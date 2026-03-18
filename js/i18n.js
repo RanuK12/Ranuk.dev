@@ -10,13 +10,13 @@ const translations = {
         "nav.skills": "Skills",
         "nav.experience": "Experience",
         "nav.projects": "Projects",
+        "nav.ranuk": "Ranuk Dev",
         "nav.mllab": "ML Lab",
-        "nav.certs": "Certifications",
         "nav.contact": "Contact",
 
         // Hero
         "hero.greeting": "Hello, World! I'm",
-        "hero.description": "Building data-driven solutions with Python, Machine Learning and Cloud technologies. From Buenos Aires to Amsterdam, engineering the future one commit at a time.",
+        "hero.description": "Building data-driven solutions with Python, Machine Learning and Cloud technologies. From C\u00f3rdoba to Barcelona, engineering the future one commit at a time.",
         "hero.cta1": "View My Work",
         "hero.cta2": "Let's Talk",
         "hero.stat1": "Years Experience",
@@ -36,12 +36,13 @@ const translations = {
 
         // About
         "about.title": '<span class="title-number">01.</span> About Me',
-        "about.p1": "I'm a Systems Engineer and Data Scientist based in the Netherlands, originally from C\u00f3rdoba, Argentina, with Italian roots that run deep. My journey through three countries and cultures has shaped how I approach problem-solving: with the analytical precision of engineering, the creativity of data science, and the human touch of someone who's navigated diverse environments.",
-        "about.p2": 'With experience at companies like <strong>Booking.com</strong>, <strong>Accenture</strong>, and <strong>Eurobrico</strong>, I\'ve built everything from dynamic pricing ML systems processing 5M+ records to supply chain optimization models that cut costs by 15%. I thrive at the intersection of engineering and data, turning complex business problems into elegant, automated solutions.',
-        "about.p3": 'Beyond code, I\'m a published author\u2014my book <em>"E Cos\u00ec Tesso il Mio Cammino"</em> reflects the same passion for storytelling that I bring to data visualization and dashboards. Whether it\'s Python, Power BI, or prose, I believe in crafting narratives that drive understanding.',
+        "about.p1": "I'm a Systems Engineer and Data Scientist based in Barcelona, Spain, originally from C\u00f3rdoba, Argentina, with Italian roots that run deep. My journey through three countries and cultures has shaped how I approach problem-solving: with the analytical precision of engineering, the creativity of data science, and the human touch of someone who's navigated diverse environments.",
+        "about.p2": 'With experience at companies like <strong>Booking.com</strong>, <strong>Accenture</strong>, and <strong>Eurobrico</strong>, I\'ve built everything from dynamic pricing ML systems processing 5M+ records to supply chain optimization models that cut costs by 15%. Now through <strong>Ranuk Development</strong>, my own software studio, I build custom digital solutions for clients across Europe and Latin America.',
+        "about.p3": 'Beyond code, I\'m a published author\u2014my book <em>"Y as\u00ed voy tejiendo mi camino"</em> reflects the same passion for storytelling that I bring to data visualization and dashboards. Whether it\'s Python, Power BI, or prose, I believe in crafting narratives that drive understanding.',
         "about.degree": "Systems Engineer - UTN, Argentina",
-        "about.book": 'Author: "E Cos\u00ec Tesso il Mio Cammino"',
+        "about.book": 'Author: "Y as\u00ed voy tejiendo mi camino"',
         "about.langs": "English, Spanish, Italian",
+        "about.company": "Founder \u2014 Ranuk Development",
 
         // Skills
         "skills.title": '<span class="title-number">02.</span> Technical Skills',
@@ -97,8 +98,23 @@ const translations = {
         "projects.eurobrico_desc": "Complete web audit and redesign prototype for a major Italian retail chain, including UX analysis and commercial proposal.",
         "projects.viewall": "View All Projects on GitHub",
 
+        // Ranuk Development
+        "ranuk.title": '<span class="title-number">05.</span> Ranuk Development',
+        "ranuk.tagline": "Technology studio building digital products that solve real problems.",
+        "ranuk.description": "Ranuk Development is my independent software studio, born from a simple belief: technology should serve people, not the other way around. I build custom web applications, automation systems, and data-driven platforms for clients across Europe and Latin America.",
+        "ranuk.val1_title": "Mission",
+        "ranuk.val1": "Deliver high-quality, scalable software solutions that empower businesses to grow \u2014 with transparency, speed, and technical excellence.",
+        "ranuk.val2_title": "Values",
+        "ranuk.val2": "Clean code. Honest communication. Client-first mindset. Every project is a partnership, not a transaction.",
+        "ranuk.val3_title": "Approach",
+        "ranuk.val3": "From concept to deployment: full-stack development, cloud architecture, automation pipelines, and ongoing support \u2014 all under one roof.",
+        "ranuk.clients_title": "Client Projects",
+        "ranuk.notarobot_desc": "Full web platform designed and developed from scratch \u2014 interactive experience with modern UI, animations, and responsive design.",
+        "ranuk.bahay_desc": "Design studio website for an Italian creative agency \u2014 showcasing their portfolio with elegant layouts and brand-aligned aesthetics.",
+        "ranuk.garycio_desc": "End-to-end WhatsApp bot platform with automated reporting, PostgreSQL database, incident management, and PDF generation for business operations.",
+
         // ML Lab
-        "mllab.title": '<span class="title-number">05.</span> ML Playground',
+        "mllab.title": '<span class="title-number">06.</span> ML Playground',
         "mllab.subtitle": "Train a neural network right in your browser. Place points of two classes and watch the model learn the decision boundary in real time.",
         "mllab.hint": "Click to place points",
         "mllab.class": "Current Class:",
@@ -112,10 +128,10 @@ const translations = {
         "mllab.epoch_count": "Epoch:",
 
         // Certifications
-        "certs.title": '<span class="title-number">06.</span> Certifications',
+        "certs.title": '<span class="title-number">07.</span> Certifications',
 
         // Contact
-        "contact.title": '<span class="title-number">07.</span> Get In Touch',
+        "contact.title": '<span class="title-number">08.</span> Get In Touch',
         "contact.text": "Whether you have a project in mind, a job opportunity, or just want to say hello, my inbox is always open. I'm currently open to new opportunities and collaborations across Europe and globally.",
         "contact.name": "Name",
         "contact.email": "Email",
@@ -131,12 +147,12 @@ const translations = {
         "nav.skills": "Habilidades",
         "nav.experience": "Experiencia",
         "nav.projects": "Proyectos",
+        "nav.ranuk": "Ranuk Dev",
         "nav.mllab": "Lab ML",
-        "nav.certs": "Certificaciones",
         "nav.contact": "Contacto",
 
         "hero.greeting": "\u00a1Hola, Mundo! Soy",
-        "hero.description": "Construyendo soluciones basadas en datos con Python, Machine Learning y tecnolog\u00edas Cloud. De Buenos Aires a \u00c1msterdam, ingenier\u00eda del futuro un commit a la vez.",
+        "hero.description": "Construyendo soluciones basadas en datos con Python, Machine Learning y tecnolog\u00edas Cloud. De C\u00f3rdoba a Barcelona, ingenier\u00eda del futuro un commit a la vez.",
         "hero.cta1": "Ver Mi Trabajo",
         "hero.cta2": "Hablemos",
         "hero.stat1": "A\u00f1os de Experiencia",
@@ -154,12 +170,13 @@ const translations = {
         ],
 
         "about.title": '<span class="title-number">01.</span> Sobre M\u00ed',
-        "about.p1": "Soy Ingeniero de Sistemas y Cient\u00edfico de Datos radicado en los Pa\u00edses Bajos, originario de C\u00f3rdoba, Argentina, con ra\u00edces italianas profundas. Mi recorrido por tres pa\u00edses y culturas ha dado forma a mi manera de resolver problemas: con la precisi\u00f3n anal\u00edtica de la ingenier\u00eda, la creatividad de la ciencia de datos y el toque humano de alguien que ha navegado entornos diversos.",
-        "about.p2": 'Con experiencia en empresas como <strong>Booking.com</strong>, <strong>Accenture</strong> y <strong>Eurobrico</strong>, he construido desde sistemas de pricing din\u00e1mico con ML procesando 5M+ registros hasta modelos de optimizaci\u00f3n de cadena de suministro que redujeron costos un 15%. Prospero en la intersecci\u00f3n de ingenier\u00eda y datos, transformando problemas complejos en soluciones elegantes y automatizadas.',
-        "about.p3": 'M\u00e1s all\u00e1 del c\u00f3digo, soy autor publicado\u2014mi libro <em>"E Cos\u00ec Tesso il Mio Cammino"</em> refleja la misma pasi\u00f3n por contar historias que llevo a la visualizaci\u00f3n de datos y dashboards. Ya sea Python, Power BI o prosa, creo en crear narrativas que impulsen la comprensi\u00f3n.',
+        "about.p1": "Soy Ingeniero de Sistemas y Cient\u00edfico de Datos radicado en Barcelona, Espa\u00f1a, originario de C\u00f3rdoba, Argentina, con ra\u00edces italianas profundas. Mi recorrido por tres pa\u00edses y culturas ha dado forma a mi manera de resolver problemas: con la precisi\u00f3n anal\u00edtica de la ingenier\u00eda, la creatividad de la ciencia de datos y el toque humano de alguien que ha navegado entornos diversos.",
+        "about.p2": 'Con experiencia en empresas como <strong>Booking.com</strong>, <strong>Accenture</strong> y <strong>Eurobrico</strong>, he construido desde sistemas de pricing din\u00e1mico con ML procesando 5M+ registros hasta modelos de optimizaci\u00f3n de cadena de suministro que redujeron costos un 15%. Ahora a trav\u00e9s de <strong>Ranuk Development</strong>, mi propio estudio de software, construyo soluciones digitales personalizadas para clientes en Europa y Am\u00e9rica Latina.',
+        "about.p3": 'M\u00e1s all\u00e1 del c\u00f3digo, soy autor publicado\u2014mi libro <em>"Y as\u00ed voy tejiendo mi camino"</em> refleja la misma pasi\u00f3n por contar historias que llevo a la visualizaci\u00f3n de datos y dashboards. Ya sea Python, Power BI o prosa, creo en crear narrativas que impulsen la comprensi\u00f3n.',
         "about.degree": "Ingeniero de Sistemas - UTN, Argentina",
-        "about.book": 'Autor: "E Cos\u00ec Tesso il Mio Cammino"',
+        "about.book": 'Autor: "Y as\u00ed voy tejiendo mi camino"',
         "about.langs": "Ingl\u00e9s, Espa\u00f1ol, Italiano",
+        "about.company": "Fundador \u2014 Ranuk Development",
 
         "skills.title": '<span class="title-number">02.</span> Habilidades T\u00e9cnicas',
         "skills.programming": "Programaci\u00f3n",
@@ -212,7 +229,22 @@ const translations = {
         "projects.eurobrico_desc": "Auditor\u00eda web completa y prototipo de redise\u00f1o para una importante cadena retail italiana, con an\u00e1lisis UX y propuesta comercial.",
         "projects.viewall": "Ver Todos los Proyectos en GitHub",
 
-        "mllab.title": '<span class="title-number">05.</span> Laboratorio ML',
+        // Ranuk Development
+        "ranuk.title": '<span class="title-number">05.</span> Ranuk Development',
+        "ranuk.tagline": "Estudio tecnol\u00f3gico que construye productos digitales que resuelven problemas reales.",
+        "ranuk.description": "Ranuk Development es mi estudio independiente de software, nacido de una creencia simple: la tecnolog\u00eda debe servir a las personas, no al rev\u00e9s. Construyo aplicaciones web personalizadas, sistemas de automatizaci\u00f3n y plataformas basadas en datos para clientes en Europa y Am\u00e9rica Latina.",
+        "ranuk.val1_title": "Misi\u00f3n",
+        "ranuk.val1": "Entregar soluciones de software de alta calidad y escalables que empoderen a las empresas a crecer \u2014 con transparencia, velocidad y excelencia t\u00e9cnica.",
+        "ranuk.val2_title": "Valores",
+        "ranuk.val2": "C\u00f3digo limpio. Comunicaci\u00f3n honesta. Mentalidad centrada en el cliente. Cada proyecto es una asociaci\u00f3n, no una transacci\u00f3n.",
+        "ranuk.val3_title": "Enfoque",
+        "ranuk.val3": "Del concepto al despliegue: desarrollo full-stack, arquitectura cloud, pipelines de automatizaci\u00f3n y soporte continuo \u2014 todo bajo un mismo techo.",
+        "ranuk.clients_title": "Proyectos de Clientes",
+        "ranuk.notarobot_desc": "Plataforma web completa dise\u00f1ada y desarrollada desde cero \u2014 experiencia interactiva con UI moderna, animaciones y dise\u00f1o responsive.",
+        "ranuk.bahay_desc": "Sitio web de estudio de dise\u00f1o para una agencia creativa italiana \u2014 mostrando su portfolio con layouts elegantes y est\u00e9tica alineada con la marca.",
+        "ranuk.garycio_desc": "Plataforma de bot de WhatsApp de extremo a extremo con reportes automatizados, base de datos PostgreSQL, gesti\u00f3n de incidentes y generaci\u00f3n de PDF.",
+
+        "mllab.title": '<span class="title-number">06.</span> Laboratorio ML',
         "mllab.subtitle": "Entrena una red neuronal directamente en tu navegador. Coloca puntos de dos clases y observa c\u00f3mo el modelo aprende la frontera de decisi\u00f3n en tiempo real.",
         "mllab.hint": "Haz clic para colocar puntos",
         "mllab.class": "Clase Actual:",
@@ -225,9 +257,9 @@ const translations = {
         "mllab.accuracy": "Precisi\u00f3n:",
         "mllab.epoch_count": "\u00c9poca:",
 
-        "certs.title": '<span class="title-number">06.</span> Certificaciones',
+        "certs.title": '<span class="title-number">07.</span> Certificaciones',
 
-        "contact.title": '<span class="title-number">07.</span> Contacto',
+        "contact.title": '<span class="title-number">08.</span> Contacto',
         "contact.text": "Ya sea que tengas un proyecto en mente, una oportunidad laboral o simplemente quieras saludar, mi bandeja de entrada siempre est\u00e1 abierta. Actualmente estoy abierto a nuevas oportunidades y colaboraciones en Europa y a nivel global.",
         "contact.name": "Nombre",
         "contact.email": "Correo Electr\u00f3nico",
@@ -242,12 +274,12 @@ const translations = {
         "nav.skills": "Competenze",
         "nav.experience": "Esperienza",
         "nav.projects": "Progetti",
+        "nav.ranuk": "Ranuk Dev",
         "nav.mllab": "Lab ML",
-        "nav.certs": "Certificazioni",
         "nav.contact": "Contatto",
 
         "hero.greeting": "Ciao, Mondo! Sono",
-        "hero.description": "Costruisco soluzioni data-driven con Python, Machine Learning e tecnologie Cloud. Da Buenos Aires ad Amsterdam, ingegnerizzando il futuro un commit alla volta.",
+        "hero.description": "Costruisco soluzioni data-driven con Python, Machine Learning e tecnologie Cloud. Da C\u00f3rdoba a Barcellona, ingegnerizzando il futuro un commit alla volta.",
         "hero.cta1": "Vedi i Miei Lavori",
         "hero.cta2": "Parliamone",
         "hero.stat1": "Anni di Esperienza",
@@ -265,12 +297,13 @@ const translations = {
         ],
 
         "about.title": '<span class="title-number">01.</span> Chi Sono',
-        "about.p1": "Sono un Ingegnere dei Sistemi e Data Scientist con sede nei Paesi Bassi, originario di C\u00f3rdoba, Argentina, con radici italiane profonde. Il mio percorso attraverso tre paesi e culture ha plasmato il mio approccio alla risoluzione dei problemi: con la precisione analitica dell'ingegneria, la creativit\u00e0 della data science e il tocco umano di chi ha navigato ambienti diversi.",
-        "about.p2": 'Con esperienza in aziende come <strong>Booking.com</strong>, <strong>Accenture</strong> ed <strong>Eurobrico</strong>, ho costruito di tutto: dai sistemi di pricing dinamico con ML che elaborano 5M+ record ai modelli di ottimizzazione della supply chain che hanno ridotto i costi del 15%. Prospero all\'intersezione tra ingegneria e dati, trasformando problemi aziendali complessi in soluzioni eleganti e automatizzate.',
-        "about.p3": 'Oltre al codice, sono un autore pubblicato\u2014il mio libro <em>"E Cos\u00ec Tesso il Mio Cammino"</em> riflette la stessa passione per la narrazione che porto nella visualizzazione dei dati e nei dashboard. Che sia Python, Power BI o prosa, credo nel creare narrazioni che guidano la comprensione.',
+        "about.p1": "Sono un Ingegnere dei Sistemi e Data Scientist con sede a Barcellona, Spagna, originario di C\u00f3rdoba, Argentina, con radici italiane profonde. Il mio percorso attraverso tre paesi e culture ha plasmato il mio approccio alla risoluzione dei problemi: con la precisione analitica dell'ingegneria, la creativit\u00e0 della data science e il tocco umano di chi ha navigato ambienti diversi.",
+        "about.p2": 'Con esperienza in aziende come <strong>Booking.com</strong>, <strong>Accenture</strong> ed <strong>Eurobrico</strong>, ho costruito di tutto: dai sistemi di pricing dinamico con ML che elaborano 5M+ record ai modelli di ottimizzazione della supply chain che hanno ridotto i costi del 15%. Ora attraverso <strong>Ranuk Development</strong>, il mio studio software, costruisco soluzioni digitali personalizzate per clienti in Europa e America Latina.',
+        "about.p3": 'Oltre al codice, sono un autore pubblicato\u2014il mio libro <em>"Y as\u00ed voy tejiendo mi camino"</em> riflette la stessa passione per la narrazione che porto nella visualizzazione dei dati e nei dashboard. Che sia Python, Power BI o prosa, credo nel creare narrazioni che guidano la comprensione.',
         "about.degree": "Ingegnere dei Sistemi - UTN, Argentina",
-        "about.book": 'Autore: "E Cos\u00ec Tesso il Mio Cammino"',
+        "about.book": 'Autore: "Y as\u00ed voy tejiendo mi camino"',
         "about.langs": "Inglese, Spagnolo, Italiano",
+        "about.company": "Fondatore \u2014 Ranuk Development",
 
         "skills.title": '<span class="title-number">02.</span> Competenze Tecniche',
         "skills.programming": "Programmazione",
@@ -323,7 +356,22 @@ const translations = {
         "projects.eurobrico_desc": "Audit web completo e prototipo di redesign per un'importante catena retail italiana, con analisi UX e proposta commerciale.",
         "projects.viewall": "Vedi Tutti i Progetti su GitHub",
 
-        "mllab.title": '<span class="title-number">05.</span> Laboratorio ML',
+        // Ranuk Development
+        "ranuk.title": '<span class="title-number">05.</span> Ranuk Development',
+        "ranuk.tagline": "Studio tecnologico che costruisce prodotti digitali che risolvono problemi reali.",
+        "ranuk.description": "Ranuk Development \u00e8 il mio studio software indipendente, nato da una convinzione semplice: la tecnologia deve servire le persone, non il contrario. Costruisco applicazioni web personalizzate, sistemi di automazione e piattaforme data-driven per clienti in Europa e America Latina.",
+        "ranuk.val1_title": "Missione",
+        "ranuk.val1": "Fornire soluzioni software di alta qualit\u00e0 e scalabili che permettano alle aziende di crescere \u2014 con trasparenza, velocit\u00e0 ed eccellenza tecnica.",
+        "ranuk.val2_title": "Valori",
+        "ranuk.val2": "Codice pulito. Comunicazione onesta. Mentalit\u00e0 orientata al cliente. Ogni progetto \u00e8 una partnership, non una transazione.",
+        "ranuk.val3_title": "Approccio",
+        "ranuk.val3": "Dal concetto al deployment: sviluppo full-stack, architettura cloud, pipeline di automazione e supporto continuo \u2014 tutto sotto un unico tetto.",
+        "ranuk.clients_title": "Progetti per Clienti",
+        "ranuk.notarobot_desc": "Piattaforma web completa progettata e sviluppata da zero \u2014 esperienza interattiva con UI moderna, animazioni e design responsive.",
+        "ranuk.bahay_desc": "Sito web di studio di design per un'agenzia creativa italiana \u2014 mostrando il loro portfolio con layout eleganti ed estetica allineata al brand.",
+        "ranuk.garycio_desc": "Piattaforma bot WhatsApp end-to-end con reportistica automatizzata, database PostgreSQL, gestione incidenti e generazione PDF.",
+
+        "mllab.title": '<span class="title-number">06.</span> Laboratorio ML',
         "mllab.subtitle": "Allena una rete neurale direttamente nel tuo browser. Posiziona punti di due classi e osserva il modello imparare il confine decisionale in tempo reale.",
         "mllab.hint": "Clicca per posizionare punti",
         "mllab.class": "Classe Attuale:",
@@ -336,9 +384,9 @@ const translations = {
         "mllab.accuracy": "Precisione:",
         "mllab.epoch_count": "Epoca:",
 
-        "certs.title": '<span class="title-number">06.</span> Certificazioni',
+        "certs.title": '<span class="title-number">07.</span> Certificazioni',
 
-        "contact.title": '<span class="title-number">07.</span> Contattami',
+        "contact.title": '<span class="title-number">08.</span> Contattami',
         "contact.text": "Che tu abbia un progetto in mente, un'opportunit\u00e0 lavorativa o semplicemente voglia salutare, la mia casella di posta \u00e8 sempre aperta. Attualmente sono aperto a nuove opportunit\u00e0 e collaborazioni in Europa e a livello globale.",
         "contact.name": "Nome",
         "contact.email": "Email",
