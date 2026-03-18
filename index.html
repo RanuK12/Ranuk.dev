@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilio Ranucoli | Systems Engineer & Data Scientist</title>
+    <meta name="description" content="Portfolio of Emilio Ranucoli - Systems Engineer, Data Scientist and Python Developer. Building data-driven solutions across ML, automation and cloud.">
+    <meta name="keywords" content="Emilio Ranucoli, Systems Engineer, Data Scientist, Python Developer, Machine Learning, Portfolio">
+    <meta name="author" content="Emilio Ranucoli">
+
+    <meta property="og:title" content="Emilio Ranucoli | Systems Engineer & Data Scientist">
+    <meta property="og:description" content="Building data-driven solutions across ML, automation and cloud.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ranuk.dev">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%E2%9A%A1</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============ PRELOADER ============ -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p class="loader-line" style="--delay: 0"><span class="prompt">$</span> initializing portfolio...</p>
+                    <p class="loader-line" style="--delay: 1"><span class="prompt">$</span> loading projects <span class="success">[28 repos found]</span></p>
+                    <p class="loader-line" style="--delay: 2"><span class="prompt">$</span> compiling skills <span class="success">[done]</span></p>
+                    <p class="loader-line" style="--delay: 3"><span class="prompt">$</span> deploying experience <span class="success">[ready]</span></p>
+                    <p class="loader-line" style="--delay: 4"><span class="prompt">$</span> launching ranuk.dev <span class="blink">_</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ CURSOR ============ -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">ER</span>
+                <span class="logo-bracket">}</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#ml-lab" class="nav-link" data-i18n="nav.mllab">ML Lab</a></li>
+                <li><a href="#certifications" class="nav-link" data-i18n="nav.certs">Certifications</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-greeting">
+                <span class="hero-tag">&lt;</span>
+                <span data-i18n="hero.greeting">Hello, World! I'm</span>
+                <span class="hero-tag">/&gt;</span>
+            </div>
+            <h1 class="hero-name glitch" data-text="EMILIO RANUCOLI">EMILIO RANUCOLI</h1>
+            <div class="hero-subtitle">
+                <span class="typed-prefix">&gt; </span>
+                <span id="typed-text" class="typed-text"></span>
+                <span class="typed-cursor">|</span>
+            </div>
+            <p class="hero-description" data-i18n="hero.description">
+                Building data-driven solutions with Python, Machine Learning and Cloud technologies.
+                From Buenos Aires to Amsterdam, engineering the future one commit at a time.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">View My Work</a>
+                <a href="#contact" class="btn btn-outline" data-i18n="hero.cta2">Let's Talk</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-i18n="hero.stat1">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-i18n="hero.stat2">Projects Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="9">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-i18n="hero.stat3">Certifications</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label" data-i18n="hero.stat4">Languages Spoken</span>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span data-i18n="hero.scroll">Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">
+                <span class="title-number">01.</span> About Me
+            </h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-i18n="about.p1">
+                        I'm a Systems Engineer and Data Scientist based in the Netherlands, originally from C&oacute;rdoba, Argentina,
+                        with Italian roots that run deep. My journey through three countries and cultures has shaped
+                        how I approach problem-solving: with the analytical precision of engineering, the creativity of
+                        data science, and the human touch of someone who's navigated diverse environments.
+                    </p>
+                    <p data-i18n="about.p2">
+                        With experience at companies like <strong>Booking.com</strong>, <strong>Accenture</strong>, and
+                        <strong>Eurobrico</strong>, I've built everything from dynamic pricing ML systems processing 5M+ records
+                        to supply chain optimization models that cut costs by 15%. I thrive at the intersection of
+                        engineering and data, turning complex business problems into elegant, automated solutions.
+                    </p>
+                    <p data-i18n="about.p3">
+                        Beyond code, I'm a published author&mdash;my book <em>"E Cos&igrave; Tesso il Mio Cammino"</em>
+                        reflects the same passion for storytelling that I bring to data visualization and dashboards.
+                        Whether it's Python, Power BI, or prose, I believe in crafting narratives that drive understanding.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zaandam, Netherlands</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span data-i18n="about.degree">Systems Engineer - UTN, Argentina</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-book"></i>
+                            <span data-i18n="about.book">Author: "E Cos&igrave; Tesso il Mio Cammino"</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-language"></i>
+                            <span data-i18n="about.langs">English, Spanish, Italian</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <div class="image-placeholder">
+                            <div class="code-avatar">
+                                <pre><code>{
+  "name": "Emilio",
+  "role": "Engineer",
+  "passion": "Data",
+  "origin": "Argentina",
+  "based_in": "Netherlands",
+  "coffee": true
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title" data-i18n="skills.title">
+                <span class="title-number">02.</span> Technical Skills
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3 data-i18n="skills.programming">Programming</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Python</span><span>95%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>SQL</span><span>90%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>HTML / CSS</span><span>85%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Java / C#</span><span>60%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="60"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3 data-i18n="skills.datascience">Data Science & ML</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Pandas / NumPy</span><span>95%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Scikit-learn</span><span>90%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>TensorFlow / Keras</span><span>80%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Data Wrangling / ETL</span><span>92%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="92"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Statistical Analysis</span><span>85%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3 data-i18n="skills.bi">BI & Analytics</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Power BI / DAX</span><span>95%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Tableau</span><span>85%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Looker / Google Analytics</span><span>75%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Excel / Advanced</span><span>90%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="90"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3 data-i18n="skills.cloud">Cloud & DevOps</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>AWS</span><span>80%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Docker / Kubernetes</span><span>75%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Git / CI-CD</span><span>88%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="88"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Azure / GCP</span><span>65%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="65"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>PostgreSQL / MongoDB</span><span>85%</span></div>
+                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title" data-i18n="experience.title">
+                <span class="title-number">03.</span> Experience
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Machine Learning Engineer</h3>
+                            <span class="timeline-company">Booking.com</span>
+                            <span class="timeline-location">Amsterdam, Netherlands</span>
+                            <span class="timeline-date">May 2025 - Oct 2025</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li data-i18n="exp.booking1">Led development of a dynamic pricing optimization system using Python, Scikit-learn, XGBoost, and neural networks for real-time price adjustments.</li>
+                            <li data-i18n="exp.booking2">Analyzed 5M+ historical booking records, improving segmentation and promotional campaign effectiveness.</li>
+                            <li data-i18n="exp.booking3">Integrated ML models into AWS production environment with scalability and continuous monitoring.</li>
+                            <li data-i18n="exp.booking4">Contributed to a 12% improvement in promotional targeting accuracy.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>AWS</span><span>Neural Networks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Python Developer</h3>
+                            <span class="timeline-company">Eurobrico S.p.A.</span>
+                            <span class="timeline-location">Italy</span>
+                            <span class="timeline-date">Nov 2024 - Apr 2025</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li data-i18n="exp.euro1">Developed internal applications to optimize inventory management and retail operations.</li>
+                            <li data-i18n="exp.euro2">Implemented data integration solutions and automation tools, reducing manual errors.</li>
+                            <li data-i18n="exp.euro3">Collaborated with department heads to translate business needs into technology solutions.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>Automation</span><span>Data Integration</span><span>Retail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-i18n="exp.accenture_title">Data Science Analyst / Sr. Analyst</h3>
+                            <span class="timeline-company">Accenture</span>
+                            <span class="timeline-location">Argentina (Remote)</span>
+                            <span class="timeline-date">Jun 2024 - Nov 2024</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li data-i18n="exp.acc1">Developed predictive and optimization models for supply chain using Python, SQL, and Power BI.</li>
+                            <li data-i18n="exp.acc2">Implemented ML to forecast demand and optimize inventory, achieving 15% cost reduction.</li>
+                            <li data-i18n="exp.acc3">Created interactive dashboards in Tableau and Power BI for critical KPIs visualization.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>ML</span><span>Scrum</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-i18n="exp.gov_title">Data Analyst & Power BI Specialist</h3>
+                            <span class="timeline-company" data-i18n="exp.gov_company">Government of C&oacute;rdoba</span>
+                            <span class="timeline-location">Argentina</span>
+                            <span class="timeline-date">Nov 2023 - Jun 2024</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li data-i18n="exp.gov1">Designed and maintained 15+ Power BI dashboards for public works KPI tracking.</li>
+                            <li data-i18n="exp.gov2">Performed data cleaning and modeling on 200K+ record datasets, improving accuracy by 30%.</li>
+                            <li data-i18n="exp.gov3">Automated certification reporting, reducing manual effort by 40%.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Power BI</span><span>DAX</span><span>Data Modeling</span><span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-i18n="exp.appen_title">Data Annotation & AI Evaluation</h3>
+                            <span class="timeline-company">Appen</span>
+                            <span class="timeline-location">Argentina (Remote)</span>
+                            <span class="timeline-date">Jan 2023 - Apr 2024</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li data-i18n="exp.appen1">Annotated and evaluated data for AI projects, improving NLP model accuracy.</li>
+                            <li data-i18n="exp.appen2">Collaborated with global teams to optimize data collection and quality control.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>NLP</span><span>AI</span><span>Data Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-i18n="exp.farma_title">Purchasing & Inventory Analyst</h3>
+                            <span class="timeline-company">Farmasut</span>
+                            <span class="timeline-location">C&oacute;rdoba, Argentina</span>
+                            <span class="timeline-date">Nov 2015 - Oct 2023</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li data-i18n="exp.farma1">Conducted inventory audits and sales analysis with Tableau, reducing losses by 15%.</li>
+                            <li data-i18n="exp.farma2">Optimized delivery routes through data analysis, decreasing logistics costs.</li>
+                            <li data-i18n="exp.farma3">Developed forecasting reports for purchasing based on historical trends.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Tableau</span><span>Analysis</span><span>Forecasting</span><span>Logistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">
+                <span class="title-number">04.</span> Featured Projects
+            </h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="projects.all">All</button>
+                <button class="filter-btn" data-filter="python" data-i18n="projects.python">Python</button>
+                <button class="filter-btn" data-filter="ml" data-i18n="projects.ml">ML / Data</button>
+                <button class="filter-btn" data-filter="web" data-i18n="projects.web">Web</button>
+                <button class="filter-btn" data-filter="automation" data-i18n="projects.automation">Automation</button>
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card" data-category="python ml" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #f59e0b">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/binance-scalper" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Crypto Analysis Dashboard</h3>
+                        <p data-i18n="projects.crypto_desc">Real-time cryptocurrency market analysis system with algorithmic trading strategies, ML-powered predictions, and Telegram bot integration.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>Streamlit</span><span>Binance API</span><span>ML</span><span>Plotly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python ml web" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #3b82f6">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/JobFinder" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>JobConnect - AI Job Finder</h3>
+                        <p data-i18n="projects.job_desc">AI-powered web platform that matches CVs with job opportunities across multiple platforms using NLP and web scraping.</p>
+                        <div class="project-tech">
+                            <span>Flask</span><span>AI / NLP</span><span>Web Scraping</span><span>Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web automation" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #10b981">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/Flight-Price-Alert" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Flight Price Alert</h3>
+                        <p data-i18n="projects.flight_desc">Automated flight price monitoring system that tracks deals and sends real-time alerts when prices drop below target thresholds.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span><span>APIs</span><span>Automation</span><span>Alerts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web automation" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #8b5cf6">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/GARYCIO_Project" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>GARYCIO Project</h3>
+                        <p data-i18n="projects.garycio_desc">Full-stack WhatsApp bot system with database integration, automated PDF reports, and incident management for business operations.</p>
+                        <div class="project-tech">
+                            <span>TypeScript</span><span>WhatsApp API</span><span>Database</span><span>PDF Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python ml" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #ec4899">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/movie-recommender" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="projects.movie_title">Movie Recommender</h3>
+                        <p data-i18n="projects.movie_desc">Machine learning-based recommendation engine that suggests personalized movie picks using collaborative filtering and content analysis.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>ML</span><span>Scikit-learn</span><span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python ml" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #06b6d4">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/review-sentiment-tool" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="projects.sentiment_title">Review Sentiment Tool</h3>
+                        <p data-i18n="projects.sentiment_desc">NLP-powered sentiment analysis tool that classifies customer reviews as positive, negative, or neutral with confidence scores.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>NLP</span><span>Sentiment Analysis</span><span>ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python automation" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #ef4444">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/Laptop-Cam-Security" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="projects.security_title">Laptop Security Cam</h3>
+                        <p data-i18n="projects.security_desc">Python-based security system using computer vision for motion detection and automated alerts when unauthorized access is detected.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>OpenCV</span><span>Computer Vision</span><span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="--accent: #14b8a6">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/RanuK12/eurobrico-web" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="projects.eurobrico_title">Eurobrico Web Redesign</h3>
+                        <p data-i18n="projects.eurobrico_desc">Complete web audit and redesign prototype for a major Italian retail chain, including UX analysis and commercial proposal.</p>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UX Audit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta">
+                <a href="https://github.com/RanuK12?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="projects.viewall">
+                    View All Projects on GitHub <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ML LAB ============ -->
+    <section id="ml-lab" class="section ml-lab">
+        <div class="container">
+            <h2 class="section-title" data-i18n="mllab.title">
+                <span class="title-number">05.</span> ML Playground
+            </h2>
+            <p class="section-subtitle" data-i18n="mllab.subtitle">
+                Train a neural network right in your browser. Place points of two classes and watch the model learn the decision boundary in real time.
+            </p>
+            <div class="ml-container">
+                <div class="ml-canvas-wrapper">
+                    <canvas id="ml-canvas" width="500" height="400"></canvas>
+                    <div class="ml-canvas-hint" data-i18n="mllab.hint">Click to place points</div>
+                </div>
+                <div class="ml-controls">
+                    <div class="ml-control-group">
+                        <label data-i18n="mllab.class">Current Class:</label>
+                        <div class="class-selector">
+                            <button class="class-btn active" data-class="0" style="--class-color: #64ffda">
+                                <span class="class-dot" style="background: #64ffda"></span> Class A
+                            </button>
+                            <button class="class-btn" data-class="1" style="--class-color: #f97316">
+                                <span class="class-dot" style="background: #f97316"></span> Class B
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ml-control-group">
+                        <label data-i18n="mllab.lr">Learning Rate:</label>
+                        <input type="range" id="learning-rate" min="0.01" max="1" step="0.01" value="0.1">
+                        <span id="lr-value">0.10</span>
+                    </div>
+                    <div class="ml-control-group">
+                        <label data-i18n="mllab.epochs">Epochs:</label>
+                        <input type="range" id="epochs" min="10" max="500" step="10" value="100">
+                        <span id="epochs-value">100</span>
+                    </div>
+                    <div class="ml-control-group">
+                        <label data-i18n="mllab.neurons">Hidden Neurons:</label>
+                        <input type="range" id="hidden-neurons" min="2" max="16" step="1" value="8">
+                        <span id="neurons-value">8</span>
+                    </div>
+                    <div class="ml-buttons">
+                        <button id="ml-train" class="btn btn-primary" data-i18n="mllab.train">
+                            <i class="fas fa-play"></i> Train Model
+                        </button>
+                        <button id="ml-clear" class="btn btn-outline" data-i18n="mllab.clear">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                    <div class="ml-stats">
+                        <div class="ml-stat">
+                            <span data-i18n="mllab.loss">Loss:</span>
+                            <span id="ml-loss">--</span>
+                        </div>
+                        <div class="ml-stat">
+                            <span data-i18n="mllab.accuracy">Accuracy:</span>
+                            <span id="ml-accuracy">--</span>
+                        </div>
+                        <div class="ml-stat">
+                            <span data-i18n="mllab.epoch_count">Epoch:</span>
+                            <span id="ml-epoch">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <h2 class="section-title" data-i18n="certs.title">
+                <span class="title-number">06.</span> Certifications
+            </h2>
+            <div class="certs-grid">
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                    <h3>Power BI Data Analyst</h3>
+                    <span class="cert-code">PL-300</span>
+                    <span class="cert-issuer">Microsoft</span>
+                    <span class="cert-year">2024</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                    <h3>Cloud Practitioner</h3>
+                    <span class="cert-code">CLF-C02</span>
+                    <span class="cert-issuer">Amazon Web Services</span>
+                    <span class="cert-year">2024</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Machine Learning with Python</h3>
+                    <span class="cert-issuer">IBM</span>
+                    <span class="cert-year">2025</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Deep Learning Fundamentals</h3>
+                    <span class="cert-issuer">IBM</span>
+                    <span class="cert-year">2025</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Deep Learning with TensorFlow</h3>
+                    <span class="cert-issuer">IBM</span>
+                    <span class="cert-year">2025</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fab fa-google"></i></div>
+                    <h3>Data Analytics Professional</h3>
+                    <span class="cert-issuer">Google</span>
+                    <span class="cert-year">2024</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fas fa-code"></i></div>
+                    <h3>Python & Software Engineer</h3>
+                    <span class="cert-issuer">HackerRank</span>
+                    <span class="cert-year">2026</span>
+                </div>
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon"><i class="fab fa-kaggle"></i></div>
+                    <h3>Intermediate Machine Learning</h3>
+                    <span class="cert-issuer">Kaggle</span>
+                    <span class="cert-year">2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.title">
+                <span class="title-number">07.</span> Get In Touch
+            </h2>
+            <div class="contact-grid">
+                <div class="contact-text">
+                    <p data-i18n="contact.text">
+                        Whether you have a project in mind, a job opportunity, or just want to say hello,
+                        my inbox is always open. I'm currently open to new opportunities and collaborations
+                        across Europe and globally.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:ranucoliemilio@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>ranucoliemilio@gmail.com</span>
+                        </a>
+                        <a href="https://linkedin.com/in/emilio-ranucoli" target="_blank" rel="noopener" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/emilio-ranucoli</span>
+                        </a>
+                        <a href="https://github.com/RanuK12" target="_blank" rel="noopener" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/RanuK12</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="form-name" required>
+                        <label for="form-name" data-i18n="contact.name">Name</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" required>
+                        <label for="form-email" data-i18n="contact.email">Email</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-message" rows="4" required></textarea>
+                        <label for="form-message" data-i18n="contact.message">Message</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.send">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/RanuK12" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/emilio-ranucoli" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ranucoliemilio@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-text">
+                    <span data-i18n="footer.designed">Designed & Built by</span>
+                    <a href="https://github.com/RanuK12" target="_blank" rel="noopener">Emilio Ranucoli</a>
+                </p>
+                <p class="footer-copy">&copy; 2026 Emilio Ranucoli. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ml-playground.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
