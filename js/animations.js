@@ -112,7 +112,9 @@ class ScrollAnimator {
             '.project-card',
             '.cert-card',
             '.skill-category',
-            '.reveal-element'
+            '.reveal-element',
+            '.ranuk-project-card',
+            '.value-card'
         ];
 
         selectors.forEach(selector => {
