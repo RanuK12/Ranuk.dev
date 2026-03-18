@@ -145,8 +145,7 @@
                         data science, and the human touch of someone who's navigated diverse environments.
                     </p>
                     <p data-i18n="about.p2">
-                        With experience at companies like <strong>Booking.com</strong>, <strong>Accenture</strong>, and
-                        <strong>Eurobrico</strong>, I've built everything from dynamic pricing ML systems processing 5M+ records
+                        With experience at companies like <strong>Booking.com</strong> and <strong>Accenture</strong>, I've built everything from dynamic pricing ML systems processing 5M+ records
                         to supply chain optimization models that cut costs by 15%. I thrive at the intersection of
                         engineering and data, turning complex business problems into elegant, automated solutions.
                     </p>
@@ -342,18 +341,19 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>Python Developer</h3>
-                            <span class="timeline-company">Eurobrico S.p.A.</span>
-                            <span class="timeline-location">Italy</span>
+                            <h3 data-i18n="exp.acc_italy_title">Python Developer — Supply Chain Integration</h3>
+                            <span class="timeline-company">Accenture</span>
+                            <span class="timeline-location">Rome, Italy</span>
                             <span class="timeline-date">Nov 2024 - Apr 2025</span>
                         </div>
                         <ul class="timeline-details">
-                            <li data-i18n="exp.euro1">Developed internal applications to optimize inventory management and retail operations.</li>
-                            <li data-i18n="exp.euro2">Implemented data integration solutions and automation tools, reducing manual errors.</li>
-                            <li data-i18n="exp.euro3">Collaborated with department heads to translate business needs into technology solutions.</li>
+                            <li data-i18n="exp.acc_it1">Designed and developed Python microservices for supply chain data integration across SAP, Oracle, and legacy ERP systems for a major logistics client.</li>
+                            <li data-i18n="exp.acc_it2">Built automated ETL pipelines processing 2M+ daily transactions, reducing data latency from 24h to near real-time.</li>
+                            <li data-i18n="exp.acc_it3">Developed REST APIs for inventory synchronization between warehouses, achieving 99.7% data consistency across 50+ locations.</li>
+                            <li data-i18n="exp.acc_it4">Implemented monitoring dashboards with Grafana and alerting systems for pipeline health and SLA compliance.</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>Python</span><span>Automation</span><span>Data Integration</span><span>Retail</span>
+                            <span>Python</span><span>FastAPI</span><span>SAP</span><span>ETL</span><span>Docker</span><span>PostgreSQL</span><span>Grafana</span>
                         </div>
                     </div>
                 </div>
@@ -703,42 +703,51 @@
                 </a>
             </div>
 
-            <!-- How it works -->
+            <!-- How it works + CTA -->
             <div class="ranuk-process">
                 <h3 class="ranuk-clients-title" data-i18n="ranuk.process_title">How We Work</h3>
-                <div class="ranuk-steps">
-                    <div class="ranuk-step">
-                        <div class="step-number">01</div>
-                        <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="ranuk-timeline-steps">
+                    <div class="ranuk-step-card">
+                        <div class="step-badge">01</div>
+                        <div class="step-icon-circle"><i class="fas fa-lightbulb"></i></div>
                         <h4 data-i18n="ranuk.step1_title">Tell Me Your Idea</h4>
                         <p data-i18n="ranuk.step1">Share your project vision — what problem you want to solve, who it's for, and where you want to go. No technical knowledge needed.</p>
                     </div>
-                    <div class="ranuk-step">
-                        <div class="step-number">02</div>
-                        <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="ranuk-step-card">
+                        <div class="step-badge">02</div>
+                        <div class="step-icon-circle"><i class="fas fa-file-alt"></i></div>
                         <h4 data-i18n="ranuk.step2_title">Custom Proposal</h4>
                         <p data-i18n="ranuk.step2">I analyze your needs and send you a clear proposal with scope, timeline, and budget. No surprises, no hidden costs.</p>
                     </div>
-                    <div class="ranuk-step">
-                        <div class="step-number">03</div>
-                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="ranuk-step-card">
+                        <div class="step-badge">03</div>
+                        <div class="step-icon-circle"><i class="fas fa-rocket"></i></div>
                         <h4 data-i18n="ranuk.step3_title">Build & Launch</h4>
                         <p data-i18n="ranuk.step3">Development with constant communication, iterative demos, and a polished product delivered on time. Post-launch support included.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- CTA -->
-            <div class="ranuk-cta">
-                <h3 data-i18n="ranuk.cta_title">Got a project in mind?</h3>
-                <p data-i18n="ranuk.cta_text">Tell me your idea and I'll prepare a personalized proposal — no strings attached.</p>
-                <div class="ranuk-cta-buttons">
-                    <a href="mailto:ranucoliemilio@gmail.com?subject=Project%20Inquiry%20-%20Ranuk%20Development" class="btn btn-primary" data-i18n="ranuk.cta_btn1">
-                        <i class="fas fa-paper-plane"></i> Request a Quote
-                    </a>
-                    <a href="#contact" class="btn btn-outline" data-i18n="ranuk.cta_btn2">
-                        <i class="fas fa-comments"></i> Let's Talk
-                    </a>
+                <!-- CTA integrado -->
+                <div class="ranuk-cta">
+                    <div class="ranuk-cta-content">
+                        <div class="cta-icon"><i class="fas fa-handshake"></i></div>
+                        <h3 data-i18n="ranuk.cta_title">Got a project in mind?</h3>
+                        <p data-i18n="ranuk.cta_text">Tell me your idea and I'll prepare a personalized proposal — no strings attached.</p>
+                        <div class="ranuk-cta-buttons">
+                            <a href="mailto:ranucoliemilio@gmail.com?subject=Project%20Inquiry%20-%20Ranuk%20Development" class="btn btn-primary btn-glow" data-i18n="ranuk.cta_btn1">
+                                <i class="fas fa-paper-plane"></i> Request a Quote
+                            </a>
+                            <a href="#contact" class="btn btn-outline" data-i18n="ranuk.cta_btn2">
+                                <i class="fas fa-comments"></i> Let's Talk
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
