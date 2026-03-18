@@ -290,12 +290,34 @@ class MLPlayground {
         });
     }
 
+    showWarning(msg) {
+        const trainBtn = document.getElementById('ml-train');
+        if (!trainBtn) return;
+        const original = trainBtn.innerHTML;
+        trainBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + msg;
+        trainBtn.style.borderColor = '#f97316';
+        trainBtn.style.color = '#f97316';
+        setTimeout(() => {
+            trainBtn.innerHTML = original;
+            trainBtn.style.borderColor = '';
+            trainBtn.style.color = '';
+        }, 2500);
+    }
+
     async train() {
-        if (this.isTraining || this.points.length < 2) return;
+        if (this.isTraining) return;
+
+        if (this.points.length < 2) {
+            this.showWarning('Add more points!');
+            return;
+        }
 
         const hasClassA = this.points.some(p => p.cls === 0);
         const hasClassB = this.points.some(p => p.cls === 1);
-        if (!hasClassA || !hasClassB) return;
+        if (!hasClassA || !hasClassB) {
+            this.showWarning('Need both classes!');
+            return;
+        }
 
         this.isTraining = true;
         const trainBtn = document.getElementById('ml-train');
