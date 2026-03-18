@@ -112,6 +112,17 @@ const translations = {
         "ranuk.notarobot_desc": "Full web platform designed and developed from scratch \u2014 interactive experience with modern UI, animations, and responsive design.",
         "ranuk.bahay_desc": "Design studio website for an Italian creative agency \u2014 showcasing their portfolio with elegant layouts and brand-aligned aesthetics.",
         "ranuk.garycio_desc": "End-to-end WhatsApp bot platform with automated reporting, PostgreSQL database, incident management, and PDF generation for business operations.",
+        "ranuk.process_title": "How We Work",
+        "ranuk.step1_title": "Tell Me Your Idea",
+        "ranuk.step1": "Share your project vision — what problem you want to solve, who it's for, and where you want to go. No technical knowledge needed.",
+        "ranuk.step2_title": "Custom Proposal",
+        "ranuk.step2": "I analyze your needs and send you a clear proposal with scope, timeline, and budget. No surprises, no hidden costs.",
+        "ranuk.step3_title": "Build & Launch",
+        "ranuk.step3": "Development with constant communication, iterative demos, and a polished product delivered on time. Post-launch support included.",
+        "ranuk.cta_title": "Got a project in mind?",
+        "ranuk.cta_text": "Tell me your idea and I'll prepare a personalized proposal — no strings attached.",
+        "ranuk.cta_btn1": '<i class="fas fa-paper-plane"></i> Request a Quote',
+        "ranuk.cta_btn2": '<i class="fas fa-comments"></i> Let\'s Talk',
 
         // ML Lab
         "mllab.title": '<span class="title-number">06.</span> ML Playground',
@@ -243,6 +254,17 @@ const translations = {
         "ranuk.notarobot_desc": "Plataforma web completa dise\u00f1ada y desarrollada desde cero \u2014 experiencia interactiva con UI moderna, animaciones y dise\u00f1o responsive.",
         "ranuk.bahay_desc": "Sitio web de estudio de dise\u00f1o para una agencia creativa italiana \u2014 mostrando su portfolio con layouts elegantes y est\u00e9tica alineada con la marca.",
         "ranuk.garycio_desc": "Plataforma de bot de WhatsApp de extremo a extremo con reportes automatizados, base de datos PostgreSQL, gesti\u00f3n de incidentes y generaci\u00f3n de PDF.",
+        "ranuk.process_title": "C\u00f3mo Trabajamos",
+        "ranuk.step1_title": "Contame Tu Idea",
+        "ranuk.step1": "Compart\u00ed tu visi\u00f3n del proyecto \u2014 qu\u00e9 problema quer\u00e9s resolver, para qui\u00e9n es y a d\u00f3nde quer\u00e9s llegar. No necesit\u00e1s conocimientos t\u00e9cnicos.",
+        "ranuk.step2_title": "Propuesta Personalizada",
+        "ranuk.step2": "Analizo tus necesidades y te env\u00edo una propuesta clara con alcance, tiempos y presupuesto. Sin sorpresas, sin costos ocultos.",
+        "ranuk.step3_title": "Desarrollo & Lanzamiento",
+        "ranuk.step3": "Desarrollo con comunicaci\u00f3n constante, demos iterativas y un producto pulido entregado a tiempo. Soporte post-lanzamiento incluido.",
+        "ranuk.cta_title": "\u00bfTen\u00e9s un proyecto en mente?",
+        "ranuk.cta_text": "Contame tu idea y te preparo una propuesta personalizada \u2014 sin compromiso.",
+        "ranuk.cta_btn1": '<i class="fas fa-paper-plane"></i> Solicitar Presupuesto',
+        "ranuk.cta_btn2": '<i class="fas fa-comments"></i> Hablemos',
 
         "mllab.title": '<span class="title-number">06.</span> Laboratorio ML',
         "mllab.subtitle": "Entrena una red neuronal directamente en tu navegador. Coloca puntos de dos clases y observa c\u00f3mo el modelo aprende la frontera de decisi\u00f3n en tiempo real.",
@@ -370,6 +392,17 @@ const translations = {
         "ranuk.notarobot_desc": "Piattaforma web completa progettata e sviluppata da zero \u2014 esperienza interattiva con UI moderna, animazioni e design responsive.",
         "ranuk.bahay_desc": "Sito web di studio di design per un'agenzia creativa italiana \u2014 mostrando il loro portfolio con layout eleganti ed estetica allineata al brand.",
         "ranuk.garycio_desc": "Piattaforma bot WhatsApp end-to-end con reportistica automatizzata, database PostgreSQL, gestione incidenti e generazione PDF.",
+        "ranuk.process_title": "Come Lavoriamo",
+        "ranuk.step1_title": "Raccontami la Tua Idea",
+        "ranuk.step1": "Condividi la tua visione del progetto \u2014 quale problema vuoi risolvere, per chi \u00e8 e dove vuoi arrivare. Non servono competenze tecniche.",
+        "ranuk.step2_title": "Proposta Personalizzata",
+        "ranuk.step2": "Analizzo le tue esigenze e ti invio una proposta chiara con ambito, tempi e budget. Nessuna sorpresa, nessun costo nascosto.",
+        "ranuk.step3_title": "Sviluppo & Lancio",
+        "ranuk.step3": "Sviluppo con comunicazione costante, demo iterative e un prodotto rifinito consegnato in tempo. Supporto post-lancio incluso.",
+        "ranuk.cta_title": "Hai un progetto in mente?",
+        "ranuk.cta_text": "Raccontami la tua idea e ti preparer\u00f2 una proposta personalizzata \u2014 senza impegno.",
+        "ranuk.cta_btn1": '<i class="fas fa-paper-plane"></i> Richiedi un Preventivo',
+        "ranuk.cta_btn2": '<i class="fas fa-comments"></i> Parliamone',
 
         "mllab.title": '<span class="title-number">06.</span> Laboratorio ML',
         "mllab.subtitle": "Allena una rete neurale direttamente nel tuo browser. Posiziona punti di due classi e osserva il modello imparare il confine decisionale in tempo reale.",
@@ -404,6 +437,11 @@ class I18n {
     }
 
     init() {
+        // Sync button active states with stored language
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
+        });
+        document.documentElement.lang = this.currentLang;
         this.applyTranslations();
         this.setupButtons();
     }
