@@ -186,13 +186,15 @@ class MLPlayground {
         this.redraw();
     }
 
-    drawGrid() {
+    drawGrid(clearBg = true) {
         const ctx = this.ctx;
         const w = this.canvas.width;
         const h = this.canvas.height;
 
-        ctx.fillStyle = this.colors.bg;
-        ctx.fillRect(0, 0, w, h);
+        if (clearBg) {
+            ctx.fillStyle = this.colors.bg;
+            ctx.fillRect(0, 0, w, h);
+        }
 
         ctx.strokeStyle = this.colors.grid;
         ctx.lineWidth = 1;
@@ -276,7 +278,7 @@ class MLPlayground {
 
         ctx.putImageData(imageData, 0, 0);
 
-        this.drawGrid();
+        this.drawGrid(false);
 
         this.points.forEach(p => {
             this.drawPoint(
@@ -298,7 +300,7 @@ class MLPlayground {
         this.isTraining = true;
         const trainBtn = document.getElementById('ml-train');
         if (trainBtn) {
-            trainBtn.textContent = 'Training...';
+            trainBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Training...';
             trainBtn.disabled = true;
         }
 

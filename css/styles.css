@@ -1684,75 +1684,106 @@ input[type="range"]::-moz-range-thumb {
     margin-bottom: 0.8rem;
 }
 
-/* ---- Ranuk Process Steps ---- */
+/* ---- Ranuk Process Steps (Redesigned) ---- */
 .ranuk-process {
     margin-top: 4rem;
 }
 
-.ranuk-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.ranuk-timeline-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
     margin-bottom: 1rem;
 }
 
-.ranuk-step {
+.ranuk-step-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    padding: 2.5rem 2rem 2rem;
     text-align: center;
     position: relative;
     transition: var(--transition);
+    flex: 1;
+    max-width: 320px;
 }
 
-.ranuk-step:hover {
+.ranuk-step-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-accent);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(100, 255, 218, 0.12);
 }
 
-.step-number {
+.step-badge {
     position: absolute;
-    top: -14px;
+    top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
     color: var(--bg-primary);
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 20px;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 24px;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
 }
 
-.step-icon {
-    font-size: 2rem;
+.step-icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(100, 255, 218, 0.08);
+    border: 2px solid rgba(100, 255, 218, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem auto 1.2rem;
+    font-size: 1.5rem;
     color: var(--accent);
-    margin: 1rem 0;
+    transition: var(--transition);
 }
 
-.ranuk-step h4 {
+.ranuk-step-card:hover .step-icon-circle {
+    background: rgba(100, 255, 218, 0.15);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.step-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8rem;
+    margin-top: 4rem;
+    color: var(--accent);
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.ranuk-step-card h4 {
     color: var(--text-bright);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     margin-bottom: 0.8rem;
+    font-weight: 600;
 }
 
-.ranuk-step p {
+.ranuk-step-card p {
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     line-height: 1.7;
 }
 
 /* ---- Ranuk CTA ---- */
 .ranuk-cta {
-    margin-top: 4rem;
+    margin-top: 3rem;
     text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, rgba(100, 255, 218, 0.05), rgba(249, 115, 22, 0.05));
+    padding: 3.5rem 2.5rem;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.06), rgba(249, 115, 22, 0.06));
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
 }
@@ -1763,12 +1794,25 @@ input[type="range"]::-moz-range-thumb {
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--accent));
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.cta-icon {
+    font-size: 2.5rem;
+    color: var(--accent-secondary);
+    margin-bottom: 1rem;
 }
 
 .ranuk-cta h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--text-bright);
     margin-bottom: 1rem;
     font-weight: 700;
@@ -1776,17 +1820,26 @@ input[type="range"]::-moz-range-thumb {
 
 .ranuk-cta p {
     color: var(--text-secondary);
-    font-size: 1rem;
-    max-width: 500px;
+    font-size: 1.05rem;
+    max-width: 520px;
     margin: 0 auto 2rem;
     line-height: 1.8;
 }
 
 .ranuk-cta-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.btn-glow {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.4);
 }
 
 /* ---- Featured Cert Card ---- */
@@ -1837,9 +1890,24 @@ input[type="range"]::-moz-range-thumb {
         text-align: center;
     }
 
-    .ranuk-values,
-    .ranuk-steps {
+    .ranuk-values {
         grid-template-columns: 1fr;
+    }
+
+    .ranuk-timeline-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .ranuk-step-card {
+        max-width: 100%;
+    }
+
+    .step-connector {
+        transform: rotate(90deg);
+        margin-top: 0;
+        padding: 0;
     }
 }
 
