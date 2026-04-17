@@ -2052,3 +2052,175 @@ input[type="range"]::-moz-range-thumb {
 
     .section { padding: 20px 0; }
 }
+
+/* ============ ACCESSIBILITY SECTION ============ */
+.accessibility {
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, transparent 100%);
+    position: relative;
+}
+
+.accessibility .section-subtitle {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 3rem;
+    color: var(--text-secondary, #a1a1aa);
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+
+.a11y-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.a11y-stat {
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.a11y-stat:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.6);
+    background: rgba(139, 92, 246, 0.12);
+}
+
+.a11y-stat-number {
+    font-family: 'Fira Code', monospace;
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.a11y-stat-label {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #a1a1aa);
+    line-height: 1.45;
+}
+
+/* Pricing cards */
+.a11y-pricing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0 1rem;
+}
+
+.a11y-plan {
+    background: rgba(24, 24, 27, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    position: relative;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.a11y-plan:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.35);
+}
+
+.a11y-plan-featured {
+    border: 1.5px solid rgba(139, 92, 246, 0.55);
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, rgba(24, 24, 27, 0.6) 100%);
+    transform: scale(1.03);
+}
+
+.a11y-plan-featured:hover {
+    transform: scale(1.03) translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.85);
+}
+
+.a11y-plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.a11y-plan-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #a1a1aa);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+}
+
+.a11y-plan-price {
+    font-family: 'Fira Code', monospace;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+}
+
+.a11y-plan-sub {
+    color: var(--text-secondary, #a1a1aa);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.a11y-plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.a11y-plan-features li {
+    padding: 0.5rem 0 0.5rem 1.75rem;
+    color: var(--text-primary, #e4e4e7);
+    font-size: 0.95rem;
+    position: relative;
+    line-height: 1.45;
+}
+
+.a11y-plan-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: #8b5cf6;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.a11y-terms {
+    text-align: center;
+    color: var(--text-secondary, #a1a1aa);
+    font-size: 0.88rem;
+    margin: 1.25rem auto 2.5rem;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+    .a11y-stats { grid-template-columns: 1fr; gap: 1rem; }
+    .a11y-pricing { grid-template-columns: 1fr; gap: 1.5rem; }
+    .a11y-plan-featured { transform: none; }
+    .a11y-plan-featured:hover { transform: translateY(-4px); }
+}
+
