@@ -1,0 +1,46 @@
+name: Sync GitHub data
+
+# Snapshot nocturno del perfil público (repos + lenguajes) → data/github.json.
+# Sin secretos: usa el GITHUB_TOKEN built-in para evitar rate-limit.
+# El client-side consume el JSON committed; nada se llama desde el navegador.
+
+on:
+  schedule:
+    - cron: '17 4 * * *'  # diario 04:17 UTC
+  workflow_dispatch:       # botón manual
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch-github.mjs'
+      - '.github/workflows/sync-github.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch GitHub snapshot
+        env:
+          GITHUB_USER: RanuK12
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-github.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n $(git status --porcelain data/github.json) ]]; then
+            git add data/github.json
+            git commit -m "chore(data): refresh GitHub snapshot [skip ci]"
+            git push
+          else
+            echo "Sin cambios en data/github.json"
+          fi
