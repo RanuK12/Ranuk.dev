@@ -2254,6 +2254,138 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* =========================================================
+   Voces — testimonios (prueba social post-Ranuk IT)
+   ========================================================= */
+
+.voices {
+    background: var(--bg-secondary);
+}
+
+.voices-title {
+    text-align: center;
+}
+
+.voices .section-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+}
+
+.voices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
+.voice-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.2rem 1.8rem 1.8rem;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.voice-card:hover {
+    border-color: var(--accent-gold, #D4A574);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.12);
+}
+
+.voice-quote-mark {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.2rem;
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--accent-gold, #D4A574);
+    opacity: 0.3;
+    pointer-events: none;
+    user-select: none;
+}
+
+.voice-text {
+    margin: 0 0 1.5rem;
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-bright);
+    flex: 1;
+}
+
+.voice-author {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.voice-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bg-primary);
+    flex-shrink: 0;
+}
+
+.voice-avatar-db { background: linear-gradient(135deg, #64FFDA, #4DCBA8); }
+.voice-avatar-bd { background: linear-gradient(135deg, #ec4899, #b83280); }
+.voice-avatar-nr { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+.voice-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    min-width: 0;
+}
+
+.voice-name {
+    color: var(--text-bright);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.voice-role {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+}
+
+.voice-source {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    transition: var(--transition);
+    cursor: none;
+}
+
+.voice-source:hover {
+    color: var(--accent-secondary);
+    transform: translateX(2px);
+}
+
+/* =========================================================
    El Libro — "Y asi voy tejiendo mi camino"
    3D book mockup CSS-only + sinopsis + CTAs (Kindle/PDF/firmada)
    ========================================================= */
