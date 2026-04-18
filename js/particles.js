@@ -24,7 +24,10 @@ class ParticleNetwork {
                 particle: 'rgba(100, 255, 218, 0.6)',
                 line: 'rgba(100, 255, 218, ',
                 mouseParticle: 'rgba(249, 115, 22, 0.8)',
-                mouseLine: 'rgba(249, 115, 22, '
+                mouseLine: 'rgba(249, 115, 22, ',
+                // Hilo tensado (telar): se tinta de oro cuando ambos extremos caen
+                // dentro del radio del cursor. Eco visual del libro "tejiendo mi camino".
+                goldLine: 'rgba(212, 165, 116, '
             }
         };
 
@@ -81,19 +84,40 @@ class ParticleNetwork {
     }
 
     drawLines() {
+        const mouseActive = this.mouse.x !== null;
+        const r = this.mouse.radius;
+
         for (let i = 0; i < this.particles.length; i++) {
+            const pi = this.particles[i];
+            // Precomputar distancia de esta partícula al cursor (si el cursor está activo)
+            const iNearMouse = mouseActive &&
+                Math.hypot(pi.x - this.mouse.x, pi.y - this.mouse.y) < r;
+
             for (let j = i + 1; j < this.particles.length; j++) {
-                const dx = this.particles[i].x - this.particles[j].x;
-                const dy = this.particles[i].y - this.particles[j].y;
+                const pj = this.particles[j];
+                const dx = pi.x - pj.x;
+                const dy = pi.y - pj.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
 
                 if (dist < this.config.maxDistance) {
                     const opacity = 1 - dist / this.config.maxDistance;
+
+                    // Telar: si ambos extremos del hilo están bajo la influencia
+                    // del cursor, el hilo se "tensa" → oro + grosor mayor.
+                    const jNearMouse = mouseActive &&
+                        Math.hypot(pj.x - this.mouse.x, pj.y - this.mouse.y) < r;
+                    const tensed = iNearMouse && jNearMouse;
+
                     this.ctx.beginPath();
-                    this.ctx.strokeStyle = this.config.colors.line + (opacity * 0.3) + ')';
-                    this.ctx.lineWidth = 0.5;
-                    this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
-                    this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                    if (tensed) {
+                        this.ctx.strokeStyle = this.config.colors.goldLine + (opacity * 0.75) + ')';
+                        this.ctx.lineWidth = 1.2;
+                    } else {
+                        this.ctx.strokeStyle = this.config.colors.line + (opacity * 0.3) + ')';
+                        this.ctx.lineWidth = 0.5;
+                    }
+                    this.ctx.moveTo(pi.x, pi.y);
+                    this.ctx.lineTo(pj.x, pj.y);
                     this.ctx.stroke();
                 }
             }

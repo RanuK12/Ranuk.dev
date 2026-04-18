@@ -13,6 +13,9 @@
     --accent-dim: rgba(100, 255, 218, 0.1);
     --accent-secondary: #f97316;
     --accent-secondary-dim: rgba(249, 115, 22, 0.1);
+    /* Hilo de oro: acento narrativo para el libro y los hilos del telar. */
+    --accent-gold: #D4A574;
+    --accent-gold-dim: rgba(212, 165, 116, 0.15);
     --text-primary: #ccd6f6;
     --text-secondary: #8892b0;
     --text-bright: #e6f1ff;
@@ -20,9 +23,12 @@
     --nav-height: 70px;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'Fira Code', 'Consolas', monospace;
+    /* Serif display: cambia el registro visual en Hero + Libro (de código a narrativa). */
+    --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     --shadow-accent: 0 0 20px rgba(100, 255, 218, 0.15);
+    --shadow-gold: 0 0 30px rgba(212, 165, 116, 0.18);
 }
 
 /* ---- Reset & Base ---- */
@@ -382,21 +388,102 @@ ul { list-style: none; }
     z-index: 1;
     text-align: center;
     padding: 2rem;
+    max-width: 980px;
 }
 
-.hero-greeting {
+/* ---- Hero v3: intro label + nombre firma ---- */
+.hero-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.hero-label {
     font-family: var(--font-mono);
-    font-size: 1rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(100, 255, 218, 0.03);
 }
 
-.hero-tag {
-    color: var(--accent);
-    opacity: 0.6;
+.hero-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    animation: pulseDot 2s ease-in-out infinite;
 }
 
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hero-name-mini {
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--text-bright);
+    position: relative;
+    display: inline-block;
+}
+
+/* ---- Hero headline (3 líneas, metáfora del tejido) ---- */
+.hero-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 7.5vw, 5.25rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--text-bright);
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+}
+
+.headline-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: headlineIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.headline-line:nth-child(1) { animation-delay: 0.1s; }
+.headline-line:nth-child(2) { animation-delay: 0.35s; }
+.headline-line:nth-child(3) { animation-delay: 0.6s; }
+
+.headline-line em {
+    font-style: italic;
+    font-weight: 900;
+    transition: text-shadow 0.3s ease;
+}
+
+.line-code em { color: var(--accent); text-shadow: 0 0 30px rgba(100, 255, 218, 0.35); }
+.line-biz em { color: var(--accent-secondary); text-shadow: 0 0 30px rgba(249, 115, 22, 0.35); }
+.line-story em {
+    color: var(--accent-gold);
+    text-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
+    font-family: var(--font-serif);
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+@keyframes headlineIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Legacy class kept for glitch effect reuse in name */
 .hero-name {
     font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 900;
@@ -488,11 +575,44 @@ ul { list-style: none; }
     line-height: 1.8;
 }
 
+.hero-subline {
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-primary);
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.65;
+    font-weight: 400;
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
     justify-content: center;
     margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold-dim);
+}
+
+.btn-ghost:hover {
+    background: var(--accent-gold-dim);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+/* Nav link primario: Ranuk IT resaltado (es la sección de venta) */
+.nav-link-primary {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+.nav-link-primary::after {
+    background: var(--accent-gold);
 }
 
 /* ---- Buttons ---- */
@@ -1840,6 +1960,417 @@ input[type="range"]::-moz-range-thumb {
 
 .btn-glow:hover {
     box-shadow: 0 0 30px rgba(100, 255, 218, 0.4);
+}
+
+/* =========================================================
+   Ranuk IT Solutions — Protagonist section
+   Manifesto → métricas → servicios → VS → clientes → CTA triple
+   Gold accent (#D4A574) se usa como registro narrativo.
+   ========================================================= */
+
+.ranuk-it {
+    position: relative;
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.ranuk-it::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(100, 255, 218, 0.045), transparent 55%),
+        radial-gradient(circle at 82% 82%, rgba(212, 165, 116, 0.04), transparent 55%);
+    pointer-events: none;
+}
+
+.ranuk-it > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Manifesto ---- */
+.ranuk-manifesto {
+    max-width: 880px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.ranuk-manifesto-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.5rem 1.1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(100, 255, 218, 0.05);
+    border: 1px solid var(--accent-dim);
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+.ranuk-manifesto-logo {
+    width: 22px;
+    height: 22px;
+    opacity: 0.9;
+}
+
+.ranuk-manifesto-headline {
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-size: clamp(1.7rem, 4.2vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--text-bright);
+    margin-bottom: 1.3rem;
+}
+
+.ranuk-manifesto-headline em {
+    font-style: italic;
+    color: var(--accent-gold, #D4A574);
+    font-variation-settings: "WONK" 1;
+}
+
+.ranuk-manifesto-sub {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ---- Métricas ---- */
+.ranuk-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metric-badge {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.6rem 1rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+}
+
+.metric-badge:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.1);
+}
+
+.metric-value {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.metric-plus {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-secondary);
+    vertical-align: top;
+    margin-left: 2px;
+}
+
+.metric-label {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+/* ---- Section heads dentro de Ranuk IT ---- */
+.ranuk-section-head {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    text-align: center;
+    margin: 3rem 0 1.8rem;
+    letter-spacing: -0.01em;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.ranuk-section-head::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-gold, #D4A574));
+    border-radius: 2px;
+}
+
+/* ---- Servicios grid ---- */
+.ranuk-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.8rem 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 26px rgba(100, 255, 218, 0.1);
+}
+
+.service-featured {
+    border-color: var(--accent-gold, #D4A574);
+    background: linear-gradient(135deg, var(--bg-card), rgba(212, 165, 116, 0.04));
+    box-shadow: 0 0 0 1px rgba(212, 165, 116, 0.08), var(--shadow-gold, 0 0 30px rgba(212, 165, 116, 0.12));
+}
+
+.service-featured:hover {
+    border-color: var(--accent-gold, #D4A574);
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.18);
+}
+
+.service-badge {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: var(--accent-gold, #D4A574);
+    color: var(--bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+.service-featured .service-icon {
+    background: rgba(212, 165, 116, 0.12);
+    color: var(--accent-gold, #D4A574);
+}
+
+.service-card h4 {
+    font-size: 1.05rem;
+    color: var(--text-bright);
+    font-weight: 700;
+    margin: 0;
+}
+
+.service-card > p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    flex: 1;
+    margin: 0;
+}
+
+.service-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.3rem;
+}
+
+.service-tech span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    background: rgba(100, 255, 218, 0.06);
+    border: 1px solid var(--accent-dim);
+    border-radius: 4px;
+    color: var(--accent);
+    letter-spacing: 0.3px;
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: none;
+}
+
+.service-link:hover {
+    color: var(--accent-secondary);
+    transform: translateX(3px);
+}
+
+.service-featured .service-link {
+    color: var(--accent-gold, #D4A574);
+}
+
+/* ---- Tabla VS ---- */
+.ranuk-vs-table {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--bg-card);
+}
+
+.vs-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.vs-row:last-child {
+    border-bottom: none;
+}
+
+.vs-row:nth-child(even) {
+    background: rgba(100, 255, 218, 0.015);
+}
+
+.vs-row.vs-header {
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(212, 165, 116, 0.08));
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.vs-topic {
+    color: var(--text-bright);
+    font-weight: 500;
+}
+
+.vs-row.vs-header .vs-topic {
+    color: var(--text-secondary);
+}
+
+.vs-them {
+    color: var(--text-secondary);
+    opacity: 0.75;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.vs-them::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: rgba(239, 68, 68, 0.6);
+    font-weight: 700;
+}
+
+.vs-row.vs-header .vs-them::before {
+    content: '';
+}
+
+.vs-us {
+    color: var(--text-bright);
+    font-weight: 500;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.vs-us::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.vs-row.vs-header .vs-us {
+    color: var(--accent);
+}
+
+.vs-row.vs-header .vs-us::before {
+    content: '';
+}
+
+/* ---- CTA triple ---- */
+.ranuk-cta-triple {
+    margin-top: 3rem;
+}
+
+.ranuk-cta-triple .ranuk-cta-buttons {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-team {
+    background: linear-gradient(135deg, var(--accent-gold, #D4A574), #b8875a);
+    color: var(--bg-primary) !important;
+    border: 1px solid var(--accent-gold, #D4A574);
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+    transition: var(--transition);
+}
+
+.btn-team:hover {
+    background: linear-gradient(135deg, #e0b688, #c99a6d);
+    box-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-team i {
+    margin-right: 6px;
+}
+
+.ranuk-cta-microcopy {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    font-style: italic;
+    padding: 1rem 1rem 0;
+    border-top: 1px dashed var(--border);
 }
 
 /* ---- Featured Cert Card ---- */
