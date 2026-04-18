@@ -1431,7 +1431,7 @@
                 <form class="contact-form" id="contact-form">
                     <div class="form-group">
                         <input type="text" id="form-name" required>
-                        <label for="form-name" data-i18n="contact.name">Name</label>
+                        <label for="form-name" data-i18n="contact.name">Nombre</label>
                         <span class="form-line"></span>
                     </div>
                     <div class="form-group">
@@ -1439,14 +1439,29 @@
                         <label for="form-email" data-i18n="contact.email">Email</label>
                         <span class="form-line"></span>
                     </div>
+                    <!-- Subject dropdown: incluye "Unite al equipo" para captar talento -->
+                    <div class="form-group form-group-select">
+                        <label for="form-subject" class="form-select-label" data-i18n="contact.subject_label">¿De qué querés hablar?</label>
+                        <select id="form-subject" required>
+                            <option value="project" data-i18n="contact.subject_project">Tengo un proyecto en mente</option>
+                            <option value="ranuk" data-i18n="contact.subject_ranuk">Consulta general — Ranuk IT</option>
+                            <option value="ada" data-i18n="contact.subject_ada">Auditoría ADA / WCAG</option>
+                            <option value="team" data-i18n="contact.subject_team">Unite al equipo (developer / data / design)</option>
+                            <option value="book" data-i18n="contact.subject_book">Pedir copia firmada del libro</option>
+                            <option value="other" data-i18n="contact.subject_other">Otra cosa</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <textarea id="form-message" rows="4" required></textarea>
-                        <label for="form-message" data-i18n="contact.message">Message</label>
+                        <label for="form-message" data-i18n="contact.message">Mensaje</label>
                         <span class="form-line"></span>
                     </div>
                     <button type="submit" class="btn btn-primary" data-i18n="contact.send">
-                        <i class="fas fa-paper-plane"></i> Send Message
+                        <i class="fas fa-paper-plane"></i> Enviar mensaje
                     </button>
+                    <p class="form-microcopy" data-i18n="contact.microcopy">
+                        Te respondo personalmente en menos de 24h.
+                    </p>
                 </form>
             </div>
         </div>
