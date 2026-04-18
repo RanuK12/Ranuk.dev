@@ -123,8 +123,20 @@ const translations = {
         "projects.eurobrico_desc": "Complete web audit and redesign prototype for a major Italian retail chain, including UX analysis and commercial proposal.",
         "projects.viewall": "View All Projects on GitHub",
 
+        // Open Lab (GitHub live)
+        "lab.title": '<span class="title-number">~/</span> Open Lab',
+        "lab.subtitle": "Live snapshot of my public GitHub. Auto-refreshed every night.",
+        "lab.stat_repos": "public repos",
+        "lab.stat_langs": "languages used",
+        "lab.stat_stars": "total stars",
+        "lab.stat_lastpush": "last push",
+        "lab.langs_title": "Stack in bytes",
+        "lab.repos_title": "Featured repos",
+        "lab.loading": "Loading data\u2026",
+        "lab.footnote": 'Data served from <code>data/github.json</code> · regenerated nightly by GitHub Actions.',
+
         // Ranuk IT Solutions (protagonist)
-        "ranuk.title": '<span class="title-number">02.</span> Ranuk IT Solutions',
+        "ranuk.title": '<span class="title-number">05.</span> Ranuk IT Solutions',
         "ranuk.eyebrow": "Ranuk IT Solutions · Independent technical studio",
         "ranuk.manifesto": "We're not another agency.<br>We're the tech team your company <em>didn't know it needed</em>.",
         "ranuk.manifesto_sub": "A studio led by an engineer and data scientist. We take on fewer projects, but we ship them right — from first commit to final invoice. Code written in-house, no middlemen.",
@@ -364,8 +376,20 @@ const translations = {
         "projects.eurobrico_desc": "Auditor\u00eda web completa y prototipo de redise\u00f1o para una importante cadena retail italiana, con an\u00e1lisis UX y propuesta comercial.",
         "projects.viewall": "Ver Todos los Proyectos en GitHub",
 
+        // Open Lab (GitHub en vivo)
+        "lab.title": '<span class="title-number">~/</span> Open Lab',
+        "lab.subtitle": "Snapshot en vivo de mi GitHub p\u00fablico. Se actualiza cada noche por s\u00ed solo.",
+        "lab.stat_repos": "repos p\u00fablicos",
+        "lab.stat_langs": "lenguajes usados",
+        "lab.stat_stars": "stars totales",
+        "lab.stat_lastpush": "\u00faltimo push",
+        "lab.langs_title": "Stack en bytes",
+        "lab.repos_title": "Repos destacados",
+        "lab.loading": "Cargando datos\u2026",
+        "lab.footnote": 'Datos servidos desde <code>data/github.json</code> · regenerados nightly por GitHub Actions.',
+
         // Ranuk IT Solutions (protagonista)
-        "ranuk.title": '<span class="title-number">02.</span> Ranuk IT Solutions',
+        "ranuk.title": '<span class="title-number">05.</span> Ranuk IT Solutions',
         "ranuk.eyebrow": "Ranuk IT Solutions · Estudio t\u00e9cnico independiente",
         "ranuk.manifesto": "No somos una agencia m\u00e1s.<br>Somos el equipo t\u00e9cnico que tu empresa <em>no sabe que necesita</em>.",
         "ranuk.manifesto_sub": "Un estudio liderado por un ingeniero y data scientist. Hacemos menos proyectos pero los hacemos bien \u2014 del primer commit a la factura del cliente. C\u00f3digo propio, sin intermediarios.",
@@ -601,8 +625,20 @@ const translations = {
         "projects.eurobrico_desc": "Audit web completo e prototipo di redesign per un'importante catena retail italiana, con analisi UX e proposta commerciale.",
         "projects.viewall": "Vedi Tutti i Progetti su GitHub",
 
+        // Open Lab (GitHub live)
+        "lab.title": '<span class="title-number">~/</span> Open Lab',
+        "lab.subtitle": "Snapshot live del mio GitHub pubblico. Si aggiorna ogni notte da solo.",
+        "lab.stat_repos": "repo pubblici",
+        "lab.stat_langs": "linguaggi usati",
+        "lab.stat_stars": "stelle totali",
+        "lab.stat_lastpush": "ultimo push",
+        "lab.langs_title": "Stack in byte",
+        "lab.repos_title": "Repo in evidenza",
+        "lab.loading": "Caricamento dati\u2026",
+        "lab.footnote": 'Dati serviti da <code>data/github.json</code> · rigenerati nightly da GitHub Actions.',
+
         // Ranuk IT Solutions (protagonista)
-        "ranuk.title": '<span class="title-number">02.</span> Ranuk IT Solutions',
+        "ranuk.title": '<span class="title-number">05.</span> Ranuk IT Solutions',
         "ranuk.eyebrow": "Ranuk IT Solutions · Studio tecnico indipendente",
         "ranuk.manifesto": "Non siamo un'agenzia qualunque.<br>Siamo il team tecnico di cui la tua azienda <em>non sa ancora di avere bisogno</em>.",
         "ranuk.manifesto_sub": "Uno studio guidato da un ingegnere e data scientist. Prendiamo meno progetti ma li facciamo bene \u2014 dal primo commit alla fattura finale. Codice scritto in casa, senza intermediari.",
@@ -785,6 +821,10 @@ class I18n {
 
     getTypedStrings() {
         return this.get('typed') || translations.en.typed;
+    }
+
+    getCurrentLang() {
+        return this.currentLang;
     }
 
     onChange(fn) {

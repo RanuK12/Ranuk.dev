@@ -1,0 +1,146 @@
+{
+  "user": "RanuK12",
+  "generated_at": "2026-04-18T19:21:15.620Z",
+  "stats": {
+    "public_repos": 24,
+    "total_stars": 1,
+    "languages_count": 26,
+    "last_push": "2026-04-18T19:20:20Z"
+  },
+  "languages": [
+    {
+      "name": "Python",
+      "bytes": 225438951,
+      "pct": 93.8
+    },
+    {
+      "name": "Cython",
+      "bytes": 4417714,
+      "pct": 1.8
+    },
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 2735298,
+      "pct": 1.1
+    },
+    {
+      "name": "HTML",
+      "bytes": 2137097,
+      "pct": 0.9
+    },
+    {
+      "name": "C",
+      "bytes": 1907090,
+      "pct": 0.8
+    },
+    {
+      "name": "C++",
+      "bytes": 1019392,
+      "pct": 0.4
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 801136,
+      "pct": 0.3
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 706478,
+      "pct": 0.3
+    },
+    {
+      "name": "CSS",
+      "bytes": 357887,
+      "pct": 0.1
+    },
+    {
+      "name": "PowerShell",
+      "bytes": 349115,
+      "pct": 0.1
+    },
+    {
+      "name": "XSLT",
+      "bytes": 161989,
+      "pct": 0.1
+    },
+    {
+      "name": "Fortran",
+      "bytes": 39272,
+      "pct": 0
+    }
+  ],
+  "featured": [
+    {
+      "name": "cryptocurrency-price-monitor",
+      "full_name": "RanuK12/cryptocurrency-price-monitor",
+      "description": null,
+      "url": "https://github.com/RanuK12/cryptocurrency-price-monitor",
+      "homepage": null,
+      "language": "Python",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "updated": "2025-06-13T15:47:19Z"
+    },
+    {
+      "name": "eurobrico-web",
+      "full_name": "RanuK12/eurobrico-web",
+      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
+      "url": "https://github.com/RanuK12/eurobrico-web",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-02-20T16:33:39Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-18T19:20:20Z"
+    },
+    {
+      "name": "Flight-Price-Alert",
+      "full_name": "RanuK12/Flight-Price-Alert",
+      "description": null,
+      "url": "https://github.com/RanuK12/Flight-Price-Alert",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-17T19:26:59Z"
+    },
+    {
+      "name": "GARYCIO_Project",
+      "full_name": "RanuK12/GARYCIO_Project",
+      "description": null,
+      "url": "https://github.com/RanuK12/GARYCIO_Project",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-16T01:40:41Z"
+    },
+    {
+      "name": "flights-alerts",
+      "full_name": "RanuK12/flights-alerts",
+      "description": null,
+      "url": "https://github.com/RanuK12/flights-alerts",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-15T15:50:13Z"
+    }
+  ]
+}
