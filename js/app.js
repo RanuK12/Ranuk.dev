@@ -58,6 +58,55 @@
         });
     }
 
+    // ---- Story thread: animar el hilo de oro vertical con scroll ----
+    // Usa GSAP/ScrollTrigger si están disponibles; fallback a IntersectionObserver
+    // para que la sección no se vea "rota" si el CDN falla.
+    function initStoryThread() {
+        const path = document.querySelector('.story-thread path');
+        const timeline = document.querySelector('.story-timeline');
+        if (!path || !timeline) return;
+
+        if (window.gsap && window.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.fromTo(path,
+                { strokeDashoffset: 1 },
+                {
+                    strokeDashoffset: 0,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: timeline,
+                        start: 'top 80%',
+                        end: 'bottom 60%',
+                        scrub: 0.6
+                    }
+                }
+            );
+
+            // Knots aparecen al llegar
+            document.querySelectorAll('.story-knot').forEach(knot => {
+                gsap.fromTo(knot,
+                    { scale: 0, opacity: 0 },
+                    {
+                        scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2)',
+                        scrollTrigger: { trigger: knot, start: 'top 75%' }
+                    }
+                );
+            });
+        } else {
+            // Fallback: dibujar el hilo de a poco según scroll progress
+            const onScroll = () => {
+                const rect = timeline.getBoundingClientRect();
+                const vh = window.innerHeight;
+                const progress = Math.max(0, Math.min(1,
+                    (vh * 0.8 - rect.top) / (rect.height + vh * 0.2)
+                ));
+                path.style.strokeDashoffset = String(1 - progress);
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
+    }
+
     // ---- Initialize everything on DOM ready ----
     function init() {
         hidePreloader();
@@ -113,6 +162,9 @@
         if (window.mlPlayground) {
             window.mlPlayground.init();
         }
+
+        // Story thread (El Tejido)
+        initStoryThread();
 
         // Smooth scroll
         initSmoothScroll();

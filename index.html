@@ -190,57 +190,103 @@
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section id="about" class="section about">
+    <!-- ============ EL TEJIDO (Historia en 3 actos) ============
+         La metáfora del libro hecha estructura: urdimbre / hilos cruzados / telar propio.
+         Hilo de oro vertical animado con ScrollTrigger (fallback CSS si GSAP falla). -->
+    <section id="story" class="section story">
         <div class="container">
-            <h2 class="section-title" data-i18n="about.title">
-                <span class="title-number">01.</span> About Me
+            <h2 class="section-title" data-i18n="story.title">
+                <span class="title-number">01.</span> El Tejido
             </h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p data-i18n="about.p1">
-                        I'm a Systems Engineer and Data Scientist based in the Netherlands, originally from C&oacute;rdoba, Argentina,
-                        with Italian roots that run deep. My journey through three countries and cultures has shaped
-                        how I approach problem-solving: with the analytical precision of engineering, the creativity of
-                        data science, and the human touch of someone who's navigated diverse environments.
-                    </p>
-                    <p data-i18n="about.p2">
-                        With experience at companies like <strong>Booking.com</strong> and <strong>Accenture</strong>, I've built everything from dynamic pricing ML systems processing 5M+ records
-                        to supply chain optimization models that cut costs by 15%. I thrive at the intersection of
-                        engineering and data, turning complex business problems into elegant, automated solutions.
-                    </p>
-                    <p data-i18n="about.p3">
-                        Beyond code, I'm a published author&mdash;my book <em>"E Cos&igrave; Tesso il Mio Cammino"</em>
-                        reflects the same passion for storytelling that I bring to data visualization and dashboards.
-                        Whether it's Python, Power BI, or prose, I believe in crafting narratives that drive understanding.
-                    </p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Barcelona, Spain</span>
+            <p class="section-subtitle story-lead" data-i18n="story.lead">
+                Tres países. Tres idiomas. Una sola historia: la del que aprendió a tejer su propio camino.
+            </p>
+
+            <div class="story-timeline">
+                <!-- Hilo de oro vertical: SVG animado por scroll -->
+                <svg class="story-thread" viewBox="0 0 4 1000" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M 2 0 L 2 1000" stroke="url(#thread-gradient)" stroke-width="2" stroke-linecap="round" pathLength="1" />
+                    <defs>
+                        <linearGradient id="thread-gradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#D4A574" stop-opacity="0.2" />
+                            <stop offset="50%" stop-color="#D4A574" stop-opacity="1" />
+                            <stop offset="100%" stop-color="#64FFDA" stop-opacity="0.4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <!-- ACT 1 — La urdimbre -->
+                <article class="story-act story-act-left">
+                    <div class="story-knot"><span class="story-knot-num">I</span></div>
+                    <div class="story-card">
+                        <div class="story-act-meta">
+                            <span class="story-year">1995 → 2018</span>
+                            <span class="story-place"><i class="fas fa-map-marker-alt"></i> Córdoba, Argentina</span>
                         </div>
-                        <div class="detail-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span data-i18n="about.degree">Systems Engineer - UTN, Argentina</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-book"></i>
-                            <span data-i18n="about.book">Author: "Y as&iacute; voy tejiendo mi camino"</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-language"></i>
-                            <span data-i18n="about.langs">English, Spanish, Italian</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-building"></i>
-                            <span data-i18n="about.company">Founder — Ranuk Development</span>
+                        <h3 class="story-act-title" data-i18n="story.act1_title">Acto I — La urdimbre</h3>
+                        <p data-i18n="story.act1">
+                            Nací en Córdoba con apellido italiano y la sensación, desde temprano, de que las cosas se construyen mejor con las manos. Estudié Ingeniería en Sistemas en la UTN porque me interesaba menos la teoría que ver funcionar lo que armaba. Los primeros hilos del telar — disciplina, lógica, la idea de que un sistema bien pensado se sostiene solo.
+                        </p>
+                        <div class="story-tags">
+                            <span>UTN</span><span>Sistemas</span><span>Primer commit</span>
                         </div>
                     </div>
+                </article>
+
+                <!-- ACT 2 — Los hilos cruzados -->
+                <article class="story-act story-act-right">
+                    <div class="story-knot"><span class="story-knot-num">II</span></div>
+                    <div class="story-card">
+                        <div class="story-act-meta">
+                            <span class="story-year">2018 → 2024</span>
+                            <span class="story-place"><i class="fas fa-globe-europe"></i> Argentina · Países Bajos · España</span>
+                        </div>
+                        <h3 class="story-act-title" data-i18n="story.act2_title">Acto II — Los hilos cruzados</h3>
+                        <p data-i18n="story.act2">
+                            Crucé el océano. Pasé por <strong>Accenture</strong> haciendo modelos de optimización de cadena de suministro que recortaron costos en dos dígitos, y por <strong>Booking.com</strong> construyendo sistemas de pricing dinámico con millones de registros. Aprendí inglés en reuniones, italiano en la mesa de mi familia, y entendí que los datos cuentan historias si sabés escucharlos. Tres países, tres idiomas, una misma manera de mirar el problema.
+                        </p>
+                        <div class="story-tags">
+                            <span>Accenture</span><span>Booking.com</span><span>ML a escala</span><span>EN · ES · IT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ACT 3 — El telar propio -->
+                <article class="story-act story-act-left">
+                    <div class="story-knot story-knot-final"><span class="story-knot-num">III</span></div>
+                    <div class="story-card story-card-final">
+                        <div class="story-act-meta">
+                            <span class="story-year">2024 → hoy</span>
+                            <span class="story-place"><i class="fas fa-compass"></i> Ranuk IT · El libro · Lo que viene</span>
+                        </div>
+                        <h3 class="story-act-title" data-i18n="story.act3_title">Acto III — El telar propio</h3>
+                        <p data-i18n="story.act3">
+                            Después de tejer para otros, decidí armar mi propio telar. <strong>Ranuk IT Solutions</strong> nació de eso: hacer software con la misma cabeza con la que escribí mi libro <em>"Y así voy tejiendo mi camino"</em> — un hilo a la vez, sin atajos. Hoy construyo productos para clientes en cuatro países, escribo, y sigo creyendo lo mismo: que vale la pena hacer las cosas bien, aunque lleven más tiempo.
+                        </p>
+                        <div class="story-tags">
+                            <span>Ranuk IT</span><span>Autor</span><span>Full-stack ML</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Coda: datos rápidos -->
+            <div class="story-coda">
+                <div class="story-coda-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-i18n="story.coda_loc">Barcelona, España</span>
                 </div>
-                <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="assets/profile.jpg" alt="Emilio Ranucoli" loading="lazy">
-                        <div class="image-border"></div>
-                    </div>
+                <div class="story-coda-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span data-i18n="story.coda_edu">Ingeniero en Sistemas — UTN</span>
+                </div>
+                <div class="story-coda-item">
+                    <i class="fas fa-language"></i>
+                    <span data-i18n="story.coda_lang">Español · English · Italiano</span>
+                </div>
+                <div class="story-coda-item">
+                    <i class="fas fa-book"></i>
+                    <span data-i18n="story.coda_book">Autor de "Y así voy tejiendo mi camino"</span>
                 </div>
             </div>
         </div>

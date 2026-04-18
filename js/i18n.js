@@ -43,7 +43,21 @@ const translations = {
             "Cloud Solutions Architect"
         ],
 
-        // About
+        // El Tejido (story 3 acts)
+        "story.title": '<span class="title-number">01.</span> The Weaving',
+        "story.lead": "Three countries. Three languages. One single story: the one of someone who learned to weave his own path.",
+        "story.act1_title": "Act I — The warp",
+        "story.act1": "Born in C\u00f3rdoba with an Italian surname and the early sense that things are built better with your hands. Studied Systems Engineering at UTN because I cared less about theory than seeing what I made actually work. The first threads of the loom \u2014 discipline, logic, the idea that a well-thought system holds itself up.",
+        "story.act2_title": "Act II — The crossed threads",
+        "story.act2": "I crossed the ocean. Spent time at <strong>Accenture</strong> building supply-chain optimization models that cut costs in double digits, and at <strong>Booking.com</strong> shipping dynamic pricing systems with millions of records. I learned English in meetings, Italian at my family's table, and understood that data tells stories if you know how to listen. Three countries, three languages, one same way of looking at problems.",
+        "story.act3_title": "Act III — My own loom",
+        "story.act3": "After weaving for others, I decided to build my own loom. <strong>Ranuk IT Solutions</strong> was born from that: making software with the same head I used to write my book <em>\"Y as\u00ed voy tejiendo mi camino\"</em> \u2014 one thread at a time, no shortcuts. Today I build products for clients in four countries, I write, and I still believe the same thing: it's worth doing things well, even if they take longer.",
+        "story.coda_loc": "Barcelona, Spain",
+        "story.coda_edu": "Systems Engineer \u2014 UTN",
+        "story.coda_lang": "Spanish · English · Italian",
+        "story.coda_book": 'Author of "Y as\u00ed voy tejiendo mi camino"',
+
+        // About (legacy keys kept for backward compat — section replaced by .story)
         "about.title": '<span class="title-number">01.</span> About Me',
         "about.p1": "I'm a Systems Engineer and Data Scientist based in Barcelona, Spain, originally from C\u00f3rdoba, Argentina, with Italian roots that run deep. My journey through three countries and cultures has shaped how I approach problem-solving: with the analytical precision of engineering, the creativity of data science, and the human touch of someone who's navigated diverse environments.",
         "about.p2": 'With experience at companies like <strong>Booking.com</strong> and <strong>Accenture</strong>, I\'ve built everything from dynamic pricing ML systems processing 5M+ records to supply chain optimization models that cut costs by 15%. Now through <strong>Ranuk Development</strong>, my own software studio, I build custom digital solutions for clients across Europe and Latin America.',
@@ -274,6 +288,20 @@ const translations = {
             "Arquitecto de Soluciones Cloud"
         ],
 
+        // El Tejido (historia 3 actos)
+        "story.title": '<span class="title-number">01.</span> El Tejido',
+        "story.lead": "Tres pa\u00edses. Tres idiomas. Una sola historia: la del que aprendi\u00f3 a tejer su propio camino.",
+        "story.act1_title": "Acto I — La urdimbre",
+        "story.act1": "Nac\u00ed en C\u00f3rdoba con apellido italiano y la sensaci\u00f3n, desde temprano, de que las cosas se construyen mejor con las manos. Estudi\u00e9 Ingenier\u00eda en Sistemas en la UTN porque me interesaba menos la teor\u00eda que ver funcionar lo que armaba. Los primeros hilos del telar \u2014 disciplina, l\u00f3gica, la idea de que un sistema bien pensado se sostiene solo.",
+        "story.act2_title": "Acto II — Los hilos cruzados",
+        "story.act2": "Cruc\u00e9 el oc\u00e9ano. Pas\u00e9 por <strong>Accenture</strong> haciendo modelos de optimizaci\u00f3n de cadena de suministro que recortaron costos en dos d\u00edgitos, y por <strong>Booking.com</strong> construyendo sistemas de pricing din\u00e1mico con millones de registros. Aprend\u00ed ingl\u00e9s en reuniones, italiano en la mesa de mi familia, y entend\u00ed que los datos cuentan historias si sab\u00e9s escucharlos. Tres pa\u00edses, tres idiomas, una misma manera de mirar el problema.",
+        "story.act3_title": "Acto III — El telar propio",
+        "story.act3": "Despu\u00e9s de tejer para otros, decid\u00ed armar mi propio telar. <strong>Ranuk IT Solutions</strong> naci\u00f3 de eso: hacer software con la misma cabeza con la que escrib\u00ed mi libro <em>\"Y as\u00ed voy tejiendo mi camino\"</em> \u2014 un hilo a la vez, sin atajos. Hoy construyo productos para clientes en cuatro pa\u00edses, escribo, y sigo creyendo lo mismo: que vale la pena hacer las cosas bien, aunque lleven m\u00e1s tiempo.",
+        "story.coda_loc": "Barcelona, Espa\u00f1a",
+        "story.coda_edu": "Ingeniero en Sistemas \u2014 UTN",
+        "story.coda_lang": "Espa\u00f1ol · English · Italiano",
+        "story.coda_book": 'Autor de "Y as\u00ed voy tejiendo mi camino"',
+
         "about.title": '<span class="title-number">01.</span> Sobre M\u00ed',
         "about.p1": "Soy Ingeniero de Sistemas y Cient\u00edfico de Datos radicado en Barcelona, Espa\u00f1a, originario de C\u00f3rdoba, Argentina, con ra\u00edces italianas profundas. Mi recorrido por tres pa\u00edses y culturas ha dado forma a mi manera de resolver problemas: con la precisi\u00f3n anal\u00edtica de la ingenier\u00eda, la creatividad de la ciencia de datos y el toque humano de alguien que ha navegado entornos diversos.",
         "about.p2": 'Con experiencia en empresas como <strong>Booking.com</strong> y <strong>Accenture</strong>, he construido desde sistemas de pricing din\u00e1mico con ML procesando 5M+ registros hasta modelos de optimizaci\u00f3n de cadena de suministro que redujeron costos un 15%. Ahora a trav\u00e9s de <strong>Ranuk Development</strong>, mi propio estudio de software, construyo soluciones digitales personalizadas para clientes en Europa y Am\u00e9rica Latina.',
@@ -496,6 +524,20 @@ const translations = {
             "Ingegnere Machine Learning",
             "Architetto Soluzioni Cloud"
         ],
+
+        // L'Intreccio (storia in 3 atti)
+        "story.title": '<span class="title-number">01.</span> L\'Intreccio',
+        "story.lead": "Tre paesi. Tre lingue. Una sola storia: quella di chi ha imparato a tessere il proprio cammino.",
+        "story.act1_title": "Atto I — L'ordito",
+        "story.act1": "Sono nato a C\u00f3rdoba con un cognome italiano e la sensazione, fin da piccolo, che le cose si costruiscano meglio con le mani. Ho studiato Ingegneria dei Sistemi all'UTN perch\u00e9 mi interessava meno la teoria che vedere funzionare quello che facevo. I primi fili del telaio \u2014 disciplina, logica, l'idea che un sistema ben pensato si regge da solo.",
+        "story.act2_title": "Atto II — I fili incrociati",
+        "story.act2": "Ho attraversato l'oceano. Sono passato per <strong>Accenture</strong> costruendo modelli di ottimizzazione della supply chain che hanno ridotto i costi a doppia cifra, e per <strong>Booking.com</strong> sviluppando sistemi di pricing dinamico con milioni di record. Ho imparato l'inglese nelle riunioni, l'italiano alla tavola della mia famiglia, e ho capito che i dati raccontano storie se sai ascoltarli. Tre paesi, tre lingue, uno stesso modo di guardare il problema.",
+        "story.act3_title": "Atto III — Il telaio mio",
+        "story.act3": "Dopo aver tessuto per altri, ho deciso di costruire il mio telaio. <strong>Ranuk IT Solutions</strong> \u00e8 nato da l\u00ec: fare software con la stessa testa con cui ho scritto il mio libro <em>\"E cos\u00ec tesso il mio cammino\"</em> \u2014 un filo alla volta, senza scorciatoie. Oggi costruisco prodotti per clienti in quattro paesi, scrivo, e continuo a credere la stessa cosa: vale la pena fare le cose bene, anche se richiedono pi\u00f9 tempo.",
+        "story.coda_loc": "Barcellona, Spagna",
+        "story.coda_edu": "Ingegnere dei Sistemi \u2014 UTN",
+        "story.coda_lang": "Spagnolo · English · Italiano",
+        "story.coda_book": 'Autore di "E cos\u00ec tesso il mio cammino"',
 
         "about.title": '<span class="title-number">01.</span> Chi Sono',
         "about.p1": "Sono un Ingegnere dei Sistemi e Data Scientist con sede a Barcellona, Spagna, originario di C\u00f3rdoba, Argentina, con radici italiane profonde. Il mio percorso attraverso tre paesi e culture ha plasmato il mio approccio alla risoluzione dei problemi: con la precisione analitica dell'ingegneria, la creativit\u00e0 della data science e il tocco umano di chi ha navigato ambienti diversi.",
