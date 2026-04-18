@@ -12,31 +12,66 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emilio Ranucoli | Systems Engineer & Data Scientist</title>
-    <meta name="description" content="Portfolio of Emilio Ranucoli - Systems Engineer, Data Scientist and Python Developer. Building data-driven solutions across ML, automation and cloud.">
-    <meta name="keywords" content="Emilio Ranucoli, Systems Engineer, Data Scientist, Python Developer, Machine Learning, Portfolio">
+    <title>Emilio Ranucoli — Ingeniero, Data Scientist, Fundador de Ranuk IT Solutions</title>
+    <meta name="description" content="Tejo código, tejo empresas, tejo historias. Ingeniero de Sistemas y Data Scientist. Full-stack con foco en ML. Fundador de Ranuk IT Solutions. Autor.">
+    <meta name="keywords" content="Emilio Ranucoli, Ranuk IT Solutions, Full Stack Developer, Machine Learning, Data Scientist, Ingeniero Sistemas, Python, Emprendedor, Escritor">
     <meta name="author" content="Emilio Ranucoli">
 
-    <meta property="og:title" content="Emilio Ranucoli | Systems Engineer & Data Scientist">
-    <meta property="og:description" content="Portfolio & software studio. ML, Data Science and custom development for clients across Europe and Latin America.">
+    <meta property="og:title" content="Emilio Ranucoli — Tejo código. Tejo empresas. Tejo historias.">
+    <meta property="og:description" content="Ingeniero, Data Scientist, fundador de Ranuk IT Solutions y autor. Del primer commit a la factura del cliente.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ranuk.dev">
     <meta property="og:image" content="https://ranuk.dev/assets/og-preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Ranuk Development">
+    <meta property="og:site_name" content="Ranuk IT Solutions">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Emilio Ranucoli | Systems Engineer & Data Scientist">
-    <meta name="twitter:description" content="Portfolio & software studio. ML, Data Science and custom development for clients across Europe and Latin America.">
+    <meta name="twitter:title" content="Emilio Ranucoli — Tejo código. Tejo empresas. Tejo historias.">
+    <meta name="twitter:description" content="Ingeniero, Data Scientist, fundador de Ranuk IT Solutions y autor.">
     <meta name="twitter:image" content="https://ranuk.dev/assets/og-preview.png">
+
+    <!-- Schema.org: Person + Organization (SEO estructurado) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Emilio Ranúcoli",
+          "alternateName": "Emilio Ranucoli",
+          "url": "https://ranuk.dev",
+          "image": "https://ranuk.dev/assets/profile.jpg",
+          "jobTitle": "Systems Engineer & Data Scientist",
+          "sameAs": [
+            "https://github.com/RanuK12",
+            "https://linkedin.com/in/emilio-ranucoli"
+          ],
+          "worksFor": { "@type": "Organization", "name": "Ranuk IT Solutions" },
+          "knowsLanguage": ["es", "en", "it"]
+        },
+        {
+          "@type": "Organization",
+          "name": "Ranuk IT Solutions",
+          "url": "https://ranuk.dev",
+          "founder": { "@type": "Person", "name": "Emilio Ranúcoli" },
+          "description": "Estudio técnico: desarrollo full-stack, Machine Learning aplicado, auditorías ADA y soporte continuo."
+        }
+      ]
+    }
+    </script>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%E2%9A%A1</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Inter (UI) + Fira Code (mono) + Fraunces (display serif para el registro narrativo: libro + hero) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=2.2">
+    <link rel="stylesheet" href="css/styles.css?v=3.0">
+
+    <!-- GSAP + ScrollTrigger (defer: no bloquean el render. Fallback a Intersection Observer si no cargan) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
@@ -74,14 +109,13 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#story" class="nav-link" data-i18n="nav.story">Historia</a></li>
+                <li><a href="#ranuk-dev" class="nav-link nav-link-primary" data-i18n="nav.ranuk">Ranuk IT</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
                 <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
-                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
-                <li><a href="#ranuk-dev" class="nav-link" data-i18n="nav.ranuk">Ranuk Dev</a></li>
-                <li><a href="#accessibility" class="nav-link" data-i18n="nav.accessibility">Accessibility</a></li>
                 <li><a href="#ml-lab" class="nav-link" data-i18n="nav.mllab">ML Lab</a></li>
-                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#book" class="nav-link" data-i18n="nav.book">Libro</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -99,53 +133,59 @@
         </div>
     </nav>
 
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO ============
+         Headline nuevo: metáfora del tejido (eco del libro "Y así voy tejiendo mi camino").
+         Tres líneas, tres identidades (código/cyan, empresa/naranja, historia/oro).
+         El nombre glitched se mantiene como firma sub-heading, no como H1. -->
     <section id="hero" class="hero">
         <canvas id="particles-canvas"></canvas>
         <div class="hero-content">
-            <div class="hero-greeting">
-                <span class="hero-tag">&lt;</span>
-                <span data-i18n="hero.greeting">Hello, World! I'm</span>
-                <span class="hero-tag">/&gt;</span>
+            <div class="hero-intro">
+                <span class="hero-label" data-i18n="hero.label">
+                    <span class="hero-label-dot"></span>
+                    Ingeniero · Data Scientist · Fundador · Autor
+                </span>
+                <span class="hero-name-mini glitch" data-text="EMILIO RANUCOLI">EMILIO RANUCOLI</span>
             </div>
-            <h1 class="hero-name glitch" data-text="EMILIO RANUCOLI">EMILIO RANUCOLI</h1>
-            <div class="hero-subtitle">
-                <span class="typed-prefix">&gt; </span>
-                <span id="typed-text" class="typed-text"></span>
-                <span class="typed-cursor">|</span>
-            </div>
-            <p class="hero-description" data-i18n="hero.description">
-                Building data-driven solutions with Python, Machine Learning and Cloud technologies.
-                From C&oacute;rdoba to Barcelona, engineering the future one commit at a time.
+            <h1 class="hero-headline">
+                <span class="headline-line line-code" data-i18n="hero.line1">Tejo <em>código</em>.</span>
+                <span class="headline-line line-biz" data-i18n="hero.line2">Tejo <em>empresas</em>.</span>
+                <span class="headline-line line-story" data-i18n="hero.line3">Tejo <em>historias</em>.</span>
+            </h1>
+            <p class="hero-subline" data-i18n="hero.subline">
+                Del primer commit a la factura del cliente. Construyo sistemas con Python y ML. Escribo sobre todo lo demás.
             </p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">View My Work</a>
-                <a href="#contact" class="btn btn-outline" data-i18n="hero.cta2">Let's Talk</a>
+                <a href="#ranuk-dev" class="btn btn-primary" data-i18n="hero.cta1">Ver mi trabajo</a>
+                <a href="#contact" class="btn btn-outline" data-i18n="hero.cta2">Hablemos</a>
+                <a href="#book" class="btn btn-ghost" data-i18n="hero.cta3">
+                    <i class="fas fa-book-open"></i> Leer el libro
+                </a>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label" data-i18n="hero.stat1">Years Experience</span>
+                    <span class="stat-label" data-i18n="hero.stat1">Años de experiencia</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label" data-i18n="hero.stat2">Projects Built</span>
+                    <span class="stat-number" data-target="28">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-i18n="hero.stat2">Repos en GitHub</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="9">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label" data-i18n="hero.stat3">Certifications</span>
+                    <span class="stat-label" data-i18n="hero.stat3">Certificaciones</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="3">0</span>
-                    <span class="stat-label" data-i18n="hero.stat4">Languages Spoken</span>
+                    <span class="stat-label" data-i18n="hero.stat4">Idiomas</span>
                 </div>
             </div>
         </div>
-        <a href="#about" class="scroll-indicator">
+        <a href="#story" class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
-            <span data-i18n="hero.scroll">Scroll Down</span>
+            <span data-i18n="hero.scroll">Seguir bajando</span>
         </a>
     </section>
 
@@ -643,52 +683,141 @@
         </div>
     </section>
 
-    <!-- ============ RANUK DEVELOPMENT ============ -->
-    <section id="ranuk-dev" class="section ranuk-dev">
+    <!-- ============ RANUK IT SOLUTIONS (sección protagonista) ============
+         Flujo: manifesto → métricas → 4 servicios → comparación vs agencia →
+         clientes reales → proceso → triple CTA (presupuesto / team / hablar). -->
+    <section id="ranuk-dev" class="section ranuk-dev ranuk-it">
         <div class="container">
             <h2 class="section-title" data-i18n="ranuk.title">
-                <span class="title-number">05.</span> Ranuk Development
+                <span class="title-number">05.</span> Ranuk IT Solutions
             </h2>
-            <div class="ranuk-hero">
-                <div class="ranuk-logo-area">
-                    <img src="assets/ranuk-logo.svg" alt="Ranuk Development" class="ranuk-logo">
+
+            <!-- Manifesto: el gancho de venta -->
+            <div class="ranuk-manifesto">
+                <div class="ranuk-manifesto-eyebrow">
+                    <img src="assets/ranuk-logo.svg" alt="Ranuk IT Solutions" class="ranuk-manifesto-logo">
+                    <span data-i18n="ranuk.eyebrow">Ranuk IT Solutions · Estudio técnico independiente</span>
                 </div>
-                <div class="ranuk-intro">
-                    <p class="ranuk-tagline" data-i18n="ranuk.tagline">Technology studio building digital products that solve real problems.</p>
-                    <p class="ranuk-description" data-i18n="ranuk.description">
-                        Ranuk Development is my independent software studio, born from a simple belief: technology should serve people, not the other way around. I build custom web applications, automation systems, and data-driven platforms for clients across Europe and Latin America.
-                    </p>
+                <h3 class="ranuk-manifesto-headline" data-i18n="ranuk.manifesto">
+                    No somos una agencia más.<br>
+                    Somos el equipo técnico que tu empresa <em>no sabe que necesita</em>.
+                </h3>
+                <p class="ranuk-manifesto-sub" data-i18n="ranuk.manifesto_sub">
+                    Un estudio liderado por un ingeniero y data scientist. Hacemos menos proyectos pero los hacemos bien — del primer commit a la factura del cliente. Código propio, sin intermediarios.
+                </p>
+            </div>
+
+            <!-- Métricas verificables -->
+            <div class="ranuk-metrics">
+                <div class="metric-badge">
+                    <span class="metric-value" data-target="28">0</span><span class="metric-plus">+</span>
+                    <span class="metric-label" data-i18n="ranuk.metric1">proyectos publicados</span>
+                </div>
+                <div class="metric-badge">
+                    <span class="metric-value" data-target="4">0</span>
+                    <span class="metric-label" data-i18n="ranuk.metric2">países atendidos</span>
+                </div>
+                <div class="metric-badge">
+                    <span class="metric-value" data-target="3">0</span>
+                    <span class="metric-label" data-i18n="ranuk.metric3">idiomas nativos</span>
+                </div>
+                <div class="metric-badge">
+                    <span class="metric-value" data-target="5">0</span><span class="metric-plus">+</span>
+                    <span class="metric-label" data-i18n="ranuk.metric4">años en tech</span>
                 </div>
             </div>
 
-            <div class="ranuk-values">
-                <div class="value-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h4 data-i18n="ranuk.val1_title">Mission</h4>
-                    <p data-i18n="ranuk.val1">Deliver high-quality, scalable software solutions that empower businesses to grow — with transparency, speed, and technical excellence.</p>
+            <!-- Servicios: la oferta concreta -->
+            <h3 class="ranuk-section-head" data-i18n="ranuk.services_title">Qué hacemos</h3>
+            <div class="ranuk-services-grid">
+                <article class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h4 data-i18n="ranuk.srv1_title">Desarrollo web a medida</h4>
+                    <p data-i18n="ranuk.srv1_desc">Sitios rápidos, accesibles y bien escritos. Sin WordPress inflado ni themes genéricos. Front, back y deploy — todo bajo un mismo techo.</p>
+                    <div class="service-tech">
+                        <span>TypeScript</span><span>React</span><span>Node</span><span>Python</span><span>Vanilla JS</span>
+                    </div>
+                    <a href="mailto:ranucoliemilio@gmail.com?subject=Consulta%20desarrollo%20web%20-%20Ranuk%20IT" class="service-link" data-i18n="ranuk.srv1_cta">Contame tu proyecto →</a>
+                </article>
+
+                <article class="service-card service-featured">
+                    <span class="service-badge" data-i18n="ranuk.srv_badge">Nuestro diferencial</span>
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h4 data-i18n="ranuk.srv2_title">Machine Learning aplicado</h4>
+                    <p data-i18n="ranuk.srv2_desc">Pricing dinámico, recommenders, NLP, forecasting, visión por computadora. Lo que construí para Booking.com y Accenture, ahora para vos.</p>
+                    <div class="service-tech">
+                        <span>Scikit-learn</span><span>XGBoost</span><span>TensorFlow</span><span>PyTorch</span>
+                    </div>
+                    <a href="#ml-lab" class="service-link" data-i18n="ranuk.srv2_cta">Probá el ML Playground →</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><i class="fas fa-universal-access"></i></div>
+                    <h4 data-i18n="ranuk.srv3_title">Auditorías ADA / WCAG 2.1</h4>
+                    <p data-i18n="ranuk.srv3_desc">Protegé tu sitio de las demandas por accesibilidad en EE.UU. Precio fijo, entrega en 2 semanas, declaración de cumplimiento firmada.</p>
+                    <div class="service-tech">
+                        <span>WCAG 2.1 AA</span><span>ARIA</span><span>Legal-ready</span>
+                    </div>
+                    <a href="#accessibility" class="service-link" data-i18n="ranuk.srv3_cta">Ver planes ADA →</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h4 data-i18n="ranuk.srv4_title">Soporte técnico continuo</h4>
+                    <p data-i18n="ranuk.srv4_desc">Retainer mensual predecible. Monitoreo, fixes, features iterativas. Tu equipo técnico sin contratar un equipo técnico.</p>
+                    <div class="service-tech">
+                        <span>SLAs</span><span>Monitoring</span><span>DevOps</span>
+                    </div>
+                    <a href="mailto:ranucoliemilio@gmail.com?subject=Consulta%20retainer%20-%20Ranuk%20IT" class="service-link" data-i18n="ranuk.srv4_cta">Consultá disponibilidad →</a>
+                </article>
+            </div>
+
+            <!-- Comparación: por qué elegir Ranuk IT -->
+            <h3 class="ranuk-section-head" data-i18n="ranuk.vs_title">Ranuk IT vs. una agencia tradicional</h3>
+            <div class="ranuk-vs-table">
+                <div class="vs-row vs-header">
+                    <div class="vs-topic"></div>
+                    <div class="vs-them" data-i18n="ranuk.vs_them">Agencia tradicional</div>
+                    <div class="vs-us" data-i18n="ranuk.vs_us">Ranuk IT</div>
                 </div>
-                <div class="value-card">
-                    <i class="fas fa-handshake"></i>
-                    <h4 data-i18n="ranuk.val2_title">Values</h4>
-                    <p data-i18n="ranuk.val2">Clean code. Honest communication. Client-first mindset. Every project is a partnership, not a transaction.</p>
+                <div class="vs-row">
+                    <div class="vs-topic" data-i18n="ranuk.vs1_topic">Quién te atiende</div>
+                    <div class="vs-them" data-i18n="ranuk.vs1_them">Account manager no técnico</div>
+                    <div class="vs-us" data-i18n="ranuk.vs1_us">Yo, que también escribo el código</div>
                 </div>
-                <div class="value-card">
-                    <i class="fas fa-rocket"></i>
-                    <h4 data-i18n="ranuk.val3_title">Approach</h4>
-                    <p data-i18n="ranuk.val3">From concept to deployment: full-stack development, cloud architecture, automation pipelines, and ongoing support — all under one roof.</p>
+                <div class="vs-row">
+                    <div class="vs-topic" data-i18n="ranuk.vs2_topic">Velocidad de iteración</div>
+                    <div class="vs-them" data-i18n="ranuk.vs2_them">Jira tickets + ciclos de review</div>
+                    <div class="vs-us" data-i18n="ranuk.vs2_us">Slack/WhatsApp directo, demo en 48h</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-topic" data-i18n="ranuk.vs3_topic">Propuesta inicial</div>
+                    <div class="vs-them" data-i18n="ranuk.vs3_them">15 páginas genéricas, precio abierto</div>
+                    <div class="vs-us" data-i18n="ranuk.vs3_us">1 página, scope claro, precio cerrado</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-topic" data-i18n="ranuk.vs4_topic">Post-lanzamiento</div>
+                    <div class="vs-them" data-i18n="ranuk.vs4_them">Factura por cada cambio</div>
+                    <div class="vs-us" data-i18n="ranuk.vs4_us">Retainer opcional y predecible</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-topic" data-i18n="ranuk.vs5_topic">ML / Data Science</div>
+                    <div class="vs-them" data-i18n="ranuk.vs5_them">"Eso lo derivamos a otro estudio"</div>
+                    <div class="vs-us" data-i18n="ranuk.vs5_us">Core de lo que hacemos</div>
                 </div>
             </div>
 
-            <h3 class="ranuk-clients-title" data-i18n="ranuk.clients_title">Client Projects</h3>
+            <!-- Clientes reales -->
+            <h3 class="ranuk-section-head" data-i18n="ranuk.clients_title">Clientes reales</h3>
             <div class="ranuk-projects">
                 <a href="https://notarobot.es" target="_blank" rel="noopener" class="ranuk-project-card">
                     <div class="ranuk-project-icon" style="--project-accent: #8b5cf6">
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="ranuk-project-info">
-                        <h4>NotARobot</h4>
-                        <span class="ranuk-project-url">notarobot.es</span>
-                        <p data-i18n="ranuk.notarobot_desc">Full web platform designed and developed from scratch — interactive experience with modern UI, animations, and responsive design.</p>
+                        <h4>NOT A ROBOT</h4>
+                        <span class="ranuk-project-url">notarobot.es · Productora audiovisual internacional</span>
+                        <p data-i18n="ranuk.notarobot_desc">Plataforma web completa desarrollada desde cero — UI moderna, animaciones a medida y diseño responsive para una productora que opera en varios países.</p>
                         <div class="project-tech">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span>
                         </div>
@@ -700,8 +829,8 @@
                     </div>
                     <div class="ranuk-project-info">
                         <h4>Bahay Design</h4>
-                        <span class="ranuk-project-url">bahaydesign.it</span>
-                        <p data-i18n="ranuk.bahay_desc">Design studio website for an Italian creative agency — showcasing their portfolio with elegant layouts and brand-aligned aesthetics.</p>
+                        <span class="ranuk-project-url">bahaydesign.it · Estudio de arquitectura · Italia</span>
+                        <p data-i18n="ranuk.bahay_desc">Sitio web para un estudio de arquitectura italiano — layouts elegantes, estética alineada al brand y navegación pensada para mostrar proyectos como obras.</p>
                         <div class="project-tech">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Design</span>
                         </div>
@@ -713,60 +842,62 @@
                     </div>
                     <div class="ranuk-project-info">
                         <h4>GARYCIO</h4>
-                        <span class="ranuk-project-url">Business Automation System</span>
-                        <p data-i18n="ranuk.garycio_desc">End-to-end WhatsApp bot platform with automated reporting, PostgreSQL database, incident management, and PDF generation for business operations.</p>
+                        <span class="ranuk-project-url" data-i18n="ranuk.garycio_url">Backend + bot de WhatsApp · En producción</span>
+                        <p data-i18n="ranuk.garycio_desc">Sistema backend completo con bot de WhatsApp, PostgreSQL, gestión de incidentes y generación de PDFs automatizada para operaciones de negocio.</p>
                         <div class="project-tech">
-                            <span>TypeScript</span><span>WhatsApp API</span><span>PostgreSQL</span><span>PDF Reports</span>
+                            <span>TypeScript</span><span>WhatsApp API</span><span>PostgreSQL</span><span>PDF</span>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <!-- How it works + CTA -->
+            <!-- Proceso de trabajo -->
             <div class="ranuk-process">
-                <h3 class="ranuk-clients-title" data-i18n="ranuk.process_title">How We Work</h3>
+                <h3 class="ranuk-section-head" data-i18n="ranuk.process_title">Cómo trabajamos</h3>
                 <div class="ranuk-timeline-steps">
                     <div class="ranuk-step-card">
                         <div class="step-badge">01</div>
                         <div class="step-icon-circle"><i class="fas fa-lightbulb"></i></div>
-                        <h4 data-i18n="ranuk.step1_title">Tell Me Your Idea</h4>
-                        <p data-i18n="ranuk.step1">Share your project vision — what problem you want to solve, who it's for, and where you want to go. No technical knowledge needed.</p>
+                        <h4 data-i18n="ranuk.step1_title">Contame tu idea</h4>
+                        <p data-i18n="ranuk.step1">Compartí tu visión — qué problema querés resolver, para quién es, a dónde querés llegar. No necesitás conocimientos técnicos.</p>
                     </div>
-                    <div class="step-connector">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
+                    <div class="step-connector"><i class="fas fa-chevron-right"></i></div>
                     <div class="ranuk-step-card">
                         <div class="step-badge">02</div>
                         <div class="step-icon-circle"><i class="fas fa-file-alt"></i></div>
-                        <h4 data-i18n="ranuk.step2_title">Custom Proposal</h4>
-                        <p data-i18n="ranuk.step2">I analyze your needs and send you a clear proposal with scope, timeline, and budget. No surprises, no hidden costs.</p>
+                        <h4 data-i18n="ranuk.step2_title">Propuesta clara</h4>
+                        <p data-i18n="ranuk.step2">Analizo tus necesidades y te mando una propuesta con alcance, tiempos y presupuesto cerrado. Sin sorpresas.</p>
                     </div>
-                    <div class="step-connector">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
+                    <div class="step-connector"><i class="fas fa-chevron-right"></i></div>
                     <div class="ranuk-step-card">
                         <div class="step-badge">03</div>
                         <div class="step-icon-circle"><i class="fas fa-rocket"></i></div>
-                        <h4 data-i18n="ranuk.step3_title">Build & Launch</h4>
-                        <p data-i18n="ranuk.step3">Development with constant communication, iterative demos, and a polished product delivered on time. Post-launch support included.</p>
+                        <h4 data-i18n="ranuk.step3_title">Build &amp; lanzamiento</h4>
+                        <p data-i18n="ranuk.step3">Desarrollo con comunicación constante, demos iterativas y producto pulido en fecha. Soporte post-launch incluido.</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- CTA integrado -->
-                <div class="ranuk-cta">
-                    <div class="ranuk-cta-content">
-                        <div class="cta-icon"><i class="fas fa-handshake"></i></div>
-                        <h3 data-i18n="ranuk.cta_title">Got a project in mind?</h3>
-                        <p data-i18n="ranuk.cta_text">Tell me your idea and I'll prepare a personalized proposal — no strings attached.</p>
-                        <div class="ranuk-cta-buttons">
-                            <a href="mailto:ranucoliemilio@gmail.com?subject=Project%20Inquiry%20-%20Ranuk%20Development" class="btn btn-primary btn-glow" data-i18n="ranuk.cta_btn1">
-                                <i class="fas fa-paper-plane"></i> Request a Quote
-                            </a>
-                            <a href="#contact" class="btn btn-outline" data-i18n="ranuk.cta_btn2">
-                                <i class="fas fa-comments"></i> Let's Talk
-                            </a>
-                        </div>
+            <!-- Triple CTA: presupuesto / team / hablar -->
+            <div class="ranuk-cta ranuk-cta-triple">
+                <div class="ranuk-cta-content">
+                    <div class="cta-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 data-i18n="ranuk.cta_title">¿Tenés un proyecto en mente?</h3>
+                    <p data-i18n="ranuk.cta_text">Contame tu idea y te preparo una propuesta clara — sin compromiso, sin costos ocultos.</p>
+                    <div class="ranuk-cta-buttons">
+                        <a href="mailto:ranucoliemilio@gmail.com?subject=Quiero%20cotizar%20un%20proyecto%20con%20Ranuk%20IT&body=Hola%20Emilio%2C%0A%0ATe%20escribo%20para%20cotizar%20un%20proyecto%3A%0A%0ADescripci%C3%B3n%3A%0APlazos%3A%0APresupuesto%20estimado%3A%0A%0AGracias." class="btn btn-primary btn-glow" data-i18n="ranuk.cta_btn1">
+                            <i class="fas fa-paper-plane"></i> Solicitar presupuesto
+                        </a>
+                        <a href="mailto:ranucoliemilio@gmail.com?subject=Quiero%20sumarme%20al%20equipo%20Ranuk%20IT&body=Hola%20Emilio%2C%20me%20gustar%C3%ADa%20sumarme%20al%20equipo.%0A%0ANombre%3A%0APerfil%20(LinkedIn%20o%20GitHub)%3A%0ARol%20en%20el%20que%20encajar%C3%ADa%3A%0APor%20qu%C3%A9%20creo%20que%20encajo%3A%0A%0AGracias." class="btn btn-team" data-i18n="ranuk.cta_btn_team">
+                            <i class="fas fa-users"></i> Unite al equipo
+                        </a>
+                        <a href="#contact" class="btn btn-outline" data-i18n="ranuk.cta_btn2">
+                            <i class="fas fa-comments"></i> Hablemos
+                        </a>
                     </div>
+                    <p class="ranuk-cta-microcopy" data-i18n="ranuk.cta_microcopy">
+                        ¿Te identificás con lo que hacemos? Si sos developer con experiencia real, data scientist o diseñador con cabeza técnica, mandame tu perfil. No busco empleados, busco socios de proyecto.
+                    </p>
                 </div>
             </div>
         </div>
