@@ -44,10 +44,20 @@
             const name = document.getElementById('form-name')?.value.trim();
             const email = document.getElementById('form-email')?.value.trim();
             const message = document.getElementById('form-message')?.value.trim();
+            const subjectKey = document.getElementById('form-subject')?.value || 'other';
 
             if (!name || !email || !message) return;
 
-            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const SUBJECTS = {
+                project: 'Nuevo proyecto',
+                ranuk:   'Consulta — Ranuk IT',
+                ada:     'Auditoría ADA / WCAG',
+                team:    'Quiero unirme al equipo',
+                book:    'Pedido de copia firmada',
+                other:   'Contacto desde ranuk.dev'
+            };
+            const subjectText = SUBJECTS[subjectKey] || SUBJECTS.other;
+            const subject = encodeURIComponent(`[${subjectText}] · ${name}`);
             const body = encodeURIComponent(
                 `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
             );
@@ -105,6 +115,59 @@
             window.addEventListener('scroll', onScroll, { passive: true });
             onScroll();
         }
+    }
+
+    // ---- Easter eggs: console signature + Konami code ----
+    function initEasterEggs() {
+        const css = [
+            'color:#D4A574',
+            'font-family:Fraunces,serif',
+            'font-size:14px',
+            'font-style:italic',
+            'line-height:1.5'
+        ].join(';');
+        const sig = [
+            '%c"Y así voy tejiendo mi camino."',
+            '',
+            '   — Emilio Ranucoli',
+            '   ranuk.dev · github.com/RanuK12',
+            '',
+            '   ¿Buscás trabajo en sistemas/data/design?',
+            '   → ranucoliemilio@gmail.com'
+        ].join('\n');
+        try { console.log(sig, css); } catch (_) {}
+
+        // Konami: ↑ ↑ ↓ ↓ ← → ← → B A
+        const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+        let idx = 0;
+        window.addEventListener('keydown', (e) => {
+            const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+            if (key === seq[idx]) {
+                idx++;
+                if (idx === seq.length) {
+                    idx = 0;
+                    document.body.style.transition = 'filter 0.6s ease';
+                    document.body.style.filter = 'hue-rotate(45deg) saturate(1.4)';
+                    const toast = document.createElement('div');
+                    toast.textContent = '✶ Konami activado — el telar cambia de color ✶';
+                    Object.assign(toast.style, {
+                        position: 'fixed', bottom: '2rem', left: '50%',
+                        transform: 'translateX(-50%)', padding: '0.75rem 1.25rem',
+                        background: '#0a192f', border: '1px solid #D4A574',
+                        color: '#D4A574', fontFamily: 'Fira Code, monospace',
+                        fontSize: '0.85rem', zIndex: 99999, borderRadius: '4px',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.4)'
+                    });
+                    document.body.appendChild(toast);
+                    setTimeout(() => {
+                        document.body.style.filter = '';
+                        toast.remove();
+                    }, 4000);
+                }
+            } else {
+                idx = (key === seq[0]) ? 1 : 0;
+            }
+        });
     }
 
     // ---- Initialize everything on DOM ready ----
@@ -171,6 +234,9 @@
 
         // Contact form
         initContactForm();
+
+        // Easter eggs
+        initEasterEggs();
 
         // Make all project cards visible initially
         setTimeout(() => {

@@ -1897,6 +1897,60 @@ input[type="range"]::-moz-range-thumb {
     align-self: flex-start;
 }
 
+/* Contact: subject dropdown + microcopy */
+.form-group-select {
+    position: relative;
+}
+.form-select-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+}
+.form-group-select select {
+    width: 100%;
+    padding: 0.85rem 2.5rem 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--accent-gold, #D4A574) 50%),
+                      linear-gradient(135deg, var(--accent-gold, #D4A574) 50%, transparent 50%);
+    background-position: calc(100% - 18px) center, calc(100% - 12px) center;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.form-group-select select:focus {
+    outline: none;
+    border-color: var(--accent-gold, #D4A574);
+    background-color: rgba(212, 165, 116, 0.04);
+}
+.form-group-select select option {
+    background: #0a192f;
+    color: var(--text-primary);
+}
+.form-microcopy {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    opacity: 0.85;
+}
+.form-microcopy::before {
+    content: "↳ ";
+    color: var(--accent-gold, #D4A574);
+    font-style: normal;
+}
+
 /* ---- Footer ---- */
 .footer {
     padding: 3rem 0 2rem;
