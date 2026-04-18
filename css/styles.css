@@ -769,6 +769,297 @@ ul { list-style: none; }
     font-size: 1rem;
 }
 
+/* =========================================================
+   El Tejido — Historia en 3 actos
+   Hilo de oro vertical animado por scroll. Cards alternadas.
+   ========================================================= */
+
+.story {
+    position: relative;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+.story::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(212, 165, 116, 0.05), transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(100, 255, 218, 0.03), transparent 55%);
+    pointer-events: none;
+}
+
+.story > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.story-lead {
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 4rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.story-timeline {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
+}
+
+/* Hilo de oro vertical animado por ScrollTrigger.
+   stroke-dashoffset se controla desde JS; aquí el estado base. */
+.story-thread {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    overflow: visible;
+}
+
+.story-thread path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 0.1s linear;
+    filter: drop-shadow(0 0 6px rgba(212, 165, 116, 0.4));
+}
+
+/* Acto: contenedor con knot central + card a un lado */
+.story-act {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    align-items: start;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.story-act:last-child {
+    margin-bottom: 0;
+}
+
+.story-act-left .story-card {
+    grid-column: 1;
+    text-align: right;
+}
+
+.story-act-left .story-knot {
+    grid-column: 2;
+}
+
+.story-act-right .story-card {
+    grid-column: 3;
+    text-align: left;
+}
+
+.story-act-right .story-knot {
+    grid-column: 2;
+}
+
+/* Knot — el nudo donde el hilo se ancla */
+.story-knot {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-gold, #D4A574);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-gold, #D4A574);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 6px var(--bg-primary), 0 0 24px rgba(212, 165, 116, 0.35);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.story-knot:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px var(--bg-primary), 0 0 32px rgba(212, 165, 116, 0.6);
+}
+
+.story-knot-final {
+    background: linear-gradient(135deg, var(--accent-gold, #D4A574), var(--accent));
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+/* Card */
+.story-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.8rem 1.6rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.story-card:hover {
+    border-color: var(--accent-gold, #D4A574);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.12);
+}
+
+.story-card-final {
+    border-color: var(--accent-dim);
+    background: linear-gradient(135deg, var(--bg-card), rgba(212, 165, 116, 0.04));
+}
+
+.story-act-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    opacity: 0.85;
+}
+
+.story-act-left .story-act-meta {
+    justify-content: flex-end;
+}
+
+.story-year {
+    color: var(--accent-gold, #D4A574);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.story-place i {
+    margin-right: 4px;
+    color: var(--accent);
+}
+
+.story-act-title {
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.story-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.story-card strong {
+    color: var(--text-bright);
+    font-weight: 600;
+}
+
+.story-card em {
+    font-family: var(--font-serif, 'Fraunces', Georgia, serif);
+    font-style: italic;
+    color: var(--accent-gold, #D4A574);
+}
+
+.story-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+}
+
+.story-act-left .story-tags {
+    justify-content: flex-end;
+}
+
+.story-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 3px 9px;
+    background: rgba(212, 165, 116, 0.08);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    border-radius: 4px;
+    color: var(--accent-gold, #D4A574);
+    letter-spacing: 0.3px;
+}
+
+/* Coda — datos rápidos al cierre */
+.story-coda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem 2rem;
+    margin-top: 3.5rem;
+    padding: 1.5rem;
+    border-top: 1px dashed var(--border);
+    border-bottom: 1px dashed var(--border);
+}
+
+.story-coda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.story-coda-item i {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+/* Responsive: en mobile el hilo se va a la izquierda y todas las cards quedan a la derecha */
+@media (max-width: 768px) {
+    .story-thread {
+        left: 28px;
+    }
+
+    .story-act {
+        grid-template-columns: 56px 1fr;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .story-act-left .story-card,
+    .story-act-right .story-card {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .story-act-left .story-knot,
+    .story-act-right .story-knot {
+        grid-column: 1;
+        margin: 0;
+    }
+
+    .story-act-left .story-act-meta,
+    .story-act-left .story-tags {
+        justify-content: flex-start;
+    }
+
+    .story-act-title {
+        font-size: 1.25rem;
+    }
+
+    .story-coda {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}
+
 /* ---- About Section ---- */
 .about-grid {
     display: grid;
