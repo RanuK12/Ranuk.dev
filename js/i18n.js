@@ -123,6 +123,17 @@ const translations = {
         "projects.eurobrico_desc": "Complete web audit and redesign prototype for a major Italian retail chain, including UX analysis and commercial proposal.",
         "projects.viewall": "View All Projects on GitHub",
 
+        // El Libro
+        "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>The book · 2024</span>',
+        "book.title": '<span class="title-number">09.</span> The Book',
+        "book.headline": "Same thing I do with code, I did with my life: <em>weave it one thread at a time</em>.",
+        "book.synopsis": "<em>\"Y as\u00ed voy tejiendo mi camino\"</em> is a short memoir about crossing oceans, losing certainties and learning to build from scratch \u2014 three times. About the discipline of someone who makes things with their hands, in code or in words. If you liked the rest of this site, this book is the version without technology.",
+        "book.quote": "\"We don't weave alone. Every thread is someone who was there, someone who taught, someone who stayed when they could have left.\"",
+        "book.cta_kindle": '<i class="fab fa-amazon"></i> Buy on Kindle',
+        "book.cta_pdf": '<i class="fas fa-file-pdf"></i> Read a preview (PDF)',
+        "book.cta_signed": '<i class="fas fa-pen-fancy"></i> Request a signed copy',
+        "book.microcopy": "Available in Spanish. Italian edition \u2014 <em>\"E cos\u00ec tesso il mio cammino\"</em> \u2014 in preparation.",
+
         // Open Lab (GitHub live)
         "lab.title": '<span class="title-number">~/</span> Open Lab',
         "lab.subtitle": "Live snapshot of my public GitHub. Auto-refreshed every night.",
@@ -253,7 +264,7 @@ const translations = {
         "certs.title": '<span class="title-number">07.</span> Certifications',
 
         // Contact
-        "contact.title": '<span class="title-number">08.</span> Get In Touch',
+        "contact.title": '<span class="title-number">10.</span> Get In Touch',
         "contact.text": "Whether you have a project in mind, a job opportunity, or just want to say hello, my inbox is always open. I'm currently open to new opportunities and collaborations across Europe and globally.",
         "contact.name": "Name",
         "contact.email": "Email",
@@ -375,6 +386,17 @@ const translations = {
         "projects.eurobrico_title": "Redise\u00f1o Web Eurobrico",
         "projects.eurobrico_desc": "Auditor\u00eda web completa y prototipo de redise\u00f1o para una importante cadena retail italiana, con an\u00e1lisis UX y propuesta comercial.",
         "projects.viewall": "Ver Todos los Proyectos en GitHub",
+
+        // El Libro
+        "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>El libro · 2024</span>',
+        "book.title": '<span class="title-number">09.</span> El Libro',
+        "book.headline": "Lo mismo que hago con el c\u00f3digo, lo hice con mi vida: <em>tejerla un hilo a la vez</em>.",
+        "book.synopsis": "<em>\"Y as\u00ed voy tejiendo mi camino\"</em> es un memoir corto sobre cruzar oc\u00e9anos, perder certezas y aprender a construir desde cero \u2014 tres veces. Sobre la disciplina del que hace las cosas con sus manos, en c\u00f3digo o en palabras. Si te gust\u00f3 el resto de este sitio, este libro es la versi\u00f3n sin tecnolog\u00eda.",
+        "book.quote": "\"No tejemos solos. Cada hilo es alguien que estuvo, alguien que ense\u00f1\u00f3, alguien que se qued\u00f3 cuando pod\u00eda haberse ido.\"",
+        "book.cta_kindle": '<i class="fab fa-amazon"></i> Comprar en Kindle',
+        "book.cta_pdf": '<i class="fas fa-file-pdf"></i> Leer una vista previa (PDF)',
+        "book.cta_signed": '<i class="fas fa-pen-fancy"></i> Pedir copia firmada',
+        "book.microcopy": "Disponible en espa\u00f1ol. Edici\u00f3n italiana \u2014 <em>\"E cos\u00ec tesso il mio cammino\"</em> \u2014 en preparaci\u00f3n.",
 
         // Open Lab (GitHub en vivo)
         "lab.title": '<span class="title-number">~/</span> Open Lab',
@@ -503,7 +525,7 @@ const translations = {
 
         "certs.title": '<span class="title-number">07.</span> Certificaciones',
 
-        "contact.title": '<span class="title-number">08.</span> Contacto',
+        "contact.title": '<span class="title-number">10.</span> Contacto',
         "contact.text": "Ya sea que tengas un proyecto en mente, una oportunidad laboral o simplemente quieras saludar, mi bandeja de entrada siempre est\u00e1 abierta. Actualmente estoy abierto a nuevas oportunidades y colaboraciones en Europa y a nivel global.",
         "contact.name": "Nombre",
         "contact.email": "Correo Electr\u00f3nico",
@@ -624,6 +646,17 @@ const translations = {
         "projects.eurobrico_title": "Redesign Web Eurobrico",
         "projects.eurobrico_desc": "Audit web completo e prototipo di redesign per un'importante catena retail italiana, con analisi UX e proposta commerciale.",
         "projects.viewall": "Vedi Tutti i Progetti su GitHub",
+
+        // Il Libro
+        "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>Il libro · 2024</span>',
+        "book.title": '<span class="title-number">09.</span> Il Libro',
+        "book.headline": "Quello che faccio con il codice, l'ho fatto con la mia vita: <em>tesserla un filo alla volta</em>.",
+        "book.synopsis": "<em>\"E cos\u00ec tesso il mio cammino\"</em> \u00e8 un breve memoir sull'attraversare oceani, perdere certezze e imparare a costruire da zero \u2014 tre volte. Sulla disciplina di chi fa le cose con le mani, in codice o in parole. Se ti \u00e8 piaciuto il resto di questo sito, questo libro \u00e8 la versione senza tecnologia.",
+        "book.quote": "\"Non tessiamo da soli. Ogni filo \u00e8 qualcuno che c'era, qualcuno che ha insegnato, qualcuno che \u00e8 rimasto quando avrebbe potuto andarsene.\"",
+        "book.cta_kindle": '<i class="fab fa-amazon"></i> Compra su Kindle',
+        "book.cta_pdf": '<i class="fas fa-file-pdf"></i> Leggi un\'anteprima (PDF)',
+        "book.cta_signed": '<i class="fas fa-pen-fancy"></i> Richiedi una copia firmata',
+        "book.microcopy": "Disponibile in spagnolo. Edizione italiana \u2014 <em>\"E cos\u00ec tesso il mio cammino\"</em> \u2014 in preparazione.",
 
         // Open Lab (GitHub live)
         "lab.title": '<span class="title-number">~/</span> Open Lab',
@@ -752,7 +785,7 @@ const translations = {
 
         "certs.title": '<span class="title-number">07.</span> Certificazioni',
 
-        "contact.title": '<span class="title-number">08.</span> Contattami',
+        "contact.title": '<span class="title-number">10.</span> Contattami',
         "contact.text": "Che tu abbia un progetto in mente, un'opportunit\u00e0 lavorativa o semplicemente voglia salutare, la mia casella di posta \u00e8 sempre aperta. Attualmente sono aperto a nuove opportunit\u00e0 e collaborazioni in Europa e a livello globale.",
         "contact.name": "Nome",
         "contact.email": "Email",
