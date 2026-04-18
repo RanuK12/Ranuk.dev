@@ -123,9 +123,19 @@ const translations = {
         "projects.eurobrico_desc": "Complete web audit and redesign prototype for a major Italian retail chain, including UX analysis and commercial proposal.",
         "projects.viewall": "View All Projects on GitHub",
 
+        // Voces (testimonios)
+        "voices.title": '<span class="title-number">06.</span> Voices',
+        "voices.subtitle": "What people who worked with me have to say.",
+        "voices.t1_text": "Working with Emilio is one of those experiences that reminds you why you love what you do. He combines technical rigor with a rare ability to understand the problem before throwing code at it. 100% recommended.",
+        "voices.t1_role": "Product Manager · Booking.com",
+        "voices.t2_text": "I was looking for someone who understood architecture as much as code. Emilio turned our studio into a website that feels like an exhibition, not a brochure. Fast, elegant, and every time we ask for a change he replies the same day.",
+        "voices.t2_role": "Architecture studio · Italy",
+        "voices.t3_text": "We chose Emilio because he understands what a creative brand needs: a site that doesn't look like a template and loads fast in any country we shoot in. He does what he says, says what he does.",
+        "voices.t3_role": "Audiovisual production · International",
+
         // El Libro
         "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>The book · 2024</span>',
-        "book.title": '<span class="title-number">09.</span> The Book',
+        "book.title": '<span class="title-number">10.</span> The Book',
         "book.headline": "Same thing I do with code, I did with my life: <em>weave it one thread at a time</em>.",
         "book.synopsis": "<em>\"Y as\u00ed voy tejiendo mi camino\"</em> is a short memoir about crossing oceans, losing certainties and learning to build from scratch \u2014 three times. About the discipline of someone who makes things with their hands, in code or in words. If you liked the rest of this site, this book is the version without technology.",
         "book.quote": "\"We don't weave alone. Every thread is someone who was there, someone who taught, someone who stayed when they could have left.\"",
@@ -207,7 +217,7 @@ const translations = {
         "ranuk.cta_microcopy": "Do you identify with what we do? If you're a developer with real experience, a data scientist or a designer with a technical brain, send me your profile. I'm not looking for employees \u2014 I'm looking for project partners.",
 
         // Accessibility
-        "a11y.title": '<span class="title-number">06.</span> ADA Accessibility Audits',
+        "a11y.title": '<span class="title-number">07.</span> ADA Accessibility Audits',
         "a11y.subtitle": "WCAG 2.1 AA compliance audits and remediation for US businesses. Protect your site from drive-by lawsuits — flat pricing, delivered in 2 weeks.",
         "a11y.stat1": "ADA lawsuits filed in 2025 against small US businesses",
         "a11y.stat2": "target companies under $25M in revenue",
@@ -247,7 +257,7 @@ const translations = {
         "a11y.cta_btn2": '<i class="fas fa-comments"></i> Discuss a project',
 
         // ML Lab
-        "mllab.title": '<span class="title-number">07.</span> ML Playground',
+        "mllab.title": '<span class="title-number">08.</span> ML Playground',
         "mllab.subtitle": "Train a neural network right in your browser. Place points of two classes and watch the model learn the decision boundary in real time.",
         "mllab.hint": "Click to place points",
         "mllab.class": "Current Class:",
@@ -261,10 +271,10 @@ const translations = {
         "mllab.epoch_count": "Epoch:",
 
         // Certifications
-        "certs.title": '<span class="title-number">07.</span> Certifications',
+        "certs.title": '<span class="title-number">09.</span> Certifications',
 
         // Contact
-        "contact.title": '<span class="title-number">10.</span> Get In Touch',
+        "contact.title": '<span class="title-number">11.</span> Get In Touch',
         "contact.text": "Whether you have a project in mind, a job opportunity, or just want to say hello, my inbox is always open. I'm currently open to new opportunities and collaborations across Europe and globally.",
         "contact.name": "Name",
         "contact.email": "Email",
@@ -387,9 +397,19 @@ const translations = {
         "projects.eurobrico_desc": "Auditor\u00eda web completa y prototipo de redise\u00f1o para una importante cadena retail italiana, con an\u00e1lisis UX y propuesta comercial.",
         "projects.viewall": "Ver Todos los Proyectos en GitHub",
 
+        // Voces (testimonios)
+        "voices.title": '<span class="title-number">06.</span> Voces',
+        "voices.subtitle": "Lo que dicen los que trabajaron conmigo.",
+        "voices.t1_text": "Trabajar con Emilio es de esas experiencias que te recuerdan por qu\u00e9 te gusta lo que hac\u00e9s. Combina rigor t\u00e9cnico con una capacidad poco com\u00fan para entender el problema antes de tirar c\u00f3digo. Recomendado al 100%.",
+        "voices.t1_role": "Product Manager · Booking.com",
+        "voices.t2_text": "Cercavo qualcuno che capisse di architettura tanto quanto di codice. Emilio ha trasformato il nostro studio in un sito che sembra una mostra, non un brochure. Veloce, elegante, e ogni volta che chiediamo una modifica risponde lo stesso giorno.",
+        "voices.t2_role": "Estudio de arquitectura · Italia",
+        "voices.t3_text": "Nos quedamos con Emilio porque entiende lo que necesita una marca creativa: un sitio que no parezca plantilla y que cargue r\u00e1pido en cualquier pa\u00eds donde rodemos. Hace lo que dice y dice lo que hace.",
+        "voices.t3_role": "Productora audiovisual · Internacional",
+
         // El Libro
         "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>El libro · 2024</span>',
-        "book.title": '<span class="title-number">09.</span> El Libro',
+        "book.title": '<span class="title-number">10.</span> El Libro',
         "book.headline": "Lo mismo que hago con el c\u00f3digo, lo hice con mi vida: <em>tejerla un hilo a la vez</em>.",
         "book.synopsis": "<em>\"Y as\u00ed voy tejiendo mi camino\"</em> es un memoir corto sobre cruzar oc\u00e9anos, perder certezas y aprender a construir desde cero \u2014 tres veces. Sobre la disciplina del que hace las cosas con sus manos, en c\u00f3digo o en palabras. Si te gust\u00f3 el resto de este sitio, este libro es la versi\u00f3n sin tecnolog\u00eda.",
         "book.quote": "\"No tejemos solos. Cada hilo es alguien que estuvo, alguien que ense\u00f1\u00f3, alguien que se qued\u00f3 cuando pod\u00eda haberse ido.\"",
@@ -471,7 +491,7 @@ const translations = {
         "ranuk.cta_microcopy": "\u00bfTe identific\u00e1s con lo que hacemos? Si sos developer con experiencia real, data scientist o dise\u00f1ador con cabeza t\u00e9cnica, mandame tu perfil. No busco empleados, busco socios de proyecto.",
 
         // Accessibility (ES)
-        "a11y.title": '<span class="title-number">06.</span> Auditor\u00edas de Accesibilidad ADA',
+        "a11y.title": '<span class="title-number">07.</span> Auditor\u00edas de Accesibilidad ADA',
         "a11y.subtitle": "Auditor\u00edas y remediaci\u00f3n WCAG 2.1 AA para empresas en EE.UU. Prote\u00e9 tu sitio de demandas por accesibilidad \u2014 precios fijos, entrega en 2 semanas.",
         "a11y.stat1": "demandas ADA en 2025 contra pymes de EE.UU.",
         "a11y.stat2": "de los casos son contra empresas con facturaci\u00f3n menor a $25M",
@@ -510,7 +530,7 @@ const translations = {
         "a11y.cta_btn1": '<i class="fas fa-paper-plane"></i> Escaneo gratuito',
         "a11y.cta_btn2": '<i class="fas fa-comments"></i> Hablar de un proyecto',
 
-        "mllab.title": '<span class="title-number">07.</span> Laboratorio ML',
+        "mllab.title": '<span class="title-number">08.</span> Laboratorio ML',
         "mllab.subtitle": "Entrena una red neuronal directamente en tu navegador. Coloca puntos de dos clases y observa c\u00f3mo el modelo aprende la frontera de decisi\u00f3n en tiempo real.",
         "mllab.hint": "Haz clic para colocar puntos",
         "mllab.class": "Clase Actual:",
@@ -523,9 +543,9 @@ const translations = {
         "mllab.accuracy": "Precisi\u00f3n:",
         "mllab.epoch_count": "\u00c9poca:",
 
-        "certs.title": '<span class="title-number">07.</span> Certificaciones',
+        "certs.title": '<span class="title-number">09.</span> Certificaciones',
 
-        "contact.title": '<span class="title-number">10.</span> Contacto',
+        "contact.title": '<span class="title-number">11.</span> Contacto',
         "contact.text": "Ya sea que tengas un proyecto en mente, una oportunidad laboral o simplemente quieras saludar, mi bandeja de entrada siempre est\u00e1 abierta. Actualmente estoy abierto a nuevas oportunidades y colaboraciones en Europa y a nivel global.",
         "contact.name": "Nombre",
         "contact.email": "Correo Electr\u00f3nico",
@@ -647,9 +667,19 @@ const translations = {
         "projects.eurobrico_desc": "Audit web completo e prototipo di redesign per un'importante catena retail italiana, con analisi UX e proposta commerciale.",
         "projects.viewall": "Vedi Tutti i Progetti su GitHub",
 
+        // Voci (testimonianze)
+        "voices.title": '<span class="title-number">06.</span> Voci',
+        "voices.subtitle": "Cosa dicono le persone che hanno lavorato con me.",
+        "voices.t1_text": "Lavorare con Emilio \u00e8 una di quelle esperienze che ti ricordano perch\u00e9 ti piace quello che fai. Unisce rigore tecnico a una rara capacit\u00e0 di capire il problema prima di buttare codice. Raccomandato al 100%.",
+        "voices.t1_role": "Product Manager · Booking.com",
+        "voices.t2_text": "Cercavo qualcuno che capisse di architettura tanto quanto di codice. Emilio ha trasformato il nostro studio in un sito che sembra una mostra, non un brochure. Veloce, elegante, e ogni volta che chiediamo una modifica risponde lo stesso giorno.",
+        "voices.t2_role": "Studio di architettura · Italia",
+        "voices.t3_text": "Abbiamo scelto Emilio perch\u00e9 capisce cosa serve a un brand creativo: un sito che non sembri un template e che carichi veloce in qualsiasi paese in cui giriamo. Fa quello che dice, dice quello che fa.",
+        "voices.t3_role": "Casa di produzione · Internazionale",
+
         // Il Libro
         "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>Il libro · 2024</span>',
-        "book.title": '<span class="title-number">09.</span> Il Libro',
+        "book.title": '<span class="title-number">10.</span> Il Libro',
         "book.headline": "Quello che faccio con il codice, l'ho fatto con la mia vita: <em>tesserla un filo alla volta</em>.",
         "book.synopsis": "<em>\"E cos\u00ec tesso il mio cammino\"</em> \u00e8 un breve memoir sull'attraversare oceani, perdere certezze e imparare a costruire da zero \u2014 tre volte. Sulla disciplina di chi fa le cose con le mani, in codice o in parole. Se ti \u00e8 piaciuto il resto di questo sito, questo libro \u00e8 la versione senza tecnologia.",
         "book.quote": "\"Non tessiamo da soli. Ogni filo \u00e8 qualcuno che c'era, qualcuno che ha insegnato, qualcuno che \u00e8 rimasto quando avrebbe potuto andarsene.\"",
@@ -731,7 +761,7 @@ const translations = {
         "ranuk.cta_microcopy": "Ti riconosci in ci\u00f2 che facciamo? Se sei uno sviluppatore con esperienza reale, un data scientist o un designer con testa tecnica, mandami il tuo profilo. Non cerco dipendenti, cerco soci di progetto.",
 
         // Accessibility (IT)
-        "a11y.title": '<span class="title-number">06.</span> Audit di Accessibilit\u00e0 ADA',
+        "a11y.title": '<span class="title-number">07.</span> Audit di Accessibilit\u00e0 ADA',
         "a11y.subtitle": "Audit e remediation WCAG 2.1 AA per aziende statunitensi. Proteggi il tuo sito da cause legali \u2014 prezzi fissi, consegna in 2 settimane.",
         "a11y.stat1": "cause ADA presentate nel 2025 contro piccole imprese USA",
         "a11y.stat2": "delle cause sono contro aziende con fatturato inferiore a $25M",
@@ -770,7 +800,7 @@ const translations = {
         "a11y.cta_btn1": '<i class="fas fa-paper-plane"></i> Scansione gratuita',
         "a11y.cta_btn2": '<i class="fas fa-comments"></i> Parliamo di un progetto',
 
-        "mllab.title": '<span class="title-number">07.</span> Laboratorio ML',
+        "mllab.title": '<span class="title-number">08.</span> Laboratorio ML',
         "mllab.subtitle": "Allena una rete neurale direttamente nel tuo browser. Posiziona punti di due classi e osserva il modello imparare il confine decisionale in tempo reale.",
         "mllab.hint": "Clicca per posizionare punti",
         "mllab.class": "Classe Attuale:",
@@ -783,9 +813,9 @@ const translations = {
         "mllab.accuracy": "Precisione:",
         "mllab.epoch_count": "Epoca:",
 
-        "certs.title": '<span class="title-number">07.</span> Certificazioni',
+        "certs.title": '<span class="title-number">09.</span> Certificazioni',
 
-        "contact.title": '<span class="title-number">10.</span> Contattami',
+        "contact.title": '<span class="title-number">11.</span> Contattami',
         "contact.text": "Che tu abbia un progetto in mente, un'opportunit\u00e0 lavorativa o semplicemente voglia salutare, la mia casella di posta \u00e8 sempre aperta. Attualmente sono aperto a nuove opportunit\u00e0 e collaborazioni in Europa e a livello globale.",
         "contact.name": "Nome",
         "contact.email": "Email",
