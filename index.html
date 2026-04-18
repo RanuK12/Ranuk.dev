@@ -729,6 +729,65 @@
         </div>
     </section>
 
+    <!-- ============ OPEN LAB — GitHub live ============
+         Auto-sync nightly via GitHub Action. Lee data/github.json (commiteado
+         por el bot) y renderiza repos destacados + distribución de lenguajes.
+         Sin tokens en el cliente, sin rate limit visible. -->
+    <section id="open-lab" class="section open-lab">
+        <div class="container">
+            <div class="open-lab-header">
+                <div>
+                    <h2 class="section-title" data-i18n="lab.title">
+                        <span class="title-number">~/</span> Open Lab
+                    </h2>
+                    <p class="section-subtitle" data-i18n="lab.subtitle">
+                        Snapshot en vivo de mi GitHub público. Se actualiza cada noche por sí solo.
+                    </p>
+                </div>
+                <a href="https://github.com/RanuK12" target="_blank" rel="noopener" class="lab-profile-link">
+                    <i class="fab fa-github"></i>
+                    <span>@RanuK12</span>
+                </a>
+            </div>
+
+            <!-- Stats cabecera (loaded por JS desde data/github.json) -->
+            <div class="lab-stats" id="lab-stats">
+                <div class="lab-stat"><span class="lab-stat-num" data-stat="public_repos">—</span><span class="lab-stat-label" data-i18n="lab.stat_repos">repos públicos</span></div>
+                <div class="lab-stat"><span class="lab-stat-num" data-stat="languages_count">—</span><span class="lab-stat-label" data-i18n="lab.stat_langs">lenguajes usados</span></div>
+                <div class="lab-stat"><span class="lab-stat-num" data-stat="total_stars">—</span><span class="lab-stat-label" data-i18n="lab.stat_stars">stars totales</span></div>
+                <div class="lab-stat"><span class="lab-stat-num" data-stat="last_push_relative">—</span><span class="lab-stat-label" data-i18n="lab.stat_lastpush">último push</span></div>
+            </div>
+
+            <div class="lab-grid">
+                <!-- Languages bar -->
+                <div class="lab-panel lab-languages">
+                    <h3 class="lab-panel-title">
+                        <i class="fas fa-chart-bar"></i>
+                        <span data-i18n="lab.langs_title">Stack en bytes</span>
+                    </h3>
+                    <div class="lab-langs-list" id="lab-langs-list">
+                        <div class="lab-loading" data-i18n="lab.loading">Cargando datos…</div>
+                    </div>
+                </div>
+
+                <!-- Featured repos -->
+                <div class="lab-panel lab-repos">
+                    <h3 class="lab-panel-title">
+                        <i class="fab fa-github"></i>
+                        <span data-i18n="lab.repos_title">Repos destacados</span>
+                    </h3>
+                    <div class="lab-repos-list" id="lab-repos-list">
+                        <div class="lab-loading" data-i18n="lab.loading">Cargando datos…</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lab-footnote" id="lab-footnote" data-i18n="lab.footnote">
+                Datos servidos desde <code>data/github.json</code> · regenerados nightly por GitHub Actions.
+            </p>
+        </div>
+    </section>
+
     <!-- ============ RANUK IT SOLUTIONS (sección protagonista) ============
          Flujo: manifesto → métricas → 4 servicios → comparación vs agencia →
          clientes reales → proceso → triple CTA (presupuesto / team / hablar). -->
@@ -1281,6 +1340,7 @@
     <script src="js/particles.js?v=2.2"></script>
     <script src="js/animations.js?v=2.2"></script>
     <script src="js/ml-playground.js?v=2.2"></script>
+    <script src="js/github-feed.js?v=1.0" defer></script>
     <script src="js/app.js?v=2.2"></script>
 </body>
 </html>

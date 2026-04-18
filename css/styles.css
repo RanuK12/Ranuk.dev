@@ -2254,6 +2254,337 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* =========================================================
+   Open Lab — GitHub live (auto-sync nightly)
+   Renderizado por js/github-feed.js leyendo data/github.json
+   ========================================================= */
+
+.open-lab {
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.open-lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.open-lab-header .section-title .title-number {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 1.4rem;
+}
+
+.open-lab-header .section-subtitle {
+    margin: 0.5rem 0 0;
+    text-align: left;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.lab-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: none;
+}
+
+.lab-profile-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.15);
+}
+
+.lab-profile-link i {
+    font-size: 1.1rem;
+}
+
+/* Stats cabecera */
+.lab-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.lab-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.lab-stat:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.lab-stat-num {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.lab-stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+}
+
+/* Grid: lenguajes + repos */
+.lab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.lab-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.lab-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--font-mono);
+}
+
+.lab-panel-title i {
+    color: var(--accent);
+}
+
+/* Languages bars */
+.lab-langs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.lang-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.lang-row-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+}
+
+.lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.lang-name {
+    color: var(--text-bright);
+    font-weight: 500;
+    flex: 1;
+}
+
+.lang-pct {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.lang-bar {
+    height: 6px;
+    background: rgba(100, 255, 218, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lang-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease;
+    opacity: 0.85;
+}
+
+/* Featured repos cards */
+.lab-repos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.8rem;
+}
+
+.lab-repo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+    cursor: none;
+}
+
+.lab-repo-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(100, 255, 218, 0.1);
+}
+
+.lab-repo-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+}
+
+.lab-repo-head > i {
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+.lab-repo-name {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lab-repo-stars {
+    font-size: 0.75rem;
+    color: var(--accent-gold, #D4A574);
+    font-weight: 600;
+}
+
+.lab-repo-stars i {
+    margin-right: 2px;
+}
+
+.lab-repo-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.lab-repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.8rem;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: auto;
+}
+
+.lab-repo-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-bright);
+    font-weight: 500;
+}
+
+.lab-repo-time {
+    font-family: var(--font-mono);
+    opacity: 0.8;
+}
+
+.lab-repo-topics {
+    display: inline-flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.repo-topic {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    background: rgba(100, 255, 218, 0.06);
+    border-radius: 3px;
+    color: var(--accent);
+}
+
+.lab-loading,
+.lab-error {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem 1rem;
+    opacity: 0.7;
+}
+
+.lab-error a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.lab-footnote {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.lab-footnote i {
+    margin-right: 0.4rem;
+    color: var(--accent);
+}
+
+.lab-footnote code {
+    background: var(--bg-card);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .lab-stats { grid-template-columns: repeat(2, 1fr); }
+    .lab-grid { grid-template-columns: 1fr; }
+    .open-lab-header { flex-direction: column; align-items: flex-start; }
+}
+
+/* =========================================================
    Ranuk IT Solutions — Protagonist section
    Manifesto → métricas → servicios → VS → clientes → CTA triple
    Gold accent (#D4A574) se usa como registro narrativo.
