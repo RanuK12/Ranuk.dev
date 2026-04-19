@@ -124,7 +124,7 @@ const translations = {
         "projects.viewall": "View All Projects on GitHub",
 
         // Voces (testimonios)
-        "voices.title": '<span class="title-number">06.</span> Voices',
+        "voices.title": '<span class="title-number">05.</span> Voices',
         "voices.subtitle": "What people who worked with me have to say.",
         "voices.t1_text": "Working with Emilio is one of those experiences that reminds you why you love what you do. He combines technical rigor with a rare ability to understand the problem before throwing code at it. 100% recommended.",
         "voices.t1_role": "Product Manager · Booking.com",
@@ -135,7 +135,7 @@ const translations = {
 
         // El Libro
         "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>The book · 2024</span>',
-        "book.title": '<span class="title-number">10.</span> The Book',
+        "book.title": '<span class="title-number">08.</span> The Book',
         "book.headline": "Same thing I do with code, I did with my life: <em>weave it one thread at a time</em>.",
         "book.synopsis": "<em>\"Y as\u00ed voy tejiendo mi camino\"</em> is a short memoir about crossing oceans, losing certainties and learning to build from scratch \u2014 three times. About the discipline of someone who makes things with their hands, in code or in words. If you liked the rest of this site, this book is the version without technology.",
         "book.quote": "\"We don't weave alone. Every thread is someone who was there, someone who taught, someone who stayed when they could have left.\"",
@@ -257,7 +257,7 @@ const translations = {
         "a11y.cta_btn2": '<i class="fas fa-comments"></i> Discuss a project',
 
         // ML Lab
-        "mllab.title": '<span class="title-number">08.</span> ML Playground',
+        "mllab.title": '<span class="title-number">06.</span> ML Playground',
         "mllab.subtitle": "Train a neural network right in your browser. Place points of two classes and watch the model learn the decision boundary in real time.",
         "mllab.hint": "Click to place points",
         "mllab.class": "Current Class:",
@@ -271,10 +271,10 @@ const translations = {
         "mllab.epoch_count": "Epoch:",
 
         // Certifications
-        "certs.title": '<span class="title-number">09.</span> Certifications',
+        "certs.title": '<span class="title-number">07.</span> Certifications',
 
         // Contact
-        "contact.title": '<span class="title-number">11.</span> Get In Touch',
+        "contact.title": '<span class="title-number">09.</span> Get In Touch',
         "contact.text": "Project, job, or just to say hi — my inbox is always open. I read every message and reply personally.",
         "contact.name": "Name",
         "contact.email": "Email",
@@ -406,7 +406,7 @@ const translations = {
         "projects.viewall": "Ver Todos los Proyectos en GitHub",
 
         // Voces (testimonios)
-        "voices.title": '<span class="title-number">06.</span> Voces',
+        "voices.title": '<span class="title-number">05.</span> Voces',
         "voices.subtitle": "Lo que dicen los que trabajaron conmigo.",
         "voices.t1_text": "Trabajar con Emilio es de esas experiencias que te recuerdan por qu\u00e9 te gusta lo que hac\u00e9s. Combina rigor t\u00e9cnico con una capacidad poco com\u00fan para entender el problema antes de tirar c\u00f3digo. Recomendado al 100%.",
         "voices.t1_role": "Product Manager · Booking.com",
@@ -417,7 +417,7 @@ const translations = {
 
         // El Libro
         "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>El libro · 2024</span>',
-        "book.title": '<span class="title-number">10.</span> El Libro',
+        "book.title": '<span class="title-number">08.</span> El Libro',
         "book.headline": "Lo mismo que hago con el c\u00f3digo, lo hice con mi vida: <em>tejerla un hilo a la vez</em>.",
         "book.synopsis": "<em>\"Y as\u00ed voy tejiendo mi camino\"</em> es un memoir corto sobre cruzar oc\u00e9anos, perder certezas y aprender a construir desde cero \u2014 tres veces. Sobre la disciplina del que hace las cosas con sus manos, en c\u00f3digo o en palabras. Si te gust\u00f3 el resto de este sitio, este libro es la versi\u00f3n sin tecnolog\u00eda.",
         "book.quote": "\"No tejemos solos. Cada hilo es alguien que estuvo, alguien que ense\u00f1\u00f3, alguien que se qued\u00f3 cuando pod\u00eda haberse ido.\"",
@@ -538,7 +538,7 @@ const translations = {
         "a11y.cta_btn1": '<i class="fas fa-paper-plane"></i> Escaneo gratuito',
         "a11y.cta_btn2": '<i class="fas fa-comments"></i> Hablar de un proyecto',
 
-        "mllab.title": '<span class="title-number">08.</span> Laboratorio ML',
+        "mllab.title": '<span class="title-number">06.</span> Laboratorio ML',
         "mllab.subtitle": "Entrena una red neuronal directamente en tu navegador. Coloca puntos de dos clases y observa c\u00f3mo el modelo aprende la frontera de decisi\u00f3n en tiempo real.",
         "mllab.hint": "Haz clic para colocar puntos",
         "mllab.class": "Clase Actual:",
@@ -551,9 +551,9 @@ const translations = {
         "mllab.accuracy": "Precisi\u00f3n:",
         "mllab.epoch_count": "\u00c9poca:",
 
-        "certs.title": '<span class="title-number">09.</span> Certificaciones',
+        "certs.title": '<span class="title-number">07.</span> Certificaciones',
 
-        "contact.title": '<span class="title-number">11.</span> Contacto',
+        "contact.title": '<span class="title-number">09.</span> Contacto',
         "contact.text": "Proyecto, propuesta laboral o simplemente saludar — mi bandeja siempre est\u00e1 abierta. Leo cada mensaje y respondo personalmente.",
         "contact.name": "Nombre",
         "contact.email": "Correo Electr\u00f3nico",
@@ -684,7 +684,7 @@ const translations = {
         "projects.viewall": "Vedi Tutti i Progetti su GitHub",
 
         // Voci (testimonianze)
-        "voices.title": '<span class="title-number">06.</span> Voci',
+        "voices.title": '<span class="title-number">05.</span> Voci',
         "voices.subtitle": "Cosa dicono le persone che hanno lavorato con me.",
         "voices.t1_text": "Lavorare con Emilio \u00e8 una di quelle esperienze che ti ricordano perch\u00e9 ti piace quello che fai. Unisce rigore tecnico a una rara capacit\u00e0 di capire il problema prima di buttare codice. Raccomandato al 100%.",
         "voices.t1_role": "Product Manager · Booking.com",
@@ -695,7 +695,7 @@ const translations = {
 
         // Il Libro
         "book.eyebrow": '<i class="fas fa-feather-alt"></i> <span>Il libro · 2024</span>',
-        "book.title": '<span class="title-number">10.</span> Il Libro',
+        "book.title": '<span class="title-number">08.</span> Il Libro',
         "book.headline": "Quello che faccio con il codice, l'ho fatto con la mia vita: <em>tesserla un filo alla volta</em>.",
         "book.synopsis": "<em>\"E cos\u00ec tesso il mio cammino\"</em> \u00e8 un breve memoir sull'attraversare oceani, perdere certezze e imparare a costruire da zero \u2014 tre volte. Sulla disciplina di chi fa le cose con le mani, in codice o in parole. Se ti \u00e8 piaciuto il resto di questo sito, questo libro \u00e8 la versione senza tecnologia.",
         "book.quote": "\"Non tessiamo da soli. Ogni filo \u00e8 qualcuno che c'era, qualcuno che ha insegnato, qualcuno che \u00e8 rimasto quando avrebbe potuto andarsene.\"",
@@ -816,7 +816,7 @@ const translations = {
         "a11y.cta_btn1": '<i class="fas fa-paper-plane"></i> Scansione gratuita',
         "a11y.cta_btn2": '<i class="fas fa-comments"></i> Parliamo di un progetto',
 
-        "mllab.title": '<span class="title-number">08.</span> Laboratorio ML',
+        "mllab.title": '<span class="title-number">06.</span> Laboratorio ML',
         "mllab.subtitle": "Allena una rete neurale direttamente nel tuo browser. Posiziona punti di due classi e osserva il modello imparare il confine decisionale in tempo reale.",
         "mllab.hint": "Clicca per posizionare punti",
         "mllab.class": "Classe Attuale:",
@@ -829,9 +829,9 @@ const translations = {
         "mllab.accuracy": "Precisione:",
         "mllab.epoch_count": "Epoca:",
 
-        "certs.title": '<span class="title-number">09.</span> Certificazioni',
+        "certs.title": '<span class="title-number">07.</span> Certificazioni',
 
-        "contact.title": '<span class="title-number">11.</span> Contattami',
+        "contact.title": '<span class="title-number">09.</span> Contattami',
         "contact.text": "Progetto, proposta di lavoro o anche solo per salutare — la mia casella \u00e8 sempre aperta. Leggo ogni messaggio e rispondo personalmente.",
         "contact.name": "Nome",
         "contact.email": "Email",
