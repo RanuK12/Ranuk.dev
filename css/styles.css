@@ -1986,6 +1986,33 @@ input[type="range"]::-moz-range-thumb {
 }
 .ranuk-hero {
     min-height: 90vh;
+    text-align: center;
+}
+.ranuk-hero .hero-content {
+    margin: 0 auto;
+    text-align: center;
+}
+.ranuk-hero .hero-headline {
+    align-items: center;
+    text-align: center;
+}
+.ranuk-hero .hero-cta,
+.ranuk-hero .hero-stats {
+    justify-content: center;
+}
+/* Center section titles + content on the Ranuk IT landing page */
+body.ranuk-it-page .section-title,
+body.ranuk-it-page .section-subtitle {
+    text-align: center;
+}
+body.ranuk-it-page .ranuk-services-grid,
+body.ranuk-it-page .ranuk-vs-table,
+body.ranuk-it-page .ranuk-projects,
+body.ranuk-it-page .ranuk-timeline-steps,
+body.ranuk-it-page .a11y-stats,
+body.ranuk-it-page .a11y-pricing {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Skip link — a11y */
