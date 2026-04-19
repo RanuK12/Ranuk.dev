@@ -1951,6 +1951,43 @@ input[type="range"]::-moz-range-thumb {
     font-style: normal;
 }
 
+/* Ranuk IT navbar variants */
+.nav-logo-ranuk {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.nav-logo-ranuk img {
+    width: 28px;
+    height: 28px;
+}
+.logo-text-ranuk {
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    font-weight: 600;
+    color: var(--accent-gold, #D4A574);
+    letter-spacing: 0.02em;
+}
+.nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    transition: all 0.2s ease;
+}
+.nav-back:hover {
+    border-color: var(--accent-gold, #D4A574);
+    color: var(--accent-gold, #D4A574);
+}
+.ranuk-hero {
+    min-height: 90vh;
+}
+
 /* Skip link — a11y */
 .skip-link {
     position: absolute;
