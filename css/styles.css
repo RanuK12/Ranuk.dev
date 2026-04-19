@@ -2099,7 +2099,7 @@ body.ranuk-it-page .a11y-pricing {
     background: var(--bg-secondary);
 }
 
-.ranuk-hero {
+.ranuk-dev .ranuk-hero {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 3rem;
@@ -3593,7 +3593,7 @@ body.ranuk-it-page .a11y-pricing {
         gap: 2rem;
     }
 
-    .ranuk-hero {
+    .ranuk-dev .ranuk-hero {
         grid-template-columns: 1fr;
         text-align: center;
     }
