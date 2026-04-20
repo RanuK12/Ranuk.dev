@@ -22,3 +22,9 @@ build/
 
 # Logs
 *.log
+
+# Outreach — datos sensibles y venv
+outreach/venv/
+outreach/.env
+outreach/leads_*.xlsx
+outreach/__pycache__/
