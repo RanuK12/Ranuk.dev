@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-04-20T05:21:21.029Z",
+  "generated_at": "2026-04-21T05:13:06.654Z",
   "stats": {
-    "public_repos": 24,
+    "public_repos": 25,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-19T15:19:15Z"
+    "last_push": "2026-04-20T23:37:38Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 225438951,
-      "pct": 93.8
+      "pct": 93.7
     },
     {
       "name": "Cython",
@@ -25,7 +25,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 2152677,
+      "bytes": 2173505,
       "pct": 0.9
     },
     {
@@ -34,14 +34,14 @@
       "pct": 0.8
     },
     {
-      "name": "C++",
-      "bytes": 1019392,
+      "name": "JavaScript",
+      "bytes": 1028977,
       "pct": 0.4
     },
     {
-      "name": "JavaScript",
-      "bytes": 824139,
-      "pct": 0.3
+      "name": "C++",
+      "bytes": 1019392,
+      "pct": 0.4
     },
     {
       "name": "TypeScript",
@@ -50,7 +50,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 379150,
+      "bytes": 382827,
       "pct": 0.2
     },
     {
@@ -95,6 +95,18 @@
       "updated": "2026-02-20T16:33:39Z"
     },
     {
+      "name": "Ranuk-Outreach",
+      "full_name": "RanuK12/Ranuk-Outreach",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk-Outreach",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-20T23:37:38Z"
+    },
+    {
       "name": "Ranuk.dev",
       "full_name": "RanuK12/Ranuk.dev",
       "description": null,
@@ -104,7 +116,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-19T15:19:15Z"
+      "updated": "2026-04-20T23:35:06Z"
     },
     {
       "name": "Flight-Price-Alert",
@@ -116,7 +128,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-17T19:26:59Z"
+      "updated": "2026-04-20T16:23:43Z"
     },
     {
       "name": "GARYCIO_Project",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-04-16T01:40:41Z"
-    },
-    {
-      "name": "flights-alerts",
-      "full_name": "RanuK12/flights-alerts",
-      "description": null,
-      "url": "https://github.com/RanuK12/flights-alerts",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-15T15:50:13Z"
     }
   ]
 }
