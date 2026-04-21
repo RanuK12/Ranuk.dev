@@ -41,7 +41,7 @@
           "name": "Emilio Ranúcoli",
           "alternateName": "Emilio Ranucoli",
           "url": "https://ranuk.dev",
-          "image": "https://ranuk.dev/assets/profile.jpg",
+          "image": "https://ranuk.dev/assets/profile-optimized.jpg",
           "jobTitle": "Systems Engineer & Data Scientist",
           "sameAs": [
             "https://github.com/RanuK12",
@@ -54,6 +54,7 @@
           "@type": "Organization",
           "name": "Ranuk IT Solutions",
           "url": "https://ranuk.dev",
+          "logo": "https://ranuk.dev/assets/ranuk-badge.png",
           "founder": { "@type": "Person", "name": "Emilio Ranúcoli" },
           "description": "Estudio técnico: desarrollo full-stack, Machine Learning aplicado, auditorías ADA y soporte continuo."
         }
@@ -61,13 +62,16 @@
     }
     </script>
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%E2%9A%A1</text></svg>">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ranuk-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Inter (UI) + Fira Code (mono) + Fraunces (display serif para el registro narrativo: libro + hero) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=3.0">
+    <link rel="stylesheet" href="css/styles.css?v=3.2">
 
     <!-- GSAP + ScrollTrigger (defer: no bloquean el render. Fallback a Intersection Observer si no cargan) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -104,10 +108,9 @@
     <!-- ============ NAVIGATION ============ -->
     <nav id="navbar" class="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-bracket">{</span>
+            <a href="#hero" class="nav-logo nav-logo-brand">
+                <img src="assets/ranuk-icon.png" alt="Ranuk" class="nav-logo-img" width="32" height="32" loading="eager">
                 <span class="logo-text">ER</span>
-                <span class="logo-bracket">}</span>
             </a>
 
             <ul class="nav-menu">
@@ -257,6 +260,9 @@
                 <article class="story-act story-act-left">
                     <div class="story-knot story-knot-final"><span class="story-knot-num">III</span></div>
                     <div class="story-card story-card-final">
+                        <div class="story-card-profile">
+                            <img src="assets/profile-optimized.jpg" alt="Emilio Ranucoli" class="story-profile-img" width="400" height="193" loading="lazy">
+                        </div>
                         <div class="story-act-meta">
                             <span class="story-year">2024 → hoy</span>
                             <span class="story-place"><i class="fas fa-compass"></i> Ranuk IT · El libro · Lo que viene</span>
@@ -1129,6 +1135,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/ranuk-badge.png" alt="Ranuk IT" class="footer-badge" width="48" height="48" loading="lazy">
+                </div>
                 <div class="footer-social">
                     <a href="https://github.com/RanuK12" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/emilio-ranucoli" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
