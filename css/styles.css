@@ -4157,3 +4157,179 @@ body.ranuk-it-page .a11y-pricing {
     .a11y-plan-featured:hover { transform: translateY(-4px); }
 }
 
+
+/* =========================================================
+   Brand Image Integration — Nav Logo, Profile, Banner, Footer
+   ========================================================= */
+
+/* ---- Nav Logo Brand (main site) ---- */
+.nav-logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    transition: var(--transition);
+    filter: drop-shadow(0 0 6px rgba(100, 255, 218, 0.15));
+}
+
+.nav-logo-brand:hover .nav-logo-img,
+.nav-logo-ranuk:hover .nav-logo-img {
+    filter: drop-shadow(0 0 12px rgba(100, 255, 218, 0.4));
+    transform: scale(1.08);
+}
+
+/* Update existing ranuk nav logo to use the new img */
+.nav-logo-ranuk .nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+/* ---- Story Profile Photo (Capa III card) ---- */
+.story-card-profile {
+    margin: -1.5rem -1.5rem 1.25rem -1.5rem;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+}
+
+.story-card-profile::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+    pointer-events: none;
+}
+
+.story-profile-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: saturate(0.85) contrast(1.05);
+}
+
+.story-card-final:hover .story-profile-img {
+    transform: scale(1.03);
+    filter: saturate(1) contrast(1);
+}
+
+/* Fix story card final to accommodate the image */
+.story-card-final {
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.story-card-final .story-act-meta,
+.story-card-final .story-act-title,
+.story-card-final p,
+.story-card-final .story-tags {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.story-card-final .story-tags {
+    padding-bottom: 1.5rem;
+}
+
+/* ---- Footer Brand Badge ---- */
+.footer-brand {
+    margin-bottom: 0.5rem;
+}
+
+.footer-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--border);
+    transition: var(--transition);
+    filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.1));
+}
+
+.footer-badge:hover {
+    filter: drop-shadow(0 0 16px rgba(100, 255, 218, 0.3));
+    border-color: var(--accent);
+    transform: scale(1.08);
+}
+
+/* ---- Ranuk IT Hero Banner ---- */
+.ranuk-hero-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.ranuk-hero-banner-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.12;
+    filter: saturate(0.6);
+    transition: opacity 0.6s ease;
+}
+
+.ranuk-hero:hover .ranuk-hero-banner-img {
+    opacity: 0.18;
+}
+
+/* ---- Responsive adjustments for brand images ---- */
+@media (max-width: 768px) {
+    .nav-logo-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .story-card-profile {
+        margin: -1rem -1rem 1rem -1rem;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .story-card-final .story-act-meta,
+    .story-card-final .story-act-title,
+    .story-card-final p,
+    .story-card-final .story-tags {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .story-card-final .story-tags {
+        padding-bottom: 1rem;
+    }
+
+    .footer-badge {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ranuk-hero-banner-img {
+        max-width: 90%;
+        opacity: 0.08;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo-brand .logo-text {
+        font-size: 1rem;
+    }
+
+    .story-card-profile {
+        margin: -0.75rem -0.75rem 0.75rem -0.75rem;
+    }
+}
