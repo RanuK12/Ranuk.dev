@@ -40,19 +40,11 @@
     box-sizing: border-box;
 }
 
-/* Performance optimization: Reduce paint on scroll */
 html {
     scroll-behavior: smooth;
     font-size: 16px;
     scrollbar-width: thin;
     scrollbar-color: var(--accent) var(--bg-secondary);
-    will-change: scroll-position;
-}
-
-/* GPU acceleration for smooth animations */
-body {
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
 }
 
 ::-webkit-scrollbar { width: 8px; }
@@ -783,10 +775,6 @@ ul { list-style: none; }
 .section {
     padding: 100px 0;
     position: relative;
-    /* Performance optimization for scroll animations */
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 .section-title {
