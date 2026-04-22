@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-04-21T05:13:06.654Z",
+  "generated_at": "2026-04-22T05:12:04.228Z",
   "stats": {
-    "public_repos": 25,
+    "public_repos": 27,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-20T23:37:38Z"
+    "last_push": "2026-04-21T22:26:03Z"
   },
   "languages": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 2173505,
+      "bytes": 2174289,
       "pct": 0.9
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1028977,
+      "bytes": 1044257,
       "pct": 0.4
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 382827,
+      "bytes": 386567,
       "pct": 0.2
     },
     {
@@ -83,6 +83,18 @@
       "updated": "2025-06-13T15:47:19Z"
     },
     {
+      "name": "skills-copilot-codespaces-vscode",
+      "full_name": "RanuK12/skills-copilot-codespaces-vscode",
+      "description": "My clone repository",
+      "url": "https://github.com/RanuK12/skills-copilot-codespaces-vscode",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-21T17:28:43Z"
+    },
+    {
       "name": "eurobrico-web",
       "full_name": "RanuK12/eurobrico-web",
       "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
@@ -95,16 +107,16 @@
       "updated": "2026-02-20T16:33:39Z"
     },
     {
-      "name": "Ranuk-Outreach",
-      "full_name": "RanuK12/Ranuk-Outreach",
+      "name": "Flight-Price-Alert",
+      "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk-Outreach",
+      "url": "https://github.com/RanuK12/Flight-Price-Alert",
       "homepage": null,
-      "language": null,
+      "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-20T23:37:38Z"
+      "updated": "2026-04-21T22:26:03Z"
     },
     {
       "name": "Ranuk.dev",
@@ -116,31 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-20T23:35:06Z"
+      "updated": "2026-04-21T22:24:20Z"
     },
     {
-      "name": "Flight-Price-Alert",
-      "full_name": "RanuK12/Flight-Price-Alert",
+      "name": "skills-claude",
+      "full_name": "RanuK12/skills-claude",
       "description": null,
-      "url": "https://github.com/RanuK12/Flight-Price-Alert",
+      "url": "https://github.com/RanuK12/skills-claude",
       "homepage": null,
-      "language": "JavaScript",
+      "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-20T16:23:43Z"
-    },
-    {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
-      "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-16T01:40:41Z"
+      "updated": "2026-04-21T18:41:51Z"
     }
   ]
 }
