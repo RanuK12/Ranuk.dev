@@ -40,11 +40,19 @@
     box-sizing: border-box;
 }
 
+/* Performance optimization: Reduce paint on scroll */
 html {
     scroll-behavior: smooth;
     font-size: 16px;
     scrollbar-width: thin;
     scrollbar-color: var(--accent) var(--bg-secondary);
+    will-change: scroll-position;
+}
+
+/* GPU acceleration for smooth animations */
+body {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 ::-webkit-scrollbar { width: 8px; }
@@ -607,12 +615,44 @@ ul { list-style: none; }
 
 /* Nav link primario: Ranuk IT resaltado (es la sección de venta) */
 .nav-link-primary {
+    color: var(--accent-gold) !important;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.15), rgba(212, 165, 116, 0.05));
+    border: 1.5px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-left: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.2);
+}
+
+.nav-link-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link-primary:hover {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.25), rgba(212, 165, 116, 0.1));
+    border-color: var(--accent);
     color: var(--accent) !important;
-    font-weight: 600;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
+}
+
+.nav-link-primary:hover::before {
+    left: 100%;
 }
 
 .nav-link-primary::after {
-    background: var(--accent-gold);
+    display: none;
 }
 
 /* ---- Buttons ---- */
@@ -743,6 +783,10 @@ ul { list-style: none; }
 .section {
     padding: 100px 0;
     position: relative;
+    /* Performance optimization for scroll animations */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .section-title {
@@ -4230,7 +4274,6 @@ body.ranuk-it-page .a11y-pricing {
     overflow: hidden;
 }
 
-.story-card-final .story-act-meta,
 .story-card-final .story-act-title,
 .story-card-final p,
 .story-card-final .story-tags {
