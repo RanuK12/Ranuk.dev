@@ -241,6 +241,10 @@ git push origin main
 # Disponible en: https://ranuk.dev
 ```
 
+**Cache Busting Automático:** El proyecto incluye un sistema automático de cache busting que actualiza las versiones de CSS y JS en cada commit, asegurando que los cambios se reflejen inmediatamente sin necesidad de limpiar el caché manualmente.
+
+Ver [CACHE_BUSTING.md](CACHE_BUSTING.md) para más detalles.
+
 ### Otros Hostings
 
 Compatible con: Vercel, Netlify, Cloudflare Pages, AWS S3 + CloudFront, o cualquier servidor de archivos estático.
