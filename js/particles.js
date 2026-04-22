@@ -217,25 +217,13 @@ class Particle {
     }
 }
 
-// Initialize particle network with performance optimizations
-(function initParticles() {
-    const canvas = document.getElementById('particles-canvas');
-    if (!canvas) return;
+// Initialize particle network immediately
+window.particleNetwork = new ParticleNetwork('particles-canvas');
 
-    // Use requestIdleCallback for non-critical initialization
-    const init = () => {
-        window.particleNetwork = new ParticleNetwork('particles-canvas');
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
         window.particleNetwork.init();
-    };
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        // Defer initialization to avoid blocking main thread
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(init, { timeout: 1000 });
-        } else {
-            setTimeout(init, 100);
-        }
-    }
-})();
+    });
+} else {
+    window.particleNetwork.init();
+}
