@@ -217,13 +217,25 @@ class Particle {
     }
 }
 
-window.particleNetwork = new ParticleNetwork('particles-canvas');
+// Initialize particle network with performance optimizations
+(function initParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    if (!canvas) return;
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+    // Use requestIdleCallback for non-critical initialization
+    const init = () => {
+        window.particleNetwork = new ParticleNetwork('particles-canvas');
         window.particleNetwork.init();
-    });
-} else {
-    window.particleNetwork.init();
-}
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        // Defer initialization to avoid blocking main thread
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(init, { timeout: 1000 });
+        } else {
+            setTimeout(init, 100);
+        }
+    }
+})();
