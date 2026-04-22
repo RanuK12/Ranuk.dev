@@ -77,13 +77,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-    <!-- Performance optimization: Load critical JS first, defer others -->
-    <script src="js/app.js?v=2.2" defer></script>
-    <script src="js/particles.js?v=2.2" defer></script>
-    <script src="js/animations.js?v=2.2" defer></script>
-    <script src="js/ml-playground.js?v=2.2" defer></script>
+    <!-- Main Scripts -->
+    <script src="js/i18n.js?v=2.2"></script>
+    <script src="js/particles.js?v=2.2"></script>
+    <script src="js/animations.js?v=2.2"></script>
+    <script src="js/ml-playground.js?v=2.2"></script>
     <script src="js/github-feed.js?v=1.0" defer></script>
-    <script src="js/i18n.js?v=2.2" defer></script>
+    <script src="js/app.js?v=2.2"></script>
+
+    <!-- Hot Reload Script (solo para desarrollo - al final para no bloquear otros scripts) -->
+    <script>
+        (function() {
+            // Solo ejecutar en desarrollo local
+            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+                return;
+            }
+
+            // Verificar soporte de EventSource
+            if (!window.EventSource) {
+                console.log('⚠️ EventSource not supported in this browser');
+                return;
+            }
+
+            try {
+                const eventSource = new EventSource('/events');
+                eventSource.onmessage = function(event) {
+                    if (event.data === 'update') {
+                        console.log('🔄 Changes detected, reloading...');
+                        window.location.reload();
+                    }
+                };
+                eventSource.onerror = function() {
+                    console.log('⚠️ Hot reload server not available');
+                    eventSource.close();
+                };
+                console.log('✅ Hot reload enabled');
+            } catch (e) {
+                console.log('⚠️ Hot reload initialization failed:', e.message);
+            }
+        })();
+    </script>
+</body>
+</html>
 </head>
 <body>
 
