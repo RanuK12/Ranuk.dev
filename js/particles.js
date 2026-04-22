@@ -6,10 +6,9 @@
 
 class ParticleNetwork {
     constructor(canvasId) {
-        this.canvas = document.getElementById(canvasId);
-        if (!this.canvas) return;
-
-        this.ctx = this.canvas.getContext('2d');
+        this.canvasId = canvasId;
+        this.canvas = null;
+        this.ctx = null;
         this.particles = [];
         this.mouse = { x: null, y: null, radius: 150 };
         this.animationId = null;
@@ -38,7 +37,15 @@ class ParticleNetwork {
     }
 
     init() {
-        if (!this.canvas) return;
+        // Deferred canvas lookup — the script loads in <head> before <canvas> exists
+        if (!this.canvas) {
+            this.canvas = document.getElementById(this.canvasId);
+        }
+        if (!this.canvas) {
+            console.warn('[ParticleNetwork] Canvas #' + this.canvasId + ' not found');
+            return;
+        }
+        this.ctx = this.canvas.getContext('2d');
 
         this.resize();
         this.createParticles();
@@ -217,13 +224,5 @@ class Particle {
     }
 }
 
-// Initialize particle network immediately
+// Create instance globally so app.js can call .init() after DOM is ready
 window.particleNetwork = new ParticleNetwork('particles-canvas');
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.particleNetwork.init();
-    });
-} else {
-    window.particleNetwork.init();
-}
