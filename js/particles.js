@@ -218,3 +218,12 @@ class Particle {
 }
 
 window.particleNetwork = new ParticleNetwork('particles-canvas');
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.particleNetwork.init();
+    });
+} else {
+    window.particleNetwork.init();
+}
