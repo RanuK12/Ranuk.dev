@@ -178,7 +178,8 @@ ul { list-style: none; }
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.1s ease;
-    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
 }
 
 .cursor-follower {
@@ -190,7 +191,8 @@ ul { list-style: none; }
     pointer-events: none;
     z-index: 9998;
     transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
 }
 
 .cursor-follower.hover {
@@ -381,6 +383,7 @@ ul { list-style: none; }
     width: 100%;
     height: 100%;
     z-index: 0;
+    pointer-events: none;
 }
 
 .hero-content {
