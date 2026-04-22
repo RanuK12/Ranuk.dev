@@ -1,0 +1,31 @@
+{
+  "name": "ranuk.dev",
+  "version": "1.0.0",
+  "description": "Portfolio personal de Emilio Ranucoli - Ingeniero de Sistemas y Data Scientist",
+  "main": "index.html",
+  "homepage": "https://ranuk.dev",
+  "author": "Emilio Ranucoli",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RanuK12/Ranuk.dev.git"
+  },
+  "keywords": [
+    "portfolio",
+    "data-science",
+    "machine-learning",
+    "python",
+    "javascript",
+    "web-development"
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "dev:advanced": "node server-advanced.js",
+    "update-versions": "node update-versions.js",
+    "update-versions:bash": "./update-versions.sh",
+    "update-versions:smart": "node update-versions-smart.js",
+    "precommit": "node update-versions-smart.js && git add index.html"
+  },
+  "devDependencies": {}
+}
