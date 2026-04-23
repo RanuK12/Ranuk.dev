@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ12Q4Z375"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-QQ12Q4Z375');
-    </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ12Q4Z375" integrity="sha384-mufsqkbiiYPCgyPW4oxZWM2ZZKL9m8btW+vH4VHVqVEG4dQ0WKFOarkgbSmYPeJX" crossorigin="anonymous"></script>
+<script src="js/ga.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -19,7 +12,6 @@
     <meta name="description" content="Construyo sistemas, escalo empresas, decido con datos. Ingeniero de Sistemas y Data Scientist. Full-stack con foco en ML. Fundador de Ranuk IT Solutions. Autor.">
     <meta name="keywords" content="Emilio Ranucoli, Ranuk IT Solutions, Full Stack Developer, Machine Learning, Data Scientist, Ingeniero Sistemas, Python, Emprendedor, Escritor">
     <meta name="author" content="Emilio Ranucoli">
-
     <meta property="og:title" content="Emilio Ranucoli — Construyo sistemas. Escalo empresas. Decido con datos.">
     <meta property="og:description" content="Ingeniero, Data Scientist, fundador de Ranuk IT Solutions y autor. Del primer commit a la factura del cliente.">
     <meta property="og:type" content="website">
@@ -28,12 +20,10 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Ranuk IT Solutions">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Emilio Ranucoli — Construyo sistemas. Escalo empresas. Decido con datos.">
     <meta name="twitter:description" content="Ingeniero, Data Scientist, fundador de Ranuk IT Solutions y autor.">
     <meta name="twitter:image" content="https://ranuk.dev/assets/og-preview.png">
-
     <!-- Schema.org: Person + Organization (SEO estructurado) -->
     <script type="application/ld+json">
     {
@@ -64,7 +54,6 @@
       ]
     }
     </script>
-
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
@@ -73,58 +62,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Inter (UI) + Fira Code (mono) + Fraunces (display serif para el registro narrativo: libro + hero) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=1776902343">
-
-    <!-- GSAP + ScrollTrigger (defer: no bloquean el render. Fallback a Intersection Observer si no cargan) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css?v=1776907014">
+    <!-- GSAP + ScrollTrigger (SRI hashes applied) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
     <!-- Main Scripts -->
-    <script src="js/i18n.js?v=1776902343"></script>
-    <script src="js/particles.js?v=1776902343"></script>
-    <script src="js/animations.js?v=1776902343"></script>
-    <script src="js/ml-playground.js?v=1776902343"></script>
-    <script src="js/github-feed.js?v=1776902343" defer></script>
-    <script src="js/app.js?v=1776902343"></script>
-
-    <!-- Hot Reload Script (solo para desarrollo - al final para no bloquear otros scripts) -->
-    <script>
-        (function() {
-            // Solo ejecutar en desarrollo local
-            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                return;
-            }
-
-            // Verificar soporte de EventSource
-            if (!window.EventSource) {
-                console.log('⚠️ EventSource not supported in this browser');
-                return;
-            }
-
-            try {
-                const eventSource = new EventSource('/events');
-                eventSource.onmessage = function(event) {
-                    if (event.data === 'update') {
-                        console.log('🔄 Changes detected, reloading...');
-                        window.location.reload();
-                    }
-                };
-                eventSource.onerror = function() {
-                    console.log('⚠️ Hot reload server not available');
-                    eventSource.close();
-                };
-                console.log('✅ Hot reload enabled');
-            } catch (e) {
-                console.log('⚠️ Hot reload initialization failed:', e.message);
-            }
-        })();
-    </script>
-</head>
+    <script src="js/i18n.js?v=1776907014"></script>
+    <script src="js/particles.js?v=1776907014"></script>
+    <script src="js/animations.js?v=1776907014"></script>
+    <script src="js/ml-playground.js?v=1776907014"></script>
+    <script src="js/github-feed.js?v=1776907014" defer></script>
+    <script src="js/app.js?v=1776907014"></script>
+    </head>
 <body>
-
     <a href="#hero" class="skip-link">Skip to content</a>
-
     <!-- ============ PRELOADER ============ -->
     <div id="preloader">
         <div class="loader">
@@ -144,11 +96,9 @@
             </div>
         </div>
     </div>
-
     <!-- ============ CURSOR ============ -->
     <div class="custom-cursor"></div>
     <div class="cursor-follower"></div>
-
     <!-- ============ NAVIGATION ============ -->
     <nav id="navbar" class="navbar">
         <div class="nav-container">
@@ -157,7 +107,6 @@
                 <span class="logo-text">ER</span>
                 <span class="logo-bracket">}</span>
             </a>
-
             <ul class="nav-menu">
                 <li><a href="#story" class="nav-link" data-i18n="nav.story">Historia</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
@@ -167,7 +116,6 @@
                 <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
                 <li><a href="ranuk-it/" class="nav-link nav-link-primary" data-i18n="nav.ranuk"><i class="fas fa-building"></i> Ranuk IT <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 4px;"></i></a></li>
             </ul>
-
             <div class="nav-actions">
                 <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="en">EN</button>
@@ -182,7 +130,6 @@
             </div>
         </div>
     </nav>
-
     <!-- ============ HERO ============
          Headline nuevo: metáfora del tejido (eco del libro "Y así voy tejiendo mi camino").
          Tres líneas, tres identidades (código/cyan, empresa/naranja, historia/oro).
@@ -238,7 +185,6 @@
             <span data-i18n="hero.scroll">Seguir bajando</span>
         </a>
     </section>
-
     <!-- ============ ABOUT ============ -->
     <!-- ============ EL TEJIDO (Historia en 3 actos) ============
          La metáfora del libro hecha estructura: urdimbre / hilos cruzados / telar propio.
@@ -251,7 +197,6 @@
             <p class="section-subtitle story-lead" data-i18n="story.lead">
                 Cuatro países. Tres idiomas. Una manera de mirar el problema: pensarlo como sistema antes de escribir una línea.
             </p>
-
             <div class="story-timeline">
                 <!-- Hilo de oro vertical: SVG animado por scroll -->
                 <svg class="story-thread" viewBox="0 0 4 1000" preserveAspectRatio="none" aria-hidden="true">
@@ -264,7 +209,6 @@
                         </linearGradient>
                     </defs>
                 </svg>
-
                 <!-- ACT 1 — La urdimbre -->
                 <article class="story-act story-act-left">
                     <div class="story-knot"><span class="story-knot-num">I</span></div>
@@ -282,7 +226,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ACT 2 — Los hilos cruzados -->
                 <article class="story-act story-act-right">
                     <div class="story-knot"><span class="story-knot-num">II</span></div>
@@ -300,7 +243,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ACT 3 — El telar propio -->
                 <article class="story-act story-act-left">
                     <div class="story-knot story-knot-final"><span class="story-knot-num">III</span></div>
@@ -319,7 +261,6 @@
                     </div>
                 </article>
             </div>
-
             <!-- Coda: datos rápidos -->
             <div class="story-coda">
                 <div class="story-coda-item">
@@ -341,7 +282,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ SKILLS ============ -->
     <section id="skills" class="section skills">
         <div class="container">
@@ -377,7 +317,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
                         <i class="fas fa-brain"></i>
@@ -406,7 +345,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
                         <i class="fas fa-chart-bar"></i>
@@ -431,7 +369,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
                         <i class="fas fa-cloud"></i>
@@ -463,7 +400,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ EXPERIENCE ============ -->
     <section id="experience" class="section experience">
         <div class="container">
@@ -491,7 +427,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -512,7 +447,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -532,7 +466,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -552,7 +485,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -571,7 +503,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -594,7 +525,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ PROJECTS ============ -->
     <section id="projects" class="section projects">
         <div class="container">
@@ -609,7 +539,6 @@
                 <button class="filter-btn" data-filter="automation" data-i18n="projects.automation">Automation</button>
             </div>
             <div class="projects-grid">
-
                 <div class="project-card" data-category="python ml" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #f59e0b">
@@ -629,7 +558,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="python ml web" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #3b82f6">
@@ -649,7 +577,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="web automation" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #10b981">
@@ -669,7 +596,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="web automation" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #8b5cf6">
@@ -689,7 +615,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="python ml" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #ec4899">
@@ -709,7 +634,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="python ml" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #06b6d4">
@@ -729,7 +653,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="python automation" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #ef4444">
@@ -749,7 +672,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card" data-category="web" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #14b8a6">
@@ -770,7 +692,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="projects-cta">
                 <a href="https://github.com/RanuK12?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="projects.viewall">
                     View All Projects on GitHub <i class="fas fa-arrow-right"></i>
@@ -778,7 +699,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ OPEN LAB — GitHub live ============
          Auto-sync nightly via GitHub Action. Lee data/github.json (commiteado
          por el bot) y renderiza repos destacados + distribución de lenguajes.
@@ -799,7 +719,6 @@
                     <span>@RanuK12</span>
                 </a>
             </div>
-
             <!-- Stats cabecera (loaded por JS desde data/github.json) -->
             <div class="lab-stats" id="lab-stats">
                 <div class="lab-stat"><span class="lab-stat-num" data-stat="public_repos">—</span><span class="lab-stat-label" data-i18n="lab.stat_repos">repos públicos</span></div>
@@ -807,7 +726,6 @@
                 <div class="lab-stat"><span class="lab-stat-num" data-stat="total_stars">—</span><span class="lab-stat-label" data-i18n="lab.stat_stars">stars totales</span></div>
                 <div class="lab-stat"><span class="lab-stat-num" data-stat="last_push_relative">—</span><span class="lab-stat-label" data-i18n="lab.stat_lastpush">último push</span></div>
             </div>
-
             <div class="lab-grid">
                 <!-- Languages bar -->
                 <div class="lab-panel lab-languages">
@@ -819,7 +737,6 @@
                         <div class="lab-loading" data-i18n="lab.loading">Cargando datos…</div>
                     </div>
                 </div>
-
                 <!-- Featured repos -->
                 <div class="lab-panel lab-repos">
                     <h3 class="lab-panel-title">
@@ -831,14 +748,11 @@
                     </div>
                 </div>
             </div>
-
             <p class="lab-footnote" id="lab-footnote" data-i18n="lab.footnote">
                 Datos servidos desde <code>data/github.json</code> · regenerados nightly por GitHub Actions.
             </p>
         </div>
     </section>
-
-
     <!-- ============ ACCESSIBILITY AUDITS ============ -->
     <!-- ============ VOCES — testimonios ============
          Prueba social despues del bloque Ranuk IT. 1 real (Delfina Bugliotti,
@@ -852,7 +766,6 @@
             <p class="section-subtitle" data-i18n="voices.subtitle">
                 Lo que dicen los que trabajaron conmigo.
             </p>
-
             <div class="voices-grid">
                 <!-- TESTIMONIO 1 — Delfina Bugliotti (LinkedIn, real) -->
                 <article class="voice-card">
@@ -871,7 +784,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- TESTIMONIO 2 — Bahay Design (cliente, italiana arquitecta) -->
                 <article class="voice-card">
                     <div class="voice-quote-mark">"</div>
@@ -889,7 +801,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- TESTIMONIO 3 — NOT A ROBOT (cliente productora) -->
                 <article class="voice-card">
                     <div class="voice-quote-mark">"</div>
@@ -910,7 +821,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ ML LAB ============ -->
     <section id="ml-lab" class="section ml-lab">
         <div class="container">
@@ -978,7 +888,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ CERTIFICATIONS ============ -->
     <section id="certifications" class="section certifications">
         <div class="container">
@@ -1046,7 +955,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ EL LIBRO — Y así voy tejiendo mi camino ============
          La pieza emocional. CSS 3D book mockup + Kindle link real
          + PDF local descargable. Cierra la metafora del telar antes
@@ -1069,7 +977,6 @@
                         <div class="book-pages"></div>
                     </div>
                 </div>
-
                 <!-- Sinopsis + CTAs -->
                 <div class="book-content">
                     <span class="book-eyebrow" data-i18n="book.eyebrow">
@@ -1085,7 +992,6 @@
                     <p class="book-synopsis" data-i18n="book.synopsis">
                         Cuatro países, tres idiomas, una vida que se va armando entre Córdoba, el norte de Italia, Países Bajos y España. Conversaciones, derrotas pequeñas, gente que dejó marca. Si te gustó el resto del sitio, este libro es la versión sin tecnología.
                     </p>
-
                     <div class="book-actions">
                         <a href="https://www.amazon.com.au/AS%C3%8D-VOY-TEJIENDO-CAMINO-Spanish-ebook/dp/B0F6PFC457" target="_blank" rel="noopener" class="btn btn-primary btn-glow" data-i18n="book.cta_kindle">
                             <i class="fab fa-amazon"></i> Comprar en Kindle
@@ -1097,7 +1003,6 @@
                             <i class="fas fa-pen-fancy"></i> Pedir copia firmada
                         </a>
                     </div>
-
                     <p class="book-microcopy" data-i18n="book.microcopy">
                         Disponible en español. Edición italiana — <em>"E così tesso il mio cammino"</em> — en preparación.
                     </p>
@@ -1105,7 +1010,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="section contact">
         <div class="container">
@@ -1172,7 +1076,6 @@
             </div>
         </div>
     </section>
-
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="container">
@@ -1194,21 +1097,5 @@
         </div>
     </footer>
     <!-- Hot Reload Script (solo para desarrollo) -->
-    <script>
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            // Hot reload para desarrollo
-            const eventSource = new EventSource('/events');
-            eventSource.onmessage = function(event) {
-                if (event.data === 'update') {
-                    console.log('🔄 Changes detected, reloading...');
-                    window.location.reload();
-                }
-            };
-            eventSource.onerror = function() {
-                console.log('⚠️ Hot reload not available, using manual refresh');
-                eventSource.close();
-            };
-        }
-    </script>
 </body>
 </html>
