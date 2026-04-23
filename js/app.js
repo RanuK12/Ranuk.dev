@@ -62,7 +62,9 @@
                 `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
             );
 
-            window.location.href = `mailto:ranucoliemilio@gmail.com?subject=${subject}&body=${body}`;
+            // Email encoded in base64 to prevent scraping
+    const encodedEmail = atob('cmFudWNvbGllbWlsaW9AZ21haWwuY29t');
+    window.location.href = `mailto:${encodedEmail}?subject=${subject}&body=${body}`;
 
             form.reset();
         });

@@ -290,19 +290,28 @@ class MLPlayground {
         });
     }
 
-    showWarning(msg) {
-        const trainBtn = document.getElementById('ml-train');
-        if (!trainBtn) return;
-        const original = trainBtn.innerHTML;
-        trainBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + msg;
-        trainBtn.style.borderColor = '#f97316';
-        trainBtn.style.color = '#f97316';
-        setTimeout(() => {
-            trainBtn.innerHTML = original;
-            trainBtn.style.borderColor = '';
-            trainBtn.style.color = '';
-        }, 2500);
-    }
+
+  showWarning(msg) {
+    const trainBtn = document.getElementById('ml-train');
+    if (!trainBtn) return;
+    const originalHtml = trainBtn.innerHTML;
+
+    // DOM-based approach to avoid innerHTML with dynamic content (XSS prevention)
+    trainBtn.innerHTML = '';
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-exclamation-triangle';
+    trainBtn.appendChild(icon);
+    trainBtn.appendChild(document.createTextNode(' ' + msg));
+
+    trainBtn.style.borderColor = '#f97316';
+    trainBtn.style.color = '#f97316';
+    setTimeout(() => {
+      trainBtn.innerHTML = originalHtml;
+      trainBtn.style.borderColor = '';
+      trainBtn.style.color = '';
+    }, 2500);
+  }
+
 
     async train() {
         if (this.isTraining) return;
