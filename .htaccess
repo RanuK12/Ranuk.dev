@@ -1,0 +1,91 @@
+# ============================================================================
+# .htaccess — Apache security configuration
+# Place this file in the root of your site (if using Apache)
+# ============================================================================
+
+# Disable server signature
+ServerSignature Off
+
+# Disable directory listing
+Options -Indexes
+
+# Enable rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Block access to sensitive files
+    RewriteRule ^(\.|git|env|config|md|log|sh|htaccess|htpasswd) - [F]
+    RewriteRule (package\.json|server.*\.js|update-versions.*|hot-reload.*) - [F]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;"
+
+    # HSTS
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # X-Frame-Options
+    Header always set X-Frame-Options "DENY"
+
+    # X-Content-Type-Options
+    Header always set X-Content-Type-Options "nosniff"
+
+    # X-XSS-Protection
+    Header always set X-XSS-Protection "0"
+
+    # Referrer-Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions-Policy
+    Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), vr=(), battery=(), ambient-light-sensor=(), autoplay=(self)"
+
+    # Cross-Origin policies
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Embedder-Policy "require-corp"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache control for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+
+    # HTML (no cache)
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Disable ETags
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
