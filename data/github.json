@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-04-22T05:12:04.228Z",
+  "generated_at": "2026-04-23T05:14:19.393Z",
   "stats": {
     "public_repos": 27,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-21T22:26:03Z"
+    "last_push": "2026-04-23T04:45:54Z"
   },
   "languages": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 2174289,
+      "bytes": 2166816,
       "pct": 0.9
     },
     {
@@ -35,8 +35,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1044257,
-      "pct": 0.4
+      "bytes": 1095225,
+      "pct": 0.5
     },
     {
       "name": "C++",
@@ -45,12 +45,12 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 706478,
+      "bytes": 747756,
       "pct": 0.3
     },
     {
       "name": "CSS",
-      "bytes": 386567,
+      "bytes": 387561,
       "pct": 0.2
     },
     {
@@ -95,18 +95,6 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
-      "name": "eurobrico-web",
-      "full_name": "RanuK12/eurobrico-web",
-      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
-      "url": "https://github.com/RanuK12/eurobrico-web",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-02-20T16:33:39Z"
-    },
-    {
       "name": "Flight-Price-Alert",
       "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
@@ -116,7 +104,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-21T22:26:03Z"
+      "updated": "2026-04-23T04:45:54Z"
     },
     {
       "name": "Ranuk.dev",
@@ -128,19 +116,31 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-21T22:24:20Z"
+      "updated": "2026-04-23T03:21:15Z"
     },
     {
-      "name": "skills-claude",
-      "full_name": "RanuK12/skills-claude",
+      "name": "GARYCIO_Project",
+      "full_name": "RanuK12/GARYCIO_Project",
       "description": null,
-      "url": "https://github.com/RanuK12/skills-claude",
+      "url": "https://github.com/RanuK12/GARYCIO_Project",
       "homepage": null,
-      "language": null,
+      "language": "TypeScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-21T18:41:51Z"
+      "updated": "2026-04-22T22:16:21Z"
+    },
+    {
+      "name": "eurobrico-web",
+      "full_name": "RanuK12/eurobrico-web",
+      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
+      "url": "https://github.com/RanuK12/eurobrico-web",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-02-20T16:33:39Z"
     }
   ]
 }
