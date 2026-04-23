@@ -5,9 +5,16 @@
 # ============================================================================
 
 /*
-  # Content Security Policy - Blocks XSS, injection attacks
-  # Note: 'unsafe-inline' removed from script-src after moving GA to external file
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;
+  # Content Security Policy - Blocks XSS attacks with enhanced directives
+  # Added require-trusted-types-for 'script' for XSS defense
+  # Added Report-To for violation monitoring
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io mailto:; upgrade-insecure-requests; require-trusted-types-for 'script';
+
+  # Report-To for CSP monitoring (modern replacement for report-uri)
+  Report-To: {"group":"csp-endpoint","max_age":31536000,"endpoints":[{"url":"https://ranuk.dev/.netlify/functions/csp-report"}]}
+
+  # NEL for network error logging
+  NEL: {"report_to":"csp-endpoint","max_age":31536000}
 
   # HSTS - Forces HTTPS for 2 years including subdomains
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
@@ -18,14 +25,14 @@
   # X-Content-Type-Options - Prevents MIME type sniffing
   X-Content-Type-Options: nosniff
 
+  # X-XSS-Protection - Enabled for legacy browsers
+  X-XSS-Protection: 1; mode=block
+
   # Referrer-Policy - Controls referrer information leakage
   Referrer-Policy: strict-origin-when-cross-origin
 
   # Permissions-Policy - Restricts browser features
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), vr=(), battery=(), ambient-light-sensor=(), autoplay=(self)
-
-  # X-XSS-Protection - Legacy browser protection (disabled as CSP handles this)
-  X-XSS-Protection: 0
 
   # Cross-Origin policies
   Cross-Origin-Resource-Policy: same-origin
@@ -35,41 +42,28 @@
 # Cache headers for static assets
 /*.js
   Cache-Control: public, max-age=31536000, immutable
-
 /*.css
   Cache-Control: public, max-age=31536000, immutable
-
 /*.png
   Cache-Control: public, max-age=31536000, immutable
-
 /*.jpg
   Cache-Control: public, max-age=31536000, immutable
-
 /*.jpeg
   Cache-Control: public, max-age=31536000, immutable
-
 /*.gif
   Cache-Control: public, max-age=31536000, immutable
-
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
-
 /*.ico
   Cache-Control: public, max-age=31536000, immutable
-
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
-
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
-
 /*.ttf
   Cache-Control: public, max-age=31536000, immutable
-
 /*.json
   Cache-Control: public, max-age=3600
-
-# HTML files - no cache for dynamic content
 /*.html
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
   Pragma: no-cache
