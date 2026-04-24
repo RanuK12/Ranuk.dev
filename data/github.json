@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-04-23T05:14:19.393Z",
+  "generated_at": "2026-04-24T05:17:45.461Z",
   "stats": {
-    "public_repos": 27,
+    "public_repos": 26,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-23T04:45:54Z"
+    "last_push": "2026-04-23T20:39:20Z"
   },
   "languages": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1095225,
+      "bytes": 1095274,
       "pct": 0.5
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 747756,
+      "bytes": 759722,
       "pct": 0.3
     },
     {
@@ -95,6 +95,18 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
+      "name": "GARYCIO_Project",
+      "full_name": "RanuK12/GARYCIO_Project",
+      "description": null,
+      "url": "https://github.com/RanuK12/GARYCIO_Project",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-23T20:39:20Z"
+    },
+    {
       "name": "Flight-Price-Alert",
       "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
@@ -104,7 +116,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-23T04:45:54Z"
+      "updated": "2026-04-23T15:54:59Z"
     },
     {
       "name": "Ranuk.dev",
@@ -116,19 +128,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-23T03:21:15Z"
-    },
-    {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
-      "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-22T22:16:21Z"
+      "updated": "2026-04-23T05:14:20Z"
     },
     {
       "name": "eurobrico-web",
