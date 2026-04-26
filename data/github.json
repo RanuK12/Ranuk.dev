@@ -1,61 +1,61 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-04-25T05:02:51.601Z",
+  "generated_at": "2026-04-26T05:20:30.009Z",
   "stats": {
     "public_repos": 26,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-24T05:17:46Z"
+    "last_push": "2026-04-25T19:30:44Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 225438951,
-      "pct": 93.7
+      "bytes": 178353062,
+      "pct": 92.5
     },
     {
       "name": "Cython",
       "bytes": 4417714,
-      "pct": 1.8
+      "pct": 2.3
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 2735298,
-      "pct": 1.1
+      "pct": 1.4
     },
     {
       "name": "HTML",
-      "bytes": 2166816,
-      "pct": 0.9
+      "bytes": 1909917,
+      "pct": 1
     },
     {
       "name": "C",
       "bytes": 1907090,
-      "pct": 0.8
-    },
-    {
-      "name": "JavaScript",
-      "bytes": 1095274,
-      "pct": 0.5
+      "pct": 1
     },
     {
       "name": "C++",
       "bytes": 1019392,
-      "pct": 0.4
+      "pct": 0.5
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 882461,
+      "pct": 0.5
     },
     {
       "name": "TypeScript",
-      "bytes": 759722,
-      "pct": 0.3
-    },
-    {
-      "name": "CSS",
-      "bytes": 387561,
-      "pct": 0.2
+      "bytes": 859479,
+      "pct": 0.4
     },
     {
       "name": "PowerShell",
-      "bytes": 349115,
+      "bytes": 246327,
+      "pct": 0.1
+    },
+    {
+      "name": "CSS",
+      "bytes": 220853,
       "pct": 0.1
     },
     {
@@ -95,18 +95,6 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-24T05:17:46Z"
-    },
-    {
       "name": "GARYCIO_Project",
       "full_name": "RanuK12/GARYCIO_Project",
       "description": null,
@@ -116,7 +104,31 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-23T20:39:20Z"
+      "updated": "2026-04-25T19:30:44Z"
+    },
+    {
+      "name": "SkyMailer",
+      "full_name": "RanuK12/SkyMailer",
+      "description": null,
+      "url": "https://github.com/RanuK12/SkyMailer",
+      "homepage": "https://sky-mailer.vercel.app",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-25T05:45:05Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-25T05:02:52Z"
     },
     {
       "name": "Flight-Price-Alert",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-04-23T15:54:59Z"
-    },
-    {
-      "name": "eurobrico-web",
-      "full_name": "RanuK12/eurobrico-web",
-      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
-      "url": "https://github.com/RanuK12/eurobrico-web",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-02-20T16:33:39Z"
     }
   ]
 }
