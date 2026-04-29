@@ -857,6 +857,16 @@ class I18n {
     }
 
     init() {
+        // If this page has no language switcher AND no data-i18n elements,
+        // it's a single-language page (e.g. /ranuk-it/, /ranuk-it/ada/).
+        // Respect its hardcoded <html lang> — don't override from localStorage.
+        const hasSwitcher = document.querySelector('.lang-btn');
+        const hasI18nNodes = document.querySelector('[data-i18n]');
+        if (!hasSwitcher && !hasI18nNodes) {
+            this.currentLang = document.documentElement.lang || this.currentLang;
+            return;
+        }
+
         // Sync button active states with stored language
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
