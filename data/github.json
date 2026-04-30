@@ -1,16 +1,16 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-04-29T05:27:10.428Z",
+  "generated_at": "2026-04-30T05:27:48.111Z",
   "stats": {
     "public_repos": 28,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-29T00:51:06Z"
+    "last_push": "2026-04-30T04:35:54Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 178353062,
+      "bytes": 178354523,
       "pct": 92.4
     },
     {
@@ -40,12 +40,12 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 956253,
+      "bytes": 959621,
       "pct": 0.5
     },
     {
       "name": "JavaScript",
-      "bytes": 896165,
+      "bytes": 900276,
       "pct": 0.5
     },
     {
@@ -95,16 +95,40 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
+      "name": "Flight-Price-Alert",
+      "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "url": "https://github.com/RanuK12/Flight-Price-Alert",
       "homepage": null,
       "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-29T00:51:06Z"
+      "updated": "2026-04-30T04:35:54Z"
+    },
+    {
+      "name": "SkyMailer",
+      "full_name": "RanuK12/SkyMailer",
+      "description": null,
+      "url": "https://github.com/RanuK12/SkyMailer",
+      "homepage": "https://sky-mailer.vercel.app",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-30T00:14:14Z"
+    },
+    {
+      "name": "RanuK12",
+      "full_name": "RanuK12/RanuK12",
+      "description": null,
+      "url": "https://github.com/RanuK12/RanuK12",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-04-29T16:31:06Z"
     },
     {
       "name": "GARYCIO_Project",
@@ -116,31 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-28T21:58:19Z"
-    },
-    {
-      "name": "Ranuk_Orbit",
-      "full_name": "RanuK12/Ranuk_Orbit",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk_Orbit",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-28T15:54:50Z"
-    },
-    {
-      "name": "Flight-Price-Alert",
-      "full_name": "RanuK12/Flight-Price-Alert",
-      "description": null,
-      "url": "https://github.com/RanuK12/Flight-Price-Alert",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-28T15:44:59Z"
+      "updated": "2026-04-29T16:29:16Z"
     }
   ]
 }
