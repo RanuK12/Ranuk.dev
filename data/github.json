@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-01T05:29:41.137Z",
+  "generated_at": "2026-05-02T05:19:36.858Z",
   "stats": {
     "public_repos": 28,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-04-30T21:39:20Z"
+    "last_push": "2026-05-01T16:46:50Z"
   },
   "languages": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 959621,
+      "bytes": 976457,
       "pct": 0.5
     },
     {
@@ -95,6 +95,30 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
+      "name": "GARYCIO_Project",
+      "full_name": "RanuK12/GARYCIO_Project",
+      "description": null,
+      "url": "https://github.com/RanuK12/GARYCIO_Project",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-01T16:46:50Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-01T05:29:41Z"
+    },
+    {
       "name": "Flight-Price-Alert",
       "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
@@ -117,30 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-04-30T17:56:38Z"
-    },
-    {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-30T05:27:48Z"
-    },
-    {
-      "name": "SkyMailer",
-      "full_name": "RanuK12/SkyMailer",
-      "description": null,
-      "url": "https://github.com/RanuK12/SkyMailer",
-      "homepage": "https://sky-mailer.vercel.app",
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-30T00:14:14Z"
     }
   ]
 }
