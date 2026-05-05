@@ -202,10 +202,13 @@ ul { list-style: none; }
     background: rgba(100, 255, 218, 0.05);
 }
 
-@media (pointer: coarse) {
+@media (hover: none), (pointer: coarse) {
     .custom-cursor,
     .cursor-follower { display: none; }
-    body { cursor: auto; }
+    body, body * { cursor: auto; }
+    a, button, [role="button"], input[type="submit"], .btn,
+    .filter-btn, .lang-btn, .nav-link, .nav-toggle, .class-btn,
+    .contact-link, .scroll-indicator { cursor: pointer; }
 }
 
 /* ---- Dot indicators ---- */
@@ -711,6 +714,9 @@ ul { list-style: none; }
     font-weight: 800;
     color: var(--accent);
     font-family: var(--font-mono);
+    display: inline-block;
+    min-width: 2ch;
+    font-variant-numeric: tabular-nums;
 }
 
 .stat-plus {
@@ -4369,4 +4375,32 @@ body.ranuk-it-page .a11y-pricing {
     .story-card-profile {
         margin: -0.75rem -0.75rem 0.75rem -0.75rem;
     }
+}
+
+/* =========================================================
+   prefers-reduced-motion — global catch-all (WCAG 2.3.3)
+   Respeta usuarios con vestibular disorders o preferencia explícita.
+   Mantiene transitions cortas para feedback (focus/hover) pero
+   neutraliza animaciones largas, parallax y el preloader artificial.
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .custom-cursor,
+    .cursor-follower,
+    #particles-canvas,
+    .scroll-indicator,
+    .blink,
+    .glitch::before,
+    .glitch::after { display: none !important; }
+    html { scroll-behavior: auto !important; }
+    .book-3d,
+    .hero-name-mini,
+    .loader-line { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
