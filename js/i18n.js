@@ -852,7 +852,9 @@ const translations = {
 
 class I18n {
     constructor() {
-        this.currentLang = localStorage.getItem('ranuk-lang') || 'en';
+        this.currentLang = localStorage.getItem('ranuk-lang')
+            || document.documentElement.lang
+            || 'en';
         this.listeners = [];
     }
 
@@ -869,7 +871,9 @@ class I18n {
 
         // Sync button active states with stored language
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
+            const isActive = btn.dataset.lang === this.currentLang;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', String(isActive));
         });
         document.documentElement.lang = this.currentLang;
         this.applyTranslations();
@@ -891,7 +895,9 @@ class I18n {
         localStorage.setItem('ranuk-lang', lang);
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
+            const isActive = btn.dataset.lang === lang;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', String(isActive));
         });
 
         document.documentElement.lang = lang;
