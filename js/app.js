@@ -7,14 +7,25 @@
     'use strict';
 
     // ---- Preloader ----
+    // Antes: 3.2s artificiales. Ahora: oculta apenas window.load + min visual de
+    // 400ms para que la animación de las líneas alcance a verse en conexiones
+    // rápidas. Si reduce-motion está activo, oculta inmediato.
     function hidePreloader() {
         const preloader = document.getElementById('preloader');
-        if (preloader) {
+        if (!preloader) return;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const minDelay = reduceMotion ? 0 : 400;
+        const start = performance.now();
+        const finish = () => {
+            const elapsed = performance.now() - start;
+            const wait = Math.max(0, minDelay - elapsed);
             setTimeout(() => {
                 preloader.classList.add('loaded');
                 setTimeout(() => preloader.remove(), 500);
-            }, 3200);
-        }
+            }, wait);
+        };
+        if (document.readyState === 'complete') finish();
+        else window.addEventListener('load', finish, { once: true });
     }
 
     // ---- Smooth scroll for anchor links ----
