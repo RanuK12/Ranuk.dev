@@ -73,6 +73,9 @@ const translations = {
         "skills.datascience": "Data Science & ML",
         "skills.bi": "BI & Analytics",
         "skills.cloud": "Cloud & DevOps",
+        "skills.lvl_expert": "Expert",
+        "skills.lvl_advanced": "Advanced",
+        "skills.lvl_working": "Working",
 
         // Experience
         "experience.title": '<span class="title-number">03.</span> Experience',
@@ -357,6 +360,9 @@ const translations = {
         "skills.datascience": "Ciencia de Datos & ML",
         "skills.bi": "BI & An\u00e1lisis",
         "skills.cloud": "Cloud & DevOps",
+        "skills.lvl_expert": "Experto",
+        "skills.lvl_advanced": "Avanzado",
+        "skills.lvl_working": "B\u00e1sico",
 
         "experience.title": '<span class="title-number">03.</span> Experiencia',
         "exp.booking1": "Lider\u00e9 el desarrollo de un sistema de optimizaci\u00f3n de precios din\u00e1micos usando Python, Scikit-learn, XGBoost y redes neuronales para ajustes de precios en tiempo real.",
@@ -635,6 +641,9 @@ const translations = {
         "skills.datascience": "Data Science & ML",
         "skills.bi": "BI & Analisi",
         "skills.cloud": "Cloud & DevOps",
+        "skills.lvl_expert": "Esperto",
+        "skills.lvl_advanced": "Avanzato",
+        "skills.lvl_working": "Base",
 
         "experience.title": '<span class="title-number">03.</span> Esperienza',
         "exp.booking1": "Ho guidato lo sviluppo di un sistema di ottimizzazione dei prezzi dinamici usando Python, Scikit-learn, XGBoost e reti neurali per aggiustamenti in tempo reale.",

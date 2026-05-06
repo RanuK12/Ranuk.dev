@@ -194,7 +194,16 @@ class NavController {
     init() {
         if (!this.navbar) return;
 
-        window.addEventListener('scroll', () => this.onScroll());
+        // rAF-throttled scroll: evita reflows por evento, mejora INP en mobile.
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                this.onScroll();
+                ticking = false;
+            });
+        }, { passive: true });
 
         if (this.toggle && this.menu) {
             this.toggle.addEventListener('click', () => this.toggleMenu());
@@ -203,7 +212,10 @@ class NavController {
         this.links.forEach(link => {
             link.addEventListener('click', () => {
                 if (this.menu) this.menu.classList.remove('open');
-                if (this.toggle) this.toggle.classList.remove('active');
+                if (this.toggle) {
+                    this.toggle.classList.remove('active');
+                    this.toggle.setAttribute('aria-expanded', 'false');
+                }
             });
         });
 
@@ -241,8 +253,9 @@ class NavController {
     }
 
     toggleMenu() {
-        this.menu.classList.toggle('open');
-        this.toggle.classList.toggle('active');
+        const isOpen = this.menu.classList.toggle('open');
+        this.toggle.classList.toggle('active', isOpen);
+        this.toggle.setAttribute('aria-expanded', String(isOpen));
     }
 }
 
