@@ -105,7 +105,7 @@
                 <span class="logo-text">ER</span>
                 <span class="logo-bracket">}</span>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#story" class="nav-link" data-i18n="nav.story">Historia</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
                 <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
@@ -120,7 +120,7 @@
                     <button class="lang-btn active" data-lang="es" aria-pressed="true" lang="es">ES</button>
                     <button class="lang-btn" data-lang="it" aria-pressed="false" lang="it">IT</button>
                 </div>
-                <button class="nav-toggle" aria-label="Toggle menu">
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -290,111 +290,54 @@
             <div class="skills-grid">
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-code" aria-hidden="true"></i>
                         <h3 data-i18n="skills.programming">Programming</h3>
                     </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Python</span><span>95%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="95"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>SQL</span><span>90%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="90"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="80"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>HTML / CSS</span><span>85%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Java / C#</span><span>60%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="60"></div></div>
-                        </div>
-                    </div>
+                    <ul class="skill-chips">
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">Python</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">SQL</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">JavaScript</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">HTML / CSS</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-working"><span class="skill-chip-name">Java / C#</span><span class="skill-chip-level" data-i18n="skills.lvl_working">Working</span></li>
+                    </ul>
                 </div>
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <h3 data-i18n="skills.datascience">Data Science & ML</h3>
                     </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Pandas / NumPy</span><span>95%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="95"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Scikit-learn</span><span>90%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="90"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>TensorFlow / Keras</span><span>80%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="80"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Data Wrangling / ETL</span><span>92%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="92"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Statistical Analysis</span><span>85%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
-                        </div>
-                    </div>
+                    <ul class="skill-chips">
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">Pandas / NumPy</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">Scikit-learn</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">Data Wrangling / ETL</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">Statistical Analysis</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">TensorFlow / Keras</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                    </ul>
                 </div>
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-chart-bar" aria-hidden="true"></i>
                         <h3 data-i18n="skills.bi">BI & Analytics</h3>
                     </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Power BI / DAX</span><span>95%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="95"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Tableau</span><span>85%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Looker / Google Analytics</span><span>75%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="75"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Excel / Advanced</span><span>90%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="90"></div></div>
-                        </div>
-                    </div>
+                    <ul class="skill-chips">
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">Power BI / DAX</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-expert"><span class="skill-chip-name">Excel / Advanced</span><span class="skill-chip-level" data-i18n="skills.lvl_expert">Expert</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">Tableau</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-working"><span class="skill-chip-name">Looker / Google Analytics</span><span class="skill-chip-level" data-i18n="skills.lvl_working">Working</span></li>
+                    </ul>
                 </div>
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fas fa-cloud" aria-hidden="true"></i>
                         <h3 data-i18n="skills.cloud">Cloud & DevOps</h3>
                     </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>AWS</span><span>80%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="80"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Docker / Kubernetes</span><span>75%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="75"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Git / CI-CD</span><span>88%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="88"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>Azure / GCP</span><span>65%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="65"></div></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info"><span>PostgreSQL / MongoDB</span><span>85%</span></div>
-                            <div class="skill-progress"><div class="progress-fill" data-width="85"></div></div>
-                        </div>
-                    </div>
+                    <ul class="skill-chips">
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">Git / CI-CD</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">PostgreSQL / MongoDB</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-advanced"><span class="skill-chip-name">AWS</span><span class="skill-chip-level" data-i18n="skills.lvl_advanced">Advanced</span></li>
+                        <li class="skill-chip skill-chip-working"><span class="skill-chip-name">Docker / Kubernetes</span><span class="skill-chip-level" data-i18n="skills.lvl_working">Working</span></li>
+                        <li class="skill-chip skill-chip-working"><span class="skill-chip-name">Azure / GCP</span><span class="skill-chip-level" data-i18n="skills.lvl_working">Working</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
