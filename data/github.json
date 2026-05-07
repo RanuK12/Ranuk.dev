@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-06T05:27:23.403Z",
+  "generated_at": "2026-05-07T05:27:57.938Z",
   "stats": {
-    "public_repos": 28,
+    "public_repos": 27,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-05-06T03:21:36Z"
+    "last_push": "2026-05-07T05:08:35Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 178354523,
-      "pct": 92.4
+      "pct": 92.3
     },
     {
       "name": "Cython",
@@ -25,7 +25,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 1907558,
+      "bytes": 1981766,
       "pct": 1
     },
     {
@@ -34,18 +34,18 @@
       "pct": 1
     },
     {
+      "name": "JavaScript",
+      "bytes": 1046715,
+      "pct": 0.5
+    },
+    {
       "name": "C++",
       "bytes": 1019392,
       "pct": 0.5
     },
     {
       "name": "TypeScript",
-      "bytes": 976457,
-      "pct": 0.5
-    },
-    {
-      "name": "JavaScript",
-      "bytes": 906762,
+      "bytes": 991244,
       "pct": 0.5
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 223236,
+      "bytes": 235312,
       "pct": 0.1
     },
     {
@@ -95,16 +95,16 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
+      "name": "Ranuk_Orbit",
+      "full_name": "RanuK12/Ranuk_Orbit",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "url": "https://github.com/RanuK12/Ranuk_Orbit",
       "homepage": null,
       "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-06T03:21:36Z"
+      "updated": "2026-05-07T05:08:35Z"
     },
     {
       "name": "GARYCIO_Project",
@@ -116,7 +116,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-01T16:46:50Z"
+      "updated": "2026-05-06T20:24:15Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-06T05:27:24Z"
     },
     {
       "name": "Flight-Price-Alert",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-04-30T21:39:20Z"
-    },
-    {
-      "name": "Bahay_Web",
-      "full_name": "RanuK12/Bahay_Web",
-      "description": null,
-      "url": "https://github.com/RanuK12/Bahay_Web",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-04-30T17:56:38Z"
     }
   ]
 }
