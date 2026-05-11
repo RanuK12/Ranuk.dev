@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-10T05:28:51.117Z",
+  "generated_at": "2026-05-11T05:40:04.329Z",
   "stats": {
     "public_repos": 27,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-05-10T04:42:49Z"
+    "last_push": "2026-05-11T04:11:35Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 178357067,
-      "pct": 92.1
+      "pct": 92
     },
     {
       "name": "Cython",
@@ -25,7 +25,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 2315680,
+      "bytes": 2338474,
       "pct": 1.2
     },
     {
@@ -35,7 +35,12 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1143868,
+      "bytes": 1157670,
+      "pct": 0.6
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 1125111,
       "pct": 0.6
     },
     {
@@ -44,18 +49,13 @@
       "pct": 0.5
     },
     {
-      "name": "TypeScript",
-      "bytes": 991244,
-      "pct": 0.5
+      "name": "CSS",
+      "bytes": 257250,
+      "pct": 0.1
     },
     {
       "name": "PowerShell",
       "bytes": 246327,
-      "pct": 0.1
-    },
-    {
-      "name": "CSS",
-      "bytes": 238755,
       "pct": 0.1
     },
     {
@@ -104,19 +104,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-10T04:42:49Z"
-    },
-    {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
-      "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-10T04:32:13Z"
+      "updated": "2026-05-11T04:11:35Z"
     },
     {
       "name": "Bahay_Web",
@@ -128,19 +116,31 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-10T04:20:08Z"
+      "updated": "2026-05-10T16:08:08Z"
     },
     {
-      "name": "Flight-Price-Alert",
-      "full_name": "RanuK12/Flight-Price-Alert",
+      "name": "GARYCIO_Project",
+      "full_name": "RanuK12/GARYCIO_Project",
       "description": null,
-      "url": "https://github.com/RanuK12/Flight-Price-Alert",
+      "url": "https://github.com/RanuK12/GARYCIO_Project",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-10T15:57:51Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
       "homepage": null,
       "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-09T18:01:27Z"
+      "updated": "2026-05-10T05:28:51Z"
     }
   ]
 }
