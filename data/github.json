@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-13T05:34:16.470Z",
+  "generated_at": "2026-05-14T05:34:16.129Z",
   "stats": {
     "public_repos": 28,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-05-13T02:07:20Z"
+    "last_push": "2026-05-13T21:28:50Z"
   },
   "languages": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1159532,
+      "bytes": 1192541,
       "pct": 0.6
     },
     {
@@ -95,40 +95,28 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
-      "name": "Bahay_Web",
-      "full_name": "RanuK12/Bahay_Web",
+      "name": "Ranuk_Orbit",
+      "full_name": "RanuK12/Ranuk_Orbit",
       "description": null,
-      "url": "https://github.com/RanuK12/Bahay_Web",
+      "url": "https://github.com/RanuK12/Ranuk_Orbit",
       "homepage": null,
       "language": "HTML",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-13T02:07:20Z"
+      "updated": "2026-05-13T21:28:50Z"
     },
     {
-      "name": "Ranuk-Copy-Trading",
-      "full_name": "RanuK12/Ranuk-Copy-Trading",
+      "name": "Flight-Price-Alert",
+      "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
+      "url": "https://github.com/RanuK12/Flight-Price-Alert",
       "homepage": null,
-      "language": "Python",
+      "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-12T20:37:22Z"
-    },
-    {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
-      "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-12T15:54:25Z"
+      "updated": "2026-05-13T21:11:41Z"
     },
     {
       "name": "Ranuk.dev",
@@ -140,7 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-12T05:29:01Z"
+      "updated": "2026-05-13T05:34:17Z"
+    },
+    {
+      "name": "Bahay_Web",
+      "full_name": "RanuK12/Bahay_Web",
+      "description": null,
+      "url": "https://github.com/RanuK12/Bahay_Web",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-13T02:07:20Z"
     }
   ]
 }
