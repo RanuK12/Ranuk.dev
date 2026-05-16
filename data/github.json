@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-15T05:37:31.373Z",
+  "generated_at": "2026-05-16T05:26:55.172Z",
   "stats": {
     "public_repos": 28,
     "total_stars": 1,
     "languages_count": 26,
-    "last_push": "2026-05-15T05:32:01Z"
+    "last_push": "2026-05-15T20:10:05Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 178639994,
-      "pct": 92.1
+      "pct": 92
     },
     {
       "name": "Cython",
@@ -25,7 +25,7 @@
     },
     {
       "name": "HTML",
-      "bytes": 2070425,
+      "bytes": 2086625,
       "pct": 1.1
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1188418,
+      "bytes": 1209463,
       "pct": 0.6
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 340413,
+      "bytes": 346432,
       "pct": 0.2
     },
     {
@@ -104,19 +104,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-15T05:32:01Z"
-    },
-    {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-14T05:34:16Z"
+      "updated": "2026-05-15T20:10:05Z"
     },
     {
       "name": "Flight-Price-Alert",
@@ -128,7 +116,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-13T21:11:41Z"
+      "updated": "2026-05-15T05:54:42Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-15T05:37:32Z"
     },
     {
       "name": "Bahay_Web",
