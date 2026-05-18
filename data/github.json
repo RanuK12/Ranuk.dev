@@ -1,71 +1,71 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-17T05:34:29.756Z",
+  "generated_at": "2026-05-18T05:42:20.710Z",
   "stats": {
-    "public_repos": 29,
+    "public_repos": 30,
     "total_stars": 1,
-    "languages_count": 26,
-    "last_push": "2026-05-16T21:44:15Z"
+    "languages_count": 13,
+    "last_push": "2026-05-18T04:35:12Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 178842579,
-      "pct": 92
-    },
-    {
-      "name": "Cython",
-      "bytes": 4417714,
-      "pct": 2.3
+      "bytes": 66548365,
+      "pct": 90.8
     },
     {
       "name": "Jupyter Notebook",
-      "bytes": 2735298,
-      "pct": 1.4
-    },
-    {
-      "name": "HTML",
-      "bytes": 2086625,
-      "pct": 1.1
-    },
-    {
-      "name": "C",
-      "bytes": 1907090,
-      "pct": 1
+      "bytes": 2734463,
+      "pct": 3.7
     },
     {
       "name": "JavaScript",
-      "bytes": 1209463,
-      "pct": 0.6
+      "bytes": 1153301,
+      "pct": 1.6
     },
     {
       "name": "TypeScript",
       "bytes": 1125111,
-      "pct": 0.6
+      "pct": 1.5
     },
     {
-      "name": "C++",
-      "bytes": 1019392,
-      "pct": 0.5
+      "name": "HTML",
+      "bytes": 1089417,
+      "pct": 1.5
     },
     {
       "name": "CSS",
-      "bytes": 346432,
-      "pct": 0.2
+      "bytes": 313591,
+      "pct": 0.4
     },
     {
       "name": "PowerShell",
-      "bytes": 246327,
+      "bytes": 218880,
+      "pct": 0.3
+    },
+    {
+      "name": "Shell",
+      "bytes": 38367,
       "pct": 0.1
     },
     {
-      "name": "XSLT",
-      "bytes": 161989,
-      "pct": 0.1
+      "name": "Batchfile",
+      "bytes": 17399,
+      "pct": 0
     },
     {
-      "name": "Fortran",
-      "bytes": 39272,
+      "name": "PLpgSQL",
+      "bytes": 6454,
+      "pct": 0
+    },
+    {
+      "name": "Dockerfile",
+      "bytes": 4986,
+      "pct": 0
+    },
+    {
+      "name": "Java",
+      "bytes": 1925,
       "pct": 0
     }
   ],
@@ -95,6 +95,42 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
+      "name": "JobFinder",
+      "full_name": "RanuK12/JobFinder",
+      "description": null,
+      "url": "https://github.com/RanuK12/JobFinder",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-18T04:35:12Z"
+    },
+    {
+      "name": "Crypto-Ranuk-Bot",
+      "full_name": "RanuK12/Crypto-Ranuk-Bot",
+      "description": null,
+      "url": "https://github.com/RanuK12/Crypto-Ranuk-Bot",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-18T04:18:10Z"
+    },
+    {
+      "name": "Ranuk-Copy-Trading",
+      "full_name": "RanuK12/Ranuk-Copy-Trading",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-18T01:16:52Z"
+    },
+    {
       "name": "GARYCIO_Project",
       "full_name": "RanuK12/GARYCIO_Project",
       "description": null,
@@ -104,43 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-17T03:14:56Z"
-    },
-    {
-      "name": "Content-Creators-AI",
-      "full_name": "RanuK12/Content-Creators-AI",
-      "description": null,
-      "url": "https://github.com/RanuK12/Content-Creators-AI",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-16T21:44:15Z"
-    },
-    {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-16T05:26:55Z"
-    },
-    {
-      "name": "Ranuk_Orbit",
-      "full_name": "RanuK12/Ranuk_Orbit",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk_Orbit",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-15T20:10:05Z"
+      "updated": "2026-05-18T00:29:34Z"
     }
   ]
 }
