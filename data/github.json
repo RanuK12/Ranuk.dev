@@ -1,22 +1,22 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-18T05:42:20.710Z",
+  "generated_at": "2026-05-19T05:41:17.221Z",
   "stats": {
     "public_repos": 30,
     "total_stars": 1,
     "languages_count": 13,
-    "last_push": "2026-05-18T04:35:12Z"
+    "last_push": "2026-05-18T23:11:18Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66548365,
+      "bytes": 66569103,
       "pct": 90.8
     },
     {
       "name": "Jupyter Notebook",
-      "bytes": 2734463,
-      "pct": 3.7
+      "bytes": 2757385,
+      "pct": 3.8
     },
     {
       "name": "JavaScript",
@@ -24,13 +24,13 @@
       "pct": 1.6
     },
     {
-      "name": "TypeScript",
-      "bytes": 1125111,
-      "pct": 1.5
+      "name": "HTML",
+      "bytes": 1144657,
+      "pct": 1.6
     },
     {
-      "name": "HTML",
-      "bytes": 1089417,
+      "name": "TypeScript",
+      "bytes": 1125111,
       "pct": 1.5
     },
     {
@@ -95,40 +95,16 @@
       "updated": "2026-04-21T17:28:43Z"
     },
     {
-      "name": "JobFinder",
-      "full_name": "RanuK12/JobFinder",
+      "name": "Content-Creators-AI",
+      "full_name": "RanuK12/Content-Creators-AI",
       "description": null,
-      "url": "https://github.com/RanuK12/JobFinder",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-18T04:35:12Z"
-    },
-    {
-      "name": "Crypto-Ranuk-Bot",
-      "full_name": "RanuK12/Crypto-Ranuk-Bot",
-      "description": null,
-      "url": "https://github.com/RanuK12/Crypto-Ranuk-Bot",
+      "url": "https://github.com/RanuK12/Content-Creators-AI",
       "homepage": null,
       "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-18T04:18:10Z"
-    },
-    {
-      "name": "Ranuk-Copy-Trading",
-      "full_name": "RanuK12/Ranuk-Copy-Trading",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-18T01:16:52Z"
+      "updated": "2026-05-18T23:11:18Z"
     },
     {
       "name": "GARYCIO_Project",
@@ -140,7 +116,31 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-18T00:29:34Z"
+      "updated": "2026-05-18T19:53:06Z"
+    },
+    {
+      "name": "JobFinder",
+      "full_name": "RanuK12/JobFinder",
+      "description": null,
+      "url": "https://github.com/RanuK12/JobFinder",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-18T16:20:29Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-18T05:42:21Z"
     }
   ]
 }
