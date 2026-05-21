@@ -197,22 +197,7 @@
             window.particleNetwork.init();
         }
 
-        // Typed text effect
-        const typeWriter = new TypeWriter('typed-text');
-        const typedStrings = window.i18n ? window.i18n.getTypedStrings() : [
-            'Systems Engineer',
-            'Data Scientist',
-            'Python Developer',
-            'Machine Learning Engineer'
-        ];
-        typeWriter.start(typedStrings);
-
-        // Restart typed effect on language change
-        if (window.i18n) {
-            window.i18n.onChange(() => {
-                typeWriter.restart(window.i18n.getTypedStrings());
-            });
-        }
+        // Typed text effect (disabled — element #typed-text not present in current design)
 
         // Scroll animations
         const scrollAnimator = new ScrollAnimator();

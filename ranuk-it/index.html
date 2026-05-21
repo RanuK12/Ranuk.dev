@@ -411,9 +411,12 @@ Contame en 3 líneas qué necesitás. Te contesto personalmente en el día.
 <form action="https://formspree.io/f/xgorlvoq"
 method="POST"
 class="ranuk-form">
-<input type="text" name="nombre" placeholder="Nombre y empresa" required>
-<input type="email" name="email" placeholder="Email corporativo" required>
-<select name="servicio" required>
+<label for="lead-nombre" class="sr-only">Nombre y empresa</label>
+<input type="text" id="lead-nombre" name="nombre" placeholder="Nombre y empresa" required>
+<label for="lead-email" class="sr-only">Email corporativo</label>
+<input type="email" id="lead-email" name="email" placeholder="Email corporativo" required>
+<label for="lead-servicio" class="sr-only">¿Qué necesitás?</label>
+<select id="lead-servicio" name="servicio" required>
 <option value="">¿Qué necesitás?</option>
 <option>Desarrollo de software a medida</option>
 <option>Modernización de sistema legacy</option>
@@ -421,7 +424,8 @@ class="ranuk-form">
 <option>Auditoría ADA (mercado US)</option>
 <option>Consultoría técnica / otro</option>
 </select>
-<textarea name="mensaje" placeholder="Contexto del proyecto (3 líneas alcanzan)" rows="3" required></textarea>
+<label for="lead-mensaje" class="sr-only">Contexto del proyecto</label>
+<textarea id="lead-mensaje" name="mensaje" placeholder="Contexto del proyecto (3 líneas alcanzan)" rows="3" required></textarea>
 <input type="hidden" name="_subject" value="[Ranuk IT] Nuevo lead web">
 <input type="hidden" name="_gotcha" style="display:none">
 <button type="submit" class="btn btn-outline contact-btn-wide">
