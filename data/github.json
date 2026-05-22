@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-21T05:42:44.573Z",
+  "generated_at": "2026-05-22T05:41:07.544Z",
   "stats": {
     "public_repos": 30,
     "total_stars": 1,
-    "languages_count": 13,
-    "last_push": "2026-05-20T15:40:33Z"
+    "languages_count": 14,
+    "last_push": "2026-05-21T23:27:17Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66573344,
-      "pct": 90.8
+      "bytes": 66573929,
+      "pct": 90.9
     },
     {
       "name": "Jupyter Notebook",
@@ -20,22 +20,22 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1153301,
+      "bytes": 1151564,
       "pct": 1.6
     },
     {
       "name": "HTML",
-      "bytes": 1144657,
+      "bytes": 1147591,
       "pct": 1.6
     },
     {
       "name": "TypeScript",
-      "bytes": 1125111,
-      "pct": 1.5
+      "bytes": 991244,
+      "pct": 1.4
     },
     {
       "name": "CSS",
-      "bytes": 313591,
+      "bytes": 289310,
       "pct": 0.4
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Shell",
-      "bytes": 38367,
+      "bytes": 39637,
       "pct": 0.1
     },
     {
@@ -80,7 +80,7 @@
       "stars": 1,
       "forks": 0,
       "topics": [],
-      "updated": "2025-06-13T15:47:19Z"
+      "updated": "2026-05-21T20:31:19Z"
     },
     {
       "name": "skills-copilot-codespaces-vscode",
@@ -92,7 +92,31 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-04-21T17:28:43Z"
+      "updated": "2026-05-21T20:32:02Z"
+    },
+    {
+      "name": "eurobrico-web",
+      "full_name": "RanuK12/eurobrico-web",
+      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
+      "url": "https://github.com/RanuK12/eurobrico-web",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-21T20:31:24Z"
+    },
+    {
+      "name": "Ranuk_Orbit",
+      "full_name": "RanuK12/Ranuk_Orbit",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk_Orbit",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-21T23:27:17Z"
     },
     {
       "name": "Crypto-Ranuk-Bot",
@@ -104,7 +128,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-20T15:40:33Z"
+      "updated": "2026-05-21T23:19:33Z"
     },
     {
       "name": "Ranuk.dev",
@@ -116,31 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-20T05:41:55Z"
-    },
-    {
-      "name": "Content-Creators-AI",
-      "full_name": "RanuK12/Content-Creators-AI",
-      "description": null,
-      "url": "https://github.com/RanuK12/Content-Creators-AI",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-18T23:11:18Z"
-    },
-    {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
-      "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-18T19:53:06Z"
+      "updated": "2026-05-21T23:18:19Z"
     }
   ]
 }
