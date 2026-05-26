@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-25T05:49:27.986Z",
+  "generated_at": "2026-05-26T05:41:15.225Z",
   "stats": {
     "public_repos": 30,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-05-24T05:40:26Z"
+    "last_push": "2026-05-25T22:19:02Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66573929,
-      "pct": 90.9
+      "bytes": 66574002,
+      "pct": 90.8
     },
     {
       "name": "Jupyter Notebook",
@@ -20,8 +20,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1151564,
-      "pct": 1.6
+      "bytes": 1230652,
+      "pct": 1.7
     },
     {
       "name": "HTML",
@@ -107,28 +107,16 @@
       "updated": "2026-05-21T20:31:24Z"
     },
     {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
+      "name": "Flight-Price-Alert",
+      "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "url": "https://github.com/RanuK12/Flight-Price-Alert",
       "homepage": null,
       "language": "JavaScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-24T05:40:26Z"
-    },
-    {
-      "name": "Ranuk_Orbit",
-      "full_name": "RanuK12/Ranuk_Orbit",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk_Orbit",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-21T23:27:17Z"
+      "updated": "2026-05-25T22:19:02Z"
     },
     {
       "name": "Crypto-Ranuk-Bot",
@@ -140,7 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-21T23:19:33Z"
+      "updated": "2026-05-25T22:08:49Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-25T05:49:28Z"
     }
   ]
 }
