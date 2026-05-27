@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-26T05:41:15.225Z",
+  "generated_at": "2026-05-27T05:44:31.089Z",
   "stats": {
     "public_repos": 30,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-05-25T22:19:02Z"
+    "last_push": "2026-05-27T04:49:53Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66574002,
-      "pct": 90.8
+      "bytes": 66589682,
+      "pct": 90.9
     },
     {
       "name": "Jupyter Notebook",
@@ -20,7 +20,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1230652,
+      "bytes": 1230665,
       "pct": 1.7
     },
     {
@@ -107,18 +107,6 @@
       "updated": "2026-05-21T20:31:24Z"
     },
     {
-      "name": "Flight-Price-Alert",
-      "full_name": "RanuK12/Flight-Price-Alert",
-      "description": null,
-      "url": "https://github.com/RanuK12/Flight-Price-Alert",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-25T22:19:02Z"
-    },
-    {
       "name": "Crypto-Ranuk-Bot",
       "full_name": "RanuK12/Crypto-Ranuk-Bot",
       "description": null,
@@ -128,7 +116,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-25T22:08:49Z"
+      "updated": "2026-05-27T04:49:53Z"
     },
     {
       "name": "Ranuk.dev",
@@ -140,7 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-25T05:49:28Z"
+      "updated": "2026-05-26T18:33:06Z"
+    },
+    {
+      "name": "Flight-Price-Alert",
+      "full_name": "RanuK12/Flight-Price-Alert",
+      "description": null,
+      "url": "https://github.com/RanuK12/Flight-Price-Alert",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-26T18:16:17Z"
     }
   ]
 }
