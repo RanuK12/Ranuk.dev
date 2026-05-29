@@ -229,16 +229,51 @@
                         </div>
                     </div>
                 </article>
-                <!-- FOTO VIAJERA — cruce del océano, entre Cimientos y Sistemas a escala -->
+                <!-- CARRUSEL VIAJERO — 3 fotos que pasan como transición entre Acts -->
                 <div class="story-photo-moment">
-                    <div class="story-photo-frame">
-                        <picture>
-                            <source srcset="assets/story-emilio.webp" type="image/webp">
-                            <img src="assets/story-emilio.jpg" alt="Emilio Ranucoli — cruzando el océano" loading="lazy" class="story-photo-img">
-                        </picture>
-                        <div class="story-photo-caption">
-                            <span class="story-photo-icon">✈</span>
-                            <span>Argentina → Italia, 2018</span>
+                    <div class="story-photo-carousel" role="region" aria-label="Galería de momentos">
+                        <div class="story-photo-track">
+                            <div class="story-photo-slide">
+                                <div class="story-photo-frame">
+                                    <picture>
+                                        <source srcset="assets/story-argentina.webp" type="image/webp">
+                                        <img src="assets/story-argentina.jpg" alt="Emilio Ranucoli — Córdoba, Argentina" loading="lazy" class="story-photo-img">
+                                    </picture>
+                                    <div class="story-photo-caption">
+                                        <span class="story-photo-icon">🌎</span>
+                                        <span>Córdoba, Argentina — los cimientos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="story-photo-slide">
+                                <div class="story-photo-frame">
+                                    <picture>
+                                        <source srcset="assets/story-emilio.webp" type="image/webp">
+                                        <img src="assets/story-emilio.jpg" alt="Emilio Ranucoli — cruzando el océano" loading="lazy" class="story-photo-img">
+                                    </picture>
+                                    <div class="story-photo-caption">
+                                        <span class="story-photo-icon">✈</span>
+                                        <span>Argentina → Italia, 2018</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="story-photo-slide">
+                                <div class="story-photo-frame">
+                                    <picture>
+                                        <source srcset="assets/story-hoy.webp" type="image/webp">
+                                        <img src="assets/story-hoy.jpg" alt="Emilio Ranucoli — hoy" loading="lazy" class="story-photo-img">
+                                    </picture>
+                                    <div class="story-photo-caption">
+                                        <span class="story-photo-icon">🚀</span>
+                                        <span>Hoy — construyendo lo que viene</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-carousel-dots">
+                            <button class="story-dot active" data-slide="0" aria-label="Foto 1: Argentina"></button>
+                            <button class="story-dot" data-slide="1" aria-label="Foto 2: Italia"></button>
+                            <button class="story-dot" data-slide="2" aria-label="Foto 3: Hoy"></button>
                         </div>
                     </div>
                 </div>

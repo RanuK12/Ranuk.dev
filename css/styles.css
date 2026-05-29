@@ -1132,6 +1132,123 @@ ul { list-style: none; }
     z-index: -1;
 }
 
+/* ---- Carrusel de 3 fotos en transición ---- */
+.story-photo-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.story-photo-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+}
+
+.story-photo-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-photo-slide .story-photo-frame {
+    transform: rotate(0deg) scale(0.92);
+    opacity: 0.6;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+    max-width: 320px;
+}
+
+.story-photo-slide.active .story-photo-frame {
+    transform: rotate(-1.5deg) scale(1);
+    opacity: 1;
+    box-shadow:
+        0 0 0 4px var(--bg-primary),
+        0 0 0 6px rgba(212, 165, 116, 0.25),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(212, 165, 116, 0.08);
+}
+
+.story-photo-slide.active .story-photo-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.story-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+.story-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.story-dot.active {
+    background: var(--accent-gold);
+    box-shadow: 0 0 12px rgba(212, 165, 116, 0.5);
+    transform: scale(1.2);
+}
+
+.story-dot:hover {
+    background: rgba(212, 165, 116, 0.3);
+    transform: scale(1.15);
+}
+
+/* Indicador de progreso */
+.story-carousel-progress {
+    position: absolute;
+    bottom: -4px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: rgba(212, 165, 116, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.story-carousel-progress-bar {
+    height: 100%;
+    width: 33.33%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent));
+    border-radius: 2px;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Responsive: carrusel en mobile */
+@media (max-width: 768px) {
+    .story-photo-carousel {
+        max-width: 280px;
+    }
+
+    .story-photo-slide .story-photo-frame {
+        max-width: 240px;
+    }
+
+    .story-photo-slide.active .story-photo-frame {
+        transform: rotate(0deg) scale(1);
+    }
+
+    .story-carousel-dots {
+        gap: 0.5rem;
+    }
+
+    .story-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
 /* Responsive: la foto viajera en mobile */
 @media (max-width: 768px) {
     .story-photo-moment {
