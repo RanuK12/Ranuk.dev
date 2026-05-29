@@ -1033,6 +1033,126 @@ ul { list-style: none; }
     font-size: 0.9rem;
 }
 
+/* ---- Foto viajera — cruce del océano (entre Act I y Act II) ---- */
+.story-photo-moment {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 2.5rem;
+    z-index: 3;
+}
+
+.story-photo-frame {
+    position: relative;
+    max-width: 340px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 2px solid rgba(212, 165, 116, 0.25);
+    box-shadow:
+        0 0 0 4px var(--bg-primary),
+        0 0 0 6px rgba(212, 165, 116, 0.15),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(212, 165, 116, 0.08);
+    transform: rotate(-1.5deg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.story-photo-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow:
+        0 0 0 4px var(--bg-primary),
+        0 0 0 6px rgba(212, 165, 116, 0.3),
+        0 25px 70px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(212, 165, 116, 0.15);
+}
+
+.story-photo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+}
+
+.story-photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(10, 10, 26, 0.6) 100%
+    );
+    pointer-events: none;
+}
+
+.story-photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.2rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-bright);
+    z-index: 2;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(to top, rgba(10, 10, 26, 0.7), transparent);
+}
+
+.story-photo-icon {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Hilo de oro que atraviesa visualmente la foto */
+.story-photo-moment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(212, 165, 116, 0.3) 30%,
+        rgba(212, 165, 116, 0.5) 50%,
+        rgba(212, 165, 116, 0.3) 70%,
+        transparent
+    );
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Responsive: la foto viajera en mobile */
+@media (max-width: 768px) {
+    .story-photo-moment {
+        margin: 0.5rem 0 1.5rem;
+        padding-left: 68px;
+    }
+
+    .story-photo-frame {
+        max-width: 260px;
+        transform: rotate(0deg);
+    }
+
+    .story-photo-frame:hover {
+        transform: scale(1.03);
+    }
+
+    .story-photo-moment::before {
+        left: 56px;
+    }
+}
+
 /* Responsive: en mobile el hilo se va a la izquierda y todas las cards quedan a la derecha */
 @media (max-width: 768px) {
     .story-thread {

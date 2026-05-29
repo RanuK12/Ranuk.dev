@@ -28,3 +28,4 @@ outreach/venv/
 outreach/.env
 outreach/leads_*.xlsx
 outreach/__pycache__/
+.claude/
