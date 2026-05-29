@@ -65,7 +65,65 @@
     <link rel="stylesheet" href="css/styles.css?v=1776914473">
     <style>/* Critical CSS — above-the-fold styles inlined to eliminate render-blocking */
 :root{--bg-primary:#0a0a1a;--bg-secondary:#0f0f23;--accent:#64ffda;--text-primary:#ccd6f6;--text-secondary:#8892b0;--text-bright:#e6f1ff;--nav-height:70px;--font-main:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}.navbar{position:fixed;top:0;width:100%;z-index:1000;padding:1rem 2rem;transition:var(--transition)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;z-index:99999}
-    </style>
+    
+/* Tarjetas polaroid individuales entre Acts */
+.story-photo-card {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+    position: relative;
+    z-index: 2;
+}
+.story-photo-card:nth-child(odd) .story-photo-frame-polaroid {
+    transform: rotate(-2deg);
+}
+.story-photo-card:nth-child(even) .story-photo-frame-polaroid {
+    transform: rotate(1.5deg);
+}
+.story-photo-frame-polaroid {
+    background: #1a1a2e;
+    padding: 12px 12px 40px 12px;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(212, 165, 116, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 320px;
+    position: relative;
+}
+.story-photo-frame-polaroid::after {
+    content: '';
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,165,116,0.3), transparent);
+}
+.story-photo-frame-polaroid:hover {
+    transform: rotate(0deg) scale(1.02) !important;
+    box-shadow: 0 12px 48px rgba(100, 255, 218, 0.15), 0 0 0 1px rgba(212, 165, 116, 0.6);
+}
+.story-photo-img-polaroid {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+.story-photo-caption-polaroid {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+}
+.story-photo-caption-polaroid .story-photo-icon {
+    margin-right: 6px;
+}
+</style>
     <!-- GSAP + ScrollTrigger (SRI hashes applied) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
@@ -217,101 +275,92 @@
                     <div class="story-knot"><span class="story-knot-num">I</span></div>
                     <div class="story-card">
                         <div class="story-act-meta">
-                            <span class="story-year">1995 → 2018</span>
+                            <span class="story-year">1995 → 2024</span>
                             <span class="story-place"><i class="fas fa-map-marker-alt"></i> Córdoba, Argentina</span>
                         </div>
                         <h3 class="story-act-title" data-i18n="story.act1_title">Capa I — Cimientos</h3>
                         <p data-i18n="story.act1">
-                            Nací en Córdoba con apellido italiano y la sensación, desde temprano, de que las cosas se construyen mejor con las manos. Estudié Ingeniería en Sistemas en la UTN porque me interesaba menos la teoría que ver funcionar lo que armaba. Los cimientos: disciplina, lógica, y la idea de que un sistema bien pensado se sostiene solo.
+                            Nací en Córdoba con apellido italiano y la sensación, desde temprano, de que las cosas se construyen mejor con las manos. Estudié Ingeniería en Sistemas en la UTN porque me interesaba menos la teoría que ver funcionar lo que armaba. Me recibí en 2024. Los cimientos: disciplina, lógica, y la idea de que un sistema bien pensado se sostiene solo.
                         </p>
                         <div class="story-tags">
-                            <span>UTN</span><span>Sistemas</span><span>Primer commit</span>
+                            <span>UTN</span><span>Systems Engineering</span><span>Primer commit</span>
                         </div>
                     </div>
                 </article>
-                <!-- CARRUSEL VIAJERO — 3 fotos que pasan como transición entre Acts -->
-                <div class="story-photo-moment">
-                    <div class="story-photo-carousel" role="region" aria-label="Galería de momentos">
-                        <div class="story-photo-track">
-                            <div class="story-photo-slide">
-                                <div class="story-photo-frame">
-                                    <picture>
-                                        <source srcset="assets/story-argentina.webp" type="image/webp">
-                                        <img src="assets/story-argentina.jpg" alt="Emilio Ranucoli — Córdoba, Argentina" loading="lazy" class="story-photo-img">
-                                    </picture>
-                                    <div class="story-photo-caption">
-                                        <span class="story-photo-icon">🌎</span>
-                                        <span>Córdoba, Argentina — los cimientos</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="story-photo-slide">
-                                <div class="story-photo-frame">
-                                    <picture>
-                                        <source srcset="assets/story-emilio.webp" type="image/webp">
-                                        <img src="assets/story-emilio.jpg" alt="Emilio Ranucoli — cruzando el océano" loading="lazy" class="story-photo-img">
-                                    </picture>
-                                    <div class="story-photo-caption">
-                                        <span class="story-photo-icon">✈</span>
-                                        <span>Argentina → Italia, 2018</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="story-photo-slide">
-                                <div class="story-photo-frame">
-                                    <picture>
-                                        <source srcset="assets/story-hoy.webp" type="image/webp">
-                                        <img src="assets/story-hoy.jpg" alt="Emilio Ranucoli — hoy" loading="lazy" class="story-photo-img">
-                                    </picture>
-                                    <div class="story-photo-caption">
-                                        <span class="story-photo-icon">🚀</span>
-                                        <span>Hoy — construyendo lo que viene</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="story-carousel-dots">
-                            <button class="story-dot active" data-slide="0" aria-label="Foto 1: Argentina"></button>
-                            <button class="story-dot" data-slide="1" aria-label="Foto 2: Italia"></button>
-                            <button class="story-dot" data-slide="2" aria-label="Foto 3: Hoy"></button>
+                <!-- TARJETA A — Entre Act I y Act II -->
+                <div class="story-photo-card">
+                    <div class="story-photo-frame-polaroid">
+                        <picture>
+                            <source srcset="assets/story-italia.webp" type="image/webp">
+                            <img src="assets/story-italia.jpg" alt="Emilio Ranucoli — Italia, 2024" loading="lazy" class="story-photo-img-polaroid">
+                        </picture>
+                        <div class="story-photo-caption-polaroid">
+                            <span class="story-photo-icon">🇮🇹</span>
+                            <span>Italia, 2024 — el primer cruce</span>
                         </div>
                     </div>
                 </div>
-                <!-- ACT 2 — Los hilos cruzados -->
+                <!-- ACT 2 — Los hilos cruzados -->                <!-- ACT 2 — Los hilos cruzados -->
                 <article class="story-act story-act-right">
                     <div class="story-knot"><span class="story-knot-num">II</span></div>
                     <div class="story-card">
                         <div class="story-act-meta">
-                            <span class="story-year">2018 → 2024</span>
-                            <span class="story-place"><i class="fas fa-globe-europe"></i> Argentina · Italia · Países Bajos · España</span>
+                            <span class="story-year">2024 → 2025</span>
+                            <span class="story-place"><i class="fas fa-globe-europe"></i> Italia · Países Bajos</span>
                         </div>
                         <h3 class="story-act-title" data-i18n="story.act2_title">Capa II — Sistemas a escala</h3>
                         <p data-i18n="story.act2">
-                            Crucé el océano. Empecé en el <strong>norte de Italia</strong>, en una empresa donde construí pipelines de datos y, viviendo allí, aprendí italiano de verdad — no el de mesa familiar, el de las reuniones técnicas. Después <strong>Países Bajos</strong>: <strong>Booking.com</strong>, sistemas de pricing dinámico con millones de registros, inglés en standups. Y unos meses en <strong>España</strong> antes de plantar bandera. Cuatro países, tres idiomas, una misma manera de mirar el problema.
+                            Crucé el océano en 2024. Me instalé en Italia y desde el primer día me sumergí: aprendí italiano de verdad — no el de mesa familiar, el de las reuniones técnicas. En 2025 me mudé a Países Bajos para trabajar en <strong>Booking.com</strong>, donde construí sistemas de pricing dinámico con millones de registros, standups en inglés, y un estándar de calidad que no sabía que existía. Ese mismo año terminé de escribir mi libro.
                         </p>
                         <div class="story-tags">
                             <span>Pipelines · Italia</span><span>Booking.com</span><span>ML a escala</span><span>EN · ES · IT</span>
                         </div>
                     </div>
                 </article>
+                <!-- TARJETA B — Entre Act II y Act III -->
+                <div class="story-photo-card">
+                    <div class="story-photo-frame-polaroid">
+                        <picture>
+                            <source srcset="assets/story-emilio.webp" type="image/webp">
+                            <img src="assets/story-emilio.jpg" alt="Emilio Ranucoli — Países Bajos, 2025" loading="lazy" class="story-photo-img-polaroid">
+                        </picture>
+                        <div class="story-photo-caption-polaroid">
+                            <span class="story-photo-icon">🇳🇱</span>
+                            <span>Países Bajos, 2025 — Booking.com</span>
+                        </div>
+                    </div>
+                </div>
                 <!-- ACT 3 — El telar propio -->
                 <article class="story-act story-act-left">
                     <div class="story-knot story-knot-final"><span class="story-knot-num">III</span></div>
                     <div class="story-card story-card-final">
                         <div class="story-act-meta">
-                            <span class="story-year">2024 → hoy</span>
-                            <span class="story-place"><i class="fas fa-compass"></i> Ranuk IT · El libro · Lo que viene</span>
+                            <span class="story-year">2025 → presente</span>
+                            <span class="story-place"><i class="fas fa-compass"></i> Barcelona, España · Ranuk IT</span>
                         </div>
                         <h3 class="story-act-title" data-i18n="story.act3_title">Capa III — Impacto propio</h3>
                         <p data-i18n="story.act3">
-                            Después de construir para otros, fundé lo mío. <strong>Ranuk IT Solutions</strong> nació de una idea simple: hacer software que el cliente entienda, mantenible, sin atajos. Hoy construyo productos para clientes en cuatro países y sigo creyendo lo mismo: vale la pena hacer las cosas bien, aunque lleven más tiempo.
+                            Después de construir para otros, en 2026 fundé lo mío. Ese mismo año me certifiqué como Ingeniero en Software y Machine Learning. <strong>Ranuk IT Solutions</strong> nació de una idea simple: hacer software que el cliente entienda, mantenible, sin atajos. Hoy construyo productos para clientes en cuatro países y sigo creyendo lo mismo: vale la pena hacer las cosas bien, aunque lleven más tiempo.
                         </p>
                         <div class="story-tags">
-                            <span>Ranuk IT</span><span>Autor</span><span>Full-stack ML</span>
+                            <span>Ranuk IT</span><span>Software & ML Engineer</span><span>Autor</span>
                         </div>
                     </div>
                 </article>
             </div>
+                <!-- TARJETA C — Después de Act III -->
+                <div class="story-photo-card">
+                    <div class="story-photo-frame-polaroid">
+                        <picture>
+                            <source srcset="assets/story-hoy.webp" type="image/webp">
+                            <img src="assets/story-hoy.jpg" alt="Emilio Ranucoli — Barcelona, 2026" loading="lazy" class="story-photo-img-polaroid">
+                        </picture>
+                        <div class="story-photo-caption-polaroid">
+                            <span class="story-photo-icon">🚀</span>
+                            <span>Barcelona, 2026 — Ranuk IT</span>
+                        </div>
+                    </div>
+                </div>
             <!-- Coda: datos rápidos -->
             <div class="story-coda">
                 <div class="story-coda-item">
@@ -320,7 +369,11 @@
                 </div>
                 <div class="story-coda-item">
                     <i class="fas fa-graduation-cap"></i>
-                    <span data-i18n="story.coda_edu">Ingeniero en Sistemas — UTN</span>
+                    <span data-i18n="story.coda_edu">Ing. en Sistemas — UTN · 2024</span>
+                </div>
+                <div class="story-coda-item">
+                    <i class="fas fa-certificate"></i>
+                    <span data-i18n="story.coda_cert">Software & ML Engineer — Cert. 2026</span>
                 </div>
                 <div class="story-coda-item">
                     <i class="fas fa-language"></i>
@@ -328,7 +381,7 @@
                 </div>
                 <div class="story-coda-item">
                     <i class="fas fa-book"></i>
-                    <span data-i18n="story.coda_book">Autor de "Y así voy tejiendo mi camino"</span>
+                    <span data-i18n="story.coda_book">Autor de "Y así voy tejiendo mi camino" (2025)</span>
                 </div>
             </div>
         </div>
