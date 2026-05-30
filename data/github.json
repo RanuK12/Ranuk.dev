@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-05-29T05:43:39.573Z",
+  "generated_at": "2026-05-30T05:34:17.390Z",
   "stats": {
     "public_repos": 30,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-05-28T21:39:45Z"
+    "last_push": "2026-05-29T22:36:44Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 66587530,
-      "pct": 90.9
+      "pct": 90.8
     },
     {
       "name": "Jupyter Notebook",
@@ -20,12 +20,12 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1230665,
+      "bytes": 1234556,
       "pct": 1.7
     },
     {
       "name": "HTML",
-      "bytes": 1147591,
+      "bytes": 1151823,
       "pct": 1.6
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 289310,
+      "bytes": 294482,
       "pct": 0.4
     },
     {
@@ -107,18 +107,6 @@
       "updated": "2026-05-21T20:31:24Z"
     },
     {
-      "name": "Crypto-Ranuk-Bot",
-      "full_name": "RanuK12/Crypto-Ranuk-Bot",
-      "description": null,
-      "url": "https://github.com/RanuK12/Crypto-Ranuk-Bot",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-05-28T21:39:45Z"
-    },
-    {
       "name": "Ranuk.dev",
       "full_name": "RanuK12/Ranuk.dev",
       "description": null,
@@ -128,7 +116,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-05-28T05:43:24Z"
+      "updated": "2026-05-29T22:36:44Z"
+    },
+    {
+      "name": "Crypto-Ranuk-Bot",
+      "full_name": "RanuK12/Crypto-Ranuk-Bot",
+      "description": null,
+      "url": "https://github.com/RanuK12/Crypto-Ranuk-Bot",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-05-29T16:33:48Z"
     },
     {
       "name": "Flight-Price-Alert",
