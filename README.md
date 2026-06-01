@@ -425,3 +425,7 @@ MIT License - Siéntete libre de fork y adaptar para tu propio portfolio.
 *Emilio Ranucoli — 2026*
 
 *"Del primer commit a la factura del cliente. Construyo sistemas con Python y ML. Escribo sobre todo lo demás."*
+
+## Licencia
+
+MIT — © 2026 Ranuk IT Solutions | [ranuk.dev](https://ranuk.dev)
