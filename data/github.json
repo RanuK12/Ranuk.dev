@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-02T05:55:25.109Z",
+  "generated_at": "2026-06-03T05:58:05.662Z",
   "stats": {
     "public_repos": 30,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-01T15:17:40Z"
+    "last_push": "2026-06-02T05:55:25Z"
   },
   "languages": [
     {
@@ -107,16 +107,16 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
-      "name": "binance-scalper",
-      "full_name": "RanuK12/binance-scalper",
+      "name": "Ranuk-Copy-Trading",
+      "full_name": "RanuK12/Ranuk-Copy-Trading",
       "description": null,
-      "url": "https://github.com/RanuK12/binance-scalper",
+      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
       "homepage": null,
       "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-01T15:18:34Z"
+      "updated": "2026-06-02T19:42:39Z"
     },
     {
       "name": "Ranuk.dev",
@@ -128,19 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-01T15:17:40Z"
+      "updated": "2026-06-02T05:55:25Z"
     },
     {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
+      "name": "binance-scalper",
+      "full_name": "RanuK12/binance-scalper",
       "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
+      "url": "https://github.com/RanuK12/binance-scalper",
       "homepage": null,
-      "language": "TypeScript",
+      "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-01T15:17:10Z"
+      "updated": "2026-06-01T15:18:34Z"
     }
   ]
 }
