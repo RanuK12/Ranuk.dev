@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-03T05:58:05.662Z",
+  "generated_at": "2026-06-04T05:56:50.154Z",
   "stats": {
-    "public_repos": 30,
+    "public_repos": 31,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-02T05:55:25Z"
+    "last_push": "2026-06-04T05:42:31Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 66587530,
-      "pct": 90.9
+      "pct": 90.8
     },
     {
       "name": "Jupyter Notebook",
@@ -20,7 +20,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1164435,
+      "bytes": 1164994,
       "pct": 1.6
     },
     {
@@ -30,12 +30,12 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 991244,
+      "bytes": 1057705,
       "pct": 1.4
     },
     {
       "name": "CSS",
-      "bytes": 295320,
+      "bytes": 299624,
       "pct": 0.4
     },
     {
@@ -107,16 +107,16 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
-      "name": "Ranuk-Copy-Trading",
-      "full_name": "RanuK12/Ranuk-Copy-Trading",
+      "name": "landing-factory",
+      "full_name": "RanuK12/landing-factory",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
+      "url": "https://github.com/RanuK12/landing-factory",
       "homepage": null,
-      "language": "Python",
+      "language": "TypeScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-02T19:42:39Z"
+      "updated": "2026-06-04T05:42:31Z"
     },
     {
       "name": "Ranuk.dev",
@@ -128,19 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-02T05:55:25Z"
+      "updated": "2026-06-03T05:58:06Z"
     },
     {
-      "name": "binance-scalper",
-      "full_name": "RanuK12/binance-scalper",
+      "name": "Ranuk-Copy-Trading",
+      "full_name": "RanuK12/Ranuk-Copy-Trading",
       "description": null,
-      "url": "https://github.com/RanuK12/binance-scalper",
+      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
       "homepage": null,
       "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-01T15:18:34Z"
+      "updated": "2026-06-02T19:42:39Z"
     }
   ]
 }
