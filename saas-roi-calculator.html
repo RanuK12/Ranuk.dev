@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS ROI Calculator - Accessibility Audit vs Lawsuit Costs</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#1a1a2e;--bg2:#16213e;--cyan:#00d4ff;--gold:#ffd700;--w:#f0f0f0;--g:#a0aec0;--r:#e74c3c;--grn:#2ecc71;--rad:12px}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--w);line-height:1.6;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;padding:80px 20px 40px;background:linear-gradient(180deg,#0f3460,var(--bg))}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:12px}
+.cyan{color:var(--cyan)}.gold{color:var(--gold)}
+.hero p{font-size:1.15rem;color:var(--g);max-width:620px;margin:0 auto 24px}
+.badge{display:inline-block;background:rgba(231,76,60,.15);color:var(--r);padding:8px 20px;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid rgba(231,76,60,.3);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(231,76,60,.4)}50%{box-shadow:0 0 0 12px rgba(231,76,60,0)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:40px auto;max-width:960px;padding:0 20px}
+.stat{text-align:center;background:var(--bg2);border-radius:var(--rad);padding:24px 16px;border:1px solid rgba(0,212,255,.1)}
+.stat .num{font-size:2rem;font-weight:800;color:var(--gold);display:block}
+.stat .label{font-size:.85rem;color:var(--g);margin-top:4px}
+.calc-section{padding:60px 20px;max-width:960px;margin:0 auto}
+.calc-card{background:var(--bg2);border-radius:var(--rad);padding:40px;box-shadow:0 8px 32px rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.08)}
+.calc-card h2{font-size:1.6rem;margin-bottom:24px;text-align:center}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.field{display:flex;flex-direction:column}
+.field label{font-size:.85rem;font-weight:600;color:var(--g);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.field input,.field select{background:var(--bg);border:2px solid rgba(0,212,255,.2);border-radius:8px;padding:12px 14px;color:var(--w);font-size:1rem}
+.field input:focus,.field select:focus{outline:none;border-color:var(--cyan)}
+.field select option{background:var(--bg);color:var(--w)}
+.btn-calc{display:block;width:100%;max-width:320px;margin:32px auto 0;padding:16px;border:none;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;background:linear-gradient(135deg,var(--cyan),#0098b3);color:var(--bg)}
+.btn-calc:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,212,255,.35)}
+.results{display:none;margin-top:40px;animation:fadeUp .5s ease}
+.results.show{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.results-header{text-align:center;margin-bottom:32px}
+.results-header h3{font-size:1.4rem;margin-bottom:8px}
+.verdict{font-size:1.1rem;color:var(--g)}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.result-card{background:var(--bg);border-radius:var(--rad);padding:28px;text-align:center;border:2px solid rgba(0,212,255,.1);position:relative;overflow:hidden}
+.result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.result-card.danger::before{background:var(--r)}
+.result-card.safe::before{background:var(--grn)}
+.result-card.gold::before{background:var(--gold)}
+.result-card .card-icon{font-size:2.4rem;margin-bottom:8px;display:block}
+.result-card .card-label{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--g);margin-bottom:4px}
+.result-card .card-value{font-size:2rem;font-weight:800;color:var(--gold)}
+.result-card.danger .card-value{color:var(--r)}
+.result-card.safe .card-value{color:var(--grn)}
+.result-card .card-detail{font-size:.85rem;color:var(--g);margin-top:8px;line-height:1.5}
+.roi-meter{margin:32px auto;max-width:500px;text-align:center}
+.roi-meter h4{font-size:1rem;color:var(--g);margin-bottom:12px}
+.meter-bar{height:18px;background:var(--bg);border-radius:99px;overflow:hidden;border:1px solid rgba(0,212,255,.15)}
+.meter-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--grn),var(--cyan));transition:width .8s ease;width:0}
+.meter-roi{font-size:2.2rem;font-weight:800;color:var(--cyan);margin-top:12px}
+.comparison{margin-top:36px}
+.comparison h4{text-align:center;margin-bottom:16px;font-size:1.1rem}
+.comp-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.comp-table th{text-align:left;padding:12px;background:rgba(0,212,255,.08);color:var(--cyan);font-weight:600;border-bottom:2px solid rgba(0,212,255,.15)}
+.comp-table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.05)}
+.comp-table .cost{color:var(--r);font-weight:700}
+.comp-table .save{color:var(--grn);font-weight:700}
+.cta-section{text-align:center;padding:60px 20px;background:linear-gradient(180deg,var(--bg),#0f3460)}
+.cta-section h2{font-size:1.8rem;margin-bottom:12px}
+.cta-section p{color:var(--g);margin-bottom:24px;max-width:600px;margin:0 auto 24px}
+.cta-btn{display:inline-block;padding:16px 40px;border-radius:8px;font-size:1.1rem;font-weight:700;background:var(--gold);color:var(--bg);text-decoration:none}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,215,0,.35)}
+footer{text-align:center;padding:32px 20px;color:var(--g);font-size:.8rem;border-top:1px solid rgba(0,212,255,.08)}
+</style>
+</head>
+<body>
+<section class="hero">
+  <span class="badge">&#9888; ADA lawsuits increased 300% in the last decade</span>
+  <h1>Is Your SaaS <span class="cyan">Accessible</span>?<br>The Cost of <span class="gold">Not Knowing</span></h1>
+  <p>Calculate what an accessibility lawsuit could cost your business vs. the ROI of a professional audit.</p>
+</section>
+<div class="stats">
+  <div class="stat"><span class="num">4,000+</span><span class="label">ADA lawsuits filed in 2023</span></div>
+  <div class="stat"><span class="num">$50K-$300K</span><span class="label">Average lawsuit settlement</span></div>
+  <div class="stat"><span class="num">96%</span><span class="label">Of homepages have WCAG failures</span></div>
+  <div class="stat"><span class="num">300%</span><span class="label">Lawsuit increase since 2018</span></div>
+</div>
+<section class="calc-section">
+  <div class="calc-card">
+    <h2>&#128202; Calculate Your Risk &amp; ROI</h2>
+    <div class="form-grid">
+      <div class="field">
+        <label>Annual Revenue</label>
+        <input type="text" id="revenue" placeholder="$500,000" oninput="fmtCur(this)">
+      </div>
+      <div class="field">
+        <label>Industry</label>
+        <select id="industry">
+          <option value="saas">SaaS / Tech</option>
+          <option value="ecommerce">E-Commerce</option>
+          <option value="finance">Finance / Banking</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="education">Education</option>
+          <option value="media">Media / Publishing</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Monthly Website Visitors</label>
+        <input type="text" id="visitors" placeholder="50,000" oninput="fmtNum(this)">
+      </div>
+      <div class="field">
+        <label>Number of Web Applications</label>
+        <select id="apps">
+          <option value="1">1</option>
+          <option value="2">2-3</option>
+          <option value="5">4-5</option>
+          <option value="10">6+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Target Markets</label>
+        <select id="markets">
+          <option value="us">US Only</option>
+          <option value="eu">EU Only</option>
+          <option value="both">US + EU</option>
+          <option value="global">Global</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Current Accessibility Level</label>
+        <select id="a11yLevel">
+          <option value="none">No audit done</option>
+          <option value="partial">Partial compliance</option>
+          <option value="full">Full WCAG 2.1 AA</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calc()">&#128640; Calculate My Risk &amp; ROI</button>
+    <div id="results" class="results">
+      <div class="results-header">
+        <h3>Your Accessibility Risk Assessment</h3>
+        <p class="verdict" id="verdict"></p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card danger">
+          <span class="card-icon">&#9888;</span>
+          <div class="card-label">Potential Lawsuit Cost</div>
+          <div class="card-value" id="lawsuitCost">$0</div>
+          <div class="card-detail" id="lawsuitDet">Settlement + legal fees + lost revenue</div>
+        </div>
+        <div class="result-card safe">
+          <span class="card-icon">&#9989;</span>
+          <div class="card-label">Audit Investment</div>
+          <div class="card-value" id="auditCost">$0</div>
+          <div class="card-detail" id="auditDet">One-time audit + remediation</div>
+        </div>
+        <div class="result-card gold">
+          <span class="card-icon">&#128176;</span>
+          <div class="card-label">Net Savings</div>
+          <div class="card-value" id="netSavings">$0</div>
+          <div class="card-detail" id="savingsDet">By preventing just one lawsuit</div>
+        </div>
+      </div>
+      <div class="roi-meter">
+        <h4>Your ROI on Accessibility Investment</h4>
+        <div class="meter-bar"><div class="meter-fill" id="meterFill"></div></div>
+        <div class="meter-roi" id="roiPct">0x</div>
+      </div>
+      <div class="comparison">
+        <h4>Detailed Cost Comparison</h4>
+        <table class="comp-table">
+          <thead><tr><th>Item</th><th>Without Audit</th><th>With Audit</th></tr></thead>
+          <tbody id="compBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <h2>Protect Your Business Today</h2>
+  <p>Get a comprehensive WCAG 2.1 AA accessibility audit from Ranuk IT Solutions. Fixed price, no surprises.</p>
+  <a href="https://ranuk.dev/ada-audits.html" class="cta-btn">&#128640; Get Your Accessibility Audit — Starting at $2,999</a>
+</section>
+<footer>&copy; 2026 Ranuk IT Solutions &mdash; Built by Emilio Ranucoli</footer>
+<script>
+function fmtCur(e){var v=e.value.replace(/[^0-9]/g,'');if(v)e.value='$'+Number(v).toLocaleString('en-US')}
+function fmtNum(e){var v=e.value.replace(/[^0-9]/g,'');if(v)e.value=Number(v).toLocaleString('en-US')}
+function pn(id){return parseInt(document.getElementById(id).value.replace(/[^0-9]/g,''))||0}
+function calc(){
+  var rev=pn('revenue'),al=document.getElementById('a11yLevel').value;
+  var mkt=document.getElementById('markets').value;
+  var ind=document.getElementById('industry').value;
+  var apps=parseInt(document.getElementById('apps').value)||1;
+  var rm={none:1,partial:.5,full:.1}[al];
+  var mm={us:1,eu:1.1,both:1.2,global:1.3}[mkt];
+  var im={saas:1,ecommerce:1.1,finance:1.3,healthcare:1.2,education:.8,media:1.1}[ind];
+  var am=1+(apps-1)*.15;
+  var rs=Math.max(1,rev/1e6);
+  var ll=Math.round(50000*rs*mm*im*rm);
+  var lh=Math.round(150000*rs*mm*im*rm*am);
+  var avg=Math.round((ll+lh)/2);
+  var dr=rev/365;
+  var lr=Math.round(dr*20*mm);
+  var bd=Math.round(rev*.05*mm);
+  var rf=Math.round(apps*4500*rm);
+  var twa=avg+lr+bd+rf;
+  var ab={1:2999,2:4499,5:7499,10:11999}[apps]||2999;
+  var rc=Math.round(ab*.4*apps);
+  var taw=ab+rc;
+  var sv=twa-taw;
+  var roi=Math.max(1,Math.round(sv/taw));
+  document.getElementById('lawsuitCost').textContent='$'+twa.toLocaleString();
+  document.getElementById('lawsuitDet').textContent='Settlement $'+avg.toLocaleString()+' + Legal $'+Math.round(avg*.3).toLocaleString()+' + Lost rev + Brand';
+  document.getElementById('auditCost').textContent='$'+taw.toLocaleString();
+  document.getElementById('auditDet').textContent='Audit $'+ab.toLocaleString()+' + Remediation $'+rc.toLocaleString();
+  document.getElementById('netSavings').textContent='$'+Math.max(0,sv).toLocaleString();
+  document.getElementById('savingsDet').textContent='ROI: '+roi+'x return on your audit investment';
+  document.getElementById('roiPct').textContent=roi+'x';
+  document.getElementById('meterFill').style.width=Math.min(100,roi*2)+'%';
+  var v=document.getElementById('verdict');
+  if(al==='full')v.textContent='Your risk is LOW. A quick audit confirms compliance.';
+  else if(al==='partial')v.textContent='Your risk is MEDIUM. Close the gaps before lawsuits find you.';
+  else v.textContent='Your risk is HIGH. Without an audit, you are an easy target.';
+  var rows=[
+    ['Lawsuit Settlement','<span class="cost">$'+avg.toLocaleString()+'</span>','<span class="save">$0</span>'],
+    ['Legal Defense Fees','<span class="cost">$'+Math.round(avg*.3).toLocaleString()+'</span>','<span class="save">$0</span>'],
+    ['Lost Revenue (20 days)','<span class="cost">$'+lr.toLocaleString()+'</span>','<span class="save">$0</span>'],
+    ['Brand / Reputation Damage','<span class="cost">$'+bd.toLocaleString()+'</span>','<span class="save">$0</span>'],
+    ['Retroactive Compliance','<span class="cost">$'+rf.toLocaleString()+'</span>','<span class="save">$'+rc.toLocaleString()+'</span>'],
+    ['Accessibility Audit','<span class="cost">N/A</span>','<span class="cost">$'+ab.toLocaleString()+'</span>'],
+    ['<strong>TOTAL</strong>','<span class="cost"><strong>$'+twa.toLocaleString()+'</strong></span>','<span class="save"><strong>$'+taw.toLocaleString()+'</strong></span>']
+  ];
+  var h='';rows.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'});
+  document.getElementById('compBody').innerHTML=h;
+  var el=document.getElementById('results');
+  el.classList.add('show');
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
