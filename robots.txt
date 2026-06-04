@@ -1,3 +1,43 @@
+# =========================================================
+# robots.txt — ranuk.dev
+# Permisos de crawlers + protección de paths sensibles
+# =========================================================
+
 User-agent: *
 Allow: /
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /js/
+Disallow: /css/
+Disallow: /*.json$
+Disallow: /screenshot*
+
+# Bloquear bots maliciosos conocidos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Solo permitir buenos bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap
 Sitemap: https://ranuk.dev/sitemap.xml
+
+# Crawl-delay para bots generosos
+User-agent: *
+Crawl-delay: 1
