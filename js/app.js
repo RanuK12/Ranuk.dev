@@ -44,7 +44,7 @@
         });
     }
 
-    // ---- Contact form handler (Formspree) ----
+    // ---- Contact form handler (FormSubmit.co) ----
     function initContactForm() {
         const form = document.getElementById('contact-form');
         if (!form) return;
@@ -63,8 +63,7 @@
                 const data = new FormData(form);
                 const response = await fetch(form.action, {
                     method: 'POST',
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
+                    body: data
                 });
 
                 if (response.ok) {
