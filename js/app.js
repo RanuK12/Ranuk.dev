@@ -44,40 +44,59 @@
         });
     }
 
-    // ---- Contact form handler ----
+    // ---- Contact form handler (Formspree) ----
     function initContactForm() {
         const form = document.getElementById('contact-form');
         if (!form) return;
 
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            const name = document.getElementById('form-name')?.value.trim();
-            const email = document.getElementById('form-email')?.value.trim();
-            const message = document.getElementById('form-message')?.value.trim();
-            const subjectKey = document.getElementById('form-subject')?.value || 'other';
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const btnOriginalHTML = submitBtn?.innerHTML;
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando…';
+            }
 
-            if (!name || !email || !message) return;
+            try {
+                const data = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            const SUBJECTS = {
-                project: 'Nuevo proyecto',
-                ranuk:   'Consulta — Ranuk IT',
-                ada:     'Auditoría ADA / WCAG',
-                team:    'Quiero unirme al equipo',
-                book:    'Pedido de copia firmada',
-                other:   'Contacto desde ranuk.dev'
-            };
-            const subjectText = SUBJECTS[subjectKey] || SUBJECTS.other;
-            const subject = encodeURIComponent(`[${subjectText}] · ${name}`);
-            const body = encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-            );
-
-            // Email encoded in base64 to prevent scraping
-    const encodedEmail = atob('cmFudWNvbGllbWlsaW9AZ21haWwuY29t');
-    window.location.href = `mailto:${encodedEmail}?subject=${subject}&body=${body}`;
-
-            form.reset();
+                if (response.ok) {
+                    form.innerHTML = `
+                        <div class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>¡Mensaje enviado!</h3>
+                            <p>Te respondo personalmente en menos de 24h.</p>
+                        </div>`;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (err) {
+                // Fallback: mailto
+                const name = form.querySelector('#form-name')?.value || '';
+                const email = form.querySelector('#form-email')?.value || '';
+                const message = form.querySelector('#form-message')?.value || '';
+                const subjectKey = form.querySelector('#form-subject')?.value || 'other';
+                const SUBJECTS = {
+                    project: 'Nuevo proyecto', ranuk: 'Consulta — Ranuk IT',
+                    ada: 'Auditoría ADA / WCAG', team: 'Quiero unirme al equipo',
+                    book: 'Pedido de copia firmada', other: 'Contacto desde ranuk.dev'
+                };
+                const subject = encodeURIComponent(`[${SUBJECTS[subjectKey] || SUBJECTS.other}] · ${name}`);
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                const encodedEmail = atob('cmFudWNvbGllbWlsaW9AZ21haWwuY29t');
+                window.location.href = `mailto:${encodedEmail}?subject=${subject}&body=${body}`;
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = btnOriginalHTML;
+                }
+            }
         });
     }
 

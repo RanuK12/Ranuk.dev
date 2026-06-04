@@ -170,6 +170,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#story" class="nav-link" data-i18n="nav.story">Historia</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="nav.services">Servicios</a></li>
                 <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
                 <li><a href="#ml-lab" class="nav-link" data-i18n="nav.mllab">ML Lab</a></li>
                 <li><a href="#book" class="nav-link" data-i18n="nav.book">Libro</a></li>
@@ -743,6 +744,9 @@
                 <a href="https://github.com/RanuK12?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="projects.viewall">
                     View All Projects on GitHub <i class="fas fa-arrow-right"></i>
                 </a>
+                <a href="#services" class="btn btn-primary" style="margin-left: 1rem;">
+                    <i class="fas fa-briefcase"></i> Ver servicios & precios
+                </a>
             </div>
         </div>
     </section>
@@ -868,6 +872,91 @@
             </div>
         </div>
     </section>
+
+    <!-- ============ SERVICIOS & PRECIOS ============ -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title services-title">
+                <span class="title-number">✦</span> Servicios
+            </h2>
+            <p class="section-subtitle">
+                Soluciones técnicas reales, con precios transparentes. Elegí lo que necesitás.
+            </p>
+            <div class="pricing-grid">
+                <!-- PLAN 1: Auditorías -->
+                <div class="pricing-card pricing-card--starter">
+                    <div class="pricing-card__badge">Entrada</div>
+                    <h3 class="pricing-card__name">Auditorías</h3>
+                    <p class="pricing-card__desc">WCAG/ADA, performance, seguridad o code review. Diagnóstico claro con plan de acción.</p>
+                    <div class="pricing-card__price">
+                        <span class="pricing-currency">USD</span>
+                        <span class="pricing-amount">50</span>
+                        <span class="pricing-period">desde</span>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Auditoría WCAG/ADA completa</li>
+                        <li><i class="fas fa-check"></i> Auditoría de performance</li>
+                        <li><i class="fas fa-check"></i> Code review técnico</li>
+                        <li><i class="fas fa-check"></i> Informe + roadmap accionable</li>
+                        <li><i class="fas fa-check"></i> Entrega en 48hs</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline pricing-card__cta">
+                        <i class="fas fa-search"></i> Solicitar auditoría
+                    </a>
+                </div>
+
+                <!-- PLAN 2: Automatizaciones -->
+                <div class="pricing-card pricing-card--pro pricing-card--featured">
+                    <div class="pricing-card__badge">Más popular</div>
+                    <h3 class="pricing-card__name">Automatizaciones</h3>
+                    <p class="pricing-card__desc">Bots, scrapers, pipelines de datos, flujos de trabajo que ahorran horas cada semana.</p>
+                    <div class="pricing-card__price">
+                        <span class="pricing-currency">USD</span>
+                        <span class="pricing-amount">100</span>
+                        <span class="pricing-period">desde</span>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Bots de Telegram / WhatsApp</li>
+                        <li><i class="fas fa-check"></i> Scraping + monitoreo 24/7</li>
+                        <li><i class="fas fa-check"></i> Pipelines de datos (ETL)</li>
+                        <li><i class="fas fa-check"></i> Integración entre APIs</li>
+                        <li><i class="fas fa-check"></i> Soporte 30 días incluido</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary pricing-card__cta">
+                        <i class="fas fa-rocket"></i> Automatizar ahora
+                    </a>
+                </div>
+
+                <!-- PLAN 3: SaaS Custom -->
+                <div class="pricing-card pricing-card--enterprise">
+                    <div class="pricing-card__badge">Full stack</div>
+                    <h3 class="pricing-card__name">Desarrollo SaaS</h3>
+                    <p class="pricing-card__desc">Producto completo de punta a punta: frontend, backend, ML, deploy. De la idea al primer cliente.</p>
+                    <div class="pricing-card__price">
+                        <span class="pricing-currency">USD</span>
+                        <span class="pricing-amount">500</span>
+                        <span class="pricing-period">desde</span>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Arquitectura + diseño técnico</li>
+                        <li><i class="fas fa-check"></i> Frontend + Backend + DB</li>
+                        <li><i class="fas fa-check"></i> ML / IA integrada</li>
+                        <li><i class="fas fa-check"></i> Deploy + CI/CD</li>
+                        <li><i class="fas fa-check"></i> Iteraciones según feedback</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline pricing-card__cta">
+                        <i class="fas fa-code"></i> Construir mi SaaS
+                    </a>
+                </div>
+            </div>
+            <p class="services-note">
+                <i class="fas fa-info-circle"></i>
+                Todos los precios son orientativos. Cada proyecto se cotiza según alcance.
+                <a href="#contact">Hablemos</a> y armo una propuesta a medida.
+            </p>
+        </div>
+    </section>
+
     <!-- ============ ML LAB ============ -->
     <section id="ml-lab" class="section ml-lab">
         <div class="container">
@@ -1085,7 +1174,7 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form" name="contact" method="post">
+                <form class="contact-form" id="contact-form" name="contact" action="https://formspree.io/f/xeozybzp" method="POST">
                     <div class="form-group">
                         <input type="text" id="form-name" name="name" autocomplete="name" required>
                         <label for="form-name" data-i18n="contact.name">Nombre</label>
