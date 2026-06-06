@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-05T05:48:27.782Z",
+  "generated_at": "2026-06-06T05:37:25.389Z",
   "stats": {
-    "public_repos": 31,
+    "public_repos": 32,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-05T04:23:53Z"
+    "last_push": "2026-06-06T02:13:40Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 66587530,
-      "pct": 90.8
+      "pct": 90.7
     },
     {
       "name": "Jupyter Notebook",
@@ -20,7 +20,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1193708,
+      "bytes": 1210736,
       "pct": 1.6
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 1079063,
+      "bytes": 1098985,
       "pct": 1.5
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Shell",
-      "bytes": 39637,
+      "bytes": 41263,
       "pct": 0.1
     },
     {
@@ -107,6 +107,18 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
+      "name": "LigaStatsGame",
+      "full_name": "RanuK12/LigaStatsGame",
+      "description": null,
+      "url": "https://github.com/RanuK12/LigaStatsGame",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-06T02:13:40Z"
+    },
+    {
       "name": "Flight-Price-Alert",
       "full_name": "RanuK12/Flight-Price-Alert",
       "description": null,
@@ -116,31 +128,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-05T04:23:53Z"
+      "updated": "2026-06-05T07:08:18Z"
     },
     {
-      "name": "landing-factory",
-      "full_name": "RanuK12/landing-factory",
+      "name": "flights-alerts",
+      "full_name": "RanuK12/flights-alerts",
       "description": null,
-      "url": "https://github.com/RanuK12/landing-factory",
+      "url": "https://github.com/RanuK12/flights-alerts",
       "homepage": null,
-      "language": "TypeScript",
+      "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-05T04:15:24Z"
-    },
-    {
-      "name": "Bahay_Web",
-      "full_name": "RanuK12/Bahay_Web",
-      "description": null,
-      "url": "https://github.com/RanuK12/Bahay_Web",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-04T22:27:09Z"
+      "updated": "2026-06-05T06:34:39Z"
     }
   ]
 }
