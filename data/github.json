@@ -1,26 +1,31 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-06T05:37:25.389Z",
+  "generated_at": "2026-06-07T05:50:56.822Z",
   "stats": {
     "public_repos": 32,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-06T02:13:40Z"
+    "last_push": "2026-06-07T03:14:32Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66587530,
-      "pct": 90.7
+      "bytes": 66686463,
+      "pct": 90.6
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 2757385,
-      "pct": 3.8
+      "pct": 3.7
     },
     {
       "name": "JavaScript",
-      "bytes": 1210736,
+      "bytes": 1218553,
+      "pct": 1.7
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 1173218,
       "pct": 1.6
     },
     {
@@ -29,13 +34,8 @@
       "pct": 1.6
     },
     {
-      "name": "TypeScript",
-      "bytes": 1098985,
-      "pct": 1.5
-    },
-    {
       "name": "CSS",
-      "bytes": 303607,
+      "bytes": 308865,
       "pct": 0.4
     },
     {
@@ -112,11 +112,23 @@
       "description": null,
       "url": "https://github.com/RanuK12/LigaStatsGame",
       "homepage": null,
-      "language": "TypeScript",
+      "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-06T02:13:40Z"
+      "updated": "2026-06-07T03:14:32Z"
+    },
+    {
+      "name": "Bahay_Web",
+      "full_name": "RanuK12/Bahay_Web",
+      "description": null,
+      "url": "https://github.com/RanuK12/Bahay_Web",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-06T16:17:14Z"
     },
     {
       "name": "Flight-Price-Alert",
@@ -128,19 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-05T07:08:18Z"
-    },
-    {
-      "name": "flights-alerts",
-      "full_name": "RanuK12/flights-alerts",
-      "description": null,
-      "url": "https://github.com/RanuK12/flights-alerts",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-05T06:34:39Z"
+      "updated": "2026-06-06T15:28:47Z"
     }
   ]
 }
