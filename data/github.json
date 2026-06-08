@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-07T05:50:56.822Z",
+  "generated_at": "2026-06-08T05:55:47.792Z",
   "stats": {
     "public_repos": 32,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-07T03:14:32Z"
+    "last_push": "2026-06-07T05:50:57Z"
   },
   "languages": [
     {
@@ -116,7 +116,19 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-07T03:14:32Z"
+      "updated": "2026-06-08T02:42:00Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-07T05:50:57Z"
     },
     {
       "name": "Bahay_Web",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-06T16:17:14Z"
-    },
-    {
-      "name": "Flight-Price-Alert",
-      "full_name": "RanuK12/Flight-Price-Alert",
-      "description": null,
-      "url": "https://github.com/RanuK12/Flight-Price-Alert",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-06T15:28:47Z"
     }
   ]
 }
