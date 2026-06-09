@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-08T05:55:47.792Z",
+  "generated_at": "2026-06-09T05:42:16.580Z",
   "stats": {
-    "public_repos": 32,
+    "public_repos": 36,
     "total_stars": 1,
-    "languages_count": 14,
-    "last_push": "2026-06-07T05:50:57Z"
+    "languages_count": 15,
+    "last_push": "2026-06-09T04:02:08Z"
   },
   "languages": [
     {
       "name": "Python",
       "bytes": 66686463,
-      "pct": 90.6
+      "pct": 90.4
     },
     {
       "name": "Jupyter Notebook",
@@ -19,23 +19,23 @@
       "pct": 3.7
     },
     {
+      "name": "TypeScript",
+      "bytes": 1308371,
+      "pct": 1.8
+    },
+    {
       "name": "JavaScript",
-      "bytes": 1218553,
+      "bytes": 1223662,
       "pct": 1.7
     },
     {
-      "name": "TypeScript",
-      "bytes": 1173218,
-      "pct": 1.6
-    },
-    {
       "name": "HTML",
-      "bytes": 1158697,
+      "bytes": 1161303,
       "pct": 1.6
     },
     {
       "name": "CSS",
-      "bytes": 308865,
+      "bytes": 315058,
       "pct": 0.4
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Shell",
-      "bytes": 41263,
+      "bytes": 42536,
       "pct": 0.1
     },
     {
@@ -64,8 +64,8 @@
       "pct": 0
     },
     {
-      "name": "Java",
-      "bytes": 1925,
+      "name": "Lua",
+      "bytes": 4881,
       "pct": 0
     }
   ],
@@ -107,40 +107,40 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
-      "name": "LigaStatsGame",
-      "full_name": "RanuK12/LigaStatsGame",
+      "name": "Real_Estate_Scraping",
+      "full_name": "RanuK12/Real_Estate_Scraping",
       "description": null,
-      "url": "https://github.com/RanuK12/LigaStatsGame",
+      "url": "https://github.com/RanuK12/Real_Estate_Scraping",
       "homepage": null,
-      "language": "Python",
+      "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-08T02:42:00Z"
+      "updated": "2026-06-09T04:02:08Z"
     },
     {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
+      "name": "redbean-landing",
+      "full_name": "RanuK12/redbean-landing",
       "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "url": "https://github.com/RanuK12/redbean-landing",
       "homepage": null,
-      "language": "JavaScript",
+      "language": "CSS",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-07T05:50:57Z"
+      "updated": "2026-06-09T03:42:33Z"
     },
     {
-      "name": "Bahay_Web",
-      "full_name": "RanuK12/Bahay_Web",
+      "name": "GARYCIO_Project",
+      "full_name": "RanuK12/GARYCIO_Project",
       "description": null,
-      "url": "https://github.com/RanuK12/Bahay_Web",
+      "url": "https://github.com/RanuK12/GARYCIO_Project",
       "homepage": null,
-      "language": "HTML",
+      "language": "TypeScript",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-06T16:17:14Z"
+      "updated": "2026-06-09T02:11:17Z"
     }
   ]
 }
