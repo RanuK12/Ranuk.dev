@@ -1,41 +1,36 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-09T05:42:16.580Z",
+  "generated_at": "2026-06-10T05:48:30.054Z",
   "stats": {
-    "public_repos": 36,
+    "public_repos": 34,
     "total_stars": 1,
-    "languages_count": 15,
-    "last_push": "2026-06-09T04:02:08Z"
+    "languages_count": 14,
+    "last_push": "2026-06-09T20:45:34Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66686463,
-      "pct": 90.4
-    },
-    {
-      "name": "Jupyter Notebook",
-      "bytes": 2757385,
-      "pct": 3.7
-    },
-    {
-      "name": "TypeScript",
-      "bytes": 1308371,
-      "pct": 1.8
+      "bytes": 66616267,
+      "pct": 95.5
     },
     {
       "name": "JavaScript",
-      "bytes": 1223662,
+      "bytes": 1201812,
       "pct": 1.7
     },
     {
       "name": "HTML",
-      "bytes": 1161303,
-      "pct": 1.6
+      "bytes": 1008332,
+      "pct": 1.4
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 317127,
+      "pct": 0.5
     },
     {
       "name": "CSS",
-      "bytes": 315058,
+      "bytes": 309437,
       "pct": 0.4
     },
     {
@@ -45,12 +40,17 @@
     },
     {
       "name": "Shell",
-      "bytes": 42536,
-      "pct": 0.1
+      "bytes": 34175,
+      "pct": 0
+    },
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 22922,
+      "pct": 0
     },
     {
       "name": "Batchfile",
-      "bytes": 17399,
+      "bytes": 15830,
       "pct": 0
     },
     {
@@ -64,8 +64,8 @@
       "pct": 0
     },
     {
-      "name": "Lua",
-      "bytes": 4881,
+      "name": "Java",
+      "bytes": 1925,
       "pct": 0
     }
   ],
@@ -107,6 +107,30 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
+      "name": "cloud-credits-tracker",
+      "full_name": "RanuK12/cloud-credits-tracker",
+      "description": null,
+      "url": "https://github.com/RanuK12/cloud-credits-tracker",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-09T20:45:34Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-09T05:42:17Z"
+    },
+    {
       "name": "Real_Estate_Scraping",
       "full_name": "RanuK12/Real_Estate_Scraping",
       "description": null,
@@ -117,30 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-09T04:02:08Z"
-    },
-    {
-      "name": "redbean-landing",
-      "full_name": "RanuK12/redbean-landing",
-      "description": null,
-      "url": "https://github.com/RanuK12/redbean-landing",
-      "homepage": null,
-      "language": "CSS",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-09T03:42:33Z"
-    },
-    {
-      "name": "GARYCIO_Project",
-      "full_name": "RanuK12/GARYCIO_Project",
-      "description": null,
-      "url": "https://github.com/RanuK12/GARYCIO_Project",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-09T02:11:17Z"
     }
   ]
 }
