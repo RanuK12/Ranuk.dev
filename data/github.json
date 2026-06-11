@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-10T05:48:30.054Z",
+  "generated_at": "2026-06-11T05:55:50.208Z",
   "stats": {
     "public_repos": 34,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-09T20:45:34Z"
+    "last_push": "2026-06-10T05:48:30Z"
   },
   "languages": [
     {
@@ -107,6 +107,18 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": null,
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-10T05:48:30Z"
+    },
+    {
       "name": "cloud-credits-tracker",
       "full_name": "RanuK12/cloud-credits-tracker",
       "description": null,
@@ -117,18 +129,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-09T20:45:34Z"
-    },
-    {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
-      "homepage": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-09T05:42:17Z"
     },
     {
       "name": "Real_Estate_Scraping",
