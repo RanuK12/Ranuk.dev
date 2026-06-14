@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-13T05:47:12.483Z",
+  "generated_at": "2026-06-14T05:55:37.667Z",
   "stats": {
-    "public_repos": 34,
+    "public_repos": 35,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-12T05:55:08Z"
+    "last_push": "2026-06-14T02:28:06Z"
   },
   "languages": [
     {
@@ -83,6 +83,18 @@
       "updated": "2026-06-01T03:24:10Z"
     },
     {
+      "name": "redbean-landing",
+      "full_name": "RanuK12/redbean-landing",
+      "description": "Redbean landing page",
+      "url": "https://github.com/RanuK12/redbean-landing",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-14T02:28:06Z"
+    },
+    {
       "name": "skills-copilot-codespaces-vscode",
       "full_name": "RanuK12/skills-copilot-codespaces-vscode",
       "description": "My clone repository",
@@ -116,7 +128,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-12T05:55:08Z"
+      "updated": "2026-06-13T05:47:13Z"
     },
     {
       "name": "cloud-credits-tracker",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-09T20:45:34Z"
-    },
-    {
-      "name": "Real_Estate_Scraping",
-      "full_name": "RanuK12/Real_Estate_Scraping",
-      "description": null,
-      "url": "https://github.com/RanuK12/Real_Estate_Scraping",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-09T04:02:08Z"
     }
   ]
 }
