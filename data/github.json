@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-15T06:06:27.411Z",
+  "generated_at": "2026-06-16T06:10:37.856Z",
   "stats": {
     "public_repos": 35,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-14T05:55:38Z"
+    "last_push": "2026-06-15T08:09:56Z"
   },
   "languages": [
     {
@@ -119,6 +119,18 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
+      "name": "LigaStatsGame",
+      "full_name": "RanuK12/LigaStatsGame",
+      "description": null,
+      "url": "https://github.com/RanuK12/LigaStatsGame",
+      "homepage": "https://ligastatsgame.vercel.app",
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-15T08:09:56Z"
+    },
+    {
       "name": "Ranuk.dev",
       "full_name": "RanuK12/Ranuk.dev",
       "description": null,
@@ -128,19 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-14T05:55:38Z"
-    },
-    {
-      "name": "cloud-credits-tracker",
-      "full_name": "RanuK12/cloud-credits-tracker",
-      "description": null,
-      "url": "https://github.com/RanuK12/cloud-credits-tracker",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-09T20:45:34Z"
+      "updated": "2026-06-15T06:06:28Z"
     }
   ]
 }
