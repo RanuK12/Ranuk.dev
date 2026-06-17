@@ -1,16 +1,16 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-16T06:10:37.856Z",
+  "generated_at": "2026-06-17T05:58:40.752Z",
   "stats": {
-    "public_repos": 35,
+    "public_repos": 36,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-15T08:09:56Z"
+    "last_push": "2026-06-16T23:39:43Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66616267,
+      "bytes": 66617884,
       "pct": 95.5
     },
     {
@@ -119,16 +119,16 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
-      "name": "LigaStatsGame",
-      "full_name": "RanuK12/LigaStatsGame",
+      "name": "firecrawl-ecom-scraper",
+      "full_name": "RanuK12/firecrawl-ecom-scraper",
       "description": null,
-      "url": "https://github.com/RanuK12/LigaStatsGame",
-      "homepage": "https://ligastatsgame.vercel.app",
-      "language": "TypeScript",
+      "url": "https://github.com/RanuK12/firecrawl-ecom-scraper",
+      "homepage": null,
+      "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-15T08:09:56Z"
+      "updated": "2026-06-16T23:39:43Z"
     },
     {
       "name": "Ranuk.dev",
@@ -140,7 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-15T06:06:28Z"
+      "updated": "2026-06-16T06:10:38Z"
     }
   ]
 }
