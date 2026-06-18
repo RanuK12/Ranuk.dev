@@ -426,6 +426,16 @@ MIT License - Siéntete libre de fork y adaptar para tu propio portfolio.
 
 *"Del primer commit a la factura del cliente. Construyo sistemas con Python y ML. Escribo sobre todo lo demás."*
 
+## 🛠 Automatización y Mantenimiento
+
+El proyecto incluye varios scripts para facilitar el mantenimiento, la actualización de dependencias y el desarrollo ágil:
+
+- **Gestión de versiones**: `update-versions.sh`, `update-versions-smart.js`, `update-versions-adv.js` — actualizan automáticamente las versiones de los archivos CSS y JS para evitar problemas de caché.
+- **Hot‑reload**: `hot-reload.sh` y `hot-reload-advanced.sh` — permiten recargar el navegador automáticamente al detectar cambios en los archivos, agilizando el desarrollo.
+- **Despliegue y seguridad**: `nginx-security.conf` — configuración de seguridad para servidores Nginx que alojan el sitio.
+
+Estos scripts se encuentran en la raíz del proyecto y en la carpeta `scripts/`.
+
 ## Licencia
 
 MIT — © 2026 Ranuk IT Solutions | [ranuk.dev](https://ranuk.dev)
