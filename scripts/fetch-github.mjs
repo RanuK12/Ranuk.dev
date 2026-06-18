@@ -15,16 +15,26 @@ const USER = process.env.GITHUB_USER || 'RanuK12';
 const TOKEN = process.env.GITHUB_TOKEN; // opcional, evita rate-limits en Actions
 const OUT = new URL('../data/github.json', import.meta.url);
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 const headers = {
     'User-Agent': 'ranuk-dev-sync',
     Accept: 'application/vnd.github+json',
     ...(TOKEN ? { Authorization: `Bearer ${TOKEN}` } : {})
 };
 
-async function ghFetch(path) {
-    const res = await fetch(`https://api.github.com${path}`, { headers });
-    if (!res.ok) throw new Error(`GH ${path} → ${res.status}`);
-    return res.json();
+async function ghFetch(path, retries = 3) {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            const res = await fetch(`https://api.github.com${path}`, { headers });
+            if (!res.ok) throw new Error(`GH ${path} → ${res.status}`);
+            return res.json();
+        } catch (err) {
+            if (attempt === retries) throw err;
+            console.warn(`⚠️  ghFetch attempt ${attempt} failed for ${path}, retrying...`);
+            await sleep(1000);
+        }
+    }
 }
 
 async function fetchAllRepos() {
@@ -43,8 +53,10 @@ async function fetchLanguagesFor(repo) {
 }
 
 function aggregateLanguages(byRepoLangs) {
+    if (!byRepoLangs || byRepoLangs.length === 0) return [];
     const totals = {};
     for (const langs of byRepoLangs) {
+        if (!langs || Object.keys(langs).length === 0) continue;
         for (const [name, bytes] of Object.entries(langs)) {
             totals[name] = (totals[name] || 0) + bytes;
         }
@@ -86,6 +98,9 @@ function pickFeatured(repos, n = 6) {
 }
 
 async function main() {
+    if (!TOKEN) {
+        console.warn('⚠️  GITHUB_TOKEN not set – unauthenticated requests are rate-limited to 60/hour. Consider setting the token for reliable sync.');
+    }
     console.log(`→ Sync GitHub para @${USER}`);
     const repos = await fetchAllRepos();
     console.log(`  ${repos.length} repos públicos no archivados`);

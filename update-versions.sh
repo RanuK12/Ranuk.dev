@@ -1,31 +1,32 @@
 #!/bin/bash
 
-# Cache Busting Script
-# Genera versiones automáticas basadas en timestamps de archivos
+# Colores para logs
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
 
-echo "🔄 Generando versiones de cache busting..."
-
-# Obtener timestamp actual
 TIMESTAMP=$(date +%s)
+FILES=("css/styles.css" "js/animations.js" "js/app.js" "js/github-feed.js" "js/i18n.js" "js/ml-playground.js" "js/particles.js")
 
-# Actualizar index.html con nuevas versiones
-sed -i.tmp "s/css\/styles.css?v=[0-9.]*\"/css\/styles.css?v=$TIMESTAMP\"/" index.html
-sed -i.tmp "s/js\/i18n.js?v=[0-9.]*\"/js\/i18n.js?v=$TIMESTAMP\"/" index.html
-sed -i.tmp "s/js\/particles.js?v=[0-9.]*\"/js\/particles.js?v=$TIMESTAMP\"/" index.html
-sed -i.tmp "s/js\/animations.js?v=[0-9.]*\"/js\/animations.js?v=$TIMESTAMP\"/" index.html
-sed -i.tmp "s/js\/ml-playground.js?v=[0-9.]*\"/js\/ml-playground.js?v=$TIMESTAMP\"/" index.html
-sed -i.tmp "s/js\/github-feed.js?v=[0-9.]*\"/js\/github-feed.js?v=$TIMESTAMP\"/" index.html
-sed -i.tmp "s/js\/app.js?v=[0-9.]*\"/js\/app.js?v=$TIMESTAMP\"/" index.html
+echo -e "${CYAN}🚀 Iniciando actualización de versiones...${NC}"
+
+for file in "${FILES[@]}"; do
+    if sed -i.tmp "s|${file}\?v=[0-9.]*\"|${file}?v=${TIMESTAMP}\"|" index.html; then
+        echo -e "${GREEN}✅ ${file} actualizado a v=${TIMESTAMP}${NC}"
+    else
+        echo -e "${YELLOW}⚠️  No se pudo actualizar ${file} (puede que no esté referenciado)${NC}"
+    fi
+done
 
 # Limpiar archivo temporal
 rm -f index.html.tmp
 
-echo "✅ Versiones actualizadas: $TIMESTAMP"
-echo "📝 Archivos modificados:"
-echo "   - css/styles.css?v=$TIMESTAMP"
-echo "   - js/i18n.js?v=$TIMESTAMP"
-echo "   - js/particles.js?v=$TIMESTAMP"
-echo "   - js/animations.js?v=$TIMESTAMP"
-echo "   - js/ml-playground.js?v=$TIMESTAMP"
-echo "   - js/github-feed.js?v=$TIMESTAMP"
-echo "   - js/app.js?v=$TIMESTAMP"
+# Remove backup if everything succeeded
+rm -f index.html.bak
+
+echo -e "${GREEN}✅ Versiones actualizadas: ${TIMESTAMP}${NC}"
+echo -e "${CYAN}📝 Archivos modificados:${NC}"
+for file in "${FILES[@]}"; do
+    echo -e "   - ${file}?v=${TIMESTAMP}"
+done
