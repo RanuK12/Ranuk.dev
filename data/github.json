@@ -1,41 +1,36 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-04T05:56:50.154Z",
+  "generated_at": "2026-06-17T05:58:40.752Z",
   "stats": {
-    "public_repos": 31,
+    "public_repos": 36,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-04T05:42:31Z"
+    "last_push": "2026-06-16T23:39:43Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66587530,
-      "pct": 90.8
-    },
-    {
-      "name": "Jupyter Notebook",
-      "bytes": 2757385,
-      "pct": 3.8
+      "bytes": 66617884,
+      "pct": 95.5
     },
     {
       "name": "JavaScript",
-      "bytes": 1164994,
-      "pct": 1.6
+      "bytes": 1201812,
+      "pct": 1.7
     },
     {
       "name": "HTML",
-      "bytes": 1150682,
-      "pct": 1.6
-    },
-    {
-      "name": "TypeScript",
-      "bytes": 1057705,
+      "bytes": 1008332,
       "pct": 1.4
     },
     {
+      "name": "TypeScript",
+      "bytes": 317127,
+      "pct": 0.5
+    },
+    {
       "name": "CSS",
-      "bytes": 299624,
+      "bytes": 309437,
       "pct": 0.4
     },
     {
@@ -45,12 +40,17 @@
     },
     {
       "name": "Shell",
-      "bytes": 39637,
-      "pct": 0.1
+      "bytes": 34175,
+      "pct": 0
+    },
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 22922,
+      "pct": 0
     },
     {
       "name": "Batchfile",
-      "bytes": 17399,
+      "bytes": 15830,
       "pct": 0
     },
     {
@@ -83,6 +83,18 @@
       "updated": "2026-06-01T03:24:10Z"
     },
     {
+      "name": "redbean-landing",
+      "full_name": "RanuK12/redbean-landing",
+      "description": "Redbean landing page",
+      "url": "https://github.com/RanuK12/redbean-landing",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-14T02:28:06Z"
+    },
+    {
       "name": "skills-copilot-codespaces-vscode",
       "full_name": "RanuK12/skills-copilot-codespaces-vscode",
       "description": "My clone repository",
@@ -107,16 +119,16 @@
       "updated": "2026-06-01T03:24:12Z"
     },
     {
-      "name": "landing-factory",
-      "full_name": "RanuK12/landing-factory",
+      "name": "firecrawl-ecom-scraper",
+      "full_name": "RanuK12/firecrawl-ecom-scraper",
       "description": null,
-      "url": "https://github.com/RanuK12/landing-factory",
+      "url": "https://github.com/RanuK12/firecrawl-ecom-scraper",
       "homepage": null,
-      "language": "TypeScript",
+      "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-04T05:42:31Z"
+      "updated": "2026-06-16T23:39:43Z"
     },
     {
       "name": "Ranuk.dev",
@@ -128,19 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-03T05:58:06Z"
-    },
-    {
-      "name": "Ranuk-Copy-Trading",
-      "full_name": "RanuK12/Ranuk-Copy-Trading",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk-Copy-Trading",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-02T19:42:39Z"
+      "updated": "2026-06-16T06:10:38Z"
     }
   ]
 }
