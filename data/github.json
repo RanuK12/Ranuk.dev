@@ -1,31 +1,31 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-17T05:58:40.752Z",
+  "generated_at": "2026-06-18T05:56:42.996Z",
   "stats": {
-    "public_repos": 36,
+    "public_repos": 41,
     "total_stars": 1,
     "languages_count": 14,
-    "last_push": "2026-06-16T23:39:43Z"
+    "last_push": "2026-06-18T05:13:51Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66617884,
+      "bytes": 66660544,
       "pct": 95.5
     },
     {
       "name": "JavaScript",
-      "bytes": 1201812,
+      "bytes": 1202181,
       "pct": 1.7
     },
     {
       "name": "HTML",
-      "bytes": 1008332,
+      "bytes": 1009833,
       "pct": 1.4
     },
     {
       "name": "TypeScript",
-      "bytes": 317127,
+      "bytes": 321121,
       "pct": 0.5
     },
     {
@@ -83,64 +83,64 @@
       "updated": "2026-06-01T03:24:10Z"
     },
     {
-      "name": "redbean-landing",
-      "full_name": "RanuK12/redbean-landing",
-      "description": "Redbean landing page",
-      "url": "https://github.com/RanuK12/redbean-landing",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-14T02:28:06Z"
-    },
-    {
-      "name": "skills-copilot-codespaces-vscode",
-      "full_name": "RanuK12/skills-copilot-codespaces-vscode",
-      "description": "My clone repository",
-      "url": "https://github.com/RanuK12/skills-copilot-codespaces-vscode",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-01T03:24:33Z"
-    },
-    {
-      "name": "eurobrico-web",
-      "full_name": "RanuK12/eurobrico-web",
-      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
-      "url": "https://github.com/RanuK12/eurobrico-web",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-01T03:24:12Z"
-    },
-    {
-      "name": "firecrawl-ecom-scraper",
-      "full_name": "RanuK12/firecrawl-ecom-scraper",
-      "description": null,
-      "url": "https://github.com/RanuK12/firecrawl-ecom-scraper",
+      "name": "smart-audit-scraper",
+      "full_name": "RanuK12/smart-audit-scraper",
+      "description": "Automated web scraping and data integrity audit tool for e-commerce platforms.",
+      "url": "https://github.com/RanuK12/smart-audit-scraper",
       "homepage": null,
       "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-16T23:39:43Z"
+      "updated": "2026-06-18T05:13:51Z"
     },
     {
-      "name": "Ranuk.dev",
-      "full_name": "RanuK12/Ranuk.dev",
-      "description": null,
-      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "name": "smart-ad-auditor",
+      "full_name": "RanuK12/smart-ad-auditor",
+      "description": "AI-powered advertising audit tool for detecting inconsistencies and compliance issues.",
+      "url": "https://github.com/RanuK12/smart-ad-auditor",
       "homepage": null,
-      "language": "JavaScript",
+      "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-16T06:10:38Z"
+      "updated": "2026-06-18T03:50:13Z"
+    },
+    {
+      "name": "ai-lead-auditor",
+      "full_name": "RanuK12/ai-lead-auditor",
+      "description": "AI-powered lead scraping and scoring tool for automated business intelligence.",
+      "url": "https://github.com/RanuK12/ai-lead-auditor",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T02:18:58Z"
+    },
+    {
+      "name": "smart-scraper-audit",
+      "full_name": "RanuK12/smart-scraper-audit",
+      "description": "A smart scraping and data auditing tool powered by Python and AI",
+      "url": "https://github.com/RanuK12/smart-scraper-audit",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T01:09:21Z"
+    },
+    {
+      "name": "smart-scraper-auditor",
+      "full_name": "RanuK12/smart-scraper-auditor",
+      "description": "A robust scraping engine with automated data integrity auditing using AI patterns.",
+      "url": "https://github.com/RanuK12/smart-scraper-auditor",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-17T23:43:00Z"
     }
   ]
 }
