@@ -20,20 +20,40 @@ const filesToUpdate = [
     'js/app.js'
 ];
 
-// Leer index.html
-let indexHtml = fs.readFileSync('index.html', 'utf8');
+let indexHtml;
+try {
+    indexHtml = fs.readFileSync('index.html', 'utf8');
+} catch (err) {
+    console.error(`❌ Error leyendo index.html: ${err.message}`);
+    process.exit(1);
+}
+
+const missingFiles = [];
 
 // Actualizar versiones
 filesToUpdate.forEach(file => {
+    if (!fs.existsSync(file)) {
+        missingFiles.push(file);
+        return;
+    }
     const regex = new RegExp(`${file.replace(/\./g, '\\.')}\\?v=[0-9.]*`, 'g');
     indexHtml = indexHtml.replace(regex, `${file}?v=${timestamp}`);
 });
 
 // Escribir index.html actualizado
-fs.writeFileSync('index.html', indexHtml, 'utf8');
+try {
+    fs.writeFileSync('index.html', indexHtml, 'utf8');
+} catch (err) {
+    console.error(`❌ Error escribiendo index.html: ${err.message}`);
+    process.exit(1);
+}
 
 console.log('✅ Versiones actualizadas:', timestamp);
 console.log('📝 Archivos modificados:');
 filesToUpdate.forEach(file => {
-    console.log(`   - ${file}?v=${timestamp}`);
+    if (missingFiles.includes(file)) {
+        console.log(`   - ${file}?v=${timestamp} (⚠️ archivo no encontrado, no se actualizó)`);
+    } else {
+        console.log(`   - ${file}?v=${timestamp}`);
+    }
 });

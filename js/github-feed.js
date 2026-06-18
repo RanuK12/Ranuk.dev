@@ -165,6 +165,19 @@
     el.appendChild(document.createTextNode(` ${word} ${ago} · data/github.json`));
   }
 
+  function showUnavailableMessage() {
+    const container = document.getElementById('open-lab');
+    if (!container) return;
+    container.innerHTML = '';
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'lab-unavailable';
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-exclamation-triangle';
+    msgDiv.appendChild(icon);
+    msgDiv.appendChild(document.createTextNode(' Feed currently unavailable'));
+    container.appendChild(msgDiv);
+  }
+
   async function load() {
     try {
       // Fetch with origin validation and explicit CORS
@@ -188,23 +201,7 @@
       renderFootnote(data.generated_at);
     } catch (err) {
       console.warn('[open-lab] Failed to load GitHub data:', err);
-      const container = document.getElementById('lab-repos-list');
-      if (container) {
-        container.innerHTML = '';
-        const errorP = document.createElement('p');
-        errorP.className = 'lab-error';
-        errorP.textContent = 'No se pudo cargar el snapshot de GitHub. ';
-
-        const errorLink = document.createElement('a');
-        errorLink.href = 'https://github.com/RanuK12';
-        errorLink.target = '_blank';
-        errorLink.rel = 'noopener';
-        errorLink.textContent = 'Visitá el perfil';
-        errorLink.className = 'lab-error-link';
-
-        errorP.appendChild(errorLink);
-        container.appendChild(errorP);
-      }
+      showUnavailableMessage();
     }
   }
 
