@@ -209,7 +209,7 @@
         document.documentElement.setAttribute('data-theme', theme);
         const btn = document.getElementById('theme-toggle');
         if (btn) {
-            btn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            btn.innerHTML = theme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
         }
     }
 
@@ -220,7 +220,7 @@
         localStorage.setItem('ranuk-theme', next);
         const btn = document.getElementById('theme-toggle');
         if (btn) {
-            btn.innerHTML = next === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            btn.innerHTML = next === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
         }
     }
 
