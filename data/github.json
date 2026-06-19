@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-18T06:26:25.829Z",
+  "generated_at": "2026-06-19T06:01:18.358Z",
   "stats": {
-    "public_repos": 41,
+    "public_repos": 44,
     "total_stars": 1,
-    "languages_count": 14,
-    "last_push": "2026-06-18T06:26:13Z"
+    "languages_count": 16,
+    "last_push": "2026-06-19T04:05:03Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66660544,
-      "pct": 95.5
+      "bytes": 66697706,
+      "pct": 95.2
     },
     {
       "name": "JavaScript",
@@ -20,18 +20,18 @@
     },
     {
       "name": "HTML",
-      "bytes": 1009833,
-      "pct": 1.4
-    },
-    {
-      "name": "TypeScript",
-      "bytes": 321121,
-      "pct": 0.5
+      "bytes": 1184632,
+      "pct": 1.7
     },
     {
       "name": "CSS",
-      "bytes": 309437,
-      "pct": 0.4
+      "bytes": 327289,
+      "pct": 0.5
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 322144,
+      "pct": 0.5
     },
     {
       "name": "PowerShell",
@@ -40,8 +40,8 @@
     },
     {
       "name": "Shell",
-      "bytes": 33857,
-      "pct": 0
+      "bytes": 38215,
+      "pct": 0.1
     },
     {
       "name": "Jupyter Notebook",
@@ -54,6 +54,11 @@
       "pct": 0
     },
     {
+      "name": "Rich Text Format",
+      "bytes": 12682,
+      "pct": 0
+    },
+    {
       "name": "PLpgSQL",
       "bytes": 6454,
       "pct": 0
@@ -61,11 +66,6 @@
     {
       "name": "Dockerfile",
       "bytes": 4986,
-      "pct": 0
-    },
-    {
-      "name": "Java",
-      "bytes": 1925,
       "pct": 0
     }
   ],
@@ -80,7 +80,55 @@
       "stars": 1,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-01T03:24:10Z"
+      "updated": "2026-06-18T10:36:20Z"
+    },
+    {
+      "name": "ai-security-auditor",
+      "full_name": "RanuK12/ai-security-auditor",
+      "description": "Tool for auditing AI API endpoints for PII leaks and prompt injection vulnerabilities",
+      "url": "https://github.com/RanuK12/ai-security-auditor",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T15:56:17Z"
+    },
+    {
+      "name": "redbean-landing",
+      "full_name": "RanuK12/redbean-landing",
+      "description": "Redbean landing page",
+      "url": "https://github.com/RanuK12/redbean-landing",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T13:54:49Z"
+    },
+    {
+      "name": "skills-copilot-codespaces-vscode",
+      "full_name": "RanuK12/skills-copilot-codespaces-vscode",
+      "description": "My clone repository",
+      "url": "https://github.com/RanuK12/skills-copilot-codespaces-vscode",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T10:39:41Z"
+    },
+    {
+      "name": "eurobrico-web",
+      "full_name": "RanuK12/eurobrico-web",
+      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
+      "url": "https://github.com/RanuK12/eurobrico-web",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T10:36:25Z"
     },
     {
       "name": "smart-audit-scraper",
@@ -93,54 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-18T05:13:51Z"
-    },
-    {
-      "name": "smart-ad-auditor",
-      "full_name": "RanuK12/smart-ad-auditor",
-      "description": "AI-powered advertising audit tool for detecting inconsistencies and compliance issues.",
-      "url": "https://github.com/RanuK12/smart-ad-auditor",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T03:50:13Z"
-    },
-    {
-      "name": "ai-lead-auditor",
-      "full_name": "RanuK12/ai-lead-auditor",
-      "description": "AI-powered lead scraping and scoring tool for automated business intelligence.",
-      "url": "https://github.com/RanuK12/ai-lead-auditor",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T02:18:58Z"
-    },
-    {
-      "name": "smart-scraper-audit",
-      "full_name": "RanuK12/smart-scraper-audit",
-      "description": "A smart scraping and data auditing tool powered by Python and AI",
-      "url": "https://github.com/RanuK12/smart-scraper-audit",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T01:09:21Z"
-    },
-    {
-      "name": "smart-scraper-auditor",
-      "full_name": "RanuK12/smart-scraper-auditor",
-      "description": "A robust scraping engine with automated data integrity auditing using AI patterns.",
-      "url": "https://github.com/RanuK12/smart-scraper-auditor",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-17T23:43:00Z"
     }
   ]
 }
