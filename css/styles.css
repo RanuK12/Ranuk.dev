@@ -31,6 +31,26 @@
     --shadow-gold: 0 0 30px rgba(212, 165, 116, 0.18);
 }
 
+[data-theme='dark'] {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-card: #e8e8e8;
+    --bg-card-hover: #dcdcdc;
+    --accent: #0077b6;
+    --accent-dim: rgba(0, 119, 182, 0.1);
+    --accent-secondary: #d62828;
+    --accent-secondary-dim: rgba(214, 40, 40, 0.1);
+    --accent-gold: #b8860b;
+    --accent-gold-dim: rgba(184, 134, 11, 0.15);
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-bright: #0a0a1a;
+    --border: rgba(0, 119, 182, 0.2);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-accent: 0 0 20px rgba(0, 119, 182, 0.15);
+    --shadow-gold: 0 0 30px rgba(184, 134, 11, 0.18);
+}
+
 /* ---- Reset & Base ---- */
 *,
 *::before,
@@ -333,6 +353,29 @@ ul { list-style: none; }
 .lang-btn.active {
     background: var(--accent);
     color: var(--bg-primary);
+}
+
+/* ---- Theme Toggle Button ---- */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
 }
 
 .nav-toggle {

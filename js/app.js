@@ -201,8 +201,38 @@
         });
     }
 
+    // ---- Theme toggle (dark mode) ----
+    function initTheme() {
+        const stored = localStorage.getItem('ranuk-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        const btn = document.getElementById('theme-toggle');
+        if (btn) {
+            btn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('ranuk-theme', next);
+        const btn = document.getElementById('theme-toggle');
+        if (btn) {
+            btn.innerHTML = next === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+    }
+
     // ---- Initialize everything on DOM ready ----
     function init() {
+        initTheme();
+
+        // Theme toggle button listener
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', toggleTheme);
+        }
         hidePreloader();
 
         // i18n
