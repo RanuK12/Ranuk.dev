@@ -17,6 +17,7 @@ Soy **Emilio Ranucoli**, Ingeniero de Sistemas y Data Scientist con más de 5 a�
 ### 🌍 Mi Trayectoria
 
 - **4 países, 3 idiomas**: Argentina · Italia · Países Bajos · España
+- **LinkedIn**: [linkedin.com/in/emilio-ranucoli](https://linkedin.com/in/emilio-ranucoli)
 - **Experiencia internacional**: Booking.com (Amsterdam), Accenture (Roma), Gobierno de Córdoba
 - **Especialización**: Machine Learning, Data Science, Full-stack Development, Python
 - **Enfoque**: Sistemas que importan — del primer commit a la factura del cliente
