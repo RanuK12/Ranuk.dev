@@ -28,6 +28,9 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-accent: 0 0 20px rgba(0, 119, 182, 0.15);
     --shadow-gold: 0 0 30px rgba(184, 134, 11, 0.18);
+    --card-radius: 20px;
+    --card-padding: 2.5rem 2rem;
+    --card-glow: 0 0 40px rgba(0, 119, 182, 0.1);
 }
 
 [data-theme='dark'] {
@@ -54,6 +57,9 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     --shadow-accent: 0 0 20px rgba(100, 255, 218, 0.15);
     --shadow-gold: 0 0 30px rgba(212, 165, 116, 0.18);
+    --card-radius: 20px;
+    --card-padding: 2.5rem 2rem;
+    --card-glow: 0 0 40px rgba(100, 255, 218, 0.1);
 }
 
 /* ---- Reset & Base ---- */
@@ -4080,28 +4086,44 @@ body.ranuk-it-page .a11y-pricing {
 .pricing-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
+    border-radius: var(--card-radius, 20px);
+    padding: var(--card-padding, 2.5rem 2rem);
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    animation: pricingFadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 0 0, rgba(var(--accent-rgb, 0, 119, 182), 0.06), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .pricing-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-accent);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 0 40px rgba(var(--accent-rgb, 0, 119, 182), 0.08);
 }
 
 .pricing-card--featured {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-accent);
-    transform: scale(1.03);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 30px rgba(var(--accent-rgb, 0, 119, 182), 0.12), var(--shadow-accent);
+    transform: scale(1.02);
 }
 
 .pricing-card--featured:hover {
-    transform: scale(1.03) translateY(-6px);
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 0 40px rgba(var(--accent-rgb, 0, 119, 182), 0.08);
 }
 
 .pricing-card__badge {
@@ -4110,12 +4132,12 @@ body.ranuk-it-page .a11y-pricing {
     right: 0;
     background: var(--accent);
     color: var(--bg-primary);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.4rem 1.2rem;
-    border-radius: 0 16px 0 12px;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 var(--card-radius, 20px) 0 12px;
 }
 
 .pricing-card__name {
@@ -4149,11 +4171,21 @@ body.ranuk-it-page .a11y-pricing {
 }
 
 .pricing-amount {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
     color: var(--text-bright);
     line-height: 1;
     font-family: var(--font-mono);
+    background: linear-gradient(135deg, var(--text-bright), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme='dark'] .pricing-amount {
+    background: none;
+    -webkit-text-fill-color: var(--text-bright);
+    color: var(--text-bright);
 }
 
 .pricing-period {
@@ -4168,12 +4200,21 @@ body.ranuk-it-page .a11y-pricing {
 }
 
 .pricing-card__features li {
-    padding: 0.45rem 0;
+    padding: 0.6rem 0;
     color: var(--text-primary);
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.pricing-card__features li:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+}
+
+.pricing-card__features li:last-child {
+    border-bottom: none;
 }
 
 .pricing-card__features li i {
@@ -4188,6 +4229,25 @@ body.ranuk-it-page .a11y-pricing {
     padding: 0.85rem 1.5rem;
     font-weight: 600;
     font-size: 0.95rem;
+    border-radius: 12px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pricing-card__cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(var(--accent-rgb, 0, 119, 182), 0.15);
+}
+
+/* ---- Pricing Card Entrance Animation ---- */
+@keyframes pricingFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .services-note {
