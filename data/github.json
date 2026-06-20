@@ -1,36 +1,36 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-19T06:01:18.358Z",
+  "generated_at": "2026-06-20T05:45:05.616Z",
   "stats": {
-    "public_repos": 44,
+    "public_repos": 46,
     "total_stars": 1,
     "languages_count": 16,
-    "last_push": "2026-06-19T04:05:03Z"
+    "last_push": "2026-06-20T04:28:57Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66697706,
+      "bytes": 66702608,
       "pct": 95.2
     },
     {
       "name": "JavaScript",
-      "bytes": 1202872,
+      "bytes": 1204138,
       "pct": 1.7
     },
     {
       "name": "HTML",
-      "bytes": 1184632,
+      "bytes": 1184840,
       "pct": 1.7
     },
     {
       "name": "CSS",
-      "bytes": 327289,
+      "bytes": 328735,
       "pct": 0.5
     },
     {
       "name": "TypeScript",
-      "bytes": 322144,
+      "bytes": 322061,
       "pct": 0.5
     },
     {
@@ -83,6 +83,30 @@
       "updated": "2026-06-18T10:36:20Z"
     },
     {
+      "name": "redbean-landing",
+      "full_name": "RanuK12/redbean-landing",
+      "description": "Redbean landing page",
+      "url": "https://github.com/RanuK12/redbean-landing",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-19T23:03:38Z"
+    },
+    {
+      "name": "shadow-api-auditor",
+      "full_name": "RanuK12/shadow-api-auditor",
+      "description": "Tool for detecting exposed endpoints and extracting structured data from complex web structures.",
+      "url": "https://github.com/RanuK12/shadow-api-auditor",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-19T13:08:17Z"
+    },
+    {
       "name": "ai-security-auditor",
       "full_name": "RanuK12/ai-security-auditor",
       "description": "Tool for auditing AI API endpoints for PII leaks and prompt injection vulnerabilities",
@@ -93,18 +117,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-18T15:56:17Z"
-    },
-    {
-      "name": "redbean-landing",
-      "full_name": "RanuK12/redbean-landing",
-      "description": "Redbean landing page",
-      "url": "https://github.com/RanuK12/redbean-landing",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T13:54:49Z"
     },
     {
       "name": "skills-copilot-codespaces-vscode",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-18T10:36:25Z"
-    },
-    {
-      "name": "smart-audit-scraper",
-      "full_name": "RanuK12/smart-audit-scraper",
-      "description": "Automated web scraping and data integrity audit tool for e-commerce platforms.",
-      "url": "https://github.com/RanuK12/smart-audit-scraper",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T05:13:51Z"
     }
   ]
 }
