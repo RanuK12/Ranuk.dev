@@ -1,21 +1,21 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-20T05:45:05.616Z",
+  "generated_at": "2026-06-21T05:57:24.775Z",
   "stats": {
-    "public_repos": 46,
+    "public_repos": 48,
     "total_stars": 1,
     "languages_count": 16,
-    "last_push": "2026-06-20T04:28:57Z"
+    "last_push": "2026-06-21T01:43:59Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66702608,
+      "bytes": 66705849,
       "pct": 95.2
     },
     {
       "name": "JavaScript",
-      "bytes": 1204138,
+      "bytes": 1205173,
       "pct": 1.7
     },
     {
@@ -25,12 +25,12 @@
     },
     {
       "name": "CSS",
-      "bytes": 328735,
+      "bytes": 330768,
       "pct": 0.5
     },
     {
       "name": "TypeScript",
-      "bytes": 322061,
+      "bytes": 330336,
       "pct": 0.5
     },
     {
@@ -83,6 +83,54 @@
       "updated": "2026-06-18T10:36:20Z"
     },
     {
+      "name": "DevTrack",
+      "full_name": "RanuK12/DevTrack",
+      "description": "Plataforma de seguimiento de proyectos para desarrolladores (DevTrack)",
+      "url": "https://github.com/RanuK12/DevTrack",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-20T10:58:41Z"
+    },
+    {
+      "name": "api-health-checker",
+      "full_name": "RanuK12/api-health-checker",
+      "description": "Mini herramienta CLI para auditar APIs locales/remotas con Python + requests. Ideal para perfiles de devs.",
+      "url": "https://github.com/RanuK12/api-health-checker",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-20T08:53:48Z"
+    },
+    {
+      "name": "smart-scraper-auditor",
+      "full_name": "RanuK12/smart-scraper-auditor",
+      "description": "A robust scraping engine with automated data integrity auditing using AI patterns.",
+      "url": "https://github.com/RanuK12/smart-scraper-auditor",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-20T08:10:37Z"
+    },
+    {
+      "name": "smart-audit-scraper",
+      "full_name": "RanuK12/smart-audit-scraper",
+      "description": "Automated web scraping and data integrity audit tool for e-commerce platforms.",
+      "url": "https://github.com/RanuK12/smart-audit-scraper",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-20T08:10:34Z"
+    },
+    {
       "name": "redbean-landing",
       "full_name": "RanuK12/redbean-landing",
       "description": "Redbean landing page",
@@ -92,55 +140,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-19T23:03:38Z"
-    },
-    {
-      "name": "shadow-api-auditor",
-      "full_name": "RanuK12/shadow-api-auditor",
-      "description": "Tool for detecting exposed endpoints and extracting structured data from complex web structures.",
-      "url": "https://github.com/RanuK12/shadow-api-auditor",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-19T13:08:17Z"
-    },
-    {
-      "name": "ai-security-auditor",
-      "full_name": "RanuK12/ai-security-auditor",
-      "description": "Tool for auditing AI API endpoints for PII leaks and prompt injection vulnerabilities",
-      "url": "https://github.com/RanuK12/ai-security-auditor",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T15:56:17Z"
-    },
-    {
-      "name": "skills-copilot-codespaces-vscode",
-      "full_name": "RanuK12/skills-copilot-codespaces-vscode",
-      "description": "My clone repository",
-      "url": "https://github.com/RanuK12/skills-copilot-codespaces-vscode",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T10:39:41Z"
-    },
-    {
-      "name": "eurobrico-web",
-      "full_name": "RanuK12/eurobrico-web",
-      "description": "Prototipo de rediseño web para Eurobrico - análisis, auditoría y propuesta comercial",
-      "url": "https://github.com/RanuK12/eurobrico-web",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T10:36:25Z"
+      "updated": "2026-06-20T08:10:31Z"
     }
   ]
 }
