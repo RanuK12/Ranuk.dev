@@ -1,12 +1,20 @@
+# robots.txt — ranuk.dev
+# Última actualización: 2026-06-24
+
+# ─── Crawl general ──────────────────────────────────────────
 User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /css/
 Allow: /js/
+Allow: /ranuk-it/
 
-# Bloquear solo lo que no debe indexarse
+# Bloques: contenido interno, scripts de build, datos
 Disallow: /scripts/
 Disallow: /data/
+Disallow: /*?
+Disallow: /*.json$
+Disallow: /*.md$
 
 # Sitemap
 Sitemap: https://ranuk.dev/sitemap.xml
@@ -14,10 +22,20 @@ Sitemap: https://ranuk.dev/sitemap.xml
 # Polite crawling
 Crawl-delay: 10
 
-# Crawl rules for Google Image
+# ─── Google Images ──────────────────────────────────────────
 User-agent: Googlebot-Image
 Allow: /assets/
+Disallow: /
 
-# Crawl rules for Google Video
+# ─── Google Video ───────────────────────────────────────────
 User-agent: Googlebot-Video
 Allow: /assets/
+Disallow: /
+
+# ─── Google News (prevenir indexación accidental) ───────────
+User-agent: Googlebot-News
+Disallow: /
+
+# ─── AdsBot (prevenir crawling de anuncios internos) ────────
+User-agent: AdsBot-Google
+Disallow: /
