@@ -361,6 +361,62 @@ No es un pitch. Son los lugares donde me formé y las certificaciones que respal
 </div>
 </div>
 </section>
+
+<!-- === TESTIMONIALS === -->
+<section class="section ranuk-it" id="testimonials">
+<div class="container">
+<h2 class="section-title" data-i18n="ranukit.testimonials-title"><span class="title-number">04.5</span> Lo que dicen nuestros clientes</h2>
+<p class="section-subtitle" data-i18n="ranukit.testimonials-sub">Resultados reales de proyectos que ya están en producción.</p>
+
+<div class="testimonials-carousel" role="region" aria-label="Testimonios de clientes">
+<div class="testimonials-track">
+<article class="testimonial-slide active" data-index="0">
+<div class="testimonial-avatar" aria-hidden="true">M</div>
+<div class="testimonial-content">
+<div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+<blockquote class="testimonial-text" data-i18n="ranukit.testimonial-1">
+"Trabajar con Emilio fue como tener un CTO externo. Entendió nuestro negocio audiovisual en la primera llamada y construyó una plataforma que nuestros clientes aman. El proceso fue claro, sin vueltas."
+</blockquote>
+<cite class="testimonial-author">Martín</cite>
+<span class="testimonial-role" data-i18n="ranukit.testimonial-1-role">NOT A ROBOT · Productora audiovisual</span>
+</div>
+</article>
+<article class="testimonial-slide" data-index="1">
+<div class="testimonial-avatar" aria-hidden="true">L</div>
+<div class="testimonial-content">
+<div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+<blockquote class="testimonial-text" data-i18n="ranukit.testimonial-2">
+"Necesitábamos un sitio que reflejara la identidad de nuestro estudio de arquitectura. Emilio capturó exactamente lo que queríamos. Diseño impecable, tiempos cumplidos, y seguimiento post-entrega."
+</blockquote>
+<cite class="testimonial-author">Luca</cite>
+<span class="testimonial-role" data-i18n="ranukit.testimonial-2-role">Bahay Design · Estudio de arquitectura</span>
+</div>
+</article>
+<article class="testimonial-slide" data-index="2">
+<div class="testimonial-avatar" aria-hidden="true">G</div>
+<div class="testimonial-content">
+<div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+<blockquote class="testimonial-text" data-i18n="ranukit.testimonial-3">
+"El bot de WhatsApp que nos desarrolló transformó nuestra operación. Pasamos de 3 horas diarias en atención a respuestas automatizadas en segundos. Inversión recuperada en el primer mes."
+</blockquote>
+<cite class="testimonial-author">Gary</cite>
+<span class="testimonial-role" data-i18n="ranukit.testimonial-3-role">GARYCIO · Operaciones</span>
+</div>
+</article>
+</div>
+
+<button class="testimonial-btn testimonial-prev" aria-label="Testimonio anterior">‹</button>
+<button class="testimonial-btn testimonial-next" aria-label="Testimonio siguiente">›</button>
+
+<div class="testimonial-dots" role="tablist" aria-label="Navegación de testimonios">
+<button class="dot active" role="tab" aria-selected="true" aria-label="Testimonio 1" data-slide="0"></button>
+<button class="dot" role="tab" aria-selected="false" aria-label="Testimonio 2" data-slide="1"></button>
+<button class="dot" role="tab" aria-selected="false" aria-label="Testimonio 3" data-slide="2"></button>
+</div>
+</div>
+</div>
+</section>
+
 <section class="section ranuk-it" id="process">
 <div class="container">
 <h2 class="section-title" data-i18n="ranukit.83"><span class="title-number">05.</span> Cómo trabajamos</h2>
@@ -473,5 +529,62 @@ Ranuk IT Solutions · estudio fundado por
 <script src="../js/particles.js?v=3.5"></script>
 <script src="../js/animations.js?v=3.5"></script>
 <script src="../js/app.js?v=3.5"></script>
+<script>
+/* Testimonials carousel */
+(function() {
+    'use strict';
+    const carousel = document.querySelector('.testimonials-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.testimonials-track');
+    const slides = carousel.querySelectorAll('.testimonial-slide');
+    const dots = carousel.querySelectorAll('.dot');
+    const prevBtn = carousel.querySelector('.testimonial-prev');
+    const nextBtn = carousel.querySelector('.testimonial-next');
+    let current = 0;
+    let autoplayTimer = null;
+    const INTERVAL = 6000;
+
+    function goTo(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        dots[index].setAttribute('aria-selected', 'true');
+        current = index;
+    }
+
+    function next() { goTo((current + 1) % slides.length); }
+    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(next, INTERVAL);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+
+    prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+    nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+    dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.slide)); startAutoplay(); }));
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    carousel.addEventListener('touchstart', stopAutoplay, { passive: true });
+    carousel.addEventListener('touchend', startAutoplay, { passive: true });
+
+    // Keyboard
+    carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { prev(); startAutoplay(); }
+        if (e.key === 'ArrowRight') { next(); startAutoplay(); }
+    });
+
+    // Start
+    goTo(0);
+    startAutoplay();
+})();
+</script>
 </body>
 </html>
