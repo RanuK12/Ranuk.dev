@@ -1,12 +1,23 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
-Disallow: /css/
-Disallow: /js/
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Bloquear solo lo que no debe indexarse
 Disallow: /scripts/
 Disallow: /data/
 
+# Sitemap
 Sitemap: https://ranuk.dev/sitemap.xml
 
-# Crawl-delay for polite crawling
+# Polite crawling
 Crawl-delay: 10
+
+# Crawl rules for Google Image
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# Crawl rules for Google Video
+User-agent: Googlebot-Video
+Allow: /assets/
