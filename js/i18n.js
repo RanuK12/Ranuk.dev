@@ -1300,7 +1300,10 @@ class I18n {
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
-            if (t[key] !== undefined) {
+            // Solo aplicar si la traducción NO está vacía. Antes (t[key] !== undefined) pisaba el
+            // contenido con "" cuando faltaba la traducción ES -> BORRABA todo el texto (desastre
+            // ranuk-it 06-24). Vacío = sin traducción -> dejar el texto original del HTML. (fix 06-24)
+            if (t[key]) {
                 el.innerHTML = t[key];
             }
         });
