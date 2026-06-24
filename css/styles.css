@@ -4764,3 +4764,43 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         padding: var(--space-5);
     }
 }
+
+/* ===== Tarjetas polaroid de la story (3 etapas) — RESTAURADO 06-24 =====
+   Se habían quedado sin CSS (clases -polaroid huérfanas) -> fotos descentradas.
+   Recuperado de 244a559. Centrado: display:flex + justify-content:center. */
+.story-photo-card {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+    position: relative;
+    z-index: 2;
+}
+.story-photo-card:nth-child(odd) .story-photo-frame-polaroid { transform: rotate(-2deg); }
+.story-photo-card:nth-child(even) .story-photo-frame-polaroid { transform: rotate(1.5deg); }
+.story-photo-frame-polaroid {
+    background: #1a1a2e;
+    padding: 12px 12px 40px 12px;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(212, 165, 116, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 320px;
+    position: relative;
+}
+.story-photo-frame-polaroid::after {
+    content: '';
+    position: absolute;
+    bottom: 28px; left: 50%; transform: translateX(-50%);
+    width: 60%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,165,116,0.3), transparent);
+}
+.story-photo-frame-polaroid:hover {
+    transform: rotate(0deg) scale(1.02) !important;
+    box-shadow: 0 12px 48px rgba(100, 255, 218, 0.15), 0 0 0 1px rgba(212, 165, 116, 0.6);
+}
+.story-photo-img-polaroid { width: 100%; height: auto; display: block; border-radius: 2px; }
+.story-photo-caption-polaroid {
+    position: absolute; bottom: 8px; left: 0; right: 0;
+    text-align: center; font-family: 'Courier New', monospace;
+    font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.5px;
+}
+.story-photo-caption-polaroid .story-photo-icon { margin-right: 6px; }
