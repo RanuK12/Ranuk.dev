@@ -130,7 +130,7 @@ const translations = {
         "ranukit.97": "",
         "ranukit.98": "",
         "ranukit.99": "",
-        "ranukit.testimonials-title": "",
+        "ranukit.testimonials-title": "What our clients say",
 // === fin ranukit ===
         // Navigation (v3: reduced set, Ranuk IT gets prominence)
         "nav.story": "Story",
@@ -548,7 +548,7 @@ const translations = {
         "ranukit.testimonial-3": "\"El bot de WhatsApp que nos desarrolló transformó nuestra operación. Pasamos de 3 horas diarias en atención a respuestas automatizadas en segundos. Inversión recuperada en el primer mes.\"",
         "ranukit.testimonial-3-role": "GARYCIO · Operaciones",
         "ranukit.testimonials-sub": "Resultados reales de proyectos que ya están en producción.",
-        "ranukit.testimonials-title": "",
+        "ranukit.testimonials-title": "Lo que dicen nuestros clientes",
         // === fin ranukit ===
         "nav.story": "Historia",
         "nav.about": "Sobre M\u00ed",
@@ -956,7 +956,7 @@ const translations = {
         "ranukit.97": "",
         "ranukit.98": "",
         "ranukit.99": "",
-        "ranukit.testimonials-title": "",
+        "ranukit.testimonials-title": "Cosa dicono i nostri clienti",
 // === fin ranukit ===
         "nav.story": "Storia",
         "nav.about": "Chi Sono",
