@@ -3990,6 +3990,80 @@ body.ranuk-it-page .a11y-pricing {
 
 
 /* =========================================================
+   Bounties Section (Proyectos y Bounties Activos)
+   ========================================================= */
+.bounties-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.bounties-section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.bounties-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+}
+
+.bounties-subtitle {
+    margin-top: 0;
+    color: var(--text-primary);
+}
+
+.bounties-list {
+    list-style: none;
+    padding: 0;
+}
+
+.bounties-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.bounties-item:last-child {
+    border-bottom: none;
+}
+
+.bounties-item strong {
+    color: var(--text-primary);
+}
+
+.bounties-price-green {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.bounties-price-gray {
+    color: #6c757d;
+}
+
+.bounties-price-cyan {
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+.bounties-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.bounties-cta p {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.bounties-cta a {
+    color: var(--accent);
+}
+
+/* =========================================================
    Brand Image Integration — Nav Logo, Profile, Banner, Footer
    ========================================================= */
 
