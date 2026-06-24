@@ -1,36 +1,36 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-23T05:41:21.310Z",
+  "generated_at": "2026-06-24T05:41:04.514Z",
   "stats": {
-    "public_repos": 50,
+    "public_repos": 51,
     "total_stars": 1,
     "languages_count": 16,
-    "last_push": "2026-06-23T03:15:27Z"
+    "last_push": "2026-06-24T04:07:21Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66766088,
+      "bytes": 66771734,
       "pct": 95.1
     },
     {
       "name": "JavaScript",
-      "bytes": 1262422,
+      "bytes": 1245815,
       "pct": 1.8
     },
     {
       "name": "HTML",
-      "bytes": 1196270,
+      "bytes": 1190829,
       "pct": 1.7
     },
     {
       "name": "TypeScript",
-      "bytes": 341491,
+      "bytes": 347176,
       "pct": 0.5
     },
     {
       "name": "CSS",
-      "bytes": 333829,
+      "bytes": 338605,
       "pct": 0.5
     },
     {
@@ -83,6 +83,18 @@
       "updated": "2026-06-18T10:36:20Z"
     },
     {
+      "name": "pycon-scraper",
+      "full_name": "RanuK12/pycon-scraper",
+      "description": "Scraping tool for PyCon Argentina conference schedule and speakers",
+      "url": "https://github.com/RanuK12/pycon-scraper",
+      "homepage": null,
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-24T04:07:21Z"
+    },
+    {
       "name": "bounty-scanner",
       "full_name": "RanuK12/bounty-scanner",
       "description": "Multi-source bounty scanner: scan GitHub, Algora, Opire, Warpspeed for open bounties from CLI",
@@ -92,7 +104,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-06-23T00:46:05Z"
+      "updated": "2026-06-23T11:58:55Z"
     },
     {
       "name": "DataScrapeAI",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-20T08:53:48Z"
-    },
-    {
-      "name": "smart-scraper-auditor",
-      "full_name": "RanuK12/smart-scraper-auditor",
-      "description": "A robust scraping engine with automated data integrity auditing using AI patterns.",
-      "url": "https://github.com/RanuK12/smart-scraper-auditor",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-20T08:10:37Z"
     }
   ]
 }
