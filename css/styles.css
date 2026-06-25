@@ -4817,19 +4817,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 .story-photo-caption-polaroid .story-photo-icon { margin-right: 6px; }
 
-/* ---- Story knot number inside the knot circle ---- */
-.story-knot-num {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
 /* ---- Book content container ---- */
 .book-content {
     display: flex;
