@@ -4983,3 +4983,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+/* ---- ADA page feature card ---- */
+.feature-card {
+    background: var(--bg-secondary, #ffffff);
+    border-radius: var(--card-radius, 20px);
+    padding: var(--card-padding, 2.5rem 2rem);
+    box-shadow: var(--shadow, 0 10px 30px rgba(0,0,0,0.1));
+    transition: var(--transition, 0.3s);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-accent, 0 0 20px rgba(0,119,182,0.15));
+}
