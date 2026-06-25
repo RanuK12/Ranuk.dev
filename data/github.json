@@ -1,36 +1,36 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-24T05:41:04.514Z",
+  "generated_at": "2026-06-25T05:41:27.636Z",
   "stats": {
-    "public_repos": 51,
+    "public_repos": 52,
     "total_stars": 1,
-    "languages_count": 16,
-    "last_push": "2026-06-24T04:07:21Z"
+    "languages_count": 17,
+    "last_push": "2026-06-25T04:45:37Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66771734,
-      "pct": 95.1
+      "bytes": 66793727,
+      "pct": 95
     },
     {
       "name": "JavaScript",
-      "bytes": 1245815,
+      "bytes": 1254954,
       "pct": 1.8
     },
     {
       "name": "HTML",
-      "bytes": 1190829,
+      "bytes": 1196176,
       "pct": 1.7
     },
     {
       "name": "TypeScript",
-      "bytes": 347176,
+      "bytes": 355453,
       "pct": 0.5
     },
     {
       "name": "CSS",
-      "bytes": 338605,
+      "bytes": 346325,
       "pct": 0.5
     },
     {
@@ -65,7 +65,7 @@
     },
     {
       "name": "Dockerfile",
-      "bytes": 4986,
+      "bytes": 5386,
       "pct": 0
     }
   ],
@@ -81,6 +81,18 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-18T10:36:20Z"
+    },
+    {
+      "name": "LLM-Proxy",
+      "full_name": "RanuK12/LLM-Proxy",
+      "description": "LLM Proxy — Router inteligente a providers gratuitos (OpenRouter + Groq). Sin tarjeta de crédito. Listo para vender como servicio.",
+      "url": "https://github.com/RanuK12/LLM-Proxy",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-24T09:29:27Z"
     },
     {
       "name": "pycon-scraper",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-20T10:58:41Z"
-    },
-    {
-      "name": "api-health-checker",
-      "full_name": "RanuK12/api-health-checker",
-      "description": "Mini herramienta CLI para auditar APIs locales/remotas con Python + requests. Ideal para perfiles de devs.",
-      "url": "https://github.com/RanuK12/api-health-checker",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-20T08:53:48Z"
     }
   ]
 }
