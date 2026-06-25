@@ -4804,3 +4804,72 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.5px;
 }
 .story-photo-caption-polaroid .story-photo-icon { margin-right: 6px; }
+
+/* ---- Story knot number inside the knot circle ---- */
+.story-knot-num {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---- Book content container ---- */
+.book-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ---- ADA page classes ---- */
+.feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.features-grid {
+    padding: 4rem 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.icon-bg {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 1.5rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.pricing {
+    padding: 4rem 0;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
