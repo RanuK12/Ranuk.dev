@@ -1,31 +1,31 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-26T05:42:55.345Z",
+  "generated_at": "2026-06-27T05:36:25.349Z",
   "stats": {
-    "public_repos": 52,
+    "public_repos": 54,
     "total_stars": 1,
     "languages_count": 17,
-    "last_push": "2026-06-25T22:38:57Z"
+    "last_push": "2026-06-26T20:13:17Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66802074,
+      "bytes": 66832727,
       "pct": 95
     },
     {
-      "name": "JavaScript",
-      "bytes": 1254954,
-      "pct": 1.8
+      "name": "HTML",
+      "bytes": 1229421,
+      "pct": 1.7
     },
     {
-      "name": "HTML",
-      "bytes": 1196600,
+      "name": "JavaScript",
+      "bytes": 1226295,
       "pct": 1.7
     },
     {
       "name": "TypeScript",
-      "bytes": 355449,
+      "bytes": 355831,
       "pct": 0.5
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "name": "Shell",
-      "bytes": 38215,
+      "bytes": 40185,
       "pct": 0.1
     },
     {
@@ -65,7 +65,7 @@
     },
     {
       "name": "Dockerfile",
-      "bytes": 5386,
+      "bytes": 5679,
       "pct": 0
     }
   ],
@@ -81,6 +81,18 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-18T10:36:20Z"
+    },
+    {
+      "name": "portfolio-demo",
+      "full_name": "RanuK12/portfolio-demo",
+      "description": "Mini proyecto demo para el portfolio de Emilio",
+      "url": "https://github.com/RanuK12/portfolio-demo",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-26T12:50:52Z"
     },
     {
       "name": "LLM-Proxy",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-22T11:04:43Z"
-    },
-    {
-      "name": "DevTrack",
-      "full_name": "RanuK12/DevTrack",
-      "description": "Plataforma de seguimiento de proyectos para desarrolladores (DevTrack)",
-      "url": "https://github.com/RanuK12/DevTrack",
-      "homepage": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-20T10:58:41Z"
     }
   ]
 }
