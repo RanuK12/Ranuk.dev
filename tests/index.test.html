@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ranuk.dev - Tests</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="test-root">
+    <h1 id="main-title">Ranuk IT Solutions</h1>
+    <p id="hero-text">Construyendo soluciones basadas en datos con Python, Machine Learning y tecnologías Cloud.</p>
+  </div>
+  <script src="../js/i18n.js"></script>
+  <script>
+    // Test básico de que el título principal existe y tiene texto
+    const title = document.getElementById('main-title');
+    if (!title || title.textContent.trim() === '') {
+      console.error('❌ Test fallido: No se encontró el título principal o está vacío');
+    } else {
+      console.log('✅ Test OK: Título principal existe y tiene texto');
+    }
+
+    // Test de que el texto del héroe existe y tiene texto
+    const heroText = document.getElementById('hero-text');
+    if (!heroText || heroText.textContent.trim() === '') {
+      console.error('❌ Test fallido: No se encontró el texto del héroe o está vacío');
+    } else {
+      console.log('✅ Test OK: Texto del héroe existe y tiene texto');
+    }
+  </script>
+</body>
+</html>
