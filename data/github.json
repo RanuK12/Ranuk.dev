@@ -1,22 +1,22 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-06-29T05:55:33.565Z",
+  "generated_at": "2026-06-30T05:42:03.521Z",
   "stats": {
     "public_repos": 54,
     "total_stars": 1,
     "languages_count": 17,
-    "last_push": "2026-06-28T14:28:23Z"
+    "last_push": "2026-06-29T21:09:42Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66834321,
+      "bytes": 66835939,
       "pct": 95
     },
     {
       "name": "JavaScript",
-      "bytes": 1230423,
-      "pct": 1.7
+      "bytes": 1231687,
+      "pct": 1.8
     },
     {
       "name": "HTML",
@@ -24,13 +24,13 @@
       "pct": 1.7
     },
     {
-      "name": "TypeScript",
-      "bytes": 355831,
+      "name": "CSS",
+      "bytes": 360075,
       "pct": 0.5
     },
     {
-      "name": "CSS",
-      "bytes": 349215,
+      "name": "TypeScript",
+      "bytes": 355831,
       "pct": 0.5
     },
     {
@@ -83,6 +83,18 @@
       "updated": "2026-06-18T10:36:20Z"
     },
     {
+      "name": "portfolio-demo",
+      "full_name": "RanuK12/portfolio-demo",
+      "description": "Mini proyecto demo para el portfolio de Emilio",
+      "url": "https://github.com/RanuK12/portfolio-demo",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-29T20:17:26Z"
+    },
+    {
       "name": "redbean-landing",
       "full_name": "RanuK12/redbean-landing",
       "description": "Redbean landing page",
@@ -93,18 +105,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-28T07:32:16Z"
-    },
-    {
-      "name": "portfolio-demo",
-      "full_name": "RanuK12/portfolio-demo",
-      "description": "Mini proyecto demo para el portfolio de Emilio",
-      "url": "https://github.com/RanuK12/portfolio-demo",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-26T12:50:52Z"
     },
     {
       "name": "LLM-Proxy",
