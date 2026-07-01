@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<script defer="" src="../js/ga.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Automatización de Trading Bots — Python, Backtrader, ccxt | Ranuk IT</title>
+<meta content="Desarrollo de bots de trading automatizado con Python, Backtrader y ccxt. Backtesting robusto, ejecución 24/7 sin emociones, integración con exchanges (Binance, Coinbase, Kraken). ML Engineer con experiencia en Booking.com y Accenture." name="description"/>
+<meta content="trading bot automatizado, bot de trading python, backtrader, ccxt, automatización trading crypto, trading algorítmico, backtesting, binance bot, quantitative trading, machine learning trading, Ranuk IT" name="keywords"/>
+<meta content="Emilio Ranucoli" name="author"/>
+<meta content="Trading Bots Automatizados — Operá 24/7 sin emociones | Ranuk IT" property="og:title"/>
+<meta content="Bots de trading personalizados con Python, Backtrader y ccxt. Backtesting riguroso, ejecución automática 24/7 e integración con los principales exchanges." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ranuk.dev/ranuk-it/trading-bots.html" property="og:url"/>
+<meta content="https://ranuk.dev/assets/og-preview.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Ranuk IT Solutions" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Trading Bots Automatizados — Ranuk IT" name="twitter:title"/>
+<meta content="Bots de trading personalizados con Python. Backtesting, ejecución 24/7, sin emociones." name="twitter:description"/>
+<meta content="https://ranuk.dev/assets/og-preview.png" name="twitter:image"/>
+<link href="https://ranuk.dev/ranuk-it/trading-bots.html" rel="canonical"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Service", "ProfessionalService"],
+  "name": "Automatización de Trading Bots — Ranuk IT Solutions",
+  "url": "https://ranuk.dev/ranuk-it/trading-bots.html",
+  "logo": "https://ranuk.dev/assets/ranuk-badge.png",
+  "founder": { "@type": "Person", "name": "Emilio Ranucoli", "url": "https://ranuk.dev" },
+  "description": "Desarrollo de bots de trading automatizado con Python, Backtrader y ccxt. Backtesting robusto, ejecución 24/7 sin emociones, integración con los principales exchanges.",
+  "areaServed": ["AR", "ES", "IT", "US"],
+  "knowsLanguage": ["es", "en", "it"],
+  "priceRange": "$$$",
+  "serviceType": ["Trading Bot Development", "Algorithmic Trading", "Backtesting", "ML Trading"],
+  "offers": [
+    {"@type":"Offer","name":"Auditoría técnica de estrategia","price":"0","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Bot de trading a medida","priceRange":"USD 6k-30k"},
+    {"@type":"Offer","name":"Backtesting & optimización","priceRange":"USD 2k-8k"},
+    {"@type":"Offer","name":"ML / señales predictivas","priceRange":"USD 6k-25k"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué exchanges soportan los bots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabajamos con Binance, Coinbase, Kraken, Bitfinex, KuCoin y cualquier exchange compatible con ccxt (100+ exchanges). También Forex vía MetaTrader o APIs propias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo ver resultados antes de operar con dinero real?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Todo bot incluye backtesting riguroso con datos históricos reales, walk-forward analysis y paper trading en sandbox antes de tocar capital real. No se pone en producción sin validación estadística."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tecnologías usan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Python como lenguaje principal, Backtrader para backtesting, ccxt para conectividad con exchanges, pandas/numpy para procesamiento de datos, y scikit-learn/XGBoost/TensorFlow cuando la estrategia requiere Machine Learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El bot opera 24/7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Los bots corren en servidores dedicados con monitoreo 24/7, auto-restart y alertas en tiempo real (Telegram, email, Slack). Operan sin emociones, sin descanso y sin errores humanos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta desarrollar un bot de trading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la complejidad: un bot básico con estrategia definida arranca en USD 6k. Estrategias con ML, múltiples pares y gestión avanzada de riesgo pueden llegar a USD 30k. Siempre con precio cerrado y sin costos ocultos."
+      }
+    }
+  ]
+}
+</script>
+<link href="../assets/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="../assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../assets/ranuk-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Fira+Code:wght@400;500;600&amp;family=Fraunces:opsz,wght,SOFT,WONK@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" rel="stylesheet"/>
+<link href="../css/styles.css?v=3.2" rel="stylesheet"/>
+<link href="https://ranuk.dev/ranuk-it/trading-bots.html" hreflang="es" rel="alternate"/>
+<link href="https://ranuk.dev/en/ranuk-it/trading-bots.html" hreflang="en" rel="alternate"/>
+<link href="https://ranuk.dev/it/ranuk-it/trading-bots.html" hreflang="it" rel="alternate"/>
+<link href="https://ranuk.dev/ranuk-it/trading-bots.html" hreflang="x-default" rel="alternate"/>
+</head>
+<body class="ranuk-it-page">
+<a class="skip-link" href="#hero">Skip to content</a>
+<div class="custom-cursor"></div>
+<div class="cursor-follower"></div>
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo nav-logo-ranuk" href="#hero">
+<img alt="Ranuk IT" class="nav-logo-img" height="32" loading="lazy" src="../assets/ranuk-icon.png" width="32"/>
+<span class="logo-text-ranuk">Ranuk IT</span>
+</a>
+<ul class="nav-menu">
+<li><a class="nav-link" href="#benefits">Beneficios</a></li>
+<li><a class="nav-link" href="#services">Servicios</a></li>
+<li><a class="nav-link" href="#vs">Por qué nosotros</a></li>
+<li><a class="nav-link" href="#process">Proceso</a></li>
+<li><a class="nav-link" href="#faq">FAQ</a></li>
+<li><a class="nav-link nav-link-primary" href="#contact">Agendar llamada</a></li>
+</ul>
+<div class="nav-actions">
+<a class="nav-back" href="../" title="Sitio personal de Emilio Ranucoli">
+<i class="fas fa-arrow-left"></i> <span>Emilio</span>
+</a>
+<a class="nav-back" href="./" title="Ranuk IT Solutions">
+<i class="fas fa-building"></i> <span>Ranuk IT</span>
+</a>
+<button aria-label="Toggle menu" class="nav-toggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+<div aria-label="Language" class="lang-switcher" role="group" style="display:inline-flex;gap:4px;margin-left:12px">
+<button aria-pressed="false" class="lang-btn" data-lang="en" lang="en">EN</button>
+<button aria-pressed="true" class="lang-btn active" data-lang="es" lang="es">ES</button>
+<button aria-pressed="false" class="lang-btn" data-lang="it" lang="it">IT</button>
+</div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero ranuk-hero" id="hero">
+<canvas id="particles-canvas"></canvas>
+<div class="hero-content">
+<div class="hero-intro">
+<span class="hero-label">
+<span class="hero-label-dot"></span>
+Trading algorítmico · Python · Backtrader · ccxt
+</span>
+<span class="hero-name-mini">RANUK IT — TRADING BOTS</span>
+</div>
+<h1 class="hero-headline">
+<span class="headline-line line-code">Bots de trading <em>automatizado</em>,</span>
+<span class="headline-line line-biz">sin emociones, <em>24/7</em>.</span>
+<span class="headline-line line-story">Código probado. <em>Resultados medibles</em>.</span>
+</h1>
+<p class="hero-subline">
+Desarrollo de bots de trading personalizados con Python, Backtrader y ccxt. Backtesting riguroso con datos históricos reales, ejecución automática 24/7 en servidores dedicados e integración con los principales exchanges del mundo. Construido por un ML Engineer que trabajó en <strong>Booking.com</strong> (Ámsterdam) y <strong>Accenture</strong> (Roma) — ahora al servicio de tu estrategia.
+</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#contact">
+<i class="fas fa-calendar-check"></i> Agendar llamada de 15 min
+</a>
+<a class="btn btn-outline" href="#benefits">Ver beneficios</a>
+</div>
+<div class="hero-stats">
+<div class="stat-item">
+<span class="stat-number" data-target="24">0</span><span class="stat-plus">/7</span>
+<span class="stat-label">Operación continua</span>
+</div>
+<div class="stat-item">
+<span class="stat-number" data-target="0">0</span>
+<span class="stat-label">Emociones</span>
+</div>
+<div class="stat-item">
+<span class="stat-number" data-target="100">0</span><span class="stat-plus">+</span>
+<span class="stat-label">Exchanges vía ccxt</span>
+</div>
+<div class="stat-item">
+<span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+<span class="stat-label">Código testeado</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== BENEFITS ==================== -->
+<section class="section ranuk-it" id="benefits">
+<div class="container">
+<h2 class="section-title">
+<span class="title-number">01.</span> ¿Por qué automatizar tu trading?
+</h2>
+<p class="section-subtitle">
+El 90% de los traders retail pierde dinero. No por mala estrategia, sino por mal execution. Un bot elimina los enemigos número uno del trader humano.
+</p>
+<div class="ranuk-services-grid authority-grid">
+<article class="service-card authority-card">
+<div class="authority-logo">
+<i class="fas fa-clock" style="font-size:2rem; color: var(--accent);"></i>
+</div>
+<h3>Operá 24/7 sin descanso</h3>
+<p>Los mercados crypto nunca cierran. Tu bot tampoco. Ejecuta órdenes en milisegundos a cualquier hora, en cualquier exchange, sin que vos tengas que mirar una pantalla. <strong>Dormí tranquilo mientras tu estrategia trabaja.</strong></p>
+</article>
+<article class="service-card authority-card">
+<div class="authority-logo">
+<i class="fas fa-brain" style="font-size:2rem; color: var(--accent-gold);"></i>
+</div>
+<h3>Sin emociones, sin errores</h3>
+<p>No hay FOMO, no hay pánico, no hay "esta vez es diferente". El bot ejecuta exactamente lo que se programó. <strong>Cada trade sigue la estrategia, no el sentimiento.</strong> Eso es la diferencia entre ganar y perder dinero.</p>
+</article>
+<article class="service-card authority-card">
+<div class="authority-logo">
+<i class="fas fa-chart-line" style="font-size:2rem; color: var(--accent);"></i>
+</div>
+<h3>Backtesting riguroso</h3>
+<p>Antes de poner un dólar real, la estrategia se testea con años de datos históricos. Walk-forward analysis, métricas de Sharpe, max drawdown, win rate. <strong>No se pone en producción sin validación estadística.</strong></p>
+</article>
+<article class="service-card authority-card">
+<div class="authority-logo">
+<i class="fas fa-shield-halved" style="font-size:2rem; color: var(--accent-gold);"></i>
+</div>
+<h3>Gestión de riesgo profesional</h3>
+<p>Stop-loss dinámicos, position sizing basado en volatilidad, limites de drawdown diario y circuit breakers automáticos. <strong>El bot protege tu capital tan agresivamente como busca ganancias.</strong></p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section class="section ranuk-it" id="services">
+<div class="container">
+<h2 class="section-title"><span class="title-number">02.</span> Servicios de automatización de trading</h2>
+<p class="section-subtitle">Tres líneas de servicio. Todas con backtesting incluido y código que te queda a vos.</p>
+<div class="ranuk-services-grid">
+<article class="service-card">
+<div class="service-icon"><i class="fas fa-robot"></i></div>
+<h3>Bot de trading a medida</h3>
+<p>Diseñamos y construimos tu bot desde cero según tu estrategia. Trend following, mean reversion, arbitraje, grid trading, scalping — <strong>lo que necesites, con código limpio, testeado y documentado</strong>. El bot es tuyo, el código es tuyo.</p>
+<div class="service-tech">
+<span>Python</span><span>Backtrader</span><span>ccxt</span><span>Pandas</span><span>PostgreSQL</span>
+</div>
+<a class="service-link" href="#contact">Solicitar propuesta →</a>
+</article>
+<article class="service-card service-featured">
+<span class="service-badge">Nuestro diferencial</span>
+<div class="service-icon"><i class="fas fa-brain"></i></div>
+<h3>Trading con Machine Learning</h3>
+<p>Modelos predictivos que detectan patrones invisibles al ojo humano. Clasificación de señales, detección de regímenes de mercado, optimización dinámica de parámetros. <strong>Lo que construí para Booking.com (pricing dinámico con millones de registros), ahora para tu portfolio.</strong></p>
+<div class="service-tech">
+<span>Scikit-learn</span><span>XGBoost</span><span>TensorFlow</span><span>Feature Engineering</span><span>MLOps</span>
+</div>
+<a class="service-link" href="#contact">Hablemos de tu estrategia →</a>
+</article>
+<article class="service-card">
+<div class="service-icon"><i class="fas fa-flask"></i></div>
+<h3>Backtesting & optimización</h3>
+<p>¿Ya tenés una estrategia pero no sabés si funciona de verdad? La testeamos con datos históricos reales, optimizamos parámetros sin overfitting y te entregamos un reporte completo: <strong>Sharpe ratio, max drawdown, profit factor, equity curve</strong>.</p>
+<div class="service-tech">
+<span>Backtrader</span><span>Walk-forward</span><span>Monte Carlo</span><span>Pandas</span>
+</div>
+<a class="service-link" href="#contact">Testear mi estrategia →</a>
+</article>
+<article class="service-card">
+<div class="service-icon"><i class="fas fa-server"></i></div>
+<h3>Infraestructura & monitoreo 24/7</h3>
+<p>Deploy en servidores dedicados con baja latencia, monitoreo en tiempo real, alertas por Telegram/email/Slack, auto-restart y logs completos. <strong>Tu bot corre en producción como un servicio profesional, no como un script en tu laptop.</strong></p>
+<div class="service-tech">
+<span>AWS</span><span>Docker</span><span>Telegram API</span><span>Grafana</span><span>CI/CD</span>
+</div>
+<a class="service-link" href="#contact">Consultar disponibilidad →</a>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ==================== WHY US ==================== -->
+<section class="section ranuk-it" id="vs">
+<div class="container">
+<h2 class="section-title"><span class="title-number">03.</span> ¿Por qué no comprar un bot genérico?</h2>
+<p class="section-subtitle">Los bots de $99 que ves en internet no funcionan. Acá te explicamos por qué, y qué hacemos diferente.</p>
+<div class="ranuk-vs-table">
+<div class="vs-row vs-header">
+<div class="vs-topic"></div>
+<div class="vs-them">Bot genérico / SaaS</div>
+<div class="vs-us">Ranuk IT — Bot a medida</div>
+</div>
+<div class="vs-row">
+<div class="vs-topic">Estrategia</div>
+<div class="vs-them">Mismos parámetros para todos</div>
+<div class="vs-us">Diseñada y testeada para tu perfil de riesgo</div>
+</div>
+<div class="vs-row">
+<div class="vs-topic">Backtesting</div>
+<div class="vs-them">"Confía en nosotros"</div>
+<div class="vs-us">Reporte completo con datos reales que vos podés verificar</div>
+</div>
+<div class="vs-row">
+<div class="vs-topic">Código</div>
+<div class="vs-them">Caja negra, no sabés qué hace</div>
+<div class="vs-us">100% tuyo, documentado, auditable</div>
+</div>
+<div class="vs-row">
+<div class="vs-topic">Gestión de riesgo</div>
+<div class="vs-them">Stop-loss básico</div>
+<div class="vs-us">Position sizing, drawdown limits, circuit breakers</div>
+</div>
+<div class="vs-row">
+<div class="vs-topic">Soporte</div>
+<div class="vs-them">Foro o chatbot</div>
+<div class="vs-us">El ingeniero que lo construyó te responde directo</div>
+</div>
+<div class="vs-row">
+<div class="vs-topic">Cuando el mercado cambia</div>
+<div class="vs-them">El bot sigue igual (y pierde)</div>
+<div class="vs-us">Re-optimización y adaptación incluida</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== PROCESS ==================== -->
+<section class="section ranuk-it" id="process">
+<div class="container">
+<h2 class="section-title"><span class="title-number">04.</span> Cómo trabajamos</h2>
+<p class="section-subtitle">Cuatro pasos. Sin letra chica. Cada etapa tiene un entregable concreto.</p>
+<div class="ranuk-timeline-steps">
+<div class="ranuk-step-card">
+<div class="step-badge">01</div>
+<div class="step-icon-circle"><i class="fas fa-magnifying-glass-chart"></i></div>
+<h3>Auditoría de tu estrategia</h3>
+<p>Llamada de 15 minutos donde analizamos tu idea de trading, tu experiencia y tu capital disponible. Si tu estrategia tiene problemas, te lo decimos antes de escribir una línea. <strong>Gratis, sin compromiso.</strong></p>
+</div>
+<div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+<div class="ranuk-step-card">
+<div class="step-badge">02</div>
+<div class="step-icon-circle"><i class="fas fa-file-contract"></i></div>
+<h3>Propuesta cerrada + backtesting</h3>
+<p>Documento de 1 página con alcance, arquitectura, tiempos y precio fijo. Incluye backtesting inicial de la estrategia con datos históricos para validar que tiene potencial real. <strong>Si no funciona en backtest, no se construye.</strong></p>
+</div>
+<div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+<div class="ranuk-step-card">
+<div class="step-badge">03</div>
+<div class="step-icon-circle"><i class="fas fa-code-branch"></i></div>
+<h3>Desarrollo + paper trading</h3>
+<p>Construcción del bot con sprints quincenales y demos. Primero corre en sandbox (paper trading) con datos reales pero sin dinero. <strong>Ves resultados reales antes de arriesgar capital.</strong></p>
+</div>
+<div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+<div class="ranuk-step-card">
+<div class="step-badge">04</div>
+<div class="step-icon-circle"><i class="fas fa-handshake"></i></div>
+<h3>Go-live + monitoreo</h3>
+<p>Deploy en producción con capital real, monitoreo 24/7, alertas y dashboard. Incluye un período de ajuste fino y re-optimización. <strong>Nunca te dejamos solo con un bot que nadie vigila.</strong></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="section ranuk-it" id="faq">
+<div class="container">
+<h2 class="section-title"><span class="title-number">05.</span> Preguntas frecuentes</h2>
+<p class="section-subtitle">Las dudas más comunes antes de arrancar.</p>
+<div class="ranuk-services-grid">
+<article class="service-card">
+<h3><i class="fas fa-exchange-alt" style="margin-right: 8px; color: var(--accent);"></i> ¿Qué exchanges soportan?</h3>
+<p>Binance, Coinbase, Kraken, Bitfinex, KuCoin y cualquier exchange compatible con ccxt (100+). También Forex vía MetaTrader o APIs propias.</p>
+</article>
+<article class="service-card">
+<h3><i class="fas fa-flask" style="margin-right: 8px; color: var(--accent);"></i> ¿Puedo ver resultados antes de poner dinero real?</h3>
+<p>Sí. Todo bot incluye backtesting con datos históricos, walk-forward analysis y paper trading en sandbox. No se toca capital real sin validación estadística completa.</p>
+</article>
+<article class="service-card">
+<h3><i class="fas fa-dollar-sign" style="margin-right: 8px; color: var(--accent-gold);"></i> ¿Cuánto capital necesito?</h3>
+<p>Para crypto, podés arrancar con tan poco como $500-1000. Para estrategias más sofisticadas con múltiples pares, recomendamos $5k+. El bot se adapta a tu capital.</p>
+</article>
+<article class="service-card">
+<h3><i class="fas fa-tools" style="margin-right: 8px; color: var(--accent-gold);"></i> ¿Qué pasa si el mercado cambia?</h3>
+<p>Incluimos un período de re-optimización post-lanzamiento. Para cambios estructurales del mercado, ofrecemos retainer mensual con ajustes continuos de parámetros.</p>
+</article>
+<article class="service-card">
+<h3><i class="fas fa-lock" style="margin-right: 8px; color: var(--accent);"></i> ¿Mis credenciales de exchange están seguras?</h3>
+<p>El bot solo necesita permisos de trading (no withdrawal). Las API keys se almacenan encriptadas en el servidor, nunca en el código. Seguridad a nivel bancario.</p>
+</article>
+<article class="service-card">
+<h3><i class="fas fa-code" style="margin-right: 8px; color: var(--accent);"></i> ¿El código es mío?</h3>
+<p>Sí. El 100% del código te pertenece. Está documentado, versionado en Git y lo podés auditar, modificar o llevar a otro ingeniero si querés.</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section class="section ranuk-it" id="testimonials">
+<div class="container">
+<h2 class="section-title"><span class="title-number">06.</span> Lo que dicen nuestros clientes</h2>
+<p class="section-subtitle">Resultados reales de bots que ya están en producción.</p>
+<div aria-label="Testimonios de clientes" class="testimonials-carousel" role="region">
+<div class="testimonials-track">
+<article class="testimonial-slide active" data-index="0">
+<div aria-hidden="true" class="testimonial-avatar">R</div>
+<div class="testimonial-content">
+<div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+<blockquote class="testimonial-text">
+"Llevaba meses operando manualmente y perdiendo por emociones. Emilio me construyó un bot de grid trading que opera solo en BTC/USDT. En 3 meses de paper trading validamos la estrategia, y ahora lleva 4 meses en producción con +18% neto. El código es limpio y lo entiendo perfectamente."
+</blockquote>
+<cite class="testimonial-author">Roberto</cite>
+<span class="testimonial-role">Trader independiente · Argentina</span>
+</div>
+</article>
+<article class="testimonial-slide" data-index="1">
+<div aria-hidden="true" class="testimonial-avatar">S</div>
+<div class="testimonial-content">
+<div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+<blockquote class="testimonial-text">
+"Necesitábamos un bot de arbitraje entre 3 exchanges para nuestra mesa de trading. Ranuk IT lo construyó en 6 semanas con todas las métricas de riesgo que pedimos. El monitoreo 24/7 y las alertas por Telegram nos dan tranquilidad total."
+</blockquote>
+<cite class="testimonial-author">Sofía</cite>
+<span class="testimonial-role">Fintech · Madrid</span>
+</div>
+</article>
+<article class="testimonial-slide" data-index="2">
+<div aria-hidden="true" class="testimonial-avatar">D</div>
+<div class="testimonial-content">
+<div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+<blockquote class="testimonial-text">
+"Probé 4 bots genéricos antes de contratar a Ranuk. Todos perdieron dinero. El bot a medida que me hicieron usa ML para adaptarse a cambios de volatilidad — algo que ningún bot SaaS hace. Lleva 6 meses y el drawdown máximo fue del 4.2%."
+</blockquote>
+<cite class="testimonial-author">Diego</cite>
+<span class="testimonial-role">Crypto fund · Buenos Aires</span>
+</div>
+</article>
+</div>
+<button aria-label="Testimonio anterior" class="testimonial-btn testimonial-prev">‹</button>
+<button aria-label="Testimonio siguiente" class="testimonial-btn testimonial-next">›</button>
+<div aria-label="Navegación de testimonios" class="testimonial-dots" role="tablist">
+<button aria-label="Testimonio 1" aria-selected="true" class="dot active" data-slide="0" role="tab"></button>
+<button aria-label="Testimonio 2" aria-selected="false" class="dot" data-slide="1" role="tab"></button>
+<button aria-label="Testimonio 3" aria-selected="false" class="dot" data-slide="2" role="tab"></button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="section contact" id="contact">
+<div class="container">
+<h2 class="section-title"><span class="title-number">07.</span> Hablemos de tu estrategia</h2>
+<p class="section-subtitle">
+Agendá una llamada gratuita de 15 minutos. Analizamos tu idea de trading, te decimos si tiene potencial real y cómo la automatizaríamos. Sin compromiso.
+</p>
+<div class="contact-dual-cta">
+<div class="contact-card contact-card-primary">
+<h3><i class="fas fa-calendar-check"></i> Agendar llamada de 15 min</h3>
+<p class="contact-card-sub">
+Contanos qué estrategia querés automatizar. Te damos una opinión técnica honesta — si no funciona, te lo decimos antes de que gastes un peso.
+</p>
+<a class="btn btn-primary btn-glow contact-btn-wide" href="https://calendly.com/emilio-ranuk/30min" rel="noopener" target="_blank">
+<i class="fas fa-video"></i> Elegir horario
+</a>
+<p class="contact-microcopy">
+<i class="fas fa-shield-halved"></i> Respuesta en &lt;24h hábiles · Sin compromiso · 100% confidencial
+</p>
+</div>
+<div class="contact-card">
+<h3><i class="fas fa-paper-plane"></i> Prefiero escribir</h3>
+<p class="contact-card-sub">
+Contame en 3 líneas qué estrategia tenés en mente, qué exchange usás y cuánto capital pensás destinar.
+</p>
+<form action="https://formspree.io/f/xgorlvoq" class="ranuk-form" method="POST">
+<label class="sr-only" for="lead-nombre">Nombre</label>
+<input id="lead-nombre" name="nombre" placeholder="Nombre" required="" type="text"/>
+<label class="sr-only" for="lead-email">Email</label>
+<input id="lead-email" name="email" placeholder="Email" required="" type="email"/>
+<label class="sr-only" for="lead-servicio">¿Qué necesitás?</label>
+<select id="lead-servicio" name="servicio" required="">
+<option value="">¿Qué necesitás?</option>
+<option>Bot de trading a medida</option>
+<option>Trading con Machine Learning</option>
+<option>Backtesting de estrategia existente</option>
+<option>Infraestructura & monitoreo 24/7</option>
+<option>Consultoría / otro</option>
+</select>
+<label class="sr-only" for="lead-mensaje">Tu estrategia</label>
+<textarea id="lead-mensaje" name="mensaje" placeholder="¿Qué estrategia querés automatizar? ¿Qué exchange? ¿Capital estimado?" required="" rows="3"></textarea>
+<input name="_subject" type="hidden" value="[Ranuk IT - Trading Bots] Nuevo lead"/>
+<input name="_gotcha" style="display:none" type="hidden"/>
+<button class="btn btn-outline contact-btn-wide" type="submit">
+<i class="fas fa-paper-plane"></i> Enviar
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-social">
+<a aria-label="GitHub" href="https://github.com/RanuK12" rel="noopener" target="_blank"><i class="fab fa-github"></i></a>
+<a aria-label="LinkedIn" href="https://linkedin.com/in/emilio-ranucoli" rel="noopener" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a aria-label="Email" href="mailto:emilio@ranuk.dev"><i class="fas fa-envelope"></i></a>
+</div>
+<p class="footer-text">
+Ranuk IT Solutions · Trading Bots · estudio fundado por
+<a href="../">Emilio Ranucoli</a> ·
+<a href="./">Servicios principales</a>
+</p>
+<p class="footer-copy">© 2026 Ranuk IT Solutions. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script src="../js/i18n.js?v=1782335954"></script>
+<script src="../js/particles.js?v=3.5"></script>
+<script src="../js/animations.js?v=3.5"></script>
+<script src="../js/app.js?v=3.5"></script>
+<script>
+/* Testimonials carousel */
+(function() {
+    'use strict';
+    const carousel = document.querySelector('.testimonials-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.testimonials-track');
+    const slides = carousel.querySelectorAll('.testimonial-slide');
+    const dots = carousel.querySelectorAll('.dot');
+    const prevBtn = carousel.querySelector('.testimonial-prev');
+    const nextBtn = carousel.querySelector('.testimonial-next');
+    let current = 0;
+    let autoplayTimer = null;
+    const INTERVAL = 6000;
+
+    function goTo(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        dots[index].setAttribute('aria-selected', 'true');
+        current = index;
+    }
+
+    function next() { goTo((current + 1) % slides.length); }
+    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(next, INTERVAL);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+
+    prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+    nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+    dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.slide)); startAutoplay(); }));
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    carousel.addEventListener('touchstart', stopAutoplay, { passive: true });
+    carousel.addEventListener('touchend', startAutoplay, { passive: true });
+
+    carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { prev(); startAutoplay(); }
+        if (e.key === 'ArrowRight') { next(); startAutoplay(); }
+    });
+
+    goTo(0);
+    startAutoplay();
+})();
+</script>
+</body>
+</html>
