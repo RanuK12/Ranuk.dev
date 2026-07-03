@@ -4998,3 +4998,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     transform: translateY(-4px);
     box-shadow: var(--shadow-accent, 0 0 20px rgba(0,119,182,0.15));
 }
+
+.pricing-card__link {
+    display: block;
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--accent);
+    text-align: center;
+    text-decoration: underline;
+}
