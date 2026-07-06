@@ -1,17 +1,17 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-07-05T07:37:00.787Z",
+  "generated_at": "2026-07-06T08:40:41.459Z",
   "stats": {
     "public_repos": 58,
     "total_stars": 1,
     "languages_count": 16,
-    "last_push": "2026-07-05T04:36:32Z"
+    "last_push": "2026-07-06T07:40:13Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66847976,
-      "pct": 95.1
+      "bytes": 66853290,
+      "pct": 95.2
     },
     {
       "name": "JavaScript",
@@ -20,8 +20,8 @@
     },
     {
       "name": "HTML",
-      "bytes": 1163012,
-      "pct": 1.7
+      "bytes": 1125794,
+      "pct": 1.6
     },
     {
       "name": "CSS",
