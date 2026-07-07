@@ -1,21 +1,21 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-07-06T08:40:41.459Z",
+  "generated_at": "2026-07-07T07:52:26.245Z",
   "stats": {
     "public_repos": 58,
-    "total_stars": 1,
+    "total_stars": 2,
     "languages_count": 16,
-    "last_push": "2026-07-06T07:40:13Z"
+    "last_push": "2026-06-18T08:31:18Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66853290,
-      "pct": 95.2
+      "bytes": 66866274,
+      "pct": 95.1
     },
     {
       "name": "JavaScript",
-      "bytes": 1234828,
+      "bytes": 1265032,
       "pct": 1.8
     },
     {
@@ -24,13 +24,13 @@
       "pct": 1.6
     },
     {
-      "name": "CSS",
-      "bytes": 360265,
+      "name": "TypeScript",
+      "bytes": 380583,
       "pct": 0.5
     },
     {
-      "name": "TypeScript",
-      "bytes": 356785,
+      "name": "CSS",
+      "bytes": 360256,
       "pct": 0.5
     },
     {
@@ -83,6 +83,18 @@
       "updated": "2026-06-18T10:36:20Z"
     },
     {
+      "name": "JobFinder",
+      "full_name": "RanuK12/JobFinder",
+      "description": null,
+      "url": "https://github.com/RanuK12/JobFinder",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-06-18T08:31:18Z"
+    },
+    {
       "name": "redbean-landing",
       "full_name": "RanuK12/redbean-landing",
       "description": "Redbean landing page",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-24T09:29:27Z"
-    },
-    {
-      "name": "pycon-scraper",
-      "full_name": "RanuK12/pycon-scraper",
-      "description": "Scraping tool for PyCon Argentina conference schedule and speakers",
-      "url": "https://github.com/RanuK12/pycon-scraper",
-      "homepage": null,
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-24T04:07:21Z"
     }
   ]
 }
