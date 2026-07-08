@@ -201,15 +201,13 @@
         });
     }
 
-    // ---- Theme toggle (dark mode) ----
     function initTheme() {
         const stored = localStorage.getItem('ranuk-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        let theme = stored || (prefersDark ? 'dark' : 'light');
+        let theme = stored || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
         const btn = document.getElementById('theme-toggle');
         if (btn) {
-            btn.innerHTML = theme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            btn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         }
     }
 
@@ -220,7 +218,7 @@
         localStorage.setItem('ranuk-theme', next);
         const btn = document.getElementById('theme-toggle');
         if (btn) {
-            btn.innerHTML = next === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            btn.innerHTML = next === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         }
     }
 
