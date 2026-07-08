@@ -5,6 +5,21 @@
 
 /* ---- CSS Variables ---- */
 :root {
+    --nav-height: 70px;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Fira Code', 'Consolas', monospace;
+    /* Serif display: cambia el registro visual en Hero + Libro (de código a narrativa). */
+    --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-accent: 0 0 20px rgba(0, 119, 182, 0.15);
+    --shadow-gold: 0 0 30px rgba(184, 134, 11, 0.18);
+    --card-radius: 20px;
+    --card-padding: 2.5rem 2rem;
+    --card-glow: 0 0 40px rgba(0, 119, 182, 0.1);
+}
+
+[data-theme='light'] {
     --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
     --bg-card: #f1f5f9;
@@ -21,18 +36,8 @@
     --border: rgba(13, 148, 136, 0.15);
     --nav-bg: rgba(248, 250, 252, 0.75);
     --nav-bg-scrolled: rgba(255, 255, 255, 0.85);
-    --nav-height: 70px;
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'Fira Code', 'Consolas', monospace;
-    /* Serif display: cambia el registro visual en Hero + Libro (de código a narrativa). */
-    --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --shadow-accent: 0 0 20px rgba(0, 119, 182, 0.15);
-    --shadow-gold: 0 0 30px rgba(184, 134, 11, 0.18);
-    --card-radius: 20px;
-    --card-padding: 2.5rem 2rem;
-    --card-glow: 0 0 40px rgba(0, 119, 182, 0.1);
+}
+:root {
     /* Design System — Tipografía */
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
