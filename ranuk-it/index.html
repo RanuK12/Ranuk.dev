@@ -934,11 +934,11 @@
         <div class="contact-cta-card">
           <h3 data-i18n="ranukit.99"><i class="fas fa-paper-plane"></i> I prefer to write</h3>
           <p data-i18n="ranukit.100">Tell me in 3 lines what you need. I'll reply personally the same day.</p>
-          <form action="https://formspree.io/f/xgejkypn" method="POST" class="contact-form" style="gap:0.8rem;display:flex;flex-direction:column;">
-            <input class="contact-input" name="name" placeholder="Name and company" required type="text" data-i18n-placeholder="ranukit.101"/>
-            <input class="contact-input" name="email" placeholder="Corporate email" required type="email" data-i18n-placeholder="ranukit.102"/>
-            <select class="contact-input contact-select" name="service">
-              <option value="">What do you need?</option>
+          <form action="https://formspree.io/f/xgejkypn" method="POST" class="ranuk-form">
+            <input name="name" placeholder="Name and company" required type="text" data-i18n-placeholder="ranukit.101"/>
+            <input name="email" placeholder="Corporate email" required type="email" data-i18n-placeholder="ranukit.102"/>
+            <select name="service">
+              <option value="" data-i18n="ranukit.104">What do you need?</option>
               <option value="software" data-i18n="ranukit.105">Custom software development</option>
               <option value="legacy" data-i18n="ranukit.106">Legacy system modernization</option>
               <option value="ml" data-i18n="ranukit.107">Machine Learning / automation</option>
@@ -947,7 +947,7 @@
               <option value="landing" data-i18n="ranukit.109">Landing Factory (landing page in 24h)</option>
               <option value="other" data-i18n="ranukit.110">Technical consulting / other</option>
             </select>
-            <textarea class="contact-input" name="message" placeholder="Project context" required rows="4" style="resize:vertical" data-i18n-placeholder="ranukit.111"></textarea>
+            <textarea name="message" placeholder="Project context" required rows="4" data-i18n-placeholder="ranukit.111"></textarea>
             <input name="_gotcha" style="display:none" type="hidden"/>
             <button class="btn btn-outline" type="submit" data-i18n="ranukit.112"><i class="fas fa-paper-plane"></i> Send</button>
           </form>
