@@ -579,23 +579,22 @@ const translations = {
         "ranukit.0": "EN",
         "ranukit.1": "ES",
         "ranukit.10": "",
-        "ranukit.100": "",
-        "ranukit.101": "",
-        "ranukit.102": "",
+        "ranukit.100": "Contame en 3 líneas qué necesitas. Te respondo personalmente en el día.",
+        "ranukit.101": "Nombre y empresa",
+        "ranukit.102": "Email corporativo",
         "ranukit.103": "",
-        "ranukit.104": "",
-        "ranukit.105": "",
-        "ranukit.106": "",
-        "ranukit.107": "",
-        "ranukit.108": "",
-        "ranukit.109": "",
-        "ranukit.11": "",
-        "ranukit.110": "",
-        "ranukit.111": "",
-        "ranukit.112": "",
+        "ranukit.104": "¿Qué necesitas?",
+        "ranukit.105": "Desarrollo de software a medida",
+        "ranukit.106": "Modernización de sistema legacy",
+        "ranukit.107": "Machine Learning / automatización",
+        "ranukit.108": "Auditoría ADA (mercado US)",
+        "ranukit.109": "Landing Factory (landing page en 24h)",
+        "ranukit.110": "Consultoría técnica / otro",
+        "ranukit.111": "Contexto del proyecto",
+        "ranukit.112": "<i class=\"fas fa-paper-plane\"></i> Enviar",
         "ranukit.113": "",
-        "ranukit.114": "",
-        "ranukit.115": "",
+        "ranukit.114": "Ranuk IT Solutions · estudio fundado por <a href=\"../\">Emilio Ranucoli</a> · <a href=\"ada/\">Auditorías ADA (US)</a>",
+        "ranukit.115": "© 2026 Ranuk IT Solutions. Todos los derechos reservados.",
         "ranukit.12": "",
         "ranukit.13": "",
         "ranukit.14": "",
@@ -687,11 +686,11 @@ const translations = {
         "ranukit.92": "",
         "ranukit.93": "",
         "ranukit.94": "",
-        "ranukit.95": "",
-        "ranukit.96": "",
-        "ranukit.97": "",
-        "ranukit.98": "",
-        "ranukit.99": "",
+        "ranukit.95": "<i class=\"fas fa-calendar-check\"></i> Agendar llamada técnica (15 min)",
+        "ranukit.96": "Elegí el horario que te sea cómodo. Fuso horario Córdoba (GMT-3) y Madrid (GMT+1) disponibles.",
+        "ranukit.97": "<i class=\"fas fa-video\"></i> Elegir horario",
+        "ranukit.98": "<i class=\"fas fa-shield-halved\"></i> Respuesta en &lt;24h hábiles · Sin compromiso",
+        "ranukit.99": "<i class=\"fas fa-paper-plane\"></i> Prefiero escribir",
         "ranukit.testimonial-1": "",
         "ranukit.testimonial-1-role": "",
         "ranukit.testimonial-2": "",
@@ -1757,6 +1756,14 @@ class I18n {
             // ranuk-it 06-24). Vacío = sin traducción -> dejar el texto original del HTML. (fix 06-24)
             if (t[key]) {
                 el.innerHTML = t[key];
+            }
+        });
+
+        // Soporte para placeholders dinámicos
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.dataset.i18nPlaceholder;
+            if (t[key]) {
+                el.placeholder = t[key];
             }
         });
     }
