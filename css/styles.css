@@ -5,20 +5,22 @@
 
 /* ---- CSS Variables ---- */
 :root {
-    --bg-primary: #f5f5f5;
+    --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
-    --bg-card: #e8e8e8;
-    --bg-card-hover: #dcdcdc;
-    --accent: #0077b6;
-    --accent-dim: rgba(0, 119, 182, 0.1);
-    --accent-secondary: #d62828;
-    --accent-secondary-dim: rgba(214, 40, 40, 0.1);
-    --accent-gold: #b8860b;
-    --accent-gold-dim: rgba(184, 134, 11, 0.15);
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a4a6a;
-    --text-bright: #0a0a1a;
-    --border: rgba(0, 119, 182, 0.2);
+    --bg-card: #f1f5f9;
+    --bg-card-hover: #e2e8f0;
+    --accent: #0d9488;
+    --accent-dim: rgba(13, 148, 136, 0.1);
+    --accent-secondary: #f97316;
+    --accent-secondary-dim: rgba(249, 115, 22, 0.1);
+    --accent-gold: #b45309;
+    --accent-gold-dim: rgba(180, 83, 9, 0.15);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-bright: #0f172a;
+    --border: rgba(13, 148, 136, 0.15);
+    --nav-bg: rgba(248, 250, 252, 0.75);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.85);
     --nav-height: 70px;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'Fira Code', 'Consolas', monospace;
@@ -69,6 +71,8 @@
     --text-secondary: #8892b0;
     --text-bright: #e6f1ff;
     --border: rgba(100, 255, 218, 0.15);
+    --nav-bg: rgba(10, 10, 26, 0.6);
+    --nav-bg-scrolled: rgba(10, 10, 26, 0.85);
     --nav-height: 70px;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'Fira Code', 'Consolas', monospace;
@@ -320,23 +324,12 @@ ul { list-style: none; }
     height: var(--nav-height);
     z-index: 1000;
     transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
-    background: rgba(10, 10, 26, 0.6);
+    background: var(--nav-bg);
     backdrop-filter: blur(0px);
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 26, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 1px 0 var(--border);
-}
-
-[data-theme='dark'] .navbar {
-    background: rgba(10, 10, 26, 0.6);
-}
-
-[data-theme='dark'] .navbar.scrolled {
-    background: rgba(10, 10, 26, 0.85);
+    background: var(--nav-bg-scrolled);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 1px 0 var(--border);
