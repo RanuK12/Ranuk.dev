@@ -1770,7 +1770,15 @@ class I18n {
 
     get(key) {
         const t = translations[this.currentLang];
-        return t ? t[key] : translations.en[key];
+        const value = t ? t[key] : translations.en[key];
+
+        // Fallback seguro: si el valor está vacío, usa EN. Si EN también está vacío, usa el key original.
+        if (value === "") {
+            const fallbackValue = translations.en[key];
+            return fallbackValue !== "" ? fallbackValue : key;
+        }
+
+        return value || key;
     }
 
     getTypedStrings() {
