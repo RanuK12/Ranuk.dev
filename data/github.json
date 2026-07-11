@@ -1,27 +1,27 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-07-10T07:52:11.710Z",
+  "generated_at": "2026-07-11T06:26:28.060Z",
   "stats": {
-    "public_repos": 59,
+    "public_repos": 61,
     "total_stars": 2,
-    "languages_count": 16,
-    "last_push": "2026-07-10T03:12:13Z"
+    "languages_count": 17,
+    "last_push": "2026-07-11T04:12:12Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66993626,
-      "pct": 94.9
+      "bytes": 67040223,
+      "pct": 94.8
     },
     {
       "name": "JavaScript",
-      "bytes": 1309434,
+      "bytes": 1310977,
       "pct": 1.9
     },
     {
       "name": "HTML",
-      "bytes": 1191595,
-      "pct": 1.7
+      "bytes": 1278372,
+      "pct": 1.8
     },
     {
       "name": "TypeScript",
@@ -30,7 +30,7 @@
     },
     {
       "name": "CSS",
-      "bytes": 366597,
+      "bytes": 382161,
       "pct": 0.5
     },
     {
@@ -40,12 +40,12 @@
     },
     {
       "name": "Shell",
-      "bytes": 47226,
+      "bytes": 53141,
       "pct": 0.1
     },
     {
       "name": "Jupyter Notebook",
-      "bytes": 22922,
+      "bytes": 25266,
       "pct": 0
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "Lua",
-      "bytes": 9913,
+      "bytes": 14794,
       "pct": 0
     },
     {
@@ -65,7 +65,7 @@
     },
     {
       "name": "Dockerfile",
-      "bytes": 5679,
+      "bytes": 6082,
       "pct": 0
     }
   ],
