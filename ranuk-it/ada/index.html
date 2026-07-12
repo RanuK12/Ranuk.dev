@@ -66,9 +66,24 @@
                 Ranuk IT Solutions te ayuda a cumplir con los estándares de accesibilidad ADA y WCAG 2.1 AA. 
                 Evita demandas legales y amplía tu audiencia incluyendo a personas con discapacidades.
             </p>
-            <a href="#cta" class="btn btn-primary" style="font-weight: 600;">Agendar Auditoría →</a>
+            <a href="#checker" class="btn btn-primary" style="font-weight: 600;">Escanear mi sitio gratis →</a>
         </div>
     </header>
+
+    <!-- CHECKER INSTANTÁNEO — imán del canal entrante (backend: scan.ranuk.dev) -->
+    <section id="checker" class="rk-checker">
+        <div class="container">
+            <p class="rkc-eyebrow">Chequeo gratis e instantáneo</p>
+            <h2 class="rkc-h">¿Tu web cumple con ADA y WCAG 2.1 AA?</h2>
+            <p class="rkc-sub">Pegá tu sitio y obtené un escaneo de accesibilidad al instante: los problemas principales, ahora mismo. Sin registrarte para ver tu puntaje.</p>
+            <div class="rkc-box">
+                <input id="rkc-url" type="url" placeholder="https://tusitio.com" aria-label="URL de tu sitio">
+                <button id="rkc-go" class="btn btn-primary">Escanear gratis →</button>
+            </div>
+            <p class="rkc-hint">Tarda ~20–40s. Corremos un chequeo real WCAG 2.1 AA (axe-core). No guardamos tus datos.</p>
+            <div id="rkc-out"></div>
+        </div>
+    </section>
 
     <section class="features-grid">
         <div class="container">
@@ -136,5 +151,73 @@
             </div>
         </div>
     </section>
+
+    <!-- FORMULARIO / captura de lead (dispara rk-ada-inbound.py vía Formspree) -->
+    <a id="cta"></a>
+    <section id="contact" class="rk-lead">
+        <div class="container">
+            <h2 class="rkc-h" style="text-align:center;">Recibí el informe completo + cómo arreglar cada punto</h2>
+            <p class="rkc-sub" style="text-align:center;max-width:620px;margin:0 auto 1.6rem;">Un ingeniero te envía el diagnóstico completo (todos los hallazgos, priorizados, con las correcciones). Sin costo, sin compromiso.</p>
+            <form class="rk-form" action="https://formspree.io/f/xgorlvoq" method="POST">
+                <input type="text" name="nombre" placeholder="Tu nombre y empresa" required>
+                <input type="email" name="email" placeholder="Tu email de trabajo" required>
+                <input type="url" name="website" placeholder="https://tusitio.com" required>
+                <textarea name="mensaje" placeholder="¿Algo que deba saber? (opcional)" rows="3"></textarea>
+                <input type="hidden" name="_subject" value="[Ranuk IT · ADA] New free scan request">
+                <input type="text" name="_gotcha" style="display:none">
+                <button type="submit" class="btn btn-primary">Enviarme el informe completo →</button>
+            </form>
+        </div>
+    </section>
+
+    <style>
+    .rk-checker,.rk-lead{padding:3.2rem 0;background:#0b1220;}
+    .rk-checker .container,.rk-lead .container{max-width:720px;}
+    .rkc-eyebrow{color:#00d4ff;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .5rem;}
+    .rkc-h{font-size:1.9rem;line-height:1.2;color:#fff;margin:0 0 .6rem;}
+    .rkc-sub{color:#b9c2d0;font-size:1.05rem;margin:0 0 1.5rem;}
+    .rkc-box{display:flex;gap:.6rem;flex-wrap:wrap;}
+    .rkc-box input{flex:1;min-width:220px;padding:.85rem 1rem;border-radius:10px;border:1px solid #26344d;background:#0c1526;color:#e6edf3;font-size:1rem;}
+    .rkc-box input:focus{outline:none;border-color:#00d4ff;}
+    .rkc-hint{color:#8ba0c0;font-size:.8rem;margin:.6rem .2rem 0;}
+    #rkc-out{margin-top:1.6rem;}
+    .rkc-card{border:1px solid #1e2b45;border-radius:14px;background:#111a2e;overflow:hidden;}
+    .rkc-head{display:flex;align-items:center;gap:1.1rem;padding:1.3rem 1.4rem;border-bottom:1px solid #1e2b45;}
+    .rkc-score{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;border:5px solid #f59e0b;}
+    .rkc-score b{font-size:1.6rem;line-height:1;color:#fff;}.rkc-score span{font-size:.7rem;color:#8ba0c0;}
+    .rkc-head .t{font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 .2rem;}.rkc-head .d{color:#8ba0c0;font-size:.9rem;}
+    ul.rkc-f{list-style:none;margin:0;padding:.4rem 1.4rem;}
+    ul.rkc-f li{padding:.9rem 0;border-bottom:1px solid #1e2b45;display:flex;gap:.7rem;align-items:flex-start;}
+    ul.rkc-f li:last-child{border-bottom:0;}
+    .rkc-dot{width:9px;height:9px;border-radius:50%;background:#ef4444;margin-top:.4rem;flex-shrink:0;}
+    .rkc-fi .ti{font-weight:600;font-size:.98rem;color:#e6edf3;}.rkc-fi .me{color:#8ba0c0;font-size:.85rem;margin-top:.15rem;}
+    .rkc-cta{padding:1.2rem 1.4rem;background:#0c1526;border-top:1px solid #1e2b45;}
+    .rkc-cta p{margin:0 0 .8rem;font-size:.98rem;color:#e6edf3;}
+    .rk-form{max-width:460px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem;}
+    .rk-form input,.rk-form textarea{padding:.85rem 1rem;border-radius:10px;border:1px solid #26344d;background:#0c1526;color:#e6edf3;font-size:1rem;font-family:inherit;}
+    .rk-form input:focus,.rk-form textarea:focus{outline:none;border-color:#00d4ff;}
+    </style>
+    <script>
+    (function(){
+      var ENDPOINT="https://scan.ranuk.dev/scan";
+      var out=document.getElementById('rkc-out'),btn=document.getElementById('rkc-go'),inp=document.getElementById('rkc-url');
+      if(!btn)return;
+      function sc(s){return s>=80?'#22c55e':s>=50?'#f59e0b':'#ef4444';}
+      function box(msg){out.innerHTML='<div class="rkc-card"><div class="rkc-head"><div class="t">'+msg+'</div></div></div>';}
+      function render(r){
+        if(!r.ok){box('No pudimos escanear ese sitio. Probá con otra URL.');return;}
+        var items=r.findings.map(function(f){return '<li><span class="rkc-dot"></span><div class="rkc-fi"><div class="ti">'+f.title+'</div><div class="me">'+(f.wcag||'')+(f.effort?' · ~'+f.effort:'')+'</div></div></li>';}).join('');
+        out.innerHTML='<div class="rkc-card"><div class="rkc-head"><div class="rkc-score" style="border-color:'+sc(r.score)+'"><b>'+r.score+'</b><span>/100</span></div><div><div class="t">'+r.issues_total+' problema'+(r.issues_total==1?'':'s')+' de accesibilidad</div><div class="d">'+r.domain+' · WCAG 2.1 AA</div></div></div><ul class="rkc-f">'+items+'</ul><div class="rkc-cta"><p><b>¿Querés el informe completo y cómo arreglar cada uno?</b> Te lo envía un ingeniero, con todos los hallazgos priorizados y las correcciones.</p><a href="#cta" class="btn btn-primary">Recibir el informe completo →</a></div></div>';
+      }
+      btn.addEventListener('click',async function(){
+        var u=(inp.value||'').trim();if(!u){inp.focus();return;}
+        btn.disabled=true;btn.textContent='Escaneando…';box('Escaneando tu sitio… (~30s)');
+        try{var res=await fetch(ENDPOINT+'?url='+encodeURIComponent(u));render(await res.json());}
+        catch(e){box('Algo falló. Probá de nuevo en un momento.');}
+        btn.disabled=false;btn.textContent='Escanear gratis →';
+      });
+      inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();btn.click();}});
+    })();
+    </script>
 </body>
 </html>
