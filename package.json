@@ -27,5 +27,7 @@
     "update-versions:smart": "node update-versions-smart.js",
     "precommit": "node update-versions-smart.js && git add index.html"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "lighthouse": "^13.4.0"
+  }
 }
