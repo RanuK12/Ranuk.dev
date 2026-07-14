@@ -1,21 +1,21 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-07-13T07:37:25.021Z",
+  "generated_at": "2026-07-14T06:25:00.878Z",
   "stats": {
     "public_repos": 62,
     "total_stars": 2,
     "languages_count": 17,
-    "last_push": "2026-07-12T23:58:00Z"
+    "last_push": "2026-07-13T21:39:14Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 67046111,
-      "pct": 94.7
+      "bytes": 67063227,
+      "pct": 94.6
     },
     {
       "name": "JavaScript",
-      "bytes": 1310977,
+      "bytes": 1313478,
       "pct": 1.9
     },
     {
@@ -25,13 +25,13 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 388846,
-      "pct": 0.5
+      "bytes": 500079,
+      "pct": 0.7
     },
     {
       "name": "CSS",
-      "bytes": 385175,
-      "pct": 0.5
+      "bytes": 392968,
+      "pct": 0.6
     },
     {
       "name": "PowerShell",
