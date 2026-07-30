@@ -1,16 +1,16 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-07-29T06:44:56.765Z",
+  "generated_at": "2026-07-30T06:41:10.690Z",
   "stats": {
-    "public_repos": 74,
+    "public_repos": 76,
     "total_stars": 2,
     "languages_count": 17,
-    "last_push": "2026-07-29T01:23:30Z"
+    "last_push": "2026-07-30T01:47:19Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66891651,
+      "bytes": 66901215,
       "pct": 95
     },
     {
@@ -95,6 +95,18 @@
       "updated": "2026-06-18T08:31:18Z"
     },
     {
+      "name": "crypto-price-notifier",
+      "full_name": "RanuK12/crypto-price-notifier",
+      "description": "Telegram bot that monitors crypto prices (CoinGecko) and sends alerts when thresholds are crossed. Configurable coins, thresholds, and check interval.",
+      "url": "https://github.com/RanuK12/crypto-price-notifier",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-07-30T01:47:19Z"
+    },
+    {
       "name": "free-tier-ai-microservice",
       "full_name": "RanuK12/free-tier-ai-microservice",
       "description": "Microservice demo using free-tier AI API",
@@ -129,18 +141,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-07-02T08:55:47Z"
-    },
-    {
-      "name": "portfolio-demo",
-      "full_name": "RanuK12/portfolio-demo",
-      "description": "Mini proyecto demo para el portfolio de Emilio",
-      "url": "https://github.com/RanuK12/portfolio-demo",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-29T20:17:26Z"
     }
   ]
 }
