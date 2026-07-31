@@ -13,43 +13,70 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "ADA/WCAG Audit",
-      "description": "Auditoría técnica de accesibilidad web para cumplimiento ADA/WCAG 2.1 AA. Incluye informe detallado y recomendaciones de remediación.",
-      "serviceType": "Accessibility Audit",
-      "provider": {
-        "@type": "Organization",
-        "name": "Ranuk IT Solutions",
-        "url": "https://ranuk.dev/ranuk-it/ada/"
-      },
-      "areaServed": "US",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "ADA/WCAG Audit Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Auditoría ADA/WCAG Básica",
-            "description": "Revisión inicial de 10-15 páginas clave. Informe de hallazgos y checklist de remediación.",
-            "price": "800",
-            "priceCurrency": "USD"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "ADA/WCAG Audit",
+          "description": "Auditoría técnica de accesibilidad web para cumplimiento ADA/WCAG 2.1 AA. Incluye informe detallado y recomendaciones de remediación.",
+          "serviceType": "Accessibility Audit",
+          "provider": {
+            "@type": "Organization",
+            "name": "Ranuk IT Solutions",
+            "url": "https://ranuk.dev/ranuk-it/"
           },
-          {
-            "@type": "Offer",
-            "name": "Auditoría ADA/WCAG Completa",
-            "description": "Revisión completa de todo el sitio web. Informe detallado con priorización de issues (críticos, graves, moderados, menores). Incluye pruebas con screen readers.",
-            "price": "1500",
-            "priceCurrency": "USD"
-          },
-          {
-            "@type": "Offer",
-            "name": "Auditoría + Remediación",
-            "description": "Auditoría completa + implementación de correcciones técnicas (HTML/CSS/JS). Informe final con pruebas de regresión.",
-            "price": "2500",
-            "priceCurrency": "USD"
+          "areaServed": "US",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "ADA/WCAG Audit Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Auditoría ADA/WCAG Básica",
+                "description": "Revisión inicial de 10-15 páginas clave. Informe de hallazgos y checklist de remediación.",
+                "price": "800",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Auditoría ADA/WCAG Completa",
+                "description": "Revisión completa de todo el sitio web. Informe detallado con priorización de issues (críticos, graves, moderados, menores). Incluye pruebas con screen readers.",
+                "price": "1500",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Auditoría + Remediación",
+                "description": "Auditoría completa + implementación de correcciones técnicas (HTML/CSS/JS). Informe final con pruebas de regresión.",
+                "price": "2500",
+                "priceCurrency": "USD"
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ranuk.dev/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ranuk IT Solutions",
+              "item": "https://ranuk.dev/ranuk-it/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "ADA/WCAG Audit",
+              "item": "https://ranuk.dev/ranuk-it/ada/"
+            }
+          ]
+        }
+      ]
     }
     </script>
     
