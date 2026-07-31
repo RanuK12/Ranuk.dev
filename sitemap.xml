@@ -4,7 +4,7 @@
   <!-- Home page (ES) -->
   <url>
     <loc>https://ranuk.dev/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/" />
@@ -15,7 +15,7 @@
   <!-- Home EN -->
   <url>
     <loc>https://ranuk.dev/en/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/" />
@@ -26,7 +26,7 @@
   <!-- Home IT -->
   <url>
     <loc>https://ranuk.dev/it/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/" />
@@ -37,7 +37,7 @@
   <!-- Ranuk IT (ES) -->
   <url>
     <loc>https://ranuk.dev/ranuk-it/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/" />
@@ -48,7 +48,7 @@
   <!-- Ranuk IT (EN) -->
   <url>
     <loc>https://ranuk.dev/en/ranuk-it/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/" />
@@ -59,7 +59,7 @@
   <!-- Ranuk IT (IT) -->
   <url>
     <loc>https://ranuk.dev/it/ranuk-it/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/" />
@@ -70,7 +70,7 @@
   <!-- ADA Audit (ES) -->
   <url>
     <loc>https://ranuk.dev/ranuk-it/ada/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/ada/" />
@@ -81,7 +81,7 @@
   <!-- ADA Audit (EN) -->
   <url>
     <loc>https://ranuk.dev/en/ranuk-it/ada/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/ada/" />
@@ -92,7 +92,7 @@
   <!-- ADA Audit (IT) -->
   <url>
     <loc>https://ranuk.dev/it/ranuk-it/ada/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/ada/" />
