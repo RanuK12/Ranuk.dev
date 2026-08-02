@@ -1,26 +1,26 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-08-01T06:40:44.687Z",
+  "generated_at": "2026-08-02T06:45:05.318Z",
   "stats": {
-    "public_repos": 78,
+    "public_repos": 80,
     "total_stars": 2,
     "languages_count": 17,
-    "last_push": "2026-08-01T00:58:43Z"
+    "last_push": "2026-08-02T01:29:12Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 66905556,
-      "pct": 95
+      "bytes": 66912717,
+      "pct": 94.9
     },
     {
       "name": "HTML",
       "bytes": 1303335,
-      "pct": 1.9
+      "pct": 1.8
     },
     {
       "name": "JavaScript",
-      "bytes": 1283546,
+      "bytes": 1296154,
       "pct": 1.8
     },
     {
@@ -39,6 +39,11 @@
       "pct": 0.3
     },
     {
+      "name": "Lua",
+      "bytes": 70216,
+      "pct": 0.1
+    },
+    {
       "name": "Shell",
       "bytes": 50682,
       "pct": 0.1
@@ -51,11 +56,6 @@
     {
       "name": "Batchfile",
       "bytes": 15830,
-      "pct": 0
-    },
-    {
-      "name": "Lua",
-      "bytes": 14794,
       "pct": 0
     },
     {
