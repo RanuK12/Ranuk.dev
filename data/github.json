@@ -1,16 +1,16 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-08-04T06:40:33.122Z",
+  "generated_at": "2026-08-05T06:41:44.047Z",
   "stats": {
-    "public_repos": 81,
+    "public_repos": 82,
     "total_stars": 2,
     "languages_count": 17,
-    "last_push": "2026-08-04T04:56:34Z"
+    "last_push": "2026-08-05T02:08:32Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 76324107,
+      "bytes": 76337067,
       "pct": 95.7
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 1161534,
+      "bytes": 1177827,
       "pct": 1.5
     },
     {
@@ -39,13 +39,13 @@
       "pct": 0.3
     },
     {
-      "name": "Shell",
-      "bytes": 85405,
+      "name": "Lua",
+      "bytes": 86352,
       "pct": 0.1
     },
     {
-      "name": "Lua",
-      "bytes": 70216,
+      "name": "Shell",
+      "bytes": 85405,
       "pct": 0.1
     },
     {
@@ -71,6 +71,18 @@
   ],
   "featured": [
     {
+      "name": "JobFinder",
+      "full_name": "RanuK12/JobFinder",
+      "description": null,
+      "url": "https://github.com/RanuK12/JobFinder",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-08-04T12:27:35Z"
+    },
+    {
       "name": "cryptocurrency-price-monitor",
       "full_name": "RanuK12/cryptocurrency-price-monitor",
       "description": null,
@@ -81,18 +93,6 @@
       "forks": 0,
       "topics": [],
       "updated": "2026-06-18T10:36:20Z"
-    },
-    {
-      "name": "JobFinder",
-      "full_name": "RanuK12/JobFinder",
-      "description": null,
-      "url": "https://github.com/RanuK12/JobFinder",
-      "homepage": null,
-      "language": "HTML",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T08:31:18Z"
     },
     {
       "name": "crypto-price-notifier",
