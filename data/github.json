@@ -1,11 +1,11 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-08-07T05:50:21.295Z",
+  "generated_at": "2026-08-08T05:09:17.326Z",
   "stats": {
     "public_repos": 82,
     "total_stars": 2,
     "languages_count": 17,
-    "last_push": "2026-08-07T02:01:08Z"
+    "last_push": "2026-08-08T02:08:04Z"
   },
   "languages": [
     {
@@ -29,13 +29,13 @@
       "pct": 0.4
     },
     {
-      "name": "PowerShell",
-      "bytes": 255554,
+      "name": "TypeScript",
+      "bytes": 257784,
       "pct": 0.3
     },
     {
-      "name": "TypeScript",
-      "bytes": 248509,
+      "name": "PowerShell",
+      "bytes": 255554,
       "pct": 0.3
     },
     {
