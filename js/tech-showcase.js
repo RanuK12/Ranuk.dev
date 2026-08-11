@@ -129,35 +129,84 @@ function initRoiEstimator() {
 
     const dataMatrix = {
         'ml-pricing': {
-            small: { arch: 'XGBoost + FastAPI + Redis Cache', eff: '85% autom. de precios', time: '2-3 semanas' },
-            medium: { arch: 'PyTorch/CUDA + Async Pipeline + Kafka', eff: '3.2x margen neto', time: '3-5 semanas' },
-            enterprise: { arch: 'Distributed MLOps + Vector DB + Multi-Region', eff: 'Optimización de millones de registros', time: '6-8 semanas' }
+            small: {
+                arch: 'XGBoost + FastAPI + Redis Cache',
+                eff: { es: '85% autom. de precios', en: '85% price automation', it: '85% automazione prezzi' },
+                time: { es: '2-3 semanas', en: '2-3 weeks', it: '2-3 settimane' }
+            },
+            medium: {
+                arch: 'PyTorch/CUDA + Async Pipeline + Kafka',
+                eff: { es: '3.2x margen neto', en: '3.2x net margin boost', it: '3.2x margine netto' },
+                time: { es: '3-5 semanas', en: '3-5 weeks', it: '3-5 settimane' }
+            },
+            enterprise: {
+                arch: 'Distributed MLOps + Vector DB + Multi-Region',
+                eff: { es: 'Optimización de millones de registros', en: 'Optimization of millions of records', it: 'Ottimizzazione di milioni di record' },
+                time: { es: '6-8 semanas', en: '6-8 weeks', it: '6-8 settimane' }
+            }
         },
         'legacy-modernization': {
-            small: { arch: 'PHP/Excel -> Python Async API + PostgreSQL', eff: '70% menos tiempo manual', time: '1-2 semanas' },
-            medium: { arch: 'Monolito -> Microservicios Dockerized + CI/CD', eff: '99.98% Uptime SLA', time: '3-4 semanas' },
-            enterprise: { arch: 'Cloud Native Migration (AWS/GCP K8s)', eff: 'Cero downtime + 60% ahorros infra', time: '5-7 semanas' }
+            small: {
+                arch: 'PHP/Excel -> Python Async API + PostgreSQL',
+                eff: { es: '70% menos tiempo manual', en: '70% manual time saved', it: '70% in meno di tempo manuale' },
+                time: { es: '1-2 semanas', en: '1-2 weeks', it: '1-2 settimane' }
+            },
+            medium: {
+                arch: 'Monolito -> Microservicios Dockerized + CI/CD',
+                eff: { es: '99.98% Uptime SLA', en: '99.98% Uptime SLA', it: '99.98% Uptime SLA' },
+                time: { es: '3-4 semanas', en: '3-4 weeks', it: '3-4 settimane' }
+            },
+            enterprise: {
+                arch: 'Cloud Native Migration (AWS/GCP K8s)',
+                eff: { es: 'Cero downtime + 60% ahorros infra', en: 'Zero downtime + 60% infra savings', it: 'Zero downtime + 60% risparmi infra' },
+                time: { es: '5-7 semanas', en: '5-7 weeks', it: '5-7 settimane' }
+            }
         },
         'trading-bots': {
-            small: { arch: 'Python + ccxt + Backtrader + VPS 24/7', eff: 'Ejecución 0ms subjetividad', time: '1-2 semanas' },
-            medium: { arch: 'Señales ML (XGBoost) + Risk Mgmt Engine', eff: 'Sharpe ratio optimizado', time: '2-4 semanas' },
-            enterprise: { arch: 'HFT Pipeline + WebSocket + Multi-Exchange Arb', eff: 'Latencia ultra-baja en milisegundos', time: '4-6 semanas' }
+            small: {
+                arch: 'Python + ccxt + Backtrader + VPS 24/7',
+                eff: { es: 'Ejecución 0ms subjetividad', en: '0ms emotional bias execution', it: 'Esecuzione 0ms soggettività' },
+                time: { es: '1-2 semanas', en: '1-2 weeks', it: '1-2 settimane' }
+            },
+            medium: {
+                arch: 'Señales ML (XGBoost) + Risk Mgmt Engine',
+                eff: { es: 'Sharpe ratio optimizado', en: 'Optimized Sharpe ratio', it: 'Sharpe ratio ottimizzato' },
+                time: { es: '2-4 semanas', en: '2-4 weeks', it: '2-4 settimane' }
+            },
+            enterprise: {
+                arch: 'HFT Pipeline + WebSocket + Multi-Exchange Arb',
+                eff: { es: 'Latencia ultra-baja en milisegundos', en: 'Ultra-low millisecond latency', it: 'Latenza ultra-bassa in millisecondi' },
+                time: { es: '4-6 semanas', en: '4-6 weeks', it: '4-6 settimane' }
+            }
         },
         'fullstack-platform': {
-            small: { arch: 'TypeScript + Next.js + PostgreSQL + Tailwind', eff: 'Lanzamiento ultra-rápido', time: '2 semanas' },
-            medium: { arch: 'Next.js App Router + GraphQL API + Auth2', eff: 'Plataforma B2B escalable', time: '3-5 semanas' },
-            enterprise: { arch: 'Micro-frontends + Distributed Backend + ADA AA', eff: 'Cumplimiento 100% ADA / WCAG 2.1', time: '6 semanas' }
+            small: {
+                arch: 'TypeScript + Next.js + PostgreSQL + Tailwind',
+                eff: { es: 'Lanzamiento ultra-rápido', en: 'Ultra-fast product launch', it: 'Lancio ultra-veloce' },
+                time: { es: '2 semanas', en: '2 weeks', it: '2 settimane' }
+            },
+            medium: {
+                arch: 'Next.js App Router + GraphQL API + Auth2',
+                eff: { es: 'Plataforma B2B escalable', en: 'Scalable B2B platform', it: 'Piattaforma B2B scalabile' },
+                time: { es: '3-5 semanas', en: '3-5 weeks', it: '3-5 settimane' }
+            },
+            enterprise: {
+                arch: 'Micro-frontends + Distributed Backend + ADA AA',
+                eff: { es: 'Cumplimiento 100% ADA / WCAG 2.1', en: '100% ADA / WCAG 2.1 compliance', it: 'Conformità 100% ADA / WCAG 2.1' },
+                time: { es: '6 semanas', en: '6 weeks', it: '6 settimane' }
+            }
         }
     };
 
     function recalculate() {
+        const lang = (window.i18n && window.i18n.currentLang) || 'es';
         const service = serviceSelect.value || 'ml-pricing';
         const scale = scaleSelect ? scaleSelect.value : 'medium';
         const result = dataMatrix[service][scale];
 
         archOutput.textContent = result.arch;
-        efficiencyOutput.textContent = result.eff;
-        timelineOutput.textContent = result.time;
+        efficiencyOutput.textContent = result.eff[lang] || result.eff.es;
+        timelineOutput.textContent = result.time[lang] || result.time.es;
 
         if (ctaBtn) {
             ctaBtn.href = `#contact?service=${service}&scale=${scale}`;
@@ -166,6 +215,10 @@ function initRoiEstimator() {
 
     serviceSelect.addEventListener('change', recalculate);
     if (scaleSelect) scaleSelect.addEventListener('change', recalculate);
+
+    if (window.i18n && window.i18n.listeners) {
+        window.i18n.listeners.push(() => recalculate());
+    }
 
     recalculate();
 }
