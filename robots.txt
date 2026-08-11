@@ -1,5 +1,5 @@
 # robots.txt — ranuk.dev
-# Última actualización: 2026-06-24
+# Última actualización: 2026-08-11
 
 # ─── Crawl general ──────────────────────────────────────────
 User-agent: *
@@ -25,12 +25,12 @@ Crawl-delay: 10
 # ─── Google Images ──────────────────────────────────────────
 User-agent: Googlebot-Image
 Allow: /assets/
-Disallow: /
+Disallow: /assets/*.pdf$
 
 # ─── Google Video ───────────────────────────────────────────
 User-agent: Googlebot-Video
 Allow: /assets/
-Disallow: /
+Disallow: /assets/*.pdf$
 
 # ─── Google News (prevenir indexación accidental) ───────────
 User-agent: Googlebot-News
