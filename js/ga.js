@@ -26,7 +26,30 @@
         'anonymize_ip': true,
         'cookie_flags': 'samesite=strict;secure'
       });
+      initConversionTracking();
     };
+  }
+
+  function initConversionTracking() {
+    var send = function(name, params) {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    };
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+      link.addEventListener('click', function() { send('generate_lead', { method: 'email', link_url: link.href }); });
+    });
+    document.querySelectorAll('a[href*="cal.com"], a[href*="calendly"]').forEach(function(link) {
+      link.addEventListener('click', function() { send('schedule_call', { link_url: link.href }); });
+    });
+    document.querySelectorAll('a[href*="github.com"], a[href*="linkedin.com"]').forEach(function(link) {
+      link.addEventListener('click', function() { send('select_content', { content_type: 'professional_profile', link_url: link.href }); });
+    });
+    document.querySelectorAll('a[href*="landing-factory"], a[href*="notarobot"], a[href*="bahaydesign"]').forEach(function(link) {
+      link.addEventListener('click', function() { send('view_demo', { link_url: link.href }); });
+    });
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function() { send('generate_lead', { method: 'contact_form', form_id: form.id || form.name || 'form' }); });
+    });
   }
 
   // Defer: load after page is fully painted
