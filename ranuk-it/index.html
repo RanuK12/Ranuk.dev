@@ -79,8 +79,9 @@
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous"/></noscript>
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="../css/styles.css?v=20260708"/>
-  <link rel="stylesheet" href="../css/visual-refresh.css?v=20260811"/>
+  <link rel="stylesheet" href="../css/styles.css?v=84d16b47"/>
+  <link rel="stylesheet" href="../css/visual-refresh.css?v=ec9ab6ee"/>
+  <script src="../js/tech-showcase.js" defer></script>
 
   <!-- Page-specific overrides & enhancements -->
   <style>
@@ -471,13 +472,21 @@
       gap: 4px;
     }
   </style>
-  <link rel="stylesheet" href="../css/visual-refresh.css?v=20260811-final"/>
+  <link rel="stylesheet" href="../css/visual-refresh.css?v=ec9ab6ee-final"/>
 </head>
 
 <body class="ranuk-it-page">
   <a class="skip-link" href="#hero">Skip to content</a>
   <div class="custom-cursor"></div>
   <div class="cursor-follower"></div>
+
+  <!-- Global System Telemetry Ticker -->
+  <div class="global-telemetry-bar">
+    <span><span class="telemetry-dot"></span> <strong>ALL SYSTEMS OPERATIONAL</strong></span>
+    <span>Uptime: <em class="telemetry-stat">99.98%</em></span>
+    <span>SLA: <em class="telemetry-stat">Ex-Booking Standard</em></span>
+    <span>Deployments: <em class="telemetry-stat">LATAM · EU · US</em></span>
+  </div>
 
   <!-- ==================== NAVBAR ==================== -->
   <nav class="navbar" id="navbar">
@@ -932,6 +941,63 @@
     </div>
   </section>
 
+  <!-- ==================== ESTIMADOR DE ROI Y ARQUITECTURA ==================== -->
+  <section class="section ranuk-it" id="roi-calculator">
+    <div class="container">
+      <span class="nav-section-pill"><i class="fas fa-calculator"></i>&nbsp; Estimador Técnico de ROI &amp; Arquitectura</span>
+      <h2 class="section-title">
+        <span class="title-number">05.</span> Configura tu requerimiento de ingeniería
+      </h2>
+      <p class="section-subtitle">
+        Obtén una estimación instantánea de arquitectura recomendada, impacto en eficiencia y tiempo de entrega sin compromiso.
+      </p>
+
+      <div class="roi-estimator-box">
+        <div class="roi-grid">
+          <div class="roi-controls">
+            <div class="roi-control-group">
+              <label for="roi-service-type">Tipo de Proyecto / Desafío Técnico:</label>
+              <select id="roi-service-type" class="roi-select">
+                <option value="ml-pricing">Machine Learning &amp; Pricing Dinámico</option>
+                <option value="legacy-modernization">Modernización de Sistemas Legacy &amp; Autom.</option>
+                <option value="trading-bots">Bots de Trading Algorítmico &amp; ML</option>
+                <option value="fullstack-platform">Plataforma Web / App B2B a Medida</option>
+              </select>
+            </div>
+            <div class="roi-control-group">
+              <label for="roi-business-scale">Escala del Negocio / Volumen:</label>
+              <select id="roi-business-scale" class="roi-select">
+                <option value="small">PYME / Startup (Operación inicial)</option>
+                <option value="medium" selected>Empresa en Crecimiento (Alto flujo)</option>
+                <option value="enterprise">Escala Enterprise (Multi-región / Millones de datos)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="roi-output-card">
+            <div class="roi-output-item">
+              <span class="roi-output-title">Arquitectura Recomendada</span>
+              <span class="roi-output-val" id="roi-arch-output">PyTorch/CUDA + Async Pipeline + Kafka</span>
+            </div>
+            <div class="roi-output-item">
+              <span class="roi-output-title">Impacto Estimado en Eficiencia / Margen</span>
+              <span class="roi-output-val" id="roi-efficiency-output">3.2x margen neto</span>
+            </div>
+            <div class="roi-output-item">
+              <span class="roi-output-title">Tiempo Estimado de Entrega</span>
+              <span class="roi-output-val" id="roi-timeline-output">3-5 semanas</span>
+            </div>
+            <div style="margin-top:1.4rem;">
+              <a id="roi-schedule-cta" href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">
+                <i class="fas fa-calendar-check"></i> Agendar Consulta Técnica sobre este proyecto →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== CONTACT ==================== -->
   <section class="section ranuk-it" id="contact">
     <div class="container">
@@ -1000,10 +1066,10 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../js/i18n.js?v=20260708"></script>
-  <script src="../js/particles.js?v=20260708"></script>
-  <script src="../js/animations.js?v=20260708"></script>
-  <script src="../js/app.js?v=20260708"></script>
+  <script src="../js/i18n.js?v=9a15b057"></script>
+  <script src="../js/particles.js?v=d7ab9656"></script>
+  <script src="../js/animations.js?v=95a293e6"></script>
+  <script src="../js/app.js?v=9e58c11f"></script>
 
   <script>
   /* ── Ranuk IT page: local interactions ── */
