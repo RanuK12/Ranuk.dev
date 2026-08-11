@@ -686,12 +686,12 @@
         <!-- ADA -->
         <article class="service-card">
           <div class="service-icon" style="background:rgba(59,130,246,0.08);color:#60a5fa"><i class="fas fa-universal-access"></i></div>
-          <h3>ADA / WCAG 2.1 Audits</h3>
+          <h3 data-i18n="ranukit.ada_title">ADA / WCAG 2.1 Audits</h3>
           <p data-i18n="ranukit.57">Do you operate in the US and need ADA / WCAG 2.1 AA compliance? We maintain a specialized and separate service.
             <a href="ada/" style="color: var(--accent-gold,#D4A574); text-decoration: underline;">View ADA Audits service →</a>
           </p>
           <div class="service-tech"><span>WCAG 2.1</span><span>Screen-reader</span><span>Keyboard nav</span><span>Compliance</span></div>
-          <a class="service-link" style="color:#60a5fa" href="ada/">See ADA plans →</a>
+          <a class="service-link" style="color:#60a5fa" href="ada/"><span data-i18n="ranukit.ada_link">See ADA plans →</span></a>
         </article>
       </div>
     </div>
@@ -944,52 +944,52 @@
   <!-- ==================== ESTIMADOR DE ROI Y ARQUITECTURA ==================== -->
   <section class="section ranuk-it" id="roi-calculator">
     <div class="container">
-      <span class="nav-section-pill"><i class="fas fa-calculator"></i>&nbsp; Estimador Técnico de ROI &amp; Arquitectura</span>
+      <span class="nav-section-pill"><i class="fas fa-calculator"></i>&nbsp; <span data-i18n="ranukit.roi_pill">Estimador Técnico de ROI &amp; Arquitectura</span></span>
       <h2 class="section-title">
-        <span class="title-number">05.</span> Configura tu requerimiento de ingeniería
+        <span class="title-number">05.</span> <span data-i18n="ranukit.roi_title">Configura tu requerimiento de ingeniería</span>
       </h2>
       <p class="section-subtitle">
-        Obtén una estimación instantánea de arquitectura recomendada, impacto en eficiencia y tiempo de entrega sin compromiso.
+        <span data-i18n="ranukit.roi_sub">Obtén una estimación instantánea de arquitectura recomendada, impacto en eficiencia y tiempo de entrega sin compromiso.</span>
       </p>
 
       <div class="roi-estimator-box">
         <div class="roi-grid">
           <div class="roi-controls">
             <div class="roi-control-group">
-              <label for="roi-service-type">Tipo de Proyecto / Desafío Técnico:</label>
+              <label for="roi-service-type"><span data-i18n="ranukit.roi_label_service">Tipo de Proyecto / Desafío Técnico:</span></label>
               <select id="roi-service-type" class="roi-select">
-                <option value="ml-pricing">Machine Learning &amp; Pricing Dinámico</option>
-                <option value="legacy-modernization">Modernización de Sistemas Legacy &amp; Autom.</option>
-                <option value="trading-bots">Bots de Trading Algorítmico &amp; ML</option>
-                <option value="fullstack-platform">Plataforma Web / App B2B a Medida</option>
+                <option value="ml-pricing" data-i18n="ranukit.roi_opt_ml">Machine Learning &amp; Pricing Dinámico</option>
+                <option value="legacy-modernization" data-i18n="ranukit.roi_opt_legacy">Modernización de Sistemas Legacy &amp; Autom.</option>
+                <option value="trading-bots" data-i18n="ranukit.roi_opt_bots">Bots de Trading Algorítmico &amp; ML</option>
+                <option value="fullstack-platform" data-i18n="ranukit.roi_opt_fullstack">Plataforma Web / App B2B a Medida</option>
               </select>
             </div>
             <div class="roi-control-group">
-              <label for="roi-business-scale">Escala del Negocio / Volumen:</label>
+              <label for="roi-business-scale"><span data-i18n="ranukit.roi_label_scale">Escala del Negocio / Volumen:</span></label>
               <select id="roi-business-scale" class="roi-select">
-                <option value="small">PYME / Startup (Operación inicial)</option>
+                <option value="small" data-i18n="ranukit.roi_opt_small">PYME / Startup (Operación inicial)</option>
                 <option value="medium" selected>Empresa en Crecimiento (Alto flujo)</option>
-                <option value="enterprise">Escala Enterprise (Multi-región / Millones de datos)</option>
+                <option value="enterprise" data-i18n="ranukit.roi_opt_enterprise">Escala Enterprise (Multi-región / Millones de datos)</option>
               </select>
             </div>
           </div>
 
           <div class="roi-output-card">
             <div class="roi-output-item">
-              <span class="roi-output-title">Arquitectura Recomendada</span>
+              <span class="roi-output-title"><span data-i18n="ranukit.roi_output_arch">Arquitectura Recomendada</span></span>
               <span class="roi-output-val" id="roi-arch-output">PyTorch/CUDA + Async Pipeline + Kafka</span>
             </div>
             <div class="roi-output-item">
-              <span class="roi-output-title">Impacto Estimado en Eficiencia / Margen</span>
+              <span class="roi-output-title"><span data-i18n="ranukit.roi_output_eff">Impacto Estimado en Eficiencia / Margen</span></span>
               <span class="roi-output-val" id="roi-efficiency-output">3.2x margen neto</span>
             </div>
             <div class="roi-output-item">
-              <span class="roi-output-title">Tiempo Estimado de Entrega</span>
+              <span class="roi-output-title"><span data-i18n="ranukit.roi_output_time">Tiempo Estimado de Entrega</span></span>
               <span class="roi-output-val" id="roi-timeline-output">3-5 semanas</span>
             </div>
             <div style="margin-top:1.4rem;">
               <a id="roi-schedule-cta" href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">
-                <i class="fas fa-calendar-check"></i> Agendar Consulta Técnica sobre este proyecto →
+                <i class="fas fa-calendar-check"></i> <span data-i18n="ranukit.roi_cta_btn">Agendar Consulta Técnica sobre este proyecto →</span>
               </a>
             </div>
           </div>
@@ -1066,7 +1066,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../js/i18n.js?v=8151f31e"></script>
+  <script src="../js/i18n.js?v=bef3ffe2"></script>
   <script src="../js/particles.js?v=d7ab9656"></script>
   <script src="../js/animations.js?v=95a293e6"></script>
   <script src="../js/app.js?v=9e58c11f"></script>
