@@ -73,13 +73,13 @@
     <style>/* Critical CSS — above-the-fold styles inlined to eliminate render-blocking */
 :root{--bg-primary:#0a0a1a;--bg-secondary:#0f0f23;--accent:#64ffda;--text-primary:#ccd6f6;--text-secondary:#8892b0;--text-bright:#e6f1ff;--nav-height:70px;--font-main:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}.navbar{position:fixed;top:0;width:100%;z-index:1000;padding:1rem 2rem;transition:var(--transition)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;z-index:99999;color:var(--accent);font-family:var(--font-mono,'Fira Code',monospace);font-size:.875rem}
 </style>
-    <link rel="stylesheet" href="css/visual-refresh.css?v=3b06ed4d">
+    <link rel="stylesheet" href="css/visual-refresh.css?v=2dc915a0">
     <!-- GSAP + ScrollTrigger (SRI hashes applied) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
     <!-- Main Scripts -->
     <script src="js/tech-showcase.js" defer></script>
-    <script src="js/i18n.js?v=b723f49c" defer></script>
+    <script src="js/i18n.js?v=728d9ddf" defer></script>
     <script src="js/particles.js?v=d7ab9656" defer></script>
     <script src="js/animations.js?v=95a293e6" defer></script>
     <script src="js/ml-playground.js?v=66d897a6" defer></script>
@@ -562,6 +562,39 @@
                 <button class="filter-btn" data-filter="automation" data-i18n="projects.automation">Automation</button>
             </div>
             <div class="projects-grid">
+                <!-- Flagship Project: Gambeta -->
+                <div class="project-card project-card-flagship" data-category="web" data-aos="fade-up" style="grid-column: 1 / -1;">
+                    <div class="project-flagship-wrapper" style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.5rem; background: linear-gradient(145deg, rgba(16, 185, 129, 0.08), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 20px; overflow: hidden; padding: 0;">
+                        <div class="project-flagship-media" style="position: relative; overflow: hidden; min-height: 260px;">
+                            <img src="assets/gambeta-banner.jpg" alt="Gambeta — Multiplayer Soccer Web Game" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <div class="project-flagship-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(10, 14, 23, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(16, 185, 129, 0.5); color: #10b981; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 50px; display: flex; align-items: center; gap: 0.4rem;">
+                                <i class="fas fa-trophy"></i> <span data-i18n="projects.gambeta_badge">Co-Creadores &amp; Lead Devs</span>
+                            </div>
+                        </div>
+                        <div class="project-flagship-content" style="padding: 1.8rem 1.8rem 1.8rem 0.5rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #10b981; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem;" data-i18n="projects.gambeta_eyebrow">✦ Flagship Web Game</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.6rem; font-weight: 700;">Gambeta — Multiplayer 2D Soccer Game</h3>
+                            <p style="color: var(--refresh-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.2rem;" data-i18n="projects.gambeta_desc">
+                                Co-creadores y desarrolladores principales de <strong>Gambeta</strong>, el juego web multijugador online de fútbol 2D en tiempo real. Motor gráfico en Canvas/WebGL, físicas competitivas, salas dinámicas y arquitectura de baja latencia con WebSockets.
+                            </p>
+                            <div class="project-tech" style="margin-bottom: 1.2rem;">
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Next.js</span>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Canvas / WebGL Engine</span>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">WebSockets</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+                                <a href="https://gambetafutbol.games/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; background: #10b981; border-color: #10b981; color: #0a0e17; text-decoration: none;">
+                                    <i class="fas fa-gamepad"></i> <span data-i18n="projects.gambeta_play">Jugar a Gambeta en vivo →</span>
+                                </a>
+                                <a href="https://github.com/RanuK12/GambetaGame" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; text-decoration: none;">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.gambeta_repo">GitHub Repo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card" data-category="python ml" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #f59e0b">

@@ -128,3 +128,9 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 .telemetry-grid{grid-template-columns:1fr 1fr!important}
 }
 
+
+/* Gambeta Flagship Card Responsive */
+@media(max-width:768px){
+  .project-flagship-wrapper{grid-template-columns:1fr!important}
+  .project-flagship-content{padding:1.25rem!important}
+}

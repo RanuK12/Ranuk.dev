@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160" role="img" aria-label="Copa Sudamericana">
+  <defs>
+    <linearGradient id="silverSuda" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#CBD5E1"/>
+      <stop offset="60%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3C4"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <linearGradient id="woodSuda" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B1C0A"/>
+      <stop offset="50%" stop-color="#5C2E12"/>
+      <stop offset="100%" stop-color="#241005"/>
+    </linearGradient>
+
+    <filter id="shadowSuda" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadowSuda)">
+    <!-- 1. BASE DE MADERA DE LA COPA SUDAMERICANA -->
+    <path d="M34 140 h52 l4 10 h-60 z" fill="url(#woodSuda)"/>
+    <rect x="36" y="112" width="48" height="28" rx="2" fill="url(#woodSuda)"/>
+    <!-- Placa de Campeón en Plata -->
+    <rect x="44" y="122" width="32" height="10" rx="1.5" fill="url(#silverSuda)"/>
+    <rect x="48" y="110" width="24" height="3" fill="url(#silverSuda)"/>
+
+    <!-- 2. COLUMNA / SOPORTE INFERIOR EN PLATA Y ORO -->
+    <path d="M52 110 L52 90 L46 90 L46 84 L74 84 L74 90 L68 90 L68 110 Z" fill="url(#silverSuda)"/>
+
+    <!-- 3. ESFERA / GLOBO TERRÁQUEO SUPERIOR -->
+    <circle cx="60" cy="44" r="24" fill="url(#silverSuda)"/>
+    <!-- Meridianos y paralelo -->
+    <ellipse cx="60" cy="44" rx="24" ry="8" fill="none" stroke="#475569" stroke-width="1.4"/>
+    <ellipse cx="60" cy="44" rx="14" ry="24" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="3,2"/>
+
+    <!-- 4. ANILLO ECUATORIAL EN ORO BRILLANTE -->
+    <ellipse cx="60" cy="44" rx="27" ry="9" fill="none" stroke="url(#goldRing)" stroke-width="4"/>
+
+    <!-- 5. ASAS LATERALES CURVAS DORADAS / PLATEADAS -->
+    <path d="M34 50 C22 40 22 24 38 22 C44 21 46 26 42 30 C34 34 32 44 34 50 Z" fill="url(#goldRing)"/>
+    <path d="M86 50 C98 40 98 24 82 22 C76 21 74 26 78 30 C86 34 88 44 86 50 Z" fill="url(#goldRing)"/>
+
+    <!-- Brillo superior -->
+    <circle cx="52" cy="34" r="5" fill="#FFFFFF" opacity="0.45"/>
+  </g>
+</svg>
