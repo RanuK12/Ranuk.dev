@@ -73,6 +73,7 @@
     <style>/* Critical CSS — above-the-fold styles inlined to eliminate render-blocking */
 :root{--bg-primary:#0a0a1a;--bg-secondary:#0f0f23;--accent:#64ffda;--text-primary:#ccd6f6;--text-secondary:#8892b0;--text-bright:#e6f1ff;--nav-height:70px;--font-main:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}.navbar{position:fixed;top:0;width:100%;z-index:1000;padding:1rem 2rem;transition:var(--transition)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;z-index:99999;color:var(--accent);font-family:var(--font-mono,'Fira Code',monospace);font-size:.875rem}
 </style>
+    <link rel="stylesheet" href="css/visual-refresh.css?v=20260811">
     <!-- GSAP + ScrollTrigger (SRI hashes applied) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
@@ -101,7 +102,7 @@
                 </div>
                 <div class="terminal-body">
                     <p class="loader-line" style="--delay: 0"><span class="prompt">$</span> initializing portfolio...</p>
-                    <p class="loader-line" style="--delay: 1"><span class="prompt">$</span> loading projects <span class="success">[28 repos found]</span></p>
+                    <p class="loader-line" style="--delay: 1"><span class="prompt">$</span> loading projects <span class="success">[85 repos found]</span></p>
                     <p class="loader-line" style="--delay: 2"><span class="prompt">$</span> compiling skills <span class="success">[done]</span></p>
                     <p class="loader-line" style="--delay: 3"><span class="prompt">$</span> deploying experience <span class="success">[ready]</span></p>
                     <p class="loader-line" style="--delay: 4"><span class="prompt">$</span> launching ranuk.dev <span class="blink">_</span></p>
@@ -183,7 +184,7 @@
                     <span class="stat-label" data-i18n="hero.stat1">Años de experiencia</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="28">0</span><span class="stat-plus">+</span>
+                    <span class="stat-number" data-target="85">0</span><span class="stat-plus">+</span>
                     <span class="stat-label" data-i18n="hero.stat2">Repos en GitHub</span>
                 </div>
                 <div class="stat-item">
