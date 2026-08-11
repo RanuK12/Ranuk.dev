@@ -1690,11 +1690,133 @@ const translations = {
     }
 };
 
+// The Spanish Ranuk IT copy used to contain empty placeholders for the main
+// landing page. Empty values intentionally preserve the HTML fallback, but
+// that meant the Spanish selector left this page in English. Keep the copy in
+// one explicit patch so it can be reviewed and extended without touching the
+// generated translation table above.
+Object.assign(translations.es, {
+    "ranukit.9": "<span class=\"hero-label\"><span class=\"hero-label-dot\"></span>Estudio técnico · Ex Booking.com · Ex Accenture · Barcelona</span><span class=\"hero-name-mini\">RANUK IT SOLUTIONS</span>",
+    "ranukit.10": "<span class=\"headline-line line-code\"><em>Ingeniería</em> de nivel europeo,</span><span class=\"headline-line line-biz\">adaptada a <em>tu empresa</em>.</span><span class=\"headline-line line-story\">Sin agencias ni <em>intermediarios</em>.</span>",
+    "ranukit.11": "Desarrollo de software a medida, modernización de sistemas legacy y Machine Learning aplicado. Construido por un ingeniero que trabajó con tecnología de <strong>Booking.com</strong> (Ámsterdam) y <strong>Accenture</strong> (Roma), ahora disponible para empresas que quieren escalar.",
+    "ranukit.12": "<a class=\"btn btn-primary\" href=\"#contact\"><i class=\"fas fa-calendar-check\"></i> Agendar consulta técnica (15 min)</a><a class=\"btn btn-outline\" href=\"#clients\">Ver casos de éxito</a>",
+    "ranukit.13": "<span class=\"stat-number\" data-target=\"28\">0</span><span class=\"stat-plus\">+</span><span class=\"stat-label\">Proyectos publicados</span>",
+    "ranukit.14": "<span class=\"stat-number\" data-target=\"4\">0</span><span class=\"stat-label\">Países atendidos</span>",
+    "ranukit.15": "<span class=\"stat-number\" data-target=\"3\">0</span><span class=\"stat-label\">Idiomas nativos</span>",
+    "ranukit.16": "<span class=\"stat-number\" data-target=\"100\">0</span><span class=\"stat-plus\">%</span><span class=\"stat-label\">Código propio</span>",
+    "ranukit.17": "<span class=\"title-number\">01.</span> El equipo técnico que trabajó en las empresas que admira la tuya",
+    "ranukit.18": "No es un discurso comercial. Son los lugares donde me formé y las certificaciones que respaldan lo que construyo hoy para tu empresa.",
+    "ranukit.20": "Data Scientist · Pricing y demanda",
+    "ranukit.21": "Sistemas de pricing dinámico con millones de registros diarios. Allí entendí qué significan realmente <strong>escala, observabilidad y rendimiento</strong>: estándares que ahora aplico a empresas que antes no tenían acceso a ese nivel.",
+    "ranukit.23": "Pipelines de datos · Norte de Italia",
+    "ranukit.24": "Construí pipelines de datos y modelos de optimización para clientes Fortune 500. Metodologías de <strong>CI/CD, testing y documentación</strong> que ahora llegan, sin intermediarios, a empresas de Europa y LATAM.",
+    "ranukit.25": "Certificaciones activas",
+    "ranukit.30": "Operación global",
+    "ranukit.31": "4 países · 3 idiomas nativos",
+    "ranukit.32": "Clientes en Argentina, España, Italia y Estados Unidos. Comunicación directa en español, inglés e italiano. <strong>El estándar es el mismo para una pyme de Córdoba que para un estudio de Milán.</strong>",
+    "ranukit.33": "<span class=\"title-number\">02.</span> Servicios técnicos para empresas que necesitan escalar",
+    "ranukit.34": "Cinco líneas de servicio. Un mismo principio: trabajo directo con quienes escriben el código.",
+    "ranukit.35": "Desarrollo de software a medida",
+    "ranukit.36": "Plataformas web full-stack, aplicaciones internas, portales de clientes e integraciones con ERPs y sistemas legacy. <strong>Arquitectura cuidada, código mantenible, tests y documentación.</strong>",
+    "ranukit.38": "Solicitar propuesta →",
+    "ranukit.39": "Nuestro diferencial",
+    "ranukit.40": "Machine Learning aplicado",
+    "ranukit.41": "Pricing dinámico, forecasting de demanda, detección de anomalías, NLP para atención al cliente y computer vision para calidad industrial. Lo que construí para <strong>Booking.com y Accenture</strong>, ahora para tu empresa.",
+    "ranukit.43": "Hablemos de tu caso →",
+    "ranukit.44": "Soluciones IT y modernización de sistemas legacy",
+    "ranukit.45": "Migración de sistemas antiguos a arquitecturas modernas y <strong>automatización de procesos manuales</strong> que hoy consumen horas de tu equipo.",
+    "ranukit.47": "Auditar mi sistema →",
+    "ranukit.48": "Soporte técnico continuo",
+    "ranukit.49": "Retainer mensual predecible, monitoreo 24/7, correcciones y nuevas funcionalidades. <strong>Tu equipo técnico sin tener que contratar un equipo técnico.</strong>",
+    "ranukit.51": "Consultar disponibilidad →",
+    "ranukit.52": "Nuevo — listo en 24h",
+    "ranukit.53": "Landing Factory — Landing profesional en 24 horas",
+    "ranukit.54": "Tu página profesional lista para convertir visitas en clientes. <strong>Diseño responsive, copy optimizado, hosting incluido y disponible en 3 idiomas</strong> (ES/EN/IT).",
+    "ranukit.56": "Ver demo online →",
+    "ranukit.57": "¿Operás en EE.UU. y necesitás cumplir ADA / WCAG 2.1 AA? Tenemos un servicio especializado. <a href=\"ada/\" style=\"color: var(--accent-gold); text-decoration: underline;\">Ver auditorías ADA →</a>",
+    "ranukit.58": "<span class=\"title-number\">03.</span> Por qué no somos una agencia tradicional",
+    "ranukit.59": "La diferencia no está en el precio. Está en quién escribe tu código y cómo se toman las decisiones técnicas.",
+    "ranukit.60": "Agencia tradicional",
+    "ranukit.61": "Ranuk IT",
+    "ranukit.62": "Quién te atiende",
+    "ranukit.63": "Account manager no técnico",
+    "ranukit.64": "La persona que también escribe el código",
+    "ranukit.65": "Velocidad de iteración",
+    "ranukit.66": "Tickets de Jira y ciclos de revisión",
+    "ranukit.67": "Slack/WhatsApp directo, demo en 48h",
+    "ranukit.68": "Propuesta inicial",
+    "ranukit.69": "15 páginas genéricas, precio abierto",
+    "ranukit.70": "1 página, alcance claro, precio cerrado",
+    "ranukit.71": "Estándares de código",
+    "ranukit.72": "Que funcione y listo",
+    "ranukit.73": "Los mismos de Booking.com y Accenture",
+    "ranukit.74": "Después del lanzamiento",
+    "ranukit.75": "Factura por cada cambio",
+    "ranukit.76": "Retainer opcional y predecible",
+    "ranukit.77": "ML / Data Science",
+    "ranukit.78": "Lo derivamos a otro estudio",
+    "ranukit.79": "Es el núcleo de lo que hacemos",
+    "ranukit.81": "Proyectos en producción. Nombres reales. Código propio.",
+    "ranukit.83": "<span class=\"title-number\">05.</span> Cómo trabajamos",
+    "ranukit.84": "Cuatro pasos. Sin letra chica. Cada etapa tiene un entregable concreto.",
+    "ranukit.85": "Auditoría técnica inicial",
+    "ranukit.87": "Roadmap y propuesta cerrada",
+    "ranukit.89": "Construcción en sprints quincenales",
+    "ranukit.91": "Entrega + soporte continuo",
+    "ranukit.93": "<span class=\"title-number\">06.</span> Hablemos de tu proyecto",
+    "ranukit.94": "Agendá una consulta técnica de 15 minutos. Sin pitch de ventas: te muestro qué vería en tu empresa si fuera tu CTO durante un tiempo.",
+    "ranukit.100": "Contame en 3 líneas qué necesitás. Te respondo personalmente en el día.",
+    "ranukit.101": "Nombre y empresa",
+    "ranukit.102": "Email corporativo",
+    "ranukit.103": "¿Qué necesitás?",
+    "ranukit.111": "Contexto del proyecto",
+    "ranukit.3": "<a class=\"nav-link\" href=\"#services\">Servicios</a>",
+    "ranukit.4": "<a class=\"nav-link\" href=\"#vs\">Por qué nosotros</a>",
+    "ranukit.5": "<a class=\"nav-link\" href=\"#clients\">Casos</a>",
+    "ranukit.6": "<a class=\"nav-link\" href=\"#process\">Proceso</a>",
+    "ranukit.7": "<a class=\"nav-link nav-link-primary\" href=\"#contact\">Agendar llamada</a>",
+    "ranukit.8": "<i class=\"fas fa-arrow-left\"></i> <span>Emilio</span>",
+    "ranukit.19": "Booking.com — Ámsterdam",
+    "ranukit.22": "Accenture — Roma",
+    "ranukit.26": "<i class=\"fab fa-aws\"></i> AWS — Cloud Practitioner",
+    "ranukit.27": "<i class=\"fas fa-database\"></i> IBM Data Science Professional",
+    "ranukit.28": "<i class=\"fab fa-microsoft\"></i> Microsoft Azure AI Fundamentals",
+    "ranukit.29": "<i class=\"fas fa-graduation-cap\"></i> Ingeniero en Sistemas — UTN",
+    "ranukit.37": "<span>TypeScript</span><span>React</span><span>Node</span><span>Python</span><span>PostgreSQL</span>",
+    "ranukit.42": "<span>Scikit-learn</span><span>XGBoost</span><span>TensorFlow</span><span>PyTorch</span><span>MLOps</span>",
+    "ranukit.46": "<span>Migración cloud</span><span>APIs</span><span>RPA</span><span>DevOps</span>",
+    "ranukit.50": "<span>SLAs</span><span>Monitoreo</span><span>On-call</span><span>Roadmap</span>",
+    "ranukit.55": "<span>HTML5</span><span>CSS3</span><span>Responsive</span><span>SEO</span><span>Multidioma</span>",
+    "ranukit.80": "<span class=\"title-number\">04.</span> Clientes y casos de estudio",
+    "ranukit.82": "<a class=\"ranuk-project-card\" href=\"https://notarobot.es\" rel=\"noopener\" target=\"_blank\"><div class=\"ranuk-project-info\"><h3>NOT A ROBOT</h3><p>Plataforma web completa para una productora audiovisual internacional.</p><div class=\"project-tech\"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span></div></div></a><a class=\"ranuk-project-card\" href=\"https://github.com/RanuK12/GARYCIO_Project\" rel=\"noopener\" target=\"_blank\"><div class=\"ranuk-project-info\"><h3>GARYCIO</h3><p>Automatización logística con bot de WhatsApp, PostgreSQL y PDFs.</p><div class=\"project-tech\"><span>TypeScript</span><span>WhatsApp API</span><span>PostgreSQL</span></div></div></a>",
+    "ranukit.86": "Llamada de 15 minutos y análisis de tu stack actual. Te llevás un diagnóstico de una página: qué hacer, qué evitar y una estimación orientativa. <strong>Gratis y sin compromiso.</strong>",
+    "ranukit.88": "Documento de una página con alcance, arquitectura, fases, tiempos y precio fijo. Los riesgos técnicos se nombran desde el principio. <strong>Sin sorpresas en la factura.</strong>",
+    "ranukit.90": "Demo cada dos semanas, repositorio privado compartido desde el día uno, tests, CI/CD y documentación. <strong>Ves progreso real, no diapositivas.</strong>",
+    "ranukit.92": "Entrega documentada a tu equipo o retainer mensual si preferís que sigamos. <strong>Nunca te dejamos con un sistema que nadie entiende.</strong>",
+    "ranukit.95": "<i class=\"fas fa-calendar-check\"></i> Agendar consulta técnica (15 min)",
+    "ranukit.96": "Elegí el horario que te sea cómodo. Fuso horario Córdoba (GMT-3) y Madrid (GMT+1) disponibles.",
+    "ranukit.97": "<i class=\"fas fa-video\"></i> Elegir horario",
+    "ranukit.98": "<i class=\"fas fa-shield-halved\"></i> Respuesta en &lt;24h hábiles · Sin compromiso",
+    "ranukit.99": "<i class=\"fas fa-paper-plane\"></i> Prefiero escribir",
+    "ranukit.112": "<i class=\"fas fa-paper-plane\"></i> Enviar",
+    "ranukit.113": "¿Sos developer con experiencia real, data scientist o diseñador con cabeza técnica? Mandame tu perfil a <a href=\"mailto:emilio@ranuk.dev?subject=Quiero%20sumarme%20al%20equipo%20Ranuk%20IT\">emilio@ranuk.dev</a>. No busco empleados: busco socios de proyecto.",
+    "ranukit.testimonial-1": "Trabajar con Emilio fue como tener un CTO externo: entendió nuestro negocio desde la primera llamada y construyó una plataforma que nuestros clientes adoran.",
+    "ranukit.testimonial-1-role": "NOT A ROBOT · Productora audiovisual",
+    "ranukit.testimonial-2": "Necesitábamos un sitio que reflejara la identidad de nuestro estudio de arquitectura. Diseño impecable, plazos cumplidos y seguimiento después de la entrega.",
+    "ranukit.testimonial-2-role": "Bahay Design · Estudio de arquitectura",
+    "ranukit.testimonial-3": "El bot de WhatsApp transformó nuestras operaciones: pasamos de tres horas diarias de soporte a respuestas automatizadas en segundos.",
+    "ranukit.testimonial-3-role": "GARYCIO · Operaciones",
+    "ranukit.testimonials-sub": "Resultados reales de proyectos que ya están en producción.",
+    "ranukit.testimonials-title": "Lo que dicen nuestros clientes"
+});
+
 class I18n {
     constructor() {
-        this.currentLang = localStorage.getItem('ranuk-lang')
-            || document.documentElement.lang
-            || 'en';
+        const storedLang = localStorage.getItem('ranuk-lang');
+        const documentLang = (document.documentElement.lang || '').slice(0, 2);
+        this.currentLang = ['en', 'es', 'it'].includes(storedLang)
+            ? storedLang
+            : (['en', 'es', 'it'].includes(documentLang) ? documentLang : 'es');
         this.listeners = [];
     }
 
@@ -1731,6 +1853,7 @@ class I18n {
     }
 
     setLanguage(lang) {
+        if (!['en', 'es', 'it'].includes(lang) || !translations[lang]) return;
         this.currentLang = lang;
         localStorage.setItem('ranuk-lang', lang);
 
@@ -1765,6 +1888,16 @@ class I18n {
             if (t[key]) {
                 el.placeholder = t[key];
             }
+        });
+
+        // Keep document metadata in sync with the selected language too.
+        document.querySelectorAll('[data-i18n-title]').forEach(el => {
+            const value = t[el.dataset.i18nTitle];
+            if (value) el.textContent = value;
+        });
+        document.querySelectorAll('[data-i18n-meta]').forEach(el => {
+            const value = t[el.dataset.i18nMeta];
+            if (value) el.setAttribute('content', value);
         });
     }
 
