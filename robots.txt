@@ -8,6 +8,10 @@ Allow: /assets/
 Allow: /css/
 Allow: /js/
 Allow: /ranuk-it/
+# Versiones por idioma (scripts/build-i18n-pages.mjs). Antes el idioma vivía en localStorage y
+# para Google el sitio era una sola página en español.
+Allow: /en/
+Allow: /it/
 
 # Bloques: contenido interno, scripts de build, datos
 Disallow: /scripts/

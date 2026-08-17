@@ -27,3 +27,13 @@ jobs:
 
       - name: Sin escapes, mismas claves en los 3 idiomas, sin data-i18n huerfanos
         run: node scripts/check-i18n.mjs
+
+      - name: Las paginas /en/ y /it/ estan al dia
+        run: |
+          node scripts/build-i18n-pages.mjs
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "Las paginas por idioma quedaron desactualizadas. Corre:"
+            echo "  node scripts/build-i18n-pages.mjs"
+            git --no-pager diff --stat
+            exit 1
+          fi
