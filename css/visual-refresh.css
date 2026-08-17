@@ -1,9 +1,9 @@
 /* RANUK.DEV visual refresh — premium technical editorial system */
 :root{--refresh-bg:#080b12;--refresh-surface:#0f1520;--refresh-surface-2:#131b28;--refresh-line:rgba(189,211,226,.14);--refresh-ink:#eef4f6;--refresh-muted:#92a2af;--refresh-mint:#6fffd1;--refresh-lime:#c8f56a;--refresh-orange:#ff8b63;--refresh-serif:'Fraunces',Georgia,serif}
 html{background:var(--refresh-bg)}body{background:radial-gradient(900px 520px at 82% -5%,rgba(43,107,120,.2),transparent 62%),radial-gradient(780px 520px at 0 28%,rgba(23,47,91,.18),transparent 65%),var(--refresh-bg);color:var(--refresh-ink)}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
-.navbar{padding:1rem max(1.25rem,4vw);background:rgba(8,11,18,.7)!important;border-bottom:1px solid var(--refresh-line);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}.navbar.scrolled{background:rgba(8,11,18,.94)!important;box-shadow:0 12px 40px rgba(0,0,0,.24)}.nav-container{max-width:1240px}.nav-logo{font-size:1rem;letter-spacing:.08em}.logo-bracket{color:var(--refresh-orange)}.nav-menu{gap:.35rem}.nav-link{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.02em;color:var(--refresh-muted);padding:.52rem .72rem;border-radius:999px}.nav-link:hover,.nav-link.active{color:var(--refresh-ink);background:rgba(111,255,209,.08)}.nav-link-primary{border:1px solid rgba(111,255,209,.35);color:var(--refresh-mint)!important;background:rgba(111,255,209,.05)}.lang-switcher{border-color:var(--refresh-line)!important;background:rgba(255,255,255,.03)!important}.theme-toggle{border-color:var(--refresh-line)!important;background:rgba(255,255,255,.03)!important;color:var(--refresh-mint)!important}
+.navbar{padding:1rem max(1.25rem,4vw);background:rgba(8,11,18,.7)!important;border-bottom:1px solid var(--refresh-line);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}.navbar.scrolled{background:rgba(8,11,18,.94)!important;box-shadow:0 12px 40px rgba(0,0,0,.24)}.nav-container{max-width:1240px}.nav-logo{font-size:1rem;letter-spacing:.08em}.logo-bracket{color:var(--refresh-orange)}.nav-menu{gap:.35rem}.nav-link{font-family:var(--font-main);font-size:.9rem;font-weight:500;letter-spacing:-.005em;color:var(--refresh-muted);padding:.5rem .78rem;border-radius:999px}.nav-link:hover,.nav-link.active{color:var(--refresh-ink);background:rgba(111,255,209,.08)}.nav-link-primary{border:1px solid rgba(111,255,209,.35);color:var(--refresh-mint)!important;background:rgba(111,255,209,.05)}.lang-switcher{border-color:var(--refresh-line)!important;background:rgba(255,255,255,.03)!important}.theme-toggle{border-color:var(--refresh-line)!important;background:rgba(255,255,255,.03)!important;color:var(--refresh-mint)!important}
 .hero{position:relative;min-height:calc(100vh - 10px);padding:9rem 0 6rem}.hero:after{content:"";position:absolute;width:30rem;height:30rem;right:4%;top:15%;border:1px solid rgba(111,255,209,.1);border-radius:50%;box-shadow:0 0 0 70px rgba(111,255,209,.018),0 0 0 140px rgba(111,255,209,.012);pointer-events:none}.hero-content{position:relative;z-index:1}.hero-label{color:var(--refresh-mint)!important;letter-spacing:.1em!important}.hero-label-dot{box-shadow:0 0 0 5px rgba(111,255,209,.11)!important}.hero-name-mini{font-family:var(--font-mono);color:var(--refresh-muted);letter-spacing:.22em}.hero-headline{font-size:clamp(3.5rem,8vw,8rem)!important;line-height:.92!important;letter-spacing:-.07em!important;max-width:960px}.headline-line{display:block}.headline-line em{font-family:var(--refresh-serif);font-weight:400}.line-code em{color:var(--refresh-mint)}.line-biz em{color:var(--refresh-orange)}.line-story em{color:var(--refresh-lime)}.hero-subline{max-width:560px!important;color:var(--refresh-muted)!important;font-size:1.05rem!important;line-height:1.75!important}.hero-cta{gap:.8rem!important}.hero-cta .btn{border-radius:999px!important;min-height:48px;display:inline-flex;align-items:center;gap:.5rem}.btn-primary{background:var(--refresh-mint)!important;color:#071313!important;box-shadow:0 12px 36px rgba(111,255,209,.18)}.btn-primary:hover{background:#b6ffe6!important;transform:translateY(-3px)}.btn-outline{border-color:rgba(111,255,209,.42)!important;color:var(--refresh-ink)!important}.btn-outline:hover{background:rgba(111,255,209,.09)!important;border-color:var(--refresh-mint)!important}.btn-ghost{color:var(--refresh-muted)!important}.hero-stats{border-top:1px solid var(--refresh-line)!important;max-width:760px;margin-top:3.4rem!important;padding-top:1.4rem!important}.stat-number{color:var(--refresh-ink)!important;font-size:2rem!important}.stat-plus{color:var(--refresh-orange)!important}.stat-label{color:var(--refresh-muted)!important;font-family:var(--font-mono);font-size:.66rem!important;text-transform:uppercase;letter-spacing:.05em}.scroll-indicator{color:var(--refresh-muted)!important}.mouse{border-color:var(--refresh-mint)!important}.wheel{background:var(--refresh-mint)!important}
-.section{position:relative;padding:8rem 0}.section-title{font-size:clamp(2.5rem,5vw,5rem)!important;letter-spacing:-.065em!important;line-height:1!important}.title-number{color:var(--refresh-orange)!important;font-family:var(--font-mono);font-size:.62em}.section-subtitle{color:var(--refresh-muted)!important;max-width:660px;line-height:1.8!important}.nav-section-pill{border-color:var(--refresh-line)!important;background:rgba(111,255,209,.05)!important;color:var(--refresh-mint)!important;border-radius:999px!important;font-family:var(--font-mono);font-size:.68rem!important;letter-spacing:.08em;padding:.5rem .8rem!important}.story,.skills,.experience,.projects,.services,.certifications,.contact-section{border-top:1px solid var(--refresh-line)}
+.section{position:relative;padding:8rem 0}.section-title{font-size:clamp(2.5rem,5vw,5rem)!important;letter-spacing:-.065em!important;line-height:1!important}.title-number{color:var(--refresh-orange)!important;font-family:var(--font-mono);font-size:.62em}.section-subtitle{color:var(--refresh-muted)!important;max-width:660px;line-height:1.8!important}.nav-section-pill{border-color:var(--refresh-line)!important;background:rgba(111,255,209,.05)!important;color:var(--refresh-mint)!important;border-radius:999px!important;font-family:var(--font-mono);font-size:.68rem!important;letter-spacing:.08em;padding:.5rem .8rem!important}.story{border-top:1px solid var(--refresh-line)}
 .story-act,.skill-card,.experience-card,.project-card,.service-card,.pricing-card,.feature-card,.bot-card,.faq-item,.testimonial-card,.lab-panel,.certificate-card{background:linear-gradient(145deg,rgba(19,27,40,.88),rgba(10,14,23,.82))!important;border:1px solid var(--refresh-line)!important;border-radius:22px!important;box-shadow:0 20px 60px rgba(0,0,0,.16)!important}.story-act:hover,.skill-card:hover,.experience-card:hover,.project-card:hover,.service-card:hover,.pricing-card:hover,.bot-card:hover{border-color:rgba(111,255,209,.42)!important;transform:translateY(-6px)}.story-act,.skill-card,.experience-card,.project-card,.service-card,.pricing-card,.bot-card{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}.project-card{overflow:hidden}.project-card .project-image,.project-card .project-visual{background:linear-gradient(135deg,#152936,#0c101a)!important}.service-featured,.bot-card-featured{border-color:rgba(111,255,209,.52)!important;background:linear-gradient(145deg,rgba(25,55,55,.8),rgba(10,18,25,.9))!important}.service-badge,.bot-badge{background:var(--refresh-mint)!important;color:#071313!important;border-radius:999px!important}.service-tech span,.tech-tag{border-color:var(--refresh-line)!important;background:rgba(255,255,255,.035)!important;color:var(--refresh-muted)!important;border-radius:999px!important}.service-link,.bot-link,.project-link{color:var(--refresh-mint)!important}.kicker,.eyebrow{font-family:var(--font-mono);color:var(--refresh-orange)}
 .contact-section{background:linear-gradient(125deg,rgba(111,255,209,.07),transparent 50%)}.contact-form,.contact-info{background:rgba(15,21,32,.7)!important;border-color:var(--refresh-line)!important;border-radius:22px!important}.form-control,.contact-form input,.contact-form textarea,.contact-form select{background:rgba(255,255,255,.045)!important;border-color:var(--refresh-line)!important;color:var(--refresh-ink)!important;border-radius:12px!important}.form-control:focus,.contact-form input:focus,.contact-form textarea:focus{border-color:var(--refresh-mint)!important;box-shadow:0 0 0 3px rgba(111,255,209,.1)!important}.footer{border-top-color:var(--refresh-line)!important;color:var(--refresh-muted)!important}.footer a{color:var(--refresh-mint)!important}
 /* Keep the compact ADA page inside the same design language. */
@@ -29,10 +29,11 @@ button,a,.btn,.nav-link,.filter-btn{cursor:pointer!important}.nav-link:focus-vis
 .story-act .story-act-meta{justify-content:space-between!important;text-align:left!important}
 .story-act .story-tags{justify-content:flex-start!important}
 .story-act .story-card p{max-width:62ch!important}
-/* Act I: Text left (60%), Photo right (40%) */
-.story-act:nth-of-type(1) .story-card{grid-template-columns:1fr minmax(200px,38%)!important}
-.story-act:nth-of-type(1) .story-card-copy{grid-column:1!important;grid-row:1!important}
-.story-act:nth-of-type(1) .story-card-media{grid-column:2!important;grid-row:1!important;border-left:1px solid var(--refresh-line)!important}
+/* Etapa I: Foto izquierda (38%), Texto derecha — pedido de Emilio (17/08). El ritmo queda
+   foto-izq / foto-der / foto-izq bajando por el hilo. */
+.story-act:nth-of-type(1) .story-card{grid-template-columns:minmax(200px,38%) 1fr!important}
+.story-act:nth-of-type(1) .story-card-media{grid-column:1!important;grid-row:1!important;border-right:1px solid var(--refresh-line)!important}
+.story-act:nth-of-type(1) .story-card-copy{grid-column:2!important;grid-row:1!important}
 .story-act:nth-of-type(1) .story-card-media img{object-position:center 25%!important}
 /* Act II: Text left (60%), Photo right (40%) */
 .story-act:nth-of-type(2) .story-card{grid-template-columns:1fr minmax(200px,38%)!important}
@@ -168,3 +169,75 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 .eco-name{font-size:1.35rem}
 .eco-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem .6rem}
 }
+
+
+/* ===== SEPARACION ENTRE APARTADOS =====
+   --bg-primary (#0a0a1a) y --bg-secondary (#0f0f23) se diferencian en cinco puntos de
+   luminancia: la alternancia de fondos no se percibe, y el border-top de 1px que habia
+   (en solo algunas secciones, y una de ellas con una clase que no existe) tampoco. Al
+   scrollear de Voces a Servicios a Contacto no habia corte visible.
+   Ahora cada apartado abre con una regla explicita y su titulo lleva marca de acento. */
+.section-rule{
+  position:relative;
+  width:min(1120px,88vw);
+  height:1px;
+  margin:0 auto;
+  background:linear-gradient(90deg,transparent,var(--refresh-line) 14%,var(--refresh-line) 86%,transparent);
+}
+/* Rombo al medio: el nodo que dice "aca empieza otra cosa". */
+.section-rule::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:9px;
+  height:9px;
+  transform:translate(-50%,-50%) rotate(45deg);
+  background:var(--bg-primary);
+  border:1px solid var(--refresh-mint);
+  box-shadow:0 0 0 5px var(--bg-primary),0 0 18px rgba(111,255,209,.5);
+}
+
+/* Marca de acento sobre el titulo: el numero mono ya numera, esto separa visualmente.
+   .section-title esta centrado globalmente (styles.css:929), asi que la marca tambien. */
+.section > .container > .section-title::before{
+  content:"";
+  display:block;
+  width:64px;
+  height:2px;
+  margin:0 auto 1.5rem;
+  background:linear-gradient(90deg,transparent,var(--refresh-mint),transparent);
+}
+/* Open Lab tiene la cabecera en flex con el titulo a la izquierda: ahi la marca no se centra. */
+.open-lab-header .section-title::before{
+  content:"";
+  display:block;
+  width:64px;
+  height:2px;
+  margin:0 0 1.2rem;
+  background:linear-gradient(90deg,var(--refresh-mint),transparent);
+}
+
+@media(max-width:768px){
+.section-rule{width:calc(100% - 2.2rem)}
+.section > .container > .section-title::before{margin-bottom:1rem;width:42px}
+}
+
+
+/* ===== BARRA DE NAVEGACION =====
+   Estaba en Fira Code a 0.7rem: mono muy chico, se leia como consola y no como
+   navegacion. Pasa a Inter 0.9rem/500 — misma familia que el resto del texto,
+   legible de un vistazo. El caracter tecnico lo siguen dando el logo { ER } y los
+   numeros de seccion en mono. */
+.navbar .nav-link{font-family:var(--font-main)!important;font-size:.9rem!important;font-weight:500!important;letter-spacing:-.005em!important;text-transform:none!important}
+.navbar .nav-link-primary{font-weight:600!important}
+.navbar .nav-menu{gap:.15rem}
+@media(max-width:900px){
+.navbar .nav-link{font-size:1rem!important;padding:.7rem .9rem!important}
+}
+
+
+/* Radar de tecnologias: los estilos que estaban repetidos inline en cada tarjeta pasan a
+   clases, para poder traducir el texto con data-i18n sin arrastrar el style. */
+.radar-card-sub{font-family:var(--font-mono);font-size:.7rem;color:var(--refresh-muted)}
+.radar-card-desc{font-size:.85rem;color:var(--refresh-muted);line-height:1.6}
