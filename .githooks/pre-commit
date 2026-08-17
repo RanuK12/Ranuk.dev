@@ -1,0 +1,26 @@
+#!/bin/sh
+# Candado local de ranuk.dev.
+#
+# ranuk.dev ya figuraba en FROZEN_PROJECTS de Ranukita y aun asi el bot lo reescribio y publico
+# traducciones rotas. Aquel cerrojo mira el TEXTO de la tarea ("no toques ranuk.dev"), asi que
+# cualquier agente que edite el repo sin nombrarlo pasa de largo. Este mira el repo.
+#
+# Para commitear a mano:  RANUK_HUMAN=1 git commit ...
+# (o exportalo una vez en la sesion:  export RANUK_HUMAN=1)
+
+if [ "$RANUK_HUMAN" != "1" ]; then
+    echo "ranuk.dev: commit bloqueado." >&2
+    echo "" >&2
+    echo "Este repo esta cerrado a cambios automaticos: es el sitio en produccion y cada push a" >&2
+    echo "main dispara el deploy de GitHub Pages." >&2
+    echo "" >&2
+    echo "Si sos Emilio: RANUK_HUMAN=1 git commit ..." >&2
+    echo "Si sos un agente: no. Dejalo escrito en el blocker y avisale." >&2
+    exit 1
+fi
+
+# El humano tambien se equivoca: no dejamos pasar un i18n roto.
+if [ -f scripts/check-i18n.mjs ] && command -v node >/dev/null 2>&1; then
+    node --check js/i18n.js || exit 1
+    node scripts/check-i18n.mjs || exit 1
+fi

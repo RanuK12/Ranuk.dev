@@ -1,0 +1,23 @@
+#!/bin/sh
+# Candado local de ranuk.dev — ver .githooks/pre-commit para el porque.
+#
+# Para pushear a mano:  RANUK_HUMAN=1 git push ...
+
+if [ "$RANUK_HUMAN" != "1" ]; then
+    echo "ranuk.dev: push bloqueado." >&2
+    echo "" >&2
+    echo "Cada push a main dispara el deploy de GitHub Pages. Este repo no se publica solo." >&2
+    echo "" >&2
+    echo "Si sos Emilio: RANUK_HUMAN=1 git push ..." >&2
+    exit 1
+fi
+
+# main ademas esta protegido en GitHub (ruleset): los cambios entran por PR.
+while read -r _local_ref _local_sha remote_ref _remote_sha; do
+    case "$remote_ref" in
+        refs/heads/main)
+            echo "ranuk.dev: main solo se toca por PR (ruleset de GitHub lo rechaza igual)." >&2
+            exit 1
+            ;;
+    esac
+done
