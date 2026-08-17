@@ -1731,13 +1731,34 @@ const translations = {
     }
 };
 
+const LANGS = ['en', 'es', 'it'];
+
+/* Idioma segun la URL: /en/... y /it/... son paginas reales (scripts/build-i18n-pages.mjs); la raiz
+   es el español. Devuelve null si la URL no declara idioma (ej. abrir un archivo suelto). */
+function langFromPath(pathname = location.pathname) {
+    const first = pathname.split('/').filter(Boolean)[0];
+    return first === 'en' || first === 'it' ? first : (pathname.startsWith('/') ? 'es' : null);
+}
+
+/* La misma pagina en otro idioma. /en/ranuk-it/ <-> /ranuk-it/ <-> /it/ranuk-it/ */
+function pathForLang(lang, pathname = location.pathname) {
+    const parts = pathname.split('/').filter(Boolean);
+    if (parts[0] === 'en' || parts[0] === 'it') parts.shift();
+    const rest = parts.join('/');
+    const slash = rest && pathname.endsWith('/') ? '/' : '';
+    return '/' + (lang === 'es' ? '' : lang + '/') + rest + slash;
+}
+
 class I18n {
     constructor() {
+        // La URL manda: si estas en /en/, la pagina es inglesa aunque localStorage diga otra cosa.
+        // Antes el idioma vivia solo en localStorage y para Google habia una sola pagina en español.
+        const urlLang = langFromPath();
         const storedLang = localStorage.getItem('ranuk-lang');
         const documentLang = (document.documentElement.lang || '').slice(0, 2);
-        this.currentLang = ['en', 'es', 'it'].includes(storedLang)
-            ? storedLang
-            : (['en', 'es', 'it'].includes(documentLang) ? documentLang : 'es');
+        this.currentLang = urlLang
+            || (LANGS.includes(storedLang) ? storedLang
+                : (LANGS.includes(documentLang) ? documentLang : 'es'));
         this.listeners = [];
     }
 
@@ -1770,9 +1791,17 @@ class I18n {
     }
 
     setLanguage(lang) {
-        if (!['en', 'es', 'it'].includes(lang) || !translations[lang]) return;
-        this.currentLang = lang;
+        if (!LANGS.includes(lang) || !translations[lang]) return;
         localStorage.setItem('ranuk-lang', lang);
+
+        // Cada idioma tiene su URL: cambiar de idioma es navegar, no repintar. Asi lo que el
+        // visitante comparte o marca como favorito conserva el idioma, y Google lo indexa aparte.
+        if (langFromPath() && langFromPath() !== lang) {
+            location.href = pathForLang(lang) + location.hash;
+            return;
+        }
+
+        this.currentLang = lang;
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             const isActive = btn.dataset.lang === lang;
