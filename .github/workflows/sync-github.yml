@@ -1,21 +1,19 @@
 name: Sync GitHub data
 
-# Snapshot nocturno del perfil público (repos + lenguajes) → data/github.json.
+# Snapshot del perfil público (repos + lenguajes) → data/github.json.
 # Sin secretos: usa el GITHUB_TOKEN built-in para evitar rate-limit.
 # El client-side consume el JSON committed; nada se llama desde el navegador.
+#
+# Antes commiteaba directo a main cada noche. main quedó protegida por ruleset (los cambios
+# entran por PR), así que ahora deja el snapshot en la rama data/github-snapshot y abre un PR
+# para que Emilio lo mergee cuando quiera refrescar Open Lab.
 
 on:
-  schedule:
-    - cron: '17 4 * * *'  # diario 04:17 UTC
-  workflow_dispatch:       # botón manual
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/fetch-github.mjs'
-      - '.github/workflows/sync-github.yml'
+  workflow_dispatch:  # botón manual
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   sync:
@@ -33,14 +31,21 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/fetch-github.mjs
 
-      - name: Commit if changed
+      - name: Abrir PR si cambió
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          if [[ -z $(git status --porcelain data/github.json) ]]; then
+            echo "Sin cambios en data/github.json"
+            exit 0
+          fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n $(git status --porcelain data/github.json) ]]; then
-            git add data/github.json
-            git commit -m "chore(data): refresh GitHub snapshot [skip ci]"
-            git push
-          else
-            echo "Sin cambios en data/github.json"
-          fi
+          git checkout -B data/github-snapshot
+          git add data/github.json
+          git commit -m "chore(data): refresh GitHub snapshot"
+          git push --force origin data/github-snapshot
+          gh pr create --base main --head data/github-snapshot \
+            --title "chore(data): refresh GitHub snapshot" \
+            --body "Snapshot del perfil público para la sección Open Lab. Generado por el workflow." \
+            || echo "Ya hay un PR abierto para esta rama"

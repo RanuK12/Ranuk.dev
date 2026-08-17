@@ -10,6 +10,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:  # para poder sellar un commit a mano cuando el check no se dispara solo
 
 jobs:
   i18n:
