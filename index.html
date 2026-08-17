@@ -125,6 +125,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#story" class="nav-link" data-i18n="nav.story">Historia</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="#ecosystem" class="nav-link" data-i18n="nav.ecosystem">Ecosistema</a></li>
                 <li><a href="#services" class="nav-link" data-i18n="nav.services">Servicios</a></li>
                 <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
                 <li><a href="#ml-lab" class="nav-link" data-i18n="nav.mllab">ML Lab</a></li>
@@ -229,7 +230,7 @@
                         </linearGradient>
                     </defs>
                 </svg>
-                <!-- ACT 1 — La urdimbre -->
+                <!-- ETAPA 1 — La urdimbre -->
                 <article class="story-act story-act-left">
                     <div class="story-knot"><span class="story-knot-num">I</span></div>
                     <div class="story-card">
@@ -239,7 +240,7 @@
                             <span class="story-year">1995 → 2024</span>
                             <span class="story-place"><i class="fas fa-map-marker-alt"></i> Córdoba, Argentina</span>
                         </div>
-                        <h3 class="story-act-title" data-i18n="story.act1_title">Capa I — Cimientos</h3>
+                        <h3 class="story-act-title" data-i18n="story.act1_title">Etapa I — Cimientos</h3>
                         <p data-i18n="story.act1">
                             Nací en Córdoba con apellido italiano y la sensación, desde temprano, de que las cosas se construyen mejor con las manos. Estudié Ingeniería en Sistemas en la UTN porque me interesaba menos la teoría que ver funcionar lo que armaba. En 2024 me recibí de Ingeniero en Sistemas. Los cimientos: disciplina, lógica, y la idea de que un sistema bien pensado se sostiene solo.
                         </p>
@@ -249,7 +250,7 @@
                         </div>
                     </div>
                 </article>
-                <!-- ACT 2 — Los hilos cruzados -->                <!-- ACT 2 — Los hilos cruzados -->
+                <!-- ETAPA 2 — Los hilos cruzados -->
                 <article class="story-act story-act-right">
                     <div class="story-knot"><span class="story-knot-num">II</span></div>
                     <div class="story-card">
@@ -259,7 +260,7 @@
                             <span class="story-year">2024 → 2025</span>
                             <span class="story-place"><i class="fas fa-globe-europe"></i> Italia · Países Bajos</span>
                         </div>
-                        <h3 class="story-act-title" data-i18n="story.act2_title">Capa II — Sistemas a escala</h3>
+                        <h3 class="story-act-title" data-i18n="story.act2_title">Etapa II — Sistemas a escala</h3>
                         <p data-i18n="story.act2">
                             Crucé el océano en 2024. Me instalé en Italia y desde el primer día me sumergí: aprendí italiano de verdad — no el de mesa familiar, el de las reuniones técnicas. En 2025 me mudé a Países Bajos para trabajar en <strong>Booking.com</strong>, donde construí sistemas de pricing dinámico con millones de registros, standups en inglés, y un estándar de calidad que no sabía que existía. Ese mismo año terminé de escribir mi libro, <strong>"Y así voy tejiendo mi camino"</strong>.
                         </p>
@@ -269,7 +270,7 @@
                         </div>
                     </div>
                 </article>
-                <!-- ACT 3 — El telar propio -->
+                <!-- ETAPA 3 — El telar propio -->
                 <article class="story-act story-act-left">
                     <div class="story-knot story-knot-final"><span class="story-knot-num">III</span></div>
                     <div class="story-card story-card-final">
@@ -279,7 +280,7 @@
                             <span class="story-year">2025 → presente</span>
                             <span class="story-place"><i class="fas fa-compass"></i> Barcelona, España · Ranuk IT</span>
                         </div>
-                        <h3 class="story-act-title" data-i18n="story.act3_title">Capa III — Impacto propio</h3>
+                        <h3 class="story-act-title" data-i18n="story.act3_title">Etapa III — Impacto propio</h3>
                         <p data-i18n="story.act3">
                             En 2026 fundé <strong>Ranuk IT Solutions</strong> y ese mismo año me certifiqué como Ingeniero en Software y Machine Learning. Nació de una idea simple: hacer software que el cliente entienda, mantenible, sin atajos. Hoy construyo productos para clientes en cuatro países y sigo creyendo lo mismo: vale la pena hacer las cosas bien, aunque lleven más tiempo.
                         </p>
@@ -562,39 +563,6 @@
                 <button class="filter-btn" data-filter="automation" data-i18n="projects.automation">Automation</button>
             </div>
             <div class="projects-grid">
-                <!-- Flagship Project: Gambeta -->
-                <div class="project-card project-card-flagship" data-category="web" data-aos="fade-up" style="grid-column: 1 / -1;">
-                    <div class="project-flagship-wrapper" style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.5rem; background: linear-gradient(145deg, rgba(16, 185, 129, 0.08), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 20px; overflow: hidden; padding: 0;">
-                        <div class="project-flagship-media" style="position: relative; overflow: hidden; min-height: 260px;">
-                            <img src="assets/gambeta-banner.jpg" alt="Gambeta — Multiplayer Soccer Web Game" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                            <div class="project-flagship-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(10, 14, 23, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(16, 185, 129, 0.5); color: #10b981; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 50px; display: flex; align-items: center; gap: 0.4rem;">
-                                <i class="fas fa-trophy"></i> <span data-i18n="projects.gambeta_badge">Co-Creadores &amp; Lead Devs</span>
-                            </div>
-                        </div>
-                        <div class="project-flagship-content" style="padding: 1.8rem 1.8rem 1.8rem 0.5rem; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #10b981; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem;" data-i18n="projects.gambeta_eyebrow">✦ Flagship Web Game</div>
-                            <h3 style="font-size: 1.5rem; margin-bottom: 0.6rem; font-weight: 700;">Gambeta — Multiplayer 2D Soccer Game</h3>
-                            <p style="color: var(--refresh-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.2rem;" data-i18n="projects.gambeta_desc">
-                                Co-creadores y desarrolladores principales de <strong>Gambeta</strong>, el juego web multijugador online de fútbol 2D en tiempo real. Motor gráfico en Canvas/WebGL, físicas competitivas, salas dinámicas y arquitectura de baja latencia con WebSockets.
-                            </p>
-                            <div class="project-tech" style="margin-bottom: 1.2rem;">
-                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Next.js</span>
-                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Canvas / WebGL Engine</span>
-                                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">WebSockets</span>
-                                <span>TypeScript</span>
-                                <span>Tailwind CSS</span>
-                            </div>
-                            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
-                                <a href="https://gambetafutbol.games/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; background: #10b981; border-color: #10b981; color: #0a0e17; text-decoration: none;">
-                                    <i class="fas fa-gamepad"></i> <span data-i18n="projects.gambeta_play">Jugar a Gambeta en vivo →</span>
-                                </a>
-                                <a href="https://github.com/RanuK12/GambetaGame" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; text-decoration: none;">
-                                    <i class="fab fa-github"></i> <span data-i18n="projects.gambeta_repo">GitHub Repo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="project-card" data-category="python ml" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-placeholder" style="--accent: #f59e0b">
@@ -757,6 +725,75 @@
                 <a href="#services" class="btn btn-primary" style="margin-left: 1rem;">
                     <i class="fas fa-briefcase"></i> Ver servicios &amp; precios
                 </a>
+            </div>
+        </div>
+    </section>
+    <!-- ============ ECOSISTEMA RANUK — productos propios ============
+         Gambeta y Ranuk Orbit son producto nuestro, no trabajo de cliente: por eso
+         viven fuera de #projects, con su propia identidad y acceso directo. -->
+    <section id="ecosystem" class="section ecosystem">
+        <div class="container">
+            <h2 class="section-title" data-i18n="eco.title">
+                <span class="title-number">✦</span> Nuestro ecosistema
+            </h2>
+            <p class="section-subtitle" data-i18n="eco.lead">
+                Además del trabajo para clientes, construimos lo nuestro. Dos productos vivos, con usuarios reales, hechos y mantenidos puertas adentro.
+            </p>
+            <div class="eco-grid">
+                <!-- Gambeta — pieza estrella -->
+                <article class="eco-card eco-gambeta" data-aos="fade-up">
+                    <div class="eco-media">
+                        <img src="assets/gambeta-og.png" alt="Gambeta — el juego del fútbol argentino y simulador de draft" loading="lazy" width="1200" height="630">
+                        <span class="eco-stamp" data-i18n="eco.gambeta_stamp">Producto de Ranuk IT Solutions</span>
+                    </div>
+                    <div class="eco-body">
+                        <div class="eco-brand">
+                            <img class="eco-logo" src="assets/gambeta-logo.svg" alt="" width="56" height="56" loading="lazy">
+                            <div>
+                                <p class="eco-eyebrow" data-i18n="eco.gambeta_eyebrow">Nuestro proyecto estrella</p>
+                                <h3 class="eco-name">Gambeta</h3>
+                            </div>
+                        </div>
+                        <p class="eco-desc" data-i18n="eco.gambeta_desc">
+                            El juego del fútbol argentino. Armá tu once ideal con planteles reales, jugá el <strong>Reto Diario</strong> —todos con el mismo bombo—, viví tu <strong>modo carrera</strong> desde el potrero y peleá el ranking. Gratis y sin registro para jugar.
+                        </p>
+                        <ul class="eco-stats">
+                            <li><b>3.334</b><span data-i18n="eco.gambeta_stat1">jugadores reales</span></li>
+                            <li><b>206</b><span data-i18n="eco.gambeta_stat2">planteles</span></li>
+                            <li><b>36</b><span data-i18n="eco.gambeta_stat3">equipos históricos</span></li>
+                            <li><b>15</b><span data-i18n="eco.gambeta_stat4">temporadas de carrera</span></li>
+                        </ul>
+                        <a class="eco-cta" href="https://gambetafutbol.games/" target="_blank" rel="noopener">
+                            <i class="fas fa-futbol"></i> <span data-i18n="eco.gambeta_cta">Jugar a Gambeta</span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Ranuk Orbit — invitación -->
+                <article class="eco-card eco-orbit" data-aos="fade-up">
+                    <div class="eco-media">
+                        <img src="assets/orbit-cover.jpg" alt="Ranuk Orbit — cinematografía con drone en los Alpes italianos" loading="lazy" width="960" height="540">
+                        <span class="eco-stamp" data-i18n="eco.orbit_stamp">También es nuestro</span>
+                    </div>
+                    <div class="eco-body">
+                        <div class="eco-brand">
+                            <svg class="eco-logo" viewBox="0 0 64 64" width="56" height="56" aria-hidden="true">
+                                <circle cx="32" cy="32" r="30" fill="#0A0A0A"/>
+                                <circle cx="32" cy="32" r="20" fill="none" stroke="#F7F7F5" stroke-width="1.5"/>
+                                <circle cx="32" cy="12" r="3" fill="#C9A227"/>
+                            </svg>
+                            <div>
+                                <p class="eco-eyebrow" data-i18n="eco.orbit_eyebrow">La Tierra, desde otro ángulo</p>
+                                <h3 class="eco-name">Ranuk Orbit</h3>
+                            </div>
+                        </div>
+                        <p class="eco-desc" data-i18n="eco.orbit_desc">
+                            Nuestro diario de viaje filmado con drone: cine aéreo, fotografía y relatos de los lugares por donde pasamos. Lo mismo que filmamos para nosotros lo hacemos para destinos, hotelería, editorial y marcas.
+                        </p>
+                        <a class="eco-cta" href="https://ranukorbit.com/" target="_blank" rel="noopener">
+                            <i class="fas fa-paper-plane"></i> <span data-i18n="eco.orbit_cta">Entrar a Ranuk Orbit</span>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>

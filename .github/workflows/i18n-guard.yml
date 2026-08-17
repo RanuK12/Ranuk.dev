@@ -1,0 +1,29 @@
+name: i18n guard
+
+# Cerrojo de publicacion. js/i18n.js se rompio en produccion sin que nadie lo notara: varias
+# pasadas de re-escritura automatica escaparon lo ya escapado y la pagina termino mostrando
+# literalmente "fundé Ranuk IT Solutions" y atributos rotos como class=\"title-number\".
+# Con main protegido por PR, este check es lo que impide que ese dano vuelva a publicarse:
+# aunque un agente logre escribir en el repo, no puede mergear con el check en rojo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:  # para poder sellar un commit a mano cuando el check no se dispara solo
+
+jobs:
+  i18n:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: js/i18n.js parsea
+        run: node --check js/i18n.js
+
+      - name: Sin escapes, mismas claves en los 3 idiomas, sin data-i18n huerfanos
+        run: node scripts/check-i18n.mjs
