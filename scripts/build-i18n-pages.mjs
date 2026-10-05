@@ -73,6 +73,28 @@ const REDIRECTS = [
   { from: 'ranuk-it/trading-bots.html', to: 'ranuk-it/trading-bots/' },  // 2026-10-05, NEXUS
 ];
 
+/**
+ * h1 por idioma, en el HTML estatico. Google lee el h1 sin ejecutar JS (o antes de ejecutarlo), asi
+ * que /en/ mostraba el titular en castellano y /ranuk-it/ (es) en ingles. Se toma el texto de
+ * js/i18n.js para los nodos data-i18n dentro de cada <h1>. Solo el h1: el resto lo sigue pintando
+ * el cliente. [synapse:seo-2026-10-05]
+ */
+const I18N_SRC = readFileSync(join(ROOT, 'js/i18n.js'), 'utf8');
+const T = new Function(I18N_SRC.replace(/^const translations = /m, 'return ').split('\nclass I18n')[0]
+  .replace(/;\s*const LANGS[\s\S]*$/, ';'))();
+
+function bakeH1(html, lang) {
+  const dict = T[lang] || {};
+  return html.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi, (h1) => {
+    const own = h1.match(/^<h1\b[^>]*\bdata-i18n="([^"]+)"[^>]*>/i);
+    if (own && dict[own[1]]) {
+      return h1.replace(/^(<h1\b[^>]*>)[\s\S]*(<\/h1>)$/i, (m, open, close) => `${open}\n        ${dict[own[1]]}\n      ${close}`);
+    }
+    return h1.replace(/(<(span|em|strong)\b[^>]*\bdata-i18n="([^"]+)"[^>]*>)[\s\S]*?(<\/\2>)/gi,
+      (m, open, tag, key, close) => (dict[key] ? `${open}${dict[key]}${close}` : m));
+  });
+}
+
 const canonicalFor = (lang, url) => `${SITE}/${lang === 'es' ? '' : lang + '/'}${url}`;
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 
@@ -102,11 +124,14 @@ function localize(html, { lang, url, path }) {
   const [title, desc] = META[path][lang];
 
   html = html.replace(/<html([^>]*)\slang="[^"]*"/i, `<html$1 lang="${lang}"`);
+  html = bakeH1(html, lang);
   html = html.replace(/<title([^>]*)>[\s\S]*?<\/title>/i, `<title$1>${esc(title)}</title>`);
   html = html.replace(/(<meta\s+name="description"\s+content=")[^"]*(")/i, `$1${esc(desc)}$2`);
   html = html.replace(/(<meta\s+property="og:title"\s+content=")[^"]*(")/i, `$1${esc(title)}$2`);
   html = html.replace(/(<meta\s+property="og:description"\s+content=")[^"]*(")/i, `$1${esc(desc)}$2`);
   html = html.replace(/(<meta\s+(?:name|property)="twitter:description"\s+content=")[^"]*(")/i, `$1${esc(desc)}$2`);
+  // og:url = canonical del idioma (antes /en/ y /it/ compartian el og:url de la version es).
+  html = html.replace(/(<meta\s+property="og:url"\s+content=")[^"]*(")/i, `$1${canonicalFor(lang, url)}$2`);
   html = html.replace(/(<meta\s+property="og:locale"\s+content=")[^"]*(")/i,
     `$1${{ es: 'es_ES', en: 'en_US', it: 'it_IT' }[lang]}$2`);
 
