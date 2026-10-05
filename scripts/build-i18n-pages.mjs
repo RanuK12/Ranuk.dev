@@ -24,7 +24,7 @@ const ALL = ['es', ...LANGS];
 const PAGES = [
   { path: 'index.html', url: '', priority: '1.0' },
   { path: 'ranuk-it/index.html', url: 'ranuk-it/', priority: '0.9' },
-  { path: 'ranuk-it/trading-bots.html', url: 'ranuk-it/trading-bots.html', priority: '0.8' },
+  { path: 'ranuk-it/trading-bots/index.html', url: 'ranuk-it/trading-bots/', priority: '0.8' },
   { path: 'ranuk-it/ada/index.html', url: 'ranuk-it/ada/', priority: '0.8' },
 ];
 
@@ -46,7 +46,7 @@ const META = {
     it: ['Ranuk IT Solutions — Software su Misura, ML & Automazione | Consulenza IT',
          'Software su misura, Machine Learning applicato, trading bot automatizzati e audit di accessibilità ADA/WCAG. Ingegneria di livello europeo da un ML Engineer con esperienza reale in Booking.com e Accenture.'],
   },
-  'ranuk-it/trading-bots.html': {
+  'ranuk-it/trading-bots/index.html': {
     es: ['Trading Bots Automatizados — Operá 24/7 sin emociones | Ranuk IT',
          'Desarrollo de bots de trading automatizado con Python, Backtrader y ccxt. Backtesting robusto, ejecución 24/7 sin emociones, integración con exchanges (Binance, Coinbase, Kraken).'],
     en: ['Automated Trading Bots — Trade 24/7 without emotions | Ranuk IT',
@@ -63,6 +63,15 @@ const META = {
          'Audit di accessibilità ADA / WCAG 2.1 AA per piattaforme web. Conformità legale per aziende statunitensi e mercati internazionali. Report dettagliati e remediation tecnica.'],
   },
 };
+
+/**
+ * URLs viejas que se mudaron. GitHub Pages no tiene 301 del lado servidor, asi que se deja un stub con
+ * canonical + meta refresh 0 + location.replace (Google lo trata como redirect permanente). Si algun
+ * dia se agrega una Redirect Rule en Cloudflare para estas rutas, el stub queda de respaldo.
+ */
+const REDIRECTS = [
+  { from: 'ranuk-it/trading-bots.html', to: 'ranuk-it/trading-bots/' },  // 2026-10-05, NEXUS
+];
 
 const canonicalFor = (lang, url) => `${SITE}/${lang === 'es' ? '' : lang + '/'}${url}`;
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
@@ -122,6 +131,30 @@ for (const page of PAGES) {
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, localize(reroot(source), { ...page, lang }), 'utf8');
     written++;
+  }
+}
+
+// ── Stubs de redirect (despues de generar: el rmSync de arriba borra /en/ y /it/) ──
+const MOVED = { es: 'Esta página se mudó a', en: 'This page has moved to', it: 'Questa pagina è stata spostata su' };
+for (const r of REDIRECTS) {
+  for (const lang of ALL) {
+    const to = canonicalFor(lang, r.to);
+    const out = join(ROOT, lang === 'es' ? '' : lang, r.from);
+    mkdirSync(dirname(out), { recursive: true });
+    writeFileSync(out, `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<title>Trading Bots — Ranuk IT Solutions</title>
+<link rel="canonical" href="${to}">
+<meta http-equiv="refresh" content="0; url=${to}">
+<script>location.replace(${JSON.stringify(to)} + location.search + location.hash);</script>
+</head>
+<body>
+<p>${MOVED[lang]} <a href="${to}">${to}</a>.</p>
+</body>
+</html>
+`, 'utf8');
   }
 }
 
