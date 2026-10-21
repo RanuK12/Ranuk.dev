@@ -271,6 +271,10 @@ class CursorEffect {
         if (this.isTouch || !this.cursor || !this.follower) return;
 
         document.addEventListener('mousemove', (e) => {
+            if (!this.cursor.classList.contains('cursor-visible')) {
+                this.cursor.classList.add('cursor-visible');
+                this.follower.classList.add('cursor-visible');
+            }
             // Position the small cursor dot
             this.cursor.style.left = (e.clientX - 4) + 'px';
             this.cursor.style.top = (e.clientY - 4) + 'px';
@@ -279,6 +283,11 @@ class CursorEffect {
             this.follower.style.left = e.clientX + 'px';
             this.follower.style.top = e.clientY + 'px';
             this.follower.style.transform = 'translate(-50%, -50%)';
+        });
+
+        document.addEventListener('mouseleave', () => {
+            this.cursor.classList.remove('cursor-visible');
+            this.follower.classList.remove('cursor-visible');
         });
 
         const hoverTargets = 'a, button, .project-card, .cert-card, input, textarea, .filter-btn, .class-btn';

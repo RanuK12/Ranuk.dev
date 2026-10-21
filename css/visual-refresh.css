@@ -13,7 +13,7 @@ body:not(.ranuk-it-page) .section-header{background:rgba(8,11,18,.88)!important;
 
 /* Final interaction polish */
 button,a,.btn,.nav-link,.filter-btn{cursor:pointer!important}.nav-link:focus-visible,.btn:focus-visible,.filter-btn:focus-visible,.lang-btn:focus-visible{outline:2px solid var(--refresh-lime)!important;outline-offset:4px}.nav-toggle{border-radius:12px!important;background:rgba(111,255,209,.06)!important;border:1px solid var(--refresh-line)!important}.nav-toggle span{background:var(--refresh-mint)!important}.form-group label,.form-select-label{color:var(--refresh-muted)}input::placeholder,textarea::placeholder{color:#71818d}.contact-form .btn,.ranuk-form .btn,.rk-form .btn{min-height:48px}.service-card p,.bot-card p,.project-card p,.authority-card p{max-width:62ch}.footer-social a{width:42px;height:42px;display:inline-grid;place-items:center;border:1px solid var(--refresh-line);border-radius:50%;color:var(--refresh-muted)}.footer-social a:hover{color:var(--refresh-mint);border-color:var(--refresh-mint);transform:translateY(-2px)}
-@media(max-width:800px){.navbar{padding-left:1rem;padding-right:1rem}.nav-menu{z-index:999;padding:5rem 1.5rem 7rem!important;gap:.6rem!important;justify-content:flex-start!important;overflow-y:auto!important}.nav-menu .nav-link{width:min(100%,340px);padding:1rem 1.2rem!important;font-size:1rem!important;border-bottom:1px solid rgba(189,211,226,.1);border-radius:0;text-align:left}.nav-menu .nav-link-primary{border:1px solid rgba(111,255,209,.4)!important;border-radius:14px;text-align:center;margin-top:1rem}.nav-actions{gap:.35rem}.lang-btn{min-width:38px!important;padding:6px 8px!important}.theme-toggle,.nav-toggle{min-width:40px!important;min-height:40px!important}.contact-form,.ranuk-form,.rk-form{padding:1.25rem!important}.project-card,.service-card,.bot-card{border-radius:18px!important}}
+@media(max-width:800px){.navbar{padding-left:.75rem!important;padding-right:.75rem!important}.nav-menu{z-index:999;padding:5rem 1.5rem 7rem!important;gap:.6rem!important;justify-content:flex-start!important;overflow-y:auto!important}.nav-menu .nav-link{width:min(100%,340px);padding:1rem 1.2rem!important;font-size:1rem!important;border-bottom:1px solid rgba(189,211,226,.1);border-radius:0;text-align:left}.nav-menu .nav-link-primary{border:1px solid rgba(111,255,209,.4)!important;border-radius:14px;text-align:center;margin-top:1rem}.nav-actions{gap:.25rem!important}.lang-btn{min-width:28px!important;padding:4px 5px!important;font-size:.7rem!important}.theme-toggle,.nav-toggle{min-width:34px!important;min-height:34px!important;width:34px!important;height:34px!important}.contact-form,.ranuk-form,.rk-form{padding:1.25rem!important}.project-card,.service-card,.bot-card{border-radius:18px!important}}
 .story-card-media{margin:0;overflow:hidden;background:linear-gradient(135deg,#142b37,#101521);position:relative}.story-card-media img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(1.04);transition:transform .6s cubic-bezier(.16,1,.3,1),filter .6s ease}.story-card:hover .story-card-media img{transform:scale(1.05);filter:saturate(1.05) contrast(1.08)}
 
 /* ===== STORY TIMELINE — FULL-WIDTH CARDS + FLOATING KNOTS ===== */
@@ -224,18 +224,181 @@ html,body{overflow-x:hidden!important;max-width:100vw!important}
 }
 
 
-/* ===== BARRA DE NAVEGACION =====
-   Estaba en Fira Code a 0.7rem: mono muy chico, se leia como consola y no como
-   navegacion. Pasa a Inter 0.9rem/500 — misma familia que el resto del texto,
-   legible de un vistazo. El caracter tecnico lo siguen dando el logo { ER } y los
-   numeros de seccion en mono. */
-.navbar .nav-link{font-family:var(--font-main)!important;font-size:.9rem!important;font-weight:500!important;letter-spacing:-.005em!important;text-transform:none!important}
-.navbar .nav-link-primary{font-weight:600!important}
-.navbar .nav-menu{gap:.15rem}
-@media(max-width:900px){
-.navbar .nav-link{font-size:1rem!important;padding:.7rem .9rem!important}
+/* ===== BARRA DE NAVEGACION & RESPONSIVENESS DEFINITIVA ===== */
+.nav-logo,
+.nav-logo-ranuk {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
+.navbar .nav-link {
+  font-family: var(--font-main) !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.navbar .nav-link-primary {
+  font-weight: 600 !important;
+}
+
+.navbar .nav-menu {
+  gap: 0.2rem !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Telemetry bar integrado en navbar sin overlap */
+.navbar.navbar-with-telemetry {
+  padding: 0 !important;
+  height: auto !important;
+}
+.navbar.navbar-with-telemetry .global-telemetry-bar {
+  position: relative !important;
+  z-index: 1 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+.navbar.navbar-with-telemetry .nav-container {
+  height: var(--nav-height, 70px) !important;
+  padding: 0 2rem !important;
+}
+
+/* Pantallas medianas (1041px - 1280px): ajuste sutil para mantener 9 links + logo + acciones en 1 fila */
+@media (min-width: 1041px) and (max-width: 1280px) {
+  .navbar .nav-link {
+    font-size: 0.78rem !important;
+    padding: 0.35rem 0.45rem !important;
+  }
+  .navbar .nav-menu {
+    gap: 0.08rem !important;
+  }
+  .nav-container {
+    padding: 0 1rem !important;
+  }
+  .nav-actions {
+    gap: 0.4rem !important;
+  }
+  .lang-btn {
+    min-width: 32px !important;
+    padding: 4px 6px !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+/* Menú colapsable en tablet y móvil (<= 1040px) */
+@media (max-width: 1040px) {
+  .nav-toggle {
+    display: flex !important;
+  }
+  .nav-menu {
+    position: fixed !important;
+    top: var(--nav-height, 70px) !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - var(--nav-height, 70px)) !important;
+    background: rgba(8, 11, 18, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 2rem 1.5rem 6rem !important;
+    gap: 0.6rem !important;
+    overflow-y: auto !important;
+    transform: translateX(100%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s !important;
+    z-index: 9999 !important;
+  }
+  .navbar.navbar-with-telemetry .nav-menu {
+    top: calc(var(--nav-height, 70px) + 28px) !important;
+    height: calc(100vh - var(--nav-height, 70px) - 28px) !important;
+  }
+  .nav-menu.open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .nav-menu .nav-link {
+    width: min(100%, 340px) !important;
+    padding: 0.85rem 1.1rem !important;
+    font-size: 1rem !important;
+    border-bottom: 1px solid rgba(189, 211, 226, 0.1) !important;
+    border-radius: 0 !important;
+    text-align: left !important;
+  }
+  .nav-menu .nav-link-primary {
+    border: 1px solid rgba(111, 255, 209, 0.4) !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+    margin-top: 1rem !important;
+    justify-content: center !important;
+  }
+}
+
+/* Móvil (<= 800px): espacio limpio en barra superior */
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0.55rem 0.65rem !important;
+  }
+  .nav-container {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .navbar.navbar-with-telemetry .nav-container {
+    padding: 0 0.5rem !important;
+    height: 52px !important;
+  }
+  .nav-actions {
+    gap: 0.2rem !important;
+    flex-shrink: 0 !important;
+  }
+  .lang-btn {
+    min-width: 26px !important;
+    padding: 3px 5px !important;
+    font-size: 0.68rem !important;
+  }
+  .theme-toggle,
+  .nav-toggle {
+    min-width: 32px !important;
+    min-height: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .nav-back span {
+    display: none !important;
+  }
+  .nav-back {
+    padding: 0.35rem 0.45rem !important;
+  }
+  .nav-logo-ranuk img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .logo-text-ranuk {
+    font-size: 0.82rem !important;
+  }
+}
+
+/* ADA Audit Page: modo oscuro nativo consistente */
+.features-grid {
+  background: var(--refresh-bg, #080b12) !important;
+  color: var(--refresh-ink, #eef4f6) !important;
+}
+.pricing {
+  background: var(--refresh-surface, #0f1520) !important;
+  color: var(--refresh-ink, #eef4f6) !important;
+}
+.features-grid h2, .pricing h2 {
+  color: #ffffff !important;
+}
 
 /* Radar de tecnologias: los estilos que estaban repetidos inline en cada tarjeta pasan a
    clases, para poder traducir el texto con data-i18n sin arrastrar el style. */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -21,8 +21,9 @@
     <meta name="twitter:title" content="Auditoría ADA / WCAG 2.1 AA — Ranuk IT Solutions">
     <meta name="twitter:description" content="Auditoría ADA y WCAG 2.1 AA para sitios web: escaneo gratis con axe-core, pruebas con NVDA y JAWS, informe priorizado y remediación. Desde USD 800.">
     <meta name="twitter:image" content="https://ranuk.dev/assets/og-ranuk-it.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/visual-refresh.css?v=c015b26f">
+    <link rel="stylesheet" href="../../css/visual-refresh.css?v=6e2ea0a4">
     
     <!-- Schema.org para SEO -->
     <script type="application/ld+json">
@@ -98,7 +99,6 @@
     <link href="../../assets/favicon.ico" rel="icon" type="image/x-icon">
     <link href="../../assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
     <link href="../../assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
-    <link rel="stylesheet" href="../../css/visual-refresh.css?v=c015b26f">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿El escaneo gratis alcanza?", "acceptedAnswer": {"@type": "Answer", "text": "Detecta los errores automáticos. Muchos criterios WCAG solo se ven probando a mano con teclado y lector de pantalla, y eso cubren los planes pagos."}}, {"@type": "Question", "name": "¿Cuánto tarda?", "acceptedAnswer": {"@type": "Answer", "text": "5, 7 o 10 días hábiles según el plan."}}, {"@type": "Question", "name": "¿Guardan mis datos?", "acceptedAnswer": {"@type": "Answer", "text": "No. El escaneo no guarda nada."}}, {"@type": "Question", "name": "¿Trabajan con cualquier tecnología?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, auditamos el sitio publicado. La remediación se hace sobre tu código o tu CMS."}}]}</script>
     <link rel="canonical" href="https://ranuk.dev/ranuk-it/ada/">
     <link rel="alternate" hreflang="es" href="https://ranuk.dev/ranuk-it/ada/">
@@ -106,8 +106,39 @@
     <link rel="alternate" hreflang="it" href="https://ranuk.dev/it/ranuk-it/ada/">
     <link rel="alternate" hreflang="x-default" href="https://ranuk.dev/ranuk-it/ada/">
 </head>
-<body>
-    <header class="section-header">
+<body class="ranuk-it-page">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a class="nav-logo nav-logo-ranuk" href="../">
+                <img alt="Ranuk IT" class="nav-logo-img" height="30" loading="lazy" src="../../assets/ranuk-icon.png" width="30"/>
+                <span class="logo-text-ranuk">Ranuk IT</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a class="nav-link" href="#checker">Checker</a></li>
+                <li><a class="nav-link" href="#features">Beneficios</a></li>
+                <li><a class="nav-link" href="#pricing">Planes</a></li>
+                <li><a class="nav-link" href="#faq">FAQ</a></li>
+                <li><a class="nav-link nav-link-primary" href="#cta">Contactar</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a class="nav-back" href="../" title="Ranuk IT Solutions">
+                    <i class="fas fa-arrow-left"></i> <span>Ranuk IT</span>
+                </a>
+                <div aria-label="Language" class="lang-switcher" role="group">
+                    <button aria-pressed="false" class="lang-btn" data-lang="en" lang="en">EN</button>
+                    <button aria-pressed="true" class="lang-btn active" data-lang="es" lang="es">ES</button>
+                    <button aria-pressed="false" class="lang-btn" data-lang="it" lang="it">IT</button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu" class="nav-toggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <header class="section-header" style="padding-top: 6.5rem;">
         <div class="container">
             <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: #00d4ff;">ADA/WCAG 2.1 AA</h1>
             <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: #ffffff;">Auditoría de Accesibilidad Web</h2>
@@ -134,7 +165,7 @@
         </div>
     </section>
 
-    <section class="features-grid">
+    <section id="features" class="features-grid">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 3rem; color: #ffffff;">¿Por qué elegirnos?</h2>
             <div class="grid-3">
@@ -157,7 +188,7 @@
         </div>
     </section>
 
-    <section class="pricing">
+    <section id="pricing" class="pricing">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 3rem; color: #ffffff;">Planes y Precios</h2>
             <div class="pricing-grid">
@@ -202,7 +233,7 @@
     </section>
 
     
-    <section class="section" id="scope" style="padding:3rem 0;">
+    <section class="section" id="faq" style="padding:3rem 0;">
       <div class="container" style="max-width:860px;margin:0 auto;">
         <h2>Qué revisamos</h2>
         <ul>
@@ -300,5 +331,7 @@
       inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();btn.click();}});
     })();
     </script>
+    <script src="../../js/animations.js" defer></script>
+    <script src="../../js/app.js" defer></script>
 </body>
 </html>

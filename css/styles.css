@@ -71,6 +71,22 @@
     --nav-bg-scrolled: rgba(255, 255, 255, 0.85);
 }
 :root {
+    --bg-primary: #0a0a1a;
+    --bg-secondary: #0f0f23;
+    --bg-card: #151530;
+    --bg-card-hover: #1a1a3e;
+    --accent: #64ffda;
+    --accent-dim: rgba(100, 255, 218, 0.1);
+    --accent-secondary: #f97316;
+    --accent-secondary-dim: rgba(249, 115, 22, 0.1);
+    --accent-gold: #D4A574;
+    --accent-gold-dim: rgba(212, 165, 116, 0.15);
+    --text-primary: #ccd6f6;
+    --text-secondary: #8892b0;
+    --text-bright: #e6f1ff;
+    --border: rgba(100, 255, 218, 0.1);
+    --nav-bg: rgba(10, 10, 26, 0.85);
+    --nav-bg-scrolled: rgba(10, 10, 26, 0.95);
     /* Design System — Tipografía */
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
@@ -305,9 +321,10 @@ ul { list-style: none; }
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, opacity 0.3s ease;
     top: 0;
     left: 0;
+    opacity: 0;
 }
 
 .cursor-follower {
@@ -318,9 +335,15 @@ ul { list-style: none; }
     position: fixed;
     pointer-events: none;
     z-index: 9998;
-    transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s;
+    transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s ease;
     top: 0;
     left: 0;
+    opacity: 0;
+}
+
+.custom-cursor.cursor-visible,
+.cursor-follower.cursor-visible {
+    opacity: 1;
 }
 
 @media (hover: none), (pointer: coarse) {
