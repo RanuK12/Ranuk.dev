@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Web & Landings de Alta Conversión | Ranuk IT Solutions</title>
+    <meta name="description" content="Portfolio de sitios web y landing pages desarrolladas por Ranuk IT Solutions (Emilio Ranucoli, ex-Booking.com). Páginas ultra-rápidas para empresas por $400 USD en 48-72h.">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Portfolio Web & Landings de Alta Conversión — Ranuk IT Solutions">
+    <meta property="og:description" content="Sitios web de alto impacto y velocidad garantizada por $400 USD. Mira nuestro trabajo real: notarobot.es, bahay, flight alert y más.">
+    <meta property="og:url" content="https://ranuk.dev/portfolio/">
+    <meta property="og:type" content="website">
+
+    <!-- Styles & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg: #07090e;
+            --surface: #0e131f;
+            --surface-hover: #161e31;
+            --border: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #00f0ff;
+            --accent-glow: rgba(0, 240, 255, 0.25);
+            --green: #10b981;
+            --purple: #8b5cf6;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent), #0099ff);
+            color: #000;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #00f0ff, #7000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 10px 22px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Offer Card */
+        .offer-banner {
+            margin: 40px auto 80px;
+            background: linear-gradient(135deg, rgba(14, 19, 31, 0.9), rgba(22, 30, 49, 0.9));
+            border: 2px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.15);
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+
+        @media (max-width: 868px) {
+            .offer-banner {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+        }
+
+        .offer-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .offer-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .offer-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .offer-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .offer-features i {
+            color: var(--green);
+        }
+
+        .price-box {
+            background: rgba(7, 9, 14, 0.7);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .price-tag {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .price-sub {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        /* Projects Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            padding: 24px 24px 16px;
+            flex-grow: 1;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #cbd5e1;
+        }
+
+        .card-footer {
+            padding: 16px 24px;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .live-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .live-link:hover {
+            gap: 10px;
+        }
+
+        .metric-chip {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 9999px;
+        }
+
+        /* Bio & Authority */
+        .authority-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px;
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (max-width: 650px) {
+            .authority-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 32px 20px;
+            }
+        }
+
+        .avatar-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #000;
+            margin: 0 auto;
+        }
+
+        .authority-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .authority-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="https://ranuk.dev/" class="brand">
+                RANUK<span>.DEV</span>
+            </a>
+            <div class="nav-links">
+                <a href="#proyectos">Proyectos</a>
+                <a href="#paquete-400">Paquete $400</a>
+                <a href="https://wa.me/34684000000?text=Hola%20Emilio,%20me%20interesa%20crear%20mi%20p%C3%A1gina%20web" class="cta-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                DISPONIBLE PARA NUEVOS PROYECTOS — ENTREGA EN 48 A 72 HORAS
+            </div>
+            <h1>Páginas Web & Landings de <span>Alta Conversión</span></h1>
+            <p>
+                Construimos sitios web corporativos y landing pages que cargan en menos de 1 segundo (PageSpeed 95+), optimizadas para móviles, SEO y preparadas para vender desde el primer día.
+            </p>
+            <div class="hero-actions">
+                <a href="#paquete-400" class="cta-btn">
+                    Ver Paquete Llave en Mano ($400 USD) →
+                </a>
+                <a href="#proyectos" class="btn-secondary">
+                    Explorar Trabajos Reales
+                </a>
+            </div>
+        </section>
+
+        <!-- The $400 USD Turnkey Offer -->
+        <section id="paquete-400" class="offer-banner">
+            <div>
+                <span class="card-tag">OFERTA LLAVE EN MANO</span>
+                <h2 class="offer-title">Tu Sitio Web Profesional por $400 USD</h2>
+                <p style="color: var(--text-muted); font-size: 1rem;">
+                    Sin complicaciones, sin constructores lentos de WordPress. Código moderno, ultraligero y listo para convertir visitas en clientes.
+                </p>
+                <ul class="offer-features">
+                    <li><i class="fas fa-check-circle"></i> Entrega garantizada en 48–72 horas</li>
+                    <li><i class="fas fa-check-circle"></i> Velocidad extrema: 95+ Google PageSpeed</li>
+                    <li><i class="fas fa-check-circle"></i> 100% responsivo en iOS y Android</li>
+                    <li><i class="fas fa-check-circle"></i> Botón flotante directo a WhatsApp</li>
+                    <li><i class="fas fa-check-circle"></i> Formulario de contacto con alertas instantáneas</li>
+                    <li><i class="fas fa-check-circle"></i> Optimización SEO y metadatos OpenGraph</li>
+                    <li><i class="fas fa-check-circle"></i> Accesibilidad WCAG 2.1 AA certificada</li>
+                    <li><i class="fas fa-check-circle"></i> Hosting en Cloudflare / Vercel ($0 costo recurrente)</li>
+                </ul>
+            </div>
+            <div class="price-box">
+                <div class="price-tag">$400</div>
+                <div class="price-sub">USD · PAGO ÚNICO CERRADO</div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;">
+                    50% al iniciar ($200) · 50% al entregar y aprobar ($200)
+                </p>
+                <a href="https://wa.me/34684000000?text=Hola%20Emilio,%20quiero%20encargar%20mi%20p%C3%A1gina%20web%20de%20400%20USD" target="_blank" class="cta-btn" style="width: 100%; justify-content: center;">
+                    <i class="fab fa-whatsapp"></i> Reservar Proyecto Ahora
+                </a>
+            </div>
+        </section>
+
+        <!-- Live Projects Grid -->
+        <section id="proyectos">
+            <div class="section-header">
+                <h2>Proyectos y Clientes en Vivo</h2>
+                <p>Evidencia real de sitios web en producción construidos y mantenidos por nuestro equipo.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                
+                <!-- Project 1: NOT A ROBOT -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-tag">Productora Audiovisual · Barcelona</span>
+                        <h3 class="card-title">NOT A ROBOT</h3>
+                        <p class="card-desc">
+                            Sitio web corporativo de alta gama para productora internacional en Poblenou (Barcelona). Integración de streaming de video, tipografías personalizadas, Google Tag Manager y enlace directo a WhatsApp.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3 Puro</span>
+                            <span class="tech-pill">Vanilla JS</span>
+                            <span class="tech-pill">GTM / GA4</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="metric-chip">100% Producción</span>
+                        <a href="https://notarobot.es/" target="_blank" rel="noopener" class="live-link">
+                            Visitar notarobot.es <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Bahay Design -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-tag">Estudio de Arquitectura & Interiorismo</span>
+                        <h3 class="card-title">Bahay Design</h3>
+                        <p class="card-desc">
+                            Portal minimalista y elegante para estudio de diseño de interiores. Showcase visual de proyectos, estética editorial de lujo con fuentes Lora y Marmelad, y estructura modular orientada a conversiones.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Responsive Design</span>
+                            <span class="tech-pill">CSS Grid</span>
+                            <span class="tech-pill">Typography</span>
+                            <span class="tech-pill">GitHub Pages</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="metric-chip">Diseño Editorial</span>
+                        <a href="https://github.com/RanuK12/Bahay_Web_tmp" target="_blank" rel="noopener" class="live-link">
+                            Ver Repositorio & Código <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Flight Alert Public -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-tag">Plataforma SaaS en Vivo</span>
+                        <h3 class="card-title">Flight Price Alert Public</h3>
+                        <p class="card-desc">
+                            SaaS público de alertas de tarifas aéreas en tiempo real. Motor dinámico con caché en Cloudflare Edge, respuestas en 140ms, mini-app de Telegram y diseño mobile-first.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Next.js / SSR</span>
+                            <span class="tech-pill">Cloudflare Edge</span>
+                            <span class="tech-pill">Telegram Bot API</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="metric-chip">&lt; 200ms Latencia</span>
+                        <a href="https://flightalert.ranuk.dev/" target="_blank" rel="noopener" class="live-link">
+                            Visitar flightalert.ranuk.dev <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Ranuk ADA & WCAG Audits -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-tag">Portal B2B & Servidor MCP</span>
+                        <h3 class="card-title">Ranuk Web Accessibility & AST</h3>
+                        <p class="card-desc">
+                            Portal B2B de auditoría automatizada según estándares WCAG 2.1 AA y Acta Europea de Accesibilidad (EAA). Integración de Stripe Checkout, checkout de licencias y servidor oficial MCP.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Cloudflare Worker</span>
+                            <span class="tech-pill">Stripe API</span>
+                            <span class="tech-pill">Model Context Protocol</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="metric-chip">Stripe Live</span>
+                        <a href="https://audit.ranuk.dev/" target="_blank" rel="noopener" class="live-link">
+                            Visitar audit.ranuk.dev <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: The Reveal -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-tag">Web App Interactiva</span>
+                        <h3 class="card-title">The Reveal — 2,500 Tiles</h3>
+                        <p class="card-desc">
+                            Aplicación web en tiempo real con 2.500 baldosas interactivas, presencia multiusuario con WebSockets sobre Cloudflare Durable Objects y base de datos SQL distribuida en borde (D1).
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Durable Objects</span>
+                            <span class="tech-pill">Cloudflare D1</span>
+                            <span class="tech-pill">WebSockets</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="metric-chip">Real-Time</span>
+                        <a href="https://reveal.ranuk.dev/" target="_blank" rel="noopener" class="live-link">
+                            Visitar reveal.ranuk.dev <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Ranuk IT Solutions -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="card-tag">Agencia & Core OS</span>
+                        <h3 class="card-title">Ranuk IT Solutions</h3>
+                        <p class="card-desc">
+                            Portal oficial de nuestra empresa de desarrollo de software e ingeniería de agentes. Arquitectura estática servida en CDN global con soporte multilingüe y terminal interactivo.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Semantic HTML</span>
+                            <span class="tech-pill">Vercel / Cloudflare</span>
+                            <span class="tech-pill">CSS Variables</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="metric-chip">Core Hub</span>
+                        <a href="https://ranuk.dev/" target="_blank" rel="noopener" class="live-link">
+                            Visitar ranuk.dev <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Authority / Bio Section -->
+        <section class="authority-box">
+            <div class="avatar-circle">
+                ER
+            </div>
+            <div class="authority-content">
+                <h3>Ingeniería Senior a cargo de Emilio Ranucoli</h3>
+                <p>
+                    Con trayectoria en compañías multinacionales como <strong>Booking.com</strong> y <strong>Accenture</strong>, no trabajamos como una agencia convencional que delega tu proyecto en pasantes. Cada sitio web y landing page es diseñado, programado y optimizado por un ingeniero senior para maximizar velocidad, diseño y conversión de clientes.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Ranuk IT Solutions · Emilio Ranucoli · Todos los derechos reservados.</p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">
+                <a href="https://ranuk.dev/" style="color: var(--accent); text-decoration: none;">ranuk.dev</a> · 
+                <a href="https://audit.ranuk.dev/enterprise" style="color: var(--text-muted); text-decoration: none;">Licencias B2B</a> · 
+                <a href="mailto:emilio@ranuk.dev" style="color: var(--text-muted); text-decoration: none;">emilio@ranuk.dev</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
