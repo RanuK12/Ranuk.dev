@@ -243,7 +243,11 @@
             window.particleNetwork.init();
         }
 
-        // Typed text effect (disabled — element #typed-text not present in current design)
+        // Antigravity dynamic typed headline
+        if (typeof TypedHeader !== 'undefined') {
+            const typedHeader = new TypedHeader();
+            typedHeader.init();
+        }
 
         // Scroll animations
         const scrollAnimator = new ScrollAnimator();
@@ -257,9 +261,11 @@
         const navController = new NavController();
         navController.init();
 
-        // Custom cursor
-        const cursorEffect = new CursorEffect();
-        cursorEffect.init();
+        // Custom cursor (GSAP quickTo Antigravity style)
+        if (typeof CursorEffect !== 'undefined') {
+            const cursorEffect = new CursorEffect();
+            cursorEffect.init();
+        }
 
         // Project filter
         const projectFilter = new ProjectFilter();
