@@ -74,12 +74,17 @@ class ParticleNetwork {
       this.createParticles();
     });
 
-    this.canvas.addEventListener('mousemove', this.handleMouse);
-    this.canvas.addEventListener('mouseleave', this.handleMouseLeave);
+    window.addEventListener('mousemove', this.handleMouse, { passive: true });
+    document.addEventListener('mouseleave', this.handleMouseLeave);
   }
 
   handleMouse(e) {
+    if (!this.canvas) return;
     const rect = this.canvas.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+      this.mouse.isActive = false;
+      return;
+    }
     this.mouse.x = e.clientX - rect.left;
     this.mouse.y = e.clientY - rect.top;
     this.mouse.isActive = true;
@@ -163,6 +168,8 @@ class ParticleNetwork {
     this.isRunning = false;
     if (this.animationId) cancelAnimationFrame(this.animationId);
     window.removeEventListener('resize', this.resize);
+    window.removeEventListener('mousemove', this.handleMouse);
+    document.removeEventListener('mouseleave', this.handleMouseLeave);
   }
 }
 

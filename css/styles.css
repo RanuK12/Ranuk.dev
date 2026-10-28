@@ -312,7 +312,10 @@ ul { list-style: none; }
     51%, 100% { opacity: 0; }
 }
 
-/* ---- Custom Cursor ---- */
+/* ---- Custom Cursor (GSAP quickTo — portado de Antigravity) ----
+   Posicionamiento por transform (x/y) gestionado por GSAP.
+   Sin transition en transform: GSAP interpola a 60fps y una transition
+   CSS competiría con el tween, causando lag perceptible. */
 .custom-cursor {
     width: 8px;
     height: 8px;
@@ -321,10 +324,11 @@ ul { list-style: none; }
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease, opacity 0.3s ease;
     top: 0;
     left: 0;
     opacity: 0;
+    will-change: transform;
+    transition: opacity 0.3s ease;
 }
 
 .cursor-follower {
@@ -335,10 +339,24 @@ ul { list-style: none; }
     position: fixed;
     pointer-events: none;
     z-index: 9998;
-    transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s ease;
     top: 0;
     left: 0;
     opacity: 0;
+    will-change: transform;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+/* Solo ocultamos el cursor nativo cuando el custom está realmente activo.
+   La clase la pone cursor.js únicamente si GSAP cargó y el puntero es fino. */
+html.has-custom-cursor,
+html.has-custom-cursor body,
+html.has-custom-cursor a,
+html.has-custom-cursor button,
+html.has-custom-cursor [role="button"],
+html.has-custom-cursor input,
+html.has-custom-cursor textarea,
+html.has-custom-cursor select {
+    cursor: none;
 }
 
 .custom-cursor.cursor-visible,
@@ -666,6 +684,24 @@ ul { list-style: none; }
     text-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
     font-family: var(--font-serif);
     font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+/* ---- Antigravity Typed Caret ---- */
+.typed-dynamic-caret {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    background-color: var(--accent-gold, #D4A574);
+    margin-left: 6px;
+    vertical-align: -0.05em;
+    border-radius: 1px;
+    animation: typedCaretBlink 0.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    box-shadow: 0 0 12px rgba(212, 165, 116, 0.6);
+}
+
+@keyframes typedCaretBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 @keyframes headlineIn {

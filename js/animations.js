@@ -260,43 +260,8 @@ class NavController {
 }
 
 
-class CursorEffect {
-    constructor() {
-        this.cursor = document.querySelector('.custom-cursor');
-        this.follower = document.querySelector('.cursor-follower');
-        this.isTouch = 'ontouchstart' in window;
-    }
-
-    init() {
-        if (this.isTouch || !this.cursor || !this.follower) return;
-
-        document.addEventListener('mousemove', (e) => {
-            if (!this.cursor.classList.contains('cursor-visible')) {
-                this.cursor.classList.add('cursor-visible');
-                this.follower.classList.add('cursor-visible');
-            }
-            // Position the small cursor dot
-            this.cursor.style.left = (e.clientX - 4) + 'px';
-            this.cursor.style.top = (e.clientY - 4) + 'px';
-
-            // Position the follower ring with center offset
-            this.follower.style.left = e.clientX + 'px';
-            this.follower.style.top = e.clientY + 'px';
-            this.follower.style.transform = 'translate(-50%, -50%)';
-        });
-
-        document.addEventListener('mouseleave', () => {
-            this.cursor.classList.remove('cursor-visible');
-            this.follower.classList.remove('cursor-visible');
-        });
-
-        const hoverTargets = 'a, button, .project-card, .cert-card, input, textarea, .filter-btn, .class-btn';
-        document.querySelectorAll(hoverTargets).forEach(el => {
-            el.addEventListener('mouseenter', () => this.follower.classList.add('hover'));
-            el.addEventListener('mouseleave', () => this.follower.classList.remove('hover'));
-        });
-    }
-}
+/* CursorEffect migrado a js/cursor.js (GSAP quickTo, portado de Antigravity).
+   Se mantiene el export por compatibilidad con app.js, que lo instancia. */
 
 
 class ProjectFilter {
@@ -332,5 +297,5 @@ window.TypeWriter = TypeWriter;
 window.ScrollAnimator = ScrollAnimator;
 window.StatCounter = StatCounter;
 window.NavController = NavController;
-window.CursorEffect = CursorEffect;
+if (typeof CursorEffect !== 'undefined') window.CursorEffect = CursorEffect;
 window.ProjectFilter = ProjectFilter;
