@@ -384,6 +384,8 @@
                 <button class="lang-btn" data-lang="es">ES</button>
                 <button class="lang-btn" data-lang="it">IT</button>
             </div>
+            <a href="../closer/" class="btn-back" id="t_nav_closer">💼 Voice Closer</a>
+            <a href="../arena/" class="btn-back" id="t_nav_arena">⚡ Pitch Arena</a>
             <a href="../" class="btn-back" id="t_back">← Back to ranuk.dev</a>
         </div>
     </header>
@@ -443,6 +445,8 @@
                 <h3 id="t_box2_head">🚀 Deploy This Voice Engine In Your Enterprise</h3>
                 <p id="t_box2_desc">The same 24kHz Full-Duplex engine (~180ms latency) is available as an enterprise B2B closer, customer security desk, and objection simulator with HTTP x402 micropayments.</p>
                 <div class="share-row">
+                    <a href="../closer/" class="btn-action" style="border-color:var(--cyan);color:var(--cyan);font-weight:700;">💼 Live Voice Closer</a>
+                    <a href="../arena/" class="btn-action" style="border-color:var(--rose);color:#fca5a5;font-weight:700;">⚡ Live Pitch Arena</a>
                     <a href="https://github.com/RanuK12/ranuk-ai-debate-studio" target="_blank" rel="noopener" class="btn-action">⭐ GitHub: Debate Studio</a>
                     <a href="https://github.com/RanuK12/ranuk-voice-closer" target="_blank" rel="noopener" class="btn-action">🎙️ GitHub: Voice Closer</a>
                     <a href="https://github.com/RanuK12/ranuk-pitch-arena" target="_blank" rel="noopener" class="btn-action">⚡ GitHub: Pitch Arena (x402)</a>
@@ -456,6 +460,8 @@
             en: {
                 brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
                 back: "← Back to ranuk.dev",
+                closer: "💼 Voice Closer",
+                arena: "⚡ Pitch Arena",
                 eyebrow: "⚡ TWO AUTONOMOUS AIS • ZERO TURN-TAKING • REAL-TIME INTERRUPTIONS",
                 hero_title: "We connected two autonomous AIs on a 24kHz Full-Duplex voice line with zero turn rules.",
                 hero_sub: "Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models listen and speak simultaneously with 180ms latency, interrupting mid-sentence when objections arise.",
@@ -474,6 +480,8 @@
             es: {
                 brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
                 back: "← Volver a ranuk.dev",
+                closer: "💼 Voice Closer",
+                arena: "⚡ Pitch Arena",
                 eyebrow: "⚡ DOS IAS AUTÓNOMAS • SIN TURNOS • INTERRUPCIONES EN TIEMPO REAL",
                 hero_title: "Conectamos dos IAs en una línea de voz Full-Duplex de 24kHz sin reglas de turnos.",
                 hero_sub: "A diferencia de los bots tradicionales donde uno espera en silencio a que el otro termine, ambos modelos neuronales escuchan y hablan simultáneamente con 180ms de latencia, interrumpiéndose a mitad de frase cuando surgen objeciones.",
@@ -492,6 +500,8 @@
             it: {
                 brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
                 back: "← Torna a ranuk.dev",
+                closer: "💼 Voice Closer",
+                arena: "⚡ Pitch Arena",
                 eyebrow: "⚡ DUE IA AUTONOME • SENZA TURNI • INTERRUZIONI IN TEMPO REALE",
                 hero_title: "Abbiamo collegato due IA su una linea vocale Full-Duplex a 24kHz senza regole di turno.",
                 hero_sub: "A differenza dei bot tradizionali in cui uno aspetta in silenzio che l'altro finisca, entrambi i modelli ascoltano e parlano simultaneamente con 180ms di latenza, interrompendosi a metà frase quando emergono obiezioni.",
@@ -610,6 +620,8 @@
             const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
             document.getElementById('t_brand').textContent = t.brand;
             document.getElementById('t_back').textContent = t.back;
+            document.getElementById('t_nav_closer').textContent = t.closer;
+            document.getElementById('t_nav_arena').textContent = t.arena;
             document.getElementById('t_eyebrow').textContent = t.eyebrow;
             document.getElementById('t_hero_title').textContent = t.hero_title;
             document.getElementById('t_hero_sub').textContent = t.hero_sub;

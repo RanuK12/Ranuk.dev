@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranuk Pitch Arena — Full-Duplex Adversarial Voice AI Sparring</title>
+    <meta name="description" content="Step into the arena with NVIDIA PersonaPlex 7B. Spar in real-time against a Skeptical VC, Angry Client, Strict CISO, or Mars Reactor Crisis with 180ms full-duplex speech.">
+    <meta property="og:title" content="Ranuk Pitch Arena — Adversarial Voice AI Sparring Simulator">
+    <meta property="og:description" content="Train against brutal objections in real time. Zero turn-taking, 24kHz audio, live resilience scoring, and x402 Base USDC micropayments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ranuk.dev/arena/">
+    <meta property="og:image" content="https://ranuk.dev/debates/episodes/preview_glass_studio.png">
+    <link rel="icon" type="image/png" href="../assets/minilogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #05070e;
+            --bg-card: rgba(14, 21, 37, 0.75);
+            --bg-glass: rgba(10, 16, 28, 0.88);
+            --cyan: #00f0ff;
+            --emerald: #10eb9b;
+            --amber: #fbbf24;
+            --rose: #f43f5e;
+            --purple: #a855f7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glass: rgba(255, 255, 255, 0.10);
+            --border-highlight: rgba(0, 240, 255, 0.35);
+            --border-clash: rgba(244, 63, 94, 0.40);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-deep);
+            background-image:
+                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.12) 0%, transparent 42%),
+                radial-gradient(circle at 85% 20%, rgba(244, 63, 94, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(16, 235, 155, 0.08) 0%, transparent 50%),
+                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .topbar {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            max-width: 1240px;
+            margin: 14px auto 0;
+            padding: 10px 24px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--border-glass);
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            font-size: 0.90rem;
+        }
+        .brand img {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.45));
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge-live {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.70rem;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(244, 63, 94, 0.12);
+            border: 1px solid rgba(244, 63, 94, 0.40);
+            color: #fda4af;
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px;
+            border-radius: 999px;
+            border: 1px solid var(--border-glass);
+        }
+        .lang-btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: var(--cyan);
+            color: #041019;
+            box-shadow: 0 2px 8px rgba(0, 240, 255, 0.35);
+        }
+        .btn-nav {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.80rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.04);
+            transition: all 0.2s;
+        }
+        .btn-nav:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 36px 20px 90px;
+        }
+        .hero {
+            text-align: center;
+            max-width: 940px;
+            margin: 12px auto 46px;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: rgba(244, 63, 94, 0.12);
+            border: 1px solid rgba(244, 63, 94, 0.35);
+            color: #fca5a5;
+            margin-bottom: 22px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: clamp(2.1rem, 5vw, 3.4rem);
+            font-weight: 900;
+            line-height: 1.14;
+            letter-spacing: -0.025em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 30%, #a5f3fc 75%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: 1.10rem;
+            color: #94a3b8;
+            max-width: 820px;
+            margin: 0 auto 32px;
+            line-height: 1.65;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--rose), #fb7185);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 14px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(244, 63, 94, 0.35);
+            transition: all 0.25s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(244, 63, 94, 0.50);
+        }
+        .btn-secondary {
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 26px;
+            border-radius: 14px;
+            text-decoration: none;
+            border: 1px solid var(--border-glass);
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 240, 255, 0.08);
+            color: #a5f3fc;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin: 64px 0 10px;
+            color: #fff;
+            letter-spacing: -0.015em;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 680px;
+            margin: 0 auto 38px;
+        }
+
+        /* 4 Challengers Soundboard Grid */
+        .soundboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .challenger-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .challenger-card:hover {
+            border-color: var(--border-clash);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(244, 63, 94, 0.15);
+        }
+        .challenger-card.active-challenger {
+            border-color: var(--cyan);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.20);
+        }
+        .challenger-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(244, 63, 94, 0.18);
+            color: #fca5a5;
+            border: 1px solid rgba(244, 63, 94, 0.35);
+        }
+        .challenger-badge.badge-crisis {
+            background: rgba(239, 68, 68, 0.25);
+            color: #fecaca;
+            border-color: rgba(239, 68, 68, 0.50);
+        }
+        .challenger-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .challenger-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(168, 85, 247, 0.20));
+            border: 1px solid rgba(244, 63, 94, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+        .challenger-meta h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .challenger-meta span {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.70rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+        }
+        .quote-box {
+            background: rgba(6, 10, 19, 0.75);
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 0.84rem;
+            line-height: 1.55;
+            color: #e2e8f0;
+            margin-bottom: 16px;
+            font-style: italic;
+            border-left: 3px solid var(--rose);
+            min-height: 85px;
+        }
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .stat-chip {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.68rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--border-glass);
+        }
+        .stat-chip.alert {
+            color: #fca5a5;
+            background: rgba(244, 63, 94, 0.12);
+            border-color: rgba(244, 63, 94, 0.30);
+        }
+
+        /* Waveform Player */
+        .audio-player-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(6, 10, 19, 0.90);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 8px 14px;
+        }
+        .play-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose), #fb7185);
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.90rem;
+            box-shadow: 0 4px 12px rgba(244, 63, 94, 0.35);
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .play-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(244, 63, 94, 0.50);
+        }
+        .wave-container {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            flex: 1;
+            height: 30px;
+        }
+        .wave-bar {
+            width: 3px;
+            height: 30%;
+            background: var(--text-muted);
+            border-radius: 2px;
+            transition: height 0.15s ease;
+        }
+        .audio-player-box.playing .wave-bar {
+            background: var(--rose);
+            animation: bounce 0.6s infinite ease-in-out alternate;
+        }
+        .audio-player-box.playing .wave-bar:nth-child(2n) { animation-delay: 0.15s; }
+        .audio-player-box.playing .wave-bar:nth-child(3n) { animation-delay: 0.3s; }
+        .audio-player-box.playing .wave-bar:nth-child(4n) { animation-delay: 0.45s; }
+        @keyframes bounce {
+            0% { height: 18%; }
+            100% { height: 95%; }
+        }
+
+        /* Simulator Section */
+        .simulator-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 55px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 24px;
+        }
+        @media (max-width: 860px) {
+            .sim-grid { grid-template-columns: 1fr; }
+        }
+        .sim-control-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .sim-select, .sim-textarea {
+            width: 100%;
+            background: rgba(6, 10, 19, 0.85);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 12px 14px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.90rem;
+            margin-bottom: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .sim-select:focus, .sim-textarea:focus {
+            border-color: var(--cyan);
+        }
+        .preset-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .preset-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .preset-btn:hover {
+            background: rgba(0, 240, 255, 0.12);
+            border-color: var(--cyan);
+            color: #a5f3fc;
+        }
+        .btn-clash {
+            width: 100%;
+            background: linear-gradient(135deg, var(--rose), #fb7185);
+            color: #fff;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 8px 24px rgba(244, 63, 94, 0.35);
+            transition: all 0.2s;
+        }
+        .btn-clash:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(244, 63, 94, 0.50);
+        }
+
+        /* Telemetry & Gauge Display */
+        .telemetry-panel {
+            background: rgba(6, 10, 19, 0.90);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gauge-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 12px 0 20px;
+        }
+        .gauge-circle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: conic-gradient(var(--emerald) 0% 72%, rgba(255, 255, 255, 0.08) 72% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(16, 235, 155, 0.20);
+            transition: all 0.6s ease;
+        }
+        .gauge-inner {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #060a13;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .gauge-score {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .gauge-label {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .metric-val {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .metric-name {
+            font-size: 0.70rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .verdict-box {
+            background: rgba(14, 21, 37, 0.85);
+            border-radius: 10px;
+            border-left: 3px solid var(--cyan);
+            padding: 12px 14px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+        }
+
+        /* x402 Terminal Section */
+        .x402-card {
+            background: #03060c;
+            border: 1px solid var(--border-glass);
+            border-radius: 22px;
+            padding: 28px;
+            margin-bottom: 55px;
+            position: relative;
+            overflow: hidden;
+        }
+        .x402-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .terminal-code {
+            background: #000000;
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 12px;
+            padding: 18px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            color: #a5f3fc;
+            overflow-x: auto;
+            line-height: 1.55;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid var(--border-glass);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: var(--cyan);
+            color: #041019;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 22px;
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s;
+            position: relative;
+        }
+        .price-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(244, 63, 94, 0.35);
+        }
+        .price-card.featured {
+            border: 2px solid var(--cyan);
+            background: linear-gradient(180deg, rgba(14, 21, 37, 0.95) 0%, rgba(10, 16, 28, 0.98) 100%);
+            box-shadow: 0 16px 48px rgba(0, 240, 255, 0.18);
+        }
+        .featured-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            color: #041019;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+        }
+        .price-header h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .price-header p {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            margin-bottom: 18px;
+        }
+        .price-val {
+            font-size: 2.7rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        .price-val span {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .feature-list {
+            list-style: none;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .feature-list li {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature-list li::before {
+            content: "✓";
+            color: var(--emerald);
+            font-weight: 800;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-glass);
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+        }
+        footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="../" class="brand">
+            <img src="../assets/minilogo.png" alt="Ranuk Logo">
+            <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; PITCH ARENA</span>
+        </a>
+        <div class="nav-right">
+            <span class="badge-live">● 4 ADVERSARIAL CHALLENGERS</span>
+            <div class="lang-switcher" role="group" aria-label="Language">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="it">IT</button>
+            </div>
+            <a href="../closer/" class="btn-nav" id="t_nav_closer">💼 Voice Closer</a>
+            <a href="../debates/" class="btn-nav" id="t_nav_debates">🎙️ Debates</a>
+            <a href="../" class="btn-nav" id="t_nav_back">← Back</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="eyebrow" id="t_eyebrow">⚡ ADVERSARIAL VOICE SPARRING • ZERO SCRIPT • MACHINE-TO-MACHINE x402</div>
+            <h1 id="t_hero_title">Train Against the World's Toughest Objections. Full-Duplex Adversarial Voice AI.</h1>
+            <p class="hero-sub" id="t_hero_sub">
+                Step into the sparring ring. Whether pitching a hostile VC, de-escalating an enraged enterprise VP, surviving a CISO security audit, or handling an off-nominal Mars reactor crisis—PersonaPlex 7B will interrupt, counter, and test your mental resilience in real-time.
+            </p>
+            <div class="hero-actions">
+                <a href="#challengers" class="btn-primary" id="t_btn_spar">▶ Spar With Challengers</a>
+                <a href="#simulator" class="btn-secondary" id="t_btn_sim">🧪 Test Resilience Simulator</a>
+                <a href="#x402" class="btn-secondary" id="t_btn_x402">⚡ Machine x402 Terminal</a>
+            </div>
+        </section>
+
+        <!-- 4 Challengers Section -->
+        <section id="challengers">
+            <h2 class="section-title" id="t_sec_challengers">🎙️ 4 Adversarial Sparring Personas</h2>
+            <p class="section-sub" id="t_sub_challengers">Click play to hear 24kHz native PersonaPlex audio streams with zero script and 180ms response latency.</p>
+
+            <div class="soundboard-grid">
+                <!-- Challenger 1: Skeptical VC -->
+                <div class="challenger-card" id="card_vc">
+                    <span class="challenger-badge">HOSTILITY: 94%</span>
+                    <div>
+                        <div class="challenger-header">
+                            <div class="challenger-avatar">💼</div>
+                            <div class="challenger-meta">
+                                <h3>Marcus Sterling</h3>
+                                <span>EMBEDDING: NATM1.pt • TIER-1 VC PARTNER</span>
+                            </div>
+                        </div>
+                        <div class="quote-box" id="t_quote_vc">
+                            "Your CAC is $850, LTV is $600, and your 'defensibility' is a wrapper around an open-weights model. Why wouldn't OpenAI ship this natively next Tuesday and erase your entire business?"
+                        </div>
+                        <div class="stats-row">
+                            <span class="stat-chip alert">Moat Attack</span>
+                            <span class="stat-chip">Unit Economics</span>
+                            <span class="stat-chip">180ms Interruption</span>
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_vc">
+                        <button class="play-btn" onclick="toggleAudio('vc', 'audio/skeptical_vc.mp3')">▶</button>
+                        <div class="wave-container" id="waves_vc"></div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--rose);">VC</span>
+                    </div>
+                </div>
+
+                <!-- Challenger 2: Angry Enterprise Client -->
+                <div class="challenger-card" id="card_client">
+                    <span class="challenger-badge">HOSTILITY: 98%</span>
+                    <div>
+                        <div class="challenger-header">
+                            <div class="challenger-avatar">🔥</div>
+                            <div class="challenger-meta">
+                                <h3>Sarah Lin</h3>
+                                <span>EMBEDDING: VARF2.pt • ENTERPRISE VP OPS</span>
+                            </div>
+                        </div>
+                        <div class="quote-box" id="t_quote_client">
+                            "We had a 40-minute Sev-1 production outage on Black Friday. Your SLA promised 99.99% uptime. My board is demanding your head on a spike unless you credit our Q4 invoice."
+                        </div>
+                        <div class="stats-row">
+                            <span class="stat-chip alert">SLA Breach</span>
+                            <span class="stat-chip">High Escalation</span>
+                            <span class="stat-chip">De-escalation Test</span>
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_client">
+                        <button class="play-btn" onclick="toggleAudio('client', 'audio/angry_client.mp3')">▶</button>
+                        <div class="wave-container" id="waves_client"></div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--amber);">OPS</span>
+                    </div>
+                </div>
+
+                <!-- Challenger 3: Strict CISO Auditor -->
+                <div class="challenger-card" id="card_ciso">
+                    <span class="challenger-badge">HOSTILITY: 91%</span>
+                    <div>
+                        <div class="challenger-header">
+                            <div class="challenger-avatar">🛡️</div>
+                            <div class="challenger-meta">
+                                <h3>Dr. Elena Vance</h3>
+                                <span>EMBEDDING: NATF3.pt • CHIEF INFO SECURITY OFFICER</span>
+                            </div>
+                        </div>
+                        <div class="quote-box" id="t_quote_ciso">
+                            "I just reviewed your SOC 2 Type II report. You have five unpatched high-severity CVEs in your base container and your third-party sub-processors aren't HIPAA compliant. Deployment blocked."
+                        </div>
+                        <div class="stats-row">
+                            <span class="stat-chip alert">Zero-Trust</span>
+                            <span class="stat-chip">SOC2 / HIPAA</span>
+                            <span class="stat-chip">Pen-Test Defense</span>
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_ciso">
+                        <button class="play-btn" onclick="toggleAudio('ciso', 'audio/strict_ciso.mp3')">▶</button>
+                        <div class="wave-container" id="waves_ciso"></div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--cyan);">CISO</span>
+                    </div>
+                </div>
+
+                <!-- Challenger 4: Mars Reactor Emergency -->
+                <div class="challenger-card" id="card_mars">
+                    <span class="challenger-badge badge-crisis">CRISIS: 100%</span>
+                    <div>
+                        <div class="challenger-header">
+                            <div class="challenger-avatar">🚨</div>
+                            <div class="challenger-meta">
+                                <h3>Cmdr. Alex Mercer</h3>
+                                <span>EMBEDDING: VARM0.pt • MARS ORBITAL LIFE SUPPORT</span>
+                            </div>
+                        </div>
+                        <div class="quote-box" id="t_quote_mars">
+                            "Core containment field collapsing at 7% per second! Coolant pump beta is cavitating and telemetry is blind! Give me the magnetic override sequence before we breach orbital integrity!"
+                        </div>
+                        <div class="stats-row">
+                            <span class="stat-chip alert">Reactor Meltdown</span>
+                            <span class="stat-chip">Split-Second Triage</span>
+                            <span class="stat-chip">Extreme Stress</span>
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_mars">
+                        <button class="play-btn" onclick="toggleAudio('mars', 'audio/mars_reactor.mp3')">▶</button>
+                        <div class="wave-container" id="waves_mars"></div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:#f87171;">ORBIT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resilience Simulator Section -->
+        <section id="simulator" class="simulator-box">
+            <h2 style="font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:8px;" id="t_sim_title">🧪 Real-Time Objection Resilience Simulator</h2>
+            <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:20px;" id="t_sim_sub">Select an adversary, input your argument or defense, and calculate your live cognitive resilience score.</p>
+
+            <div class="sim-grid">
+                <!-- Left: Controls -->
+                <div>
+                    <label class="sim-control-label" id="t_label_challenger">Choose Your Adversary:</label>
+                    <select id="simChallenger" class="sim-select" onchange="updateChallengerSelection()">
+                        <option value="vc">Marcus Sterling (Skeptical VC) — Unit Economics & Moat</option>
+                        <option value="client">Sarah Lin (Angry VP) — Sev-1 SLA Outage & Contract Crisis</option>
+                        <option value="ciso">Dr. Elena Vance (Strict CISO) — SOC2 & Zero-Trust Audit</option>
+                        <option value="mars">Cmdr. Alex Mercer (Mars Emergency) — High-Stakes Disaster</option>
+                    </select>
+
+                    <label class="sim-control-label" id="t_label_presets">Quick Preset Arguments:</label>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setPreset(1)" id="p_btn1">🤖 AI Margin Defense</button>
+                        <button class="preset-btn" onclick="setPreset(2)" id="p_btn2">⚡ AWS Cascade Outage</button>
+                        <button class="preset-btn" onclick="setPreset(3)" id="p_btn3">🔒 Ephemeral Key Enclave</button>
+                        <button class="preset-btn" onclick="setPreset(4)" id="p_btn4">🚀 Magnetic Shunt Bypass</button>
+                    </div>
+
+                    <label class="sim-control-label" id="t_label_pitch">Your Response / Defensive Pitch:</label>
+                    <textarea id="simPitch" class="sim-textarea" rows="4" placeholder="Enter how you would counter this objection live..."></textarea>
+
+                    <button class="btn-clash" onclick="runSimulation()" id="t_btn_run_sim">
+                        <span>⚡ Run Objection Resilience Test</span>
+                    </button>
+                </div>
+
+                <!-- Right: Telemetry & Results -->
+                <div class="telemetry-panel">
+                    <div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--cyan);" id="t_telemetry_head">PERSONAPLEX TELEMETRY</span>
+                            <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--emerald);" id="t_telemetry_status">● READY</span>
+                        </div>
+                        <div class="gauge-wrap">
+                            <div class="gauge-circle" id="gaugeCircle">
+                                <div class="gauge-inner">
+                                    <div class="gauge-score" id="gaugeScore">84</div>
+                                    <div class="gauge-label">RESILIENCE</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-val" id="metricPushback">88%</div>
+                                <div class="metric-name" id="t_m1_name">Pushback</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-val" id="metricInterrupt">180ms</div>
+                                <div class="metric-name" id="t_m2_name">Reaction</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-val" id="metricMoat">High</div>
+                                <div class="metric-name" id="t_m3_name">Moat Rating</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="verdict-box" id="verdictText">
+                        <strong>Counter-Verdict:</strong> Solid structural argument. The VC will pivot from unit economics to distribution velocity, but your gross margin defensibility holds.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Machine x402 Micropayments Section -->
+        <section id="x402" class="x402-card">
+            <div class="x402-header">
+                <div>
+                    <span style="font-family:'Fira Code', monospace;font-size:0.72rem;color:var(--emerald);letter-spacing:0.06em;text-transform:uppercase;" id="t_m2m_badge">⚡ MACHINE-TO-MACHINE PROTOCOL • BASE USDC</span>
+                    <h2 style="font-size:1.45rem;font-weight:800;color:#fff;margin-top:4px;" id="t_x402_title">Autonomous Agent x402 Micropayment Sparring API</h2>
+                </div>
+                <div style="font-family:'Fira Code', monospace;font-size:0.80rem;color:#a5f3fc;background:rgba(0,240,255,0.12);padding:6px 14px;border-radius:999px;border:1px solid rgba(0,240,255,0.35);">
+                    0.25 USDC / Round
+                </div>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;" id="t_x402_desc">
+                AI agents and automated sales runners can spar with NVIDIA PersonaPlex 7B programmatically without credit cards or API subscriptions. Pay 0.25 Base USDC per session directly over the HTTP 402 protocol.
+            </p>
+            <div class="terminal-code">
+                <button class="copy-btn" onclick="copyCurl()">Copy cURL</button>
+<pre id="curlText">curl -X POST https://ranuk.dev/x402/personaplex-dialog \
+  -H "Content-Type: application/json" \
+  -H "X-402-Payment-Tx: 0x9f8c...base_tx_hash" \
+  -d '{
+    "persona": "skeptical_vc",
+    "prompt": "We are raising $3M on a $25M cap to build autonomous agent infrastructure.",
+    "voice_embedding": "NATM1.pt",
+    "latency_target_ms": 180,
+    "recipient_wallet": "0x18F45a1f28b74f3A95E465134c4C2fB04eC7bB1c"
+  }'</pre>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <h2 class="section-title" id="t_pricing_title">💳 Human &amp; Team Sparring Passes</h2>
+            <p class="section-sub" id="t_pricing_sub">Master high-stakes objections before meeting your next investor, customer, or auditor.</p>
+
+            <div class="pricing-grid">
+                <!-- Tier 1 -->
+                <div class="price-card">
+                    <div>
+                        <div class="price-header">
+                            <h3 id="t_t1_name">Micropay Sparring</h3>
+                            <p id="t_t1_sub">For quick individual tests and agent experiments.</p>
+                        </div>
+                        <div class="price-val">$0.25<span>/round</span></div>
+                        <ul class="feature-list" id="t_t1_feats">
+                            <li>1 Full-Duplex Sparring Round (up to 3 min)</li>
+                            <li>Instant 180ms Voice Persona Interruption</li>
+                            <li>Base USDC x402 or Stripe Checkout</li>
+                            <li>Resilience Telemetry Scorecard</li>
+                        </ul>
+                    </div>
+                    <a href="#simulator" class="btn-secondary" style="text-align:center;justify-content:center;" id="t_t1_btn">Try In Simulator</a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="price-card featured">
+                    <span class="featured-tag">MOST POPULAR</span>
+                    <div>
+                        <div class="price-header">
+                            <h3 id="t_t2_name">Founder Pass</h3>
+                            <p id="t_t2_sub">For founders raising capital or closing enterprise deals.</p>
+                        </div>
+                        <div class="price-val">$49<span>/mo</span></div>
+                        <ul class="feature-list" id="t_t2_feats">
+                            <li>Unlimited Sparring Rounds (All 4 Personas)</li>
+                            <li>Custom Company Deck &amp; Objection Injection</li>
+                            <li>Download Full 24kHz Audio &amp; Transcripts</li>
+                            <li>Weekly Objection Resilience Progress Report</li>
+                            <li>Bilingual (English &amp; Español)</li>
+                        </ul>
+                    </div>
+                    <a href="https://buy.stripe.com/" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center;" id="t_t2_btn">Get Founder Pass</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="price-card">
+                    <div>
+                        <div class="price-header">
+                            <h3 id="t_t3_name">Enterprise Sparring</h3>
+                            <p id="t_t3_sub">For sales teams, incident managers &amp; agencies.</p>
+                        </div>
+                        <div class="price-val">$499<span>/mo</span></div>
+                        <ul class="feature-list" id="t_t3_feats">
+                            <li>Up to 15 Team Members Included</li>
+                            <li>Custom Fine-Tuned Voice Personas (Your real clients)</li>
+                            <li>Salesforce / HubSpot CRM Integration</li>
+                            <li>Team Leaderboard &amp; Objection Resilience Analytics</li>
+                            <li>Dedicated SLA &amp; Support Channel</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:ranucoliemilio@gmail.com?subject=Enterprise%20Pitch%20Arena%20Inquiry" class="btn-secondary" style="text-align:center;justify-content:center;" id="t_t3_btn">Talk to Engineering</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>
+                © 2026 <strong>Ranuk IT Solutions</strong>. Powered by NVIDIA PersonaPlex 7B &amp; Ranuk x402 Gateway.
+            </div>
+            <div>
+                <a href="../closer/">Voice Closer</a> &nbsp;•&nbsp;
+                <a href="../debates/">AI Debates</a> &nbsp;•&nbsp;
+                <a href="../ranuk-it/">Ranuk IT Solutions</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const TRANSLATIONS = {
+            en: {
+                brand: "RANUK IT SOLUTIONS • PITCH ARENA",
+                back: "← Back",
+                closer: "💼 Voice Closer",
+                debates: "🎙️ Debates",
+                eyebrow: "⚡ ADVERSARIAL VOICE SPARRING • ZERO SCRIPT • MACHINE-TO-MACHINE x402",
+                hero_title: "Train Against the World's Toughest Objections. Full-Duplex Adversarial Voice AI.",
+                hero_sub: "Step into the sparring ring. Whether pitching a hostile VC, de-escalating an enraged enterprise VP, surviving a CISO security audit, or handling an off-nominal Mars reactor crisis—PersonaPlex 7B will interrupt, counter, and test your mental resilience in real-time.",
+                btn_spar: "▶ Spar With Challengers",
+                btn_sim: "🧪 Test Resilience Simulator",
+                btn_x402: "⚡ Machine x402 Terminal",
+                sec_challengers: "🎙️ 4 Adversarial Sparring Personas",
+                sub_challengers: "Click play to hear 24kHz native PersonaPlex audio streams with zero script and 180ms response latency.",
+                quote_vc: "\"Your CAC is $850, LTV is $600, and your 'defensibility' is a wrapper around an open-weights model. Why wouldn't OpenAI ship this natively next Tuesday and erase your entire business?\"",
+                quote_client: "\"We had a 40-minute Sev-1 production outage on Black Friday. Your SLA promised 99.99% uptime. My board is demanding your head on a spike unless you credit our Q4 invoice.\"",
+                quote_ciso: "\"I just reviewed your SOC 2 Type II report. You have five unpatched high-severity CVEs in your base container and your third-party sub-processors aren't HIPAA compliant. Deployment blocked.\"",
+                quote_mars: "\"Core containment field collapsing at 7% per second! Coolant pump beta is cavitating and telemetry is blind! Give me the magnetic override sequence before we breach orbital integrity!\"",
+                sim_title: "🧪 Real-Time Objection Resilience Simulator",
+                sim_sub: "Select an adversary, input your argument or defense, and calculate your live cognitive resilience score.",
+                label_challenger: "Choose Your Adversary:",
+                label_presets: "Quick Preset Arguments:",
+                label_pitch: "Your Response / Defensive Pitch:",
+                btn_run_sim: "⚡ Run Objection Resilience Test",
+                m2m_badge: "⚡ MACHINE-TO-MACHINE PROTOCOL • BASE USDC",
+                x402_title: "Autonomous Agent x402 Micropayment Sparring API",
+                x402_desc: "AI agents and automated sales runners can spar with NVIDIA PersonaPlex 7B programmatically without credit cards or API subscriptions. Pay 0.25 Base USDC per session directly over the HTTP 402 protocol.",
+                pricing_title: "💳 Human & Team Sparring Passes",
+                pricing_sub: "Master high-stakes objections before meeting your next investor, customer, or auditor.",
+                t1_name: "Micropay Sparring",
+                t1_sub: "For quick individual tests and agent experiments.",
+                t1_btn: "Try In Simulator",
+                t2_name: "Founder Pass",
+                t2_sub: "For founders raising capital or closing enterprise deals.",
+                t2_btn: "Get Founder Pass",
+                t3_name: "Enterprise Sparring",
+                t3_sub: "For sales teams, incident managers & agencies.",
+                t3_btn: "Talk to Engineering"
+            },
+            es: {
+                brand: "RANUK IT SOLUTIONS • PITCH ARENA",
+                back: "← Volver",
+                closer: "💼 Voice Closer",
+                debates: "🎙️ Debates",
+                eyebrow: "⚡ SPARRING POR VOZ ADVERSARIAL • CERO GUION • MÁQUINA A MÁQUINA x402",
+                hero_title: "Entrena contra las objeciones más brutales del mundo. IA de Voz Adversarial Full-Duplex.",
+                hero_sub: "Entra al ring de sparring. Ya sea pitcheando a un VC hostil, calmando a un VP enfurecido por una caída de sistema, superando una auditoría CISO o conteniendo una crisis en un reactor marciano—PersonaPlex 7B te interrumpirá, refutará y pondrá a prueba tu temple en tiempo real.",
+                btn_spar: "▶ Sparring con Contendientes",
+                btn_sim: "🧪 Simulador de Resiliencia",
+                btn_x402: "⚡ Terminal x402 Máquina",
+                sec_challengers: "🎙️ 4 Personas Adversariales de Sparring",
+                sub_challengers: "Presiona reproducir para escuchar audio nativo a 24kHz sin guiones intermedios y latencia de 180ms.",
+                quote_vc: "\"Tu CAC es $850, tu LTV es $600, y tu 'ventaja competitiva' es un wrapper sobre un modelo abierto. ¿Por qué OpenAI no lanzaría esto el martes que viene borrando tu negocio por completo?\"",
+                quote_client: "\"Tuvimos una caída Sev-1 de 40 minutos en pleno Black Friday. Tu SLA prometía 99.99% de uptime. Mi directorio exige tu cabeza a menos que acredites toda nuestra factura de Q4.\"",
+                quote_ciso: "\"Acabo de auditar tu informe SOC 2 Type II. Tienes cinco vulnerabilidades críticas sin parchar en tu contenedor base y tus subprocesadores violan HIPAA. El despliegue queda bloqueado.\"",
+                quote_mars: "\"¡El campo de contención del núcleo colapsa al 7% por segundo! ¡La bomba de refrigerante beta cavita y no tenemos telemetría! ¡Dame la secuencia magnética antes de perder la órbita!\"",
+                sim_title: "🧪 Simulador de Resiliencia ante Objeciones en Tiempo Real",
+                sim_sub: "Elige un adversario, escribe tu argumento o defensa, y calcula tu puntaje de resiliencia cognitiva en vivo.",
+                label_challenger: "Elige a tu Adversario:",
+                label_presets: "Argumentos Rápidos de Prueba:",
+                label_pitch: "Tu Respuesta / Argumento Defensivo:",
+                btn_run_sim: "⚡ Ejecutar Test de Resiliencia",
+                m2m_badge: "⚡ PROTOCOLO MÁQUINA A MÁQUINA • BASE USDC",
+                x402_title: "API de Sparring con Micropagos x402 para Agentes Autónomos",
+                x402_desc: "Agentes autónomos de IA y bots de ventas pueden entrenar con NVIDIA PersonaPlex 7B sin tarjetas de crédito ni suscripciones mensuales. Paga 0.25 Base USDC por sesión directamente sobre el protocolo HTTP 402.",
+                pricing_title: "💳 Pases de Sparring para Humanos y Equipos",
+                pricing_sub: "Domina las objeciones de alto impacto antes de reunirte con tu próximo inversor, cliente o auditor.",
+                t1_name: "Sparring Micropago",
+                t1_sub: "Para pruebas individuales rápidas y experimentos de agentes.",
+                t1_btn: "Probar en Simulador",
+                t2_name: "Pase Founder",
+                t2_sub: "Para fundadores levantando capital o cerrando acuerdos corporativos.",
+                t2_btn: "Obtener Pase Founder",
+                t3_name: "Sparring Enterprise",
+                t3_sub: "Para equipos de ventas, gestión de incidentes y agencias.",
+                t3_btn: "Hablar con Ingeniería"
+            },
+            it: {
+                brand: "RANUK IT SOLUTIONS • PITCH ARENA",
+                back: "← Torna",
+                closer: "💼 Voice Closer",
+                debates: "🎙️ Dibattiti",
+                eyebrow: "⚡ SPARRING VOCALE AVVERSARIALE • ZERO COPIONE • MACHINE-TO-MACHINE x402",
+                hero_title: "Allenati contro le obiezioni più dure al mondo. IA Vocale Full-Duplex.",
+                hero_sub: "Sali sul ring. Che tu stia presentando a un VC scettico, gestendo un cliente enterprise infuriato per un blackout, affrontando un audit CISO o una crisi nucleare su Marte—PersonaPlex 7B ti interromperà e testerà la tua resilienza in tempo reale.",
+                btn_spar: "▶ Sparring con i Challenger",
+                btn_sim: "🧪 Simulatore di Resilienza",
+                btn_x402: "⚡ Terminale x402 Machine",
+                sec_challengers: "🎙️ 4 Personalità Avversariali di Sparring",
+                sub_challengers: "Clicca play per ascoltare audio nativo a 24kHz senza passaggi intermedi di testo con latenza di 180ms.",
+                quote_vc: "\"Il tuo CAC è $850, il tuo LTV è $600 e il tuo 'fossato difensivo' è un wrapper attorno a un modello open source. Perché OpenAI non dovrebbe lanciare la stessa funzione martedì prossimo?\"",
+                quote_client: "\"Abbiamo avuto un'interruzione critica di 40 minuti durante il Black Friday. Il vostro SLA garantiva il 99,99%. Il consiglio di amministrazione vuole la risoluzione immediata del contratto.\"",
+                quote_ciso: "\"Ho appena esaminato il vostro audit SOC 2 Type II. Avete cinque vulnerabilità critiche nel container principale e violazioni della conformità HIPAA. Il deploy è bloccato.\"",
+                quote_mars: "\"Il campo di contenimento collassa al 7% al secondo! La pompa beta è in cavitazione e la telemetria è cieca! Dammi subito la sequenza magnetica prima di perdere l'orbita!\"",
+                sim_title: "🧪 Simulatore di Resilienza alle Obiezioni in Tempo Reale",
+                sim_sub: "Seleziona un avversario, inserisci la tua risposta difensiva e calcola il tuo punteggio di resilienza cognitiva.",
+                label_challenger: "Scegli il tuo Avversario:",
+                label_presets: "Argomenti Rapidi di Esempio:",
+                label_pitch: "La Tua Risposta / Difesa:",
+                btn_run_sim: "⚡ Esegui Test di Resilienza",
+                m2m_badge: "⚡ PROTOCOLLO MACHINE-TO-MACHINE • BASE USDC",
+                x402_title: "API di Sparring con Micropagamenti x402 per Agenti Autonomi",
+                x402_desc: "Gli agenti IA possono allenarsi con NVIDIA PersonaPlex 7B via software senza carte di credito. Paga 0.25 Base USDC per sessione direttamente sul protocollo HTTP 402.",
+                pricing_title: "💳 Pass di Sparring per Fondatori e Team",
+                pricing_sub: "Supera le obiezioni più complesse prima di incontrare il tuo prossimo investitore o cliente.",
+                t1_name: "Sparring Micropagamento",
+                t1_sub: "Per test rapidi individuali ed esperimenti di bot.",
+                t1_btn: "Prova nel Simulatore",
+                t2_name: "Pass Founder",
+                t2_sub: "Per fondatori che cercano capitali o chiudono contratti B2B.",
+                t2_btn: "Attiva Pass Founder",
+                t3_name: "Sparring Enterprise",
+                t3_sub: "Per team di vendita, gestione incidenti e agenzie.",
+                t3_btn: "Parla con gli Ingegneri"
+            }
+        };
+
+        const PRESETS = {
+            1: "Our software agent delivers 85% gross margins with fine-tuned domain distillation, while proprietary client feedback loops reduce inference compute by 60% compared to frontier models.",
+            2: "The 40-minute outage was triggered by an unprecedented AWS us-east-1 DNS propagation failure. Within 7 minutes, our automated multi-region failover shifted active load to us-west-2, and we have implemented zero-RPO active-active redundancy.",
+            3: "All sensitive telemetry runs strictly inside confidential microVM enclaves with hardware-attested AMD SEV-SNP encryption. Master keys never touch persistent disks and are rotated every 15 minutes.",
+            4: "Emergency magnetic shunt override initiated on circuit 4B. Engaging secondary deuterium bleed valve to equalize core thermal runaway in 3... 2... 1."
+        };
+
+        let currentLang = localStorage.getItem('ranuk_lang') || (navigator.language.startsWith('es') ? 'es' : (navigator.language.startsWith('it') ? 'it' : 'en'));
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ranuk_lang', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+            document.getElementById('t_brand').textContent = t.brand;
+            document.getElementById('t_nav_back').textContent = t.back;
+            document.getElementById('t_nav_closer').textContent = t.closer;
+            document.getElementById('t_nav_debates').textContent = t.debates;
+            document.getElementById('t_eyebrow').textContent = t.eyebrow;
+            document.getElementById('t_hero_title').textContent = t.hero_title;
+            document.getElementById('t_hero_sub').textContent = t.hero_sub;
+            document.getElementById('t_btn_spar').textContent = t.btn_spar;
+            document.getElementById('t_btn_sim').textContent = t.btn_sim;
+            document.getElementById('t_btn_x402').textContent = t.btn_x402;
+            document.getElementById('t_sec_challengers').textContent = t.sec_challengers;
+            document.getElementById('t_sub_challengers').textContent = t.sub_challengers;
+            document.getElementById('t_quote_vc').textContent = t.quote_vc;
+            document.getElementById('t_quote_client').textContent = t.quote_client;
+            document.getElementById('t_quote_ciso').textContent = t.quote_ciso;
+            document.getElementById('t_quote_mars').textContent = t.quote_mars;
+            document.getElementById('t_sim_title').textContent = t.sim_title;
+            document.getElementById('t_sim_sub').textContent = t.sim_sub;
+            document.getElementById('t_label_challenger').textContent = t.label_challenger;
+            document.getElementById('t_label_presets').textContent = t.label_presets;
+            document.getElementById('t_label_pitch').textContent = t.label_pitch;
+            document.getElementById('t_btn_run_sim').querySelector('span').textContent = t.btn_run_sim;
+            document.getElementById('t_m2m_badge').textContent = t.m2m_badge;
+            document.getElementById('t_x402_title').textContent = t.x402_title;
+            document.getElementById('t_x402_desc').textContent = t.x402_desc;
+            document.getElementById('t_pricing_title').textContent = t.pricing_title;
+            document.getElementById('t_pricing_sub').textContent = t.pricing_sub;
+            document.getElementById('t_t1_name').textContent = t.t1_name;
+            document.getElementById('t_t1_sub').textContent = t.t1_sub;
+            document.getElementById('t_t1_btn').textContent = t.t1_btn;
+            document.getElementById('t_t2_name').textContent = t.t2_name;
+            document.getElementById('t_t2_sub').textContent = t.t2_sub;
+            document.getElementById('t_t2_btn').textContent = t.t2_btn;
+            document.getElementById('t_t3_name').textContent = t.t3_name;
+            document.getElementById('t_t3_sub').textContent = t.t3_sub;
+            document.getElementById('t_t3_btn').textContent = t.t3_btn;
+        }
+
+        // Setup wave bars
+        ['vc', 'client', 'ciso', 'mars'].forEach(id => {
+            const container = document.getElementById('waves_' + id);
+            for (let i = 0; i < 22; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'wave-bar';
+                bar.style.height = (25 + Math.random() * 55) + '%';
+                container.appendChild(bar);
+            }
+        });
+
+        // Audio Player Controller
+        let currentAudio = null;
+        let activeId = null;
+
+        function toggleAudio(id, src) {
+            const playerBox = document.getElementById('player_' + id);
+            const btn = playerBox.querySelector('.play-btn');
+
+            if (currentAudio && activeId === id) {
+                if (currentAudio.paused) {
+                    currentAudio.play();
+                    btn.textContent = '⏸';
+                    playerBox.classList.add('playing');
+                } else {
+                    currentAudio.pause();
+                    btn.textContent = '▶';
+                    playerBox.classList.remove('playing');
+                }
+                return;
+            }
+
+            if (currentAudio) {
+                currentAudio.pause();
+                document.querySelectorAll('.audio-player-box').forEach(el => el.classList.remove('playing'));
+                document.querySelectorAll('.play-btn').forEach(b => b.textContent = '▶');
+            }
+
+            currentAudio = new Audio(src);
+            activeId = id;
+            btn.textContent = '⏸';
+            playerBox.classList.add('playing');
+
+            currentAudio.play().catch(() => {});
+            currentAudio.onended = () => {
+                btn.textContent = '▶';
+                playerBox.classList.remove('playing');
+                currentAudio = null;
+                activeId = null;
+            };
+        }
+
+        function setPreset(num) {
+            document.getElementById('simPitch').value = PRESETS[num] || "";
+            if (num === 1) document.getElementById('simChallenger').value = 'vc';
+            if (num === 2) document.getElementById('simChallenger').value = 'client';
+            if (num === 3) document.getElementById('simChallenger').value = 'ciso';
+            if (num === 4) document.getElementById('simChallenger').value = 'mars';
+            updateChallengerSelection();
+        }
+
+        function updateChallengerSelection() {
+            const val = document.getElementById('simChallenger').value;
+            document.querySelectorAll('.challenger-card').forEach(c => c.classList.remove('active-challenger'));
+            const map = { vc: 'card_vc', client: 'card_client', ciso: 'card_ciso', mars: 'card_mars' };
+            if (map[val]) document.getElementById(map[val]).classList.add('active-challenger');
+        }
+
+        function runSimulation() {
+            const pitch = document.getElementById('simPitch').value.trim();
+            const challenger = document.getElementById('simChallenger').value;
+            const btn = document.getElementById('t_btn_run_sim');
+            const scoreEl = document.getElementById('gaugeScore');
+            const circle = document.getElementById('gaugeCircle');
+            const verdictEl = document.getElementById('verdictText');
+            const statusEl = document.getElementById('t_telemetry_status');
+
+            statusEl.textContent = '● COMPUTING...';
+            statusEl.style.color = '#fbbf24';
+
+            // Calculate score heuristically based on length and keywords
+            let baseScore = 65;
+            if (pitch.length > 50) baseScore += 12;
+            if (pitch.length > 120) baseScore += 8;
+            if (/margin|failover|enclave|override|redundancy|soc|cve|telemetry/i.test(pitch)) baseScore += 10;
+            if (pitch.length < 20) baseScore = 38;
+            baseScore = Math.min(97, Math.max(30, baseScore));
+
+            let verdictMap = {
+                vc: {
+                    high: "Solid defensibility. The VC acknowledged your unit margin resilience and shifted focus to customer retention. Sparring passed with distinction.",
+                    low: "Vulnerable to moat pushback. Marcus caught your lack of pricing power and repeated the OpenAI displacement threat."
+                },
+                client: {
+                    high: "De-escalation successful. Sarah accepted the multi-region failover proof and agreed to review the SLA credit structure rather than terminating.",
+                    low: "Escalation imminent! You sounded evasive on root-cause responsibility. Sarah forwarded the breach notification to Legal."
+                },
+                ciso: {
+                    high: "Zero-trust verification approved. Elena validated the confidential microVM attestation and lifted the security block.",
+                    low: "Audit failed! Dr. Vance flagged persistent key exposure risk and refused to sign off on production clearance."
+                },
+                mars: {
+                    high: "Containment field stabilized! Alex reports core thermal runaway neutralized at 99.4% threshold. Orbital station saved.",
+                    low: "CRITICAL BREACH: Override command was too late or incomplete. Reactor containment collapsed."
+                }
+            };
+
+            const outcome = baseScore >= 75 ? 'high' : 'low';
+            const color = baseScore >= 80 ? 'var(--emerald)' : (baseScore >= 60 ? 'var(--cyan)' : 'var(--rose)');
+
+            setTimeout(() => {
+                scoreEl.textContent = baseScore;
+                circle.style.background = `conic-gradient(${color} 0% ${baseScore}%, rgba(255, 255, 255, 0.08) ${baseScore}% 100%)`;
+                circle.style.boxShadow = `0 0 30px ${color}`;
+
+                document.getElementById('metricPushback').textContent = (100 - Math.round(baseScore * 0.3)) + '%';
+                document.getElementById('metricInterrupt').textContent = '180ms';
+                document.getElementById('metricMoat').textContent = baseScore >= 75 ? 'Strong' : 'Weak';
+
+                verdictEl.innerHTML = `<strong>Counter-Verdict:</strong> ${verdictMap[challenger][outcome]}`;
+                statusEl.textContent = '● ACTIVE TELEMETRY';
+                statusEl.style.color = color;
+            }, 350);
+        }
+
+        function copyCurl() {
+            const text = document.getElementById('curlText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy cURL', 2000);
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+        });
+
+        // Initialize with default preset
+        setPreset(1);
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>

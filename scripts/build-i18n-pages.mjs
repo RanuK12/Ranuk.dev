@@ -186,6 +186,12 @@ for (const r of REDIRECTS) {
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 // Sin <lastmod> a proposito: una fecha generada en cada build hace que el sitemap cambie todos los
 // dias sin que cambie el contenido — Google ignora esas fechas y el check de CI daria rojo cada dia.
+const STANDALONE = [
+  { url: 'debates/', priority: '0.9' },
+  { url: 'closer/', priority: '0.9' },
+  { url: 'arena/', priority: '0.9' },
+];
+
 const urls = PAGES.flatMap((p) => ALL.map((lang) => `  <url>
     <loc>${canonicalFor(lang, p.url)}</loc>
     <changefreq>monthly</changefreq>
@@ -194,13 +200,19 @@ ${ALL.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${canoni
     <xhtml:link rel="alternate" hreflang="x-default" href="${canonicalFor('es', p.url)}"/>
   </url>`));
 
+const standaloneUrls = STANDALONE.map((p) => `  <url>
+    <loc>${SITE}/${p.url}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>${p.priority}</priority>
+  </url>`);
+
 writeFileSync(join(ROOT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.join('\n')}
+${[...urls, ...standaloneUrls].join('\n')}
 </urlset>
 `, 'utf8');
 
 console.log(`i18n pages: ${written} generadas (${LANGS.join(', ')}), ${PAGES.length} normalizadas en es`);
-console.log(`sitemap.xml: ${PAGES.length * ALL.length} URLs`);
+console.log(`sitemap.xml: ${PAGES.length * ALL.length + STANDALONE.length} URLs`);
