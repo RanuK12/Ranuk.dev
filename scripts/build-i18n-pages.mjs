@@ -31,12 +31,12 @@ const PAGES = [
 /** <title> y meta description por pagina e idioma. Lo que Google muestra en el resultado. */
 const META = {
   'index.html': {
-    es: ['Emilio Ranucoli — ML Engineer & Data Scientist | Ingeniero en Sistemas',
-         'ML Engineer y Data Scientist con experiencia en Booking.com y Accenture. Construyo sistemas a medida, automatización con IA y trading bots. Fundador de Ranuk IT Solutions. Disponible para proyectos freelance y consultoría.'],
-    en: ['Emilio Ranucoli — ML Engineer & Data Scientist | Systems Engineer',
-         'ML Engineer and Data Scientist with experience at Booking.com and Accenture. I build custom systems, AI automation and trading bots. Founder of Ranuk IT Solutions. Available for freelance projects and consulting.'],
-    it: ['Emilio Ranucoli — ML Engineer & Data Scientist | Ingegnere dei Sistemi',
-         'ML Engineer e Data Scientist con esperienza in Booking.com e Accenture. Costruisco sistemi su misura, automazione con IA e trading bot. Fondatore di Ranuk IT Solutions. Disponibile per progetti freelance e consulenza.'],
+    es: ['Emilio Ranucoli — Desarrollo Web, Agentes de IA & Software a Medida | Ranuk IT Solutions',
+         'Desarrollador Full-Stack y ML Engineer (ex Booking.com y Accenture). Landing pages de alto impacto por  USD en 48h, agentes de voz IA a 180ms y desarrollo de software a medida. Calidad premium directa.'],
+    en: ['Emilio Ranucoli — Web Development, Voice AI Agents & Custom Software | Ranuk IT Solutions',
+         'Full-Stack Developer & ML Engineer (ex Booking.com, Accenture). High-converting landing pages ( USD / 48h), 180ms Voice AI Agents and custom enterprise software. Direct senior engineering.'],
+    it: ['Emilio Ranucoli — Sviluppo Web, Agenti IA Vocali & Software su Misura | Ranuk IT Solutions',
+         'Sviluppatore Full-Stack & ML Engineer (ex Booking.com, Accenture). Landing page ad alta conversione da  USD in 48h, agenti vocali IA a 180ms e software su misura.'],
   },
   'ranuk-it/index.html': {
     es: ['Ranuk IT Solutions — Software a medida, ML y automatización',
@@ -190,6 +190,8 @@ const STANDALONE = [
   { url: 'debates/', priority: '0.9' },
   { url: 'closer/', priority: '0.9' },
   { url: 'arena/', priority: '0.9' },
+  { url: 'portfolio/', priority: '0.9' },
+  { url: 'analytics/', priority: '0.7' },
 ];
 
 const urls = PAGES.flatMap((p) => ALL.map((lang) => `  <url>

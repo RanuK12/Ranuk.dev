@@ -242,4 +242,18 @@
     }
   };
 
+  // 8. Atajo de teclado (Ctrl + Shift + A o Cmd + Shift + A) para abrir el panel /analytics/
+  window.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+      e.preventDefault();
+      var inSubfolder = window.location.pathname.indexOf('/closer/') !== -1 ||
+                         window.location.pathname.indexOf('/arena/') !== -1 ||
+                         window.location.pathname.indexOf('/debates/') !== -1 ||
+                         window.location.pathname.indexOf('/portfolio/') !== -1 ||
+                         window.location.pathname.indexOf('/ranuk-it/') !== -1;
+      var targetUrl = inSubfolder ? '../analytics/' : 'analytics/';
+      window.location.href = targetUrl;
+    }
+  });
+
 })();
