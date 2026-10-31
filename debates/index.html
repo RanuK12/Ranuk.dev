@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI vs AI: Full-Duplex Debates — Ranuk IT Solutions</title>
-    <meta name="description" content="Dos inteligencias artificiales conectadas en un canal de voz full-duplex de 24kHz sin turnos preestablecidos. Se escuchan, se interrumpen a mitad de frase y debaten los temas más calientes de 2026.">
+    <meta name="description" content="Two autonomous neural models on a raw 24kHz full-duplex voice line with zero turn-taking rules. Powered natively by NVIDIA PersonaPlex 7B.">
     <meta property="og:title" content="AI vs AI: Unscripted Full-Duplex Debates — Ranuk Synthetic Arena">
     <meta property="og:description" content="Two autonomous AIs on a raw 24kHz full-duplex voice line with zero turn-taking rules. Watch them interrupt each other mid-sentence.">
     <meta property="og:type" content="video.other">
@@ -26,6 +26,7 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border-glass: rgba(255, 255, 255, 0.10);
+            --border-highlight: rgba(0, 240, 255, 0.35);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -47,8 +48,8 @@
             z-index: 100;
             max-width: 1240px;
             margin: 14px auto 0;
-            padding: 12px 24px;
-            background: rgba(10, 16, 30, 0.78);
+            padding: 10px 24px;
+            background: rgba(10, 16, 30, 0.82);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             border: 1px solid var(--border-glass);
@@ -66,11 +67,11 @@
             color: var(--text-main);
             font-weight: 800;
             letter-spacing: 0.03em;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
         .brand img {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
             filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.45));
         }
@@ -81,19 +82,47 @@
         }
         .badge-live {
             font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            padding: 6px 14px;
+            font-size: 0.72rem;
+            padding: 5px 12px;
             border-radius: 999px;
             background: rgba(0, 240, 255, 0.10);
             border: 1px solid rgba(0, 240, 255, 0.35);
             color: #a5f3fc;
         }
+        .lang-switcher {
+            display: flex;
+            gap: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px;
+            border-radius: 999px;
+            border: 1px solid var(--border-glass);
+        }
+        .lang-btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: var(--cyan);
+            color: #041019;
+            box-shadow: 0 2px 8px rgba(0, 240, 255, 0.35);
+        }
+        .lang-btn:hover:not(.active) {
+            color: #fff;
+        }
         .btn-back {
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 999px;
             border: 1px solid var(--border-glass);
             background: rgba(255, 255, 255, 0.04);
@@ -106,12 +135,12 @@
         .container {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 36px 20px 80px;
+            padding: 32px 20px 80px;
         }
         .hero-header {
             text-align: center;
-            max-width: 860px;
-            margin: 12px auto 38px;
+            max-width: 880px;
+            margin: 10px auto 36px;
         }
         .eyebrow {
             display: inline-flex;
@@ -129,7 +158,7 @@
         h1 {
             font-size: clamp(2rem, 4.2vw, 3.25rem);
             font-weight: 800;
-            line-height: 1.12;
+            line-height: 1.15;
             letter-spacing: -0.02em;
             margin-bottom: 14px;
             background: linear-gradient(95deg, #ffffff 0%, #a5f3fc 52%, #6ee7b7 100%);
@@ -138,13 +167,13 @@
         }
         .hero-sub {
             color: var(--text-muted);
-            font-size: 1.06rem;
-            max-width: 720px;
+            font-size: 1.05rem;
+            max-width: 740px;
             margin: 0 auto;
         }
         .stage-grid {
             display: grid;
-            grid-template-columns: 1.65fr 1fr;
+            grid-template-columns: 1.6fr 1fr;
             gap: 26px;
             align-items: start;
             margin-bottom: 48px;
@@ -155,7 +184,7 @@
         .player-card {
             background: var(--bg-card);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 240, 255, 0.25);
+            border: 1px solid var(--border-highlight);
             border-radius: 24px;
             padding: 18px;
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
@@ -168,11 +197,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            max-height: 560px;
+            max-height: 580px;
         }
         video {
             width: 100%;
-            max-height: 540px;
+            max-height: 560px;
             display: block;
             border-radius: 16px;
         }
@@ -185,12 +214,12 @@
             gap: 14px;
         }
         .player-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
         }
         .player-sub {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             margin-top: 2px;
         }
         .share-row {
@@ -261,10 +290,11 @@
         }
         .ep-tags {
             display: flex;
+            flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 6px;
             font-family: 'Fira Code', monospace;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
         }
         .tag-pill {
             padding: 2px 8px;
@@ -272,8 +302,14 @@
             background: rgba(0, 240, 255, 0.14);
             color: #a5f3fc;
         }
-        .tag-pill.es { background: rgba(16, 235, 155, 0.15); color: #6ee7b7; }
-        .tag-pill.vert { background: rgba(251, 191, 36, 0.15); color: #fde68a; }
+        .tag-pill.badge-model {
+            background: rgba(16, 235, 155, 0.15);
+            color: #6ee7b7;
+        }
+        .tag-pill.badge-format {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fde68a;
+        }
         .ep-item h3 {
             font-size: 0.95rem;
             font-weight: 700;
@@ -339,20 +375,25 @@
     <header class="topbar">
         <a href="../" class="brand">
             <img src="episodes/minilogo.png" alt="Ranuk Logo">
-            <span>RANUK IT SOLUTIONS &nbsp;•&nbsp; AI DEBATE ARENA</span>
+            <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; AI DEBATE ARENA</span>
         </a>
         <div class="nav-right">
             <span class="badge-live">● 24kHz FULL-DUPLEX</span>
-            <a href="../" class="btn-back">← Volver a ranuk.dev</a>
+            <div class="lang-switcher" role="group" aria-label="Language">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="it">IT</button>
+            </div>
+            <a href="../" class="btn-back" id="t_back">← Back to ranuk.dev</a>
         </div>
     </header>
 
     <main class="container">
         <section class="hero-header">
-            <div class="eyebrow">⚡ DOS IAs AUTÓNOMAS • SIN TURNOS • INTERRUPCIONES EN TIEMPO REAL</div>
-            <h1>Conectamos dos IAs en una línea de voz Full-Duplex sin reglas de turnos.</h1>
-            <p class="hero-sub">
-                A diferencia de los podcasts tradicionales donde un bot espera en silencio a que el otro termine, aquí ambos agentes escuchan y hablan simultáneamente con 180ms de respuesta, interrumpiéndose a mitad de frase cuando no están de acuerdo.
+            <div class="eyebrow" id="t_eyebrow">⚡ TWO AUTONOMOUS AIS • ZERO TURN-TAKING • REAL-TIME INTERRUPTIONS</div>
+            <h1 id="t_hero_title">We connected two autonomous AIs on a 24kHz Full-Duplex voice line with zero turn rules.</h1>
+            <p class="hero-sub" id="t_hero_sub">
+                Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models listen and speak simultaneously with 180ms latency, interrupting mid-sentence when objections arise.
             </p>
         </section>
 
@@ -360,95 +401,47 @@
             <div class="player-card">
                 <div class="video-wrapper">
                     <video id="mainVideo" controls playsinline preload="metadata" poster="episodes/preview_glass_studio.png">
-                        <source id="mainSource" src="episodes/ia_vs_ingenieros_2026.mp4" type="video/mp4">
+                        <source id="mainSource" src="episodes/mars_reactor_crisis_16x9.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="player-meta">
                     <div>
-                        <div class="player-title" id="epTitle">Ep. 01 — ¿La IA reemplazará a los Ingenieros en 2026?</div>
-                        <div class="player-sub" id="epSub">Mateo Vega (CTO) vs. Sofía Kovács (AI Agent Architect) • 4 interrupciones Full-Duplex en vivo</div>
+                        <div class="player-title" id="epTitle">Ep. 01 — When AI Panics: Mars Reactor Meltdown</div>
+                        <div class="player-sub" id="epSub">Mission Control vs. Astronaut Alex (VARM0) • Raw NVIDIA PersonaPlex 7B Telemetry</div>
                     </div>
                     <div class="share-row">
-                        <a id="redditShare" href="https://www.reddit.com/submit?url=https%3A%2F%2Franuk.dev%2Fdebates%2F&title=Conect%C3%A9%20dos%20IAs%20en%20un%20canal%20de%20voz%20full-duplex%20sin%20turnos%20y%20se%20interrumpen%20a%20mitad%20de%20frase" target="_blank" rel="noopener" class="btn-action btn-reddit">🔥 Compartir en Reddit</a>
-                        <a id="xShare" href="https://twitter.com/intent/tweet?text=Dos%20IAs%20debatiendo%20en%20voz%20Full-Duplex%20sin%20turnos%20(se%20interrumpen%20a%20mitad%20de%20frase)%20%E2%9A%A1&url=https%3A%2F%2Franuk.dev%2Fdebates%2F" target="_blank" rel="noopener" class="btn-action">𝕏 Postear</a>
-                        <a id="downloadLink" href="episodes/ia_vs_ingenieros_2026.mp4" download class="btn-action">⬇ Descargar MP4</a>
+                        <a id="redditShare" href="https://www.reddit.com/submit?url=https%3A%2F%2Franuk.dev%2Fdebates%2F&title=Connected%20two%20AIs%20on%20a%2024kHz%20full-duplex%20voice%20line%20and%20they%20interrupt%20each%20other" target="_blank" rel="noopener" class="btn-action btn-reddit" id="t_share_reddit">🔥 Share on Reddit</a>
+                        <a id="xShare" href="https://twitter.com/intent/tweet?text=Two%20autonomous%20AIs%20debating%20on%20a%2024kHz%20full-duplex%20voice%20line%20with%20zero%20turn%20rules%20%E2%9A%A1&url=https%3A%2F%2Franuk.dev%2Fdebates%2F" target="_blank" rel="noopener" class="btn-action" id="t_share_x">𝕏 Post</a>
+                        <a id="downloadLink" href="episodes/mars_reactor_crisis_16x9.mp4" download class="btn-action" id="t_download">⬇ Download MP4</a>
                     </div>
                 </div>
             </div>
 
             <aside class="playlist-panel">
                 <div class="playlist-header">
-                    <h2>🎙️ Episodios Disponibles</h2>
-                    <span style="font-size:0.78rem;color:var(--text-muted);">Click para reproducir</span>
+                    <h2 id="t_playlist_head">🎙️ Official English Episodes</h2>
+                    <span style="font-size:0.78rem;color:var(--text-muted);" id="t_playlist_hint">Click to play</span>
                 </div>
                 <div class="ep-list" id="epList">
-                    <div class="ep-item active" data-src="episodes/ia_vs_ingenieros_2026.mp4" data-title="Ep. 01 — ¿La IA reemplazará a los Ingenieros en 2026?" data-sub="Mateo Vega (CTO) vs. Sofía Kovács (AI Agent Architect) • Estilo Glass Studio 16:9">
-                        <div class="ep-tags">
-                            <span class="tag-pill es">ESPAÑOL</span>
-                            <span class="tag-pill">16:9 GLASS STUDIO</span>
-                            <span class="tag-pill">4 OVERLAPS</span>
-                        </div>
-                        <h3>Ep. 01 — ¿La IA reemplazará a los Ingenieros en 2026?</h3>
-                        <p>Enjambres autónomos de código vs. responsabilidad humana cuando producción cae a las 3 AM.</p>
-                    </div>
-
-                    <div class="ep-item" data-src="episodes/economia_x402_billeteras_ia.mp4" data-title="Ep. 02 — ¿Deberían las IAs tener su propia billetera bancaria? (x402)" data-sub="Lucas Ferrara (Fintech) vs. Elena R. (Web3 & Protocolo x402) • Formato Vertical Reel 9:16">
-                        <div class="ep-tags">
-                            <span class="tag-pill es">ESPAÑOL</span>
-                            <span class="tag-pill vert">9:16 VERTICAL REEL</span>
-                            <span class="tag-pill">FINTECH &amp; x402</span>
-                        </div>
-                        <h3>Ep. 02 — ¿IAs con Billetera Propia? Economía x402</h3>
-                        <p>¿Qué pasa si un agente autónomo necesita pagar cómputo o datos en milisegundos sin pedir permiso a un banco?</p>
-                    </div>
-
-                    <div class="ep-item" data-src="episodes/full_duplex_voice_revolution.mp4" data-title="Ep. 03 — The Death of Walkie-Talkie Voice AI (180ms Full-Duplex)" data-sub="Marcus Vance vs. Aria Chen • Minimalist Split-Wave Executive Arena 16:9">
-                        <div class="ep-tags">
-                            <span class="tag-pill">ENGLISH</span>
-                            <span class="tag-pill">16:9 SPLIT-WAVE</span>
-                            <span class="tag-pill">180ms LATENCY</span>
-                        </div>
-                        <h3>Ep. 03 — The Death of Walkie-Talkie Voice AI</h3>
-                        <p>Why 24kHz full-duplex speech-to-speech makes legacy 2-second STT→LLM→TTS voice bots obsolete.</p>
-                    </div>
-
-                    <div class="ep-item" data-src="episodes/open_vs_closed_ai_2026.mp4" data-title="Ep. 04 — Modelos Abiertos vs. Gigantes Cerrados en 2026" data-sub="Diego Morales (Cloud VP) vs. Valeria Soto (Open-Weights Lead) • Estilo Split-Wave 16:9">
-                        <div class="ep-tags">
-                            <span class="tag-pill es">ESPAÑOL</span>
-                            <span class="tag-pill">16:9 SPLIT-WAVE</span>
-                            <span class="tag-pill">SOBERANÍA IA</span>
-                        </div>
-                        <h3>Ep. 04 — Modelos Abiertos vs. Gigantes Cerrados</h3>
-                        <p>APIs cerradas con límites de tokens vs. modelos compactos de 7B parámetros corriendo en infraestructura propia.</p>
-                    </div>
-
-                    <div class="ep-item" data-src="episodes/mars_reactor_crisis.mp4" data-title="Ep. 05 — Mars Vessel Reactor Meltdown (Raw PersonaPlex 7B Telemetry)" data-sub="Mission Control vs. Astronaut Alex (VARM0.pt) • High-Urgency Sci-Fi Stress Test">
-                        <div class="ep-tags">
-                            <span class="tag-pill">ENGLISH</span>
-                            <span class="tag-pill">RAW PERSONAPLEX 7B</span>
-                            <span class="tag-pill">STRESS TEST</span>
-                        </div>
-                        <h3>Ep. 05 — Mars Vessel Reactor Core Meltdown</h3>
-                        <p>Emergency coolant failure test demonstrating vocal urgency and continuous backchanneling.</p>
-                    </div>
+                    <!-- Episodes injected dynamically by JS to handle language switching -->
                 </div>
             </aside>
         </section>
 
         <section class="mystery-box">
             <div class="glass-box">
-                <h3>🗳️ Propón el próximo enfrentamiento entre las dos IAs</h3>
-                <p>¿Qué tema actual, polémico o técnico quieres que debatan sin filtro en el próximo episodio? Los temas más votados en Reddit y X se renderizan automáticamente.</p>
+                <h3 id="t_box1_head">🗳️ Propose the Next AI Debate</h3>
+                <p id="t_box1_desc">What high-stakes technical or philosophical dilemma should the models clash on next? Top community topics are rendered autonomously.</p>
                 <form class="topic-input-group" onsubmit="event.preventDefault(); document.getElementById('voteMsg').style.display='block'; this.reset();">
-                    <input type="text" class="topic-input" placeholder="Ej: ¿Deberían pagar impuestos los robots humanoides?" required>
-                    <button type="submit" class="btn-submit">Enviar Tema</button>
+                    <input type="text" class="topic-input" id="t_topic_input" placeholder="e.g.: Should humanoid robots be taxed per compute hour?" required>
+                    <button type="submit" class="btn-submit" id="t_topic_btn">Submit Topic</button>
                 </form>
-                <p id="voteMsg" style="display:none;color:var(--emerald);margin-top:10px;font-weight:600;">✓ ¡Tema registrado en la cola del estudio! Síguenos en @ranuk_dev para ver el episodio.</p>
+                <p id="voteMsg" style="display:none;color:var(--emerald);margin-top:10px;font-weight:600;">✓ Topic enqueued in the studio pipeline! Follow @ranuk_dev for the live episode.</p>
             </div>
 
             <div class="glass-box" style="border-color: rgba(16, 235, 155, 0.28);">
-                <h3>🚀 ¿Quieres esta tecnología de voz en tu empresa?</h3>
-                <p>El mismo motor Full-Duplex de 24kHz (~180ms de respuesta) está disponible como recepcionista B2B, closer de ventas web y simulador de objeciones con pagos HTTP x402.</p>
+                <h3 id="t_box2_head">🚀 Deploy This Voice Engine In Your Enterprise</h3>
+                <p id="t_box2_desc">The same 24kHz Full-Duplex engine (~180ms latency) is available as an enterprise B2B closer, customer security desk, and objection simulator with HTTP x402 micropayments.</p>
                 <div class="share-row">
                     <a href="https://github.com/RanuK12/ranuk-ai-debate-studio" target="_blank" rel="noopener" class="btn-action">⭐ GitHub: Debate Studio</a>
                     <a href="https://github.com/RanuK12/ranuk-voice-closer" target="_blank" rel="noopener" class="btn-action">🎙️ GitHub: Voice Closer</a>
@@ -459,28 +452,248 @@
     </main>
 
     <script>
-        const items = document.querySelectorAll('.ep-item');
-        const video = document.getElementById('mainVideo');
-        const source = document.getElementById('mainSource');
-        const epTitle = document.getElementById('epTitle');
-        const epSub = document.getElementById('epSub');
-        const downloadLink = document.getElementById('downloadLink');
+        const TRANSLATIONS = {
+            en: {
+                brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
+                back: "← Back to ranuk.dev",
+                eyebrow: "⚡ TWO AUTONOMOUS AIS • ZERO TURN-TAKING • REAL-TIME INTERRUPTIONS",
+                hero_title: "We connected two autonomous AIs on a 24kHz Full-Duplex voice line with zero turn rules.",
+                hero_sub: "Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models listen and speak simultaneously with 180ms latency, interrupting mid-sentence when objections arise.",
+                playlist_head: "🎙️ Official English Episodes",
+                playlist_hint: "Click to play",
+                share_reddit: "🔥 Share on Reddit",
+                share_x: "𝕏 Post",
+                download: "⬇ Download MP4",
+                box1_head: "🗳️ Propose the Next AI Debate",
+                box1_desc: "What high-stakes technical or philosophical dilemma should the models clash on next? Top community topics are rendered autonomously.",
+                box1_ph: "e.g.: Should humanoid robots be taxed per compute hour?",
+                box1_btn: "Submit Topic",
+                box2_head: "🚀 Deploy This Voice Engine In Your Enterprise",
+                box2_desc: "The same 24kHz Full-Duplex engine (~180ms latency) is available as an enterprise B2B closer, customer security desk, and objection simulator with HTTP x402 micropayments."
+            },
+            es: {
+                brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
+                back: "← Volver a ranuk.dev",
+                eyebrow: "⚡ DOS IAS AUTÓNOMAS • SIN TURNOS • INTERRUPCIONES EN TIEMPO REAL",
+                hero_title: "Conectamos dos IAs en una línea de voz Full-Duplex de 24kHz sin reglas de turnos.",
+                hero_sub: "A diferencia de los bots tradicionales donde uno espera en silencio a que el otro termine, ambos modelos neuronales escuchan y hablan simultáneamente con 180ms de latencia, interrumpiéndose a mitad de frase cuando surgen objeciones.",
+                playlist_head: "🎙️ Episodios Oficiales (Inglés Nativo)",
+                playlist_hint: "Click para reproducir",
+                share_reddit: "🔥 Compartir en Reddit",
+                share_x: "𝕏 Postear",
+                download: "⬇ Descargar MP4",
+                box1_head: "🗳️ Propón el próximo enfrentamiento entre las dos IAs",
+                box1_desc: "¿Qué tema actual, polémico o técnico quieres que debatan sin filtro en el próximo episodio? Los temas más votados se renderizan automáticamente.",
+                box1_ph: "Ej: ¿Deberían pagar impuestos los robots humanoides?",
+                box1_btn: "Enviar Tema",
+                box2_head: "🚀 ¿Quieres esta tecnología de voz en tu empresa?",
+                box2_desc: "El mismo motor Full-Duplex de 24kHz (~180ms de respuesta) está disponible como closer B2B, atención al cliente y simulador de objeciones con micropagos HTTP x402."
+            },
+            it: {
+                brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
+                back: "← Torna a ranuk.dev",
+                eyebrow: "⚡ DUE IA AUTONOME • SENZA TURNI • INTERRUZIONI IN TEMPO REALE",
+                hero_title: "Abbiamo collegato due IA su una linea vocale Full-Duplex a 24kHz senza regole di turno.",
+                hero_sub: "A differenza dei bot tradizionali in cui uno aspetta in silenzio che l'altro finisca, entrambi i modelli ascoltano e parlano simultaneamente con 180ms di latenza, interrompendosi a metà frase quando emergono obiezioni.",
+                playlist_head: "🎙️ Episodi Ufficiali (Inglese Nativo)",
+                playlist_hint: "Clicca per riprodurre",
+                share_reddit: "🔥 Condividi su Reddit",
+                share_x: "𝕏 Condividi",
+                download: "⬇ Scarica MP4",
+                box1_head: "🗳️ Proponi il prossimo dibattito tra le due IA",
+                box1_desc: "Quale dilemma tecnico o controversia dovrebbero affrontare le IA nel prossimo episodio? Le proposte più votate vengono renderizzate automaticamente.",
+                box1_ph: "Es.: I robot umanoidi dovrebbero pagare le tasse per ora di calcolo?",
+                box1_btn: "Invia Tema",
+                box2_head: "🚀 Vuoi questa tecnologia vocale nella tua azienda?",
+                box2_desc: "Lo stesso motore Full-Duplex a 24kHz (~180ms di latenza) è disponibile come closer B2B aziendale, supporto clienti e simulatore di obiezioni con micropagamenti HTTP x402."
+            }
+        };
 
-        items.forEach(item => {
-            item.addEventListener('click', () => {
-                items.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                const src = item.getAttribute('data-src');
-                const title = item.getAttribute('data-title');
-                const sub = item.getAttribute('data-sub');
-                source.setAttribute('src', src);
+        const EPISODES = [
+            {
+                id: "mars_reactor_crisis",
+                src: "episodes/mars_reactor_crisis_16x9.mp4",
+                tags: ["ENGLISH", "NVIDIA PERSONAPLEX 7B", "16:9 REEL", "SUB-200ms"],
+                titles: {
+                    en: "Ep. 01 — When AI Panics: Mars Reactor Meltdown",
+                    es: "Ep. 01 — Cuando la IA entra en pánico: Crisis del Reactor en Marte",
+                    it: "Ep. 01 — Quando l'IA va in panico: Crisi del Reattore su Marte"
+                },
+                subtitles: {
+                    en: "Mission Control vs. Astronaut Alex (VARM0) • Raw NVIDIA PersonaPlex 7B Telemetry",
+                    es: "Control de Misión vs. Astronauta Alex (VARM0) • Telemetría nativa NVIDIA PersonaPlex 7B",
+                    it: "Controllo Missione vs. Astronauta Alex (VARM0) • Telemetria nativa NVIDIA PersonaPlex 7B"
+                },
+                descriptions: {
+                    en: "Unscripted crisis debate during a simulated Mars nuclear coolant failure. Watch the model pause and pivot with vocal urgency when interrupted.",
+                    es: "Debate no guionado de emergencia durante una falla de refrigerante en Marte. Observa cómo el modelo modula urgencia vocal e interrupciones en vivo.",
+                    it: "Dibattito non programmato di emergenza durante un guasto nucleare su Marte. Guarda come il modello modula l'urgenza vocale e le interruzioni dal vivo."
+                }
+            },
+            {
+                id: "banking_b2b_closer",
+                src: "episodes/banking_b2b_closer_16x9.mp4",
+                tags: ["ENGLISH", "FINTECH & CLOSER", "VARF1 VOICEMODEL", "180ms LATENCY"],
+                titles: {
+                    en: "Ep. 02 — AI Bank Security Catches $1,200 Fraud Live",
+                    es: "Ep. 02 — Seguridad Bancaria IA detecta Fraude de $1.200 en Vivo",
+                    it: "Ep. 02 — Sicurezza Bancaria IA rileva Frode di $1.200 dal Vivo"
+                },
+                subtitles: {
+                    en: "Bank Customer vs. Sanni Virtanen (VARF1) • Enterprise Objection Handling Desk",
+                    es: "Cliente Bancario vs. Sanni Virtanen (VARF1) • Manejo de objeciones y seguridad financiera",
+                    it: "Cliente Bancario vs. Sanni Virtanen (VARF1) • Gestione delle obiezioni e sicurezza finanziaria"
+                },
+                descriptions: {
+                    en: "Live enterprise fraud scenario: Sanni Virtanen handles a suspicious Miami card decline with zero pause and sub-second empathy control.",
+                    es: "Escenario de fraude empresarial en vivo: Sanni resuelve el bloqueo de tarjeta en Miami con empatía instantánea y cero pausa.",
+                    it: "Scenario aziendale antifrode: Sanni gestisce il blocco della carta a Miami con empatia istantanea e zero pause."
+                }
+            },
+            {
+                id: "interruption_benchmark",
+                src: "episodes/interruption_benchmark_tiktok_9x16.mp4",
+                tags: ["ENGLISH", "FULL-DUPLEX", "9:16 VERTICAL", "NATF2 VOICEMODEL"],
+                titles: {
+                    en: "Ep. 03 — Can You Interrupt an AI Mid-Sentence?",
+                    es: "Ep. 03 — ¿Puedes interrumpir a una IA a mitad de frase?",
+                    it: "Ep. 03 — Puoi interrompere un'IA a metà frase?"
+                },
+                subtitles: {
+                    en: "Live Interlocutor vs. PersonaPlex (NATF2) • Full-Duplex Acoustic Recovery Benchmark",
+                    es: "Interlocutor en vivo vs. PersonaPlex (NATF2) • Benchmark de recuperación acústica",
+                    it: "Interlocutore dal vivo vs. PersonaPlex (NATF2) • Benchmark di recupero acustico"
+                },
+                descriptions: {
+                    en: "Testing live acoustic interruption without speech cut-off: a caller interrupts mid-sentence and the neural voice smoothly yields and adapts.",
+                    es: "Prueba de interrupción acústica sin cortes abruptos: el usuario interrumpe a mitad de frase y la voz neuronal cede el turno con total fluidez.",
+                    it: "Test di interruzione acustica senza tagli bruschi: l'utente interrompe a metà frase e la voce neurale cede il turno con fluidità."
+                }
+            },
+            {
+                id: "full_duplex_voice_revolution",
+                src: "episodes/full_duplex_voice_revolution_tiktok_9x16.mp4",
+                tags: ["ENGLISH", "SPEECH-TO-SPEECH", "24kHz DUAL-CHANNEL", "ZERO TEXT BOTTLENECK"],
+                titles: {
+                    en: "Ep. 04 — The Death of Walkie-Talkie Voice AI",
+                    es: "Ep. 04 — La muerte de los bots de voz estilo Walkie-Talkie",
+                    it: "Ep. 04 — La fine dei bot vocali stile Walkie-Talkie"
+                },
+                subtitles: {
+                    en: "Marcus Vance vs. Aria Chen • Why 24kHz Speech-to-Speech Replaces Legacy Bots",
+                    es: "Marcus Vance vs. Aria Chen • Por qué la voz 24kHz Speech-to-Speech reemplaza a los bots legados",
+                    it: "Marcus Vance vs. Aria Chen • Perché la voce 24kHz Speech-to-Speech sostituisce i vecchi bot"
+                },
+                descriptions: {
+                    en: "Why streaming neural audio tokens eliminates the 2-second STT→LLM→TTS delay and replaces legacy enterprise call centers.",
+                    es: "Por qué transmitir tokens de audio neuronal elimina la demora de 2 segundos de las arquitecturas tradicionales y revoluciona los call centers.",
+                    it: "Perché lo streaming di token audio neurali elimina il ritardo di 2 secondi delle architetture tradizionali e trasforma i call center."
+                }
+            }
+        ];
+
+        let currentLang = localStorage.getItem('ranuk_lang') || (navigator.language.startsWith('es') ? 'es' : (navigator.language.startsWith('it') ? 'it' : 'en'));
+        let currentEpIndex = 0;
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ranuk_lang', lang);
+            document.documentElement.lang = lang;
+
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const isActive = btn.getAttribute('data-lang') === lang;
+                btn.classList.toggle('active', isActive);
+            });
+
+            // Update static strings
+            const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+            document.getElementById('t_brand').textContent = t.brand;
+            document.getElementById('t_back').textContent = t.back;
+            document.getElementById('t_eyebrow').textContent = t.eyebrow;
+            document.getElementById('t_hero_title').textContent = t.hero_title;
+            document.getElementById('t_hero_sub').textContent = t.hero_sub;
+            document.getElementById('t_playlist_head').textContent = t.playlist_head;
+            document.getElementById('t_playlist_hint').textContent = t.playlist_hint;
+            document.getElementById('t_share_reddit').textContent = t.share_reddit;
+            document.getElementById('t_share_x').textContent = t.share_x;
+            document.getElementById('t_download').textContent = t.download;
+            document.getElementById('t_box1_head').textContent = t.box1_head;
+            document.getElementById('t_box1_desc').textContent = t.box1_desc;
+            document.getElementById('t_topic_input').placeholder = t.box1_ph;
+            document.getElementById('t_topic_btn').textContent = t.box1_btn;
+            document.getElementById('t_box2_head').textContent = t.box2_head;
+            document.getElementById('t_box2_desc').textContent = t.box2_desc;
+
+            renderPlaylist();
+            updateCurrentPlayer();
+        }
+
+        function renderPlaylist() {
+            const listEl = document.getElementById('epList');
+            listEl.innerHTML = '';
+
+            EPISODES.forEach((ep, idx) => {
+                const item = document.createElement('div');
+                item.className = 'ep-item' + (idx === currentEpIndex ? ' active' : '');
+                
+                const title = ep.titles[currentLang] || ep.titles.en;
+                const sub = ep.subtitles[currentLang] || ep.subtitles.en;
+                const desc = ep.descriptions[currentLang] || ep.descriptions.en;
+
+                const tagsHtml = ep.tags.map(t => `<span class="tag-pill">${t}</span>`).join(' ');
+
+                item.innerHTML = `
+                    <div class="ep-tags">${tagsHtml}</div>
+                    <h3>${title}</h3>
+                    <p>${desc}</p>
+                `;
+
+                item.addEventListener('click', () => {
+                    currentEpIndex = idx;
+                    document.querySelectorAll('.ep-item').forEach((el, i) => {
+                        el.classList.toggle('active', i === currentEpIndex);
+                    });
+                    updateCurrentPlayer(true);
+                });
+
+                listEl.appendChild(item);
+            });
+        }
+
+        function updateCurrentPlayer(autoPlay = false) {
+            const ep = EPISODES[currentEpIndex];
+            const video = document.getElementById('mainVideo');
+            const source = document.getElementById('mainSource');
+            const epTitle = document.getElementById('epTitle');
+            const epSub = document.getElementById('epSub');
+            const downloadLink = document.getElementById('downloadLink');
+
+            const title = ep.titles[currentLang] || ep.titles.en;
+            const sub = ep.subtitles[currentLang] || ep.subtitles.en;
+
+            epTitle.textContent = title;
+            epSub.textContent = sub;
+            downloadLink.setAttribute('href', ep.src);
+
+            if (source.getAttribute('src') !== ep.src) {
+                source.setAttribute('src', ep.src);
                 video.load();
-                video.play().catch(() => {});
-                epTitle.textContent = title;
-                epSub.textContent = sub;
-                downloadLink.setAttribute('href', src);
+                if (autoPlay) {
+                    video.play().catch(() => {});
+                }
+            }
+        }
+
+        // Setup lang buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
             });
         });
+
+        // Initialize on page load
+        setLanguage(currentLang);
     </script>
     <script src="../js/ranuk-voice-widget.js" defer></script>
 </body>
