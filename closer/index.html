@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranuk Voice Closer — 24/7 Full-Duplex AI Sales Agent (180ms)</title>
+    <meta name="description" content="Turn your website into a 24/7 autonomous AI Voice Closer. Powered by NVIDIA PersonaPlex 7B native speech-to-speech with 180ms latency.">
+    <meta property="og:title" content="Ranuk Voice Closer — NVIDIA PersonaPlex 7B Full-Duplex AI Sales Agent">
+    <meta property="og:description" content="Embed a real-time 180ms AI voice closer on your landing page. Handles objections live, qualifies leads, and closes sales via Stripe & Cal.com.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ranuk.dev/closer/">
+    <meta property="og:image" content="https://ranuk.dev/debates/episodes/preview_glass_studio.png">
+    <link rel="icon" type="image/png" href="../assets/minilogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #060913;
+            --bg-card: rgba(15, 23, 42, 0.72);
+            --bg-glass: rgba(10, 16, 30, 0.85);
+            --cyan: #00f0ff;
+            --emerald: #10eb9b;
+            --amber: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glass: rgba(255, 255, 255, 0.10);
+            --border-highlight: rgba(0, 240, 255, 0.35);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-deep);
+            background-image:
+                radial-gradient(circle at 18% 18%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 82% 24%, rgba(16, 235, 155, 0.11) 0%, transparent 45%),
+                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .topbar {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            max-width: 1240px;
+            margin: 14px auto 0;
+            padding: 10px 24px;
+            background: rgba(10, 16, 30, 0.85);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--border-glass);
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            font-size: 0.92rem;
+        }
+        .brand img {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.45));
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .badge-live {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(0, 240, 255, 0.10);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            color: #a5f3fc;
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px;
+            border-radius: 999px;
+            border: 1px solid var(--border-glass);
+        }
+        .lang-btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: var(--cyan);
+            color: #041019;
+            box-shadow: 0 2px 8px rgba(0, 240, 255, 0.35);
+        }
+        .btn-nav {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.04);
+            transition: all 0.2s;
+        }
+        .btn-nav:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 36px 20px 80px;
+        }
+        .hero {
+            text-align: center;
+            max-width: 900px;
+            margin: 10px auto 50px;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.78rem;
+            color: var(--emerald);
+            background: rgba(16, 235, 155, 0.09);
+            border: 1px solid rgba(16, 235, 155, 0.32);
+            padding: 6px 16px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+        h1 {
+            font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            margin-bottom: 16px;
+            background: linear-gradient(95deg, #ffffff 0%, #a5f3fc 48%, #6ee7b7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 760px;
+            margin: 0 auto 30px;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            color: #041019;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 14px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.35);
+            transition: all 0.25s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(0, 240, 255, 0.50);
+        }
+        .btn-secondary {
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 26px;
+            border-radius: 14px;
+            text-decoration: none;
+            border: 1px solid var(--border-glass);
+            transition: all 0.25s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 240, 255, 0.08);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 60px 0 12px;
+            color: #fff;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 36px;
+        }
+        .soundboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+        .voice-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: 22px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .voice-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(0, 240, 255, 0.12);
+        }
+        .voice-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .voice-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #a5f3fc, #0891b2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 0 18px rgba(0, 240, 255, 0.35);
+        }
+        .voice-avatar.female {
+            background: radial-gradient(circle at 30% 30%, #6ee7b7, #059669);
+            box-shadow: 0 0 18px rgba(16, 235, 155, 0.35);
+        }
+        .voice-meta h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .voice-meta span {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+        .voice-quote {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            background: rgba(10, 16, 30, 0.65);
+            padding: 14px;
+            border-radius: 14px;
+            border: 1px solid var(--border-glass);
+            margin-bottom: 18px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .audio-player-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(6, 9, 19, 0.75);
+            border: 1px solid var(--border-glass);
+            padding: 10px 16px;
+            border-radius: 14px;
+        }
+        .play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--cyan);
+            color: #041019;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 800;
+            transition: all 0.2s;
+        }
+        .play-btn:hover {
+            transform: scale(1.06);
+            background: #a5f3fc;
+        }
+        .wave-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 28px;
+        }
+        .wave-bar {
+            width: 3px;
+            background: rgba(0, 240, 255, 0.35);
+            border-radius: 2px;
+            height: 30%;
+            transition: height 0.15s ease;
+        }
+        .playing .wave-bar {
+            background: var(--cyan);
+            animation: bounceWave 0.6s infinite alternate;
+        }
+        @keyframes bounceWave {
+            0% { height: 20%; }
+            100% { height: 95%; }
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 26px;
+            margin-bottom: 60px;
+        }
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .price-card.featured {
+            border-color: var(--cyan);
+            box-shadow: 0 20px 50px rgba(0, 240, 255, 0.15);
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(6, 9, 19, 0.95));
+        }
+        .featured-tag {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            color: #041019;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+        .price-header h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .price-header p {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            margin-bottom: 20px;
+        }
+        .price-val {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .price-val span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .feature-list {
+            list-style: none;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .feature-list li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature-list li::before {
+            content: "✓";
+            color: var(--emerald);
+            font-weight: 800;
+        }
+        .snippet-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 22px;
+            padding: 28px;
+            margin-bottom: 50px;
+        }
+        .code-block {
+            background: #03060c;
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.88rem;
+            color: #a5f3fc;
+            overflow-x: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="../" class="brand">
+            <img src="../assets/minilogo.png" alt="Ranuk Logo">
+            <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; VOICE CLOSER</span>
+        </a>
+        <div class="nav-right">
+            <span class="badge-live">● 180ms FULL-DUPLEX</span>
+            <div class="lang-switcher" role="group" aria-label="Language">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="it">IT</button>
+            </div>
+            <a href="../arena/" class="btn-nav" id="t_nav_arena">⚡ Pitch Arena</a>
+            <a href="../debates/" class="btn-nav" id="t_nav_debates">🎙️ Debates</a>
+            <a href="../" class="btn-nav" id="t_nav_back">← Back</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="eyebrow" id="t_eyebrow">⚡ 24/7 INBOUND SALES • NATIVE S2S • ZERO CHATBOTS</div>
+            <h1 id="t_hero_title">Turn your website into a 24/7 AI Voice Closer that actually closes.</h1>
+            <p class="hero-sub" id="t_hero_sub">
+                Eliminate the 3-second delay of traditional voice bots. Powered by NVIDIA PersonaPlex 7B, our voice closer talks and listens simultaneously at 24kHz, resolves objections mid-sentence, and drives leads straight to Stripe checkout.
+            </p>
+            <div class="hero-actions">
+                <a href="#demo" class="btn-primary" id="t_btn_demo">▶ Listen to Live Personas</a>
+                <a href="#pricing" class="btn-secondary" id="t_btn_pricing">💳 View B2B Pricing</a>
+            </div>
+        </section>
+
+        <section id="demo">
+            <h2 class="section-title" id="t_demo_title">🎙️ Battle-Tested Voice Personas</h2>
+            <p class="section-sub" id="t_demo_sub">Click play to hear real 24kHz audio streams generated natively with zero text intermediate.</p>
+
+            <div class="soundboard-grid">
+                <!-- Card 1: Sanni Closer -->
+                <div class="voice-card">
+                    <div>
+                        <div class="voice-card-header">
+                            <div class="voice-avatar female">🎙️</div>
+                            <div class="voice-meta">
+                                <h3>Sanni Virtanen</h3>
+                                <span>EMBEDDING: VARF1.pt • CLOSER &amp; FRAUD DESK</span>
+                            </div>
+                        </div>
+                        <div class="voice-quote" id="t_quote_sanni">
+                            "I see your card transaction was declined in Miami because your primary residence is Seattle. Would you like me to authorize and re-process it right now?"
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_sanni">
+                        <button class="play-btn" onclick="toggleAudio('sanni', 'audio/sanni_closer.mp3')">▶</button>
+                        <div class="wave-container" id="waves_sanni">
+                            <!-- Bars generated dynamically -->
+                        </div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--cyan);">180ms</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Mateo Solutions -->
+                <div class="voice-card">
+                    <div>
+                        <div class="voice-card-header">
+                            <div class="voice-avatar">⚡</div>
+                            <div class="voice-meta">
+                                <h3>Mateo Vega</h3>
+                                <span>EMBEDDING: NATM1.pt • ENTERPRISE SDR</span>
+                            </div>
+                        </div>
+                        <div class="voice-quote" id="t_quote_mateo">
+                            "Let me jump in—you're right that legacy bots feel robotic. But because we stream neural audio tokens directly, I can hear your hesitation and adapt instantly."
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_mateo">
+                        <button class="play-btn" onclick="toggleAudio('mateo', 'audio/mateo_enterprise.mp3')">▶</button>
+                        <div class="wave-container" id="waves_mateo"></div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--emerald);">180ms</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Elena Concierge -->
+                <div class="voice-card">
+                    <div>
+                        <div class="voice-card-header">
+                            <div class="voice-avatar female">✨</div>
+                            <div class="voice-meta">
+                                <h3>Elena Rostova</h3>
+                                <span>EMBEDDING: VARF0.pt • CONCIERGE &amp; QUALIFIER</span>
+                            </div>
+                        </div>
+                        <div class="voice-quote" id="t_quote_elena">
+                            "Welcome to Ranuk IT Solutions! Are you looking for custom AI agents, or did you want to schedule an urgent $400 ADA compliance audit?"
+                        </div>
+                    </div>
+                    <div class="audio-player-box" id="player_elena">
+                        <button class="play-btn" onclick="toggleAudio('elena', 'audio/elena_concierge.mp3')">▶</button>
+                        <div class="wave-container" id="waves_elena"></div>
+                        <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--amber);">180ms</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1-line Integration snippet -->
+        <section class="snippet-box">
+            <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;color:#fff;" id="t_snippet_title">⚡ 1-Line Drop-In Integration</h2>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:18px;" id="t_snippet_sub">Add our lightweight floating voice closer to your Webflow, WordPress, Shopify, or React landing page with zero dependencies.</p>
+            <div class="code-block">
+                &lt;script src="https://ranuk.dev/assets/ranuk-voice-widget.js" defer&gt;&lt;/script&gt;
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <h2 class="section-title" id="t_pricing_title">💳 Simple B2B Pricing</h2>
+            <p class="section-sub" id="t_pricing_sub">Deploy your autonomous voice agent today. Cancel anytime.</p>
+
+            <div class="pricing-grid">
+                <!-- Tier 1 -->
+                <div class="price-card">
+                    <div>
+                        <div class="price-header">
+                            <h3 id="t_plan1_name">Starter Pilot</h3>
+                            <p id="t_plan1_sub">For founders & solo consultants testing voice inbound.</p>
+                        </div>
+                        <div class="price-val">$199<span>/mo</span></div>
+                        <ul class="feature-list" id="t_plan1_feats">
+                            <li>1 Domain / Website</li>
+                            <li>500 Voice Minutes Included</li>
+                            <li>Cal.com Meeting Handoff</li>
+                            <li>Standard 180ms Response Latency</li>
+                            <li>Bilingual (English &amp; Español)</li>
+                        </ul>
+                    </div>
+                    <a href="https://buy.stripe.com/" target="_blank" rel="noopener" class="btn-secondary" style="text-align:center;" id="t_plan1_btn">Deploy Starter</a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="price-card featured">
+                    <span class="featured-tag">MOST POPULAR</span>
+                    <div>
+                        <div class="price-header">
+                            <h3 id="t_plan2_name">Growth Closer</h3>
+                            <p id="t_plan2_sub">For agencies & high-ticket B2B businesses.</p>
+                        </div>
+                        <div class="price-val">$499<span>/mo</span></div>
+                        <ul class="feature-list" id="t_plan2_feats">
+                            <li>Up to 3 Domains / Websites</li>
+                            <li>2,500 Voice Minutes Included</li>
+                            <li>Stripe Checkout Payment Handoff</li>
+                            <li>Custom &lt;system&gt; Telemetry Prompts</li>
+                            <li>18 Native PersonaPlex Voice Embeddings</li>
+                            <li>Slack / Webhook Event Alerts</li>
+                        </ul>
+                    </div>
+                    <a href="https://buy.stripe.com/" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center;" id="t_plan2_btn">Deploy Growth Closer</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="price-card">
+                    <div>
+                        <div class="price-header">
+                            <h3 id="t_plan3_name">Enterprise Setup</h3>
+                            <p id="t_plan3_sub">Turnkey deployment, CRM sync & SLA guarantee.</p>
+                        </div>
+                        <div class="price-val">$1,200<span> setup</span></div>
+                        <ul class="feature-list" id="t_plan3_feats">
+                            <li>Complete White-Label Widget</li>
+                            <li>Dedicated Fine-Tuned Voice Persona</li>
+                            <li>HubSpot, Salesforce & Stripe Integration</li>
+                            <li>Custom LLM Knowledge Base Sync</li>
+                            <li>24/7 Monitoring & SLA Guarantee</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:ranucoliemilio@gmail.com?subject=Enterprise%20Voice%20Closer%20Inquiry" class="btn-secondary" style="text-align:center;" id="t_plan3_btn">Talk to Engineering</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const TRANSLATIONS = {
+            en: {
+                brand: "RANUK IT SOLUTIONS • VOICE CLOSER",
+                back: "← Back",
+                arena: "⚡ Pitch Arena",
+                debates: "🎙️ Debates",
+                eyebrow: "⚡ 24/7 INBOUND SALES • NATIVE S2S • ZERO CHATBOTS",
+                hero_title: "Turn your website into a 24/7 AI Voice Closer that actually closes.",
+                hero_sub: "Eliminate the 3-second delay of traditional voice bots. Powered by NVIDIA PersonaPlex 7B, our voice closer talks and listens simultaneously at 24kHz, resolves objections mid-sentence, and drives leads straight to Stripe checkout.",
+                btn_demo: "▶ Listen to Live Personas",
+                btn_pricing: "💳 View B2B Pricing",
+                demo_title: "🎙️ Battle-Tested Voice Personas",
+                demo_sub: "Click play to hear real 24kHz audio streams generated natively with zero text intermediate.",
+                quote_sanni: "\"I see your card transaction was declined in Miami because your primary residence is Seattle. Would you like me to authorize and re-process it right now?\"",
+                quote_mateo: "\"Let me jump in—you're right that legacy bots feel robotic. But because we stream neural audio tokens directly, I can hear your hesitation and adapt instantly.\"",
+                quote_elena: "\"Welcome to Ranuk IT Solutions! Are you looking for custom AI agents, or did you want to schedule an urgent $400 ADA compliance audit?\"",
+                snippet_title: "⚡ 1-Line Drop-In Integration",
+                snippet_sub: "Add our lightweight floating voice closer to your Webflow, WordPress, Shopify, or React landing page with zero dependencies.",
+                pricing_title: "💳 Simple B2B Pricing",
+                pricing_sub: "Deploy your autonomous voice agent today. Cancel anytime.",
+                plan1_name: "Starter Pilot",
+                plan1_sub: "For founders & solo consultants testing voice inbound.",
+                plan1_btn: "Deploy Starter",
+                plan2_name: "Growth Closer",
+                plan2_sub: "For agencies & high-ticket B2B businesses.",
+                plan2_btn: "Deploy Growth Closer",
+                plan3_name: "Enterprise Setup",
+                plan3_sub: "Turnkey deployment, CRM sync & SLA guarantee.",
+                plan3_btn: "Talk to Engineering"
+            },
+            es: {
+                brand: "RANUK IT SOLUTIONS • VOICE CLOSER",
+                back: "← Volver",
+                arena: "⚡ Pitch Arena",
+                debates: "🎙️ Debates",
+                eyebrow: "⚡ VENTAS INBOUND 24/7 • SPEECH-TO-SPEECH • CERO CHATBOTS",
+                hero_title: "Convierte tu sitio web en un Closer de Ventas por Voz que realmente cierra.",
+                hero_sub: "Elimina la demora de 3 segundos de los bots tradicionales. Con el poder de NVIDIA PersonaPlex 7B, nuestro closer habla y escucha a la vez a 24kHz, resuelve objeciones en caliente y deriva pagos directo a Stripe.",
+                btn_demo: "▶ Escuchar Voces en Vivo",
+                btn_pricing: "💳 Ver Planes B2B",
+                demo_title: "🎙️ Voces de Venta Probadas en Producción",
+                demo_sub: "Presiona reproducir para escuchar audio nativo a 24kHz sin capas intermedias de texto.",
+                quote_sanni: "\"Veo que tu pago fue rechazado en Miami porque tu residencia habitual es Seattle. ¿Deseas que lo autorice y lo reprocesemos ahora mismo?\"",
+                quote_mateo: "\"Permíteme interrumpir: tienes razón en que los bots viejos suenan rígidos. Pero al transmitir audio neuronal directo, detecto tu duda y me adapto al instante.\"",
+                quote_elena: "\"¡Bienvenido a Ranuk IT Solutions! ¿Buscas agentes de software a medida o deseas agendar una auditoría urgente de accesibilidad ADA de $400?\"",
+                snippet_title: "⚡ Instalación en 1 Sola Línea",
+                snippet_sub: "Agrega el widget flotante a tu Webflow, WordPress, Shopify o React sin dependencias externas.",
+                pricing_title: "💳 Precios B2B Transparentes",
+                pricing_sub: "Despliega tu closer de voz autónomo hoy mismo. Cancela cuando quieras.",
+                plan1_name: "Piloto Starter",
+                plan1_sub: "Para founders y consultores probando ventas por voz.",
+                plan1_btn: "Contratar Starter",
+                plan2_name: "Growth Closer",
+                plan2_sub: "Para agencias y negocios B2B de alto ticket.",
+                plan2_btn: "Contratar Growth Closer",
+                plan3_name: "Setup Enterprise",
+                plan3_sub: "Instalación llave en mano, sincronización CRM y SLA.",
+                plan3_btn: "Hablar con Ingeniería"
+            },
+            it: {
+                brand: "RANUK IT SOLUTIONS • VOICE CLOSER",
+                back: "← Torna",
+                arena: "⚡ Pitch Arena",
+                debates: "🎙️ Dibattiti",
+                eyebrow: "⚡ VENDITE INBOUND 24/7 • SPEECH-TO-SPEECH • ZERO CHATBOT",
+                hero_title: "Trasforma il tuo sito web in un Closer Vocale AI che converte davvero.",
+                hero_sub: "Elimina il ritardo di 3 secondi dei bot tradizionali. Grazie a NVIDIA PersonaPlex 7B, il nostro closer parla e ascolta contemporaneamente a 24kHz, gestisce le obiezioni all'istante e porta i clienti su Stripe.",
+                btn_demo: "▶ Ascolta le Voci dal Vivo",
+                btn_pricing: "💳 Vedi Piani B2B",
+                demo_title: "🎙️ Voci di Vendita Testate in Produzione",
+                demo_sub: "Clicca su play per ascoltare audio nativo a 24kHz senza passaggi intermedi di testo.",
+                quote_sanni: "\"Vedo che il pagamento è stato rifiutato a Miami poiché la residenza è a Seattle. Vuole che autorizzi e ripeta la transazione adesso?\"",
+                quote_mateo: "\"Mi permetta di intervenire: i vecchi bot sembravano rigidi. Ma trasmettendo token audio neurali, sento le sue esitazioni e mi adatto subito.\"",
+                quote_elena: "\"Benvenuto in Ranuk IT Solutions! Cerca agenti AI su misura o desidera prenotare un audit di conformità ADA da $400?\"",
+                snippet_title: "⚡ Integrazione in 1 Sola Riga",
+                snippet_sub: "Aggiungi il widget vocale al tuo sito Webflow, WordPress, Shopify o React senza dipendenze.",
+                pricing_title: "💳 Prezzi B2B Trasparenti",
+                pricing_sub: "Attiva il tuo agente vocale autonomo oggi. Disdici in qualsiasi momento.",
+                plan1_name: "Pilota Starter",
+                plan1_sub: "Per fondatori e consulenti che testano le vendite vocali.",
+                plan1_btn: "Attiva Starter",
+                plan2_name: "Growth Closer",
+                plan2_sub: "Per agenzie e aziende B2B ad alto valore.",
+                plan2_btn: "Attiva Growth Closer",
+                plan3_name: "Setup Enterprise",
+                plan3_sub: "Installazione completa, integrazione CRM e SLA garantito.",
+                plan3_btn: "Parla con gli Ingegneri"
+            }
+        };
+
+        let currentLang = localStorage.getItem('ranuk_lang') || (navigator.language.startsWith('es') ? 'es' : (navigator.language.startsWith('it') ? 'it' : 'en'));
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ranuk_lang', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+            document.getElementById('t_brand').textContent = t.brand;
+            document.getElementById('t_nav_back').textContent = t.back;
+            document.getElementById('t_nav_arena').textContent = t.arena;
+            document.getElementById('t_nav_debates').textContent = t.debates;
+            document.getElementById('t_eyebrow').textContent = t.eyebrow;
+            document.getElementById('t_hero_title').textContent = t.hero_title;
+            document.getElementById('t_hero_sub').textContent = t.hero_sub;
+            document.getElementById('t_btn_demo').textContent = t.btn_demo;
+            document.getElementById('t_btn_pricing').textContent = t.btn_pricing;
+            document.getElementById('t_demo_title').textContent = t.demo_title;
+            document.getElementById('t_demo_sub').textContent = t.demo_sub;
+            document.getElementById('t_quote_sanni').textContent = t.quote_sanni;
+            document.getElementById('t_quote_mateo').textContent = t.quote_mateo;
+            document.getElementById('t_quote_elena').textContent = t.quote_elena;
+            document.getElementById('t_snippet_title').textContent = t.snippet_title;
+            document.getElementById('t_snippet_sub').textContent = t.snippet_sub;
+            document.getElementById('t_pricing_title').textContent = t.pricing_title;
+            document.getElementById('t_pricing_sub').textContent = t.pricing_sub;
+            document.getElementById('t_plan1_name').textContent = t.plan1_name;
+            document.getElementById('t_plan1_sub').textContent = t.plan1_sub;
+            document.getElementById('t_plan1_btn').textContent = t.plan1_btn;
+            document.getElementById('t_plan2_name').textContent = t.plan2_name;
+            document.getElementById('t_plan2_sub').textContent = t.plan2_sub;
+            document.getElementById('t_plan2_btn').textContent = t.plan2_btn;
+            document.getElementById('t_plan3_name').textContent = t.plan3_name;
+            document.getElementById('t_plan3_sub').textContent = t.plan3_sub;
+            document.getElementById('t_plan3_btn').textContent = t.plan3_btn;
+        }
+
+        // Setup wave bars
+        ['sanni', 'mateo', 'elena'].forEach(id => {
+            const container = document.getElementById('waves_' + id);
+            for (let i = 0; i < 24; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'wave-bar';
+                bar.style.height = (25 + Math.random() * 55) + '%';
+                container.appendChild(bar);
+            }
+        });
+
+        // Audio Player Controller
+        let currentAudio = null;
+        let activeId = null;
+
+        function toggleAudio(id, src) {
+            const playerBox = document.getElementById('player_' + id);
+            const btn = playerBox.querySelector('.play-btn');
+
+            if (currentAudio && activeId === id) {
+                if (currentAudio.paused) {
+                    currentAudio.play();
+                    btn.textContent = '⏸';
+                    playerBox.classList.add('playing');
+                } else {
+                    currentAudio.pause();
+                    btn.textContent = '▶';
+                    playerBox.classList.remove('playing');
+                }
+                return;
+            }
+
+            if (currentAudio) {
+                currentAudio.pause();
+                document.querySelectorAll('.audio-player-box').forEach(el => el.classList.remove('playing'));
+                document.querySelectorAll('.play-btn').forEach(b => b.textContent = '▶');
+            }
+
+            currentAudio = new Audio(src);
+            activeId = id;
+            btn.textContent = '⏸';
+            playerBox.classList.add('playing');
+
+            currentAudio.play().catch(() => {});
+            currentAudio.onended = () => {
+                btn.textContent = '▶';
+                playerBox.classList.remove('playing');
+                currentAudio = null;
+                activeId = null;
+            };
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+        });
+
+        setLanguage(currentLang);
+    </script>
+    <script src="../assets/ranuk-voice-widget.js" defer></script>
+</body>
+</html>
