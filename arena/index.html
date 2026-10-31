@@ -14,6 +14,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Ranuk Pitch Arena",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "url": "https://ranuk.dev/arena/",
+          "description": "Adversarial voice sparring simulator powered by NVIDIA PersonaPlex 7B. Spar live against a skeptical Silicon Valley VC, angry enterprise VP, strict CISO auditor, or Mars reactor crisis with Base USDC x402 micropayments.",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "0.25",
+            "highPrice": "499",
+            "offerCount": "3"
+          },
+          "creator": {
+            "@type": "Organization",
+            "name": "Ranuk IT Solutions",
+            "url": "https://ranuk.dev/"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Ranuk Pitch Arena?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is an adversarial voice simulator allowing founders, sales representatives, and engineers to spar against hostile objections with zero script and 180ms real-time audio interruptions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do machine-to-machine x402 micropayments work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Autonomous agents pay 0.25 Base USDC per session directly over the HTTP 402 protocol with no credit card or account registration required."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
             --bg-deep: #05070e;
@@ -234,8 +282,52 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.95rem;
-            max-width: 680px;
+            max-width: 820px;
             margin: 0 auto 38px;
+            line-height: 1.6;
+        }
+
+        /* Value Proposition & Explainer Cards */
+        .value-banner {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(0, 240, 255, 0.05) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 34px 28px;
+            margin-bottom: 56px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 26px;
+        }
+        .why-card {
+            background: rgba(6, 10, 19, 0.70);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.2s;
+        }
+        .why-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+        .why-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .why-card h3 {
+            font-size: 1.10rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
         /* 4 Challengers Soundboard Grid */
@@ -249,7 +341,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
             border-radius: 20px;
-            padding: 24px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -266,48 +358,82 @@
             border-color: var(--cyan);
             box-shadow: 0 0 25px rgba(0, 240, 255, 0.20);
         }
+        .challenger-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
         .challenger-badge {
-            position: absolute;
-            top: 14px;
-            right: 14px;
             font-family: 'Fira Code', monospace;
-            font-size: 0.65rem;
-            font-weight: 700;
+            font-size: 0.68rem;
+            font-weight: 800;
             padding: 3px 8px;
             border-radius: 6px;
             background: rgba(244, 63, 94, 0.18);
             color: #fca5a5;
             border: 1px solid rgba(244, 63, 94, 0.35);
+            display: inline-flex;
+            align-items: center;
+            letter-spacing: 0.04em;
         }
         .challenger-badge.badge-crisis {
             background: rgba(239, 68, 68, 0.25);
             color: #fecaca;
             border-color: rgba(239, 68, 68, 0.50);
         }
+        .challenger-latency-pill {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.68rem;
+            color: var(--cyan);
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
         .challenger-header {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         .challenger-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(168, 85, 247, 0.20));
             border: 1px solid rgba(244, 63, 94, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+        .challenger-meta {
+            overflow: hidden;
+            width: 100%;
         }
         .challenger-meta h3 {
             font-size: 1.05rem;
             font-weight: 800;
             color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .challenger-meta span {
             font-family: 'Fira Code', monospace;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
             font-size: 0.70rem;
             color: var(--text-muted);
             display: block;
@@ -726,7 +852,7 @@
 
     <header class="topbar">
         <a href="../" class="brand">
-            <img src="../assets/minilogo.png" alt="Ranuk Logo">
+            <img src="../assets/minilogo.png" alt="Ranuk Logo" onerror="this.onerror=null; this.src='../assets/ranuk-logo.svg';">
             <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; PITCH ARENA</span>
         </a>
         <div class="nav-right">
@@ -757,16 +883,45 @@
             </div>
         </section>
 
+        <!-- Value Proposition / Why Us Section -->
+        <section class="value-banner">
+            <div style="text-align:center;max-width:820px;margin:0 auto 20px;">
+                <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--rose);letter-spacing:0.06em;text-transform:uppercase;" id="t_why_eyebrow">⚡ LA PRIMERA ARENA DE SPARRING VOCAL ADVERSARIAL</span>
+                <h2 style="font-size:1.65rem;font-weight:900;color:#fff;margin-top:6px;" id="t_why_title">¿Por qué entrenar aquí antes de tu próxima reunión decisiva?</h2>
+                <p style="color:var(--text-muted);font-size:0.92rem;margin-top:8px;" id="t_why_sub">Los chatbots de texto tradicionales no te preparan para la tensión real. En una llamada con un fondo de inversión o un cliente furioso, el titubeo y los silencios te hacen perder millones.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3 id="t_why1_title">Voz Neuronal 24kHz sin Retardos</h3>
+                    <p id="t_why1_desc">A diferencia de los bots que tardan 3 segundos en transcribir y responder, NVIDIA PersonaPlex 7B tiene 180ms de latencia: responde más rápido que el tiempo de reacción humano.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎙️</div>
+                    <h3 id="t_why2_title">Full-Duplex: Te Interrumpe en Vivo</h3>
+                    <p id="t_why2_desc">No espera pacientemente su turno. Si tu argumento tiene agujeros, el adversario te corta a mitad de frase, detecta dudas en tu tono y te obliga a defender tu tesis en caliente.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3 id="t_why3_title">Entorno Seguro de Alto Riesgo</h3>
+                    <p id="t_why3_desc">Comete errores aquí, no frente a Andreessen Horowitz ni ante tu cliente más grande. Pule tus respuestas 50 veces hasta que tus objeciones sean indestructibles.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 4 Challengers Section -->
         <section id="challengers">
             <h2 class="section-title" id="t_sec_challengers">🎙️ 4 Adversarial Sparring Personas</h2>
-            <p class="section-sub" id="t_sub_challengers">Click play to hear 24kHz native PersonaPlex audio streams with zero script and 180ms response latency.</p>
+            <p class="section-sub" id="t_sub_challengers">Presiona reproducir para escuchar audio nativo a 24kHz sin guiones intermedios y latencia de respuesta de 180ms.</p>
 
             <div class="soundboard-grid">
                 <!-- Challenger 1: Skeptical VC -->
                 <div class="challenger-card" id="card_vc">
-                    <span class="challenger-badge">HOSTILITY: 94%</span>
                     <div>
+                        <div class="challenger-top-bar">
+                            <span class="challenger-badge">HOSTILITY: 94%</span>
+                            <span class="challenger-latency-pill">⚡ 180ms</span>
+                        </div>
                         <div class="challenger-header">
                             <div class="challenger-avatar">💼</div>
                             <div class="challenger-meta">
@@ -792,8 +947,11 @@
 
                 <!-- Challenger 2: Angry Enterprise Client -->
                 <div class="challenger-card" id="card_client">
-                    <span class="challenger-badge">HOSTILITY: 98%</span>
                     <div>
+                        <div class="challenger-top-bar">
+                            <span class="challenger-badge">HOSTILITY: 98%</span>
+                            <span class="challenger-latency-pill">⚡ 180ms</span>
+                        </div>
                         <div class="challenger-header">
                             <div class="challenger-avatar">🔥</div>
                             <div class="challenger-meta">
@@ -819,8 +977,11 @@
 
                 <!-- Challenger 3: Strict CISO Auditor -->
                 <div class="challenger-card" id="card_ciso">
-                    <span class="challenger-badge">HOSTILITY: 91%</span>
                     <div>
+                        <div class="challenger-top-bar">
+                            <span class="challenger-badge">HOSTILITY: 91%</span>
+                            <span class="challenger-latency-pill">⚡ 180ms</span>
+                        </div>
                         <div class="challenger-header">
                             <div class="challenger-avatar">🛡️</div>
                             <div class="challenger-meta">
@@ -846,8 +1007,11 @@
 
                 <!-- Challenger 4: Mars Reactor Emergency -->
                 <div class="challenger-card" id="card_mars">
-                    <span class="challenger-badge badge-crisis">CRISIS: 100%</span>
                     <div>
+                        <div class="challenger-top-bar">
+                            <span class="challenger-badge badge-crisis">CRISIS: 100%</span>
+                            <span class="challenger-latency-pill">⚡ 180ms</span>
+                        </div>
                         <div class="challenger-header">
                             <div class="challenger-avatar">🚨</div>
                             <div class="challenger-meta">
@@ -1063,6 +1227,15 @@
                 btn_spar: "▶ Spar With Challengers",
                 btn_sim: "🧪 Test Resilience Simulator",
                 btn_x402: "⚡ Machine x402 Terminal",
+                why_eyebrow: "⚡ THE WORLD'S FIRST ADVERSARIAL VOICE SPARRING ARENA",
+                why_title: "Why train here before your next make-or-break meeting?",
+                why_sub: "Traditional text chatbots don't prepare you for raw human pressure. On a live pitch with a top VC or an enraged enterprise client, hesitating for two seconds costs you millions.",
+                why1_title: "24kHz Neural Audio with Zero Delay",
+                why1_desc: "Unlike legacy voice bots that take 3+ seconds to transcribe and answer, PersonaPlex 7B streams at 180ms latency—faster than human reaction speed.",
+                why2_title: "Full-Duplex: Live Real-Time Interruptions",
+                why2_desc: "It doesn't wait politely for you to finish. If your thesis has weak spots, challengers cut you off mid-sentence, detect vocal hesitation, and force you to defend on your feet.",
+                why3_title: "High-Stakes Private Safe Haven",
+                why3_desc: "Make mistakes here, not in front of Andreessen Horowitz or your biggest enterprise customer. Polish your objections 50 times until your pitch is bulletproof.",
                 sec_challengers: "🎙️ 4 Adversarial Sparring Personas",
                 sub_challengers: "Click play to hear 24kHz native PersonaPlex audio streams with zero script and 180ms response latency.",
                 quote_vc: "\"Your CAC is $850, LTV is $600, and your 'defensibility' is a wrapper around an open-weights model. Why wouldn't OpenAI ship this natively next Tuesday and erase your entire business?\"",
@@ -1101,6 +1274,15 @@
                 btn_spar: "▶ Sparring con Contendientes",
                 btn_sim: "🧪 Simulador de Resiliencia",
                 btn_x402: "⚡ Terminal x402 Máquina",
+                why_eyebrow: "⚡ LA PRIMERA ARENA DE SPARRING VOCAL ADVERSARIAL",
+                why_title: "¿Por qué entrenar aquí antes de tu próxima reunión decisiva?",
+                why_sub: "Los chatbots de texto tradicionales no te preparan para la tensión real. En una llamada con un fondo de inversión o un cliente furioso, el titubeo y los silencios te hacen perder millones.",
+                why1_title: "Voz Neuronal 24kHz sin Retardos",
+                why1_desc: "A diferencia de los bots que tardan 3 segundos en transcribir y responder, NVIDIA PersonaPlex 7B tiene 180ms de latencia: responde más rápido que el tiempo de reacción humano.",
+                why2_title: "Full-Duplex: Te Interrumpe en Vivo",
+                why2_desc: "No espera pacientemente su turno. Si tu argumento tiene agujeros, el adversario te corta a mitad de frase, detecta dudas en tu tono y te obliga a defender tu tesis en caliente.",
+                why3_title: "Entorno Seguro de Alto Riesgo",
+                why3_desc: "Comete errores aquí, no frente a Andreessen Horowitz ni ante tu cliente más grande. Pule tus respuestas 50 veces hasta que tus objeciones sean indestructibles.",
                 sec_challengers: "🎙️ 4 Personas Adversariales de Sparring",
                 sub_challengers: "Presiona reproducir para escuchar audio nativo a 24kHz sin guiones intermedios y latencia de 180ms.",
                 quote_vc: "\"Tu CAC es $850, tu LTV es $600, y tu 'ventaja competitiva' es un wrapper sobre un modelo abierto. ¿Por qué OpenAI no lanzaría esto el martes que viene borrando tu negocio por completo?\"",
@@ -1139,6 +1321,15 @@
                 btn_spar: "▶ Sparring con i Challenger",
                 btn_sim: "🧪 Simulatore di Resilienza",
                 btn_x402: "⚡ Terminale x402 Machine",
+                why_eyebrow: "⚡ LA PRIMA ARENA DI SPARRING VOCALE AVVERSARIALE",
+                why_title: "Perché allenarti qui prima della tua prossima riunione decisiva?",
+                why_sub: "I chatbot testuali tradizionali non ti preparano alla pressione reale. In un pitch con un fondo VC o un cliente arrabbiato, esitare due secondi costa milioni.",
+                why1_title: "Audio Neurale 24kHz senza Ritardo",
+                why1_desc: "A differenza dei vecchi bot che impiegano 3 secondi per trascrivere e rispondere, PersonaPlex 7B ha una latenza di 180ms: più veloce della reazione umana.",
+                why2_title: "Full-Duplex: Ti Interrompe dal Vivo",
+                why2_desc: "Non aspetta pazientemente la fine della frase. Se la tua argomentazione mostra debolezze, l'avversario ti interrompe a metà parola e ti mette alla prova.",
+                why3_title: "Palestra Protetta ad Alto Rischio",
+                why3_desc: "Sbaglia qui, non davanti ad Andreessen Horowitz o al tuo cliente più importante. Affina le tue risposte finché le tue difese non saranno inattaccabili.",
                 sec_challengers: "🎙️ 4 Personalità Avversariali di Sparring",
                 sub_challengers: "Clicca play per ascoltare audio nativo a 24kHz senza passaggi intermedi di testo con latenza di 180ms.",
                 quote_vc: "\"Il tuo CAC è $850, il tuo LTV è $600 e il tuo 'fossato difensivo' è un wrapper attorno a un modello open source. Perché OpenAI non dovrebbe lanciare la stessa funzione martedì prossimo?\"",
@@ -1197,6 +1388,15 @@
             document.getElementById('t_btn_spar').textContent = t.btn_spar;
             document.getElementById('t_btn_sim').textContent = t.btn_sim;
             document.getElementById('t_btn_x402').textContent = t.btn_x402;
+            document.getElementById('t_why_eyebrow').textContent = t.why_eyebrow;
+            document.getElementById('t_why_title').textContent = t.why_title;
+            document.getElementById('t_why_sub').textContent = t.why_sub;
+            document.getElementById('t_why1_title').textContent = t.why1_title;
+            document.getElementById('t_why1_desc').textContent = t.why1_desc;
+            document.getElementById('t_why2_title').textContent = t.why2_title;
+            document.getElementById('t_why2_desc').textContent = t.why2_desc;
+            document.getElementById('t_why3_title').textContent = t.why3_title;
+            document.getElementById('t_why3_desc').textContent = t.why3_desc;
             document.getElementById('t_sec_challengers').textContent = t.sec_challengers;
             document.getElementById('t_sub_challengers').textContent = t.sub_challengers;
             document.getElementById('t_quote_vc').textContent = t.quote_vc;
@@ -1367,5 +1567,6 @@
         setPreset(1);
         setLanguage(currentLang);
     </script>
+    <script defer src="../js/ranuk-analytics.js"></script>
 </body>
 </html>
