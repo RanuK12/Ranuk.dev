@@ -14,6 +14,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Ranuk Voice Closer",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://ranuk.dev/closer/",
+          "description": "Full-Duplex 180ms autonomous AI voice sales closer powered by NVIDIA PersonaPlex 7B native speech-to-speech architecture. Handles live inbound objections and closes Stripe checkout in real-time.",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "199",
+            "highPrice": "1200",
+            "offerCount": "3"
+          },
+          "creator": {
+            "@type": "Organization",
+            "name": "Ranuk IT Solutions",
+            "url": "https://ranuk.dev/"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does Ranuk Voice Closer achieve 180ms response latency?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "By utilizing NVIDIA PersonaPlex 7B native 24kHz dual-channel speech-to-speech tokens, removing traditional cascading speech-to-text and text-to-speech intermediate bottlenecks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a user interrupt the AI voice closer while it is speaking?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It operates in full-duplex mode, listening continuously while speaking and modulating its tone or yielding naturally when interrupted."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
             --bg-deep: #060913;
@@ -429,13 +477,56 @@
             overflow-x: auto;
             position: relative;
         }
+
+        /* Value Proposition & Explainer Cards */
+        .value-banner {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.08) 0%, rgba(16, 235, 155, 0.05) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 34px 28px;
+            margin-bottom: 56px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 26px;
+        }
+        .why-card {
+            background: rgba(6, 10, 19, 0.70);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.2s;
+        }
+        .why-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+        .why-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .why-card h3 {
+            font-size: 1.10rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
     <header class="topbar">
         <a href="../" class="brand">
-            <img src="../assets/minilogo.png" alt="Ranuk Logo">
+            <img src="../assets/minilogo.png" alt="Ranuk Logo" onerror="this.onerror=null; this.src='../assets/ranuk-logo.svg';">
             <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; VOICE CLOSER</span>
         </a>
         <div class="nav-right">
@@ -461,6 +552,32 @@
             <div class="hero-actions">
                 <a href="#demo" class="btn-primary" id="t_btn_demo">▶ Listen to Live Personas</a>
                 <a href="#pricing" class="btn-secondary" id="t_btn_pricing">💳 View B2B Pricing</a>
+            </div>
+        </section>
+
+        <!-- Value Proposition / Why Us Section -->
+        <section class="value-banner">
+            <div style="text-align:center;max-width:820px;margin:0 auto 20px;">
+                <span style="font-family:'Fira Code', monospace;font-size:0.75rem;color:var(--cyan);letter-spacing:0.06em;text-transform:uppercase;" id="t_why_eyebrow">⚡ EL PROBLEMA DE LOS CHATBOTS TRADICIONALES</span>
+                <h2 style="font-size:1.65rem;font-weight:900;color:#fff;margin-top:6px;" id="t_why_title">El 70% de tus visitantes abandonan tu web antes de llenar un formulario.</h2>
+                <p style="color:var(--text-muted);font-size:0.92rem;margin-top:8px;" id="t_why_sub">Los chatbots de texto y las llamadas de voz tradicionales con pausas de 3 segundos matan tus ventas. Tus clientes quieren respuestas por voz humana inmediatas, resolver objeciones y poder pagar en el acto.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3 id="t_why1_title">180ms: Cero Silencio Incómodo</h3>
+                    <p id="t_why1_desc">Los bots basados en cadenas STT→LLM→TTS tardan de 2 a 4 segundos en hablar. Ranuk Voice Closer corre PersonaPlex 7B nativo a 24kHz: habla en 180ms, más rápido que un humano.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎙️</div>
+                    <h3 id="t_why2_title">Full-Duplex: Escucha e Interrumpe</h3>
+                    <p id="t_why2_desc">Si el visitante interrumpe para preguntar "¿Cuánto cuesta?" o pedir una aclaración, el closer modula su tono en tiempo real, cede la palabra y responde con empatía.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💳</div>
+                    <h3 id="t_why3_title">Cierre Directo en Stripe & Cal.com</h3>
+                    <p id="t_why3_desc">No es un bot informativo: es un closer de ventas. Guía al comprador, despeja dudas de pricing, y envía el checkout de Stripe o agenda la demo calificada en tu calendario.</p>
+                </div>
             </div>
         </section>
 
@@ -625,6 +742,15 @@
                 hero_sub: "Eliminate the 3-second delay of traditional voice bots. Powered by NVIDIA PersonaPlex 7B, our voice closer talks and listens simultaneously at 24kHz, resolves objections mid-sentence, and drives leads straight to Stripe checkout.",
                 btn_demo: "▶ Listen to Live Personas",
                 btn_pricing: "💳 View B2B Pricing",
+                why_eyebrow: "⚡ THE PROBLEM WITH LEGACY CHATBOTS",
+                why_title: "70% of web visitors bounce before filling out a contact form.",
+                why_sub: "Text chatbots and traditional voice bots with 3-second delays kill your conversion rate. Customers want immediate human-speed voice answers, objection resolution, and frictionless payment.",
+                why1_title: "180ms: Zero Awkward Silence",
+                why1_desc: "Bots chained via STT→LLM→TTS take 2 to 4 seconds to respond. Ranuk Voice Closer runs native 24kHz PersonaPlex 7B: 180ms speech latency, faster than human response speed.",
+                why2_title: "Full-Duplex: Speaks & Listens Together",
+                why2_desc: "If the visitor interrupts to ask 'How much does it cost?' or request clarification, the closer smoothly yields mid-sentence, modulates tone, and replies with empathy.",
+                why3_title: "Direct Close via Stripe & Cal.com",
+                why3_desc: "This isn't an FAQ bot—it's a sales closer. It qualifies the prospect, removes pricing doubts, and hands off the Stripe checkout link or books a meeting on your calendar.",
                 demo_title: "🎙️ Battle-Tested Voice Personas",
                 demo_sub: "Click play to hear real 24kHz audio streams generated natively with zero text intermediate.",
                 quote_sanni: "\"I see your card transaction was declined in Miami because your primary residence is Seattle. Would you like me to authorize and re-process it right now?\"",
@@ -654,6 +780,15 @@
                 hero_sub: "Elimina la demora de 3 segundos de los bots tradicionales. Con el poder de NVIDIA PersonaPlex 7B, nuestro closer habla y escucha a la vez a 24kHz, resuelve objeciones en caliente y deriva pagos directo a Stripe.",
                 btn_demo: "▶ Escuchar Voces en Vivo",
                 btn_pricing: "💳 Ver Planes B2B",
+                why_eyebrow: "⚡ EL PROBLEMA DE LOS CHATBOTS TRADICIONALES",
+                why_title: "El 70% de tus visitantes abandonan tu web antes de llenar un formulario.",
+                why_sub: "Los chatbots de texto y las llamadas de voz tradicionales con pausas de 3 segundos matan tus ventas. Tus clientes quieren respuestas por voz humana inmediatas, resolver objeciones y poder pagar en el acto.",
+                why1_title: "180ms: Cero Silencio Incómodo",
+                why1_desc: "Los bots basados en cadenas STT→LLM→TTS tardan de 2 a 4 segundos en hablar. Ranuk Voice Closer corre PersonaPlex 7B nativo a 24kHz: habla en 180ms, más rápido que un humano.",
+                why2_title: "Full-Duplex: Escucha e Interrumpe",
+                why2_desc: "Si el visitante interrumpe para preguntar '¿Cuánto cuesta?' o pedir una aclaración, el closer modula su tono en tiempo real, cede la palabra y responde con empatía.",
+                why3_title: "Cierre Directo en Stripe & Cal.com",
+                why3_desc: "No es un bot informativo: es un closer de ventas. Guía al comprador, despeja dudas de pricing, y envía el checkout de Stripe o agenda la demo calificada en tu calendario.",
                 demo_title: "🎙️ Voces de Venta Probadas en Producción",
                 demo_sub: "Presiona reproducir para escuchar audio nativo a 24kHz sin capas intermedias de texto.",
                 quote_sanni: "\"Veo que tu pago fue rechazado en Miami porque tu residencia habitual es Seattle. ¿Deseas que lo autorice y lo reprocesemos ahora mismo?\"",
@@ -683,6 +818,15 @@
                 hero_sub: "Elimina il ritardo di 3 secondi dei bot tradizionali. Grazie a NVIDIA PersonaPlex 7B, il nostro closer parla e ascolta contemporaneamente a 24kHz, gestisce le obiezioni all'istante e porta i clienti su Stripe.",
                 btn_demo: "▶ Ascolta le Voci dal Vivo",
                 btn_pricing: "💳 Vedi Piani B2B",
+                why_eyebrow: "⚡ IL PROBLEMA DEI CHATBOT TRADIZIONALI",
+                why_title: "Il 70% dei visitatori abbandona il tuo sito prima di compilare un modulo.",
+                why_sub: "I chatbot testuali e i vecchi bot vocali con ritardi di 3 secondi azzerano le conversioni. I clienti desiderano risposte vocali umane istantanee e acquisti senza frizioni.",
+                why1_title: "180ms: Zero Silenzi Imbarazzanti",
+                why1_desc: "I bot basati sulla sequenza STT→LLM→TTS impiegano da 2 a 4 secondi per parlare. Ranuk Voice Closer sfrutta PersonaPlex 7B nativo a 24kHz: risposta in 180ms.",
+                why2_title: "Full-Duplex: Ascolta e Interrompe",
+                why2_desc: "Se il visitatore interrompe per chiedere chiarimenti sul prezzo, il closer modula il tono in tempo reale, cede la parola e risponde con empatia.",
+                why3_title: "Chiusura Diretta con Stripe & Cal.com",
+                why3_desc: "Non è un bot per FAQ: è un commerciale vocale autonomo. Qualifica il prospect, scioglie le obiezioni e invia il link Stripe o fissa l'appuntamento.",
                 demo_title: "🎙️ Voci di Vendita Testate in Produzione",
                 demo_sub: "Clicca su play per ascoltare audio nativo a 24kHz senza passaggi intermedi di testo.",
                 quote_sanni: "\"Vedo che il pagamento è stato rifiutato a Miami poiché la residenza è a Seattle. Vuole che autorizzi e ripeta la transazione adesso?\"",
@@ -725,6 +869,15 @@
             document.getElementById('t_hero_sub').textContent = t.hero_sub;
             document.getElementById('t_btn_demo').textContent = t.btn_demo;
             document.getElementById('t_btn_pricing').textContent = t.btn_pricing;
+            document.getElementById('t_why_eyebrow').textContent = t.why_eyebrow;
+            document.getElementById('t_why_title').textContent = t.why_title;
+            document.getElementById('t_why_sub').textContent = t.why_sub;
+            document.getElementById('t_why1_title').textContent = t.why1_title;
+            document.getElementById('t_why1_desc').textContent = t.why1_desc;
+            document.getElementById('t_why2_title').textContent = t.why2_title;
+            document.getElementById('t_why2_desc').textContent = t.why2_desc;
+            document.getElementById('t_why3_title').textContent = t.why3_title;
+            document.getElementById('t_why3_desc').textContent = t.why3_desc;
             document.getElementById('t_demo_title').textContent = t.demo_title;
             document.getElementById('t_demo_sub').textContent = t.demo_sub;
             document.getElementById('t_quote_sanni').textContent = t.quote_sanni;
@@ -804,5 +957,6 @@
         setLanguage(currentLang);
     </script>
     <script src="../assets/ranuk-voice-widget.js" defer></script>
+    <script src="../js/ranuk-analytics.js" defer></script>
 </body>
 </html>

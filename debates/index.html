@@ -15,6 +15,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "AI Debate Arena",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Web",
+          "url": "https://ranuk.dev/debates/",
+          "description": "Autonomous full-duplex 24kHz AI debates clashing with zero turn-taking rules powered by NVIDIA PersonaPlex 7B neural voice architecture.",
+          "creator": {
+            "@type": "Organization",
+            "name": "Ranuk IT Solutions",
+            "url": "https://ranuk.dev/"
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
             --bg-deep: #060913;
@@ -374,7 +394,7 @@
 
     <header class="topbar">
         <a href="../" class="brand">
-            <img src="episodes/minilogo.png" alt="Ranuk Logo">
+            <img src="episodes/minilogo.png" alt="Ranuk Logo" onerror="this.onerror=null; this.src='../assets/ranuk-logo.svg';">
             <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; AI DEBATE ARENA</span>
         </a>
         <div class="nav-right">
@@ -708,5 +728,6 @@
         setLanguage(currentLang);
     </script>
     <script src="../js/ranuk-voice-widget.js" defer></script>
+    <script src="../js/ranuk-analytics.js" defer></script>
 </body>
 </html>
