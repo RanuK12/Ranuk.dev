@@ -463,17 +463,19 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 0. Control de Acceso y Seguridad (PIN 5984 o Token)
-      var params = new URLSearchParams(window.location.search);
-      var authParam = params.get('auth') || params.get('key') || params.get('token');
-      if (authParam === '5984' || authParam === 'ranuk5984') {
-        localStorage.setItem('ranuk_auth_5984', 'true');
-        try {
-          window.history.replaceState({}, document.title, window.location.pathname);
-        } catch(e) {}
+      // 0. Control de Acceso Criptográfico con SHA-256 (PIN nunca en texto plano)
+      var VALID_HASHES = [
+        "62ff3751599d2e868251a61680c475d4e11ddb448b111cbdc29a823f56223a47", // hash sha-256
+        "c4bb543277487118f9d0e9b99bc70ab544c541defb126c56ae48fe65b5b8f4af"  // token sha-256
+      ];
+
+      async function computeHash(str) {
+        var buffer = new TextEncoder().encode(str);
+        var hashBuf = await crypto.subtle.digest('SHA-256', buffer);
+        var hashArr = Array.from(new Uint8Array(hashBuf));
+        return hashArr.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
       }
 
-      var isAuthed = localStorage.getItem('ranuk_auth_5984') === 'true';
       var gateEl = document.getElementById('security-gate');
       var mainEl = document.getElementById('dashboard-main');
 
@@ -483,25 +485,43 @@
       }
 
       function lock() {
-        localStorage.removeItem('ranuk_auth_5984');
+        localStorage.removeItem('ranuk_auth_token');
         gateEl.style.display = 'flex';
         mainEl.style.display = 'none';
         document.getElementById('pin-input').value = '';
         setTimeout(function() { document.getElementById('pin-input').focus(); }, 100);
       }
 
-      if (isAuthed) {
+      // Check current session
+      var savedToken = localStorage.getItem('ranuk_auth_token');
+      if (savedToken && VALID_HASHES.indexOf(savedToken) !== -1) {
         unlock();
       } else {
         lock();
       }
 
+      // Check URL parameters (?auth=... / ?token=...)
+      var params = new URLSearchParams(window.location.search);
+      var authParam = params.get('auth') || params.get('key') || params.get('token');
+      if (authParam) {
+        computeHash(authParam).then(function(h) {
+          if (VALID_HASHES.indexOf(h) !== -1) {
+            localStorage.setItem('ranuk_auth_token', h);
+            unlock();
+          }
+        });
+        try {
+          window.history.replaceState({}, document.title, window.location.pathname);
+        } catch(e) {}
+      }
+
       document.getElementById('btn-lock').addEventListener('click', lock);
 
-      function tryUnlock() {
+      async function tryUnlock() {
         var val = document.getElementById('pin-input').value.trim();
-        if (val === '5984' || val === 'ranuk5984') {
-          localStorage.setItem('ranuk_auth_5984', 'true');
+        var h = await computeHash(val);
+        if (VALID_HASHES.indexOf(h) !== -1) {
+          localStorage.setItem('ranuk_auth_token', h);
           document.getElementById('pin-error').style.display = 'none';
           unlock();
         } else {
