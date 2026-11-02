@@ -113,24 +113,26 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&family=Fraunces:wght@400;600;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous"></noscript>
-    <link rel="stylesheet" href="../css/styles.css?v=9d7d40d2">
+    <link rel="stylesheet" href="../css/styles.css?v=daf0d50b">
     <style>/* Critical CSS — above-the-fold styles inlined to eliminate render-blocking */
 :root{--bg-primary:#0a0a1a;--bg-secondary:#0f0f23;--accent:#64ffda;--text-primary:#ccd6f6;--text-secondary:#8892b0;--text-bright:#e6f1ff;--nav-height:70px;--font-main:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}.navbar{position:fixed;top:0;width:100%;z-index:1000;padding:1rem 2rem;transition:var(--transition)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;z-index:99999;color:var(--accent);font-family:var(--font-mono,'Fira Code',monospace);font-size:.875rem}
 </style>
     <link rel="stylesheet" href="../css/visual-refresh.css?v=6e2ea0a4">
+    <link rel="stylesheet" href="../css/antigravity.css?v=9dc31f83">
     <!-- GSAP + ScrollTrigger (SRI hashes applied) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
     <!-- Main Scripts -->
     <script src="../js/tech-showcase.js" defer></script>
-    <script src="../js/i18n.js?v=5d63507e" defer></script>
-    <script src="../js/particles.js?v=d7ab9656" defer></script>
-    <script src="../js/animations.js?v=22f9d79b" defer></script>
-    <script src="../js/cursor.js?v=1" defer></script>
-    <script src="../js/typed-header.js?v=1" defer></script>
+    <script src="../js/i18n.js?v=c8925a0a" defer></script>
+    <script src="../js/particles.js?v=67e3e18a" defer></script>
+    <script src="../js/animations.js?v=b65c9960" defer></script>
+    <script src="../js/cursor.js?v=28ea6674" defer></script>
+    <script src="../js/typed-header.js?v=56db3a49" defer></script>
     <script src="../js/ml-playground.js?v=66d897a6" defer></script>
-    <script src="../js/github-feed.js?v=813469d5" defer></script>
-    <script src="../js/app.js?v=9e58c11f" defer></script>
+    <script src="../js/github-feed.js?v=4cc0529a" defer></script>
+    <script src="../js/antigravity.js?v=eba82be8" defer></script>
+    <script src="../js/app.js?v=d21c4c3b" defer></script>
     <link rel="canonical" href="https://ranuk.dev/it/">
     <link rel="alternate" hreflang="es" href="https://ranuk.dev/">
     <link rel="alternate" hreflang="en" href="https://ranuk.dev/en/">
@@ -175,15 +177,75 @@
                 <li><a href="#ecosystem" class="nav-link" data-i18n="nav.ecosystem">Ecosistema</a></li>
                 <li><a href="#services" class="nav-link" data-i18n="nav.services">Servicios</a></li>
                 <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#ml-lab" class="nav-link" data-i18n="nav.mllab">ML Lab</a></li>
-                <li><a href="#book" class="nav-link" data-i18n="nav.book">Libro</a></li>
-                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
-                <li><a href="debates/" class="nav-link" style="color: #10eb9b; font-weight: 700;"><i class="fas fa-microphone-lines"></i> AI Debates</a></li>
-                <li><a href="closer/" class="nav-link" style="color: #00f0ff; font-weight: 700;"><i class="fas fa-headset"></i> Voice Closer</a></li>
-                <li><a href="arena/" class="nav-link" style="color: #f43f5e; font-weight: 700;"><i class="fas fa-bolt"></i> Pitch Arena</a></li>
-                <li><a href="portfolio/" class="nav-link" style="color: #00f0ff; font-weight: 700;"><i class="fas fa-layer-group"></i> Portfolio ($400)</a></li>
-                <li><a href="#enterprise-products" class="nav-link" style="color: #3b82f6; font-weight: 700;"><i class="fas fa-cube"></i> <span data-i18n="nav.enterprise">Empresa &amp; IA</span></a></li>
-                <li><a href="ranuk-it/" class="nav-link nav-link-primary"><i class="fas fa-building"></i> <span data-i18n="nav.ranuk">Ranuk IT</span> <i class="fas fa-external-link-alt" style="font-size: 0.7em; margin-left: 4px;"></i></a></li>
+                <li><a href="#open-lab" class="nav-link" data-i18n="nav.openlab">Open Lab</a></li>
+                <!-- Dropdown Ranuk IT Solutions -->
+                <li class="nav-dropdown-item">
+                    <button class="nav-link nav-ranuk-btn" id="ranuk-it-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                        <span class="nav-pulse-dot"></span>
+                        <span data-i18n="nav.ranuk_solutions">Ranuk IT Solutions</span>
+                        <i class="fas fa-chevron-down nav-caret"></i>
+                    </button>
+                    <div class="nav-dropdown-panel" id="ranuk-it-dropdown-panel">
+                        <div class="dropdown-header">
+                            <span class="dropdown-eyebrow" data-i18n="nav.drop_eyebrow">ESTUDIO TÉCNICO &amp; IA AUTÓNOMA</span>
+                            <a href="ranuk-it/" class="dropdown-main-portal">
+                                <div class="portal-icon"><img src="../assets/ranuk-icon.png" alt="Ranuk IT" width="28" height="28"></div>
+                                <div class="portal-info">
+                                    <strong data-i18n="nav.drop_portal">Portal Ranuk IT Solutions →</strong>
+                                    <span data-i18n="nav.drop_portal_sub">Software a medida, arquitectura ex Booking &amp; Accenture</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dropdown-grid">
+                            <a href="closer/" class="dropdown-link-card">
+                                <div class="card-icon" style="color: #00f0ff;"><i class="fas fa-headset"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Voice Closer (180ms)</span>
+                                    <span class="card-desc">Ventas Inbound Speech-to-Speech</span>
+                                </div>
+                            </a>
+                            <a href="arena/" class="dropdown-link-card">
+                                <div class="card-icon" style="color: #f43f5e;"><i class="fas fa-bolt"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Pitch Arena (Sparring)</span>
+                                    <span class="card-desc">Simulador VC con x402 Base USDC</span>
+                                </div>
+                            </a>
+                            <a href="debates/" class="dropdown-link-card">
+                                <div class="card-icon" style="color: #10eb9b;"><i class="fas fa-microphone-lines"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">AI Debate Studio</span>
+                                    <span class="card-desc">Debates autónomos a 24kHz</span>
+                                </div>
+                            </a>
+                            <a href="portfolio/" class="dropdown-link-card">
+                                <div class="card-icon" style="color: #38bdf8;"><i class="fas fa-layer-group"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Portfolio ($400 USD)</span>
+                                    <span class="card-desc">Landings nativas &lt;1s y SEO</span>
+                                </div>
+                            </a>
+                            <a href="ranuk-it/ada/" class="dropdown-link-card">
+                                <div class="card-icon" style="color: #a78bfa;"><i class="fas fa-universal-access"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Auditorías ADA/WCAG</span>
+                                    <span class="card-desc">Cumplimiento legal y remediación</span>
+                                </div>
+                            </a>
+                            <a href="ranuk-it/trading-bots/" class="dropdown-link-card">
+                                <div class="card-icon" style="color: #f59e0b;"><i class="fas fa-chart-line"></i></div>
+                                <div class="card-content">
+                                    <span class="card-title">Trading Bots Cuantitativos</span>
+                                    <span class="card-desc">Estrategias algorítmicas 24/7</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dropdown-footer">
+                            <a href="#enterprise-products" class="dropdown-anchor-link"><i class="fas fa-stream"></i> <span data-i18n="nav.drop_inpage">Ver División Enterprise en esta página</span></a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact" style="font-weight: 700; color: var(--refresh-mint);">Contacto</a></li>
             </ul>
             <div class="nav-actions">
                 <div class="lang-switcher" role="group" aria-label="Language">
@@ -930,113 +992,348 @@
         </div>
     </section>
 
-    <!-- ============ RANUK IT ENTERPRISE & PROPRIETARY AI PRODUCTS ============ -->
+    <!-- ============ RANUK IT ENTERPRISE & PROPRIETARY AI PRODUCTS (ANTIGRAVITY SHOWCASE) ============ -->
     <div class="section-rule" aria-hidden="true"></div>
-    <section id="enterprise-products" class="section enterprise-products">
+    <section id="enterprise-products" class="section enterprise-products antigravity-scroll-scale">
         <div class="container">
             <h2 class="section-title" data-i18n="ent.title">
-                <span class="title-number">✦</span> División Empresa &amp; Productos de IA
+                <span class="title-number">✦</span> Ranuk IT Solutions · División Enterprise &amp; IA
             </h2>
             <p class="section-subtitle" data-i18n="ent.subtitle">
-                Más que desarrollo freelance. En Ranuk IT Solutions diseñamos, operamos y vendemos infraestructura de IA autónoma y sitios web de alto rendimiento.
+                Arquitectura de sistemas de nivel europeo, agentes autónomos de voz e infraestructura de IA de alto rendimiento sin intermediarios.
             </p>
 
-            <div class="ent-why-box" data-aos="fade-up">
-                <div class="ent-why-badge"><i class="fas fa-lightbulb"></i> <span data-i18n="ent.why_title">¿Por qué lo ofrecemos?</span></div>
-                <p class="ent-why-text" data-i18n="ent.why_desc">
-                    La mayoría de las agencias venden chatbots de texto lentos que nadie usa o plantillas infladas de WordPress que tardan 5 segundos en cargar. Nosotros construimos soluciones con código nativo, modelos neuronales speech-to-speech a 180ms y páginas web optimizadas para cerrar clientes.
-                </p>
+            <!-- Gateway Card to Ranuk IT Solutions Portal -->
+            <div class="ag-gateway-card" style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.08), rgba(16, 235, 155, 0.05), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 20px; padding: 1.8rem 2.2rem; margin: 2rem 0 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 240, 255, 0.1);">
+                <div style="max-width: 680px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <img src="../assets/ranuk-icon.png" alt="Ranuk IT" width="30" height="30" style="border-radius: 8px;">
+                        <span style="font-family: var(--font-mono, monospace); font-size: 0.76rem; color: var(--ag-cyan, #00f0ff); font-weight: 700; letter-spacing: 0.06em;">ESTUDIO TÉCNICO · EX BOOKING.COM &amp; ACCENTURE</span>
+                    </div>
+                    <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 6px; font-weight: 800;">Ranuk IT Solutions: Software a medida &amp; Modernización</h3>
+                    <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                        Trabajás directamente con el ingeniero que escribe y despliega el código. Diseñamos plataformas web en código nativo, agentes de voz a 180ms, auditorías de accesibilidad y bots cuantitativos.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="ranuk-it/" class="btn btn-primary" style="background: linear-gradient(135deg, #00f0ff, #10eb9b) !important; color: #050811 !important; font-weight: 800; border: none; padding: 0.8rem 1.6rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-building"></i> <span>Entrar al Portal Ranuk IT →</span>
+                    </a>
+                    <a href="ranuk-it/#contact" class="btn btn-outline" style="border-color: rgba(0, 240, 255, 0.4) !important; color: #e2e8f0; padding: 0.8rem 1.4rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-calendar-alt"></i> <span>Consulta Técnica (15m)</span>
+                    </a>
+                </div>
             </div>
 
-            <div class="ent-grid">
-                <!-- Card 1: Landing Pages $400 USD -->
-                <article class="ent-card" data-aos="fade-up">
-                    <div class="ent-card-header">
-                        <span class="ent-badge ent-badge--blue" data-i18n="ent.p1_badge">Entrega en 48-72h</span>
-                        <div class="ent-icon"><i class="fas fa-layer-group"></i></div>
-                    </div>
-                    <h3 class="ent-card-title" data-i18n="ent.p1_title">Landing Pages de Alto Impacto ($400 USD)</h3>
-                    <p class="ent-card-desc" data-i18n="ent.p1_desc">
-                        Diseño a medida en código nativo (React/Next.js/HTML5). Cero plantillas lentas. Carga en &lt;1s, SEO agresivo y optimización extrema de conversión.
-                    </p>
-                    <div class="ent-features">
-                        <span><i class="fas fa-check"></i> Lighthouse 95+</span>
-                        <span><i class="fas fa-check"></i> Copywriting B2B</span>
-                        <span><i class="fas fa-check"></i> Dominio y Hosting 1 año</span>
-                    </div>
-                    <a href="portfolio/" class="ent-cta">
-                        <span data-i18n="ent.p1_cta">Ver Portfolio de $400 →</span>
-                    </a>
-                </article>
+            <!-- Antigravity Interactive Expanding Tabs Showcase -->
+            <div class="ag-showcase">
+                <!-- Floating Tabs Bar -->
+                <div class="ag-tabs-bar" role="tablist" aria-label="Antigravity Enterprise Tabs">
+                    <button class="ag-tab-btn active" data-tab="ag-tab-voice" role="tab" aria-selected="true">
+                        <span class="ag-tab-dot"></span>
+                        <i class="fas fa-headset" style="color: #00f0ff;"></i>
+                        <span>Voice Closer (180ms)</span>
+                    </button>
+                    <button class="ag-tab-btn" data-tab="ag-tab-arena" role="tab" aria-selected="false">
+                        <span class="ag-tab-dot"></span>
+                        <i class="fas fa-bolt" style="color: #f43f5e;"></i>
+                        <span>Pitch Arena (x402)</span>
+                    </button>
+                    <button class="ag-tab-btn" data-tab="ag-tab-debates" role="tab" aria-selected="false">
+                        <span class="ag-tab-dot"></span>
+                        <i class="fas fa-microphone-lines" style="color: #10eb9b;"></i>
+                        <span>AI Debate Studio</span>
+                    </button>
+                    <button class="ag-tab-btn" data-tab="ag-tab-landings" role="tab" aria-selected="false">
+                        <span class="ag-tab-dot"></span>
+                        <i class="fas fa-layer-group" style="color: #38bdf8;"></i>
+                        <span>Landings $400 USD</span>
+                    </button>
+                    <button class="ag-tab-btn" data-tab="ag-tab-ada-bots" role="tab" aria-selected="false">
+                        <span class="ag-tab-dot"></span>
+                        <i class="fas fa-shield-alt" style="color: #a78bfa;"></i>
+                        <span>ADA &amp; Trading Bots</span>
+                    </button>
+                </div>
 
-                <!-- Card 2: Ranuk Voice Closer -->
-                <article class="ent-card ent-card--featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ent-card-header">
-                        <span class="ent-badge ent-badge--cyan" data-i18n="ent.p2_badge">180ms Full-Duplex</span>
-                        <div class="ent-icon" style="color: #00f0ff;"><i class="fas fa-headset"></i></div>
+                <!-- Antigravity Viewport (Expands with tabs) -->
+                <div class="ag-viewport">
+                    <!-- Tab 1: Voice Closer -->
+                    <div class="ag-tab-pane active" id="ag-tab-voice">
+                        <div class="ag-pane-left">
+                            <div class="ag-pane-badge-row">
+                                <span class="ag-badge ag-badge-cyan">180ms Latencia Full-Duplex</span>
+                                <span class="ag-badge ag-badge-mint">NVIDIA PersonaPlex 7B</span>
+                                <span class="ag-badge ag-badge-blue">Ventas Inbound 24/7</span>
+                            </div>
+                            <h3 class="ag-pane-title">Ranuk Voice Closer</h3>
+                            <p class="ag-pane-desc">
+                                Vendedor y recepcionista de voz autónomo para empresas. Habla con audio nativo a 24kHz, permite interrupción en caliente sin pausas robóticas, supera objeciones complejas y cierra ventas con cobros en llamada vía Stripe.
+                            </p>
+                            <ul class="ag-feature-list">
+                                <li><i class="fas fa-check-circle"></i> Integración en cualquier web con 1 línea de script</li>
+                                <li><i class="fas fa-check-circle"></i> Speech-to-Speech nativo (sin STT/TTS desacoplados lentos)</li>
+                                <li><i class="fas fa-check-circle"></i> Sincronización automática de leads con HubSpot, Notion y Telegram</li>
+                            </ul>
+                            <div class="ag-btn-group">
+                                <a href="closer/" class="ag-btn-primary">
+                                    <i class="fas fa-play"></i> <span>Probar Voice Closer en Vivo</span>
+                                </a>
+                                <a href="ranuk-it/" class="ag-btn-secondary">
+                                    <i class="fas fa-info-circle"></i> <span>Documentación Técnica</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ag-pane-right">
+                            <div class="ag-mock-header">
+                                <div class="ag-mock-dots">
+                                    <span class="ag-mock-dot r"></span>
+                                    <span class="ag-mock-dot y"></span>
+                                    <span class="ag-mock-dot g"></span>
+                                </div>
+                                <span class="ag-mock-status"><span class="nav-pulse-dot"></span> LIVE 24kHz DUPLEX</span>
+                            </div>
+                            <!-- Live Waveform Visualizer -->
+                            <div class="ag-waveform-container" aria-label="Visualizador de Onda">
+                                <div class="ag-wave-bar" style="animation-delay: 0.1s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.3s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.2s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.4s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.15s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.35s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.05s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.25s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.45s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.2s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.3s;"></div>
+                                <div class="ag-wave-bar" style="animation-delay: 0.1s;"></div>
+                            </div>
+                            <div class="ag-terminal-text">
+                                <p><span class="cyan">agent&gt;</span> "¿Cuál es la principal fricción en tu embudo de ventas hoy?"</p>
+                                <p><span class="mint">cliente&gt;</span> "Nuestros prospectos agendan pero no asisten a la demo."</p>
+                                <p><span class="cyan">agent&gt;</span> "Voice Closer contacta al lead en los primeros 45 segundos tras el registro..."</p>
+                            </div>
+                            <div class="ag-metrics-badge-row">
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-cyan);">180ms</span><span class="ag-metric-lbl">Latencia</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-mint);">24 kHz</span><span class="ag-metric-lbl">Audio Nativo</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: #93c5fd;">24/7</span><span class="ag-metric-lbl">Disponibilidad</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="ent-card-title" data-i18n="ent.p2_title">Ranuk Voice Closer (Ventas Inbound)</h3>
-                    <p class="ent-card-desc" data-i18n="ent.p2_desc">
-                        Vendedor de voz autónomo 24/7 impulsado por NVIDIA PersonaPlex 7B. Atiende a tus clientes, supera objeciones y cobra por Stripe sin pausas incómodas.
-                    </p>
-                    <div class="ent-features">
-                        <span><i class="fas fa-check"></i> Audio nativo a 24kHz</span>
-                        <span><i class="fas fa-check"></i> Interrupción en caliente</span>
-                        <span><i class="fas fa-check"></i> Embed en 1 línea</span>
-                    </div>
-                    <a href="closer/" class="ent-cta ent-cta--primary">
-                        <span data-i18n="ent.p2_cta">Probar Voice Closer →</span>
-                    </a>
-                </article>
 
-                <!-- Card 3: Ranuk Pitch Arena -->
-                <article class="ent-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="ent-card-header">
-                        <span class="ent-badge ent-badge--rose" data-i18n="ent.p3_badge">Voz Adversarial</span>
-                        <div class="ent-icon" style="color: #f43f5e;"><i class="fas fa-bolt"></i></div>
+                    <!-- Tab 2: Pitch Arena -->
+                    <div class="ag-tab-pane" id="ag-tab-arena">
+                        <div class="ag-pane-left">
+                            <div class="ag-pane-badge-row">
+                                <span class="ag-badge ag-badge-rose">Voz Adversarial</span>
+                                <span class="ag-badge ag-badge-cyan">x402 Micropayments</span>
+                                <span class="ag-badge ag-badge-blue">Base USDC</span>
+                            </div>
+                            <h3 class="ag-pane-title">Ranuk Pitch Arena</h3>
+                            <p class="ag-pane-desc">
+                                El gimnasio de combate verbal para fundadores y ejecutivos. Entrena tu pitch antes de hablar con un VC despiadado de Silicon Valley o un comprador escéptico. Paga 0.25 USDC por llamada usando el protocolo nativo x402 sin cuentas ni suscripciones.
+                            </p>
+                            <ul class="ag-feature-list">
+                                <li><i class="fas fa-check-circle"></i> 4 Personas adversariales: VC implacable, CFO tacaño, Director de TI y Prospecto indeciso</li>
+                                <li><i class="fas fa-check-circle"></i> Evaluación instantánea de resiliencia, claridad y manejo de objeciones</li>
+                                <li><i class="fas fa-check-circle"></i> Transacciones automáticas Web3 on-chain en Base network</li>
+                            </ul>
+                            <div class="ag-btn-group">
+                                <a href="arena/" class="ag-btn-primary" style="background: linear-gradient(135deg, #f43f5e, #fb7185); color: #fff;">
+                                    <i class="fas fa-bolt"></i> <span>Entrar al Sparring en Arena</span>
+                                </a>
+                                <a href="ranuk-it/" class="ag-btn-secondary">
+                                    <i class="fas fa-wallet"></i> <span>Protocolo x402</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ag-pane-right">
+                            <div class="ag-mock-header">
+                                <div class="ag-mock-dots">
+                                    <span class="ag-mock-dot r"></span>
+                                    <span class="ag-mock-dot y"></span>
+                                    <span class="ag-mock-dot g"></span>
+                                </div>
+                                <span class="ag-mock-status" style="color: var(--ag-rose);"><i class="fas fa-fire"></i> HARSH VC MODE</span>
+                            </div>
+                            <div class="ag-terminal-text" style="margin: 1.5rem 0;">
+                                <p><span class="rose">Peter_Thiel_AI&gt;</span> "¿Por qué tu software no es un feature que Google o OpenAI destruyen en 3 semanas?"</p>
+                                <p><span class="gold">scorecard&gt;</span> Resistencia a la presión: <strong>92/100</strong></p>
+                                <p><span class="cyan">x402_protocol&gt;</span> 0.25 USDC verified on Base tx: 0x9f8c...a31b</p>
+                            </div>
+                            <div class="ag-metrics-badge-row">
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-rose);">0.25 $</span><span class="ag-metric-lbl">Por llamada</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-cyan);">x402</span><span class="ag-metric-lbl">Protocolo</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: #6ee7b7;">Base</span><span class="ag-metric-lbl">Chain L2</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="ent-card-title" data-i18n="ent.p3_title">Ranuk Pitch Arena (Sparring &amp; x402)</h3>
-                    <p class="ent-card-desc" data-i18n="ent.p3_desc">
-                        Entrena tu pitch contra un VC escéptico de Silicon Valley o un cliente furioso antes de tu reunión real. Con micropagos en Base USDC.
-                    </p>
-                    <div class="ent-features">
-                        <span><i class="fas fa-check"></i> 4 Personas extremas</span>
-                        <span><i class="fas fa-check"></i> Scorecard de resiliencia</span>
-                        <span><i class="fas fa-check"></i> 0.25 Base USDC x402</span>
-                    </div>
-                    <a href="arena/" class="ent-cta">
-                        <span data-i18n="ent.p3_cta">Entrar al Sparring →</span>
-                    </a>
-                </article>
 
-                <!-- Card 4: AI Debate Arena & Trading Bots -->
-                <article class="ent-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="ent-card-header">
-                        <span class="ent-badge ent-badge--emerald" data-i18n="ent.p4_badge">Laboratorio en Vivo</span>
-                        <div class="ent-icon" style="color: #10eb9b;"><i class="fas fa-robot"></i></div>
+                    <!-- Tab 3: AI Debates -->
+                    <div class="ag-tab-pane" id="ag-tab-debates">
+                        <div class="ag-pane-left">
+                            <div class="ag-pane-badge-row">
+                                <span class="ag-badge ag-badge-mint">Estudio Multi-Agente</span>
+                                <span class="ag-badge ag-badge-cyan">24kHz PersonaPlex</span>
+                                <span class="ag-badge ag-badge-gold">Cero Moderación Humana</span>
+                            </div>
+                            <h3 class="ag-pane-title">AI Debate Studio</h3>
+                            <p class="ag-pane-desc">
+                                Dos agentes de IA independientes debatiendo en tiempo real sin guión ni intervención humana. Argumentación en vivo, réplica dialéctica, interrupciones naturales y transmisión de audio a 24kHz con vídeo sincronizado.
+                            </p>
+                            <ul class="ag-feature-list">
+                                <li><i class="fas fa-check-circle"></i> Modelos con personalidades divergentes y heurísticas contrapuestas</li>
+                                <li><i class="fas fa-check-circle"></i> Generación automática de resúmenes, clips verticales y podcast RSS</li>
+                                <li><i class="fas fa-check-circle"></i> Código y pipeline de agentes 100% de Ranuk IT Solutions</li>
+                            </ul>
+                            <div class="ag-btn-group">
+                                <a href="debates/" class="ag-btn-primary" style="background: linear-gradient(135deg, #10eb9b, #00f0ff); color: #020617;">
+                                    <i class="fas fa-play"></i> <span>Escuchar Debates en Vivo</span>
+                                </a>
+                                <a href="https://github.com/RanuK12/ranuk-ai-debate-studio" target="_blank" rel="noopener" class="ag-btn-secondary">
+                                    <i class="fab fa-github"></i> <span>Ver Repositorio</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ag-pane-right">
+                            <div class="ag-mock-header">
+                                <div class="ag-mock-dots">
+                                    <span class="ag-mock-dot r"></span>
+                                    <span class="ag-mock-dot y"></span>
+                                    <span class="ag-mock-dot g"></span>
+                                </div>
+                                <span class="ag-mock-status" style="color: var(--ag-mint);"><span class="nav-pulse-dot"></span> 2 AGENTS LIVE</span>
+                            </div>
+                            <div class="ag-terminal-text" style="margin: 1.2rem 0;">
+                                <p><span class="mint">[Agent_Alpha]&gt;</span> "La centralización de modelos de frontera amenaza la soberanía técnica global."</p>
+                                <p><span class="cyan">[Agent_Beta]&gt;</span> "Disiento. El cómputo distribuido y la cuantización local equilibran la balanza..."</p>
+                                <p><span class="gold">[System]&gt;</span> Turn overlap: 0.12s · Damping: 0.98 · Moshi PersonaPlex 7B</p>
+                            </div>
+                            <div class="ag-metrics-badge-row">
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-mint);">2</span><span class="ag-metric-lbl">Agentes</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-cyan);">24 kHz</span><span class="ag-metric-lbl">Broadcast</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: #fde047;">Live</span><span class="ag-metric-lbl">Multi-Stream</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="ent-card-title" data-i18n="ent.p4_title">AI Debate Arena &amp; Trading Bots</h3>
-                    <p class="ent-card-desc" data-i18n="ent.p4_desc">
-                        Estudio público de debates autónomos entre dos IAs a 24kHz y bots cuantitativos de trading 24/7 en Python con ccxt y Backtrader.
-                    </p>
-                    <div class="ent-features">
-                        <span><i class="fas fa-check"></i> Debates sin moderador</span>
-                        <span><i class="fas fa-check"></i> Backtesting algorítmico</span>
-                        <span><i class="fas fa-check"></i> Código abierto &amp; APIs</span>
+
+                    <!-- Tab 4: Landings $400 USD -->
+                    <div class="ag-tab-pane" id="ag-tab-landings">
+                        <div class="ag-pane-left">
+                            <div class="ag-pane-badge-row">
+                                <span class="ag-badge ag-badge-blue">Entrega 48-72h</span>
+                                <span class="ag-badge ag-badge-cyan">Lighthouse 98+</span>
+                                <span class="ag-badge ag-badge-mint">$400 USD All-Inclusive</span>
+                            </div>
+                            <h3 class="ag-pane-title">Landing Pages de Alto Impacto</h3>
+                            <p class="ag-pane-desc">
+                                Olvidate de WordPress lento y plantillas genéricas. Construimos tu sitio web en código nativo (React, Next.js, HTML5/CSS) con carga menor a 1 segundo, SEO técnico agresivo y arquitectura pensada exclusivamente para convertir visitantes en clientes.
+                            </p>
+                            <ul class="ag-feature-list">
+                                <li><i class="fas fa-check-circle"></i> Dominio .com y hosting premium incluido por 1 año</li>
+                                <li><i class="fas fa-check-circle"></i> Copywriting B2B persuasivo redactado con criterio de negocio</li>
+                                <li><i class="fas fa-check-circle"></i> Formularios integrados a tu WhatsApp, CRM o correo directo</li>
+                            </ul>
+                            <div class="ag-btn-group">
+                                <a href="portfolio/" class="ag-btn-primary">
+                                    <i class="fas fa-layer-group"></i> <span>Ver Portfolio de $400 USD</span>
+                                </a>
+                                <a href="#contact" class="ag-btn-secondary">
+                                    <i class="fas fa-envelope"></i> <span>Pedir mi Landing</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ag-pane-right">
+                            <div class="ag-mock-header">
+                                <div class="ag-mock-dots">
+                                    <span class="ag-mock-dot r"></span>
+                                    <span class="ag-mock-dot y"></span>
+                                    <span class="ag-mock-dot g"></span>
+                                </div>
+                                <span class="ag-mock-status" style="color: var(--ag-cyan);"><i class="fas fa-tachometer-alt"></i> LIGHTHOUSE AUDIT</span>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 1.5rem 0; text-align: center;">
+                                <div style="padding: 12px 6px; background: rgba(16, 235, 155, 0.08); border: 1px solid rgba(16, 235, 155, 0.3); border-radius: 12px;">
+                                    <span style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 800; color: #10eb9b; display: block;">100</span>
+                                    <span style="font-size: 0.65rem; color: #cbd5e1; text-transform: uppercase;">Perf</span>
+                                </div>
+                                <div style="padding: 12px 6px; background: rgba(16, 235, 155, 0.08); border: 1px solid rgba(16, 235, 155, 0.3); border-radius: 12px;">
+                                    <span style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 800; color: #10eb9b; display: block;">100</span>
+                                    <span style="font-size: 0.65rem; color: #cbd5e1; text-transform: uppercase;">A11y</span>
+                                </div>
+                                <div style="padding: 12px 6px; background: rgba(16, 235, 155, 0.08); border: 1px solid rgba(16, 235, 155, 0.3); border-radius: 12px;">
+                                    <span style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 800; color: #10eb9b; display: block;">100</span>
+                                    <span style="font-size: 0.65rem; color: #cbd5e1; text-transform: uppercase;">Best</span>
+                                </div>
+                                <div style="padding: 12px 6px; background: rgba(16, 235, 155, 0.08); border: 1px solid rgba(16, 235, 155, 0.3); border-radius: 12px;">
+                                    <span style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 800; color: #10eb9b; display: block;">100</span>
+                                    <span style="font-size: 0.65rem; color: #cbd5e1; text-transform: uppercase;">SEO</span>
+                                </div>
+                            </div>
+                            <div class="ag-terminal-text">
+                                <p><span class="mint">FCP:</span> 0.4s · <span class="cyan">LCP:</span> 0.8s · <span class="mint">CLS:</span> 0.000 · <span class="cyan">FID:</span> 8ms</p>
+                            </div>
+                        </div>
                     </div>
-                    <a href="debates/" class="ent-cta">
-                        <span data-i18n="ent.p4_cta">Explorar Debates y Bots →</span>
-                    </a>
-                </article>
+
+                    <!-- Tab 5: ADA & Trading Bots -->
+                    <div class="ag-tab-pane" id="ag-tab-ada-bots">
+                        <div class="ag-pane-left">
+                            <div class="ag-pane-badge-row">
+                                <span class="ag-badge ag-badge-rose">WCAG 2.1 AA Compliance</span>
+                                <span class="ag-badge ag-badge-gold">Python ccxt 24/7</span>
+                                <span class="ag-badge ag-badge-cyan">Playwright + Axe-Core</span>
+                            </div>
+                            <h3 class="ag-pane-title">Auditorías ADA &amp; Trading Cuantitativo</h3>
+                            <p class="ag-pane-desc">
+                                Dos especialidades de ingeniería dura: auditorías automáticas contra demandas de accesibilidad ADA Title III en EEUU / Europa, y sistemas algorítmicos de trading 24/7 con backtesting determinista en Python.
+                            </p>
+                            <ul class="ag-feature-list">
+                                <li><i class="fas fa-check-circle"></i> Escaneo de accesibilidad con Playwright + Axe-Core y validación con lectores de pantalla</li>
+                                <li><i class="fas fa-check-circle"></i> Bots de trading con backtesting de datos reales, paper trading y ejecución 24/7</li>
+                                <li><i class="fas fa-check-circle"></i> El código es 100% de tu empresa, sin candados propietarios</li>
+                            </ul>
+                            <div class="ag-btn-group">
+                                <a href="ranuk-it/ada/" class="ag-btn-primary" style="background: linear-gradient(135deg, #a78bfa, #818cf8); color: #fff;">
+                                    <i class="fas fa-universal-access"></i> <span>Auditoría ADA / WCAG</span>
+                                </a>
+                                <a href="ranuk-it/trading-bots/" class="ag-btn-secondary">
+                                    <i class="fas fa-chart-line"></i> <span>Trading Bots 24/7</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ag-pane-right">
+                            <div class="ag-mock-header">
+                                <div class="ag-mock-dots">
+                                    <span class="ag-mock-dot r"></span>
+                                    <span class="ag-mock-dot y"></span>
+                                    <span class="ag-mock-dot g"></span>
+                                </div>
+                                <span class="ag-mock-status" style="color: #a78bfa;"><i class="fas fa-terminal"></i> AUTOMATED AUDIT &amp; ENGINE</span>
+                            </div>
+                            <div class="ag-terminal-text" style="margin: 1.2rem 0;">
+                                <p><span class="rose">[ADA_SCAN]&gt;</span> 42 URL nodes evaluated · 0 critical violations</p>
+                                <p><span class="mint">[WCAG_LEVEL]&gt;</span> Pass AA standard · Screen Reader tree valid</p>
+                                <p><span class="gold">[QUANT_BOT]&gt;</span> Backtest CAGR: +34.2% · Sharpe: 2.14 · Max Drawdown: 7.8%</p>
+                            </div>
+                            <div class="ag-metrics-badge-row">
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: #a78bfa;">WCAG 2.1</span><span class="ag-metric-lbl">Standard</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: var(--ag-gold);">24/7</span><span class="ag-metric-lbl">Execution</span></div>
+                                <div class="ag-metric-card"><span class="ag-metric-val" style="color: #6ee7b7;">100%</span><span class="ag-metric-lbl">Código Tuyo</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- ============ OPEN LAB — GitHub live ============
+
+    <!-- ============ OPEN LAB — GitHub live (ANTIGRAVITY SCROLL SCALE) ============
          Auto-sync nightly via GitHub Action. Lee data/github.json (commiteado
          por el bot) y renderiza repos destacados + distribución de lenguajes.
          Sin tokens en el cliente, sin rate limit visible. -->
     <div class="section-rule" aria-hidden="true"></div>
-    <section id="open-lab" class="section open-lab">
+    <section id="open-lab" class="section open-lab antigravity-scroll-scale">
         <div class="container">
             <div class="open-lab-header">
                 <div>
