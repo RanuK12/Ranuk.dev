@@ -14,8 +14,6 @@
     var gtagScript = document.createElement('script');
     gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-QQ12Q4Z375';
     gtagScript.async = true;
-    gtagScript.crossOrigin = 'anonymous';
-    gtagScript.integrity = 'sha384-mufsqkbiiYPCgyPW4oxZWM2ZZKL9m8btW+vH4VHVqVEG4dQ0WKFOarkgbSmYPeJX';
     document.head.appendChild(gtagScript);
 
     gtagScript.onload = function() {
