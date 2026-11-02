@@ -100,6 +100,13 @@
     setNum('languages_count', stats.languages_count);
     setNum('total_stars', stats.total_stars);
     setNum('last_push_relative', relativeTime(stats.last_push, lang));
+
+    // Update hero stat if present
+    const heroRepoStat = document.querySelector('.hero-stats [data-target="85"]');
+    if (heroRepoStat && stats.public_repos) {
+      heroRepoStat.setAttribute('data-target', stats.public_repos);
+      heroRepoStat.textContent = stats.public_repos;
+    }
   }
 
   function renderLanguages(languages) {
@@ -123,6 +130,23 @@
     }).join('');
   }
 
+  function getRepoPill(repoName) {
+    const n = (repoName || '').toLowerCase();
+    if (n.includes('voice') || n.includes('debate') || n.includes('closer')) {
+      return '<span class="repo-status-pill"><span class="pulse-dot"></span> AI Agent</span>';
+    }
+    if (n.includes('arena') || n.includes('flight') || n.includes('alert')) {
+      return '<span class="repo-status-pill" style="color:var(--ag-cyan);border-color:rgba(0,240,255,0.4);background:rgba(0,240,255,0.1)"><span class="pulse-dot" style="background:var(--ag-cyan);box-shadow:0 0 6px var(--ag-cyan)"></span> Live Engine</span>';
+    }
+    if (n.includes('audit') || n.includes('ada')) {
+      return '<span class="repo-status-pill" style="color:#a78bfa;border-color:rgba(167,139,250,0.4);background:rgba(167,139,250,0.1)"><span class="pulse-dot" style="background:#a78bfa;box-shadow:0 0 6px #a78bfa"></span> Compliance</span>';
+    }
+    if (n.includes('mcp')) {
+      return '<span class="repo-status-pill" style="color:#fde047;border-color:rgba(253,224,71,0.4);background:rgba(253,224,71,0.1)"><span class="pulse-dot" style="background:#fde047;box-shadow:0 0 6px #fde047"></span> MCP Server</span>';
+    }
+    return '<span class="repo-status-pill"><span class="pulse-dot"></span> Active</span>';
+  }
+
   function renderRepos(featured) {
     const container = document.getElementById('lab-repos-list');
     if (!container) return;
@@ -132,18 +156,22 @@
       const topics = (r.topics || []).slice(0, 3).map(t =>
         `<span class="repo-topic">${escapeHTML(t)}</span>`
       ).join('');
+      const pill = getRepoPill(r.name);
       return `
         <a href="${escapeHTML(r.url)}" target="_blank" rel="noopener" class="lab-repo-card">
-          <div class="lab-repo-head">
-            <i class="fas fa-code-branch"></i>
-            <span class="lab-repo-name">${escapeHTML(r.name)}</span>
-            ${r.stars > 0 ? `<span class="lab-repo-stars"><i class="fas fa-star"></i> ${r.stars}</span>` : ''}
+          <div class="lab-repo-head" style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <div style="display:flex;align-items:center;gap:8px;overflow:hidden;">
+              <i class="fas fa-code-branch" style="color:var(--ag-cyan,#00f0ff);flex-shrink:0;"></i>
+              <span class="lab-repo-name" style="font-weight:700;letter-spacing:-0.01em;">${escapeHTML(r.name)}</span>
+            </div>
+            ${pill}
           </div>
-          <p class="lab-repo-desc">${escapeHTML(r.description || '—')}</p>
-          <div class="lab-repo-meta">
+          <p class="lab-repo-desc" style="font-size:0.86rem;line-height:1.55;color:#94a3b8;margin:12px 0 16px;">${escapeHTML(r.description || '—')}</p>
+          <div class="lab-repo-meta" style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.75rem;">
             ${r.language ? `<span class="lab-repo-lang"><span class="lang-dot" style="background:${escapeHTML(color)}"></span>${escapeHTML(r.language)}</span>` : ''}
-            <span class="lab-repo-time"><i class="far fa-clock"></i> ${relativeTime(r.updated, lang)}</span>
-            ${topics ? `<span class="lab-repo-topics">${topics}</span>` : ''}
+            ${r.stars > 0 ? `<span class="lab-repo-stars" style="color:#fde047;"><i class="fas fa-star"></i> ${r.stars}</span>` : ''}
+            <span class="lab-repo-time" style="color:#64748b;"><i class="far fa-clock"></i> ${relativeTime(r.updated, lang)}</span>
+            ${topics ? `<span class="lab-repo-topics" style="margin-left:auto;">${topics}</span>` : ''}
           </div>
         </a>
       `;

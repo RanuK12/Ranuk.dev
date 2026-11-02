@@ -71,14 +71,43 @@ function aggregateLanguages(byRepoLangs) {
         .sort((a, b) => b.bytes - a.bytes);
 }
 
-function pickFeatured(repos, n = 6) {
-    // Score: stars + reciente + tiene description.
+const FLAGSHIP_REPOS = [
+    'flight-alert-public',
+    'ranuk-browser-bridge',
+    'ranuk-voice-closer',
+    'ranuk-pitch-arena',
+    'ADA-Audits',
+    'ranuk-ai-debate-studio',
+    'rk-mcp-datacanvas',
+    'Ranuk.dev',
+    'api',
+    'fc27-gallery-bot',
+    'crypto-price-notifier'
+];
+
+function pickFeatured(repos, n = 8) {
+    // Score: Flagship status + description presence + recency + stars
     const now = Date.now();
     return repos
+        .filter(r => r.name !== 'RanuK12') // Exclude profile readme repo
         .map(r => {
+            const isFlagship = FLAGSHIP_REPOS.includes(r.name);
+            const flagshipIndex = FLAGSHIP_REPOS.indexOf(r.name);
             const ageDays = (now - new Date(r.pushed_at).getTime()) / 86400000;
-            const recency = Math.max(0, 1 - ageDays / 365); // 1 si <hoy, 0 si >1 año
-            const score = (r.stargazers_count * 5) + recency * 3 + (r.description ? 0.5 : 0);
+            const recency = Math.max(0, 1 - ageDays / 180); // higher weight for recent work
+            const hasDesc = (r.description && r.description.trim().length > 5) ? 1 : 0;
+            
+            // Prioritize flagships and well-documented recent projects over abandoned 1-star repos
+            let score = 0;
+            if (isFlagship) {
+                score += 50 - flagshipIndex * 2;
+            }
+            score += hasDesc * 10;
+            score += (r.stargazers_count || 0) * 4;
+            score += recency * 8;
+            if (!hasDesc && !isFlagship) {
+                score -= 20; // penalize empty undocumented repos
+            }
             return { ...r, _score: score };
         })
         .sort((a, b) => b._score - a._score)

@@ -1,37 +1,37 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-08-17T04:57:56.937Z",
+  "generated_at": "2026-11-02T15:28:14.209Z",
   "stats": {
-    "public_repos": 87,
-    "total_stars": 2,
-    "languages_count": 17,
-    "last_push": "2026-08-16T20:43:04Z"
+    "public_repos": 124,
+    "total_stars": 5,
+    "languages_count": 19,
+    "last_push": "2026-10-30T18:39:09Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 76358960,
-      "pct": 95.1
-    },
-    {
-      "name": "JavaScript",
-      "bytes": 1478222,
-      "pct": 1.8
+      "bytes": 77788465,
+      "pct": 90
     },
     {
       "name": "HTML",
-      "bytes": 1320530,
-      "pct": 1.6
+      "bytes": 3017770,
+      "pct": 3.5
     },
     {
-      "name": "CSS",
-      "bytes": 388579,
-      "pct": 0.5
+      "name": "JavaScript",
+      "bytes": 2391729,
+      "pct": 2.8
     },
     {
       "name": "TypeScript",
-      "bytes": 257784,
-      "pct": 0.3
+      "bytes": 2160520,
+      "pct": 2.5
+    },
+    {
+      "name": "CSS",
+      "bytes": 521553,
+      "pct": 0.6
     },
     {
       "name": "PowerShell",
@@ -39,13 +39,13 @@
       "pct": 0.3
     },
     {
-      "name": "Lua",
-      "bytes": 86385,
-      "pct": 0.1
+      "name": "Shell",
+      "bytes": 170311,
+      "pct": 0.2
     },
     {
-      "name": "Shell",
-      "bytes": 85405,
+      "name": "Lua",
+      "bytes": 83336,
       "pct": 0.1
     },
     {
@@ -54,93 +54,157 @@
       "pct": 0
     },
     {
-      "name": "Batchfile",
-      "bytes": 15830,
+      "name": "Verse",
+      "bytes": 19822,
       "pct": 0
     },
     {
       "name": "Dockerfile",
-      "bytes": 6990,
+      "bytes": 13927,
       "pct": 0
     },
     {
-      "name": "PLpgSQL",
-      "bytes": 6454,
+      "name": "Rich Text Format",
+      "bytes": 12682,
       "pct": 0
     }
   ],
   "featured": [
     {
-      "name": "JobFinder",
-      "full_name": "RanuK12/JobFinder",
-      "description": null,
-      "url": "https://github.com/RanuK12/JobFinder",
+      "name": "flight-alert-public",
+      "full_name": "RanuK12/flight-alert-public",
+      "description": "Autonomous Flight Price Arbitrage & Real-time Alerts Engine (Telegram Bot + Multi-Engine Scraping)",
+      "url": "https://github.com/RanuK12/flight-alert-public",
       "homepage": null,
-      "language": "HTML",
-      "stars": 1,
+      "language": "JavaScript",
+      "stars": 2,
       "forks": 0,
-      "topics": [],
-      "updated": "2026-08-15T17:49:21Z"
+      "topics": [
+        "ai-agent",
+        "arbitrage",
+        "python",
+        "scraping",
+        "telegram-bot"
+      ],
+      "updated": "2026-11-01T00:24:38Z"
     },
     {
-      "name": "cryptocurrency-price-monitor",
-      "full_name": "RanuK12/cryptocurrency-price-monitor",
-      "description": null,
-      "url": "https://github.com/RanuK12/cryptocurrency-price-monitor",
-      "homepage": null,
-      "language": "Python",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-06-18T10:36:20Z"
-    },
-    {
-      "name": "crypto-price-notifier",
-      "full_name": "RanuK12/crypto-price-notifier",
-      "description": "Telegram bot that monitors crypto prices (CoinGecko) and sends alerts when thresholds are crossed. Configurable coins, thresholds, and check interval.",
-      "url": "https://github.com/RanuK12/crypto-price-notifier",
-      "homepage": null,
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "updated": "2026-08-16T11:50:06Z"
-    },
-    {
-      "name": "free-tier-ai-microservice",
-      "full_name": "RanuK12/free-tier-ai-microservice",
-      "description": "Microservice demo using free-tier AI API",
-      "url": "https://github.com/RanuK12/free-tier-ai-microservice",
-      "homepage": "https://github.com/RanuK12/free-tier-ai-microservice",
+      "name": "ranuk-browser-bridge",
+      "full_name": "RanuK12/ranuk-browser-bridge",
+      "description": "Enterprise Agent Browser Bridge & Deep Debugging Engine for Autonomous AI Agents — Zero Focus Theft, CDP Debugger, Memory Guardian",
+      "url": "https://github.com/RanuK12/ranuk-browser-bridge",
+      "homepage": "https://ranuk.dev",
       "language": "JavaScript",
       "stars": 0,
       "forks": 0,
-      "topics": [],
-      "updated": "2026-07-15T11:45:51Z"
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "autonomous-agents",
+        "browser-automation",
+        "cdp",
+        "chrome-extension",
+        "debugging",
+        "mcp",
+        "stealth-browser",
+        "zero-focus",
+        "zero-focus-theft"
+      ],
+      "updated": "2026-10-30T18:39:09Z"
     },
     {
-      "name": "redbean-landing",
-      "full_name": "RanuK12/redbean-landing",
-      "description": "Redbean landing page",
-      "url": "https://github.com/RanuK12/redbean-landing",
+      "name": "ranuk-voice-closer",
+      "full_name": "RanuK12/ranuk-voice-closer",
+      "description": "Enterprise Full-Duplex B2B AI Voice Receptionist & Sales Closer powered by NVIDIA PersonaPlex 7B (nvidia/personaplex-7b-v1 / moshi) in English & Español",
+      "url": "https://github.com/RanuK12/ranuk-voice-closer",
       "homepage": null,
-      "language": "HTML",
+      "language": "Python",
       "stars": 0,
       "forks": 0,
-      "topics": [],
-      "updated": "2026-07-03T06:07:21Z"
+      "topics": [
+        "ai-voice",
+        "full-duplex",
+        "nvidia",
+        "speech-to-speech"
+      ],
+      "updated": "2026-10-30T23:45:15Z"
     },
     {
-      "name": "scraper-utils",
-      "full_name": "RanuK12/scraper-utils",
-      "description": "Herramientas de scraping y automatización para ML/Data tasks — repositorio demo de Emilio Ranucoli",
-      "url": "https://github.com/RanuK12/scraper-utils",
+      "name": "ranuk-pitch-arena",
+      "full_name": "RanuK12/ranuk-pitch-arena",
+      "description": "Full-Duplex AI Tough-Client & VC Pitch Simulator powered 100% by NVIDIA PersonaPlex (nvidia/personaplex-7b-v1 / moshi) + x402 Pay-Per-Call Protocol on Base USDC",
+      "url": "https://github.com/RanuK12/ranuk-pitch-arena",
       "homepage": null,
       "language": "Python",
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-07-02T08:55:47Z"
+      "updated": "2026-10-30T23:43:02Z"
+    },
+    {
+      "name": "ADA-Audits",
+      "full_name": "RanuK12/ADA-Audits",
+      "description": "Automated WCAG, ADA Title III & Web3 Accessibility Compliance Auditing Engine (Playwright + Axe-core)",
+      "url": "https://github.com/RanuK12/ADA-Audits",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "accessibility",
+        "axe-core",
+        "playwright",
+        "wcag",
+        "web3"
+      ],
+      "updated": "2026-11-02T13:23:30Z"
+    },
+    {
+      "name": "ranuk-ai-debate-studio",
+      "full_name": "RanuK12/ranuk-ai-debate-studio",
+      "description": "Full-Duplex Multi-Agent Debate & Broadcast Video Studio powered by NVIDIA PersonaPlex 7B (Moshi)",
+      "url": "https://github.com/RanuK12/ranuk-ai-debate-studio",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-11-01T19:49:33Z"
+    },
+    {
+      "name": "rk-mcp-datacanvas",
+      "full_name": "RanuK12/rk-mcp-datacanvas",
+      "description": "Interactive Business Intelligence & Data Visualization MCP Server (DuckDB-WASM + Apache ECharts) for ChatGPT, Claude, and Cursor.",
+      "url": "https://github.com/RanuK12/rk-mcp-datacanvas",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "analytics",
+        "chatgpt-plugin",
+        "cursor",
+        "data-visualization",
+        "duckdb",
+        "echarts",
+        "fastapi",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
+      ],
+      "updated": "2026-10-29T20:08:31Z"
+    },
+    {
+      "name": "Ranuk.dev",
+      "full_name": "RanuK12/Ranuk.dev",
+      "description": "Official Ranuk IT Solutions & Emilio Ranucoli Web Platform — High-Performance, Multilingual, Autonomous AI Showcase",
+      "url": "https://github.com/RanuK12/Ranuk.dev",
+      "homepage": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "updated": "2026-11-02T02:41:39Z"
     }
   ]
 }
