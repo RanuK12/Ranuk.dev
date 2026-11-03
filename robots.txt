@@ -16,9 +16,18 @@ Allow: /it/
 # Bloques: contenido interno, scripts de build, datos
 Disallow: /scripts/
 Disallow: /data/
+Disallow: /mcp
+Disallow: /.well-known/mcp.json
 Disallow: /*?
 Disallow: /*.json$
 Disallow: /*.md$
+
+# ─── Bloqueo de Scrapers y Crawlers No Autorizados ─────────
+User-agent: SealKeeper
+Disallow: /
+
+User-agent: SealKeeper-Crawler
+Disallow: /
 
 # Sitemap
 Sitemap: https://ranuk.dev/sitemap.xml
