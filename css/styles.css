@@ -3852,7 +3852,7 @@ body.ranuk-it-page .a11y-pricing {
         left: 0;
         width: 100%;
         height: calc(100vh - var(--nav-height));
-        background: rgba(10, 10, 26, 0.97);
+        background: #080c14;
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;

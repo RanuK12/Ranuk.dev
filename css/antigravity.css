@@ -25,29 +25,64 @@
   list-style: none;
 }
 
+.nav-ranuk-row {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(16, 235, 155, 0.08));
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.22rem 0.45rem 0.22rem 0.85rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-ranuk-row:hover,
+.nav-dropdown-item.is-open .nav-ranuk-row {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(16, 235, 155, 0.18));
+  border-color: var(--ag-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+  transform: translateY(-1px);
+}
+
 .nav-ranuk-btn {
   display: inline-flex !important;
   align-items: center !important;
   gap: 0.5rem;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(16, 235, 155, 0.08)) !important;
-  border: 1px solid rgba(0, 240, 255, 0.35) !important;
-  border-radius: 999px !important;
-  padding: 0.45rem 0.95rem !important;
   color: #e0f2fe !important;
   font-weight: 600 !important;
   font-size: 0.88rem !important;
   letter-spacing: -0.01em;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0.25rem 0.35rem 0.25rem 0 !important;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.2s ease;
 }
 
-.nav-ranuk-btn:hover,
-.nav-dropdown-item.is-open .nav-ranuk-btn {
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(16, 235, 155, 0.18)) !important;
-  border-color: var(--ag-cyan) !important;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+.nav-ranuk-btn:hover {
   color: #fff !important;
-  transform: translateY(-1px);
+}
+
+.nav-portal-badge {
+  display: none;
+}
+
+.nav-caret-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--ag-cyan);
+  cursor: pointer;
+  padding: 0.25rem 0.35rem;
+  border-radius: 50%;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-caret-btn:hover {
+  color: #fff;
 }
 
 .nav-pulse-dot {
@@ -683,28 +718,159 @@
 /* =========================================================
    4. RESPONSIVE QUERIES
    ========================================================= */
-@media (max-width: 992px) {
+@media (max-width: 1040px) {
   .ag-tab-pane {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2rem 1.5rem;
   }
+  .nav-dropdown-item {
+    width: 100% !important;
+    max-width: min(100%, 360px) !important;
+    margin: 0.5rem 0 !important;
+    list-style: none !important;
+  }
+  .nav-ranuk-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(16, 235, 155, 0.1)) !important;
+    border: 1.5px solid rgba(0, 240, 255, 0.45) !important;
+    border-radius: 14px !important;
+    padding: 0.5rem 0.65rem 0.5rem 0.85rem !important;
+    box-shadow: 0 4px 18px rgba(0, 240, 255, 0.12) !important;
+    transition: all 0.25s ease !important;
+    box-sizing: border-box !important;
+  }
+  .nav-dropdown-item.is-open .nav-ranuk-row {
+    border-color: rgba(111, 255, 209, 0.7) !important;
+    box-shadow: 0 0 24px rgba(0, 240, 255, 0.25) !important;
+  }
+  .nav-ranuk-btn {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    flex: 1 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 0.98rem !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    border-bottom: none !important;
+    padding: 0.25rem 0 !important;
+    box-shadow: none !important;
+  }
+  .nav-portal-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 0.68rem !important;
+    font-family: var(--font-mono, monospace) !important;
+    font-weight: 700 !important;
+    background: rgba(0, 240, 255, 0.2) !important;
+    color: #6fffd1 !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+    letter-spacing: 0.05em !important;
+    border: 1px solid rgba(0, 240, 255, 0.35) !important;
+    margin-left: auto !important;
+    margin-right: 0.5rem !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-caret-btn {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(0, 240, 255, 0.3) !important;
+    background: rgba(0, 240, 255, 0.12) !important;
+    color: var(--ag-cyan, #00f0ff) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    font-size: 0.85rem !important;
+    flex-shrink: 0 !important;
+    transition: background 0.2s ease, transform 0.2s ease !important;
+  }
+  .nav-dropdown-item.is-open .nav-caret-btn {
+    background: rgba(0, 240, 255, 0.25) !important;
+    color: #ffffff !important;
+  }
+  .nav-dropdown-item.is-open .nav-caret-btn .nav-caret {
+    transform: rotate(180deg) !important;
+  }
   .nav-dropdown-panel {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-    box-shadow: none;
-    margin-top: 0.5rem;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
+    margin-top: 0.65rem !important;
+    display: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    padding: 1rem !important;
+    background: rgba(12, 18, 30, 0.98) !important;
+    border: 1px solid rgba(0, 240, 255, 0.25) !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
   }
   .nav-dropdown-item.is-open .nav-dropdown-panel {
-    display: block;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .dropdown-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .dropdown-main-portal {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.8rem 0.95rem !important;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.16), rgba(16, 235, 155, 0.12)) !important;
+    border: 1.5px solid rgba(0, 240, 255, 0.45) !important;
+    border-radius: 12px !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.15) !important;
+    margin-top: 0.4rem !important;
+  }
+  .dropdown-main-portal:hover,
+  .dropdown-main-portal:active {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(16, 235, 155, 0.2)) !important;
+    border-color: #6fffd1 !important;
+    transform: translateY(-1px) !important;
   }
   .dropdown-grid {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .dropdown-link-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.65rem 0.8rem !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(189, 211, 226, 0.12) !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+    min-height: 48px !important;
+  }
+  .dropdown-link-card:active {
+    background: rgba(0, 240, 255, 0.1) !important;
+    border-color: rgba(0, 240, 255, 0.35) !important;
+  }
+  .dropdown-footer {
+    margin-top: 0.75rem !important;
+    padding-top: 0.75rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    text-align: center !important;
   }
 }
 

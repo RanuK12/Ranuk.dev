@@ -97,20 +97,23 @@
   // 3. Navbar Ranuk IT Mega-Pill Dropdown Controller
   function initNavbarDropdown() {
     const dropdownItem = document.querySelector('.nav-dropdown-item');
-    const dropdownBtn = document.querySelector('.nav-ranuk-btn');
-    if (!dropdownItem || !dropdownBtn) return;
+    const caretBtn = document.querySelector('.nav-caret-btn');
+    if (!dropdownItem) return;
 
-    dropdownBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      const isOpen = dropdownItem.classList.toggle('is-open');
-      dropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
+    if (caretBtn) {
+      caretBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = dropdownItem.classList.toggle('is-open');
+        caretBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
 
     // Close on outside click
     document.addEventListener('click', function (e) {
       if (!dropdownItem.contains(e.target)) {
         dropdownItem.classList.remove('is-open');
-        dropdownBtn.setAttribute('aria-expanded', 'false');
+        if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
       }
     });
 
@@ -118,7 +121,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         dropdownItem.classList.remove('is-open');
-        dropdownBtn.setAttribute('aria-expanded', 'false');
+        if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
       }
     });
   }
