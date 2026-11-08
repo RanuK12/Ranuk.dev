@@ -211,11 +211,29 @@ class NavController {
 
         this.links.forEach(link => {
             link.addEventListener('click', () => {
+                const href = link.getAttribute('href');
+                if (!href || link.classList.contains('nav-caret-btn') || link.id === 'ranuk-it-dropdown-btn') {
+                    return;
+                }
+                if (href.startsWith('#')) {
+                    if (this.menu) this.menu.classList.remove('open');
+                    if (this.toggle) {
+                        this.toggle.classList.remove('active');
+                        this.toggle.setAttribute('aria-expanded', 'false');
+                    }
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        });
+
+        document.querySelectorAll('.dropdown-anchor-link').forEach(anchor => {
+            anchor.addEventListener('click', () => {
                 if (this.menu) this.menu.classList.remove('open');
                 if (this.toggle) {
                     this.toggle.classList.remove('active');
                     this.toggle.setAttribute('aria-expanded', 'false');
                 }
+                document.body.classList.remove('nav-open');
             });
         });
 
@@ -256,6 +274,7 @@ class NavController {
         const isOpen = this.menu.classList.toggle('open');
         this.toggle.classList.toggle('active', isOpen);
         this.toggle.setAttribute('aria-expanded', String(isOpen));
+        document.body.classList.toggle('nav-open', isOpen);
     }
 }
 
