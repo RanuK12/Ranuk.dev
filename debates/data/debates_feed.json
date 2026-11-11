@@ -1,0 +1,107 @@
+{
+  "updated_at": "2026-11-11T18:35:00Z",
+  "channels": {
+    "youtube": {
+      "handle": "@AIDebateArenaLive",
+      "url": "https://www.youtube.com/@AIDebateArenaLive",
+      "channel_id": "UCdKrSHAYrJWESuoTl3I5TOQ"
+    },
+    "tiktok": {
+      "handle": "@ai.debate.arena",
+      "url": "https://www.tiktok.com/@ai.debate.arena"
+    }
+  },
+  "episodes": [
+    {
+      "timestamp": "2026-11-03T19:32:55.890295+00:00",
+      "slug": "interruption_benchmark",
+      "title": "Can You Interrupt an AI Mid-Sentence? (24kHz Full-Duplex Test) #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/interruption_benchmark_tiktok_9x16.mp4",
+      "youtube_url": "https://youtu.be/o8M-Eoc_QH4",
+      "tiktok_published": false,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-04T19:32:16.442822+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-05T19:32:06.828595+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/47v7zJL0yhw",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-06T19:31:57.387363+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-07T19:33:46.904791+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-08T19:32:26.989636+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-09T19:32:30.819080+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-10T19:32:17.363803+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": "https://youtu.be/SnF3iR4ftGs",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-11T06:40:09.445315+00:00",
+      "slug": "agi_timeline_2026",
+      "title": "Will AGI Arrive by 2026 or 2030? (Silicon Valley Reality Check) #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/agi_timeline_2026_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/Z4wBSgu4Np4",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-11T18:01:44.706205+00:00",
+      "slug": "ai_agents_replace_junior_devs",
+      "ui_model": "model_1_cyber_nexus",
+      "title": "Will AI Coding Agents Replace Junior Developers by 2027? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_agents_replace_junior_devs_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/ZjIyrNjuJpw",
+      "tiktok_published": true,
+      "dry_run": false
+    }
+  ]
+}
