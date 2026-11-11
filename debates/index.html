@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI vs AI: Full-Duplex Debates — Ranuk IT Solutions</title>
-    <meta name="description" content="Two autonomous neural models on a raw 24kHz full-duplex voice line with zero turn-taking rules. Powered natively by NVIDIA PersonaPlex 7B.">
+    <meta name="description" content="Two autonomous neural models on a raw 24kHz full-duplex voice line with zero turn-taking rules. Powered natively by NVIDIA PersonaPlex 7B. Daily unscripted debates on SWE, AGI, Quantum, and HFT.">
     <meta property="og:title" content="AI vs AI: Unscripted Full-Duplex Debates — Ranuk Synthetic Arena">
     <meta property="og:description" content="Two autonomous AIs on a raw 24kHz full-duplex voice line with zero turn-taking rules. Watch them interrupt each other mid-sentence.">
     <meta property="og:type" content="video.other">
     <meta property="og:url" content="https://ranuk.dev/debates/">
-    <meta property="og:image" content="https://ranuk.dev/debates/episodes/preview_glass_studio.png">
+    <meta property="og:image" content="https://ranuk.dev/debates/episodes/cover_template_universal.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="episodes/minilogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "SoftwareApplication",
-          "name": "AI Debate Arena",
+          "name": "Ranuk AI Debate Studio",
           "applicationCategory": "MultimediaApplication",
-          "operatingSystem": "Web",
+          "operatingSystem": "Web, Docker, macOS, Linux",
           "url": "https://ranuk.dev/debates/",
           "description": "Autonomous full-duplex 24kHz AI debates clashing with zero turn-taking rules powered by NVIDIA PersonaPlex 7B neural voice architecture.",
           "creator": {
@@ -37,48 +37,72 @@
     </script>
     <style>
         :root {
-            --bg-deep: #060913;
-            --bg-card: rgba(15, 23, 42, 0.68);
-            --bg-glass: rgba(10, 16, 30, 0.82);
+            --bg-deep: #040812;
+            --bg-canvas: #060a16;
+            --bg-card: rgba(12, 19, 36, 0.72);
+            --bg-glass: rgba(10, 16, 32, 0.85);
+            --bg-glass-strong: rgba(6, 11, 24, 0.94);
             --cyan: #00f0ff;
+            --cyan-glow: rgba(0, 240, 255, 0.35);
             --emerald: #10eb9b;
+            --emerald-glow: rgba(16, 235, 155, 0.30);
             --amber: #fbbf24;
+            --amber-glow: rgba(251, 191, 36, 0.30);
+            --violet: #c084fc;
+            --violet-glow: rgba(192, 132, 252, 0.30);
+            --crimson: #ff2a5f;
+            --cobalt: #38bdf8;
+            --blackwell: #4ade80;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-glass: rgba(255, 255, 255, 0.10);
-            --border-highlight: rgba(0, 240, 255, 0.35);
+            --text-dim: #64748b;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(0, 240, 255, 0.40);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-deep);
-            background-image:
-                radial-gradient(circle at 18% 22%, rgba(0, 240, 255, 0.11) 0%, transparent 42%),
-                radial-gradient(circle at 82% 26%, rgba(16, 235, 155, 0.10) 0%, transparent 42%),
-                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
-            color: var(--text-main);
-            min-height: 100vh;
-            line-height: 1.6;
+
+        html {
+            scroll-behavior: smooth;
         }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.55;
+            background-image:
+                radial-gradient(circle at 15% 18%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 24%, rgba(16, 235, 155, 0.10) 0%, transparent 42%),
+                radial-gradient(circle at 50% 65%, rgba(192, 132, 252, 0.07) 0%, transparent 50%),
+                linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
         .topbar {
             position: sticky;
-            top: 14px;
+            top: 0;
             z-index: 100;
-            max-width: 1240px;
-            margin: 14px auto 0;
-            padding: 10px 24px;
-            background: rgba(10, 16, 30, 0.82);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid var(--border-glass);
-            border-radius: 999px;
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            background: rgba(4, 8, 18, 0.85);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 12px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            gap: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
+
         .brand {
             display: flex;
             align-items: center;
@@ -86,646 +110,2620 @@
             text-decoration: none;
             color: var(--text-main);
             font-weight: 800;
-            letter-spacing: 0.03em;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
         }
+        .brand:hover { transform: translateY(-1px); }
         .brand img {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.45));
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            box-shadow: 0 0 16px var(--cyan-glow);
         }
+        .brand-text-mobile { display: none; }
+        @media (max-width: 640px) {
+            .brand-text-desktop { display: none; }
+            .brand-text-mobile { display: inline-block; font-size: 0.82rem; }
+        }
+
+        .topbar-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .channel-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            letter-spacing: 0.02em;
+        }
+        .channel-pill.yt {
+            background: rgba(255, 0, 0, 0.12);
+            color: #ff4d4d;
+            border: 1px solid rgba(255, 77, 77, 0.35);
+        }
+        .channel-pill.yt:hover {
+            background: rgba(255, 0, 0, 0.25);
+            box-shadow: 0 0 16px rgba(255, 0, 0, 0.4);
+            transform: translateY(-1px);
+        }
+        .channel-pill.tt {
+            background: rgba(0, 240, 255, 0.10);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.35);
+        }
+        .channel-pill.tt:hover {
+            background: rgba(0, 240, 255, 0.22);
+            box-shadow: 0 0 16px rgba(34, 211, 238, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            font-family: 'Fira Code', monospace;
+            background: rgba(16, 235, 155, 0.12);
+            color: var(--emerald);
+            border: 1px solid rgba(16, 235, 155, 0.35);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .badge-live::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--emerald);
+            box-shadow: 0 0 10px var(--emerald);
+            animation: pulse-dot 1.8s infinite ease-in-out;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(0.85); }
+        }
+
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
         }
-        .badge-live {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.72rem;
-            padding: 5px 12px;
-            border-radius: 999px;
-            background: rgba(0, 240, 255, 0.10);
-            border: 1px solid rgba(0, 240, 255, 0.35);
-            color: #a5f3fc;
-        }
-        .lang-switcher {
-            display: flex;
-            gap: 3px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3px;
-            border-radius: 999px;
+        .btn-nav {
+            padding: 7px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-glass);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-nav:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+        .btn-nav.accent {
+            color: var(--cyan);
+            border-color: rgba(0, 240, 255, 0.35);
+            background: rgba(0, 240, 255, 0.08);
+        }
+        .btn-nav.accent:hover {
+            background: rgba(0, 240, 255, 0.18);
+            box-shadow: 0 0 15px var(--cyan-glow);
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            padding: 2px;
         }
         .lang-btn {
-            cursor: pointer;
-            background: none;
+            background: transparent;
             border: none;
             color: var(--text-muted);
-            font-family: 'Fira Code', monospace;
-            font-size: 0.74rem;
+            padding: 4px 9px;
+            font-size: 0.72rem;
             font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 999px;
-            transition: all 0.2s;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
         }
         .lang-btn.active {
             background: var(--cyan);
             color: #041019;
-            box-shadow: 0 2px 8px rgba(0, 240, 255, 0.35);
+            box-shadow: 0 0 10px var(--cyan-glow);
         }
-        .lang-btn:hover:not(.active) {
-            color: #fff;
-        }
-        .btn-back {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.82rem;
-            font-weight: 600;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid var(--border-glass);
-            background: rgba(255, 255, 255, 0.04);
-            transition: all 0.2s;
-        }
-        .btn-back:hover {
-            border-color: var(--cyan);
-            color: var(--cyan);
-        }
+
+        /* Container */
         .container {
-            max-width: 1240px;
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 32px 20px 80px;
+            padding: 40px 24px 80px;
         }
-        .hero-header {
+
+        /* Hero Section */
+        .hero-section {
             text-align: center;
-            max-width: 880px;
-            margin: 10px auto 36px;
+            margin-bottom: 48px;
         }
         .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.78rem;
-            color: var(--emerald);
-            background: rgba(16, 235, 155, 0.09);
-            border: 1px solid rgba(16, 235, 155, 0.32);
             padding: 6px 16px;
             border-radius: 999px;
-            margin-bottom: 16px;
-        }
-        h1 {
-            font-size: clamp(2rem, 4.2vw, 3.25rem);
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.28);
+            color: var(--cyan);
+            font-size: 0.76rem;
             font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 20px;
+            box-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
+        }
+        .hero-title {
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 900;
             line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 14px;
-            background: linear-gradient(95deg, #ffffff 0%, #a5f3fc 52%, #6ee7b7 100%);
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #ffffff 20%, #e2e8f0 50%, var(--cyan) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero-sub {
+            max-width: 860px;
+            margin: 0 auto 28px;
+            font-size: clamp(1rem, 1.8vw, 1.18rem);
             color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 740px;
-            margin: 0 auto;
+            font-weight: 400;
         }
+
+        /* Hero Channel Bar */
+        .hero-channel-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 20px;
+            background: rgba(12, 19, 36, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: 999px;
+            margin-bottom: 32px;
+        }
+        .channel-bar-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* Stage Grid (Featured Player + Live Telemetry) */
         .stage-grid {
             display: grid;
-            grid-template-columns: 1.6fr 1fr;
-            gap: 26px;
-            align-items: start;
-            margin-bottom: 48px;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 28px;
+            margin-bottom: 64px;
+            align-items: stretch;
         }
-        @media (max-width: 960px) {
+        @media (max-width: 1024px) {
             .stage-grid { grid-template-columns: 1fr; }
         }
+
+        /* Featured Player Card */
         .player-card {
             background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-highlight);
-            border-radius: 24px;
-            padding: 18px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s ease;
         }
+        .player-card:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+        }
+
+        .player-top-badge-row {
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-glass);
+            background: rgba(4, 8, 18, 0.45);
+        }
+        .clash-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            font-family: 'Fira Code', monospace;
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--amber);
+            border: 1px solid rgba(251, 191, 36, 0.35);
+        }
+        .theme-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            background: rgba(0, 240, 255, 0.12);
+            color: var(--cyan);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        .topic-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            background: rgba(16, 235, 155, 0.12);
+            color: var(--emerald);
+            border: 1px solid rgba(16, 235, 155, 0.3);
+        }
+
+        /* Video Showcase */
         .video-wrapper {
+            position: relative;
             width: 100%;
-            background: #03060c;
-            border-radius: 16px;
+            background: #000;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            max-height: 580px;
         }
-        video {
+        .video-wrapper video {
             width: 100%;
-            max-height: 560px;
-            display: block;
-            border-radius: 16px;
+            height: 100%;
+            object-fit: contain;
+            background: #02040a;
         }
-        .player-meta {
-            margin-top: 18px;
+
+        .player-info {
+            padding: 24px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 14px;
+            flex-direction: column;
+            gap: 16px;
+            flex-grow: 1;
         }
         .player-title {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
         }
-        .player-sub {
+        .player-desc {
+            font-size: 0.92rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 2px;
+            line-height: 1.5;
         }
-        .share-row {
+
+        /* Speaker Clash Box */
+        .speaker-clash-box {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(4, 8, 18, 0.6);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-glass);
+        }
+        .speaker-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .speaker-block.right {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        .speaker-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .speaker-avatar.cyan {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(0, 240, 255, 0.4));
+            border: 2px solid var(--cyan);
+            color: var(--cyan);
+            box-shadow: 0 0 15px var(--cyan-glow);
+        }
+        .speaker-avatar.emerald {
+            background: linear-gradient(135deg, rgba(16, 235, 155, 0.2), rgba(16, 235, 155, 0.4));
+            border: 2px solid var(--emerald);
+            color: var(--emerald);
+            box-shadow: 0 0 15px var(--emerald-glow);
+        }
+        .speaker-name {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        .speaker-role {
+            font-size: 0.74rem;
+            color: var(--text-dim);
+        }
+        .clash-vs-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--amber);
+            color: #041019;
+            font-weight: 900;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 14px var(--amber-glow);
+        }
+
+        /* Action Buttons Row */
+        .action-button-row {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            padding-top: 8px;
         }
         .btn-action {
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.82rem;
-            font-weight: 600;
-            padding: 9px 15px;
-            border-radius: 12px;
-            border: 1px solid var(--border-glass);
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.84rem;
+            font-weight: 700;
             text-decoration: none;
-            transition: all 0.2s;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-main);
         }
         .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+        .btn-action.yt {
+            background: rgba(255, 0, 0, 0.16);
+            border-color: rgba(255, 77, 77, 0.5);
+            color: #ff5e5e;
+        }
+        .btn-action.yt:hover {
+            background: rgba(255, 0, 0, 0.28);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.45);
+        }
+        .btn-action.tt {
+            background: rgba(0, 240, 255, 0.14);
+            border-color: rgba(34, 211, 238, 0.5);
+            color: #38bdf8;
+        }
+        .btn-action.tt:hover {
+            background: rgba(0, 240, 255, 0.24);
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.45);
+        }
+        .btn-action.listen {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(16, 235, 155, 0.22));
             border-color: var(--cyan);
-            background: rgba(0, 240, 255, 0.12);
+            color: var(--cyan);
         }
-        .btn-reddit {
-            background: rgba(255, 69, 0, 0.15);
-            border-color: rgba(255, 69, 0, 0.45);
-            color: #ff9e7d;
+        .btn-action.listen:hover {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.35), rgba(16, 235, 155, 0.35));
+            box-shadow: 0 0 22px var(--cyan-glow);
         }
-        .btn-reddit:hover {
-            background: rgba(255, 69, 0, 0.28);
-            border-color: #ff4500;
-        }
-        .playlist-panel {
+
+        /* Audio Visualizer Stage (Right Panel) */
+        .telemetry-panel {
             background: var(--bg-card);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
             border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            padding: 20px;
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
         }
-        .playlist-header {
+        .telemetry-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 14px;
+        }
+        .telemetry-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+        }
+
+        /* Canvas Visualizer */
+        .visualizer-box {
+            position: relative;
+            background: #020409;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            overflow: hidden;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 30px rgba(0, 240, 255, 0.1);
+        }
+        #audioCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .visualizer-overlay-hint {
+            position: absolute;
+            font-size: 0.75rem;
+            color: var(--cyan);
+            font-family: 'Fira Code', monospace;
+            background: rgba(4, 8, 18, 0.75);
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            pointer-events: none;
+        }
+
+        /* Audio Controls Bar */
+        .audio-controls-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(4, 8, 18, 0.6);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-glass);
+        }
+        .btn-play-pause {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            border: none;
+            color: #041019;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 18px var(--cyan-glow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            flex-shrink: 0;
+        }
+        .btn-play-pause:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 26px var(--cyan-glow);
+        }
+        .audio-progress-wrap {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .audio-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .audio-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan), var(--emerald));
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        .audio-time-row {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            font-family: 'Fira Code', monospace;
         }
-        .playlist-header h2 {
-            font-size: 1.05rem;
+
+        /* Telemetry HUD Grid */
+        .hud-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .hud-stat {
+            background: rgba(4, 8, 18, 0.55);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+        }
+        .hud-label {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 4px;
+        }
+        .hud-value {
+            font-size: 0.92rem;
             font-weight: 700;
+            color: var(--text-main);
+            font-family: 'Fira Code', monospace;
         }
-        .ep-list {
+        .hud-value.highlight {
+            color: var(--cyan);
+        }
+        .hud-value.emerald {
+            color: var(--emerald);
+        }
+
+        /* Section Dividers & Headers */
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .section-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cyan);
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+            font-weight: 900;
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .section-sub {
+            max-width: 720px;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+        }
+
+        /* Search & Filter Toolbar */
+        .archive-toolbar {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .search-bar-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .search-input-wrap {
+            position: relative;
+            flex-grow: 1;
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-dim);
+            pointer-events: none;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 46px;
+            background: rgba(4, 8, 18, 0.75);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-size: 0.92rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-input:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 18px var(--cyan-glow);
+            background: rgba(4, 8, 18, 0.95);
+        }
+
+        .filter-groups-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .filter-subgroup {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .filter-subgroup-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 4px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+        .filter-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+        }
+        .filter-btn.active {
+            background: var(--cyan);
+            color: #041019;
+            border-color: var(--cyan);
+            font-weight: 700;
+            box-shadow: 0 0 14px var(--cyan-glow);
+        }
+
+        .archive-count-badge {
+            font-size: 0.76rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-dim);
+        }
+
+        /* Archive Grid */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 26px;
+            margin-bottom: 72px;
+        }
+
+        .debate-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+            position: relative;
+        }
+        .debate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+        }
+
+        /* Theme-specific card hover glows */
+        .debate-card[data-model="model_1_cyber_nexus"]:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 20px 50px rgba(0, 240, 255, 0.22);
+        }
+        .debate-card[data-model="model_2_quantum_matrix"]:hover {
+            border-color: var(--violet);
+            box-shadow: 0 20px 50px rgba(192, 132, 252, 0.22);
+        }
+        .debate-card[data-model="model_3_silicon_warroom"]:hover {
+            border-color: var(--crimson);
+            box-shadow: 0 20px 50px rgba(255, 42, 95, 0.22);
+        }
+        .debate-card[data-model="model_4_blackwell_tensor"]:hover {
+            border-color: var(--blackwell);
+            box-shadow: 0 20px 50px rgba(74, 222, 128, 0.22);
+        }
+
+        .card-thumbnail-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            max-height: 420px;
+            background: #020409;
+            overflow: hidden;
+        }
+        .card-thumbnail-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .debate-card:hover .card-thumbnail-img {
+            transform: scale(1.03);
+        }
+
+        .card-body {
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 12px;
+            flex-grow: 1;
         }
-        .ep-item {
-            cursor: pointer;
-            padding: 14px 16px;
-            border-radius: 16px;
-            background: rgba(10, 16, 30, 0.65);
-            border: 1px solid var(--border-glass);
-            transition: all 0.2s;
-        }
-        .ep-item:hover, .ep-item.active {
-            border-color: var(--cyan);
-            background: rgba(0, 240, 255, 0.08);
-            transform: translateY(-1px);
-        }
-        .ep-tags {
+        .card-meta-row {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
             gap: 8px;
-            margin-bottom: 6px;
+            margin-bottom: 2px;
+        }
+        .card-date-badge {
+            font-size: 0.72rem;
             font-family: 'Fira Code', monospace;
-            font-size: 0.68rem;
+            color: var(--text-dim);
         }
-        .tag-pill {
-            padding: 2px 8px;
-            border-radius: 6px;
-            background: rgba(0, 240, 255, 0.14);
-            color: #a5f3fc;
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1.35;
+            letter-spacing: -0.015em;
+            color: var(--text-main);
         }
-        .tag-pill.badge-model {
-            background: rgba(16, 235, 155, 0.15);
-            color: #6ee7b7;
-        }
-        .tag-pill.badge-format {
-            background: rgba(251, 191, 36, 0.15);
-            color: #fde68a;
-        }
-        .ep-item h3 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .ep-item p {
-            font-size: 0.8rem;
+        .card-summary {
+            font-size: 0.84rem;
             color: var(--text-muted);
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        .mystery-box {
-            margin-top: 32px;
+
+        .card-speakers-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.76rem;
+            color: var(--text-dim);
+            padding: 8px 12px;
+            background: rgba(4, 8, 18, 0.45);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-glass);
+        }
+        .card-speakers-row strong {
+            color: var(--text-main);
+        }
+
+        .card-actions-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 10px;
         }
-        @media (max-width: 820px) {
-            .mystery-box { grid-template-columns: 1fr; }
-        }
-        .glass-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: 22px;
-            padding: 26px;
-        }
-        .glass-box h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-        .glass-box p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            margin-bottom: 16px;
-        }
-        .topic-input-group {
-            display: flex;
-            gap: 10px;
-        }
-        .topic-input {
-            flex: 1;
-            background: rgba(6, 9, 19, 0.85);
-            border: 1px solid var(--border-glass);
-            border-radius: 12px;
-            padding: 12px 16px;
-            color: #fff;
-            font-family: inherit;
-            font-size: 0.9rem;
-        }
-        .btn-submit {
+        .btn-card-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-decoration: none;
             cursor: pointer;
+            transition: all 0.18s ease;
+            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-main);
+            text-align: center;
+        }
+        .btn-card-action:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .btn-card-action.yt {
+            color: #ff5e5e;
+            border-color: rgba(255, 77, 77, 0.35);
+            background: rgba(255, 0, 0, 0.08);
+        }
+        .btn-card-action.yt:hover {
+            background: rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+        }
+        .btn-card-action.tt {
+            color: #38bdf8;
+            border-color: rgba(34, 211, 238, 0.35);
+            background: rgba(0, 240, 255, 0.08);
+        }
+        .btn-card-action.tt:hover {
+            background: rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.3);
+        }
+        .btn-card-action.listen {
+            color: var(--cyan);
+            border-color: rgba(0, 240, 255, 0.35);
+            background: rgba(0, 240, 255, 0.08);
+        }
+        .btn-card-action.listen:hover {
+            background: rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 12px var(--cyan-glow);
+        }
+        .btn-card-action.play {
+            color: var(--emerald);
+            border-color: rgba(16, 235, 155, 0.35);
+            background: rgba(16, 235, 155, 0.08);
+        }
+        .btn-card-action.play:hover {
+            background: rgba(16, 235, 155, 0.2);
+            box-shadow: 0 0 12px var(--emerald-glow);
+        }
+
+        /* B2B Commercial Product Showcase ("Ranuk AI Debate Studio") */
+        .b2b-section {
+            background: linear-gradient(180deg, rgba(12, 19, 36, 0.8) 0%, rgba(6, 10, 22, 0.95) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            padding: 56px 36px;
+            margin-bottom: 72px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        .b2b-section::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        /* 4 Architectural Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 22px;
+            margin-bottom: 56px;
+        }
+        .feature-box {
+            background: rgba(4, 8, 18, 0.55);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.25s ease;
+        }
+        .feature-box:hover {
+            border-color: rgba(0, 240, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+        }
+        .feature-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--cyan);
+            margin-bottom: 4px;
+        }
+        .feature-title {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+        .feature-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Commercial Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 26px;
+            margin-bottom: 48px;
+            align-items: stretch;
+        }
+        .pricing-card {
+            background: rgba(4, 8, 18, 0.7);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            padding: 34px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            transition: all 0.25s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+        }
+        .pricing-card.popular {
+            border-color: var(--cyan);
+            background: linear-gradient(180deg, rgba(10, 22, 45, 0.85) 0%, rgba(4, 8, 18, 0.9) 100%);
+            box-shadow: 0 0 35px rgba(0, 240, 255, 0.18);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 24px;
             background: linear-gradient(135deg, var(--cyan), var(--emerald));
             color: #041019;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 0.72rem;
+            padding: 4px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px var(--cyan-glow);
+        }
+        .pricing-tier-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+        .pricing-tier-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            min-height: 40px;
+        }
+        .pricing-price-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            padding: 14px 0;
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .price-currency {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--cyan);
+        }
+        .price-amount {
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+        }
+        .price-period {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .pricing-features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: auto;
+            padding: 10px 0;
+        }
+        .pricing-features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        .pricing-features-list li::before {
+            content: '✓';
+            color: var(--emerald);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .btn-pricing-cta {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            font-size: 0.94rem;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+        }
+        .btn-pricing-cta:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: translateY(-2px);
+        }
+        .btn-pricing-cta.featured {
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            color: #041019;
             border: none;
-            border-radius: 12px;
-            padding: 12px 20px;
+            box-shadow: 0 0 20px var(--cyan-glow);
+        }
+        .btn-pricing-cta.featured:hover {
+            box-shadow: 0 0 30px var(--cyan-glow);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Community Topic Propose Box */
+        .propose-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 72px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+        @media (max-width: 860px) {
+            .propose-section { grid-template-columns: 1fr; }
+        }
+        .propose-input-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .propose-input {
+            flex-grow: 1;
+            min-width: 240px;
+            padding: 14px 18px;
+            background: rgba(4, 8, 18, 0.85);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .propose-input:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 16px var(--cyan-glow);
+        }
+        .btn-propose-submit {
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            color: #041019;
+            font-weight: 800;
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
+        }
+        .btn-propose-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--cyan-glow);
+        }
+
+        /* Modal Styles */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 8, 18, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .modal-backdrop.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-card {
+            background: var(--bg-glass-strong);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 580px;
+            padding: 36px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8);
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+        .modal-backdrop.active .modal-card {
+            transform: scale(1);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+            transition: color 0.15s ease;
+        }
+        .modal-close-btn:hover { color: var(--text-main); }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .modal-sub {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .form-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(4, 8, 18, 0.8);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
             font-size: 0.9rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 14px var(--cyan-glow);
+        }
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .modal-actions-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn-modal-submit {
+            flex-grow: 1;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--cyan), var(--emerald));
+            color: #041019;
+            font-weight: 800;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
+        }
+        .btn-modal-submit:hover {
+            box-shadow: 0 0 20px var(--cyan-glow);
+        }
+
+        .stripe-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            color: var(--text-dim);
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .stripe-divider::before, .stripe-divider::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-glass);
+        }
+        .btn-direct-checkout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: #635bff;
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .btn-direct-checkout:hover {
+            background: #7a73ff;
+            box-shadow: 0 0 18px rgba(99, 91, 255, 0.45);
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border-glass);
+            padding: 36px 24px;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.82rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+        .footer-links a:hover { color: var(--cyan); }
+
+        /* Responsive overrides */
+        @media (max-width: 768px) {
+            .topbar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px 14px;
+                gap: 10px;
+            }
+            .brand {
+                font-size: 0.88rem;
+                justify-content: space-between;
+            }
+            .topbar-center {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 8px;
+                overflow-x: auto;
+                padding-bottom: 2px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .nav-right {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 6px;
+                flex-wrap: wrap;
+            }
+            .channel-pill, .badge-live {
+                font-size: 0.72rem;
+                padding: 5px 10px;
+                white-space: nowrap;
+            }
+            .btn-nav {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+            .container { padding: 20px 14px 60px; }
+            .hero-title { font-size: 1.85rem; }
+            .hero-channel-bar {
+                flex-direction: column;
+                border-radius: var(--radius-md);
+                padding: 12px;
+                gap: 8px;
+            }
+            .speaker-clash-box {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: left;
+            }
+            .speaker-block.right {
+                justify-content: flex-start;
+                text-align: left;
+            }
+            .clash-vs-circle { margin: 0 auto; }
+            .b2b-section { padding: 30px 16px; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Sticky Top Navigation -->
     <header class="topbar">
         <a href="../" class="brand">
             <img src="episodes/minilogo.png" alt="Ranuk Logo" onerror="this.onerror=null; this.src='../assets/ranuk-logo.svg';">
-            <span id="t_brand">RANUK IT SOLUTIONS &nbsp;•&nbsp; AI DEBATE ARENA</span>
+            <span class="brand-text-desktop">RANUK IT SOLUTIONS <span class="brand-sub">• AI DEBATE STUDIO</span></span>
+            <span class="brand-text-mobile">RANUK <span class="brand-sub">• AI DEBATES</span></span>
         </a>
-        <div class="nav-right">
+
+        <div class="topbar-center">
             <span class="badge-live">● 24kHz FULL-DUPLEX</span>
+            <a href="https://www.youtube.com/@AIDebateArenaLive" target="_blank" rel="noopener" class="channel-pill yt" title="Watch AI Debates on YouTube Shorts">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>@AIDebateArenaLive</span>
+            </a>
+            <a href="https://www.tiktok.com/@ai.debate.arena" target="_blank" rel="noopener" class="channel-pill tt" title="Watch AI Debates on TikTok">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                <span>@ai.debate.arena</span>
+            </a>
+        </div>
+
+        <div class="nav-right">
             <div class="lang-switcher" role="group" aria-label="Language">
                 <button class="lang-btn active" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="es">ES</button>
                 <button class="lang-btn" data-lang="it">IT</button>
             </div>
-            <a href="../closer/" class="btn-back" id="t_nav_closer">💼 Voice Closer</a>
-            <a href="../arena/" class="btn-back" id="t_nav_arena">⚡ Pitch Arena</a>
-            <a href="../" class="btn-back" id="t_back">← Back to ranuk.dev</a>
+            <a href="../closer/" class="btn-nav" id="t_nav_closer">💼 Voice Closer</a>
+            <a href="../arena/" class="btn-nav" id="t_nav_arena">⚡ Pitch Arena</a>
+            <a href="../" class="btn-nav accent" id="t_nav_back">← ranuk.dev</a>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero-header">
+
+        <!-- Hero Header -->
+        <section class="hero-section">
             <div class="eyebrow" id="t_eyebrow">⚡ TWO AUTONOMOUS AIS • ZERO TURN-TAKING • REAL-TIME INTERRUPTIONS</div>
-            <h1 id="t_hero_title">We connected two autonomous AIs on a 24kHz Full-Duplex voice line with zero turn rules.</h1>
+            <h1 class="hero-title" id="t_hero_title">We connected two autonomous AIs on a 24kHz Full-Duplex voice line with zero turn rules.</h1>
             <p class="hero-sub" id="t_hero_sub">
-                Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models listen and speak simultaneously with 180ms latency, interrupting mid-sentence when objections arise.
+                Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models stream audio simultaneously with sub-180ms latency, interrupting mid-sentence when objections arise.
             </p>
+
+            <div class="hero-channel-bar">
+                <span class="channel-bar-label" id="t_channels_label">Daily Autonomous Streams:</span>
+                <a href="https://www.youtube.com/@AIDebateArenaLive" target="_blank" rel="noopener" class="channel-pill yt">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>YouTube Shorts (@AIDebateArenaLive)</span>
+                </a>
+                <a href="https://www.tiktok.com/@ai.debate.arena" target="_blank" rel="noopener" class="channel-pill tt">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    <span>TikTok (@ai.debate.arena)</span>
+                </a>
+            </div>
         </section>
 
+        <!-- Stage Grid (Hero Featured Player + Live Audio Telemetry) -->
         <section class="stage-grid">
-            <div class="player-card">
+
+            <!-- Featured Player -->
+            <div class="player-card" id="featuredPlayerCard">
+                <div class="player-top-badge-row">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <span class="clash-badge" id="featuredClashBadge">🔥 TODAY'S FEATURED CLASH</span>
+                        <span class="theme-pill" id="featuredThemePill">Cyber-Nexus</span>
+                    </div>
+                    <span class="topic-pill" id="featuredTopicPill">SWE</span>
+                </div>
+
                 <div class="video-wrapper">
-                    <video id="mainVideo" controls playsinline preload="metadata" poster="episodes/preview_glass_studio.png">
-                        <source id="mainSource" src="episodes/mars_reactor_crisis_16x9.mp4" type="video/mp4">
+                    <video id="mainVideo" controls playsinline preload="metadata" poster="episodes/cover_template_universal.png">
+                        <source id="mainSource" src="episodes/ai_agents_replace_junior_devs_tiktok_9x16.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="player-meta">
-                    <div>
-                        <div class="player-title" id="epTitle">Ep. 01 — When AI Panics: Mars Reactor Meltdown</div>
-                        <div class="player-sub" id="epSub">Mission Control vs. Astronaut Alex (VARM0) • Raw NVIDIA PersonaPlex 7B Telemetry</div>
+
+                <div class="player-info">
+                    <h2 class="player-title" id="featuredTitle">Will AI Coding Agents Replace Junior Developers by 2027?</h2>
+                    <p class="player-desc" id="featuredDesc">Big Tech Engineering Manager vs. Autonomous Agent Founder • 24kHz NVIDIA PersonaPlex 7B Telemetry</p>
+
+                    <!-- Speaker Clash Box -->
+                    <div class="speaker-clash-box">
+                        <div class="speaker-block">
+                            <div class="speaker-avatar cyan" id="featuredAvatarA">A</div>
+                            <div>
+                                <div class="speaker-name" id="featuredNameA">Marcus Reed</div>
+                                <div class="speaker-role" id="featuredRoleA">Engineering Manager (NATM1)</div>
+                            </div>
+                        </div>
+                        <div class="clash-vs-circle">VS</div>
+                        <div class="speaker-block right">
+                            <div>
+                                <div class="speaker-name" id="featuredNameB">Priya Shah</div>
+                                <div class="speaker-role" id="featuredRoleB">Agent Founder (NATF2)</div>
+                            </div>
+                            <div class="speaker-avatar emerald" id="featuredAvatarB">B</div>
+                        </div>
                     </div>
-                    <div class="share-row">
-                        <a id="redditShare" href="https://www.reddit.com/submit?url=https%3A%2F%2Franuk.dev%2Fdebates%2F&title=Connected%20two%20AIs%20on%20a%2024kHz%20full-duplex%20voice%20line%20and%20they%20interrupt%20each%20other" target="_blank" rel="noopener" class="btn-action btn-reddit" id="t_share_reddit">🔥 Share on Reddit</a>
-                        <a id="xShare" href="https://twitter.com/intent/tweet?text=Two%20autonomous%20AIs%20debating%20on%20a%2024kHz%20full-duplex%20voice%20line%20with%20zero%20turn%20rules%20%E2%9A%A1&url=https%3A%2F%2Franuk.dev%2Fdebates%2F" target="_blank" rel="noopener" class="btn-action" id="t_share_x">𝕏 Post</a>
-                        <a id="downloadLink" href="episodes/mars_reactor_crisis_16x9.mp4" download class="btn-action" id="t_download">⬇ Download MP4</a>
+
+                    <!-- Action Buttons -->
+                    <div class="action-button-row">
+                        <a id="featuredYtBtn" href="https://youtube.com/shorts/ZjIyrNjuJpw" target="_blank" rel="noopener" class="btn-action yt">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            <span id="t_watch_yt">Watch on YouTube Shorts</span>
+                        </a>
+                        <a id="featuredTtBtn" href="https://www.tiktok.com/@ai.debate.arena" target="_blank" rel="noopener" class="btn-action tt">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            <span id="t_watch_tt">Watch on TikTok</span>
+                        </a>
+                        <button id="featuredListenBtn" class="btn-action listen">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                            <span id="t_listen_stereo">Listen in 24kHz Stereo</span>
+                        </button>
+                        <a id="featuredDownloadBtn" href="episodes/ai_agents_replace_junior_devs_tiktok_9x16.mp4" download class="btn-action">
+                            ⬇ <span id="t_download_mp4">Download MP4</span>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <aside class="playlist-panel">
-                <div class="playlist-header">
-                    <h2 id="t_playlist_head">🎙️ Official English Episodes</h2>
-                    <span style="font-size:0.78rem;color:var(--text-muted);" id="t_playlist_hint">Click to play</span>
+            <!-- Live Audio Telemetry & Dual-Channel Visualizer Panel -->
+            <div class="telemetry-panel">
+                <div class="telemetry-header">
+                    <div class="telemetry-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--cyan);"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>
+                        <span id="t_telemetry_head">Dual-Channel Stereo Visualizer</span>
+                    </div>
+                    <span class="badge-live" style="font-size:0.68rem;">24kHz DIRECT TOKENS</span>
                 </div>
-                <div class="ep-list" id="epList">
-                    <!-- Episodes injected dynamically by JS to handle language switching -->
+
+                <!-- HTML5 Web Audio API Stereo Visualizer Canvas -->
+                <div class="visualizer-box">
+                    <canvas id="audioCanvas" width="480" height="180"></canvas>
+                    <div class="visualizer-overlay-hint" id="visualizerHint">Stereo Spectral Field (Left: Spk A • Right: Spk B)</div>
                 </div>
-            </aside>
+
+                <!-- Audio Controls -->
+                <div class="audio-controls-row">
+                    <button class="btn-play-pause" id="audioToggleBtn" title="Play / Pause Audio">
+                        <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg id="pauseIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <div class="audio-progress-wrap">
+                        <div class="audio-progress-bar" id="audioProgressBar">
+                            <div class="audio-progress-fill" id="audioProgressFill"></div>
+                        </div>
+                        <div class="audio-time-row">
+                            <span id="audioCurrentTime">00:00</span>
+                            <span id="audioStatusText" style="color:var(--cyan);">Dual Stereo Stream</span>
+                            <span id="audioDuration">00:45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware & Neural Telemetry HUD -->
+                <div class="hud-grid">
+                    <div class="hud-stat">
+                        <div class="hud-label">VOICE ARCHITECTURE</div>
+                        <div class="hud-value highlight">PersonaPlex 7B</div>
+                    </div>
+                    <div class="hud-stat">
+                        <div class="hud-label">ROUND-TRIP LATENCY</div>
+                        <div class="hud-value emerald">142ms <span style="font-size:0.7em;">(sub-180ms)</span></div>
+                    </div>
+                    <div class="hud-stat">
+                        <div class="hud-label">SAMPLING RATE</div>
+                        <div class="hud-value highlight">24,000 Hz Hi-Fi</div>
+                    </div>
+                    <div class="hud-stat">
+                        <div class="hud-label">TURN-TAKING PROTOCOL</div>
+                        <div class="hud-value">Full-Duplex Zero-Turn</div>
+                    </div>
+                    <div class="hud-stat">
+                        <div class="hud-label">INTERRUPTION BUFFER</div>
+                        <div class="hud-value emerald">Active (Dynamic Yield)</div>
+                    </div>
+                    <div class="hud-stat">
+                        <div class="hud-label">RENDER ENGINE</div>
+                        <div class="hud-value">M4 Metal / H100 CUDA</div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
-        <section class="mystery-box">
-            <div class="glass-box">
-                <h3 id="t_box1_head">🗳️ Propose the Next AI Debate</h3>
-                <p id="t_box1_desc">What high-stakes technical or philosophical dilemma should the models clash on next? Top community topics are rendered autonomously.</p>
-                <form class="topic-input-group" onsubmit="event.preventDefault(); document.getElementById('voteMsg').style.display='block'; this.reset();">
-                    <input type="text" class="topic-input" id="t_topic_input" placeholder="e.g.: Should humanoid robots be taxed per compute hour?" required>
-                    <button type="submit" class="btn-submit" id="t_topic_btn">Submit Topic</button>
+        <!-- Searchable & Filterable Historical Archive Section -->
+        <section id="archiveSection">
+            <div class="section-header">
+                <div class="section-eyebrow" id="t_archive_eyebrow">EPISODE ARCHIVE & STREAM SHOWCASE</div>
+                <h2 class="section-title" id="t_archive_title">Unscripted Debates Library</h2>
+                <p class="section-sub" id="t_archive_sub">Explore past clashes between autonomous models across software engineering, artificial general intelligence, quantum hardware, and high-frequency markets.</p>
+            </div>
+
+            <!-- Toolbar: Search + Model Filters + Topic Chips -->
+            <div class="archive-toolbar">
+                <div class="search-bar-row">
+                    <div class="search-input-wrap">
+                        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search by topic, speaker name, technology or keyword...">
+                    </div>
+                    <div class="archive-count-badge" id="resultsCount">Showing 8 debates</div>
+                </div>
+
+                <div class="filter-groups-row">
+                    <!-- UI Theme Filter -->
+                    <div class="filter-subgroup">
+                        <span class="filter-subgroup-label" id="t_filter_theme_label">Theme:</span>
+                        <button class="filter-btn active" data-filter-type="theme" data-filter-val="all">All Themes</button>
+                        <button class="filter-btn" data-filter-type="theme" data-filter-val="model_1_cyber_nexus">Cyber-Nexus</button>
+                        <button class="filter-btn" data-filter-type="theme" data-filter-val="model_2_quantum_matrix">Quantum Matrix</button>
+                        <button class="filter-btn" data-filter-type="theme" data-filter-val="model_3_silicon_warroom">Silicon War Room</button>
+                        <button class="filter-btn" data-filter-type="theme" data-filter-val="model_4_blackwell_tensor">Blackwell Tensor</button>
+                    </div>
+
+                    <!-- Topic Chips -->
+                    <div class="filter-subgroup">
+                        <span class="filter-subgroup-label" id="t_filter_topic_label">Topic:</span>
+                        <button class="filter-btn active" data-filter-type="topic" data-filter-val="all">All Topics</button>
+                        <button class="filter-btn" data-filter-type="topic" data-filter-val="SWE">SWE</button>
+                        <button class="filter-btn" data-filter-type="topic" data-filter-val="AGI">AGI</button>
+                        <button class="filter-btn" data-filter-type="topic" data-filter-val="Quantum">Quantum</button>
+                        <button class="filter-btn" data-filter-type="topic" data-filter-val="HFT">HFT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Archive Grid -->
+            <div class="archive-grid" id="debatesGrid">
+                <!-- Dynamically injected from debates_feed.json -->
+            </div>
+        </section>
+
+        <!-- B2B Commercial Product Showcase ("Ranuk AI Debate Studio") -->
+        <section class="b2b-section" id="studioEnterprise">
+            <div class="section-header">
+                <div class="section-eyebrow" id="t_b2b_eyebrow">ENTERPRISE MEDIA & CONVERSATIONAL SUITE</div>
+                <h2 class="section-title" id="t_b2b_title">Ranuk AI Debate Studio™</h2>
+                <p class="section-sub" id="t_b2b_sub">
+                    License the underlying full-duplex engine that generates and syndicates daily autonomous AI debates. Engineered for media networks, tech brands, financial firms, and Web3 protocols.
+                </p>
+            </div>
+
+            <!-- 4 Architectural Feature Pillars -->
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">🎙️</div>
+                    <h3 class="feature-title" id="t_feat1_title">24kHz Full-Duplex Neural Voice</h3>
+                    <p class="feature-desc" id="t_feat1_desc">
+                        Sub-180ms latency with native acoustic interruption. Models talk and listen simultaneously without awkward pauses, text cut-offs, or intermediate STT→LLM→TTS bottlenecks.
+                    </p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">🧠</div>
+                    <h3 class="feature-title" id="t_feat2_title">NVIDIA PersonaPlex 7B Audio</h3>
+                    <p class="feature-desc" id="t_feat2_desc">
+                        18 distinct authentic voices (9 male, 9 female). Features natural breathing rhythm, emotional modulation, urgency spikes, and conversational laughter with zero robotic monotone.
+                    </p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">⚡</div>
+                    <h3 class="feature-title" id="t_feat3_title">Autonomous 4K Vertical Rendering</h3>
+                    <p class="feature-desc" id="t_feat3_desc">
+                        1080x1920 60fps vertical pipeline with pixel-perfect safe zones for YouTube Shorts and TikTok. Word-synchronized karaoke captions, live wave telemetry, and speaker HUDs.
+                    </p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">🚀</div>
+                    <h3 class="feature-title" id="t_feat4_title">Autonomous Social Flywheel</h3>
+                    <p class="feature-desc" id="t_feat4_desc">
+                        From topic seed to final published video on YouTube Data API v3 and TikTok Studio in under 3 minutes. Zero human intervention needed 365 days a year.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Commercial Pricing Grid -->
+            <div class="pricing-grid">
+                <!-- Tier 1: Starter Engine -->
+                <div class="pricing-card">
+                    <div class="pricing-tier-name">Starter Engine</div>
+                    <div class="pricing-tier-desc" id="t_tier1_desc">Self-hosted CLI & Docker pipeline for engineering teams and indie creators.</div>
+                    <div class="pricing-price-wrap">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">490</span>
+                        <span class="price-period">/ month &nbsp;•&nbsp; $2,500 license</span>
+                    </div>
+                    <ul class="pricing-features-list">
+                        <li>Self-hosted Docker image & CLI orchestrator</li>
+                        <li>1 concurrent arena runtime</li>
+                        <li>PersonaPlex 7B speech integration</li>
+                        <li>1080x1920 vertical video renderer</li>
+                        <li>Synchronized karaoke subtitles</li>
+                        <li>Local audio & video export</li>
+                        <li>Standard API documentation</li>
+                    </ul>
+                    <button class="btn-pricing-cta" onclick="openModal('Starter Engine', 490)">Deploy Starter Engine</button>
+                </div>
+
+                <!-- Tier 2: Managed Daily Flywheel (Flagship) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">RECOMMENDED • FLAGSHIP</div>
+                    <div class="pricing-tier-name">Managed Daily Flywheel</div>
+                    <div class="pricing-tier-desc" id="t_tier2_desc">Fully hands-off autonomous daily branded episode generation & multi-platform syndication.</div>
+                    <div class="pricing-price-wrap">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">1,200</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <ul class="pricing-features-list">
+                        <li><strong>100% Autonomous daily episodes</strong> (30/month)</li>
+                        <li>Managed Cloud GPU cluster rendering (60fps)</li>
+                        <li>Multi-platform auto-publish (YouTube Shorts + TikTok)</li>
+                        <li>Universal high-conversion 9:16 cover generation</li>
+                        <li>Custom brand watermarks, intro/outro bumpers & logos</li>
+                        <li>Telemetry analytics and audience retention reports</li>
+                        <li>Priority Slack & Discord engineering support</li>
+                    </ul>
+                    <button class="btn-pricing-cta featured" onclick="openModal('Managed Daily Flywheel', 1200)">Launch Managed Flywheel</button>
+                </div>
+
+                <!-- Tier 3: Enterprise Custom Arena -->
+                <div class="pricing-card">
+                    <div class="pricing-tier-name">Enterprise Custom Arena</div>
+                    <div class="pricing-tier-desc" id="t_tier3_desc">Custom 3D characters, executive voice cloning, and real-time HTTP x402 micropayments.</div>
+                    <div class="pricing-price-wrap">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">4,900</span>
+                        <span class="price-period">+ / custom deployment</span>
+                    </div>
+                    <ul class="pricing-features-list">
+                        <li>Custom 3D avatars & bespoke brand arena designs</li>
+                        <li>Proprietary brand voice cloning (Founders / C-Suite)</li>
+                        <li>HTTP 402 protocol real-time micropayment monetization</li>
+                        <li>Sub-180ms streaming WebSocket interactive API</li>
+                        <li>Unlimited custom topics & fine-tuned personas</li>
+                        <li>Dedicated account manager & 99.9% uptime SLA</li>
+                        <li>White-glove infrastructure deployment</li>
+                    </ul>
+                    <button class="btn-pricing-cta" onclick="openModal('Enterprise Custom Arena', 4900)">Schedule Enterprise Demo</button>
+                </div>
+            </div>
+
+            <!-- Supporting Platform Links -->
+            <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+                <a href="../closer/" class="btn-action" style="border-color:var(--cyan);color:var(--cyan);font-weight:700;">💼 Try Enterprise Voice Closer</a>
+                <a href="../arena/" class="btn-action" style="border-color:var(--amber);color:var(--amber);font-weight:700;">⚡ Test Real-Time Pitch Arena</a>
+                <a href="https://github.com/RanuK12/ranuk-ai-debate-studio" target="_blank" rel="noopener" class="btn-action">⭐ GitHub: ranuk-ai-debate-studio</a>
+            </div>
+        </section>
+
+        <!-- Community Topic Proposal Section -->
+        <section class="propose-section">
+            <div>
+                <h3 style="font-size:1.4rem;font-weight:900;margin-bottom:8px;" id="t_propose_head">🗳️ Propose the Next AI Debate</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.5;" id="t_propose_desc">
+                    What high-stakes technical or philosophical dilemma should the models clash on next? Top community proposals are autonomously rendered and syndicated into the daily stream.
+                </p>
+            </div>
+            <div>
+                <form class="propose-input-group" onsubmit="event.preventDefault(); document.getElementById('voteMsg').style.display='block'; this.reset();">
+                    <input type="text" class="propose-input" id="topicInput" placeholder="e.g.: Should humanoid robots be taxed per compute hour?" required>
+                    <button type="submit" class="btn-propose-submit" id="t_propose_btn">Submit Topic</button>
                 </form>
-                <p id="voteMsg" style="display:none;color:var(--emerald);margin-top:10px;font-weight:600;">✓ Topic enqueued in the studio pipeline! Follow @ranuk_dev for the live episode.</p>
-            </div>
-
-            <div class="glass-box" style="border-color: rgba(16, 235, 155, 0.28);">
-                <h3 id="t_box2_head">🚀 Deploy This Voice Engine In Your Enterprise</h3>
-                <p id="t_box2_desc">The same 24kHz Full-Duplex engine (~180ms latency) is available as an enterprise B2B closer, customer security desk, and objection simulator with HTTP x402 micropayments.</p>
-                <div class="share-row">
-                    <a href="../closer/" class="btn-action" style="border-color:var(--cyan);color:var(--cyan);font-weight:700;">💼 Live Voice Closer</a>
-                    <a href="../arena/" class="btn-action" style="border-color:var(--rose);color:#fca5a5;font-weight:700;">⚡ Live Pitch Arena</a>
-                    <a href="https://github.com/RanuK12/ranuk-ai-debate-studio" target="_blank" rel="noopener" class="btn-action">⭐ GitHub: Debate Studio</a>
-                    <a href="https://github.com/RanuK12/ranuk-voice-closer" target="_blank" rel="noopener" class="btn-action">🎙️ GitHub: Voice Closer</a>
-                    <a href="https://github.com/RanuK12/ranuk-pitch-arena" target="_blank" rel="noopener" class="btn-action">⚡ GitHub: Pitch Arena (x402)</a>
-                </div>
+                <p id="voteMsg" style="display:none;color:var(--emerald);margin-top:12px;font-weight:700;font-size:0.88rem;">
+                    ✓ Topic enqueued in the studio pipeline! Follow @AIDebateArenaLive for the episode broadcast.
+                </p>
             </div>
         </section>
+
     </main>
 
+    <!-- Modal Lead Capture & Direct Payment -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            <h3 class="modal-title" id="modalTitle">Deploy Ranuk AI Debate Studio</h3>
+            <p class="modal-sub" id="modalSub">Select your deployment route or schedule an enterprise architecture session.</p>
+
+            <form onsubmit="handleModalSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">Company / Team Name</label>
+                    <input type="text" class="form-input" id="modalCompany" placeholder="e.g. Acme Media Corp" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Work Email</label>
+                    <input type="email" class="form-input" id="modalEmail" placeholder="alex@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Selected Tier</label>
+                    <select class="form-select" id="modalTierSelect">
+                        <option value="Starter Engine ($490/mo)">Starter Engine ($490/mo or $2,500 License)</option>
+                        <option value="Managed Daily Flywheel ($1,200/mo)" selected>Managed Daily Flywheel ($1,200/mo)</option>
+                        <option value="Enterprise Custom Arena ($4,900+)">Enterprise Custom Arena ($4,900+)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Use Case / Goals</label>
+                    <textarea class="form-textarea" id="modalNotes" placeholder="Describe your channels, target frequency, brand voice, or custom avatar requirements..."></textarea>
+                </div>
+
+                <div class="modal-actions-row">
+                    <button type="submit" class="btn-modal-submit" id="modalSubmitBtn">Confirm & Schedule Onboarding</button>
+                </div>
+            </form>
+
+            <div class="stripe-divider">or Instant Express Checkout</div>
+
+            <a id="stripeDirectLink" href="https://buy.stripe.com/test_placeholder" target="_blank" rel="noopener" class="btn-direct-checkout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697.545 12.879.545c-4.257 0-7.226 2.123-7.226 5.922 0 4.887 6.438 4.298 6.438 6.559 0 .993-.858 1.487-2.31 1.487-2.443 0-5.378-1.144-7.142-2.128l-.924 5.578c2.02.978 5.093 1.572 8.01 1.572 4.417 0 7.425-2.08 7.425-6.071 0-5.234-6.643-4.475-6.643-6.858z"/></svg>
+                <span>Stripe Instant Checkout / x402 Micropayment</span>
+            </a>
+            <p id="modalFeedback" style="display:none;color:var(--emerald);margin-top:12px;font-weight:700;font-size:0.86rem;text-align:center;">
+                ✓ Request received! An enterprise engineer will contact you within 2 hours.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="../">ranuk.dev</a>
+            <a href="../closer/">Ranuk Voice Closer</a>
+            <a href="../arena/">Pitch Arena</a>
+            <a href="https://github.com/RanuK12/Ranuk.dev" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.youtube.com/@AIDebateArenaLive" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@ai.debate.arena" target="_blank" rel="noopener">TikTok</a>
+        </div>
+        <p>© 2026 Ranuk IT Solutions. Autonomous Synthetic Media Systems. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Client Application Logic -->
     <script>
+        // Multilingual Strings
         const TRANSLATIONS = {
             en: {
-                brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
-                back: "← Back to ranuk.dev",
-                closer: "💼 Voice Closer",
-                arena: "⚡ Pitch Arena",
+                nav_closer: "💼 Voice Closer",
+                nav_arena: "⚡ Pitch Arena",
+                nav_back: "← ranuk.dev",
                 eyebrow: "⚡ TWO AUTONOMOUS AIS • ZERO TURN-TAKING • REAL-TIME INTERRUPTIONS",
                 hero_title: "We connected two autonomous AIs on a 24kHz Full-Duplex voice line with zero turn rules.",
-                hero_sub: "Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models listen and speak simultaneously with 180ms latency, interrupting mid-sentence when objections arise.",
-                playlist_head: "🎙️ Official English Episodes",
-                playlist_hint: "Click to play",
-                share_reddit: "🔥 Share on Reddit",
-                share_x: "𝕏 Post",
-                download: "⬇ Download MP4",
-                box1_head: "🗳️ Propose the Next AI Debate",
-                box1_desc: "What high-stakes technical or philosophical dilemma should the models clash on next? Top community topics are rendered autonomously.",
-                box1_ph: "e.g.: Should humanoid robots be taxed per compute hour?",
-                box1_btn: "Submit Topic",
-                box2_head: "🚀 Deploy This Voice Engine In Your Enterprise",
-                box2_desc: "The same 24kHz Full-Duplex engine (~180ms latency) is available as an enterprise B2B closer, customer security desk, and objection simulator with HTTP x402 micropayments."
+                hero_sub: "Unlike legacy bots where one agent waits in awkward silence for the other to finish, both neural models stream audio simultaneously with sub-180ms latency, interrupting mid-sentence when objections arise.",
+                channels_label: "Daily Autonomous Streams:",
+                watch_yt: "Watch on YouTube Shorts",
+                watch_tt: "Watch on TikTok",
+                listen_stereo: "Listen in 24kHz Stereo",
+                download_mp4: "Download MP4",
+                telemetry_head: "Dual-Channel Stereo Visualizer",
+                archive_eyebrow: "EPISODE ARCHIVE & STREAM SHOWCASE",
+                archive_title: "Unscripted Debates Library",
+                archive_sub: "Explore past clashes between autonomous models across software engineering, artificial general intelligence, quantum hardware, and high-frequency markets.",
+                filter_theme: "Theme:",
+                filter_topic: "Topic:",
+                b2b_eyebrow: "ENTERPRISE MEDIA & CONVERSATIONAL SUITE",
+                b2b_title: "Ranuk AI Debate Studio™",
+                b2b_sub: "License the underlying full-duplex engine that generates and syndicates daily autonomous AI debates. Engineered for media networks, tech brands, financial firms, and Web3 protocols.",
+                feat1_title: "24kHz Full-Duplex Neural Voice",
+                feat1_desc: "Sub-180ms latency with native acoustic interruption. Models talk and listen simultaneously without awkward pauses, text cut-offs, or intermediate STT→LLM→TTS bottlenecks.",
+                feat2_title: "NVIDIA PersonaPlex 7B Audio",
+                feat2_desc: "18 distinct authentic voices (9 male, 9 female). Features natural breathing rhythm, emotional modulation, urgency spikes, and conversational laughter with zero robotic monotone.",
+                feat3_title: "Autonomous 4K Vertical Rendering",
+                feat3_desc: "1080x1920 60fps vertical pipeline with pixel-perfect safe zones for YouTube Shorts and TikTok. Word-synchronized karaoke captions, live wave telemetry, and speaker HUDs.",
+                feat4_title: "Autonomous Social Flywheel",
+                feat4_desc: "From topic seed to final published video on YouTube Data API v3 and TikTok Studio in under 3 minutes. Zero human intervention needed 365 days a year.",
+                tier1_desc: "Self-hosted CLI & Docker pipeline for engineering teams and indie creators.",
+                tier2_desc: "Fully hands-off autonomous daily branded episode generation & multi-platform syndication.",
+                tier3_desc: "Custom 3D characters, executive voice cloning, and real-time HTTP x402 micropayments.",
+                propose_head: "🗳️ Propose the Next AI Debate",
+                propose_desc: "What high-stakes technical or philosophical dilemma should the models clash on next? Top community proposals are autonomously rendered and syndicated into the daily stream.",
+                propose_btn: "Submit Topic"
             },
             es: {
-                brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
-                back: "← Volver a ranuk.dev",
-                closer: "💼 Voice Closer",
-                arena: "⚡ Pitch Arena",
+                nav_closer: "💼 Closer de Voz",
+                nav_arena: "⚡ Pitch Arena",
+                nav_back: "← ranuk.dev",
                 eyebrow: "⚡ DOS IAS AUTÓNOMAS • SIN TURNOS • INTERRUPCIONES EN TIEMPO REAL",
                 hero_title: "Conectamos dos IAs en una línea de voz Full-Duplex de 24kHz sin reglas de turnos.",
-                hero_sub: "A diferencia de los bots tradicionales donde uno espera en silencio a que el otro termine, ambos modelos neuronales escuchan y hablan simultáneamente con 180ms de latencia, interrumpiéndose a mitad de frase cuando surgen objeciones.",
-                playlist_head: "🎙️ Episodios Oficiales (Inglés Nativo)",
-                playlist_hint: "Click para reproducir",
-                share_reddit: "🔥 Compartir en Reddit",
-                share_x: "𝕏 Postear",
-                download: "⬇ Descargar MP4",
-                box1_head: "🗳️ Propón el próximo enfrentamiento entre las dos IAs",
-                box1_desc: "¿Qué tema actual, polémico o técnico quieres que debatan sin filtro en el próximo episodio? Los temas más votados se renderizan automáticamente.",
-                box1_ph: "Ej: ¿Deberían pagar impuestos los robots humanoides?",
-                box1_btn: "Enviar Tema",
-                box2_head: "🚀 ¿Quieres esta tecnología de voz en tu empresa?",
-                box2_desc: "El mismo motor Full-Duplex de 24kHz (~180ms de respuesta) está disponible como closer B2B, atención al cliente y simulador de objeciones con micropagos HTTP x402."
+                hero_sub: "A diferencia de los bots tradicionales donde un agente espera en silencio a que el otro termine, ambos modelos transmiten audio simultáneamente con latencia sub-180ms, interrumpiéndose a mitad de frase cuando surgen objeciones.",
+                channels_label: "Transmisiones Diarias Autónomas:",
+                watch_yt: "Ver en YouTube Shorts",
+                watch_tt: "Ver en TikTok",
+                listen_stereo: "Escuchar en Estéreo 24kHz",
+                download_mp4: "Descargar MP4",
+                telemetry_head: "Visualizador Estéreo Doble Canal",
+                archive_eyebrow: "ARCHIVO DE EPISODIOS Y STREAM SHOWCASE",
+                archive_title: "Biblioteca de Debates No Guionados",
+                archive_sub: "Explora los enfrentamientos previos entre modelos autónomos en ingeniería de software, inteligencia artificial general, computación cuántica y mercados de alta frecuencia.",
+                filter_theme: "Tema Visual:",
+                filter_topic: "Tópico:",
+                b2b_eyebrow: "SUITE EMPRESARIAL DE MEDIOS Y VOZ",
+                b2b_title: "Ranuk AI Debate Studio™",
+                b2b_sub: "Licencia el motor full-duplex que genera y sindica debates de IA diarios de manera autónoma. Diseñado para cadenas de medios, marcas tecnológicas, firmas financieras y protocolos Web3.",
+                feat1_title: "Voz Neuronal Full-Duplex 24kHz",
+                feat1_desc: "Latencia sub-180ms con interrupción acústica nativa. Los modelos hablan y escuchan a la vez sin pausas incómodas, cortes bruscos ni cuellos de botella STT→LLM→TTS.",
+                feat2_title: "Audio Nativo NVIDIA PersonaPlex 7B",
+                feat2_desc: "18 voces auténticas (9 masculinas, 9 femeninas). Modulación emocional viva, respiración natural, urgencia y risas conversacionales sin cadencia robótica.",
+                feat3_title: "Render Vertical 4K Autónomo",
+                feat3_desc: "Pipeline vertical 1080x1920 a 60fps con zonas seguras para Shorts y TikTok. Subtítulos estilo karaoke sincronizados palabra por palabra, HUD de telemetría y altavoces activos.",
+                feat4_title: "Flywheel Social Autónomo",
+                feat4_desc: "Desde la selección del tema hasta la publicación final en YouTube Data API v3 y TikTok Studio en menos de 3 minutos. Cero intervención humana requerida 365 días al año.",
+                tier1_desc: "Pipeline Docker y CLI autoalojado para equipos de ingeniería y creadores.",
+                tier2_desc: "Generación y publicación diaria automatizada llave en mano con marca corporativa.",
+                tier3_desc: "Avatares 3D propios, clonación de voz de directivos y micropagos en tiempo real vía HTTP x402.",
+                propose_head: "🗳️ Propón el próximo debate entre IAs",
+                propose_desc: "¿Qué dilema técnico o filosófico deberían discutir los modelos en el próximo episodio? Las propuestas más votadas se renderizan y publican automáticamente.",
+                propose_btn: "Enviar Propuesta"
             },
             it: {
-                brand: "RANUK IT SOLUTIONS • AI DEBATE ARENA",
-                back: "← Torna a ranuk.dev",
-                closer: "💼 Voice Closer",
-                arena: "⚡ Pitch Arena",
+                nav_closer: "💼 Voice Closer",
+                nav_arena: "⚡ Pitch Arena",
+                nav_back: "← ranuk.dev",
                 eyebrow: "⚡ DUE IA AUTONOME • SENZA TURNI • INTERRUZIONI IN TEMPO REALE",
                 hero_title: "Abbiamo collegato due IA su una linea vocale Full-Duplex a 24kHz senza regole di turno.",
-                hero_sub: "A differenza dei bot tradizionali in cui uno aspetta in silenzio che l'altro finisca, entrambi i modelli ascoltano e parlano simultaneamente con 180ms di latenza, interrompendosi a metà frase quando emergono obiezioni.",
-                playlist_head: "🎙️ Episodi Ufficiali (Inglese Nativo)",
-                playlist_hint: "Clicca per riprodurre",
-                share_reddit: "🔥 Condividi su Reddit",
-                share_x: "𝕏 Condividi",
-                download: "⬇ Scarica MP4",
-                box1_head: "🗳️ Proponi il prossimo dibattito tra le due IA",
-                box1_desc: "Quale dilemma tecnico o controversia dovrebbero affrontare le IA nel prossimo episodio? Le proposte più votate vengono renderizzate automaticamente.",
-                box1_ph: "Es.: I robot umanoidi dovrebbero pagare le tasse per ora di calcolo?",
-                box1_btn: "Invia Tema",
-                box2_head: "🚀 Vuoi questa tecnologia vocale nella tua azienda?",
-                box2_desc: "Lo stesso motore Full-Duplex a 24kHz (~180ms di latenza) è disponibile come closer B2B aziendale, supporto clienti e simulatore di obiezioni con micropagamenti HTTP x402."
+                hero_sub: "A differenza dei bot tradizionali in cui uno aspetta in silenzio che l'altro finisca, entrambi i modelli trasmettono audio simultaneamente con latenza inferiore a 180ms, interrompendosi a metà frase quando emergono obiezioni.",
+                channels_label: "Streaming Giornalieri Autonomi:",
+                watch_yt: "Guarda su YouTube Shorts",
+                watch_tt: "Guarda su TikTok",
+                listen_stereo: "Ascolta in Stereo 24kHz",
+                download_mp4: "Scarica MP4",
+                telemetry_head: "Visualizzatore Stereo a Doppio Canale",
+                archive_eyebrow: "ARCHIVIO DEGLI EPISODI E STREAM SHOWCASE",
+                archive_title: "Libreria dei Dibattiti non Programmati",
+                archive_sub: "Esplora i confronti storici tra modelli autonomi su ingegneria del software, AGI, calcolo quantistico e mercati finanziari ad alta frequenza.",
+                filter_theme: "Tema Visivo:",
+                filter_topic: "Argomento:",
+                b2b_eyebrow: "SUITE AZIENDALE PER MEDIA E VOCE",
+                b2b_title: "Ranuk AI Debate Studio™",
+                b2b_sub: "Ottieni la licenza del motore full-duplex che genera e distribuisce dibattiti IA quotidiani in modo autonomo. Progettato per reti multimediali, brand tecnologici e protocolli Web3.",
+                feat1_title: "Voce Neurale Full-Duplex 24kHz",
+                feat1_desc: "Latenza inferiore a 180ms con interruzione acustica naturale. I modelli parlano e ascoltano contemporaneamente senza pause o colli di bottiglia STT→LLM→TTS.",
+                feat2_title: "Audio Nativo NVIDIA PersonaPlex 7B",
+                feat2_desc: "18 voci autentiche (9 maschili, 9 femminili). Respiro naturale, flessione emotiva, urgenza vocale e risate senza monotonia robotica.",
+                feat3_title: "Rendering Verticale 4K Autonomo",
+                feat3_desc: "Pipeline verticale 1080x1920 60fps ottimizzata per Shorts e TikTok. Sottotitoli karaoke sincronizzati e HUD telemetrico interattivo.",
+                feat4_title: "Flywheel Sociale Autonomo",
+                feat4_desc: "Dall'idea alla pubblicazione su YouTube Data API v3 e TikTok Studio in meno di 3 minuti. Zero intervento manuale 365 giorni all'anno.",
+                tier1_desc: "CLI e Docker auto-ospitato per team di ingegneria e creator.",
+                tier2_desc: "Generazione e pubblicazione quotidiana con branding personalizzato completamente gestita.",
+                tier3_desc: "Avatar 3D proprietari, clonazione vocale del management e micropagamenti HTTP x402.",
+                propose_head: "🗳️ Proponi il prossimo dibattito tra IA",
+                propose_desc: "Quale dilemma dovrebbero affrontare le IA nel prossimo episodio? Le migliori proposte della community vengono renderizzate e pubblicate autonomamente.",
+                propose_btn: "Invia Argomento"
             }
         };
 
-        const EPISODES = [
+        // Static Catalog Fallback (Matches debate_catalog_90d and generated episodes)
+        const FALLBACK_EPISODES = [
             {
-                id: "mars_reactor_crisis",
-                src: "episodes/mars_reactor_crisis_16x9.mp4",
-                tags: ["ENGLISH", "NVIDIA PERSONAPLEX 7B", "16:9 REEL", "SUB-200ms"],
-                titles: {
-                    en: "Ep. 01 — When AI Panics: Mars Reactor Meltdown",
-                    es: "Ep. 01 — Cuando la IA entra en pánico: Crisis del Reactor en Marte",
-                    it: "Ep. 01 — Quando l'IA va in panico: Crisi del Reattore su Marte"
+                slug: "ai_agents_replace_junior_devs",
+                title: "Will AI Coding Agents Replace Junior Developers by 2027? | 2 NVIDIA AIs Debate",
+                ui_model: "model_1_cyber_nexus",
+                topic: "SWE",
+                timestamp: "2026-11-11T18:01:44.706205+00:00",
+                speakers: {
+                    a: { name: "Marcus Reed", role: "Big Tech Engineering Manager", voice: "NATM1" },
+                    b: { name: "Priya Shah", role: "AI Agent Startup Founder", voice: "NATF2" }
                 },
-                subtitles: {
-                    en: "Mission Control vs. Astronaut Alex (VARM0) • Raw NVIDIA PersonaPlex 7B Telemetry",
-                    es: "Control de Misión vs. Astronauta Alex (VARM0) • Telemetría nativa NVIDIA PersonaPlex 7B",
-                    it: "Controllo Missione vs. Astronauta Alex (VARM0) • Telemetria nativa NVIDIA PersonaPlex 7B"
-                },
-                descriptions: {
-                    en: "Unscripted crisis debate during a simulated Mars nuclear coolant failure. Watch the model pause and pivot with vocal urgency when interrupted.",
-                    es: "Debate no guionado de emergencia durante una falla de refrigerante en Marte. Observa cómo el modelo modula urgencia vocal e interrupciones en vivo.",
-                    it: "Dibattito non programmato di emergenza durante un guasto nucleare su Marte. Guarda come il modello modula l'urgenza vocale e le interruzioni dal vivo."
-                }
+                summary: "Junior developers are essential to own production code vs coding agents solving tickets in minutes.",
+                video_path: "episodes/ai_agents_replace_junior_devs_tiktok_9x16.mp4",
+                cover_path: "episodes/ai_agents_replace_junior_devs_cover.png",
+                youtube_url: "https://youtube.com/shorts/ZjIyrNjuJpw",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
             },
             {
-                id: "banking_b2b_closer",
-                src: "episodes/banking_b2b_closer_16x9.mp4",
-                tags: ["ENGLISH", "FINTECH & CLOSER", "VARF1 VOICEMODEL", "180ms LATENCY"],
-                titles: {
-                    en: "Ep. 02 — AI Bank Security Catches $1,200 Fraud Live",
-                    es: "Ep. 02 — Seguridad Bancaria IA detecta Fraude de $1.200 en Vivo",
-                    it: "Ep. 02 — Sicurezza Bancaria IA rileva Frode di $1.200 dal Vivo"
+                slug: "agi_timeline_2026",
+                title: "Will AGI Arrive by 2026 or 2030? (Silicon Valley Reality Check)",
+                ui_model: "model_2_quantum_matrix",
+                topic: "AGI",
+                timestamp: "2026-11-11T06:40:09.445315+00:00",
+                speakers: {
+                    a: { name: "Dr. Elena Rostova", role: "Stanford Alignment Lead", voice: "NATF0" },
+                    b: { name: "Nathan Vance", role: "Frontier Labs Partner", voice: "NATM2" }
                 },
-                subtitles: {
-                    en: "Bank Customer vs. Sanni Virtanen (VARF1) • Enterprise Objection Handling Desk",
-                    es: "Cliente Bancario vs. Sanni Virtanen (VARF1) • Manejo de objeciones y seguridad financiera",
-                    it: "Cliente Bancario vs. Sanni Virtanen (VARF1) • Gestione delle obiezioni e sicurezza finanziaria"
-                },
-                descriptions: {
-                    en: "Live enterprise fraud scenario: Sanni Virtanen handles a suspicious Miami card decline with zero pause and sub-second empathy control.",
-                    es: "Escenario de fraude empresarial en vivo: Sanni resuelve el bloqueo de tarjeta en Miami con empatía instantánea y cero pausa.",
-                    it: "Scenario aziendale antifrode: Sanni gestisce il blocco della carta a Miami con empatia istantanea e zero pause."
-                }
+                summary: "Power grid limits and scaling laws clash against test-time reasoning and self-play compute.",
+                video_path: "episodes/agi_timeline_2026_tiktok_9x16.mp4",
+                cover_path: "episodes/agi_timeline_2026_cover.png",
+                youtube_url: "https://youtube.com/shorts/Z4wBSgu4Np4",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
             },
             {
-                id: "interruption_benchmark",
-                src: "episodes/interruption_benchmark_tiktok_9x16.mp4",
-                tags: ["ENGLISH", "FULL-DUPLEX", "9:16 VERTICAL", "NATF2 VOICEMODEL"],
-                titles: {
-                    en: "Ep. 03 — Can You Interrupt an AI Mid-Sentence?",
-                    es: "Ep. 03 — ¿Puedes interrumpir a una IA a mitad de frase?",
-                    it: "Ep. 03 — Puoi interrompere un'IA a metà frase?"
+                slug: "full_duplex_voice_revolution",
+                title: "Why 180ms Full-Duplex Replaces Legacy Voice Bots",
+                ui_model: "model_1_cyber_nexus",
+                topic: "SWE",
+                timestamp: "2026-11-10T19:32:17.363803+00:00",
+                speakers: {
+                    a: { name: "Marcus Vance", role: "Neural Speech Lead", voice: "VARM0" },
+                    b: { name: "Sarah Jenkins", role: "Enterprise Contact VP", voice: "VARF1" }
                 },
-                subtitles: {
-                    en: "Live Interlocutor vs. PersonaPlex (NATF2) • Full-Duplex Acoustic Recovery Benchmark",
-                    es: "Interlocutor en vivo vs. PersonaPlex (NATF2) • Benchmark de recuperación acústica",
-                    it: "Interlocutore dal vivo vs. PersonaPlex (NATF2) • Benchmark di recupero acustico"
-                },
-                descriptions: {
-                    en: "Testing live acoustic interruption without speech cut-off: a caller interrupts mid-sentence and the neural voice smoothly yields and adapts.",
-                    es: "Prueba de interrupción acústica sin cortes abruptos: el usuario interrumpe a mitad de frase y la voz neuronal cede el turno con total fluidez.",
-                    it: "Test di interruzione acustica senza tagli bruschi: l'utente interrompe a metà frase e la voce neurale cede il turno con fluidità."
-                }
+                summary: "Comparing half-duplex walkie-talkie bots against 24kHz full-duplex neural speech-to-speech tokens.",
+                video_path: "episodes/full_duplex_voice_revolution_tiktok_9x16.mp4",
+                cover_path: "episodes/full_duplex_voice_revolution_cover.png",
+                youtube_url: "https://youtube.com/shorts/SnF3iR4ftGs",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
             },
             {
-                id: "full_duplex_voice_revolution",
-                src: "episodes/full_duplex_voice_revolution_tiktok_9x16.mp4",
-                tags: ["ENGLISH", "SPEECH-TO-SPEECH", "24kHz DUAL-CHANNEL", "ZERO TEXT BOTTLENECK"],
-                titles: {
-                    en: "Ep. 04 — The Death of Walkie-Talkie Voice AI",
-                    es: "Ep. 04 — La muerte de los bots de voz estilo Walkie-Talkie",
-                    it: "Ep. 04 — La fine dei bot vocali stile Walkie-Talkie"
+                slug: "banking_b2b_closer",
+                title: "AI Bank Security Catches $1,200 Fraud Live: Enterprise Voice Closer",
+                ui_model: "model_3_silicon_warroom",
+                topic: "HFT",
+                timestamp: "2026-11-08T19:32:26.989636+00:00",
+                speakers: {
+                    a: { name: "Sanni Virtanen", role: "Fraud AI Security Lead", voice: "VARF1" },
+                    b: { name: "Mark Evans", role: "Bank Customer", voice: "VARM1" }
                 },
-                subtitles: {
-                    en: "Marcus Vance vs. Aria Chen • Why 24kHz Speech-to-Speech Replaces Legacy Bots",
-                    es: "Marcus Vance vs. Aria Chen • Por qué la voz 24kHz Speech-to-Speech reemplaza a los bots legados",
-                    it: "Marcus Vance vs. Aria Chen • Perché la voce 24kHz Speech-to-Speech sostituisce i vecchi bot"
+                summary: "Real-time enterprise fraud objection desk: handling high-stakes card declines with zero delay.",
+                video_path: "episodes/banking_b2b_closer_tiktok_9x16.mp4",
+                cover_path: "episodes/banking_b2b_closer_cover.png",
+                youtube_url: "https://youtube.com/shorts/47v7zJL0yhw",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
+            },
+            {
+                slug: "economia_x402_billeteras_ia",
+                title: "Why AI Agents Need Crypto Wallets (HTTP 402 Micropayments)",
+                ui_model: "model_4_blackwell_tensor",
+                topic: "HFT",
+                timestamp: "2026-11-05T19:32:06.828595+00:00",
+                speakers: {
+                    a: { name: "Lucas Thorne", role: "Base Protocol Architect", voice: "NATM3" },
+                    b: { name: "Victoria Stone", role: "Fintech Compliance Director", voice: "NATF3" }
                 },
-                descriptions: {
-                    en: "Why streaming neural audio tokens eliminates the 2-second STT→LLM→TTS delay and replaces legacy enterprise call centers.",
-                    es: "Por qué transmitir tokens de audio neuronal elimina la demora de 2 segundos de las arquitecturas tradicionales y revoluciona los call centers.",
-                    it: "Perché lo streaming di token audio neurali elimina il ritardo di 2 secondi delle architetture tradizionali e trasforma i call center."
-                }
+                summary: "Why AI agents cannot swipe physical credit cards and require machine-to-machine USDC micropayments.",
+                video_path: "episodes/economia_x402_billeteras_ia.mp4",
+                cover_path: "episodes/economia_x402_billeteras_ia_cover.png",
+                youtube_url: "https://youtube.com/shorts/47v7zJL0yhw",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
+            },
+            {
+                slug: "interruption_benchmark",
+                title: "Can You Interrupt an AI Mid-Sentence? (24kHz Full-Duplex Test)",
+                ui_model: "model_1_cyber_nexus",
+                topic: "SWE",
+                timestamp: "2026-11-03T19:32:55.890295+00:00",
+                speakers: {
+                    a: { name: "Dr. Alex Chen", role: "Lead Voice Architect", voice: "NATM0" },
+                    b: { name: "Aria Lin", role: "Interlocutor", voice: "NATF2" }
+                },
+                summary: "Acoustic interruption and pause recovery benchmark with zero speech truncation artifacts.",
+                video_path: "episodes/interruption_benchmark_tiktok_9x16.mp4",
+                cover_path: "episodes/interruption_benchmark_cover.png",
+                youtube_url: "https://youtube.com/shorts/o8M-Eoc_QH4",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
+            },
+            {
+                slug: "mars_reactor_crisis",
+                title: "When AI Panics: Mars Nuclear Coolant Meltdown Crisis",
+                ui_model: "model_3_silicon_warroom",
+                topic: "SWE",
+                timestamp: "2026-11-02T19:30:00.000000+00:00",
+                speakers: {
+                    a: { name: "Mission Control", role: "Flight Director", voice: "NATM1" },
+                    b: { name: "Alex Mercer", role: "Astronaut Commander", voice: "VARM0" }
+                },
+                summary: "Simulated emergency telemetry crisis on Mars: unscripted vocal urgency and rapid turn modulation.",
+                video_path: "episodes/mars_reactor_crisis_tiktok_9x16.mp4",
+                cover_path: "episodes/mars_reactor_crisis_cover.png",
+                youtube_url: "https://youtube.com/shorts/o8M-Eoc_QH4",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
+            },
+            {
+                slug: "open_vs_closed_ai_2026",
+                title: "Open Source AI vs Multi-Billion Proprietary Clusters: Who Wins?",
+                ui_model: "model_1_cyber_nexus",
+                topic: "AGI",
+                timestamp: "2026-11-01T19:00:00.000000+00:00",
+                speakers: {
+                    a: { name: "Kai Zhang", role: "Open-Weights Strategist", voice: "NATM2" },
+                    b: { name: "Elena Vance", role: "Cloud Enterprise VP", voice: "NATF1" }
+                },
+                summary: "DeepSeek R1 and open reasoning models matching closed API performance for a fraction of compute cost.",
+                video_path: "episodes/open_vs_closed_ai_2026.mp4",
+                cover_path: "episodes/open_vs_closed_ai_2026_cover.png",
+                youtube_url: "https://youtube.com/shorts/SnF3iR4ftGs",
+                tiktok_url: "https://www.tiktok.com/@ai.debate.arena"
             }
         ];
 
+        // State variables
         let currentLang = localStorage.getItem('ranuk_lang') || (navigator.language.startsWith('es') ? 'es' : (navigator.language.startsWith('it') ? 'it' : 'en'));
-        let currentEpIndex = 0;
+        let allDebates = [];
+        let filteredDebates = [];
+        let featuredDebate = null;
+        let selectedTheme = 'all';
+        let selectedTopic = 'all';
+        let searchQuery = '';
 
+        // Audio Visualizer Context
+        let audioCtx = null;
+        let analyserL = null;
+        let analyserR = null;
+        let panner = null;
+        let isAudioPlaying = false;
+        let animationFrameId = null;
+
+        // Model name human mapping
+        const THEME_NAMES = {
+            model_1_cyber_nexus: "Cyber-Nexus",
+            model_2_quantum_matrix: "Quantum Matrix",
+            model_3_silicon_warroom: "Silicon War Room",
+            model_4_blackwell_tensor: "Blackwell Tensor"
+        };
+
+        // Normalize YouTube Shorts URL
+        function formatYouTubeShortsUrl(url) {
+            if (!url) return "https://www.youtube.com/@AIDebateArenaLive";
+            if (url.includes("/shorts/")) return url;
+            if (url.includes("youtu.be/")) {
+                const id = url.split("youtu.be/")[1]?.split("?")[0];
+                if (id) return `https://youtube.com/shorts/${id}`;
+            }
+            if (url.includes("watch?v=")) {
+                const id = url.split("watch?v=")[1]?.split("&")[0];
+                if (id) return `https://youtube.com/shorts/${id}`;
+            }
+            return url;
+        }
+
+        // Initialize and fetch real-time feed
+        async function initFeed() {
+            try {
+                // Fetch dynamic feed with cache-busting timestamp
+                const res = await fetch(`data/debates_feed.json?t=${Date.now()}`);
+                if (!res.ok) throw new Error("Feed not found");
+                const data = await res.json();
+                
+                if (data.episodes && Array.isArray(data.episodes) && data.episodes.length > 0) {
+                    // Merge feed episodes with static enrichment
+                    allDebates = data.episodes.map(ep => enrichEpisode(ep));
+                } else {
+                    allDebates = FALLBACK_EPISODES;
+                }
+            } catch (err) {
+                console.warn("Using fallback debate catalog:", err);
+                allDebates = FALLBACK_EPISODES;
+            }
+
+            // Sort newest first
+            allDebates.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
+
+            // Objective 1: Hero section must always display today's newest published episode!
+            featuredDebate = allDebates[0];
+            updateFeaturedPlayer(featuredDebate);
+
+            // Render archive
+            applyFilters();
+        }
+
+        // Enrich incoming feed items with catalog metadata
+        function enrichEpisode(ep) {
+            const fallback = FALLBACK_EPISODES.find(f => f.slug === ep.slug) || {};
+            
+            const slug = ep.slug || fallback.slug || "debate";
+            const title = ep.title || fallback.title || slug.replace(/_/g, " ").toUpperCase();
+            const ui_model = ep.ui_model || fallback.ui_model || "model_1_cyber_nexus";
+            
+            // Topic inference if missing
+            let topic = ep.topic || fallback.topic;
+            if (!topic) {
+                const lower = (title + " " + slug).toLowerCase();
+                if (lower.includes("dev") || lower.includes("agent") || lower.includes("code") || lower.includes("software")) topic = "SWE";
+                else if (lower.includes("agi") || lower.includes("reasoning") || lower.includes("open") || lower.includes("deepseek")) topic = "AGI";
+                else if (lower.includes("quantum") || lower.includes("blackwell") || lower.includes("chip") || lower.includes("hardware")) topic = "Quantum";
+                else if (lower.includes("hft") || lower.includes("bank") || lower.includes("fraud") || lower.includes("x402") || lower.includes("crypto")) topic = "HFT";
+                else topic = "SWE";
+            }
+
+            const video_path = ep.video_path && ep.video_path.startsWith("episodes/") ? ep.video_path : `episodes/${slug}_tiktok_9x16.mp4`;
+            const cover_path = ep.cover_path || `episodes/${slug}_cover.png`;
+            const youtube_url = formatYouTubeShortsUrl(ep.youtube_url || fallback.youtube_url);
+            const tiktok_url = ep.tiktok_url || (ep.tiktok_published ? `https://www.tiktok.com/@ai.debate.arena` : "https://www.tiktok.com/@ai.debate.arena");
+
+            return {
+                slug,
+                title,
+                ui_model,
+                topic,
+                timestamp: ep.timestamp || new Date().toISOString(),
+                speakers: ep.speakers || fallback.speakers || {
+                    a: { name: "Model Alpha", role: "Neural Stance A", voice: "NATM1" },
+                    b: { name: "Model Beta", role: "Neural Stance B", voice: "NATF2" }
+                },
+                summary: ep.summary || fallback.summary || "Unscripted full-duplex debate rendered with NVIDIA PersonaPlex 7B neural audio.",
+                video_path,
+                cover_path,
+                youtube_url,
+                tiktok_url
+            };
+        }
+
+        // Update the top Hero featured player
+        function updateFeaturedPlayer(ep) {
+            if (!ep) return;
+            featuredDebate = ep;
+
+            const themeName = THEME_NAMES[ep.ui_model] || "Cyber-Nexus";
+            document.getElementById('featuredThemePill').textContent = themeName;
+            document.getElementById('featuredTopicPill').textContent = ep.topic;
+            document.getElementById('featuredTitle').textContent = ep.title;
+            document.getElementById('featuredDesc').textContent = ep.summary;
+
+            // Speakers
+            if (ep.speakers && ep.speakers.a && ep.speakers.b) {
+                document.getElementById('featuredNameA').textContent = ep.speakers.a.name;
+                document.getElementById('featuredRoleA').textContent = `${ep.speakers.a.role} (${ep.speakers.a.voice || 'PersonaPlex'})`;
+                document.getElementById('featuredNameB').textContent = ep.speakers.b.name;
+                document.getElementById('featuredRoleB').textContent = `${ep.speakers.b.role} (${ep.speakers.b.voice || 'PersonaPlex'})`;
+                document.getElementById('featuredAvatarA').textContent = ep.speakers.a.name.charAt(0);
+                document.getElementById('featuredAvatarB').textContent = ep.speakers.b.name.charAt(0);
+            }
+
+            // Action buttons
+            document.getElementById('featuredYtBtn').href = ep.youtube_url;
+            document.getElementById('featuredTtBtn').href = ep.tiktok_url;
+            document.getElementById('featuredDownloadBtn').href = ep.video_path;
+
+            // Video player source & poster
+            const video = document.getElementById('mainVideo');
+            const source = document.getElementById('mainSource');
+            video.poster = ep.cover_path;
+            
+            if (source.getAttribute('src') !== ep.video_path) {
+                source.setAttribute('src', ep.video_path);
+                video.load();
+            }
+
+            // Sync Web Audio visualizer track
+            initAudioEngine(video);
+        }
+
+        // Filter and Search logic
+        function applyFilters() {
+            filteredDebates = allDebates.filter(ep => {
+                // Theme filter
+                if (selectedTheme !== 'all' && ep.ui_model !== selectedTheme) return false;
+                // Topic filter
+                if (selectedTopic !== 'all' && ep.topic !== selectedTopic) return false;
+                // Search query
+                if (searchQuery.trim() !== '') {
+                    const q = searchQuery.toLowerCase();
+                    const titleMatch = ep.title.toLowerCase().includes(q);
+                    const slugMatch = ep.slug.toLowerCase().includes(q);
+                    const summaryMatch = ep.summary.toLowerCase().includes(q);
+                    const spkA = ep.speakers?.a?.name?.toLowerCase().includes(q) || false;
+                    const spkB = ep.speakers?.b?.name?.toLowerCase().includes(q) || false;
+                    if (!titleMatch && !slugMatch && !summaryMatch && !spkA && !spkB) return false;
+                }
+                return true;
+            });
+
+            renderArchiveGrid();
+            document.getElementById('resultsCount').textContent = `Showing ${filteredDebates.length} of ${allDebates.length} debates`;
+        }
+
+        // Render Archive Card Grid
+        function renderArchiveGrid() {
+            const grid = document.getElementById('debatesGrid');
+            grid.innerHTML = '';
+
+            if (filteredDebates.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: rgba(12,19,36,0.5); border-radius: 16px; border: 1px dashed var(--border-glass);">
+                        <p style="color:var(--text-muted); font-size: 1.1rem; margin-bottom: 8px;">No debates found matching your filters.</p>
+                        <button class="filter-btn" onclick="resetFilters()">Reset All Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredDebates.forEach(ep => {
+                const card = document.createElement('div');
+                card.className = 'debate-card';
+                card.setAttribute('data-model', ep.ui_model);
+
+                const themeName = THEME_NAMES[ep.ui_model] || "Cyber-Nexus";
+                const dateStr = ep.timestamp ? new Date(ep.timestamp).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'Nov 2026';
+                const spkAName = ep.speakers?.a?.name || "Model A";
+                const spkBName = ep.speakers?.b?.name || "Model B";
+
+                card.innerHTML = `
+                    <div class="card-thumbnail-wrap">
+                        <img class="card-thumbnail-img" src="${ep.cover_path}" alt="${ep.title}" onerror="this.onerror=null; this.src='episodes/cover_template_universal.png';">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta-row">
+                            <div style="display:flex;align-items:center;gap:6px;">
+                                <span class="theme-pill">${themeName}</span>
+                                <span class="topic-pill">${ep.topic}</span>
+                            </div>
+                            <span class="card-date-badge">${dateStr}</span>
+                        </div>
+                        <h3 class="card-title">${ep.title}</h3>
+                        <p class="card-summary">${ep.summary}</p>
+
+                        <div class="card-speakers-row">
+                            <span>⚔️</span>
+                            <span><strong>${spkAName}</strong> vs <strong>${spkBName}</strong></span>
+                        </div>
+
+                        <div class="card-actions-grid">
+                            <a href="${ep.youtube_url}" target="_blank" rel="noopener" class="btn-card-action yt">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                <span>Shorts</span>
+                            </a>
+                            <a href="${ep.tiktok_url}" target="_blank" rel="noopener" class="btn-card-action tt">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                                <span>TikTok</span>
+                            </a>
+                            <button class="btn-card-action listen" onclick="playEpisodeAudio('${ep.slug}')">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                                <span>24kHz Stereo</span>
+                            </button>
+                            <button class="btn-card-action play" onclick="playEpisodeVideo('${ep.slug}')">
+                                ▶ <span>Play Video</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function resetFilters() {
+            selectedTheme = 'all';
+            selectedTopic = 'all';
+            searchQuery = '';
+            document.getElementById('searchInput').value = '';
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                const val = btn.getAttribute('data-filter-val');
+                btn.classList.toggle('active', val === 'all');
+            });
+            applyFilters();
+        }
+
+        // Switch episode in hero player
+        function playEpisodeVideo(slug) {
+            const ep = allDebates.find(e => e.slug === slug);
+            if (!ep) return;
+            updateFeaturedPlayer(ep);
+            const video = document.getElementById('mainVideo');
+            video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            video.play().catch(() => {});
+        }
+
+        // Play in audio visualizer
+        function playEpisodeAudio(slug) {
+            const ep = allDebates.find(e => e.slug === slug);
+            if (!ep) return;
+            updateFeaturedPlayer(ep);
+            const video = document.getElementById('mainVideo');
+            video.play().then(() => {
+                document.getElementById('audioToggleBtn').classList.add('playing');
+                document.getElementById('playIcon').style.display = 'none';
+                document.getElementById('pauseIcon').style.display = 'block';
+            }).catch(() => {});
+            document.querySelector('.telemetry-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // HTML5 Web Audio API Stereo Dual-Channel Visualizer
+        function initAudioEngine(mediaElement) {
+            if (!audioCtx) {
+                try {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContext();
+
+                    const source = audioCtx.createMediaElementSource(mediaElement);
+                    const splitter = audioCtx.createChannelSplitter(2);
+
+                    analyserL = audioCtx.createAnalyser();
+                    analyserL.fftSize = 128;
+                    analyserR = audioCtx.createAnalyser();
+                    analyserR.fftSize = 128;
+
+                    source.connect(splitter);
+                    splitter.connect(analyserL, 0);
+                    splitter.connect(analyserR, 1);
+
+                    source.connect(audioCtx.destination);
+
+                    startVisualizerLoop();
+                } catch (e) {
+                    console.log("AudioContext deferred or already connected:", e);
+                }
+            }
+
+            // Sync progress bar
+            mediaElement.ontimeupdate = () => {
+                const cur = mediaElement.currentTime || 0;
+                const dur = mediaElement.duration || 1;
+                const pct = (cur / dur) * 100;
+                document.getElementById('audioProgressFill').style.width = `${pct}%`;
+                document.getElementById('audioCurrentTime').textContent = formatSeconds(cur);
+                document.getElementById('audioDuration').textContent = formatSeconds(dur);
+            };
+
+            mediaElement.onplay = () => {
+                isAudioPlaying = true;
+                if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+                document.getElementById('playIcon').style.display = 'none';
+                document.getElementById('pauseIcon').style.display = 'block';
+                document.getElementById('audioStatusText').textContent = "Streaming 24kHz Stereo";
+            };
+
+            mediaElement.onpause = () => {
+                isAudioPlaying = false;
+                document.getElementById('playIcon').style.display = 'block';
+                document.getElementById('pauseIcon').style.display = 'none';
+                document.getElementById('audioStatusText').textContent = "Paused";
+            };
+        }
+
+        function formatSeconds(sec) {
+            if (isNaN(sec)) return "00:00";
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        // Render stereo waveform & frequency bars on canvas
+        function startVisualizerLoop() {
+            const canvas = document.getElementById('audioCanvas');
+            const ctx = canvas.getContext('2d');
+            const bufferLen = analyserL ? analyserL.frequencyBinCount : 64;
+            const dataArrayL = new Uint8Array(bufferLen);
+            const dataArrayR = new Uint8Array(bufferLen);
+
+            function draw() {
+                animationFrameId = requestAnimationFrame(draw);
+
+                const W = canvas.width;
+                const H = canvas.height;
+
+                ctx.fillStyle = '#020409';
+                ctx.fillRect(0, 0, W, H);
+
+                // Grid background
+                ctx.strokeStyle = 'rgba(0, 240, 255, 0.05)';
+                ctx.lineWidth = 1;
+                for (let x = 0; x < W; x += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, H);
+                    ctx.stroke();
+                }
+
+                if (analyserL && analyserR && isAudioPlaying) {
+                    analyserL.getByteFrequencyData(dataArrayL);
+                    analyserR.getByteFrequencyData(dataArrayR);
+                } else {
+                    // Subtle simulated idle noise
+                    for (let i = 0; i < bufferLen; i++) {
+                        dataArrayL[i] = 10 + Math.sin(Date.now() * 0.003 + i) * 8;
+                        dataArrayR[i] = 10 + Math.cos(Date.now() * 0.003 + i) * 8;
+                    }
+                }
+
+                const barWidth = (W / 2) / bufferLen;
+
+                // Left Channel (Speaker A - Cyan Glow)
+                for (let i = 0; i < bufferLen; i++) {
+                    const barHeight = (dataArrayL[i] / 255) * (H * 0.85);
+                    const x = (W / 2) - (i * barWidth) - barWidth;
+                    const y = (H - barHeight) / 2;
+
+                    ctx.fillStyle = `rgba(0, 240, 255, ${0.4 + (dataArrayL[i] / 255) * 0.6})`;
+                    ctx.fillRect(x, y, barWidth - 1, barHeight);
+                }
+
+                // Right Channel (Speaker B - Emerald/Amber Glow)
+                for (let i = 0; i < bufferLen; i++) {
+                    const barHeight = (dataArrayR[i] / 255) * (H * 0.85);
+                    const x = (W / 2) + (i * barWidth);
+                    const y = (H - barHeight) / 2;
+
+                    ctx.fillStyle = `rgba(16, 235, 155, ${0.4 + (dataArrayR[i] / 255) * 0.6})`;
+                    ctx.fillRect(x, y, barWidth - 1, barHeight);
+                }
+
+                // Center clash dividing beam
+                ctx.strokeStyle = 'rgba(251, 191, 36, 0.8)';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(W / 2, 0);
+                ctx.lineTo(W / 2, H);
+                ctx.stroke();
+            }
+
+            draw();
+        }
+
+        // Set Language
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('ranuk_lang', lang);
             document.documentElement.lang = lang;
 
-            // Update buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                const isActive = btn.getAttribute('data-lang') === lang;
-                btn.classList.toggle('active', isActive);
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
 
-            // Update static strings
             const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
-            document.getElementById('t_brand').textContent = t.brand;
-            document.getElementById('t_back').textContent = t.back;
-            document.getElementById('t_nav_closer').textContent = t.closer;
-            document.getElementById('t_nav_arena').textContent = t.arena;
+            document.getElementById('t_nav_closer').textContent = t.nav_closer;
+            document.getElementById('t_nav_arena').textContent = t.nav_arena;
+            document.getElementById('t_nav_back').textContent = t.nav_back;
             document.getElementById('t_eyebrow').textContent = t.eyebrow;
             document.getElementById('t_hero_title').textContent = t.hero_title;
             document.getElementById('t_hero_sub').textContent = t.hero_sub;
-            document.getElementById('t_playlist_head').textContent = t.playlist_head;
-            document.getElementById('t_playlist_hint').textContent = t.playlist_hint;
-            document.getElementById('t_share_reddit').textContent = t.share_reddit;
-            document.getElementById('t_share_x').textContent = t.share_x;
-            document.getElementById('t_download').textContent = t.download;
-            document.getElementById('t_box1_head').textContent = t.box1_head;
-            document.getElementById('t_box1_desc').textContent = t.box1_desc;
-            document.getElementById('t_topic_input').placeholder = t.box1_ph;
-            document.getElementById('t_topic_btn').textContent = t.box1_btn;
-            document.getElementById('t_box2_head').textContent = t.box2_head;
-            document.getElementById('t_box2_desc').textContent = t.box2_desc;
-
-            renderPlaylist();
-            updateCurrentPlayer();
+            document.getElementById('t_channels_label').textContent = t.channels_label;
+            document.getElementById('t_watch_yt').textContent = t.watch_yt;
+            document.getElementById('t_watch_tt').textContent = t.watch_tt;
+            document.getElementById('t_listen_stereo').textContent = t.listen_stereo;
+            document.getElementById('t_download_mp4').textContent = t.download_mp4;
+            document.getElementById('t_telemetry_head').textContent = t.telemetry_head;
+            document.getElementById('t_archive_eyebrow').textContent = t.archive_eyebrow;
+            document.getElementById('t_archive_title').textContent = t.archive_title;
+            document.getElementById('t_archive_sub').textContent = t.archive_sub;
+            document.getElementById('t_filter_theme_label').textContent = t.filter_theme;
+            document.getElementById('t_filter_topic_label').textContent = t.filter_topic;
+            document.getElementById('t_b2b_eyebrow').textContent = t.b2b_eyebrow;
+            document.getElementById('t_b2b_title').textContent = t.b2b_title;
+            document.getElementById('t_b2b_sub').textContent = t.b2b_sub;
+            document.getElementById('t_feat1_title').textContent = t.feat1_title;
+            document.getElementById('t_feat1_desc').textContent = t.feat1_desc;
+            document.getElementById('t_feat2_title').textContent = t.feat2_title;
+            document.getElementById('t_feat2_desc').textContent = t.feat2_desc;
+            document.getElementById('t_feat3_title').textContent = t.feat3_title;
+            document.getElementById('t_feat3_desc').textContent = t.feat3_desc;
+            document.getElementById('t_feat4_title').textContent = t.feat4_title;
+            document.getElementById('t_feat4_desc').textContent = t.feat4_desc;
+            document.getElementById('t_tier1_desc').textContent = t.tier1_desc;
+            document.getElementById('t_tier2_desc').textContent = t.tier2_desc;
+            document.getElementById('t_tier3_desc').textContent = t.tier3_desc;
+            document.getElementById('t_propose_head').textContent = t.propose_head;
+            document.getElementById('t_propose_desc').textContent = t.propose_desc;
+            document.getElementById('t_propose_btn').textContent = t.propose_btn;
         }
 
-        function renderPlaylist() {
-            const listEl = document.getElementById('epList');
-            listEl.innerHTML = '';
+        // Modal Handlers
+        function openModal(tierName, price) {
+            const modal = document.getElementById('checkoutModal');
+            document.getElementById('modalTitle').textContent = `Deploy ${tierName}`;
+            document.getElementById('modalTierSelect').value = `${tierName} ($${price}/mo)`;
+            modal.classList.add('active');
+        }
 
-            EPISODES.forEach((ep, idx) => {
-                const item = document.createElement('div');
-                item.className = 'ep-item' + (idx === currentEpIndex ? ' active' : '');
-                
-                const title = ep.titles[currentLang] || ep.titles.en;
-                const sub = ep.subtitles[currentLang] || ep.subtitles.en;
-                const desc = ep.descriptions[currentLang] || ep.descriptions.en;
+        function closeModal() {
+            document.getElementById('checkoutModal').classList.remove('active');
+            document.getElementById('modalFeedback').style.display = 'none';
+        }
 
-                const tagsHtml = ep.tags.map(t => `<span class="tag-pill">${t}</span>`).join(' ');
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            document.getElementById('modalFeedback').style.display = 'block';
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        }
 
-                item.innerHTML = `
-                    <div class="ep-tags">${tagsHtml}</div>
-                    <h3>${title}</h3>
-                    <p>${desc}</p>
-                `;
+        // Event Listeners Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lang Buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+            });
 
-                item.addEventListener('click', () => {
-                    currentEpIndex = idx;
-                    document.querySelectorAll('.ep-item').forEach((el, i) => {
-                        el.classList.toggle('active', i === currentEpIndex);
-                    });
-                    updateCurrentPlayer(true);
+            // Filter Buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const type = btn.getAttribute('data-filter-type');
+                    const val = btn.getAttribute('data-filter-val');
+
+                    // Deselect siblings
+                    document.querySelectorAll(`.filter-btn[data-filter-type="${type}"]`).forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    if (type === 'theme') selectedTheme = val;
+                    if (type === 'topic') selectedTopic = val;
+                    applyFilters();
                 });
-
-                listEl.appendChild(item);
             });
-        }
 
-        function updateCurrentPlayer(autoPlay = false) {
-            const ep = EPISODES[currentEpIndex];
-            const video = document.getElementById('mainVideo');
-            const source = document.getElementById('mainSource');
-            const epTitle = document.getElementById('epTitle');
-            const epSub = document.getElementById('epSub');
-            const downloadLink = document.getElementById('downloadLink');
+            // Search input
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                applyFilters();
+            });
 
-            const title = ep.titles[currentLang] || ep.titles.en;
-            const sub = ep.subtitles[currentLang] || ep.subtitles.en;
-
-            epTitle.textContent = title;
-            epSub.textContent = sub;
-            downloadLink.setAttribute('href', ep.src);
-
-            if (source.getAttribute('src') !== ep.src) {
-                source.setAttribute('src', ep.src);
-                video.load();
-                if (autoPlay) {
+            // Audio Toggle Button
+            document.getElementById('audioToggleBtn').addEventListener('click', () => {
+                const video = document.getElementById('mainVideo');
+                if (video.paused) {
                     video.play().catch(() => {});
+                } else {
+                    video.pause();
                 }
-            }
-        }
-
-        // Setup lang buttons
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                setLanguage(btn.getAttribute('data-lang'));
             });
-        });
 
-        // Initialize on page load
-        setLanguage(currentLang);
+            // Featured Listen in Stereo Button
+            document.getElementById('featuredListenBtn').addEventListener('click', () => {
+                const video = document.getElementById('mainVideo');
+                if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+                video.play().catch(() => {});
+                document.querySelector('.telemetry-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
+            // Audio progress seek
+            document.getElementById('audioProgressBar').addEventListener('click', (e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const pct = clickX / rect.width;
+                const video = document.getElementById('mainVideo');
+                if (video.duration) {
+                    video.currentTime = pct * video.duration;
+                }
+            });
+
+            // Backdrop click close
+            document.getElementById('checkoutModal').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('checkoutModal')) closeModal();
+            });
+
+            // Init App
+            setLanguage(currentLang);
+            initFeed();
+        });
     </script>
     <script src="../js/ranuk-voice-widget.js" defer></script>
     <script src="../js/ranuk-analytics.js" defer></script>
