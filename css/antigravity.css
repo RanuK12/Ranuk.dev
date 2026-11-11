@@ -890,3 +890,326 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* =========================================================
+   5. STAGGERED SCROLL REVEAL & SPOTLIGHTS
+   ========================================================= */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================================================
+   6. HERO TRI-MODAL COMBO STRIP ("EL COMBO DE TODO")
+   Viajero / Nómada + Empresarial Ranuk IT + Python/ML
+   ========================================================= */
+.tri-modal-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1140px;
+  margin: 32px auto 24px;
+  text-align: left;
+}
+
+.tri-modal-card {
+  background: rgba(10, 16, 32, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tri-modal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(0, 240, 255, 0.12);
+}
+
+.tri-modal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--card-accent, #00f0ff), transparent);
+  opacity: 0.8;
+}
+
+.tri-card-traveler { --card-accent: #fbbf24; }
+.tri-card-enterprise { --card-accent: #00f0ff; }
+.tri-card-ml { --card-accent: #10eb9b; }
+
+.tri-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tri-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-accent, #00f0ff);
+}
+
+.tri-modal-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.tri-modal-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tri-modal-link {
+  margin-top: auto;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--card-accent, #00f0ff);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease;
+}
+
+.tri-modal-link:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .tri-modal-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   7. LIVE 𝕏 (@ranuk_dev) DISPATCH TERMINAL WIDGET
+   ========================================================= */
+.lab-panel.lab-x-dispatch {
+  background: rgba(8, 14, 28, 0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  border-radius: 16px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 240, 255, 0.08);
+}
+
+.x-dispatch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.x-account-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.x-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ag-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+  object-fit: cover;
+}
+
+.x-account-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.x-display-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.x-verified-icon {
+  color: #38bdf8;
+  font-size: 0.85rem;
+}
+
+.x-handle {
+  font-size: 0.76rem;
+  font-family: var(--font-mono, monospace);
+  color: #94a3b8;
+}
+
+.x-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.x-follow-btn:hover {
+  background: #fff;
+  color: #040812;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.x-tweets-container {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Custom Cyber Slim Scrollbar */
+.x-tweets-container::-webkit-scrollbar {
+  width: 5px;
+}
+.x-tweets-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+}
+.x-tweets-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ag-cyan), var(--ag-mint));
+  border-radius: 999px;
+}
+
+.x-tweet-card {
+  background: rgba(4, 8, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.x-tweet-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  background: rgba(6, 12, 26, 0.75);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.x-tweet-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.x-tweet-time {
+  font-family: var(--font-mono, monospace);
+}
+
+.x-tweet-body {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  line-height: 1.45;
+}
+
+.x-tweet-body strong {
+  color: #fff;
+}
+
+.x-tweet-body a {
+  color: var(--ag-cyan);
+  text-decoration: none;
+}
+
+.x-tweet-tag {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.x-tweet-metrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-family: var(--font-mono, monospace);
+}
+
+.x-tweet-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.x-tweet-stat:hover {
+  color: var(--ag-cyan);
+}
+
+.x-view-link {
+  color: var(--ag-cyan);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.x-view-link:hover {
+  text-decoration: underline;
+}
+
+/* Open Lab Grid with X Dispatch */
+@media (min-width: 1080px) {
+  .lab-grid.has-x-dispatch {
+    grid-template-columns: 0.95fr 1.35fr 1.15fr !important;
+    gap: 1.4rem !important;
+  }
+}
+

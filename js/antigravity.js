@@ -7,51 +7,72 @@
 (function () {
   'use strict';
 
-  // 1. Scroll-driven Progressive Scaling (Antigravity Expand)
+  // 1. Scroll-driven Progressive Scaling & Entrance Reveals
   function initScrollExpansion() {
     const targets = document.querySelectorAll('.antigravity-scroll-scale, .open-lab .container');
-    if (!targets.length) return;
+    if (targets.length) {
+      if (window.gsap && window.ScrollTrigger) {
+        window.gsap.registerPlugin(window.ScrollTrigger);
 
-    if (window.gsap && window.ScrollTrigger) {
-      window.gsap.registerPlugin(window.ScrollTrigger);
-
-      targets.forEach(target => {
-        window.gsap.fromTo(target,
-          {
-            scale: 0.92,
-            rotateX: 3,
-            opacity: 0.85,
-            transformPerspective: 1200
-          },
-          {
-            scale: 1,
-            rotateX: 0,
-            opacity: 1,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: target,
-              start: 'top 85%',
-              end: 'top 45%',
-              scrub: 0.8,
-              onEnter: () => target.classList.add('is-expanded'),
-              onLeaveBack: () => target.classList.remove('is-expanded')
+        targets.forEach(target => {
+          window.gsap.fromTo(target,
+            {
+              scale: 0.94,
+              rotateX: 2,
+              opacity: 0.88,
+              transformPerspective: 1200
+            },
+            {
+              scale: 1,
+              rotateX: 0,
+              opacity: 1,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: target,
+                start: 'top 85%',
+                end: 'top 45%',
+                scrub: 0.8,
+                onEnter: () => target.classList.add('is-expanded'),
+                onLeaveBack: () => target.classList.remove('is-expanded')
+              }
             }
-          }
-        );
-      });
-    } else {
-      // IntersectionObserver fallback
-      const observer = new IntersectionObserver((entries) => {
+          );
+        });
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-expanded');
+            } else if (entry.boundingClientRect.top > 0) {
+              entry.target.classList.remove('is-expanded');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        targets.forEach(t => observer.observe(t));
+      }
+    }
+
+    // Universal Staggered Scroll Reveal for Cards & Sections
+    const revealElements = document.querySelectorAll('.scroll-reveal, .story-act, .radar-card, .project-card, .eco-card, .lab-panel, .voice-card');
+    if (revealElements.length) {
+      const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-expanded');
-          } else if (entry.boundingClientRect.top > 0) {
-            entry.target.classList.remove('is-expanded');
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.25 });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
 
-      targets.forEach(t => observer.observe(t));
+      revealElements.forEach((el, idx) => {
+        el.classList.add('scroll-reveal');
+        el.style.setProperty('--reveal-delay', `${(idx % 4) * 0.1}s`);
+        revealObserver.observe(el);
+      });
     }
   }
 
