@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T18:35:00Z",
+  "updated_at": "2026-11-11T19:32:53.168711+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -13,147 +13,114 @@
   },
   "episodes": [
     {
-      "timestamp": "2026-11-11T18:01:44.706205+00:00",
-      "slug": "ai_agents_replace_junior_devs",
-      "ui_model": "model_1_cyber_nexus",
-      "topic": "SWE",
-      "title": "Will AI Coding Agents Replace Junior Developers by 2027? | 2 NVIDIA AIs Debate",
-      "speakers": {
-        "a": { "name": "Marcus Reed", "role": "Big Tech Engineering Manager", "voice": "NATM1" },
-        "b": { "name": "Priya Shah", "role": "AI Agent Startup Founder", "voice": "NATF2" }
-      },
-      "summary": "Junior developers are essential to own production code vs coding agents solving tickets in minutes.",
-      "video_path": "episodes/ai_agents_replace_junior_devs_tiktok_9x16.mp4",
-      "cover_path": "episodes/ai_agents_replace_junior_devs_cover.png",
-      "youtube_url": "https://youtube.com/shorts/ZjIyrNjuJpw",
-      "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
+      "timestamp": "2026-11-03T19:32:55.890295+00:00",
+      "slug": "interruption_benchmark",
+      "title": "Can You Interrupt an AI Mid-Sentence? (24kHz Full-Duplex Test) #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/interruption_benchmark_tiktok_9x16.mp4",
+      "youtube_url": "https://youtu.be/o8M-Eoc_QH4",
+      "tiktok_published": false,
       "dry_run": false
     },
     {
-      "timestamp": "2026-11-11T06:40:09.445315+00:00",
-      "slug": "agi_timeline_2026",
-      "ui_model": "model_2_quantum_matrix",
-      "topic": "AGI",
-      "title": "Will AGI Arrive by 2026 or 2030? (Silicon Valley Reality Check)",
-      "speakers": {
-        "a": { "name": "Dr. Elena Rostova", "role": "Stanford Alignment Lead", "voice": "NATF0" },
-        "b": { "name": "Nathan Vance", "role": "Frontier Labs Partner", "voice": "NATM2" }
-      },
-      "summary": "Scaling laws and power grid bottlenecks clash against test-time reasoning and RLVR compute.",
-      "video_path": "episodes/agi_timeline_2026_tiktok_9x16.mp4",
-      "cover_path": "episodes/agi_timeline_2026_cover.png",
-      "youtube_url": "https://youtube.com/shorts/Z4wBSgu4Np4",
+      "timestamp": "2026-11-04T19:32:16.442822+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
       "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-05T19:32:06.828595+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/47v7zJL0yhw",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-06T19:31:57.387363+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-07T19:33:46.904791+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-08T19:32:26.989636+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-09T19:32:30.819080+00:00",
+      "slug": "full_duplex_voice_revolution",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
       "dry_run": false
     },
     {
       "timestamp": "2026-11-10T19:32:17.363803+00:00",
       "slug": "full_duplex_voice_revolution",
-      "ui_model": "model_1_cyber_nexus",
-      "topic": "SWE",
-      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots",
-      "speakers": {
-        "a": { "name": "Marcus Vance", "role": "Neural Speech Lead", "voice": "VARM0" },
-        "b": { "name": "Sarah Jenkins", "role": "Enterprise Contact VP", "voice": "VARF1" }
-      },
-      "summary": "Comparing half-duplex walkie-talkie bots against 24kHz full-duplex neural speech-to-speech tokens.",
-      "video_path": "episodes/full_duplex_voice_revolution_tiktok_9x16.mp4",
-      "cover_path": "episodes/full_duplex_voice_revolution_cover.png",
-      "youtube_url": "https://youtube.com/shorts/SnF3iR4ftGs",
+      "title": "Why 180ms Full-Duplex Replaces Legacy Voice Bots #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/full_duplex_voice_revolution_tiktok_9x16.mp4",
+      "youtube_url": "https://youtu.be/SnF3iR4ftGs",
       "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
       "dry_run": false
     },
     {
-      "timestamp": "2026-11-08T19:32:26.989636+00:00",
-      "slug": "banking_b2b_closer",
+      "timestamp": "2026-11-11T06:40:09.445315+00:00",
+      "slug": "agi_timeline_2026",
+      "title": "Will AGI Arrive by 2026 or 2030? (Silicon Valley Reality Check) #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/agi_timeline_2026_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/Z4wBSgu4Np4",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-11T18:01:44.706205+00:00",
+      "slug": "ai_agents_replace_junior_devs",
+      "ui_model": "model_1_cyber_nexus",
+      "title": "Will AI Coding Agents Replace Junior Developers by 2027? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_agents_replace_junior_devs_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/ZjIyrNjuJpw",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-11T19:24:06.501125+00:00",
+      "slug": "nvidia_monopoly_2027",
+      "ui_model": "model_2_quantum_matrix",
+      "title": "Can Anyone Break NVIDIA's AI Chip Monopoly? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/nvidia_monopoly_2027_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/4K1v17JjE-o",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-11T19:32:53.168711+00:00",
+      "slug": "agi_2027_or_hype",
       "ui_model": "model_3_silicon_warroom",
-      "topic": "HFT",
-      "title": "AI Bank Security Catches $1,200 Fraud Live: Enterprise Voice Closer",
-      "speakers": {
-        "a": { "name": "Sanni Virtanen", "role": "Fraud AI Security Lead", "voice": "VARF1" },
-        "b": { "name": "Mark Evans", "role": "Bank Customer", "voice": "VARM1" }
-      },
-      "summary": "Real-time enterprise fraud objection desk: handling high-stakes card declines with zero delay.",
-      "video_path": "episodes/banking_b2b_closer_tiktok_9x16.mp4",
-      "cover_path": "episodes/banking_b2b_closer_cover.png",
-      "youtube_url": "https://youtube.com/shorts/47v7zJL0yhw",
+      "title": "Is AGI Coming in 2027 or Is It Pure Hype? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/agi_2027_or_hype_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/Hbs_Y8NQ_60",
       "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
-      "dry_run": false
-    },
-    {
-      "timestamp": "2026-11-05T19:32:06.828595+00:00",
-      "slug": "economia_x402_billeteras_ia",
-      "ui_model": "model_4_blackwell_tensor",
-      "topic": "HFT",
-      "title": "Why AI Agents Need Crypto Wallets (HTTP 402 Micropayments)",
-      "speakers": {
-        "a": { "name": "Lucas Thorne", "role": "Base Protocol Architect", "voice": "NATM3" },
-        "b": { "name": "Victoria Stone", "role": "Fintech Compliance Director", "voice": "NATF3" }
-      },
-      "summary": "Why AI agents cannot swipe physical credit cards and require machine-to-machine USDC micropayments.",
-      "video_path": "episodes/economia_x402_billeteras_ia.mp4",
-      "cover_path": "episodes/economia_x402_billeteras_ia_cover.png",
-      "youtube_url": "https://youtube.com/shorts/47v7zJL0yhw",
-      "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
-      "dry_run": false
-    },
-    {
-      "timestamp": "2026-11-03T19:32:55.890295+00:00",
-      "slug": "interruption_benchmark",
-      "ui_model": "model_1_cyber_nexus",
-      "topic": "SWE",
-      "title": "Can You Interrupt an AI Mid-Sentence? (24kHz Full-Duplex Test)",
-      "speakers": {
-        "a": { "name": "Dr. Alex Chen", "role": "Lead Voice Architect", "voice": "NATM0" },
-        "b": { "name": "Aria Lin", "role": "Interlocutor", "voice": "NATF2" }
-      },
-      "summary": "Acoustic interruption and pause recovery benchmark with zero speech truncation artifacts.",
-      "video_path": "episodes/interruption_benchmark_tiktok_9x16.mp4",
-      "cover_path": "episodes/interruption_benchmark_cover.png",
-      "youtube_url": "https://youtube.com/shorts/o8M-Eoc_QH4",
-      "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
-      "dry_run": false
-    },
-    {
-      "timestamp": "2026-11-02T19:30:00.000000+00:00",
-      "slug": "mars_reactor_crisis",
-      "ui_model": "model_3_silicon_warroom",
-      "topic": "SWE",
-      "title": "When AI Panics: Mars Nuclear Coolant Meltdown Crisis",
-      "speakers": {
-        "a": { "name": "Mission Control", "role": "Flight Director", "voice": "NATM1" },
-        "b": { "name": "Alex Mercer", "role": "Astronaut Commander", "voice": "VARM0" }
-      },
-      "summary": "Simulated emergency telemetry crisis on Mars: unscripted vocal urgency and rapid turn modulation.",
-      "video_path": "episodes/mars_reactor_crisis_tiktok_9x16.mp4",
-      "cover_path": "episodes/mars_reactor_crisis_cover.png",
-      "youtube_url": "https://youtube.com/shorts/o8M-Eoc_QH4",
-      "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
-      "dry_run": false
-    },
-    {
-      "timestamp": "2026-11-01T19:00:00.000000+00:00",
-      "slug": "open_vs_closed_ai_2026",
-      "ui_model": "model_1_cyber_nexus",
-      "topic": "AGI",
-      "title": "Open Source AI vs Multi-Billion Proprietary Clusters: Who Wins?",
-      "speakers": {
-        "a": { "name": "Kai Zhang", "role": "Open-Weights Strategist", "voice": "NATM2" },
-        "b": { "name": "Elena Vance", "role": "Cloud Enterprise VP", "voice": "NATF1" }
-      },
-      "summary": "DeepSeek R1 and open reasoning models matching closed API performance for a fraction of compute cost.",
-      "video_path": "episodes/open_vs_closed_ai_2026.mp4",
-      "cover_path": "episodes/open_vs_closed_ai_2026_cover.png",
-      "youtube_url": "https://youtube.com/shorts/SnF3iR4ftGs",
-      "tiktok_published": true,
-      "tiktok_url": "https://www.tiktok.com/@ai.debate.arena",
       "dry_run": false
     }
   ]
