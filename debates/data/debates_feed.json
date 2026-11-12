@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T19:32:53.168711+00:00",
+  "updated_at": "2026-11-12T19:32:28.358103+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -121,6 +121,16 @@
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/agi_2027_or_hype_tiktok_9x16.mp4",
       "youtube_url": "https://youtube.com/shorts/Hbs_Y8NQ_60",
       "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-12T19:32:28.358103+00:00",
+      "slug": "humanoid_robots_home_2027",
+      "ui_model": "model_4_blackwell_tensor",
+      "title": "Will You Have a Humanoid Robot at Home by 2028? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/humanoid_robots_home_2027_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/_mOLIMHJGS8",
+      "tiktok_published": false,
       "dry_run": false
     }
   ]
