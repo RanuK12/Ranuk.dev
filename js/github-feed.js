@@ -99,7 +99,13 @@
     setNum('public_repos', stats.public_repos);
     setNum('languages_count', stats.languages_count);
     setNum('total_stars', stats.total_stars);
-    setNum('last_push_relative', relativeTime(stats.last_push, lang));
+    const elPush = document.querySelector('[data-stat="last_push_relative"]');
+    if (elPush) {
+      const rel = relativeTime(stats.last_push, lang);
+      elPush.innerHTML = `<span class="pulse-dot" style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#10eb9b; box-shadow:0 0 8px #10eb9b; vertical-align:middle; margin-right:5px;"></span>${escapeHTML(rel)}`;
+    } else {
+      setNum('last_push_relative', relativeTime(stats.last_push, lang));
+    }
 
     // Update hero stat if present
     const heroRepoStat = document.querySelector('.hero-stats [data-target="85"]');
@@ -166,7 +172,7 @@
             </div>
             ${pill}
           </div>
-          <p class="lab-repo-desc" style="font-size:0.86rem;line-height:1.55;color:#94a3b8;margin:12px 0 16px;">${escapeHTML(r.description || '—')}</p>
+          <p class="lab-repo-desc" style="font-size:0.84rem;line-height:1.45;color:#94a3b8;margin:6px 0 10px;">${escapeHTML(r.description || '—')}</p>
           <div class="lab-repo-meta" style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.75rem;">
             ${r.language ? `<span class="lab-repo-lang"><span class="lang-dot" style="background:${escapeHTML(color)}"></span>${escapeHTML(r.language)}</span>` : ''}
             ${r.stars > 0 ? `<span class="lab-repo-stars" style="color:#fde047;"><i class="fas fa-star"></i> ${r.stars}</span>` : ''}
