@@ -1213,3 +1213,60 @@
   }
 }
 
+/* =========================================================
+   8. ECOSYSTEM 3-COLUMN LAYOUT & AUTOPSIA MENTAL CARD
+   ========================================================= */
+@media (min-width: 1024px) {
+  .eco-grid.has-3-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 1.6rem !important;
+  }
+}
+
+.eco-card.eco-autopsia {
+  --eco-accent: #ef4444;
+}
+
+.eco-card.eco-autopsia:hover {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  box-shadow: 0 20px 50px rgba(239, 68, 68, 0.12), 0 0 30px rgba(239, 68, 68, 0.08) !important;
+}
+
+.eco-card.eco-autopsia .eco-stamp {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.eco-card.eco-autopsia .eco-cta.eco-cta-spotify {
+  background: #1db954 !important;
+  color: #040812 !important;
+  font-weight: 700 !important;
+  border: 1px solid #1ed760 !important;
+  box-shadow: 0 4px 16px rgba(29, 185, 84, 0.35) !important;
+  transition: all 0.25s ease;
+}
+
+.eco-card.eco-autopsia .eco-cta.eco-cta-spotify:hover {
+  background: #1ed760 !important;
+  color: #000 !important;
+  box-shadow: 0 6px 22px rgba(29, 185, 84, 0.55) !important;
+  transform: translateY(-2px);
+}
+
+.eco-card.eco-autopsia .eco-cta.eco-cta-rss {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #94a3b8 !important;
+  transition: all 0.25s ease;
+}
+
+.eco-card.eco-autopsia .eco-cta.eco-cta-rss:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+

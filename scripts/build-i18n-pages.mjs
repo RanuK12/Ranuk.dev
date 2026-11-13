@@ -32,11 +32,11 @@ const PAGES = [
 const META = {
   'index.html': {
     es: ['Emilio Ranucoli — Desarrollo Web, Agentes de IA & Software a Medida | Ranuk IT Solutions',
-         'Desarrollador Full-Stack y ML Engineer (ex Booking.com y Accenture). Landing pages de alto impacto por  USD en 48h, agentes de voz IA a 180ms y desarrollo de software a medida. Calidad premium directa.'],
+         'Desarrollador Full-Stack y ML Engineer (ex Booking.com y Accenture). Landing pages de alto impacto por $400 USD en 48h, agentes de voz IA a 180ms y desarrollo de software a medida. Calidad premium directa.'],
     en: ['Emilio Ranucoli — Web Development, Voice AI Agents & Custom Software | Ranuk IT Solutions',
-         'Full-Stack Developer & ML Engineer (ex Booking.com, Accenture). High-converting landing pages ( USD / 48h), 180ms Voice AI Agents and custom enterprise software. Direct senior engineering.'],
+         'Full-Stack Developer & ML Engineer (ex Booking.com, Accenture). High-converting landing pages ($400 USD / 48h), 180ms Voice AI Agents and custom enterprise software. Direct senior engineering.'],
     it: ['Emilio Ranucoli — Sviluppo Web, Agenti IA Vocali & Software su Misura | Ranuk IT Solutions',
-         'Sviluppatore Full-Stack & ML Engineer (ex Booking.com, Accenture). Landing page ad alta conversione da  USD in 48h, agenti vocali IA a 180ms e software su misura.'],
+         'Sviluppatore Full-Stack & ML Engineer (ex Booking.com, Accenture). Landing page ad alta conversione da $400 USD in 48h, agenti vocali IA a 180ms e software su misura.'],
   },
   'ranuk-it/index.html': {
     es: ['Ranuk IT Solutions — Software a medida, ML y automatización',
@@ -191,7 +191,8 @@ const STANDALONE = [
   { url: 'closer/', priority: '0.9' },
   { url: 'arena/', priority: '0.9' },
   { url: 'portfolio/', priority: '0.9' },
-  { url: 'analytics/', priority: '0.7' },
+  { url: 'privacy/', priority: '0.5' },
+  { url: 'terms/', priority: '0.5' },
 ];
 
 const urls = PAGES.flatMap((p) => ALL.map((lang) => `  <url>

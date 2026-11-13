@@ -1,5 +1,5 @@
 # robots.txt — ranuk.dev
-# Última actualización: 2026-08-11
+# Última actualización: 2026-11-12
 
 # ─── Crawl general ──────────────────────────────────────────
 User-agent: *
@@ -7,13 +7,19 @@ Allow: /
 Allow: /assets/
 Allow: /css/
 Allow: /js/
+Allow: /debates/
+Allow: /closer/
+Allow: /arena/
+Allow: /portfolio/
+Allow: /privacy/
+Allow: /terms/
 Allow: /ranuk-it/
-# Versiones por idioma (scripts/build-i18n-pages.mjs). Antes el idioma vivía en localStorage y
-# para Google el sitio era una sola página en español.
+# Versiones por idioma (scripts/build-i18n-pages.mjs).
 Allow: /en/
 Allow: /it/
 
-# Bloques: contenido interno, scripts de build, datos
+# Bloques: contenido interno, scripts de build, datos, dashboard privado
+Disallow: /analytics/
 Disallow: /scripts/
 Disallow: /data/
 Disallow: /mcp
@@ -22,7 +28,23 @@ Disallow: /*?
 Disallow: /*.json$
 Disallow: /*.md$
 
-# ─── Bloqueo de Scrapers y Crawlers No Autorizados ─────────
+# ─── Motores de Búsqueda de IA y Asistentes Globales ─────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ─── Bloqueo de Scrapers Maliciosos No Autorizados ──────────
 User-agent: SealKeeper
 Disallow: /
 
