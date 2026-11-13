@@ -1,27 +1,27 @@
 {
   "user": "RanuK12",
-  "generated_at": "2026-11-02T15:28:14.209Z",
+  "generated_at": "2026-11-13T02:59:36.076Z",
   "stats": {
     "public_repos": 124,
-    "total_stars": 5,
+    "total_stars": 8,
     "languages_count": 19,
-    "last_push": "2026-10-30T18:39:09Z"
+    "last_push": "2026-11-12T23:14:33Z"
   },
   "languages": [
     {
       "name": "Python",
-      "bytes": 77788465,
-      "pct": 90
+      "bytes": 77918995,
+      "pct": 88.9
     },
     {
       "name": "HTML",
-      "bytes": 3017770,
-      "pct": 3.5
+      "bytes": 3632623,
+      "pct": 4.1
     },
     {
       "name": "JavaScript",
-      "bytes": 2391729,
-      "pct": 2.8
+      "bytes": 2799141,
+      "pct": 3.2
     },
     {
       "name": "TypeScript",
@@ -30,8 +30,8 @@
     },
     {
       "name": "CSS",
-      "bytes": 521553,
-      "pct": 0.6
+      "bytes": 586847,
+      "pct": 0.7
     },
     {
       "name": "PowerShell",
@@ -86,7 +86,7 @@
         "scraping",
         "telegram-bot"
       ],
-      "updated": "2026-11-01T00:24:38Z"
+      "updated": "2026-11-12T23:33:51Z"
     },
     {
       "name": "ranuk-browser-bridge",
@@ -110,7 +110,7 @@
         "zero-focus",
         "zero-focus-theft"
       ],
-      "updated": "2026-10-30T18:39:09Z"
+      "updated": "2026-11-10T19:23:54Z"
     },
     {
       "name": "ranuk-voice-closer",
@@ -127,7 +127,7 @@
         "nvidia",
         "speech-to-speech"
       ],
-      "updated": "2026-10-30T23:45:15Z"
+      "updated": "2026-11-06T23:57:12Z"
     },
     {
       "name": "ranuk-pitch-arena",
@@ -157,7 +157,7 @@
         "wcag",
         "web3"
       ],
-      "updated": "2026-11-02T13:23:30Z"
+      "updated": "2026-11-11T18:58:12Z"
     },
     {
       "name": "ranuk-ai-debate-studio",
@@ -169,7 +169,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-11-01T19:49:33Z"
+      "updated": "2026-11-12T21:01:28Z"
     },
     {
       "name": "rk-mcp-datacanvas",
@@ -192,7 +192,7 @@
         "mcp-server",
         "model-context-protocol"
       ],
-      "updated": "2026-10-29T20:08:31Z"
+      "updated": "2026-11-07T15:23:57Z"
     },
     {
       "name": "Ranuk.dev",
@@ -204,7 +204,7 @@
       "stars": 0,
       "forks": 0,
       "topics": [],
-      "updated": "2026-11-02T02:41:39Z"
+      "updated": "2026-11-13T00:41:10Z"
     }
   ]
 }
