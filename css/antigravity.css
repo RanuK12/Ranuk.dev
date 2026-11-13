@@ -23,6 +23,8 @@
 .nav-dropdown-item {
   position: relative;
   list-style: none;
+  padding-bottom: 14px; /* Extends hover hit area down toward the panel */
+  margin-bottom: -14px;
 }
 
 .nav-ranuk-row {
@@ -113,31 +115,44 @@
 /* Glassmorphic Dropdown Panel */
 .nav-dropdown-panel {
   position: absolute;
-  top: calc(100% + 12px);
-  right: -40px;
+  top: calc(100% + 4px);
+  right: -30px;
   width: 440px;
   max-width: 95vw;
-  background: linear-gradient(165deg, rgba(13, 20, 33, 0.96), rgba(8, 12, 22, 0.98));
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: linear-gradient(165deg, rgba(13, 20, 33, 0.98), rgba(8, 12, 22, 0.99));
+  border: 1px solid rgba(0, 240, 255, 0.28);
   border-radius: 20px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 240, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 240, 255, 0.15);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   padding: 1.25rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px) scale(0.96);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-6px) scale(0.97);
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
   z-index: 1050;
   pointer-events: none;
 }
 
+/* Invisible Hit-Box Bridge: covers the gap completely so mouse never loses hover */
+.nav-dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: -20px;
+  right: -20px;
+  height: 28px;
+  background: transparent;
+  pointer-events: auto;
+  z-index: 1;
+}
+
 .nav-dropdown-item:hover .nav-dropdown-panel,
 .nav-dropdown-item.is-open .nav-dropdown-panel {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
 }
 
 .dropdown-header {

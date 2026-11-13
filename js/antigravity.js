@@ -118,21 +118,90 @@
   // 3. Navbar Ranuk IT Mega-Pill Dropdown Controller
   function initNavbarDropdown() {
     const dropdownItem = document.querySelector('.nav-dropdown-item');
-    const caretBtn = document.querySelector('.nav-caret-btn');
     if (!dropdownItem) return;
 
+    const caretBtn = dropdownItem.querySelector('.nav-caret-btn');
+    const ranukRow = dropdownItem.querySelector('.nav-ranuk-row');
+    const dropdownPanel = dropdownItem.querySelector('.nav-dropdown-panel');
+
+    let closeTimer = null;
+    let isPinned = false;
+
+    function openDropdown() {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
+      dropdownItem.classList.add('is-open');
+      if (caretBtn) caretBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function scheduleClose(delay = 350) {
+      if (isPinned) return; // Keep static if user pinned it open
+      if (closeTimer) clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        if (!isPinned) {
+          dropdownItem.classList.remove('is-open');
+          if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
+        }
+      }, delay);
+    }
+
+    function togglePinned() {
+      isPinned = !isPinned;
+      if (isPinned) {
+        if (closeTimer) clearTimeout(closeTimer);
+        openDropdown();
+      } else {
+        dropdownItem.classList.remove('is-open');
+        if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Hover listeners with grace period — ensures menu NEVER vanishes when moving cursor
+    dropdownItem.addEventListener('mouseenter', () => {
+      openDropdown();
+    });
+
+    dropdownItem.addEventListener('mouseleave', () => {
+      scheduleClose(350);
+    });
+
+    if (dropdownPanel) {
+      dropdownPanel.addEventListener('mouseenter', () => {
+        openDropdown();
+      });
+      dropdownPanel.addEventListener('mouseleave', () => {
+        scheduleClose(350);
+      });
+    }
+
+    // Caret button pins/toggles static dropdown
     if (caretBtn) {
       caretBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        const isOpen = dropdownItem.classList.toggle('is-open');
-        caretBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        togglePinned();
+      });
+    }
+
+    // Close when clicking any link inside dropdown so destination opens cleanly
+    if (dropdownPanel) {
+      dropdownPanel.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          isPinned = false;
+          if (closeTimer) clearTimeout(closeTimer);
+          dropdownItem.classList.remove('is-open');
+          if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
+        });
       });
     }
 
     // Close on outside click
     document.addEventListener('click', function (e) {
       if (!dropdownItem.contains(e.target)) {
+        isPinned = false;
+        if (closeTimer) clearTimeout(closeTimer);
         dropdownItem.classList.remove('is-open');
         if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
       }
@@ -141,6 +210,8 @@
     // Close on escape key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
+        isPinned = false;
+        if (closeTimer) clearTimeout(closeTimer);
         dropdownItem.classList.remove('is-open');
         if (caretBtn) caretBtn.setAttribute('aria-expanded', 'false');
       }
