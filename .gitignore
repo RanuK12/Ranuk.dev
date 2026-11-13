@@ -30,3 +30,11 @@ outreach/leads_*.xlsx
 outreach/__pycache__/
 .claude/
 .aider*
+
+# Debates daily generated media (metadata lives in debates/data/debates_feed.json)
+debates/episodes/*.mp4
+debates/episodes/*.mov
+debates/episodes/*.wav
+debates/episodes/*_cover.png
+debates/episodes/*_cover.jpg
+

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T21:01:25.086129+00:00",
+  "updated_at": "2026-11-13T19:32:39.622307+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -130,6 +130,16 @@
       "title": "Will You Have a Humanoid Robot at Home by 2028? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/humanoid_robots_home_2027_tiktok_9x16.mp4",
       "youtube_url": "https://youtube.com/shorts/OM3cEAwHB2I",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-13T19:32:39.622307+00:00",
+      "slug": "open_source_vs_closed_ai",
+      "ui_model": "model_1_cyber_nexus",
+      "title": "Open Source AI vs Closed Models: Who Wins? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/open_source_vs_closed_ai_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/gOouAjC20Aw",
       "tiktok_published": true,
       "dry_run": false
     }
