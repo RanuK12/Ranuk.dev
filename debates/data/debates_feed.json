@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T19:32:39.622307+00:00",
+  "updated_at": "2026-11-14T19:31:46.983391+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -140,6 +140,16 @@
       "title": "Open Source AI vs Closed Models: Who Wins? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/open_source_vs_closed_ai_tiktok_9x16.mp4",
       "youtube_url": "https://youtube.com/shorts/gOouAjC20Aw",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-14T19:31:46.983391+00:00",
+      "slug": "ai_girlfriends_loneliness",
+      "ui_model": "model_2_quantum_matrix",
+      "title": "Are AI Companions Curing Loneliness or Making It Worse? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_girlfriends_loneliness_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/ukJS_a5VT4A",
       "tiktok_published": true,
       "dry_run": false
     }
