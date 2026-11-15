@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T19:31:46.983391+00:00",
+  "updated_at": "2026-11-15T19:31:55.051448+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -150,6 +150,16 @@
       "title": "Are AI Companions Curing Loneliness or Making It Worse? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_girlfriends_loneliness_tiktok_9x16.mp4",
       "youtube_url": "https://youtube.com/shorts/ukJS_a5VT4A",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-15T19:31:55.051448+00:00",
+      "slug": "google_search_dead",
+      "ui_model": "model_3_silicon_warroom",
+      "title": "Is Google Search Dying Because of AI Answers? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/google_search_dead_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/QChmKoyn5uA",
       "tiktok_published": true,
       "dry_run": false
     }
