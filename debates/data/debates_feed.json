@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T19:31:55.051448+00:00",
+  "updated_at": "2026-11-16T19:31:24.108292+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -160,6 +160,16 @@
       "title": "Is Google Search Dying Because of AI Answers? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/google_search_dead_tiktok_9x16.mp4",
       "youtube_url": "https://youtube.com/shorts/QChmKoyn5uA",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-16T19:31:24.108292+00:00",
+      "slug": "cs_degree_worth_it",
+      "ui_model": "model_4_blackwell_tensor",
+      "title": "Is a Computer Science Degree Still Worth It in the AI Era? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/cs_degree_worth_it_tiktok_9x16.mp4",
+      "youtube_url": "https://youtube.com/shorts/vcNOnrZCSkU",
       "tiktok_published": true,
       "dry_run": false
     }
