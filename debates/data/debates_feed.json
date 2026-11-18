@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T19:31:51.534252+00:00",
+  "updated_at": "2026-11-18T19:31:54.670642+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -180,6 +180,16 @@
       "title": "Can Deepfakes Swing the Next Election? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/deepfake_elections_tiktok_9x16.mp4",
       "youtube_url": "https://youtube.com/shorts/VYfneLbHUik",
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-18T19:31:54.670642+00:00",
+      "slug": "vibe_coding_real",
+      "ui_model": "model_2_quantum_matrix",
+      "title": "Is Vibe Coding Real Engineering or a Dangerous Trend? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/vibe_coding_real_tiktok_9x16.mp4",
+      "youtube_url": null,
       "tiktok_published": true,
       "dry_run": false
     }
