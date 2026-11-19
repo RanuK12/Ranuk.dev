@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T19:31:54.670642+00:00",
+  "updated_at": "2026-11-19T19:30:59.990688+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -189,6 +189,16 @@
       "ui_model": "model_2_quantum_matrix",
       "title": "Is Vibe Coding Real Engineering or a Dangerous Trend? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/vibe_coding_real_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-19T19:30:59.990688+00:00",
+      "slug": "ai_bubble_2027",
+      "ui_model": "model_3_silicon_warroom",
+      "title": "Is the AI Boom a Bubble About to Pop? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_bubble_2027_tiktok_9x16.mp4",
       "youtube_url": null,
       "tiktok_published": true,
       "dry_run": false
