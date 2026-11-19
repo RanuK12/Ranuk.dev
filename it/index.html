@@ -2137,24 +2137,24 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form" name="contact" action="https://formsubmit.co/ranucoliemilio@gmail.com" method="POST">
+                <form class="contact-form" id="contact-form" name="contact" action="https://formsubmit.co/ranucoliemilio@gmail.com" method="POST" toolname="sendProjectInquiry" tooldescription="Pre-fill a project inquiry, ADA/WCAG audit request, or collaboration message for Ranuk IT Solutions (Emilio Ranucoli). Leaves final submission to the user.">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="Mensaje desde ranuk.dev">
                     <input type="hidden" name="_template" value="table">
                     <div class="form-group">
-                        <input type="text" id="form-name" name="name" autocomplete="name" required>
+                        <input type="text" id="form-name" name="name" autocomplete="name" toolparamdescription="Full name of the person or client contacting Ranuk IT Solutions." required>
                         <label for="form-name" data-i18n="contact.name">Nombre</label>
                         <span class="form-line"></span>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="form-email" name="email" autocomplete="email" required>
+                        <input type="email" id="form-email" name="email" autocomplete="email" toolparamdescription="Reply email address for Emilio Ranucoli to respond." required>
                         <label for="form-email" data-i18n="contact.email">Email</label>
                         <span class="form-line"></span>
                     </div>
                     <!-- Subject dropdown: incluye "Unite al equipo" para captar talento -->
                     <div class="form-group form-group-select">
                         <label for="form-subject" class="form-select-label" data-i18n="contact.subject_label">¿De qué querés hablar?</label>
-                        <select id="form-subject" name="subject" required>
+                        <select id="form-subject" name="subject" toolparamdescription="Category of the inquiry: project, ranuk, ada (WCAG audit), team, book, or other." required>
                             <option value="project" data-i18n="contact.subject_project">Tengo un proyecto en mente</option>
                             <option value="ranuk" data-i18n="contact.subject_ranuk">Consulta general — Ranuk IT</option>
                             <option value="ada" data-i18n="contact.subject_ada">Auditoría ADA / WCAG</option>
@@ -2164,7 +2164,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea id="form-message" name="message" rows="4" autocomplete="off" required></textarea>
+                        <textarea id="form-message" name="message" rows="4" autocomplete="off" toolparamdescription="Detailed project scope, website URL, or question for Ranuk IT Solutions." required></textarea>
                         <label for="form-message" data-i18n="contact.message">Mensaje</label>
                         <span class="form-line"></span>
                     </div>
@@ -2203,6 +2203,7 @@
     <script src="../assets/ranuk-voice-widget.js" defer></script>
     <!-- Ranuk Analytics & Traffic Counter -->
     <script src="../js/ranuk-analytics.js" defer></script>
+    <script src="../js/webmcp.js" defer></script>
     <!-- Hot Reload Script (solo para desarrollo) -->
 </body>
 </html>
