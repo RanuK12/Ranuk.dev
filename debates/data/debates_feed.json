@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T19:30:59.990688+00:00",
+  "updated_at": "2026-11-20T19:32:47.890765+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -199,6 +199,16 @@
       "ui_model": "model_3_silicon_warroom",
       "title": "Is the AI Boom a Bubble About to Pop? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_bubble_2027_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-20T19:32:47.890765+00:00",
+      "slug": "tesla_robotaxi_vs_waymo",
+      "ui_model": "model_4_blackwell_tensor",
+      "title": "Tesla Robotaxi vs Waymo: Who Wins Self-Driving? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/tesla_robotaxi_vs_waymo_tiktok_9x16.mp4",
       "youtube_url": null,
       "tiktok_published": true,
       "dry_run": false
