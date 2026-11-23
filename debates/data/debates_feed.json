@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T19:32:47.890765+00:00",
+  "updated_at": "2026-11-23T23:54:36.161406+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -209,6 +209,16 @@
       "ui_model": "model_4_blackwell_tensor",
       "title": "Tesla Robotaxi vs Waymo: Who Wins Self-Driving? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/tesla_robotaxi_vs_waymo_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-23T23:54:36.161406+00:00",
+      "slug": "ai_doctors_better",
+      "ui_model": "model_1_cyber_nexus",
+      "title": "Should AI Diagnose You Before a Human Doctor? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_doctors_better_tiktok_9x16.mp4",
       "youtube_url": null,
       "tiktok_published": true,
       "dry_run": false
