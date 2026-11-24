@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T23:54:36.161406+00:00",
+  "updated_at": "2026-11-24T15:31:04.127759+00:00",
   "channels": {
     "youtube": {
       "handle": "@AIDebateArenaLive",
@@ -219,6 +219,16 @@
       "ui_model": "model_1_cyber_nexus",
       "title": "Should AI Diagnose You Before a Human Doctor? | 2 NVIDIA AIs Debate #Shorts",
       "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/ai_doctors_better_tiktok_9x16.mp4",
+      "youtube_url": null,
+      "tiktok_published": true,
+      "dry_run": false
+    },
+    {
+      "timestamp": "2026-11-24T15:31:04.127759+00:00",
+      "slug": "neuralink_brain_chips",
+      "ui_model": "model_2_quantum_matrix",
+      "title": "Would You Put a Neuralink Chip in Your Brain? | 2 NVIDIA AIs Debate #Shorts",
+      "video_path": "/Users/emilioranucoli/Desktop/Oficina_Ranuk/Shorts_Listos_Para_Publicar/neuralink_brain_chips_tiktok_9x16.mp4",
       "youtube_url": null,
       "tiktok_published": true,
       "dry_run": false
