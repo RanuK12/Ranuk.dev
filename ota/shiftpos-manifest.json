@@ -1,0 +1,22 @@
+{
+  "version": "3.1.0",
+  "notes": "v3.1.0: Interfaccia collaboratori ultra-semplificata (3 schede grandi + conferma turno in 1 tocco) + Orari Giornalieri Bar Chalet Heidi sulla Home principale + Autodetezione OTA.",
+  "assets": {
+    "RanukShiftPOS-win64.exe": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.1.0/RanukShiftPOS-win64.exe",
+      "sha256": "4e7dcbadd0e191cb6c5cddc421a3383bb0957d2f6419476a40c0ce5649241a6b"
+    },
+    "RanukShiftPOS-win32.exe": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.1.0/RanukShiftPOS-win32.exe",
+      "sha256": "51957141e9627db4f54efc681b558dd214082f4776197ddd8f4fe6b27f07e430"
+    },
+    "RanukShiftPOS-darwin-arm64": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.1.0/RanukShiftPOS-darwin-arm64",
+      "sha256": "5e6d604ec1e2c5871bdd5193cd7a66ae64af4566f61f7dab203082953492d75f"
+    },
+    "RanukShiftPOS-darwin-amd64": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.1.0/RanukShiftPOS-darwin-amd64",
+      "sha256": "58c0930820d2fc741e628852c115be8cff778457abf97219517b849702268425"
+    }
+  }
+}
