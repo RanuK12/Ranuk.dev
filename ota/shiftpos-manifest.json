@@ -1,22 +1,22 @@
 {
   "version": "3.2.0",
-  "notes": "v3.2.0: Turni Bar Oggi ridisegnato (team fisso Bar Heidi + pulsante Aggiungi Persona), Agenda Mensile interattiva cliccando qualsiasi giorno + Meteo Meteoblue Passo Brocon & Webcam Live rotativa ogni 2 min.",
+  "notes": "v3.2.0 LTS: Auto-OTA 100% automatico + Turni Bar Heidi pulito + Agenda Mensile cliccabile + Meteo Meteoblue & Webcam Live",
   "assets": {
     "RanukShiftPOS-win64.exe": {
       "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-win64.exe",
-      "sha256": "e7b30e8672187a5104004f16dc6bc73c39b9b018647f7549b9558c2c3913ac1f"
+      "sha256": "8723c526374ac40b8fc53888e662ed6a282172eb112725d41d2469adf599930c"
     },
     "RanukShiftPOS-win32.exe": {
       "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-win32.exe",
-      "sha256": "e8a6565c6ebb445b8e5060a60f951b1f0817f9d12b26d786aca705a3ec42a173"
+      "sha256": "a3b0227231cf49b744896f7ef742ef04a62a21f97307c0ccbe075a76ffae19ef"
     },
     "RanukShiftPOS-darwin-arm64": {
       "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-darwin-arm64",
-      "sha256": "d8a1cf76d5da865416f692eaa013dbe6b7055bb0072a715eb488d9dcd55cca15"
+      "sha256": "893e7538ec4f04fd033b8eb4973c90119f9a24a67e0e012411b34320d48a1162"
     },
     "RanukShiftPOS-darwin-amd64": {
       "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-darwin-amd64",
-      "sha256": "35f1e15ee033de56a2194d364ff3ffb68b73abb0937c1a0278a200763feb4c74"
+      "sha256": "d0c64d1a7f649fdc15101a35ec2255826790f803ed7cae5840cb84ad24eb8268"
     }
   }
 }
