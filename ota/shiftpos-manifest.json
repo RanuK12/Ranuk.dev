@@ -1,22 +1,22 @@
 {
-  "version": "3.2.0",
-  "notes": "v3.2.0: Turni Bar Oggi ridisegnato (team fisso Bar Heidi senza cucina + Aggiungi Persona), Agenda Mensile interattiva 1-clic, Meteo 7gg Meteoblue Passo Brocon + Webcam Live rotativa 2m, Sovrascrittura sicura installer + Auto-OTA Zero-Touch.",
+  "version": "3.2.1",
+  "notes": "v3.2.1: Zero finestre console su Windows (CREATE_NO_WINDOW + cache memoria), barra titolo bianca con icone Minimizza/Ingrandisci/Chiudi ben visibili, avvio singolo pulito al boot PC (auto-pulizia vecchi hook duplicati) e metadati PE Windows anti-falso-positivo.",
   "assets": {
     "RanukShiftPOS-win64.exe": {
-      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-win64.exe",
-      "sha256": "8a77aec4510ee5f7aa7e01620f8701a79f8d07e997746b3af7215cd81e41e744"
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.1/RanukShiftPOS-win64.exe",
+      "sha256": "f9331db06d9358d7835e3de792e36d8743421edf7c6a0c65c8261b2e04dfe435"
     },
     "RanukShiftPOS-win32.exe": {
-      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-win32.exe",
-      "sha256": "c89d3f1b41ed7fd10da13eb24fddab7f89ed5d75861a01ab1b702e6bf2320f0a"
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.1/RanukShiftPOS-win32.exe",
+      "sha256": "2a5b41ca9d243c690ae251a5ba1e8c3f48eb0da85dfa29b80af21a9300575d8c"
     },
     "RanukShiftPOS-darwin-arm64": {
-      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-darwin-arm64",
-      "sha256": "118ce7223f90ede0becd78bb5f988d3a507ca8fa579fa72b680a4263febbbc92"
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.1/RanukShiftPOS-darwin-arm64",
+      "sha256": "faf65fece1dd0d434702cd83f28f4893b4464d6aec20674796c3c0e89f91db35"
     },
     "RanukShiftPOS-darwin-amd64": {
-      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.0/RanukShiftPOS-darwin-amd64",
-      "sha256": "5b231032746e1b7f7b40b8a79c25100923aed4bd85bada96e4350e6056c070cb"
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.1/RanukShiftPOS-darwin-amd64",
+      "sha256": "2b2658ced81f7f7fac703858e90d07a45ca646cc344f4ae440e04c8007fe7d3a"
     }
   }
 }
