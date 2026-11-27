@@ -1,0 +1,22 @@
+{
+  "version": "3.2.3",
+  "notes": "v3.2.3: Blindaggio sicurezza Direzione esclusivo per Angela Paterno ed Emilio Ranucoli (blocco totale creazione primo PIN su Direzione e migrazione automatica profili).",
+  "assets": {
+    "RanukShiftPOS-win64.exe": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.3/RanukShiftPOS-win64.exe",
+      "sha256": "db387cb370f04eb54b0b8fc9f5075073efd7b7e35285e44ec3bf7e8bce980619"
+    },
+    "RanukShiftPOS-win32.exe": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.3/RanukShiftPOS-win32.exe",
+      "sha256": "6f262b7b9b478816e172ed545327b3876908657646b420909dd4e38fa2184c38"
+    },
+    "RanukShiftPOS-darwin-arm64": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.3/RanukShiftPOS-darwin-arm64",
+      "sha256": "959235710e9c019b091839ad937d6353ad4935cffb890d158582faaea8555d40"
+    },
+    "RanukShiftPOS-darwin-amd64": {
+      "url": "https://github.com/RanuK12/Ranuk.dev/releases/download/shiftpos-v3.2.3/RanukShiftPOS-darwin-amd64",
+      "sha256": "0d2138d6ad0d48c76b061a802bc3d9917932acecd0469bf5214c3a2169cca35d"
+    }
+  }
+}
